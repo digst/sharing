@@ -1,35 +1,42 @@
-Synopsis for
-Referencearkitektur for  deling af myndigheders registeroplysninger
-
 Denne synopsis er en del af det indledende afklarende arbejde der udføres før der tages beslutning om udarbejdelse af en referencearkitektur. Formålet er at konkretisere et muligt indhold med henblik på udpegning af interessenter samt at afgrænse opgaven i forhold til øvrige aktiviteter.
 Synopsis vil, på kortest mulige form, giver et overblik over strukturen og indholdet af den endelige arkitektur. Synopsen er ikke et gennemtænkt bud på den endelige løsning, men skal udtale sig om retning og afprøve rammerne for det videre arbejde.
 
-20150629 Version 1 (forslag i forbindelse med udarbejdelse af digitaliseringsstrategi) 2015-1713
-20170815 Version 2 (udvidet med eDelivery)
+ pssst | shjdjfhm   |
+---|---|
+20150629 | Version 1 (forslag i forbindelse med udarbejdelse af digitaliseringsstrategi)
+20170815 | Version 2 (udvidet med eDelivery)
+
 # Indledende afsnit
+
 ## Formål
 Referencearkitekturen understøtter udviklingen af it-systemer
 - der anvender og (sammenstiller) registeroplysninger til sagsbehandling eller selvbetjening
 - der sender eller modtager meddelelser fra andre it-systemer
+
 ## Definition og afgrænsning af virkefelt
-- Aktiviteter under Digitaliseringsstrategien… 
+- Aktiviteter under Digitaliseringsstrategien…
 - Offentlige [autoritative?] registre [vedrørende personer og virksomheder?] [, hvortil der er knyttet rettigheder?]
 - Kun anvendelse, udstilling [og fejlrettelser?] udenfor registerejer
+
 ## Centrale begreber
 - Register, registerejer, dataansvarlig, dataanvender, den registrerede.
 - Grunddata,
 - Dokument,
-- Afsender, modtager, meddelelse 
+- Afsender, modtager, meddelelse
+
 ## Metoderamme
-- OIO referencearkitektur, men også EIRA enablers. 
+- OIO referencearkitektur, men også EIRA enablers.
+
 ## Vision, mål og strategier
+
 ## Forretningsmæssige tendenser
-- Ensretning og nationale indsatser 
+- Ensretning og nationale indsatser
 - Data øget værdi for organisationer
 - Øget bevågenhed omkring beskyttelse af privatliv
 - Øget opmærksomhed om håndtering af personlige oplysninger
 - Mængden af oplysninger der håndteres stiger
 -b Grænseoverskridende services
+
 ## Teknologiske tendenser
 - øget central standardisering af begreber, datamodeller og grænseflader
 - Flere og mere forskelligartede enheder forbundet til netværket
@@ -44,7 +51,7 @@ Referencearkitekturen understøtter udviklingen af it-systemer
 ## Målsætning
 [beskriv målsætninger i eksisterende aftaler og strategier]
 Strategiske principper
-F1: Autoritative register med henvisninger til andre registre 
+F1: Autoritative register med henvisninger til andre registre
 F2: Ansvar for begrænsning af adgang ligger hos registerejer
 F3: Let at komme med forslag til rettelser
 I1: Fælles referenceinformationsmodel
@@ -70,24 +77,24 @@ Effektiv systemudvikling (begrænse udfaldsrum, opsamle best practice)
  - [meget generiske]
 ## Aktører, roller og ansvar
 - Borger, virksomhed, offentlig myndigheder [udenlandske?]
-- Registerejer, Registeranvender, ”Den som data handler om”. 
+- Registerejer, Registeranvender, ”Den som data handler om”.
 - Public Service Provider, Private Service Provider
 - Service Consumer
 ## Mønstre? Generic use cases
-- Registrering, (gen)-brug af data, forsendelse 
+- Registrering, (gen)-brug af data, forsendelse
 
 ## Tværgående processer (proces-trin)
 
  - Sagsbehandling [sag og dokument], id, belysning, hændelser
  - Simpel selvbetjening [CBI?] Genkende, godkende [Krølle om rette forkerte oplysninger]
- - Tværgående selvbetjening 
- 
+ - Tværgående selvbetjening
+
  - Indsigt i oplysninger og deres anvendelse
- 
+
  - Sende meddelelse
  - Modtage meddelelse
  - Tag et dokument med til en anden service provider (der ikke har adgang til registre)
- 
+
 ## Tjenester
 
 Nødvendige: Dataservice(Register), eDelivery Service, Katalog, Kontaktregister,, Log(Overblik).
@@ -100,7 +107,7 @@ Meddelelse, Påmindelse, Dokument, URI
 Rettighed/hjemmel/samtykke/retskilde
 Kontekst, anvendelse og afsendelse 
 Teknik
-Services 
+Services
 (Applikationsroller?, enablers?, capabilities?)
 Opslag
 Meld forslag til korrektur?
@@ -132,6 +139,6 @@ Meld forslag til korrektur?
 - Hændelsesbeskeder
 - Protokol for flytning af filer, kryptering
 - Hjemmel (samtykke, lov)
-- Context 
+- Context
 
 ## Identifikation af standarder

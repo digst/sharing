@@ -1,0 +1,259 @@
+Denne synopsis er en del af det indledende afklarende arbejde der
+udføres før der tages beslutning om udarbejdelse af en
+referencearkitektur. Formålet er at konkretisere et muligt indhold med
+henblik på udpegning af interessenter samt at afgrænse opgaven i forhold
+til øvrige aktiviteter. Synopsis vil, på kortest mulige form, giver et
+overblik over strukturen og indholdet af den endelige arkitektur.
+Synopsen er ikke et gennemtænkt bud på den endelige løsning, men skal
+udtale sig om retning og afprøve rammerne for det videre arbejde.
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.05\columnwidth}\raggedright\strut
+pssst\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright\strut
+shjdjfhm\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+20150629\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Version 1 (forslag i forbindelse med udarbejdelse af
+digitaliseringsstrategi)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+20170815\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+Version 2 (udvidet med eDelivery)\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\section{Indledende afsnit}\label{indledende-afsnit}
+
+\subsection{Formål}\label{formuxe5l}
+
+Referencearkitekturen understøtter udviklingen af it-systemer - der
+anvender og (sammenstiller) registeroplysninger til sagsbehandling eller
+selvbetjening - der sender eller modtager meddelelser fra andre
+it-systemer
+
+\subsection{Definition og afgrænsning af
+virkefelt}\label{definition-og-afgruxe6nsning-af-virkefelt}
+
+\begin{itemize}
+\tightlist
+\item
+  Aktiviteter under Digitaliseringsstrategien\ldots{}
+\item
+  Offentlige {[}autoritative?{]} registre {[}vedrørende personer og
+  virksomheder?{]} {[}, hvortil der er knyttet rettigheder?{]}
+\item
+  Kun anvendelse, udstilling {[}og fejlrettelser?{]} udenfor
+  registerejer
+\end{itemize}
+
+\subsection{Centrale begreber}\label{centrale-begreber}
+
+\begin{itemize}
+\tightlist
+\item
+  Register, registerejer, dataansvarlig, dataanvender, den registrerede.
+\item
+  Grunddata,
+\item
+  Dokument,
+\item
+  Afsender, modtager, meddelelse
+\end{itemize}
+
+\subsection{Metoderamme}\label{metoderamme}
+
+\begin{itemize}
+\tightlist
+\item
+  OIO referencearkitektur, men også EIRA enablers.
+\end{itemize}
+
+\subsection{Vision, mål og
+strategier}\label{vision-muxe5l-og-strategier}
+
+\subsection{Forretningsmæssige
+tendenser}\label{forretningsmuxe6ssige-tendenser}
+
+\begin{itemize}
+\tightlist
+\item
+  Ensretning og nationale indsatser
+\item
+  Data øget værdi for organisationer
+\item
+  Øget bevågenhed omkring beskyttelse af privatliv
+\item
+  Øget opmærksomhed om håndtering af personlige oplysninger
+\item
+  Mængden af oplysninger der håndteres stiger -b Grænseoverskridende
+  services
+\end{itemize}
+
+\subsection{Teknologiske tendenser}\label{teknologiske-tendenser}
+
+\begin{itemize}
+\tightlist
+\item
+  øget central standardisering af begreber, datamodeller og grænseflader
+\item
+  Flere og mere forskelligartede enheder forbundet til netværket
+\item
+  Øgede forventninger til brugervenlighed af offentlige digitale
+  services
+\item
+  Mængden af tilgængelige oplysninger vokser
+\item
+  Arkitekturvision for anvendelse og udstilling
+\item
+  Intergrated Service Delivery
+\item
+  ''Once only''
+\item
+  ''Ineroperability/Samarbejdende infrastrukturer / Økosystem af fælles
+  løsninger?''
+\item
+  ''Valgfri for anvender mellem flere tekniske udbydere af samme
+  oplysninger''
+\end{itemize}
+
+\subsection{Målsætning}\label{muxe5lsuxe6tning}
+
+{[}beskriv målsætninger i eksisterende aftaler og strategier{]}
+Strategiske principper F1: Autoritative register med henvisninger til
+andre registre F2: Ansvar for begrænsning af adgang ligger hos
+registerejer F3: Let at komme med forslag til rettelser I1: Fælles
+referenceinformationsmodel I2: Dokument-princip (attester mv.)? A1:
+Onlineopslag i sagsbehandling og selvbetjening A2: Log adgang A3: Adgang
+til og fra internationale registre sker gennem national gateway T1:
+Central fuldmagt/rettighedsstyring T2: Multi-flavour-api
+
+\subsection{Værdiskabelse}\label{vuxe6rdiskabelse}
+
+Mindre besvær for borger og virksomheder ved brug af digitale services
+Simplere arbejdsgange og mere potentiale for automatisering hos
+myndigheder {[}og virksomheder{]} Understøtte transparens og bevare
+tillid til registre Effektiv systemudvikling (begrænse udfaldsrum,
+opsamle best practice)
+
+\section{Forretning}\label{forretning}
+
+\subsection{Opgaver}\label{opgaver}
+
+\begin{itemize}
+\tightlist
+\item
+  Borger og virksomhedsvendte selvbetjeningsløsninger
+\item
+  Myndigheders sagsbehandling
+\item
+  Tværgående analyse
+\item
+  {[}meget generiske{]} \#\# Aktører, roller og ansvar
+\item
+  Borger, virksomhed, offentlig myndigheder {[}udenlandske?{]}
+\item
+  Registerejer, Registeranvender, ''Den som data handler om''.
+\item
+  Public Service Provider, Private Service Provider
+\item
+  Service Consumer \#\# Mønstre? Generic use cases
+\item
+  Registrering, (gen)-brug af data, forsendelse
+\end{itemize}
+
+\subsection{Tværgående processer
+(proces-trin)}\label{tvuxe6rguxe5ende-processer-proces-trin}
+
+\begin{itemize}
+\item
+  Sagsbehandling {[}sag og dokument{]}, id, belysning, hændelser
+\item
+  Simpel selvbetjening {[}CBI?{]} Genkende, godkende {[}Krølle om rette
+  forkerte oplysninger{]}
+\item
+  Tværgående selvbetjening
+\item
+  Indsigt i oplysninger og deres anvendelse
+\item
+  Sende meddelelse
+\item
+  Modtage meddelelse
+\item
+  Tag et dokument med til en anden service provider (der ikke har adgang
+  til registre)
+\end{itemize}
+
+\subsection{Tjenester}\label{tjenester}
+
+Nødvendige: Dataservice(Register), eDelivery Service, Katalog,
+Kontaktregister,, Log(Overblik). Ønskelige: Signering, Indeks Mangler:
+Referencedata (Klassifikation), Identitet/brugerstyring
+
+\subsection{Forretningsobjekter}\label{forretningsobjekter}
+
+Meddelelse, Påmindelse, Dokument, URI
+Rettighed/hjemmel/samtykke/retskilde Kontekst, anvendelse og afsendelse 
+Teknik Services (Applikationsroller?, enablers?, capabilities?) Opslag
+Meld forslag til korrektur?
+
+\section{Tekniske implementeringer}\label{tekniske-implementeringer}
+
+\subsection{Adgang til data hos anden
+myndighed}\label{adgang-til-data-hos-anden-myndighed}
+
+\begin{itemize}
+\tightlist
+\item
+  Direkte adgang, SOA
+\item
+  Datadistribution, sammenstilling samt adgangskontrol og logning
+\item
+  Fælles Data og applikations-platform \#\# Forsendelse
+\item
+  SOA
+\item
+  Fælles system
+\item
+  Specific eDelivery
+\item
+  Generic eDelivery
+\end{itemize}
+
+\subsection{Områder for
+standardisering/profileringer}\label{omruxe5der-for-standardiseringprofileringer}
+
+(Per mønster?, matrix) - Service Design Guidelines - Access Protocols -
+Distribution Protocols - Synchronisation Protocols
+
+\begin{itemize}
+\tightlist
+\item
+  Metadata for opslag/søgning/anvendelse
+\item
+  Log format
+\item
+  Identifikation
+\item
+  Klassifikation af følsomhed
+\item
+  Klassifikation af anvendelse (sagsbehandling vs analyse)
+\item
+  Hændelsesbeskeder
+\item
+  Protokol for flytning af filer, kryptering
+\item
+  Hjemmel (samtykke, lov)
+\item
+  Context
+\end{itemize}
+
+\subsection{Identifikation af
+standarder}\label{identifikation-af-standarder}
