@@ -1,5 +1,8 @@
+A very early draft of a reference architecture to be.
 
+Working copy in `main.md`
 
-Current version in `src/main.md`
+Sources for illustrations, scripts and others in `src/`
 
-Last published version `releases/`
+Official versions in `releases/´
+
