@@ -103,7 +103,7 @@ Re-use
   ~ *mål* om genbrug af it med henblik på lavere omkostninger
 
 
-# Vision
+## Vision
 
 ```
 data deles på en måde hvor dataejer ikke unødigt begrænser genbrug...
@@ -116,7 +116,7 @@ Simplere arbejdsgange og mere potentiale for automatisering hos myndigheder [og 
 Understøtte transparens og bevare tillid til registre
 Effektiv systemudvikling (begrænse udfaldsrum, opsamle best practice)
 
-# Strategiske principper
+## Strategiske principper
 - F1: Autoritative register med henvisninger til andre registre
 - F2: Ansvar for begrænsning af adgang ligger hos registerejer
 - F3: Let at komme med forslag til rettelser
@@ -136,9 +136,6 @@ Effektiv systemudvikling (begrænse udfaldsrum, opsamle best practice)
  - Borger og virksomhedsvendte selvbetjeningsløsninger
  - Myndigheders sagsbehandling
  - Tværgående analyse, tilsyn, kontrol
-
-
- ![usecases](https://rawgit.com/digst/sharing/blob/master/usecases.pdf "Collaborative use cases and their roles")
 
 
 ## Funktioner
@@ -181,7 +178,7 @@ Herunder beskrives relevante proces-trin fra processer beskrevet andre steder.
  - Modtage meddelelse
  - Tag et dokument med til en anden service provider (der ikke har adgang til registre)
 
-## Tjenester
+## Forretnings-tjenester? -funktioner?
 Proces trin kan realiseres af interne busines functions eller trække på eksterne business services. Skal vi bare slå swervices og functions sammen (da vi ikke taler om implementering endnu)
 - Dataudstilling
 - Forsendelse
@@ -200,27 +197,103 @@ Datadistributør
 
 ## Forretningsobjekter
 
-Meddelelse, Påmindelse, Dokument, URI
-Rettighed/hjemmel/samtykke/retskilde
-Kontekst, anvendelse og afsendelse 
-Teknik
-Services
-(Applikationsroller?, enablers?, capabilities?)
-Opslag
-Meld forslag til korrektur?
+### Data
+Abstrakt...bruges om både registerrecord og dokument
 
-# Tekniske implementeringer
+### Registeroplysning (record)
 
-## Adgang til data hos anden myndighed
-- Direkte adgang, SOA
-- Datadistribution, sammenstilling samt adgangskontrol og logning
-- Fælles Data og applikations-platform
--
-## Forsendelse
- - SOA
- - Fælles system
- - Specific eDelivery
- - Generic eDelivery
+### Dokument
+
+### Datasamling
+
+### Datasubjekt
+
+### Indeks
+
+### Katalog
+
+### Model/Schema
+
+### Segl
+
+mangler
+
+Meddelelse, Påmindelse, Registreringshændelse
+
+
+
+# Teknik
+forretningsfunktionerne understøttes/realiseres af applikationer.
+
+## Applikationsroller
+
+### eDelivery Service Provider
+som skal kunne:
+- udstille eller levere meddelelser til modtager
+- modtage og distribuere meddeleleser
+- fortælle andre om deres kunder
+
+### Dataservice
+som skal kunne:
+- opbevare datasamling
+- begrænse adgang til de rigtige
+- måske vedligeholde og udsende abonnementer
+
+### Kontaktregister
+som er en slags data service med en særlig type oplysninger
+
+### Log
+som er en slags data service med særlige oplysninger
+
+### Indeks
+som er en slags data service med særlige oplysninger
+kan undværes, men ikke effektivt.
+
+## Katalog
+som ikke er en dataservice fordi der ikke er begrænset adgang
+kan undværes, men ikke effektivt.
+
+(Skal vi have en "beskyttet dataservice" og en offentlig?)
+
+
+
+# Implementering(er)
+Her placeres de enkelte services på processtrin fra tidligere afsnit
+
+
+## Datanvendelse
+Når myndighed vil have adgang til data hos en anden er det er par mønstre
+
+
+### Direkte adgang, SOA
+
+### Datadistribution
+sammenstilling samt adgangskontrol og logning
+
+### Distribueret Service- og data-platform
+
+## Registreret forsendelse
+Når en myndighed vil sende noget til en myndighed, virksom eller borger.
+
+### SOA / Email...
+
+### Fælles system
+e.g. e-Boks.
+
+### Service Providers
+kan være både generisk eller specifik for et domæne.
+
+
+## Registrering
+skal med for at forklare index
+
+## ansvar hos registrant
+
+## ansvar hos dataejer
+
+
+
+
 
 ## Områder for standardisering/profileringer
 (Per mønster?, matrix)
