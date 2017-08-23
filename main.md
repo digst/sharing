@@ -138,7 +138,7 @@ Effektiv systemudvikling (begrænse udfaldsrum, opsamle best practice)
  - Tværgående analyse, tilsyn, kontrol
 
 
- ![usecases](usecases.pdf "Collaborative use cases and their roles")
+ ![usecases](https://rawgit.com/digst/sharing/blob/master/usecases.pdf "Collaborative use cases and their roles")
 
 
 ## Funktioner
