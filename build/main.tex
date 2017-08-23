@@ -7,30 +7,7 @@ overblik over strukturen og indholdet af den endelige arkitektur.
 Synopsen er ikke et gennemtænkt bud på den endelige løsning, men skal
 udtale sig om retning og afprøve rammerne for det videre arbejde.
 
-\begin{longtable}[]{@{}ll@{}}
-\toprule
-\begin{minipage}[b]{0.05\columnwidth}\raggedright\strut
-pssst\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright\strut
-shjdjfhm\strut
-\end{minipage}\tabularnewline
-\midrule
-\endhead
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-20150629\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-Version 1 (forslag i forbindelse med udarbejdelse af
-digitaliseringsstrategi)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-20170815\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-Version 2 (udvidet med eDelivery)\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
-
-\section{Indledende afsnit}\label{indledende-afsnit}
+\section{Introduktion}\label{introduktion}
 
 \subsection{Formål}\label{formuxe5l}
 
@@ -39,13 +16,12 @@ anvender og (sammenstiller) registeroplysninger til sagsbehandling eller
 selvbetjening - der sender eller modtager meddelelser fra andre
 it-systemer
 
-\subsection{Definition og afgrænsning af
-virkefelt}\label{definition-og-afgruxe6nsning-af-virkefelt}
+\subsection{Scope}\label{scope}
 
 \begin{itemize}
 \tightlist
 \item
-  Aktiviteter under Digitaliseringsstrategien\ldots{}
+  Aktiviteter under Digitaliseringsstrategien
 \item
   Offentlige {[}autoritative?{]} registre {[}vedrørende personer og
   virksomheder?{]} {[}, hvortil der er knyttet rettigheder?{]}
@@ -68,6 +44,21 @@ virkefelt}\label{definition-og-afgruxe6nsning-af-virkefelt}
   Afsender, modtager, meddelelse
 \end{itemize}
 
+\subsection{Anvendelse}\label{anvendelse}
+
+\begin{itemize}
+\tightlist
+\item
+  bruges sprog til at formulere en fælles strategi
+\item
+  bruges som reference ved løsningsbeskrivelser
+\end{itemize}
+
+\subsection{Tilblivelse og governance}\label{tilblivelse-og-governance}
+
+Denne version er skrevet\ldots{}.og rettet mod\ldots{} Endelig
+godkendelse hos SDA
+
 \subsection{Metoderamme}\label{metoderamme}
 
 \begin{itemize}
@@ -75,6 +66,19 @@ virkefelt}\label{definition-og-afgruxe6nsning-af-virkefelt}
 \item
   OIO referencearkitektur, men også EIRA enablers.
 \end{itemize}
+
+\subsection{Relation til andre
+referencearkitekturer}\label{relation-til-andre-referencearkitekturer}
+
+\begin{itemize}
+\tightlist
+\item
+  Anvender brugerstyring
+\item
+  Anvendes af selvbetjening og overblik
+\end{itemize}
+
+\section{Strategi?}\label{strategi}
 
 \subsection{Vision, mål og
 strategier}\label{vision-muxe5l-og-strategier}
@@ -143,6 +147,22 @@ myndigheder {[}og virksomheder{]} Understøtte transparens og bevare
 tillid til registre Effektiv systemudvikling (begrænse udfaldsrum,
 opsamle best practice)
 
+\begin{description}
+\tightlist
+\item[Interoperability]
+\emph{mål} om sammenhængende services\ldots{} integrated service
+delivery
+\item[Once-only]
+\emph{mål} om at borger og virksomhed kun skal afgive den samme
+information til det offentlige en gang\ldots{} (men give lov til
+genbrug?)
+\item[Transperancy]
+\emph{mål} om borger og virksomheder skal kunne se hvilke data der
+findes om dem og hvor disse data anvendes
+\item[Re-use]
+\emph{mål} om genbrug af it med henblik på lavere omkostninger
+\end{description}
+
 \section{Forretning}\label{forretning}
 
 \subsection{Opgaver}\label{opgaver}
@@ -156,7 +176,25 @@ opsamle best practice)
 \item
   Tværgående analyse
 \item
-  {[}meget generiske{]} \#\# Aktører, roller og ansvar
+  {[}meget generiske{]}
+\end{itemize}
+
+\emph{Funktion/proces trin}
+
+Registrering \textasciitilde{} \emph{funktion} hvor oplysninger bringes
+på digital form
+
+Datanvendelse \textasciitilde{} \emph{funktion} hvor oplysninger
+anvendes i en opgave
+
+Registreret forsendelse \textasciitilde{} \emph{funktion} hvor
+meddelelser sendes uafviseligt
+
+\subsection{Aktører, roller og
+ansvar}\label{aktuxf8rer-roller-og-ansvar}
+
+\begin{itemize}
+\tightlist
 \item
   Borger, virksomhed, offentlig myndigheder {[}udenlandske?{]}
 \item
@@ -164,7 +202,31 @@ opsamle best practice)
 \item
   Public Service Provider, Private Service Provider
 \item
-  Service Consumer \#\# Mønstre? Generic use cases
+  Service Consumer
+\end{itemize}
+
+Registrant \textasciitilde{} \emph{rolle} som bringer oplysninger på
+digital form, registrer
+
+\begin{description}
+\tightlist
+\item[Dataejer]
+\emph{rolle} som ejer registreringer/data
+\item[Dataanvender]
+\emph{rolle} der anvender oplysninger fra et register
+\item[Datasubject]
+\emph{rolle} som oplysninger handler
+\item[Dataindeksejer]
+\emph{rolle} som er ansvarlig for opbevaring af metadata
+\item[Datadistributør]
+\emph{rolle} som er ansvarlig for adgang til data for dataanvendere
+\end{description}
+
+\subsection{Mønstre? Generic use
+cases}\label{muxf8nstre-generic-use-cases}
+
+\begin{itemize}
+\tightlist
 \item
   Registrering, (gen)-brug af data, forsendelse
 \end{itemize}
@@ -210,13 +272,14 @@ Meld forslag til korrektur?
 myndighed}\label{adgang-til-data-hos-anden-myndighed}
 
 \begin{itemize}
-\tightlist
 \item
   Direkte adgang, SOA
 \item
   Datadistribution, sammenstilling samt adgangskontrol og logning
 \item
-  Fælles Data og applikations-platform \#\# Forsendelse
+  Fælles Data og applikations-platform
+\item ~
+  \subsection{Forsendelse}\label{forsendelse}
 \item
   SOA
 \item
