@@ -2,6 +2,10 @@ Denne synopsis er en del af det indledende afklarende arbejde der udføres før 
 Synopsis vil, på kortest mulige form, giver et overblik over strukturen og indholdet af den endelige arkitektur. Synopsen er ikke et gennemtænkt bud på den endelige løsning, men skal udtale sig om retning og afprøve rammerne for det videre arbejde.
 
 
+*english synopsis*
+
+
+
 # Introduktion
 
 ## Formål
@@ -158,7 +162,7 @@ Registrant
    ~ *rolle* som bringer oplysninger på digital form, registrer
 
 Dataejer
-  ~ *rolle* som ejer registreringer/data
+  ~ *rolle* som ejer registreringer/data, ansvar for at udarbejde adgangspolitik
 
 Dataanvender
   ~ *rolle* der anvender oplysninger fra et register
@@ -313,3 +317,5 @@ skal med for at forklare index
 - Context
 
 ## Identifikation af standarder
+
+# Appendix

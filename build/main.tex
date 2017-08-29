@@ -11,38 +11,42 @@ udtale sig om retning og afprøve rammerne for det videre arbejde.
 
 \subsection{Formål}\label{formuxe5l}
 
-Referencearkitekturen understøtter udviklingen af it-systemer - der
-anvender og (sammenstiller) registeroplysninger til sagsbehandling eller
-selvbetjening - der sender eller modtager meddelelser fra andre
-it-systemer
+Referencearkitekturen understøtter anvendelse og udviklingen af
+it-systemer - der anvender og (sammenstiller) registeroplysninger til
+sagsbehandling eller selvbetjening - der sender eller modtager
+meddelelser fra andre it-systemer
 
 \subsection{Scope}\label{scope}
 
+Referencearkitekturen beskriver anvendelse af og udvikling af it-system
+der reguleres af blandt andet:
+
+\begin{description}
+\tightlist
+\item[EU databeskyttelse]
+\emph{lov} som beskriver pligter og rettigheder
+\item[EU eIDAS]
+\emph{lov} som definerer registrede tillidstjenester
+\end{description}
+
 \begin{itemize}
 \tightlist
 \item
-  Aktiviteter under Digitaliseringsstrategien
+  DK persondata lov
 \item
-  Offentlige {[}autoritative?{]} registre {[}vedrørende personer og
-  virksomheder?{]} {[}, hvortil der er knyttet rettigheder?{]}
-\item
-  Kun anvendelse, udstilling {[}og fejlrettelser?{]} udenfor
-  registerejer
+  Lov om Digital Post
 \end{itemize}
+
+Referencearkitekturen skrives på baggrund af - Beslutning i
+Digitaliseringsstrategien - Aftale papir og deltagerkreds
+
+Uden for scope: - registrering og anvendelse hos registerejer - kun
+registre og dokumenter der kræver adgangskontrol
 
 \subsection{Centrale begreber}\label{centrale-begreber}
 
-\begin{itemize}
-\tightlist
-\item
-  Register, registerejer, dataansvarlig, dataanvender, den registrerede.
-\item
-  Grunddata,
-\item
-  Dokument,
-\item
-  Afsender, modtager, meddelelse
-\end{itemize}
+Register, registerejer, dataansvarlig, dataanvender, den registrerede,
+Grunddata, Dokument, Afsender, modtager, meddelelse
 
 \subsection{Anvendelse}\label{anvendelse}
 
@@ -56,32 +60,30 @@ it-systemer
 
 \subsection{Tilblivelse og governance}\label{tilblivelse-og-governance}
 
-Denne version er skrevet\ldots{}.og rettet mod\ldots{} Endelig
-godkendelse hos SDA
+Denne version er skrevet\ldots{}.og rettet mod ``dem der laver
+strategi'' og it-arkitekter Endelig godkendelse hos SDA
 
 \subsection{Metoderamme}\label{metoderamme}
 
-\begin{itemize}
-\tightlist
-\item
-  OIO referencearkitektur, men også EIRA enablers.
-\end{itemize}
+Skrives indefor rammerne af Fællesoffentlige Digital Arkitektur, det vil
+sige\ldots{} - erfaringer fra OIO referencearkitektur - og EIRA -
+TOGAFF, ArchiMate
 
 \subsection{Relation til andre
 referencearkitekturer}\label{relation-til-andre-referencearkitekturer}
 
-\begin{itemize}
-\tightlist
-\item
-  Anvender brugerstyring
-\item
-  Anvendes af selvbetjening og overblik
-\end{itemize}
+Gør brug af - Fællesoffentlig referencearkitektur for brugerstyring
 
-\section{Strategi?}\label{strategi}
+Skal kunne anvendes af - Fællesoffentlig referencearkitektur for
+selvbetjening - Fællesoffentlig referencearkitektur for overblik over
+egne sager
 
-\subsection{Vision, mål og
-strategier}\label{vision-muxe5l-og-strategier}
+Skal anvendes i kontekst sammen med - Deling af dokumenter på
+sundhedsområdet - Indberetning til registre på sundhedsområdet - Sag- og
+dokument på det kommunale område
+
+\section{Strategi? (Vision, mål og
+strategier)}\label{strategi-vision-muxe5l-og-strategier}
 
 \subsection{Forretningsmæssige
 tendenser}\label{forretningsmuxe6ssige-tendenser}
@@ -97,8 +99,9 @@ tendenser}\label{forretningsmuxe6ssige-tendenser}
 \item
   Øget opmærksomhed om håndtering af personlige oplysninger
 \item
-  Mængden af oplysninger der håndteres stiger -b Grænseoverskridende
-  services
+  Mængden af oplysninger der håndteres stiger
+\item
+  Grænseoverskridende services
 \end{itemize}
 
 \subsection{Teknologiske tendenser}\label{teknologiske-tendenser}
@@ -131,21 +134,6 @@ tendenser}\label{forretningsmuxe6ssige-tendenser}
 \subsection{Målsætning}\label{muxe5lsuxe6tning}
 
 {[}beskriv målsætninger i eksisterende aftaler og strategier{]}
-Strategiske principper F1: Autoritative register med henvisninger til
-andre registre F2: Ansvar for begrænsning af adgang ligger hos
-registerejer F3: Let at komme med forslag til rettelser I1: Fælles
-referenceinformationsmodel I2: Dokument-princip (attester mv.)? A1:
-Onlineopslag i sagsbehandling og selvbetjening A2: Log adgang A3: Adgang
-til og fra internationale registre sker gennem national gateway T1:
-Central fuldmagt/rettighedsstyring T2: Multi-flavour-api
-
-\subsection{Værdiskabelse}\label{vuxe6rdiskabelse}
-
-Mindre besvær for borger og virksomheder ved brug af digitale services
-Simplere arbejdsgange og mere potentiale for automatisering hos
-myndigheder {[}og virksomheder{]} Understøtte transparens og bevare
-tillid til registre Effektiv systemudvikling (begrænse udfaldsrum,
-opsamle best practice)
 
 \begin{description}
 \tightlist
@@ -163,6 +151,48 @@ findes om dem og hvor disse data anvendes
 \emph{mål} om genbrug af it med henblik på lavere omkostninger
 \end{description}
 
+\subsection{Vision}\label{vision}
+
+\begin{verbatim}
+data deles på en måde hvor dataejer ikke unødigt begrænser genbrug...
+(prøve at ramme høste-så problemet og sikre gennemsigtighed og beskyttelse )
+\end{verbatim}
+
+\subsection{Værdiskabelse}\label{vuxe6rdiskabelse}
+
+Mindre besvær for borger og virksomheder ved brug af digitale services
+Simplere arbejdsgange og mere potentiale for automatisering hos
+myndigheder {[}og virksomheder{]} Understøtte transparens og bevare
+tillid til registre Effektiv systemudvikling (begrænse udfaldsrum,
+opsamle best practice)
+
+\subsection{Strategiske principper}\label{strategiske-principper}
+
+\begin{itemize}
+\tightlist
+\item
+  F1: Autoritative register med henvisninger til andre registre
+\item
+  F2: Ansvar for begrænsning af adgang ligger hos registerejer
+\item
+  F3: Let at komme med forslag til rettelser
+\item
+  I1: Fælles referenceinformationsmodel
+\item
+  I2: Dokument-princip (attester mv.)?
+\item
+  A1: Onlineopslag i sagsbehandling og selvbetjening
+\item
+  A2: Log adgang
+\item
+  A3: Adgang til og fra internationale registre sker gennem national
+  gateway
+\item
+  T1: Central fuldmagt/rettighedsstyring
+\item
+  T2: Multi-flavour-api
+\end{itemize}
+
 \section{Forretning}\label{forretning}
 
 \subsection{Opgaver}\label{opgaver}
@@ -174,12 +204,13 @@ findes om dem og hvor disse data anvendes
 \item
   Myndigheders sagsbehandling
 \item
-  Tværgående analyse
-\item
-  {[}meget generiske{]}
+  Tværgående analyse, tilsyn, kontrol
 \end{itemize}
 
-\emph{Funktion/proces trin}
+\subsection{Funktioner}\label{funktioner}
+
+Referencearkitketuren beskriver tre centrale use cases hvor aktører
+arbejder sammen\ldots{}
 
 Registrering \textasciitilde{} \emph{funktion} hvor oplysninger bringes
 på digital form
@@ -190,19 +221,14 @@ anvendes i en opgave
 Registreret forsendelse \textasciitilde{} \emph{funktion} hvor
 meddelelser sendes uafviseligt
 
-\subsection{Aktører, roller og
-ansvar}\label{aktuxf8rer-roller-og-ansvar}
+\subsection{Aktører, roller}\label{aktuxf8rer-roller}
 
 \begin{itemize}
 \tightlist
 \item
-  Borger, virksomhed, offentlig myndigheder {[}udenlandske?{]}
+  Borger, virksomhed, offentlig myndigheder
 \item
-  Registerejer, Registeranvender, ''Den som data handler om''.
-\item
-  Public Service Provider, Private Service Provider
-\item
-  Service Consumer
+  Udlandske?
 \end{itemize}
 
 Registrant \textasciitilde{} \emph{rolle} som bringer oplysninger på
@@ -216,34 +242,23 @@ digital form, registrer
 \emph{rolle} der anvender oplysninger fra et register
 \item[Datasubject]
 \emph{rolle} som oplysninger handler
-\item[Dataindeksejer]
-\emph{rolle} som er ansvarlig for opbevaring af metadata
-\item[Datadistributør]
-\emph{rolle} som er ansvarlig for adgang til data for dataanvendere
 \end{description}
 
-\subsection{Mønstre? Generic use
-cases}\label{muxf8nstre-generic-use-cases}
+\subsection{Tværgående processer (proces-trin, business
+functions?)}\label{tvuxe6rguxe5ende-processer-proces-trin-business-functions}
 
-\begin{itemize}
-\tightlist
-\item
-  Registrering, (gen)-brug af data, forsendelse
-\end{itemize}
-
-\subsection{Tværgående processer
-(proces-trin)}\label{tvuxe6rguxe5ende-processer-proces-trin}
+Herunder beskrives relevante proces-trin fra processer beskrevet andre
+steder.
 
 \begin{itemize}
 \item
-  Sagsbehandling {[}sag og dokument{]}, id, belysning, hændelser
+  Sagsbehandling (fra sag og dokument):
 \item
-  Simpel selvbetjening {[}CBI?{]} Genkende, godkende {[}Krølle om rette
-  forkerte oplysninger{]}
+  Simpel selvbetjening (fra selvbetjening):
 \item
-  Tværgående selvbetjening
+  Tværgående selvbetjening (fra sammenhængende services):
 \item
-  Indsigt i oplysninger og deres anvendelse
+  Indsigt i oplysninger og deres anvendelse (fra overblik?)
 \item
   Sende meddelelse
 \item
@@ -253,42 +268,129 @@ cases}\label{muxf8nstre-generic-use-cases}
   til registre)
 \end{itemize}
 
-\subsection{Tjenester}\label{tjenester}
+\subsection{Forretnings-tjenester?
+-funktioner?}\label{forretnings-tjenester--funktioner}
+
+Proces trin kan realiseres af interne busines functions eller trække på
+eksterne business services. Skal vi bare slå swervices og functions
+sammen (da vi ikke taler om implementering endnu) - Dataudstilling -
+Forsendelse - Brugerstyring
 
 Nødvendige: Dataservice(Register), eDelivery Service, Katalog,
-Kontaktregister,, Log(Overblik). Ønskelige: Signering, Indeks Mangler:
-Referencedata (Klassifikation), Identitet/brugerstyring
+Kontaktregister,, Log(Overblik). Ønskelige: Signering, Distributør,
+Indeks Mangler: Referencedata (Klassifikation), Identitet/brugerstyring
+
+\begin{description}
+\tightlist
+\item[Dataindeksejer]
+\emph{rolle} som er ansvarlig for opbevaring af metadata
+\item[Datadistributør]
+\emph{rolle} som er ansvarlig for adgang til data for dataanvendere
+\end{description}
 
 \subsection{Forretningsobjekter}\label{forretningsobjekter}
 
-Meddelelse, Påmindelse, Dokument, URI
-Rettighed/hjemmel/samtykke/retskilde Kontekst, anvendelse og afsendelse 
-Teknik Services (Applikationsroller?, enablers?, capabilities?) Opslag
-Meld forslag til korrektur?
+\subsubsection{Data}\label{data}
 
-\section{Tekniske implementeringer}\label{tekniske-implementeringer}
+Abstrakt\ldots{}bruges om både registerrecord og dokument
 
-\subsection{Adgang til data hos anden
-myndighed}\label{adgang-til-data-hos-anden-myndighed}
+\subsubsection{Registeroplysning
+(record)}\label{registeroplysning-record}
 
-\begin{itemize}
-\item
-  Direkte adgang, SOA
-\item
-  Datadistribution, sammenstilling samt adgangskontrol og logning
-\item
-  Fælles Data og applikations-platform
-\item ~
-  \subsection{Forsendelse}\label{forsendelse}
-\item
-  SOA
-\item
-  Fælles system
-\item
-  Specific eDelivery
-\item
-  Generic eDelivery
-\end{itemize}
+\subsubsection{Dokument}\label{dokument}
+
+\subsubsection{Datasamling}\label{datasamling}
+
+\subsubsection{Datasubjekt}\label{datasubjekt}
+
+\subsubsection{Indeks}\label{indeks}
+
+\subsubsection{Katalog}\label{katalog}
+
+\subsubsection{Model/Schema}\label{modelschema}
+
+\subsubsection{Segl}\label{segl}
+
+mangler
+
+Meddelelse, Påmindelse, Registreringshændelse
+
+\section{Teknik}\label{teknik}
+
+forretningsfunktionerne understøttes/realiseres af applikationer.
+
+\subsection{Applikationsroller}\label{applikationsroller}
+
+\subsubsection{eDelivery Service
+Provider}\label{edelivery-service-provider}
+
+som skal kunne: - udstille eller levere meddelelser til modtager -
+modtage og distribuere meddeleleser - fortælle andre om deres kunder
+
+\subsubsection{Dataservice}\label{dataservice}
+
+som skal kunne: - opbevare datasamling - begrænse adgang til de rigtige
+- måske vedligeholde og udsende abonnementer
+
+\subsubsection{Kontaktregister}\label{kontaktregister}
+
+som er en slags data service med en særlig type oplysninger
+
+\subsubsection{Log}\label{log}
+
+som er en slags data service med særlige oplysninger
+
+\subsubsection{Indeks}\label{indeks-1}
+
+som er en slags data service med særlige oplysninger kan undværes, men
+ikke effektivt.
+
+\subsection{Katalog}\label{katalog-1}
+
+som ikke er en dataservice fordi der ikke er begrænset adgang kan
+undværes, men ikke effektivt.
+
+(Skal vi have en ``beskyttet dataservice'' og en offentlig?)
+
+\section{Implementering(er)}\label{implementeringer}
+
+Her placeres de enkelte services på processtrin fra tidligere afsnit
+
+\subsection{Datanvendelse}\label{datanvendelse}
+
+Når myndighed vil have adgang til data hos en anden er det er par
+mønstre
+
+\subsubsection{Direkte adgang, SOA}\label{direkte-adgang-soa}
+
+\subsubsection{Datadistribution}\label{datadistribution}
+
+sammenstilling samt adgangskontrol og logning
+
+\subsubsection{Distribueret Service- og
+data-platform}\label{distribueret-service--og-data-platform}
+
+\subsection{Registreret forsendelse}\label{registreret-forsendelse}
+
+Når en myndighed vil sende noget til en myndighed, virksom eller borger.
+
+\subsubsection{SOA / Email\ldots{}}\label{soa-email}
+
+\subsubsection{Fælles system}\label{fuxe6lles-system}
+
+e.g.~e-Boks.
+
+\subsubsection{Service Providers}\label{service-providers}
+
+kan være både generisk eller specifik for et domæne.
+
+\subsection{Registrering}\label{registrering}
+
+skal med for at forklare index
+
+\subsection{ansvar hos registrant}\label{ansvar-hos-registrant}
+
+\subsection{ansvar hos dataejer}\label{ansvar-hos-dataejer}
 
 \subsection{Områder for
 standardisering/profileringer}\label{omruxe5der-for-standardiseringprofileringer}
