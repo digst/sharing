@@ -1,10 +1,9 @@
-Denne synopsis er en del af det indledende afklarende arbejde der
-udføres før der tages beslutning om udarbejdelse af en
+Denne version udgør synopsis for det videre arbejde med en
 referencearkitektur. Formålet er at konkretisere et muligt indhold med
 henblik på udpegning af interessenter samt at afgrænse opgaven i forhold
 til øvrige aktiviteter. Synopsis vil, på kortest mulige form, giver et
 overblik over strukturen og indholdet af den endelige arkitektur.
-Synopsen er ikke et gennemtænkt bud på den endelige løsning, men skal
+Synopsen er ikke et gennemarbejdet bud på den endelige løsning, men skal
 udtale sig om retning og afprøve rammerne for det videre arbejde.
 
 \section{Introduktion}\label{introduktion}
@@ -12,9 +11,15 @@ udtale sig om retning og afprøve rammerne for det videre arbejde.
 \subsection{Formål}\label{formuxe5l}
 
 Referencearkitekturen understøtter anvendelse og udviklingen af
-it-systemer - der anvender og (sammenstiller) registeroplysninger til
-sagsbehandling eller selvbetjening - der sender eller modtager
-meddelelser fra andre it-systemer
+offentlige it-systemer, der
+
+\begin{itemize}
+\tightlist
+\item
+  (gen)anvender oplysninger til sagsbehandling eller selvbetjening
+\item
+  sender eller modtager meddelelser fra andre it-systemer
+\end{itemize}
 
 \subsection{Scope}\label{scope}
 
@@ -24,66 +29,117 @@ der reguleres af blandt andet:
 \begin{description}
 \tightlist
 \item[EU databeskyttelse]
-\emph{lov} som beskriver pligter og rettigheder
+\emph{lov} som beskriver pligter og rettigheder ved behandling af
+persondata
 \item[EU eIDAS]
 \emph{lov} som definerer registrede tillidstjenester
+\item[Persondata lov]
+\emph{lov} som beskriver pligter og rettigheder ved behandling af
+persondata
+\item[Lov om Digital Post]
+\emph{lov} der gør det obligatorisk for virksomheder og borgere at
+modtage digitale meddelelser fra offentlige afsendereß
 \end{description}
+
+Referencearkitekturen skrives på baggrund af den fællesoffentlige
+digitaliseringsstrategi 2020 under initiativ 8.1 med tilslutning fra FM,
+UFM, EVM, SIM, JM, EFKM, MBUL, SÆM, SKM, MFVM, BM, KL og Danske Regioner
+
+\begin{quote}
+For at operationalisere, hvilke krav hvidbogen konkret stiller til
+initiativer og systemer udarbejdes en referencearkitektur for deling af
+data og dokumenter, der blandt andet beskriver fælles behovsmønstre og
+mønstre for teknisk understøttelse, herunder de forskelige roller, der
+skal afklares i initiativerne. Referencearkitekturen udpeger også
+eventuelle områder for eksisterende og nye fælles standarder og
+infrastruktur, som skal lette initiativernes implementering.
+Referencearkitekturen bliver således en generel ramme og støtte for alle
+initiativernes egen specifikke arkitektur.
+\end{quote}
+
+Uden for scope:
 
 \begin{itemize}
 \tightlist
 \item
-  DK persondata lov
+  åbne data, der ikke kræver adgangskontrol
 \item
-  Lov om Digital Post
+  registrering og anvendelse hos registerejer
 \end{itemize}
-
-Referencearkitekturen skrives på baggrund af - Beslutning i
-Digitaliseringsstrategien - Aftale papir og deltagerkreds
-
-Uden for scope: - registrering og anvendelse hos registerejer - kun
-registre og dokumenter der kræver adgangskontrol
 
 \subsection{Centrale begreber}\label{centrale-begreber}
 
-Register, registerejer, dataansvarlig, dataanvender, den registrerede,
-Grunddata, Dokument, Afsender, modtager, meddelelse
+I det efterfølgende vil begrebet data blive brugt til at betegne både
+oplysninger på dokumentform og oplysninger der optræder i registre. Vi
+anvender begrebet datasamling både om et register og et repository med
+dokumenter.
+
+\begin{figure}
+\centering
+\includegraphics{abstraktion.pdf}
+\caption{Anvendelse af begrebet data og relaterede begreber i denne
+referencearkitektur}
+\end{figure}
 
 \subsection{Anvendelse}\label{anvendelse}
+
+Referencearkitekturen skal
 
 \begin{itemize}
 \tightlist
 \item
-  bruges sprog til at formulere en fælles strategi
+  danne et fælles sprog til at formulere en fælles handlingsplan
 \item
   bruges som reference ved løsningsbeskrivelser
 \end{itemize}
 
 \subsection{Tilblivelse og governance}\label{tilblivelse-og-governance}
 
-Denne version er skrevet\ldots{}.og rettet mod ``dem der laver
-strategi'' og it-arkitekter Endelig godkendelse hos SDA
+Første udgave er skrevet hos Kontor for Data og Arkitektur af Mads
+Hjorth, Digitaliseringsstyrelsen og Anders Fausbøll, Omnium IT.
+
+Endelig godkendelse forventes hos Styregruppe for Data og Arkitektur
+under Digitaliseringsstrategien 18. december 2018.
 
 \subsection{Metoderamme}\label{metoderamme}
 
 Skrives indefor rammerne af Fællesoffentlige Digital Arkitektur, det vil
-sige\ldots{} - erfaringer fra OIO referencearkitektur - og EIRA -
-TOGAFF, ArchiMate
+sige; erfaringer fra OIO referencearkitektur, EIRA, TOGAF, ArchiMate.
 
 \subsection{Relation til andre
 referencearkitekturer}\label{relation-til-andre-referencearkitekturer}
 
-Gør brug af - Fællesoffentlig referencearkitektur for brugerstyring
+Gør brug af
 
-Skal kunne anvendes af - Fællesoffentlig referencearkitektur for
-selvbetjening - Fællesoffentlig referencearkitektur for overblik over
-egne sager
+\begin{itemize}
+\tightlist
+\item
+  Fællesoffentlig referencearkitektur for brugerstyring
+\end{itemize}
 
-Skal anvendes i kontekst sammen med - Deling af dokumenter på
-sundhedsområdet - Indberetning til registre på sundhedsområdet - Sag- og
-dokument på det kommunale område
+Skal kunne anvendes af
 
-\section{Strategi? (Vision, mål og
-strategier)}\label{strategi-vision-muxe5l-og-strategier}
+\begin{itemize}
+\tightlist
+\item
+  Fællesoffentlig referencearkitektur for selvbetjening
+\item
+  Fællesoffentlig referencearkitektur for overblik over egne sager
+\end{itemize}
+
+Skal anvendes i kontekst sammen med
+
+\begin{itemize}
+\tightlist
+\item
+  Deling af dokumenter på sundhedsområdet
+\item
+  Indberetning til registre på sundhedsområdet
+\item
+  Sag- og dokument på det kommunale område
+\end{itemize}
+
+\section{Strategi}\label{strategi}
 
 \subsection{Forretningsmæssige
 tendenser}\label{forretningsmuxe6ssige-tendenser}
@@ -122,8 +178,6 @@ tendenser}\label{forretningsmuxe6ssige-tendenser}
 \item
   Intergrated Service Delivery
 \item
-  ''Once only''
-\item
   ''Ineroperability/Samarbejdende infrastrukturer / Økosystem af fælles
   løsninger?''
 \item
@@ -131,9 +185,10 @@ tendenser}\label{forretningsmuxe6ssige-tendenser}
   oplysninger''
 \end{itemize}
 
-\subsection{Målsætning}\label{muxe5lsuxe6tning}
+\subsection{Strategiske målsætning}\label{strategiske-muxe5lsuxe6tning}
 
-{[}beskriv målsætninger i eksisterende aftaler og strategier{]}
+{[}beskriv målsætninger i eksisterende aftaler og strategier, også gerne
+fra andre områder{]}
 
 \begin{description}
 \tightlist
@@ -153,18 +208,29 @@ findes om dem og hvor disse data anvendes
 
 \subsection{Vision}\label{vision}
 
-\begin{verbatim}
-data deles på en måde hvor dataejer ikke unødigt begrænser genbrug...
-(prøve at ramme høste-så problemet og sikre gennemsigtighed og beskyttelse )
-\end{verbatim}
+{[}fokus på første workshop{]}
+
+\begin{quote}
+\emph{data deles på en måde hvor dataejer ikke unødigt begrænser
+genbrug\ldots{}} \emph{(prøve at ramme høste-så problemet og sikre
+gennemsigtighed og beskyttelse)} \emph{Nemmere at bruge og sværere at
+misbruge}
+\end{quote}
 
 \subsection{Værdiskabelse}\label{vuxe6rdiskabelse}
 
-Mindre besvær for borger og virksomheder ved brug af digitale services
-Simplere arbejdsgange og mere potentiale for automatisering hos
-myndigheder {[}og virksomheder{]} Understøtte transparens og bevare
-tillid til registre Effektiv systemudvikling (begrænse udfaldsrum,
-opsamle best practice)
+\begin{itemize}
+\tightlist
+\item
+  Mindre besvær for borger og virksomheder ved brug af digitale services
+\item
+  Simplere arbejdsgange og mere potentiale for automatisering hos
+  myndigheder {[}og virksomheder{]}
+\item
+  Understøtte transparens og bevare tillid til registre
+\item
+  Effektiv systemudvikling (begrænse udfaldsrum, opsamle best practice)
+\end{itemize}
 
 \subsection{Strategiske principper}\label{strategiske-principper}
 
@@ -174,8 +240,6 @@ opsamle best practice)
   F1: Autoritative register med henvisninger til andre registre
 \item
   F2: Ansvar for begrænsning af adgang ligger hos registerejer
-\item
-  F3: Let at komme med forslag til rettelser
 \item
   I1: Fælles referenceinformationsmodel
 \item
@@ -195,7 +259,20 @@ opsamle best practice)
 
 \section{Forretning}\label{forretning}
 
+\subsection{Aktører}\label{aktuxf8rer}
+
+\begin{itemize}
+\tightlist
+\item
+  Offentlig myndigheder, og virksomheder der handler på vegne af dem.
+\item
+  Borger og virksomheder
+\end{itemize}
+
 \subsection{Opgaver}\label{opgaver}
+
+Referencearkitekturen finder anvendelse i løsningen af alle offentlige
+opgaver.
 
 \begin{itemize}
 \tightlist
@@ -209,48 +286,55 @@ opsamle best practice)
 
 \subsection{Funktioner}\label{funktioner}
 
-Referencearkitketuren beskriver tre centrale use cases hvor aktører
-arbejder sammen\ldots{}
+Referencearkitekturen beskriver tre centrale use cases hvor aktører
+arbejder sammen i forskellige roller
 
-Registrering \textasciitilde{} \emph{funktion} hvor oplysninger bringes
-på digital form
+\begin{figure}
+\centering
+\includegraphics{usecases.pdf}
+\caption{Tværgående use cases og funktioner hos de enkelte roller}
+\end{figure}
 
-Datanvendelse \textasciitilde{} \emph{funktion} hvor oplysninger
+Registrering \textasciitilde{} \emph{collaboration} hvor oplysninger
+bringes på digital form
+
+Datanvendelse \textasciitilde{} \emph{collaboration} hvor oplysninger
 anvendes i en opgave
 
-Registreret forsendelse \textasciitilde{} \emph{funktion} hvor
+Registreret forsendelse \textasciitilde{} \emph{collaboration} hvor
 meddelelser sendes uafviseligt
 
-\subsection{Aktører, roller}\label{aktuxf8rer-roller}
+\subsection{Roller}\label{roller}
 
-\begin{itemize}
-\tightlist
-\item
-  Borger, virksomhed, offentlig myndigheder
-\item
-  Udlandske?
-\end{itemize}
-
-Registrant \textasciitilde{} \emph{rolle} som bringer oplysninger på
-digital form, registrer
+Nogle er specialisering af Databehandler\ldots{} {[}tilføj kilder til
+roller{]}
 
 \begin{description}
 \tightlist
-\item[Dataejer]
-\emph{rolle} som ejer registreringer/data
-\item[Dataanvender]
-\emph{rolle} der anvender oplysninger fra et register
+\item[Registrant]
+\emph{rolle} som bringer oplysninger på digital form, registrer
 \item[Datasubject]
 \emph{rolle} som oplysninger handler
+\item[Dataanvender]
+\emph{rolle} der anvender oplysninger fra et register
+\item[eDelivery kunde/forbruger?]
+\emph{rolle} som der sender og modtager meddelelser
+\item[Dataejer]
+\emph{rolle} som ejer registreringer/data, ansvar for at udarbejde
+adgangspolitik
+\item[Datadistributør]
+\emph{rolle} som ejer registreringer/data, ansvar for at udarbejde
+adgangspolitik
 \end{description}
 
 \subsection{Tværgående processer (proces-trin, business
 functions?)}\label{tvuxe6rguxe5ende-processer-proces-trin-business-functions}
 
-Herunder beskrives relevante proces-trin fra processer beskrevet andre
-steder.
+Herunder beskrives hvor de enkelte business functions hos de enkelte
+roller anvendes i kontekst af nogle generiske procesmønstre.
 
 \begin{itemize}
+\tightlist
 \item
   Sagsbehandling (fra sag og dokument):
 \item
@@ -260,35 +344,28 @@ steder.
 \item
   Indsigt i oplysninger og deres anvendelse (fra overblik?)
 \item
-  Sende meddelelse
+  Sende meddelelse (tilmeldingslister)
 \item
-  Modtage meddelelse
+  Modtage meddelelse (måske påmindelser)
 \item
   Tag et dokument med til en anden service provider (der ikke har adgang
-  til registre)
+  til registre) Beskrive hvordan dokumenter valideres.
 \end{itemize}
 
 \subsection{Forretnings-tjenester?
 -funktioner?}\label{forretnings-tjenester--funktioner}
 
-Proces trin kan realiseres af interne busines functions eller trække på
-eksterne business services. Skal vi bare slå swervices og functions
-sammen (da vi ikke taler om implementering endnu) - Dataudstilling -
-Forsendelse - Brugerstyring
+Procestrin kan realiseres af interne busines functions eller trække på
+eksterne business services. Skal vi bare slå services og functions
+sammen (da vi ikke taler om implementering endnu)
 
-Nødvendige: Dataservice(Register), eDelivery Service, Katalog,
-Kontaktregister,, Log(Overblik). Ønskelige: Signering, Distributør,
-Indeks Mangler: Referencedata (Klassifikation), Identitet/brugerstyring
-
-\begin{description}
-\tightlist
-\item[Dataindeksejer]
-\emph{rolle} som er ansvarlig for opbevaring af metadata
-\item[Datadistributør]
-\emph{rolle} som er ansvarlig for adgang til data for dataanvendere
-\end{description}
+{[}Vi skal være bedre til at beskrive hvordan vi trækker på elementer
+fra brugerstyring, men husk at holde det teknologi-fri{]}
 
 \subsection{Forretningsobjekter}\label{forretningsobjekter}
+
+{[}Bør identificeres på workshop. Skal det være begrebsmodellering eller
+logiske kernemodeller?{]}
 
 \subsubsection{Data}\label{data}
 
@@ -299,21 +376,31 @@ Abstrakt\ldots{}bruges om både registerrecord og dokument
 
 \subsubsection{Dokument}\label{dokument}
 
+{[}Dokument model fra OIO{]}
+
 \subsubsection{Datasamling}\label{datasamling}
+
+{[}Datasæt model{]}
 
 \subsubsection{Datasubjekt}\label{datasubjekt}
 
-\subsubsection{Indeks}\label{indeks}
-
-\subsubsection{Katalog}\label{katalog}
+{[}Grunddata person{]}
 
 \subsubsection{Model/Schema}\label{modelschema}
 
-\subsubsection{Segl}\label{segl}
+{[}Modelregler fra FDA{]}
 
-mangler
+\subsubsection{Meddelelse}\label{meddelelse}
 
-Meddelelse, Påmindelse, Registreringshændelse
+{[}NgDP{]}
+
+\subsubsection{Påmindelse}\label{puxe5mindelse}
+
+{[}NgDP{]}
+
+\subsubsection{Registreringshændelse?}\label{registreringshuxe6ndelse}
+
+{[}Datafordeler{]}
 
 \section{Teknik}\label{teknik}
 
@@ -340,21 +427,23 @@ som er en slags data service med en særlig type oplysninger
 
 som er en slags data service med særlige oplysninger
 
-\subsubsection{Indeks}\label{indeks-1}
+\subsubsection{Indeks}\label{indeks}
 
 som er en slags data service med særlige oplysninger kan undværes, men
 ikke effektivt.
 
-\subsection{Katalog}\label{katalog-1}
+\subsection{Katalog}\label{katalog}
 
-som ikke er en dataservice fordi der ikke er begrænset adgang kan
-undværes, men ikke effektivt.
+som ikke er en dataservice fordi der ikke er begrænset adgang
 
-(Skal vi have en ``beskyttet dataservice'' og en offentlig?)
+kan undværes, men ikke effektivt.
 
-\section{Implementering(er)}\label{implementeringer}
+{[}Skal vi have en ``beskyttet dataservice'' og en offentlig?{]}
 
-Her placeres de enkelte services på processtrin fra tidligere afsnit
+\section{Tekniske Implementering(er)}\label{tekniske-implementeringer}
+
+Her grupperes de enkelte roller og applikationsroller jf forskellige
+mønstre.
 
 \subsection{Datanvendelse}\label{datanvendelse}
 
@@ -388,9 +477,11 @@ kan være både generisk eller specifik for et domæne.
 
 skal med for at forklare index
 
-\subsection{ansvar hos registrant}\label{ansvar-hos-registrant}
+\subsubsection{ansvar hos registrant}\label{ansvar-hos-registrant}
 
-\subsection{ansvar hos dataejer}\label{ansvar-hos-dataejer}
+\subsubsection{ansvar hos dataejer}\label{ansvar-hos-dataejer}
+
+\subsubsection{ansvar hos distributør?}\label{ansvar-hos-distributuxf8r}
 
 \subsection{Områder for
 standardisering/profileringer}\label{omruxe5der-for-standardiseringprofileringer}
@@ -420,5 +511,5 @@ Distribution Protocols - Synchronisation Protocols
   Context
 \end{itemize}
 
-\subsection{Identifikation af
-standarder}\label{identifikation-af-standarder}
+\subsection{Identifikation af eksisterende
+standarder}\label{identifikation-af-eksisterende-standarder}

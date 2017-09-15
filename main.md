@@ -1,17 +1,18 @@
-Denne synopsis er en del af det indledende afklarende arbejde der udføres før der tages beslutning om udarbejdelse af en referencearkitektur. Formålet er at konkretisere et muligt indhold med henblik på udpegning af interessenter samt at afgrænse opgaven i forhold til øvrige aktiviteter.
-Synopsis vil, på kortest mulige form, giver et overblik over strukturen og indholdet af den endelige arkitektur. Synopsen er ikke et gennemtænkt bud på den endelige løsning, men skal udtale sig om retning og afprøve rammerne for det videre arbejde.
 
+Denne version udgør synopsis for det videre arbejde med en referencearkitektur.
+Formålet er at konkretisere et muligt indhold med henblik på udpegning af interessenter samt at afgrænse opgaven i forhold til øvrige aktiviteter.
+Synopsis vil, på kortest mulige form, giver et overblik over strukturen og indholdet af den endelige arkitektur. Synopsen er ikke et gennemarbejdet bud på den endelige løsning, men skal udtale sig om retning og afprøve rammerne for det videre arbejde.
 
-*english synopsis*
 
 
 
 # Introduktion
 
 ## Formål
-Referencearkitekturen understøtter anvendelse og udviklingen af it-systemer
-- der anvender og (sammenstiller) registeroplysninger til sagsbehandling eller selvbetjening
-- der sender eller modtager meddelelser fra andre it-systemer
+Referencearkitekturen understøtter anvendelse og udviklingen af offentlige it-systemer, der
+
+- (gen)anvender oplysninger til sagsbehandling eller selvbetjening
+- sender eller modtager meddelelser fra andre it-systemer
 
 
 ## Scope
@@ -19,57 +20,66 @@ Referencearkitekturen understøtter anvendelse og udviklingen af it-systemer
 Referencearkitekturen beskriver anvendelse af og udvikling af it-system der reguleres af blandt andet:
 
 EU databeskyttelse
- ~ *lov* som beskriver pligter og rettigheder
+ ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
 
 EU eIDAS
  ~ *lov* som definerer registrede tillidstjenester
 
-- DK persondata lov
-- Lov om Digital Post
+Persondata lov
+ ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
 
+Lov om Digital Post
+ ~ *lov* der gør det obligatorisk for virksomheder og borgere at modtage digitale meddelelser fra offentlige afsendereß
 
-Referencearkitekturen skrives på baggrund af
-- Beslutning i Digitaliseringsstrategien
-- Aftale papir og deltagerkreds
+Referencearkitekturen skrives på baggrund af den fællesoffentlige digitaliseringsstrategi 2020 under initiativ 8.1 med tilslutning fra
+FM, UFM, EVM, SIM, JM, EFKM, MBUL, SÆM, SKM, MFVM, BM, KL og Danske Regioner
 
+> For at operationalisere, hvilke krav hvidbogen konkret stiller til initiativer og systemer udarbejdes en referencearkitektur for deling af data og dokumenter, der blandt andet beskriver fælles behovsmønstre og mønstre for teknisk understøttelse, herunder de forskelige roller, der skal afklares i initiativerne. Referencearkitekturen udpeger også eventuelle områder for eksisterende og nye fælles standarder og infrastruktur, som skal lette initiativernes implementering. Referencearkitekturen bliver således en generel ramme og støtte for alle initiativernes egen specifikke arkitektur.
 
 Uden for scope:
+
+- åbne data, der ikke kræver adgangskontrol
 - registrering og anvendelse hos registerejer
-- kun registre og dokumenter der kræver adgangskontrol
 
 ## Centrale begreber
-Register, registerejer, dataansvarlig, dataanvender, den registrerede, Grunddata, Dokument, Afsender, modtager, meddelelse
+I det efterfølgende vil begrebet data blive brugt til at betegne både oplysninger på dokumentform og oplysninger der optræder i registre. Vi anvender begrebet datasamling både om et register og et repository med dokumenter.
+
+![Anvendelse af begrebet data og relaterede begreber i denne referencearkitektur](abstraktion.pdf)
+
 
 ## Anvendelse
-- bruges sprog til at formulere en fælles strategi
+Referencearkitekturen skal
+
+- danne et fælles sprog til at formulere en fælles handlingsplan
 - bruges som reference ved løsningsbeskrivelser
 
 ## Tilblivelse og governance
-Denne version er skrevet....og rettet mod "dem der laver strategi" og it-arkitekter
-Endelig godkendelse hos SDA
+Første udgave er skrevet hos Kontor for Data og Arkitektur af Mads Hjorth, Digitaliseringsstyrelsen og Anders Fausbøll, Omnium IT.
+
+Endelig godkendelse forventes hos Styregruppe for Data og Arkitektur under Digitaliseringsstrategien 18. december 2018.
 
 
 ## Metoderamme
-Skrives indefor rammerne af Fællesoffentlige Digital Arkitektur, det vil sige...
-- erfaringer fra OIO referencearkitektur
-- og EIRA
-- TOGAFF, ArchiMate
+Skrives indefor rammerne af Fællesoffentlige Digital Arkitektur, det vil sige; erfaringer fra OIO referencearkitektur, EIRA, TOGAF, ArchiMate.
 
 ## Relation til andre referencearkitekturer
 Gør brug af
+
 - Fællesoffentlig referencearkitektur for brugerstyring
 
 Skal kunne anvendes af
+
 - Fællesoffentlig referencearkitektur for selvbetjening
 - Fællesoffentlig referencearkitektur for overblik over egne sager
 
 Skal anvendes i kontekst sammen med
+
 - Deling af dokumenter på sundhedsområdet
 - Indberetning til registre på sundhedsområdet
 - Sag- og dokument på det kommunale område
 
 
-# Strategi? (Vision, mål og strategier)
+# Strategi
 
 ## Forretningsmæssige tendenser
 - Ensretning og nationale indsatser
@@ -86,13 +96,12 @@ Skal anvendes i kontekst sammen med
 - Mængden af tilgængelige oplysninger vokser
 - Arkitekturvision for anvendelse og udstilling
 - Intergrated Service Delivery
-- ”Once only”
 - ”Ineroperability/Samarbejdende infrastrukturer / Økosystem af fælles løsninger?”
 - ”Valgfri for anvender mellem flere tekniske udbydere af samme oplysninger”
 
 
-## Målsætning
-[beskriv målsætninger i eksisterende aftaler og strategier]
+## Strategiske målsætning
+[beskriv målsætninger i eksisterende aftaler og strategier, også gerne fra andre områder]
 
 Interoperability
   ~  *mål* om sammenhængende services... integrated service delivery
@@ -108,22 +117,24 @@ Re-use
 
 
 ## Vision
+[fokus på første workshop]
 
-```
-data deles på en måde hvor dataejer ikke unødigt begrænser genbrug...
-(prøve at ramme høste-så problemet og sikre gennemsigtighed og beskyttelse )
-```
+> *data deles på en måde hvor dataejer ikke unødigt begrænser genbrug...*
+> *(prøve at ramme høste-så problemet og sikre gennemsigtighed og beskyttelse)*
+> *Nemmere at bruge og sværere at misbruge*
+
 
 ## Værdiskabelse
-Mindre besvær for borger og virksomheder ved brug af digitale services
-Simplere arbejdsgange og mere potentiale for automatisering hos myndigheder [og virksomheder]
-Understøtte transparens og bevare tillid til registre
-Effektiv systemudvikling (begrænse udfaldsrum, opsamle best practice)
+
+- Mindre besvær for borger og virksomheder ved brug af digitale services
+- Simplere arbejdsgange og mere potentiale for automatisering hos myndigheder [og virksomheder]
+- Understøtte transparens og bevare tillid til registre
+- Effektiv systemudvikling (begrænse udfaldsrum, opsamle best practice)
 
 ## Strategiske principper
+
 - F1: Autoritative register med henvisninger til andre registre
 - F2: Ansvar for begrænsning af adgang ligger hos registerejer
-- F3: Let at komme med forslag til rettelser
 - I1: Fælles referenceinformationsmodel
 - I2: Dokument-princip (attester mv.)?
 - A1: Onlineopslag i sagsbehandling og selvbetjening
@@ -136,70 +147,78 @@ Effektiv systemudvikling (begrænse udfaldsrum, opsamle best practice)
 
 # Forretning
 
+## Aktører
+
+- Offentlig myndigheder, og virksomheder der handler på vegne af dem.
+- Borger og virksomheder
+
+
 ## Opgaver
+Referencearkitekturen finder anvendelse i løsningen af alle offentlige opgaver.
+
  - Borger og virksomhedsvendte selvbetjeningsløsninger
  - Myndigheders sagsbehandling
  - Tværgående analyse, tilsyn, kontrol
 
 
 ## Funktioner
-Referencearkitketuren beskriver tre centrale use cases hvor aktører arbejder sammen...
+Referencearkitekturen beskriver tre centrale use cases hvor aktører arbejder sammen i forskellige roller
+
+![Tværgående use cases og funktioner hos de enkelte roller](usecases.pdf)
+
 
 Registrering
-   ~ *funktion* hvor oplysninger bringes på digital form
+   ~ *collaboration* hvor oplysninger bringes på digital form
 
 Datanvendelse
-   ~ *funktion* hvor oplysninger anvendes i en opgave
+   ~ *collaboration* hvor oplysninger anvendes i en opgave
 
 Registreret forsendelse
-   ~ *funktion* hvor meddelelser sendes uafviseligt
+   ~ *collaboration* hvor meddelelser sendes uafviseligt
 
-## Aktører, roller
-- Borger, virksomhed, offentlig myndigheder
-- Udlandske?
+
+## Roller
+Nogle er specialisering af Databehandler... [tilføj kilder til roller]
 
 Registrant
-   ~ *rolle* som bringer oplysninger på digital form, registrer
-
-Dataejer
-  ~ *rolle* som ejer registreringer/data, ansvar for at udarbejde adgangspolitik
-
-Dataanvender
-  ~ *rolle* der anvender oplysninger fra et register
+  ~ *rolle* som bringer oplysninger på digital form, registrer
 
 Datasubject
   ~ *rolle* som oplysninger handler
 
+Dataanvender
+  ~ *rolle* der anvender oplysninger fra et register
+
+eDelivery kunde/forbruger?
+  ~ *rolle* som der sender og modtager meddelelser
+
+Dataejer
+  ~ *rolle* som ejer registreringer/data, ansvar for at udarbejde adgangspolitik
+
+Datadistributør
+  ~ *rolle* som ejer registreringer/data, ansvar for at udarbejde adgangspolitik
+
+
 ## Tværgående processer (proces-trin, business functions?)
-Herunder beskrives relevante proces-trin fra processer beskrevet andre steder.
+Herunder beskrives hvor de enkelte business functions hos de enkelte roller anvendes i kontekst af nogle generiske procesmønstre.
 
  - Sagsbehandling (fra sag og dokument):
  - Simpel selvbetjening (fra selvbetjening):
  - Tværgående selvbetjening (fra sammenhængende services):
  - Indsigt i oplysninger og deres anvendelse (fra overblik?)
+ - Sende meddelelse (tilmeldingslister)
+ - Modtage meddelelse (måske påmindelser)
+ - Tag et dokument med til en anden service provider (der ikke har adgang til registre) Beskrive hvordan dokumenter valideres.
 
- - Sende meddelelse
- - Modtage meddelelse
- - Tag et dokument med til en anden service provider (der ikke har adgang til registre)
 
 ## Forretnings-tjenester? -funktioner?
-Proces trin kan realiseres af interne busines functions eller trække på eksterne business services. Skal vi bare slå swervices og functions sammen (da vi ikke taler om implementering endnu)
-- Dataudstilling
-- Forsendelse
-- Brugerstyring
+Procestrin kan realiseres af interne busines functions eller trække på eksterne business services. Skal vi bare slå services og functions sammen (da vi ikke taler om implementering endnu)
 
-Nødvendige: Dataservice(Register), eDelivery Service, Katalog, Kontaktregister,, Log(Overblik).
-Ønskelige: Signering, Distributør, Indeks
-Mangler: Referencedata (Klassifikation), Identitet/brugerstyring
+[Vi skal være bedre til at beskrive hvordan vi trækker på elementer fra brugerstyring, men husk at holde det teknologi-fri]
 
-
-Dataindeksejer
-  ~ *rolle* som er ansvarlig for opbevaring af metadata
-
-Datadistributør
- ~ *rolle* som er ansvarlig for adgang til data for dataanvendere
 
 ## Forretningsobjekter
+[Bør identificeres på workshop. Skal det være begrebsmodellering eller logiske kernemodeller?]
 
 ### Data
 Abstrakt...bruges om både registerrecord og dokument
@@ -207,22 +226,26 @@ Abstrakt...bruges om både registerrecord og dokument
 ### Registeroplysning (record)
 
 ### Dokument
+[Dokument model fra OIO]
 
 ### Datasamling
+[Datasæt model]
 
 ### Datasubjekt
-
-### Indeks
-
-### Katalog
+[Grunddata person]
 
 ### Model/Schema
+[Modelregler fra FDA]
 
-### Segl
+### Meddelelse
+[NgDP]
 
-mangler
+### Påmindelse
+[NgDP]
 
-Meddelelse, Påmindelse, Registreringshændelse
+### Registreringshændelse?
+[Datafordeler]
+
 
 
 
@@ -255,19 +278,19 @@ kan undværes, men ikke effektivt.
 
 ## Katalog
 som ikke er en dataservice fordi der ikke er begrænset adgang
+
 kan undværes, men ikke effektivt.
 
-(Skal vi have en "beskyttet dataservice" og en offentlig?)
+[Skal vi have en "beskyttet dataservice" og en offentlig?]
 
 
 
-# Implementering(er)
-Her placeres de enkelte services på processtrin fra tidligere afsnit
+# Tekniske Implementering(er)
+Her grupperes de enkelte roller og applikationsroller jf forskellige mønstre.
 
 
 ## Datanvendelse
 Når myndighed vil have adgang til data hos en anden er det er par mønstre
-
 
 ### Direkte adgang, SOA
 
@@ -291,9 +314,11 @@ kan være både generisk eller specifik for et domæne.
 ## Registrering
 skal med for at forklare index
 
-## ansvar hos registrant
+### ansvar hos registrant
 
-## ansvar hos dataejer
+### ansvar hos dataejer
+
+### ansvar hos distributør?
 
 
 
@@ -316,6 +341,4 @@ skal med for at forklare index
 - Hjemmel (samtykke, lov)
 - Context
 
-## Identifikation af standarder
-
-# Appendix
+## Identifikation af eksisterende standarder
