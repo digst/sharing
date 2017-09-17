@@ -21,35 +21,8 @@
 \BOOKMARK [2][-]{subsection.3.5}{Tværgående processer \(proces-trin, business functions?\)}{section.3}% 21
 \BOOKMARK [2][-]{subsection.3.6}{Forretnings-tjenester?\040-funktioner?}{section.3}% 22
 \BOOKMARK [2][-]{subsection.3.7}{Forretningsobjekter}{section.3}% 23
-\BOOKMARK [3][-]{subsubsection.3.7.1}{Data}{subsection.3.7}% 24
-\BOOKMARK [3][-]{subsubsection.3.7.2}{Registeroplysning\040\(record\)}{subsection.3.7}% 25
-\BOOKMARK [3][-]{subsubsection.3.7.3}{Dokument}{subsection.3.7}% 26
-\BOOKMARK [3][-]{subsubsection.3.7.4}{Datasamling}{subsection.3.7}% 27
-\BOOKMARK [3][-]{subsubsection.3.7.5}{Datasubjekt}{subsection.3.7}% 28
-\BOOKMARK [3][-]{subsubsection.3.7.6}{Model/Schema}{subsection.3.7}% 29
-\BOOKMARK [3][-]{subsubsection.3.7.7}{Meddelelse}{subsection.3.7}% 30
-\BOOKMARK [3][-]{subsubsection.3.7.8}{Påmindelse}{subsection.3.7}% 31
-\BOOKMARK [3][-]{subsubsection.3.7.9}{Registreringshændelse?}{subsection.3.7}% 32
-\BOOKMARK [1][-]{section.4}{Teknik}{}% 33
-\BOOKMARK [2][-]{subsection.4.1}{Applikationsroller}{section.4}% 34
-\BOOKMARK [3][-]{subsubsection.4.1.1}{eDelivery\040Service\040Provider}{subsection.4.1}% 35
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Dataservice}{subsection.4.1}% 36
-\BOOKMARK [3][-]{subsubsection.4.1.3}{Kontaktregister}{subsection.4.1}% 37
-\BOOKMARK [3][-]{subsubsection.4.1.4}{Log}{subsection.4.1}% 38
-\BOOKMARK [3][-]{subsubsection.4.1.5}{Indeks}{subsection.4.1}% 39
-\BOOKMARK [2][-]{subsection.4.2}{Katalog}{section.4}% 40
-\BOOKMARK [1][-]{section.5}{Tekniske\040Implementering\(er\)}{}% 41
-\BOOKMARK [2][-]{subsection.5.1}{Datanvendelse}{section.5}% 42
-\BOOKMARK [3][-]{subsubsection.5.1.1}{Direkte\040adgang,\040SOA}{subsection.5.1}% 43
-\BOOKMARK [3][-]{subsubsection.5.1.2}{Datadistribution}{subsection.5.1}% 44
-\BOOKMARK [3][-]{subsubsection.5.1.3}{Distribueret\040Service-\040og\040data-platform}{subsection.5.1}% 45
-\BOOKMARK [2][-]{subsection.5.2}{Registreret\040forsendelse}{section.5}% 46
-\BOOKMARK [3][-]{subsubsection.5.2.1}{SOA / Email…}{subsection.5.2}% 47
-\BOOKMARK [3][-]{subsubsection.5.2.2}{Fælles system}{subsection.5.2}% 48
-\BOOKMARK [3][-]{subsubsection.5.2.3}{Service\040Providers}{subsection.5.2}% 49
-\BOOKMARK [2][-]{subsection.5.3}{Registrering}{section.5}% 50
-\BOOKMARK [3][-]{subsubsection.5.3.1}{ansvar\040hos\040registrant}{subsection.5.3}% 51
-\BOOKMARK [3][-]{subsubsection.5.3.2}{ansvar\040hos\040dataejer}{subsection.5.3}% 52
-\BOOKMARK [3][-]{subsubsection.5.3.3}{ansvar hos distributør?}{subsection.5.3}% 53
-\BOOKMARK [2][-]{subsection.5.4}{Områder for standardisering/profileringer}{section.5}% 54
-\BOOKMARK [2][-]{subsection.5.5}{Identifikation\040af\040eksisterende\040standarder}{section.5}% 55
+\BOOKMARK [1][-]{section.4}{Teknik}{}% 24
+\BOOKMARK [2][-]{subsection.4.1}{Applikationsroller}{section.4}% 25
+\BOOKMARK [2][-]{subsection.4.2}{Tekniske\040Implementering\(er\)}{section.4}% 26
+\BOOKMARK [2][-]{subsection.4.3}{Områder for standardisering/profileringer}{section.4}% 27
+\BOOKMARK [2][-]{subsection.4.4}{Identifikation\040af\040eksisterende\040standarder}{section.4}% 28

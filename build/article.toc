@@ -1,0 +1,29 @@
+\select@language {danish}
+\contentsline {section}{\numberline {1}Introduktion}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Formål}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Scope}{2}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Centrale begreber}{3}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Anvendelse}{3}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Tilblivelse og governance}{3}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}Metoderamme}{4}{subsection.1.6}
+\contentsline {subsection}{\numberline {1.7}Relation til andre referencearkitekturer}{4}{subsection.1.7}
+\contentsline {section}{\numberline {2}Strategi}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}Forretningsmæssige tendenser}{5}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Teknologiske tendenser}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Strategiske målsætning}{5}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Vision}{5}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Værdiskabelse}{6}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Strategiske principper}{6}{subsection.2.6}
+\contentsline {section}{\numberline {3}Forretning}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Aktører}{7}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Opgaver}{7}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Funktioner}{7}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Roller}{7}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Tværgående processer (proces-trin, business functions?)}{8}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Forretnings-tjenester? -funktioner?}{8}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}Forretningsobjekter}{9}{subsection.3.7}
+\contentsline {section}{\numberline {4}Teknik}{10}{section.4}
+\contentsline {subsection}{\numberline {4.1}Applikationsroller}{10}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Tekniske Implementering(er)}{10}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Områder for standardisering/profileringer}{11}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Identifikation af eksisterende standarder}{11}{subsection.4.4}

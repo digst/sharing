@@ -168,13 +168,13 @@ Referencearkitekturen beskriver tre centrale use cases hvor aktører arbejder sa
 
 
 Registrering
-   ~ *collaboration* hvor oplysninger bringes på digital form
+  ~ *collaboration* hvor oplysninger bringes på digital form
 
 Datanvendelse
-   ~ *collaboration* hvor oplysninger anvendes i en opgave
+  ~ *collaboration* hvor oplysninger anvendes i en opgave
 
 Registreret forsendelse
-   ~ *collaboration* hvor meddelelser sendes uafviseligt
+  ~ *collaboration* hvor meddelelser sendes uafviseligt
 
 
 ## Roller
@@ -220,31 +220,34 @@ Procestrin kan realiseres af interne busines functions eller trække på ekstern
 ## Forretningsobjekter
 [Bør identificeres på workshop. Skal det være begrebsmodellering eller logiske kernemodeller?]
 
-### Data
-Abstrakt...bruges om både registerrecord og dokument
+![Oversigt over de centrale forretningsobjekter og deres relationer](objekter.pdf)
 
-### Registeroplysning (record)
+Data
+  ~ *objekt* (Abstrakt...bruges om både registerrecord og dokument)
 
-### Dokument
-[Dokument model fra OIO]
+Registeroplysning
+  ~ *objekt* en record
 
-### Datasamling
-[Datasæt model]
+Dokument
+  ~ *objekt* [Dokument model fra OIO]
 
-### Datasubjekt
-[Grunddata person]
+Datasamling
+  ~ *objekt* [Datasæt model]
 
-### Model/Schema
-[Modelregler fra FDA]
+Datasubjekt
+  ~ *objekt* [Grunddata person]
 
-### Meddelelse
-[NgDP]
+Model/Schema
+  ~ *objekt* [Modelregler fra FDA]
 
-### Påmindelse
-[NgDP]
+Meddelelse
+  ~ *objekt* [NgDP]
 
-### Registreringshændelse?
-[Datafordeler]
+Påmindelse
+  ~ *objekt* [NgDP]
+
+Registreringshændelse
+  ~ *objekt* [Datafordeler]
 
 
 
@@ -254,71 +257,78 @@ forretningsfunktionerne understøttes/realiseres af applikationer.
 
 ## Applikationsroller
 
-### eDelivery Service Provider
-som skal kunne:
+eDelivery Service Provider
+  ~ *applikationsservice* som skal kunne:
+
 - udstille eller levere meddelelser til modtager
 - modtage og distribuere meddeleleser
 - fortælle andre om deres kunder
 
-### Dataservice
-som skal kunne:
+Dataservice
+  ~ *applikationsservice* som skal kunne:
+
 - opbevare datasamling
 - begrænse adgang til de rigtige
 - måske vedligeholde og udsende abonnementer
 
-### Kontaktregister
-som er en slags data service med en særlig type oplysninger
+Kontaktregister
+  ~ *applikationsservice* som er en slags data service med en særlig type oplysninger
 
-### Log
-som er en slags data service med særlige oplysninger
+Log
+  ~ *applikationsservice* som er en slags data service med særlige oplysninger
 
-### Indeks
-som er en slags data service med særlige oplysninger
-kan undværes, men ikke effektivt.
+Indeks
+  ~ *applikationsservice* som er en slags data service med særlige oplysninger kan undværes, men ikke effektivt.
 
-## Katalog
-som ikke er en dataservice fordi der ikke er begrænset adgang
-
-kan undværes, men ikke effektivt.
+Katalog
+  ~ *applikationsservice* som ikke er en dataservice fordi der ikke er begrænset adgang kan undværes, men ikke effektivt.
 
 [Skal vi have en "beskyttet dataservice" og en offentlig?]
 
 
 
-# Tekniske Implementering(er)
+## Tekniske Implementering(er)
 Her grupperes de enkelte roller og applikationsroller jf forskellige mønstre.
 
 
-## Datanvendelse
+*Datanvendelse*
+
 Når myndighed vil have adgang til data hos en anden er det er par mønstre
 
-### Direkte adgang, SOA
+Direkte adgang, SOA
+  ~ *implementationsmønster*
 
-### Datadistribution
-sammenstilling samt adgangskontrol og logning
+Datadistribution
+  ~ *implementationsmønster* sammenstilling samt adgangskontrol og logning
 
-### Distribueret Service- og data-platform
+Distribueret Service- og data-platform
+  ~ *implementationsmønster*
 
-## Registreret forsendelse
+*Registreret forsendelse*
+
 Når en myndighed vil sende noget til en myndighed, virksom eller borger.
 
-### SOA / Email...
+SOA / Email
+  ~ *implementationsmønster*
 
-### Fælles system
-e.g. e-Boks.
+Fælles system
+  ~ *implementationsmønster* e.g. e-Boks.
 
-### Service Providers
-kan være både generisk eller specifik for et domæne.
+Service Providers
+  ~ *implementationsmønster* kan være både generisk eller specifik for et domæne.
 
 
-## Registrering
+*Registrering*
 skal med for at forklare index
 
-### ansvar hos registrant
+ansvar hos registrant
+  ~ *implementationsmønster*
 
-### ansvar hos dataejer
+ansvar hos dataejer
+  ~ *implementationsmønster*
 
-### ansvar hos distributør?
+ansvar hos distributør?
+  ~ *implementationsmønster*
 
 
 

@@ -295,14 +295,15 @@ arbejder sammen i forskellige roller
 \caption{Tværgående use cases og funktioner hos de enkelte roller}
 \end{figure}
 
-Registrering \textasciitilde{} \emph{collaboration} hvor oplysninger
-bringes på digital form
-
-Datanvendelse \textasciitilde{} \emph{collaboration} hvor oplysninger
-anvendes i en opgave
-
-Registreret forsendelse \textasciitilde{} \emph{collaboration} hvor
-meddelelser sendes uafviseligt
+\begin{description}
+\tightlist
+\item[Registrering]
+\emph{collaboration} hvor oplysninger bringes på digital form
+\item[Datanvendelse]
+\emph{collaboration} hvor oplysninger anvendes i en opgave
+\item[Registreret forsendelse]
+\emph{collaboration} hvor meddelelser sendes uafviseligt
+\end{description}
 
 \subsection{Roller}\label{roller}
 
@@ -367,40 +368,35 @@ fra brugerstyring, men husk at holde det teknologi-fri{]}
 {[}Bør identificeres på workshop. Skal det være begrebsmodellering eller
 logiske kernemodeller?{]}
 
-\subsubsection{Data}\label{data}
+\begin{figure}
+\centering
+\includegraphics{objekter.pdf}
+\caption{Oversigt over de centrale forretningsobjekter og deres
+relationer}
+\end{figure}
 
-Abstrakt\ldots{}bruges om både registerrecord og dokument
-
-\subsubsection{Registeroplysning
-(record)}\label{registeroplysning-record}
-
-\subsubsection{Dokument}\label{dokument}
-
-{[}Dokument model fra OIO{]}
-
-\subsubsection{Datasamling}\label{datasamling}
-
-{[}Datasæt model{]}
-
-\subsubsection{Datasubjekt}\label{datasubjekt}
-
-{[}Grunddata person{]}
-
-\subsubsection{Model/Schema}\label{modelschema}
-
-{[}Modelregler fra FDA{]}
-
-\subsubsection{Meddelelse}\label{meddelelse}
-
-{[}NgDP{]}
-
-\subsubsection{Påmindelse}\label{puxe5mindelse}
-
-{[}NgDP{]}
-
-\subsubsection{Registreringshændelse?}\label{registreringshuxe6ndelse}
-
-{[}Datafordeler{]}
+\begin{description}
+\tightlist
+\item[Data]
+\emph{objekt} (Abstrakt\ldots{}bruges om både registerrecord og
+dokument)
+\item[Registeroplysning]
+\emph{objekt} en record
+\item[Dokument]
+\emph{objekt} {[}Dokument model fra OIO{]}
+\item[Datasamling]
+\emph{objekt} {[}Datasæt model{]}
+\item[Datasubjekt]
+\emph{objekt} {[}Grunddata person{]}
+\item[Model/Schema]
+\emph{objekt} {[}Modelregler fra FDA{]}
+\item[Meddelelse]
+\emph{objekt} {[}NgDP{]}
+\item[Påmindelse]
+\emph{objekt} {[}NgDP{]}
+\item[Registreringshændelse]
+\emph{objekt} {[}Datafordeler{]}
+\end{description}
 
 \section{Teknik}\label{teknik}
 
@@ -408,80 +404,104 @@ forretningsfunktionerne understøttes/realiseres af applikationer.
 
 \subsection{Applikationsroller}\label{applikationsroller}
 
-\subsubsection{eDelivery Service
-Provider}\label{edelivery-service-provider}
+\begin{description}
+\tightlist
+\item[eDelivery Service Provider]
+\emph{applikationsservice} som skal kunne:
+\end{description}
 
-som skal kunne: - udstille eller levere meddelelser til modtager -
-modtage og distribuere meddeleleser - fortælle andre om deres kunder
+\begin{itemize}
+\tightlist
+\item
+  udstille eller levere meddelelser til modtager
+\item
+  modtage og distribuere meddeleleser
+\item
+  fortælle andre om deres kunder
+\end{itemize}
 
-\subsubsection{Dataservice}\label{dataservice}
+\begin{description}
+\tightlist
+\item[Dataservice]
+\emph{applikationsservice} som skal kunne:
+\end{description}
 
-som skal kunne: - opbevare datasamling - begrænse adgang til de rigtige
-- måske vedligeholde og udsende abonnementer
+\begin{itemize}
+\tightlist
+\item
+  opbevare datasamling
+\item
+  begrænse adgang til de rigtige
+\item
+  måske vedligeholde og udsende abonnementer
+\end{itemize}
 
-\subsubsection{Kontaktregister}\label{kontaktregister}
-
-som er en slags data service med en særlig type oplysninger
-
-\subsubsection{Log}\label{log}
-
-som er en slags data service med særlige oplysninger
-
-\subsubsection{Indeks}\label{indeks}
-
-som er en slags data service med særlige oplysninger kan undværes, men
-ikke effektivt.
-
-\subsection{Katalog}\label{katalog}
-
-som ikke er en dataservice fordi der ikke er begrænset adgang
-
-kan undværes, men ikke effektivt.
+\begin{description}
+\tightlist
+\item[Kontaktregister]
+\emph{applikationsservice} som er en slags data service med en særlig
+type oplysninger
+\item[Log]
+\emph{applikationsservice} som er en slags data service med særlige
+oplysninger
+\item[Indeks]
+\emph{applikationsservice} som er en slags data service med særlige
+oplysninger kan undværes, men ikke effektivt.
+\item[Katalog]
+\emph{applikationsservice} som ikke er en dataservice fordi der ikke er
+begrænset adgang kan undværes, men ikke effektivt.
+\end{description}
 
 {[}Skal vi have en ``beskyttet dataservice'' og en offentlig?{]}
 
-\section{Tekniske Implementering(er)}\label{tekniske-implementeringer}
+\subsection{Tekniske
+Implementering(er)}\label{tekniske-implementeringer}
 
 Her grupperes de enkelte roller og applikationsroller jf forskellige
 mønstre.
 
-\subsection{Datanvendelse}\label{datanvendelse}
+\emph{Datanvendelse}
 
 Når myndighed vil have adgang til data hos en anden er det er par
 mønstre
 
-\subsubsection{Direkte adgang, SOA}\label{direkte-adgang-soa}
+\begin{description}
+\tightlist
+\item[Direkte adgang, SOA]
+\emph{implementationsmønster}
+\item[Datadistribution]
+\emph{implementationsmønster} sammenstilling samt adgangskontrol og
+logning
+\item[Distribueret Service- og data-platform]
+\emph{implementationsmønster}
+\end{description}
 
-\subsubsection{Datadistribution}\label{datadistribution}
-
-sammenstilling samt adgangskontrol og logning
-
-\subsubsection{Distribueret Service- og
-data-platform}\label{distribueret-service--og-data-platform}
-
-\subsection{Registreret forsendelse}\label{registreret-forsendelse}
+\emph{Registreret forsendelse}
 
 Når en myndighed vil sende noget til en myndighed, virksom eller borger.
 
-\subsubsection{SOA / Email\ldots{}}\label{soa-email}
+\begin{description}
+\tightlist
+\item[SOA / Email]
+\emph{implementationsmønster}
+\item[Fælles system]
+\emph{implementationsmønster} e.g.~e-Boks.
+\item[Service Providers]
+\emph{implementationsmønster} kan være både generisk eller specifik for
+et domæne.
+\end{description}
 
-\subsubsection{Fælles system}\label{fuxe6lles-system}
+\emph{Registrering} skal med for at forklare index
 
-e.g.~e-Boks.
-
-\subsubsection{Service Providers}\label{service-providers}
-
-kan være både generisk eller specifik for et domæne.
-
-\subsection{Registrering}\label{registrering}
-
-skal med for at forklare index
-
-\subsubsection{ansvar hos registrant}\label{ansvar-hos-registrant}
-
-\subsubsection{ansvar hos dataejer}\label{ansvar-hos-dataejer}
-
-\subsubsection{ansvar hos distributør?}\label{ansvar-hos-distributuxf8r}
+\begin{description}
+\tightlist
+\item[ansvar hos registrant]
+\emph{implementationsmønster}
+\item[ansvar hos dataejer]
+\emph{implementationsmønster}
+\item[ansvar hos distributør?]
+\emph{implementationsmønster}
+\end{description}
 
 \subsection{Områder for
 standardisering/profileringer}\label{omruxe5der-for-standardiseringprofileringer}
