@@ -104,7 +104,7 @@ Udarbejdelsen af referencearkitekturen tager udgangspunkt i en række identifice
 
 
 ## Strategiske målsætninger
-[TODO]: x "[beskriv målsætninger i eksisterende aftaler og strategier, også gerne fra andre områder]"
+[TODO beskriv målsætninger i eksisterende aftaler og strategier, også gerne fra andre områder]: x
 
 Interoperability
   ~  *mål* om sammenhængende services... integrated service delivery
@@ -120,7 +120,7 @@ Re-use
 
 
 ## Vision
-[TODO]: x "[fokus på første workshop]"
+[TODO fokus på første workshop]: x
 
 > *Data skal være nemme at bruge og svære at misbruge*
 
@@ -225,9 +225,10 @@ Herunder beskrives, hvor de enkelte business functions hos de enkelte roller anv
 
 ## Forretningstjenester
 Procestrin udtrykkes typisk ved Forretningstjenester, der igen kan realiseres af interne business functions eller trække på eksterne business services.
-[TODO]: x "Skal vi bare slå services og functions sammen (da vi ikke taler om implementering endnu)"
 
-[TODO]: x "[Vi skal være bedre til at beskrive hvordan vi trækker på elementer fra brugerstyring, men husk at holde det teknologi-fri]"
+[TODO Skal vi bare slå services og functions sammen (da vi ikke taler om implementering endnu)]: x
+
+[TODO Vi skal være bedre til at beskrive hvordan vi trækker på elementer fra brugerstyring, men husk at holde det teknologi-fri]: x
 
 
 ## Forretningsobjekter
@@ -332,6 +333,7 @@ Service Providers
 
 
 *Registrering*
+
 Registrering af data er ikke i scope for denne referencearkitektur, men medtages kort pga. sin væsentlige relation til Index-konceptet.
 
 Ansvar hos registrant
