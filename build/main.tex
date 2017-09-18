@@ -1,7 +1,7 @@
 Denne version udgør synopsis for det videre arbejde med en
 referencearkitektur. Formålet er at konkretisere et muligt indhold med
 henblik på udpegning af interessenter samt at afgrænse opgaven i forhold
-til øvrige aktiviteter. Synopsis vil, på kortest mulige form, giver et
+til øvrige aktiviteter. Synopsis vil, på kortest mulige form, give et
 overblik over strukturen og indholdet af den endelige arkitektur.
 Synopsen er ikke et gennemarbejdet bud på den endelige løsning, men skal
 udtale sig om retning og afprøve rammerne for det videre arbejde.
@@ -16,15 +16,16 @@ offentlige it-systemer, der
 \begin{itemize}
 \tightlist
 \item
-  (gen)anvender oplysninger til sagsbehandling eller selvbetjening
+  (gen)anvender oplysninger i form af data og dokumenter til
+  sagsbehandling eller selvbetjening
 \item
   sender eller modtager meddelelser fra andre it-systemer
 \end{itemize}
 
 \subsection{Scope}\label{scope}
 
-Referencearkitekturen beskriver anvendelse af og udvikling af it-system
-der reguleres af blandt andet:
+Referencearkitekturen beskriver anvendelse af og udvikling af
+it-systemer, der reguleres af blandt andet:
 
 \begin{description}
 \tightlist
@@ -38,12 +39,13 @@ persondata
 persondata
 \item[Lov om Digital Post]
 \emph{lov} der gør det obligatorisk for virksomheder og borgere at
-modtage digitale meddelelser fra offentlige afsendereß
+modtage digitale meddelelser fra offentlige afsendere.
 \end{description}
 
 Referencearkitekturen skrives på baggrund af den fællesoffentlige
 digitaliseringsstrategi 2020 under initiativ 8.1 med tilslutning fra FM,
-UFM, EVM, SIM, JM, EFKM, MBUL, SÆM, SKM, MFVM, BM, KL og Danske Regioner
+UFM, EVM, SIM, JM, EFKM, MBUL, SÆM, SKM, MFVM, BM, KL og Danske
+Regioner. Heri beskrives referencearkitekturen således:
 
 \begin{quote}
 For at operationalisere, hvilke krav hvidbogen konkret stiller til
@@ -64,7 +66,7 @@ Uden for scope:
 \item
   åbne data, der ikke kræver adgangskontrol
 \item
-  registrering og anvendelse hos registerejer
+  registrering og anvendelse af data hos registerejer
 \end{itemize}
 
 \subsection{Centrale begreber}\label{centrale-begreber}
@@ -96,15 +98,16 @@ Referencearkitekturen skal
 \subsection{Tilblivelse og governance}\label{tilblivelse-og-governance}
 
 Første udgave er skrevet hos Kontor for Data og Arkitektur af Mads
-Hjorth, Digitaliseringsstyrelsen og Anders Fausbøll, Omnium IT.
+Hjorth, Digitaliseringsstyrelsen og Anders Fausbøll, Omnium Improvement.
 
 Endelig godkendelse forventes hos Styregruppe for Data og Arkitektur
-under Digitaliseringsstrategien 18. december 2018.
+under Digitaliseringsstrategien 18. december 2017.
 
 \subsection{Metoderamme}\label{metoderamme}
 
-Skrives indefor rammerne af Fællesoffentlige Digital Arkitektur, det vil
-sige; erfaringer fra OIO referencearkitektur, EIRA, TOGAF, ArchiMate.
+Skrives inden for rammerne af Fællesoffentlige Digital Arkitektur, det
+vil sige; erfaringer fra OIO referencearkitektur, EIRA, TOGAF,
+ArchiMate.
 
 \subsection{Relation til andre
 referencearkitekturer}\label{relation-til-andre-referencearkitekturer}
@@ -124,7 +127,8 @@ Skal kunne anvendes af
 \item
   Fællesoffentlig referencearkitektur for selvbetjening
 \item
-  Fællesoffentlig referencearkitektur for overblik over egne sager
+  Fællesoffentlig referencearkitektur for overblik over egne sager og
+  ydelser
 \end{itemize}
 
 Skal anvendes i kontekst sammen med
@@ -141,6 +145,9 @@ Skal anvendes i kontekst sammen med
 
 \section{Strategi}\label{strategi}
 
+Udarbejdelsen af referencearkitekturen tager udgangspunkt i en række
+identificerede forretningsmæssige og teknologiske trends og tendenser.
+
 \subsection{Forretningsmæssige
 tendenser}\label{forretningsmuxe6ssige-tendenser}
 
@@ -149,7 +156,7 @@ tendenser}\label{forretningsmuxe6ssige-tendenser}
 \item
   Ensretning og nationale indsatser
 \item
-  Data øget værdi for organisationer
+  Data har øget værdi for organisationer
 \item
   Øget bevågenhed omkring beskyttelse af privatliv
 \item
@@ -176,12 +183,12 @@ tendenser}\label{forretningsmuxe6ssige-tendenser}
 \item
   Arkitekturvision for anvendelse og udstilling
 \item
-  Intergrated Service Delivery
+  Integrated Service Delivery
 \item
-  ''Ineroperability/Samarbejdende infrastrukturer / Økosystem af fælles
+  ''Interoperability/Samarbejdende infrastrukturer / Økosystem af fælles
   løsninger?''
 \item
-  ''Valgfri for anvender mellem flere tekniske udbydere af samme
+  ''Valgfrihed for anvender mellem flere tekniske udbydere af samme
   oplysninger''
 \end{itemize}
 
@@ -200,8 +207,8 @@ delivery
 information til det offentlige en gang\ldots{} (men give lov til
 genbrug?)
 \item[Transperancy]
-\emph{mål} om borger og virksomheder skal kunne se hvilke data der
-findes om dem og hvor disse data anvendes
+\emph{mål} om at borgere og virksomheder skal kunne se, hvilke data der
+findes om dem, og hvor disse data anvendes
 \item[Re-use]
 \emph{mål} om genbrug af it med henblik på lavere omkostninger
 \end{description}
@@ -234,6 +241,9 @@ misbruge}
 
 \subsection{Strategiske principper}\label{strategiske-principper}
 
+Forretningsmæssige, Informationsmæssige, Applikationsmæssige og Tekniske
+principper bag referencearkitekturen:
+
 \begin{itemize}
 \tightlist
 \item
@@ -252,7 +262,7 @@ misbruge}
   A3: Adgang til og fra internationale registre sker gennem national
   gateway
 \item
-  T1: Central fuldmagt/rettighedsstyring
+  T1: Central fuldmagts-/rettighedsstyring
 \item
   T2: Multi-flavour-api
 \end{itemize}
@@ -286,7 +296,7 @@ opgaver.
 
 \subsection{Funktioner}\label{funktioner}
 
-Referencearkitekturen beskriver tre centrale use cases hvor aktører
+Referencearkitekturen beskriver tre centrale use cases, hvor aktører
 arbejder sammen i forskellige roller
 
 \begin{figure}
@@ -318,14 +328,16 @@ roller{]}
 \emph{rolle} som oplysninger handler
 \item[Dataanvender]
 \emph{rolle} der anvender oplysninger fra et register
-\item[eDelivery kunde/forbruger?]
-\emph{rolle} som der sender og modtager meddelelser
 \item[Dataejer]
 \emph{rolle} som ejer registreringer/data, ansvar for at udarbejde
 adgangspolitik
 \item[Datadistributør]
 \emph{rolle} som ejer registreringer/data, ansvar for at udarbejde
 adgangspolitik
+\item[Messaging User]
+\emph{rolle} som der sender og modtager meddelelser
+\item[Messaging Provider]
+\emph{rolle} som leverer services til forsendelse
 \end{description}
 
 \subsection{Tværgående processer (proces-trin, business
