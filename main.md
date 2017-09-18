@@ -1,7 +1,7 @@
 
 Denne version udgør synopsis for det videre arbejde med en referencearkitektur.
 Formålet er at konkretisere et muligt indhold med henblik på udpegning af interessenter samt at afgrænse opgaven i forhold til øvrige aktiviteter.
-Synopsis vil, på kortest mulige form, giver et overblik over strukturen og indholdet af den endelige arkitektur. Synopsen er ikke et gennemarbejdet bud på den endelige løsning, men skal udtale sig om retning og afprøve rammerne for det videre arbejde.
+Synopsis vil, på kortest mulige form, give et overblik over strukturen og indholdet af den endelige arkitektur. Synopsen er ikke et gennemarbejdet bud på den endelige løsning, men skal udtale sig om retning og afprøve rammerne for det videre arbejde.
 
 
 
@@ -11,13 +11,13 @@ Synopsis vil, på kortest mulige form, giver et overblik over strukturen og indh
 ## Formål
 Referencearkitekturen understøtter anvendelse og udviklingen af offentlige it-systemer, der
 
-- (gen)anvender oplysninger til sagsbehandling eller selvbetjening
+- (gen)anvender oplysninger i form af data og dokumenter til sagsbehandling eller selvbetjening
 - sender eller modtager meddelelser fra andre it-systemer
 
 
 ## Scope
 
-Referencearkitekturen beskriver anvendelse af og udvikling af it-system der reguleres af blandt andet:
+Referencearkitekturen beskriver anvendelse af og udvikling af it-systemer, der reguleres af blandt andet:
 
 EU databeskyttelse
  ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
@@ -29,17 +29,17 @@ Persondata lov
  ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
 
 Lov om Digital Post
- ~ *lov* der gør det obligatorisk for virksomheder og borgere at modtage digitale meddelelser fra offentlige afsendereß
+ ~ *lov* der gør det obligatorisk for virksomheder og borgere at modtage digitale meddelelser fra offentlige afsendere.
 
 Referencearkitekturen skrives på baggrund af den fællesoffentlige digitaliseringsstrategi 2020 under initiativ 8.1 med tilslutning fra
-FM, UFM, EVM, SIM, JM, EFKM, MBUL, SÆM, SKM, MFVM, BM, KL og Danske Regioner
+FM, UFM, EVM, SIM, JM, EFKM, MBUL, SÆM, SKM, MFVM, BM, KL og Danske Regioner. Heri beskrives referencearkitekturen således:
 
 > For at operationalisere, hvilke krav hvidbogen konkret stiller til initiativer og systemer udarbejdes en referencearkitektur for deling af data og dokumenter, der blandt andet beskriver fælles behovsmønstre og mønstre for teknisk understøttelse, herunder de forskelige roller, der skal afklares i initiativerne. Referencearkitekturen udpeger også eventuelle områder for eksisterende og nye fælles standarder og infrastruktur, som skal lette initiativernes implementering. Referencearkitekturen bliver således en generel ramme og støtte for alle initiativernes egen specifikke arkitektur.
 
 Uden for scope:
 
 - åbne data, der ikke kræver adgangskontrol
-- registrering og anvendelse hos registerejer
+- registrering og anvendelse af data hos registerejer
 
 ## Centrale begreber
 I det efterfølgende vil begrebet data blive brugt til at betegne både oplysninger på dokumentform og oplysninger der optræder i registre. Vi anvender begrebet datasamling både om et register og et repository med dokumenter.
@@ -54,13 +54,13 @@ Referencearkitekturen skal
 - bruges som reference ved løsningsbeskrivelser
 
 ## Tilblivelse og governance
-Første udgave er skrevet hos Kontor for Data og Arkitektur af Mads Hjorth, Digitaliseringsstyrelsen og Anders Fausbøll, Omnium IT.
+Første udgave er skrevet hos Kontor for Data og Arkitektur af Mads Hjorth, Digitaliseringsstyrelsen og Anders Fausbøll, Omnium Improvement.
 
-Endelig godkendelse forventes hos Styregruppe for Data og Arkitektur under Digitaliseringsstrategien 18. december 2018.
+Endelig godkendelse forventes hos Styregruppe for Data og Arkitektur under Digitaliseringsstrategien 18. december 2017.
 
 
 ## Metoderamme
-Skrives indefor rammerne af Fællesoffentlige Digital Arkitektur, det vil sige; erfaringer fra OIO referencearkitektur, EIRA, TOGAF, ArchiMate.
+Skrives inden for rammerne af Fællesoffentlige Digital Arkitektur, det vil sige; erfaringer fra OIO referencearkitektur, EIRA, TOGAF, ArchiMate.
 
 ## Relation til andre referencearkitekturer
 Gør brug af
@@ -70,7 +70,7 @@ Gør brug af
 Skal kunne anvendes af
 
 - Fællesoffentlig referencearkitektur for selvbetjening
-- Fællesoffentlig referencearkitektur for overblik over egne sager
+- Fællesoffentlig referencearkitektur for overblik over egne sager og ydelser
 
 Skal anvendes i kontekst sammen med
 
@@ -81,9 +81,12 @@ Skal anvendes i kontekst sammen med
 
 # Strategi
 
+Udarbejdelsen af referencearkitekturen tager udgangspunkt i en række identificerede forretningsmæssige og teknologiske trends og tendenser.
+
 ## Forretningsmæssige tendenser
+
 - Ensretning og nationale indsatser
-- Data øget værdi for organisationer
+- Data har øget værdi for organisationer
 - Øget bevågenhed omkring beskyttelse af privatliv
 - Øget opmærksomhed om håndtering af personlige oplysninger
 - Mængden af oplysninger der håndteres stiger
@@ -95,9 +98,9 @@ Skal anvendes i kontekst sammen med
 - Øgede forventninger til brugervenlighed af offentlige digitale services
 - Mængden af tilgængelige oplysninger vokser
 - Arkitekturvision for anvendelse og udstilling
-- Intergrated Service Delivery
-- ”Ineroperability/Samarbejdende infrastrukturer / Økosystem af fælles løsninger?”
-- ”Valgfri for anvender mellem flere tekniske udbydere af samme oplysninger”
+- Integrated Service Delivery
+- ”Interoperability/Samarbejdende infrastrukturer / Økosystem af fælles løsninger?”
+- ”Valgfrihed for anvender mellem flere tekniske udbydere af samme oplysninger”
 
 
 ## Strategiske målsætning
@@ -110,7 +113,7 @@ Once-only
   ~  *mål* om at borger og virksomhed kun skal afgive den samme information til det offentlige en gang... (men give lov til genbrug?)
 
 Transperancy
-  ~ *mål* om borger og virksomheder skal kunne se hvilke data der findes om dem og hvor disse data anvendes
+  ~ *mål* om at borgere og virksomheder skal kunne se, hvilke data der findes om dem, og hvor disse data anvendes
 
 Re-use
   ~ *mål* om genbrug af it med henblik på lavere omkostninger
@@ -133,6 +136,8 @@ Re-use
 
 ## Strategiske principper
 
+Forretningsmæssige, Informationsmæssige, Applikationsmæssige og Tekniske principper bag referencearkitekturen:
+
 - F1: Autoritative register med henvisninger til andre registre
 - F2: Ansvar for begrænsning af adgang ligger hos registerejer
 - I1: Fælles referenceinformationsmodel
@@ -140,7 +145,7 @@ Re-use
 - A1: Onlineopslag i sagsbehandling og selvbetjening
 - A2: Log adgang
 - A3: Adgang til og fra internationale registre sker gennem national gateway
-- T1: Central fuldmagt/rettighedsstyring
+- T1: Central fuldmagts-/rettighedsstyring
 - T2: Multi-flavour-api
 
 
@@ -162,7 +167,7 @@ Referencearkitekturen finder anvendelse i løsningen af alle offentlige opgaver.
 
 
 ## Funktioner
-Referencearkitekturen beskriver tre centrale use cases hvor aktører arbejder sammen i forskellige roller
+Referencearkitekturen beskriver tre centrale use cases, hvor aktører arbejder sammen i forskellige roller
 
 ![Tværgående use cases og funktioner hos de enkelte roller](usecases.pdf)
 
