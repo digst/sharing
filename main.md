@@ -48,7 +48,7 @@ I det efterfølgende vil begrebet data blive brugt til at betegne både oplysnin
 
 
 ## Anvendelse
-Referencearkitekturen skal
+Referencearkitekturen skal:
 
 - danne et fælles sprog til at formulere en fælles handlingsplan
 - bruges som reference ved løsningsbeskrivelser
@@ -67,12 +67,12 @@ Gør brug af
 
 - Fællesoffentlig referencearkitektur for brugerstyring
 
-Skal kunne anvendes af
+Skal kunne anvendes af:
 
 - Fællesoffentlig referencearkitektur for selvbetjening
 - Fællesoffentlig referencearkitektur for overblik over egne sager og ydelser
 
-Skal anvendes i kontekst sammen med
+Skal anvendes i kontekst sammen med:
 
 - Deling af dokumenter på sundhedsområdet
 - Indberetning til registre på sundhedsområdet
@@ -123,9 +123,14 @@ Re-use
 ## Vision
 [fokus på første workshop]
 
-> *data deles på en måde hvor dataejer ikke unødigt begrænser genbrug...*
-> *(prøve at ramme høste-så problemet og sikre gennemsigtighed og beskyttelse)*
-> *Nemmere at bruge og sværere at misbruge*
+> *Data skal være nemmere at bruge og sværere at misbruge*
+
+> *Byrden i datadeling skal afløftes fra dataejeren, hvis den begrænser genbrug*
+
+> *Ensartet datadeling skal understøtte sammenstilling af data og tværgående brug*
+
+> *Klar governance omkring beskrivelse af, adgang til og brug af data.*
+
 
 
 ## Værdiskabelse
@@ -184,7 +189,6 @@ Registreret forsendelse
 
 
 ## Roller
-Nogle er specialisering af Databehandler... [tilføj kilder til roller]
 
 Registrant
   ~ *rolle* som bringer oplysninger på digital form, registrer
@@ -207,27 +211,29 @@ Messaging User
 Messaging Provider
   ~ *rolle* som leverer services til forsendelse
 
+Nogle kan betragtes som specialiseringer af GDPR-rollen Databehandler.
 
-## Tværgående processer (proces-trin, business functions?)
+## Tværgående processer
 Herunder beskrives hvor de enkelte business functions hos de enkelte roller anvendes i kontekst af nogle generiske procesmønstre.
 
- - Sagsbehandling (fra sag og dokument):
- - Simpel selvbetjening (fra selvbetjening):
- - Tværgående selvbetjening (fra sammenhængende services):
- - Indsigt i oplysninger og deres anvendelse (fra overblik?)
- - Sende meddelelse (tilmeldingslister)
- - Modtage meddelelse (måske påmindelser)
+ - Sagsbehandling (fra Sag og dokument):
+ - Simpel selvbetjening (fra Selvbetjening):
+ - Tværgående selvbetjening (fra Sammenhængende services):
+ - Indsigt i oplysninger og deres anvendelse (fra Overblik over sag og ydelser)
+ - Sende meddelelse (inkl. brug af tilmeldingslister og påmindelser)
+ - Modtage meddelelse
  - Tag et dokument med til en anden service provider (der ikke har adgang til registre) Beskrive hvordan dokumenter valideres.
 
 
 ## Forretnings-tjenester? -funktioner?
-Procestrin kan realiseres af interne busines functions eller trække på eksterne business services. Skal vi bare slå services og functions sammen (da vi ikke taler om implementering endnu)
+Procestrin udtrykkes typisk ved Forretningstjenester, der igen kan realiseres af interne business functions eller trække på eksterne business services.
+[TODO]: x "Skal vi bare slå services og functions sammen (da vi ikke taler om implementering endnu)"
 
-[Vi skal være bedre til at beskrive hvordan vi trækker på elementer fra brugerstyring, men husk at holde det teknologi-fri]
 
+[TODO]: x "[Vi skal være bedre til at beskrive hvordan vi trækker på elementer fra brugerstyring, men husk at holde det teknologi-fri]"
 
 ## Forretningsobjekter
-[Bør identificeres på workshop. Skal det være begrebsmodellering eller logiske kernemodeller?]
+Nedenfor fremgår en initiel oversigt over en række forretningsobjekter, der er væsentlige for referencearkitekturen. Det videre arbejde skal klarlægge, hvilke elementer der skal indgå i listen samt hvordan de defineres. Modelleringsniveauet skal endvidere lægges fast (bregrebsmodellering og/eller logiske kernemodeller?) Kommentarer/regibemærkninger indgår i listen, markeret med kantede parenteser.
 
 ![Oversigt over de centrale forretningsobjekter og deres relationer](objekter.pdf)
 
@@ -238,22 +244,22 @@ Registeroplysning
   ~ *objekt* en record
 
 Dokument
-  ~ *objekt* [Dokument model fra OIO]
+  ~ *objekt* [Dokumentmodel fra OIO]
 
 Datasamling
-  ~ *objekt* [Datasæt model]
+  ~ *objekt* [Datasætmodel]
 
 Datasubjekt
-  ~ *objekt* [Grunddata person]
+  ~ *objekt* [Grunddata, fx person]
 
 Model/Schema
-  ~ *objekt* [Modelregler fra FDA]
+  ~ *objekt* [Jf. Modelregler fra FDA]
 
 Meddelelse
-  ~ *objekt* [NgDP]
+  ~ *objekt* [Næste generation Digital Post]
 
 Påmindelse
-  ~ *objekt* [NgDP]
+  ~ *objekt* [Næste generation Digital Post]
 
 Registreringshændelse
   ~ *objekt* [Datafordeler]
@@ -262,7 +268,7 @@ Registreringshændelse
 
 
 # Teknik
-forretningsfunktionerne understøttes/realiseres af applikationer.
+Forretningsfunktionerne understøttes/realiseres af applikationer.
 
 ## Applikationsroller
 
@@ -278,7 +284,7 @@ Dataservice
 
 - opbevare datasamling
 - begrænse adgang til de rigtige
-- måske vedligeholde og udsende abonnementer
+- (måske) vedligeholde og udsende abonnementer
 
 Kontaktregister
   ~ *applikationsservice* som er en slags data service med en særlig type oplysninger
@@ -287,12 +293,12 @@ Log
   ~ *applikationsservice* som er en slags data service med særlige oplysninger
 
 Indeks
-  ~ *applikationsservice* som er en slags data service med særlige oplysninger kan undværes, men ikke effektivt.
+  ~ *applikationsservice* som er en slags data service med særlige oplysninger. Kan undværes, men på kraftig bekostning af effektivitet i bestemte situationer.
 
 Katalog
-  ~ *applikationsservice* som ikke er en dataservice fordi der ikke er begrænset adgang kan undværes, men ikke effektivt.
+  ~ *applikationsservice* som ikke er en dataservice, fordi der ikke er begrænset adgang. Kan undværes, men ikke effektivt.
 
-[Skal vi have en "beskyttet dataservice" og en offentlig?]
+  [TODO Skal vi have en "beskyttet dataservice" og en offentlig?]: x
 
 
 
@@ -302,7 +308,7 @@ Her grupperes de enkelte roller og applikationsroller jf forskellige mønstre.
 
 *Datanvendelse*
 
-Når myndighed vil have adgang til data hos en anden er det er par mønstre
+Når myndighed vil have adgang til data hos en anden myndighed, er der et par relevante mønstre:
 
 Direkte adgang, SOA
   ~ *implementationsmønster*
@@ -315,7 +321,7 @@ Distribueret Service- og data-platform
 
 *Registreret forsendelse*
 
-Når en myndighed vil sende noget til en myndighed, virksom eller borger.
+Når en myndighed vil sende noget til en myndighed, virksomhed eller borger.
 
 SOA / Email
   ~ *implementationsmønster*
@@ -324,11 +330,11 @@ Fælles system
   ~ *implementationsmønster* e.g. e-Boks.
 
 Service Providers
-  ~ *implementationsmønster* kan være både generisk eller specifik for et domæne.
+  ~ *implementationsmønster* kan være både generisk eller specifikt for et domæne.
 
 
 *Registrering*
-skal med for at forklare index
+Registrering af data er ikke i scope for denne referencearkitektur, men medtages kort pga. sin væsentlige relation til Index-konceptet.
 
 ansvar hos registrant
   ~ *implementationsmønster*
@@ -344,7 +350,8 @@ ansvar hos distributør?
 
 
 ## Områder for standardisering/profileringer
-(Per mønster?, matrix)
+Nedenstående, tekniske områder er kandidater til at indgå i referencearkitekturen i forhold til at pege på en anbefalet standard eller en særlig profilering, evt. vendt mod de enkelte, tekniske mønstre.
+
 - Service Design Guidelines
 - Access Protocols
 - Distribution Protocols

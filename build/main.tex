@@ -85,7 +85,7 @@ referencearkitektur}
 
 \subsection{Anvendelse}\label{anvendelse}
 
-Referencearkitekturen skal
+Referencearkitekturen skal:
 
 \begin{itemize}
 \tightlist
@@ -120,7 +120,7 @@ Gør brug af
   Fællesoffentlig referencearkitektur for brugerstyring
 \end{itemize}
 
-Skal kunne anvendes af
+Skal kunne anvendes af:
 
 \begin{itemize}
 \tightlist
@@ -131,7 +131,7 @@ Skal kunne anvendes af
   ydelser
 \end{itemize}
 
-Skal anvendes i kontekst sammen med
+Skal anvendes i kontekst sammen med:
 
 \begin{itemize}
 \tightlist
@@ -218,10 +218,22 @@ findes om dem, og hvor disse data anvendes
 {[}fokus på første workshop{]}
 
 \begin{quote}
-\emph{data deles på en måde hvor dataejer ikke unødigt begrænser
-genbrug\ldots{}} \emph{(prøve at ramme høste-så problemet og sikre
-gennemsigtighed og beskyttelse)} \emph{Nemmere at bruge og sværere at
-misbruge}
+\emph{Data skal være nemmere at bruge og sværere at misbruge}
+\end{quote}
+
+\begin{quote}
+\emph{Byrden i datadeling skal afløftes fra dataejeren, hvis den
+begrænser genbrug}
+\end{quote}
+
+\begin{quote}
+\emph{Ensartet datadeling skal understøtte sammenstilling af data og
+tværgående brug}
+\end{quote}
+
+\begin{quote}
+\emph{Klar governance omkring beskrivelse af, adgang til og brug af
+data.}
 \end{quote}
 
 \subsection{Værdiskabelse}\label{vuxe6rdiskabelse}
@@ -317,9 +329,6 @@ arbejder sammen i forskellige roller
 
 \subsection{Roller}\label{roller}
 
-Nogle er specialisering af Databehandler\ldots{} {[}tilføj kilder til
-roller{]}
-
 \begin{description}
 \tightlist
 \item[Registrant]
@@ -340,8 +349,9 @@ adgangspolitik
 \emph{rolle} som leverer services til forsendelse
 \end{description}
 
-\subsection{Tværgående processer (proces-trin, business
-functions?)}\label{tvuxe6rguxe5ende-processer-proces-trin-business-functions}
+Nogle kan betragtes som specialiseringer af GDPR-rollen Databehandler.
+
+\subsection{Tværgående processer}\label{tvuxe6rguxe5ende-processer}
 
 Herunder beskrives hvor de enkelte business functions hos de enkelte
 roller anvendes i kontekst af nogle generiske procesmønstre.
@@ -349,17 +359,18 @@ roller anvendes i kontekst af nogle generiske procesmønstre.
 \begin{itemize}
 \tightlist
 \item
-  Sagsbehandling (fra sag og dokument):
+  Sagsbehandling (fra Sag og dokument):
 \item
-  Simpel selvbetjening (fra selvbetjening):
+  Simpel selvbetjening (fra Selvbetjening):
 \item
-  Tværgående selvbetjening (fra sammenhængende services):
+  Tværgående selvbetjening (fra Sammenhængende services):
 \item
-  Indsigt i oplysninger og deres anvendelse (fra overblik?)
+  Indsigt i oplysninger og deres anvendelse (fra Overblik over sag og
+  ydelser)
 \item
-  Sende meddelelse (tilmeldingslister)
+  Sende meddelelse (inkl. brug af tilmeldingslister og påmindelser)
 \item
-  Modtage meddelelse (måske påmindelser)
+  Modtage meddelelse
 \item
   Tag et dokument med til en anden service provider (der ikke har adgang
   til registre) Beskrive hvordan dokumenter valideres.
@@ -368,17 +379,20 @@ roller anvendes i kontekst af nogle generiske procesmønstre.
 \subsection{Forretnings-tjenester?
 -funktioner?}\label{forretnings-tjenester--funktioner}
 
-Procestrin kan realiseres af interne busines functions eller trække på
-eksterne business services. Skal vi bare slå services og functions
-sammen (da vi ikke taler om implementering endnu)
-
-{[}Vi skal være bedre til at beskrive hvordan vi trækker på elementer
-fra brugerstyring, men husk at holde det teknologi-fri{]}
+Procestrin udtrykkes typisk ved Forretningstjenester, der igen kan
+realiseres af interne business functions eller trække på eksterne
+business services. \href{x}{TODO}: x ``Skal vi bare slå services og
+functions sammen (da vi ikke taler om implementering endnu)''
 
 \subsection{Forretningsobjekter}\label{forretningsobjekter}
 
-{[}Bør identificeres på workshop. Skal det være begrebsmodellering eller
-logiske kernemodeller?{]}
+Nedenfor fremgår en initiel oversigt over en række forretningsobjekter,
+der er væsentlige for referencearkitekturen. Det videre arbejde skal
+klarlægge, hvilke elementer der skal indgå i listen samt hvordan de
+defineres. Modelleringsniveauet skal endvidere lægges fast
+(bregrebsmodellering og/eller logiske kernemodeller?)
+Kommentarer/regibemærkninger indgår i listen, markeret med kantede
+parenteser.
 
 \begin{figure}
 \centering
@@ -395,24 +409,24 @@ dokument)
 \item[Registeroplysning]
 \emph{objekt} en record
 \item[Dokument]
-\emph{objekt} {[}Dokument model fra OIO{]}
+\emph{objekt} {[}Dokumentmodel fra OIO{]}
 \item[Datasamling]
-\emph{objekt} {[}Datasæt model{]}
+\emph{objekt} {[}Datasætmodel{]}
 \item[Datasubjekt]
-\emph{objekt} {[}Grunddata person{]}
+\emph{objekt} {[}Grunddata, fx person{]}
 \item[Model/Schema]
-\emph{objekt} {[}Modelregler fra FDA{]}
+\emph{objekt} {[}Jf. Modelregler fra FDA{]}
 \item[Meddelelse]
-\emph{objekt} {[}NgDP{]}
+\emph{objekt} {[}Næste generation Digital Post{]}
 \item[Påmindelse]
-\emph{objekt} {[}NgDP{]}
+\emph{objekt} {[}Næste generation Digital Post{]}
 \item[Registreringshændelse]
 \emph{objekt} {[}Datafordeler{]}
 \end{description}
 
 \section{Teknik}\label{teknik}
 
-forretningsfunktionerne understøttes/realiseres af applikationer.
+Forretningsfunktionerne understøttes/realiseres af applikationer.
 
 \subsection{Applikationsroller}\label{applikationsroller}
 
@@ -445,7 +459,7 @@ forretningsfunktionerne understøttes/realiseres af applikationer.
 \item
   begrænse adgang til de rigtige
 \item
-  måske vedligeholde og udsende abonnementer
+  (måske) vedligeholde og udsende abonnementer
 \end{itemize}
 
 \begin{description}
@@ -458,13 +472,12 @@ type oplysninger
 oplysninger
 \item[Indeks]
 \emph{applikationsservice} som er en slags data service med særlige
-oplysninger kan undværes, men ikke effektivt.
+oplysninger. Kan undværes, men på kraftig bekostning af effektivitet i
+bestemte situationer.
 \item[Katalog]
-\emph{applikationsservice} som ikke er en dataservice fordi der ikke er
-begrænset adgang kan undværes, men ikke effektivt.
+\emph{applikationsservice} som ikke er en dataservice, fordi der ikke er
+begrænset adgang. Kan undværes, men ikke effektivt.
 \end{description}
-
-{[}Skal vi have en ``beskyttet dataservice'' og en offentlig?{]}
 
 \subsection{Tekniske
 Implementering(er)}\label{tekniske-implementeringer}
@@ -474,8 +487,8 @@ mønstre.
 
 \emph{Datanvendelse}
 
-Når myndighed vil have adgang til data hos en anden er det er par
-mønstre
+Når myndighed vil have adgang til data hos en anden myndighed, er der et
+par relevante mønstre:
 
 \begin{description}
 \tightlist
@@ -490,7 +503,8 @@ logning
 
 \emph{Registreret forsendelse}
 
-Når en myndighed vil sende noget til en myndighed, virksom eller borger.
+Når en myndighed vil sende noget til en myndighed, virksomhed eller
+borger.
 
 \begin{description}
 \tightlist
@@ -499,11 +513,13 @@ Når en myndighed vil sende noget til en myndighed, virksom eller borger.
 \item[Fælles system]
 \emph{implementationsmønster} e.g.~e-Boks.
 \item[Service Providers]
-\emph{implementationsmønster} kan være både generisk eller specifik for
+\emph{implementationsmønster} kan være både generisk eller specifikt for
 et domæne.
 \end{description}
 
-\emph{Registrering} skal med for at forklare index
+\emph{Registrering} Registrering af data er ikke i scope for denne
+referencearkitektur, men medtages kort pga. sin væsentlige relation til
+Index-konceptet.
 
 \begin{description}
 \tightlist
@@ -518,11 +534,20 @@ et domæne.
 \subsection{Områder for
 standardisering/profileringer}\label{omruxe5der-for-standardiseringprofileringer}
 
-(Per mønster?, matrix) - Service Design Guidelines - Access Protocols -
-Distribution Protocols - Synchronisation Protocols
+Nedenstående, tekniske områder er kandidater til at indgå i
+referencearkitekturen i forhold til at pege på en anbefalet standard
+eller en særlig profilering, evt. vendt mod de enkelte, tekniske
+mønstre.
 
 \begin{itemize}
-\tightlist
+\item
+  Service Design Guidelines
+\item
+  Access Protocols
+\item
+  Distribution Protocols
+\item
+  Synchronisation Protocols
 \item
   Metadata for opslag/søgning/anvendelse
 \item

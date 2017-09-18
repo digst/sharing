@@ -19,11 +19,11 @@
 \contentsline {subsection}{\numberline {3.2}Opgaver}{7}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Funktioner}{7}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Roller}{7}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Tværgående processer (proces-trin, business functions?)}{9}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.5}Tværgående processer}{9}{subsection.3.5}
 \contentsline {subsection}{\numberline {3.6}Forretnings-tjenester? -funktioner?}{9}{subsection.3.6}
 \contentsline {subsection}{\numberline {3.7}Forretningsobjekter}{9}{subsection.3.7}
 \contentsline {section}{\numberline {4}Teknik}{11}{section.4}
 \contentsline {subsection}{\numberline {4.1}Applikationsroller}{11}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Tekniske Implementering(er)}{11}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Områder for standardisering/profileringer}{12}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Identifikation af eksisterende standarder}{12}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.4}Identifikation af eksisterende standarder}{13}{subsection.4.4}
