@@ -2,6 +2,7 @@
 Denne version udgør synopsis for det videre arbejde med en referencearkitektur.
 Formålet er at konkretisere et muligt indhold med henblik på udpegning af interessenter samt at afgrænse opgaven i forhold til øvrige aktiviteter.
 Synopsis vil, på kortest mulige form, give et overblik over strukturen og indholdet af den endelige arkitektur. Synopsen er ikke et gennemarbejdet bud på den endelige løsning, men skal udtale sig om retning og afprøve rammerne for det videre arbejde.
+Synopsis følger skabelon for referencearkitekturer som udarbejdet i DIGST/KDA.
 
 
 
@@ -93,7 +94,6 @@ Udarbejdelsen af referencearkitekturen tager udgangspunkt i en række identifice
 - Grænseoverskridende services
 
 ## Teknologiske tendenser
-
 - øget central standardisering af begreber, datamodeller og grænseflader
 - Flere og mere forskelligartede enheder forbundet til netværket
 - Øgede forventninger til brugervenlighed af offentlige digitale services
@@ -104,8 +104,8 @@ Udarbejdelsen af referencearkitekturen tager udgangspunkt i en række identifice
 - ”Valgfrihed for anvender mellem flere tekniske udbydere af samme oplysninger”
 
 
-## Strategiske målsætning
-[beskriv målsætninger i eksisterende aftaler og strategier, også gerne fra andre områder]
+## Strategiske målsætninger
+[TODO beskriv målsætninger i eksisterende aftaler og strategier, også gerne fra andre områder]: x
 
 Interoperability
   ~  *mål* om sammenhængende services... integrated service delivery
@@ -121,16 +121,15 @@ Re-use
 
 
 ## Vision
-[fokus på første workshop]
+[TODO fokus på første workshop]: x
 
-> *Data skal være nemmere at bruge og sværere at misbruge*
+> *Data skal være nemme at bruge og svære at misbruge*
 
-> *Byrden i datadeling skal afløftes fra dataejeren, hvis den begrænser genbrug*
+> *Byrden i datadeling skal afløftes fra dataejer, hvis den begrænser genbrug*
 
 > *Ensartet datadeling skal understøtte sammenstilling af data og tværgående brug*
 
-> *Klar governance omkring beskrivelse af, adgang til og brug af data.*
-
+> *Klar governancce omkring beskrivelse af, adgang til og brug af data*
 
 
 ## Værdiskabelse
@@ -213,21 +212,21 @@ Messaging Provider
 
 Nogle kan betragtes som specialiseringer af GDPR-rollen Databehandler.
 
-## Tværgående processer
-Herunder beskrives hvor de enkelte business functions hos de enkelte roller anvendes i kontekst af nogle generiske procesmønstre.
 
- - Sagsbehandling (fra Sag og dokument):
- - Simpel selvbetjening (fra Selvbetjening):
- - Tværgående selvbetjening (fra Sammenhængende services):
+## Tværgående processer
+Herunder beskrives, hvor de enkelte business functions hos de enkelte roller anvendes i kontekst af et sæt af generiske procesmønstre.
+
+ - Sagsbehandling (fra Sag og dokument)
+ - Simpel selvbetjening (fra Selvbetjening)
+ - Tværgående selvbetjening (fra Sammenhængende services)
  - Indsigt i oplysninger og deres anvendelse (fra Overblik over sag og ydelser)
  - Sende meddelelse (inkl. brug af tilmeldingslister og påmindelser)
  - Modtage meddelelse
- - Tag et dokument med til en anden service provider (der ikke har adgang til registre) Beskrive hvordan dokumenter valideres.
+ - Tag et dokument med til en anden service provider, der ikke har adgang til registre - herunder beskrive, hvordan dokumenter valideres.
 
 
-## Forretnings-tjenester? -funktioner?
+## Forretningstjenester
 Procestrin udtrykkes typisk ved Forretningstjenester, der igen kan realiseres af interne business functions eller trække på eksterne business services.
-[TODO]: x "Skal vi bare slå services og functions sammen (da vi ikke taler om implementering endnu)"
 
 
 [TODO]: x "[Vi skal være bedre til at beskrive hvordan vi trækker på elementer fra brugerstyring, men husk at holde det teknologi-fri]"
@@ -238,7 +237,7 @@ Nedenfor fremgår en initiel oversigt over en række forretningsobjekter, der er
 ![Oversigt over de centrale forretningsobjekter og deres relationer](objekter.pdf)
 
 Data
-  ~ *objekt* (Abstrakt...bruges om både registerrecord og dokument)
+  ~ *objekt* (Abstrakt. Bruges om både registerrecord og dokument)
 
 Registeroplysning
   ~ *objekt* en record
@@ -253,7 +252,7 @@ Datasubjekt
   ~ *objekt* [Grunddata, fx person]
 
 Model/Schema
-  ~ *objekt* [Jf. Modelregler fra FDA]
+  ~ *objekt* [Jf. modelregler fra FDA]
 
 Meddelelse
   ~ *objekt* [Næste generation Digital Post]
@@ -298,12 +297,12 @@ Indeks
 Katalog
   ~ *applikationsservice* som ikke er en dataservice, fordi der ikke er begrænset adgang. Kan undværes, men ikke effektivt.
 
-  [TODO Skal vi have en "beskyttet dataservice" og en offentlig?]: x
+[TODO Skal vi have en "beskyttet dataservice" og en offentlig?]: x
 
 
 
-## Tekniske Implementering(er)
-Her grupperes de enkelte roller og applikationsroller jf forskellige mønstre.
+## Tekniske Implementeringer
+Her grupperes de enkelte roller og applikationsroller jf. forskellige mønstre.
 
 
 *Datanvendelse*
@@ -327,22 +326,23 @@ SOA / Email
   ~ *implementationsmønster*
 
 Fælles system
-  ~ *implementationsmønster* e.g. e-Boks.
+  ~ *implementationsmønster* fx e-Boks.
 
 Service Providers
   ~ *implementationsmønster* kan være både generisk eller specifikt for et domæne.
 
 
 *Registrering*
+
 Registrering af data er ikke i scope for denne referencearkitektur, men medtages kort pga. sin væsentlige relation til Index-konceptet.
 
-ansvar hos registrant
+Ansvar hos registrant
   ~ *implementationsmønster*
 
-ansvar hos dataejer
+Ansvar hos dataejer
   ~ *implementationsmønster*
 
-ansvar hos distributør?
+Ansvar hos distributør
   ~ *implementationsmønster*
 
 
@@ -356,7 +356,6 @@ Nedenstående, tekniske områder er kandidater til at indgå i referencearkitekt
 - Access Protocols
 - Distribution Protocols
 - Synchronisation Protocols
-
 - Metadata for opslag/søgning/anvendelse
 - Log format
 - Identifikation
