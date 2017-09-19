@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.4.26)  19 SEP 2017 08:48
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.4.26)  19 SEP 2017 08:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1198,8 +1198,8 @@ File: ../overview.pdf Graphic file (type QTm)
 
 LaTeX Warning: Float too large for page by 27.59161pt on input line 52.
 
-File: ../eco.pdf Graphic file (type QTm)
-<use  "../eco.pdf" >
+File: ../eco2.pdf Graphic file (type QTm)
+<use  "../eco2.pdf" >
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 62.
 Package babel Info: Redefining danish shorthand "|
 (babel)             in language  on input line 62.
@@ -1227,7 +1227,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 62.
  ) 
 Here is how much of TeX's memory you used:
  21586 strings out of 493068
- 389897 string characters out of 6135636
+ 389899 string characters out of 6135636
  455909 words of memory out of 5000000
  25330 multiletter control sequences out of 15000+600000
  11476 words of font info for 73 fonts, out of 8000000 for 9000
