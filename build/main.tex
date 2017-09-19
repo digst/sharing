@@ -1,11 +1,3 @@
-Denne version udgør synopsis for det videre arbejde med en
-referencearkitektur. Formålet er at konkretisere et muligt indhold med
-henblik på udpegning af interessenter samt at afgrænse opgaven i forhold
-til øvrige aktiviteter. Synopsis vil, på kortest mulige form, give et
-overblik over strukturen og indholdet af den endelige arkitektur.
-Synopsen er ikke et gennemarbejdet bud på den endelige løsning, men skal
-udtale sig om retning og afprøve rammerne for det videre arbejde.
-
 \section{Introduktion}\label{introduktion}
 
 \subsection{Formål}\label{formuxe5l}
@@ -192,10 +184,8 @@ tendenser}\label{forretningsmuxe6ssige-tendenser}
   oplysninger''
 \end{itemize}
 
-\subsection{Strategiske målsætning}\label{strategiske-muxe5lsuxe6tning}
-
-{[}beskriv målsætninger i eksisterende aftaler og strategier, også gerne
-fra andre områder{]}
+\subsection{Strategiske
+målsætninger}\label{strategiske-muxe5lsuxe6tninger}
 
 \begin{description}
 \tightlist
@@ -215,15 +205,13 @@ findes om dem, og hvor disse data anvendes
 
 \subsection{Vision}\label{vision}
 
-{[}fokus på første workshop{]}
-
 \begin{quote}
-\emph{Data skal være nemmere at bruge og sværere at misbruge}
+\emph{Data skal være nemme at bruge og svære at misbruge}
 \end{quote}
 
 \begin{quote}
-\emph{Byrden i datadeling skal afløftes fra dataejeren, hvis den
-begrænser genbrug}
+\emph{Byrden i datadeling skal afløftes fra dataejer, hvis den begrænser
+genbrug}
 \end{quote}
 
 \begin{quote}
@@ -232,8 +220,8 @@ tværgående brug}
 \end{quote}
 
 \begin{quote}
-\emph{Klar governance omkring beskrivelse af, adgang til og brug af
-data.}
+\emph{Klar governancce omkring beskrivelse af, adgang til og brug af
+data}
 \end{quote}
 
 \subsection{Værdiskabelse}\label{vuxe6rdiskabelse}
@@ -353,17 +341,17 @@ Nogle kan betragtes som specialiseringer af GDPR-rollen Databehandler.
 
 \subsection{Tværgående processer}\label{tvuxe6rguxe5ende-processer}
 
-Herunder beskrives hvor de enkelte business functions hos de enkelte
-roller anvendes i kontekst af nogle generiske procesmønstre.
+Herunder beskrives, hvor de enkelte business functions hos de enkelte
+roller anvendes i kontekst af et sæt af generiske procesmønstre.
 
 \begin{itemize}
 \tightlist
 \item
-  Sagsbehandling (fra Sag og dokument):
+  Sagsbehandling (fra Sag og dokument)
 \item
-  Simpel selvbetjening (fra Selvbetjening):
+  Simpel selvbetjening (fra Selvbetjening)
 \item
-  Tværgående selvbetjening (fra Sammenhængende services):
+  Tværgående selvbetjening (fra Sammenhængende services)
 \item
   Indsigt i oplysninger og deres anvendelse (fra Overblik over sag og
   ydelser)
@@ -372,17 +360,15 @@ roller anvendes i kontekst af nogle generiske procesmønstre.
 \item
   Modtage meddelelse
 \item
-  Tag et dokument med til en anden service provider (der ikke har adgang
-  til registre) Beskrive hvordan dokumenter valideres.
+  Tag et dokument med til en anden service provider, der ikke har adgang
+  til registre - herunder beskrive, hvordan dokumenter valideres.
 \end{itemize}
 
-\subsection{Forretnings-tjenester?
--funktioner?}\label{forretnings-tjenester--funktioner}
+\subsection{Forretningstjenester}\label{forretningstjenester}
 
 Procestrin udtrykkes typisk ved Forretningstjenester, der igen kan
 realiseres af interne business functions eller trække på eksterne
-business services. \href{x}{TODO}: x ``Skal vi bare slå services og
-functions sammen (da vi ikke taler om implementering endnu)''
+business services.
 
 \subsection{Forretningsobjekter}\label{forretningsobjekter}
 
@@ -404,8 +390,7 @@ relationer}
 \begin{description}
 \tightlist
 \item[Data]
-\emph{objekt} (Abstrakt\ldots{}bruges om både registerrecord og
-dokument)
+\emph{objekt} (Abstrakt. Bruges om både registerrecord og dokument)
 \item[Registeroplysning]
 \emph{objekt} en record
 \item[Dokument]
@@ -415,7 +400,7 @@ dokument)
 \item[Datasubjekt]
 \emph{objekt} {[}Grunddata, fx person{]}
 \item[Model/Schema]
-\emph{objekt} {[}Jf. Modelregler fra FDA{]}
+\emph{objekt} {[}Jf. modelregler fra FDA{]}
 \item[Meddelelse]
 \emph{objekt} {[}Næste generation Digital Post{]}
 \item[Påmindelse]
@@ -479,10 +464,9 @@ bestemte situationer.
 begrænset adgang. Kan undværes, men ikke effektivt.
 \end{description}
 
-\subsection{Tekniske
-Implementering(er)}\label{tekniske-implementeringer}
+\subsection{Tekniske Implementeringer}\label{tekniske-implementeringer}
 
-Her grupperes de enkelte roller og applikationsroller jf forskellige
+Her grupperes de enkelte roller og applikationsroller jf. forskellige
 mønstre.
 
 \emph{Datanvendelse}
@@ -511,23 +495,24 @@ borger.
 \item[SOA / Email]
 \emph{implementationsmønster}
 \item[Fælles system]
-\emph{implementationsmønster} e.g.~e-Boks.
+\emph{implementationsmønster} fx e-Boks.
 \item[Service Providers]
 \emph{implementationsmønster} kan være både generisk eller specifikt for
 et domæne.
 \end{description}
 
-\emph{Registrering} Registrering af data er ikke i scope for denne
-referencearkitektur, men medtages kort pga. sin væsentlige relation til
-Index-konceptet.
+\emph{Registrering}
+
+Registrering af data er ikke i scope for denne referencearkitektur, men
+medtages kort pga. sin væsentlige relation til Index-konceptet.
 
 \begin{description}
 \tightlist
-\item[ansvar hos registrant]
+\item[Ansvar hos registrant]
 \emph{implementationsmønster}
-\item[ansvar hos dataejer]
+\item[Ansvar hos dataejer]
 \emph{implementationsmønster}
-\item[ansvar hos distributør?]
+\item[Ansvar hos distributør]
 \emph{implementationsmønster}
 \end{description}
 
@@ -540,6 +525,7 @@ eller en særlig profilering, evt. vendt mod de enkelte, tekniske
 mønstre.
 
 \begin{itemize}
+\tightlist
 \item
   Service Design Guidelines
 \item

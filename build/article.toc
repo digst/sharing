@@ -1,29 +1,29 @@
 \select@language {danish}
-\contentsline {section}{\numberline {1}Introduktion}{2}{section.1}
-\contentsline {subsection}{\numberline {1.1}Formål}{2}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Scope}{2}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Centrale begreber}{3}{subsection.1.3}
-\contentsline {subsection}{\numberline {1.4}Anvendelse}{3}{subsection.1.4}
-\contentsline {subsection}{\numberline {1.5}Tilblivelse og governance}{3}{subsection.1.5}
-\contentsline {subsection}{\numberline {1.6}Metoderamme}{4}{subsection.1.6}
-\contentsline {subsection}{\numberline {1.7}Relation til andre referencearkitekturer}{4}{subsection.1.7}
-\contentsline {section}{\numberline {2}Strategi}{5}{section.2}
-\contentsline {subsection}{\numberline {2.1}Forretningsmæssige tendenser}{5}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Teknologiske tendenser}{5}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Strategiske målsætning}{5}{subsection.2.3}
+\contentsline {section}{\numberline {1}Introduktion}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Formål}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Scope}{3}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Centrale begreber}{4}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Anvendelse}{4}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Tilblivelse og governance}{4}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}Metoderamme}{5}{subsection.1.6}
+\contentsline {subsection}{\numberline {1.7}Relation til andre referencearkitekturer}{5}{subsection.1.7}
+\contentsline {section}{\numberline {2}Strategi}{6}{section.2}
+\contentsline {subsection}{\numberline {2.1}Forretningsmæssige tendenser}{6}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Teknologiske tendenser}{6}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Strategiske målsætninger}{6}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Vision}{6}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}Værdiskabelse}{6}{subsection.2.5}
-\contentsline {subsection}{\numberline {2.6}Strategiske principper}{6}{subsection.2.6}
-\contentsline {section}{\numberline {3}Forretning}{7}{section.3}
-\contentsline {subsection}{\numberline {3.1}Aktører}{7}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Opgaver}{7}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Funktioner}{7}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Roller}{7}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Tværgående processer}{9}{subsection.3.5}
-\contentsline {subsection}{\numberline {3.6}Forretnings-tjenester? -funktioner?}{9}{subsection.3.6}
-\contentsline {subsection}{\numberline {3.7}Forretningsobjekter}{9}{subsection.3.7}
-\contentsline {section}{\numberline {4}Teknik}{11}{section.4}
-\contentsline {subsection}{\numberline {4.1}Applikationsroller}{11}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Tekniske Implementering(er)}{11}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Områder for standardisering/profileringer}{12}{subsection.4.3}
+\contentsline {subsection}{\numberline {2.5}Værdiskabelse}{7}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Strategiske principper}{7}{subsection.2.6}
+\contentsline {section}{\numberline {3}Forretning}{8}{section.3}
+\contentsline {subsection}{\numberline {3.1}Aktører}{8}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Opgaver}{8}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Funktioner}{8}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Roller}{8}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Tværgående processer}{10}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Forretningstjenester}{10}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}Forretningsobjekter}{10}{subsection.3.7}
+\contentsline {section}{\numberline {4}Teknik}{12}{section.4}
+\contentsline {subsection}{\numberline {4.1}Applikationsroller}{12}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Tekniske Implementeringer}{12}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Områder for standardisering/profileringer}{13}{subsection.4.3}
 \contentsline {subsection}{\numberline {4.4}Identifikation af eksisterende standarder}{13}{subsection.4.4}
