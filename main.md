@@ -12,6 +12,7 @@ Synopsis vil, på kortest mulige form, give et overblik over strukturen og indho
 
 Synopsis følger skabelon for referencearkitekturer som udarbejdet i DIGST/KDA.
 
+
 ## Formål
 Referencearkitekturen understøtter anvendelse og udviklingen af offentlige it-systemer, der
 
@@ -249,7 +250,8 @@ Dokument
   ~ *objekt* [Dokumentmodel fra OIO]
 
 Datasamling
-  ~ *objekt* [Datasætmodel]
+  ~ *objekt* [Datasætmodel har ikke noget!] ISO9115: en identificerbar samling af oplysninger (samlebetegnelse for PSI, GPDR, )
+
 
 Datasubjekt
   ~ *objekt* [Grunddata, fx person]
@@ -271,6 +273,10 @@ Registreringshændelse
 
 # Teknik
 Forretningsfunktionerne understøttes/realiseres af applikationer.
+
+![Oversigt over nødvendige og understøttende applikations-services og deres indbyrdes relationer](services.pdf)
+
+
 
 ## Applikationsroller
 
