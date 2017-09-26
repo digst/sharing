@@ -5,6 +5,7 @@
 
 # Introduktion
 
+
 ## Formål
 Referencearkitekturen understøtter anvendelse og udviklingen af offentlige it-systemer, der
 
@@ -242,7 +243,8 @@ Dokument
   ~ *objekt* [Dokumentmodel fra OIO]
 
 Datasamling
-  ~ *objekt* [Datasætmodel]
+  ~ *objekt* [Datasætmodel har ikke noget!] ISO9115: en identificerbar samling af oplysninger (samlebetegnelse for PSI, GPDR, )
+
 
 Datasubjekt
   ~ *objekt* [Grunddata, fx person]
@@ -264,6 +266,10 @@ Registreringshændelse
 
 # Teknik
 Forretningsfunktionerne understøttes/realiseres af applikationer.
+
+![Oversigt over nødvendige og understøttende applikations-services og deres indbyrdes relationer](services.pdf)
+
+
 
 ## Applikationsroller
 
@@ -308,11 +314,18 @@ Når myndighed vil have adgang til data hos en anden myndighed, er der et par re
 Direkte adgang, SOA
   ~ *implementationsmønster*
 
+![A1](use-soa.pdf)
+
+
 Datadistribution
   ~ *implementationsmønster* sammenstilling samt adgangskontrol og logning
 
+![A2](use-dist.pdf)
+
 Distribueret Service- og data-platform
   ~ *implementationsmønster*
+
+![A34](use-plat.pdf)
 
 *Registreret forsendelse*
 
