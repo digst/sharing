@@ -320,18 +320,18 @@ Når myndighed vil have adgang til data hos en anden myndighed, er der et par re
 
 ### Direkte adgang, SOA
 
-![Implementeringsmønster for SOA](figures/use-soa.pdf)
+
+![Implementeringsmønster for SOA](figures/use-soa.png)
 
 TODO: Tilføj beskrivelse
 
 ### Datadistribution
-![Implementeringsmønster for datadistribution](figures/use-dist.pdf)
-
+![Implementeringsmønster for datadistribution](figures/use-dist.png)
 TODO: Tilføj beskrivelse (sammenstilling samt adgangskontrol og logning)
 
 
 ### Distribueret Service- og data-platform
-![Implementeringsmønster for distribueret dataplatform](figures/use-plat.pdf)
+![Implementeringsmønster for distribueret dataplatform](figures/use-plat.png)
 
 TODO: Tilføj beskrivelse
 
