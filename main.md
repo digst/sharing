@@ -1,9 +1,15 @@
-
-
-
+# Fællesoffentlig referencearkitektur for deling af data og dokumenter
+_Version 0.1, september 2017._
 
 
 # Introduktion
+
+Denne version udgør synopsis for det videre arbejde med en referencearkitektur.
+
+Formålet er at konkretisere et muligt indhold med henblik på udpegning af interessenter samt at afgrænse opgaven i forhold til øvrige aktiviteter.
+
+
+Synopsis følger skabelon for referencearkitekturer som udarbejdet i DIGST/KDA.
 
 
 ## Formål
@@ -311,21 +317,23 @@ Her grupperes de enkelte roller og applikationsroller jf. forskellige mønstre.
 
 Når myndighed vil have adgang til data hos en anden myndighed, er der et par relevante mønstre:
 
-Direkte adgang, SOA
-  ~ *implementationsmønster*
-
-![A1](use-soa.png)
+### Direkte adgang, SOA
 
 
-Datadistribution
-  ~ *implementationsmønster* sammenstilling samt adgangskontrol og logning
+![Implementeringsmønster for SOA](figures/use-soa.png)
 
-![A2](use-dist.png)
+TODO: Tilføj beskrivelse
 
-Distribueret Service- og data-platform
-  ~ *implementationsmønster*
+### Datadistribution
+![Implementeringsmønster for datadistribution](figures/use-dist.png)
+TODO: Tilføj beskrivelse (sammenstilling samt adgangskontrol og logning)
 
-![A34](use-plat.png)
+
+### Distribueret Service- og data-platform
+![Implementeringsmønster for distribueret dataplatform](figures/use-plat.png)
+
+TODO: Tilføj beskrivelse
+
 
 *Registreret forsendelse*
 
