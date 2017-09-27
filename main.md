@@ -49,7 +49,7 @@ Uden for scope:
 ## Centrale begreber
 I det efterfølgende vil begrebet data blive brugt til at betegne både oplysninger på dokumentform og oplysninger der optræder i registre. Vi anvender begrebet datasamling både om et register og et repository med dokumenter.
 
-![Anvendelse af begrebet data og relaterede begreber i denne referencearkitektur](abstraktion.pdf)
+![Anvendelse af begrebet data og relaterede begreber i denne referencearkitektur](figures/abstraktion.png)
 
 Vi vil endvidere lave en skelnen mellem:
  - Udstilling af data - typisk via API i system-til-system-integrationer
@@ -184,7 +184,7 @@ Referencearkitekturen finder anvendelse i løsningen af alle offentlige opgaver.
 ## Funktioner
 Referencearkitekturen beskriver tre centrale use cases, hvor aktører arbejder sammen i forskellige roller
 
-![Tværgående use cases og funktioner hos de enkelte roller](usecases.pdf)
+![Tværgående use cases og funktioner hos de enkelte roller](figures/usecases.png)
 
 
 
@@ -246,7 +246,7 @@ Procestrin udtrykkes typisk ved Forretningstjenester, der igen kan realiseres af
 ## Forretningsobjekter
 Nedenfor fremgår en initiel oversigt over en række forretningsobjekter, der er væsentlige for referencearkitekturen. Det videre arbejde skal klarlægge, hvilke elementer der skal indgå i listen samt hvordan de defineres. Modelleringsniveauet skal endvidere lægges fast (bregrebsmodellering og/eller logiske kernemodeller?) Kommentarer/regibemærkninger indgår i listen, markeret med kantede parenteser.
 
-![Oversigt over de centrale forretningsobjekter og deres relationer](objekter.pdf)
+![Oversigt over de centrale forretningsobjekter og deres relationer](figures/objekter.png)
 
 Data
   ~ *objekt* (Abstrakt. Bruges om både registerrecord og dokument)
@@ -276,7 +276,23 @@ Påmindelse
 Registreringshændelse
   ~ *objekt* [Datafordeler]
 
+## Forretningsmønstre?
 
+Rambøll nævner:
+
+- Samtale -> forsendelse
+- Udsende, hente -> forsendelse? udstilling?
+- Indberetning -> registrering
+- Udsende eller hente med svarforventning -> forsendelse?
+- Abonnement -> ekstra service ved udstilling
+- Proceskæde med afhængigheder -> forsendelse mellem processer
+
+KL nævner i rammearkitekturen:
+
+- Kald integration -> udstilling
+- Hændelsesbeskedintegration -> ekstra service ved udstilling
+- Meddelelsesbesked integration -> forsendelse
+- Dialogintegration -> udstilling?
 
 
 # Teknisk arkitektur
@@ -324,43 +340,48 @@ Katalog
 Her grupperes de enkelte roller og applikationsroller jf. forskellige mønstre.
 
 
-### *Dataanvendelse*
+### Dataanvendelse
 
 Når en dataanvender (virksomheder eller myndigheder) vil have adgang til data hos en myndighed, er der et par relevante mønstre: (TODO: Overvej samtykker ift. Virksomhed)
 
 #### Direkte adgang, SOA
-
-
-![Implementeringsmønster for SOA](figures/use-soa.png)
+![Implementeringsmønster for service enablede registre](figures/use-soa.png)
 
 TODO: Tilføj beskrivelse
 
-### Datadistribution
+#### Datadistribution
 ![Implementeringsmønster for datadistribution](figures/use-dist.png)
+
 TODO: Tilføj beskrivelse (sammenstilling samt adgangskontrol og logning)
 
 
-### Distribueret Service- og data-platform
+#### Distribueret Service- og data-platform
 ![Implementeringsmønster for distribueret dataplatform](figures/use-plat.png)
 
 TODO: Tilføj beskrivelse
 
 
-*Registreret forsendelse*
+### Registreret forsendelse
 
 Når en myndighed vil sende noget til en myndighed, virksomhed eller borger.
 
-SOA / Email
-  ~ *implementationsmønster*
 
-Fælles system
-  ~ *implementationsmønster* fx e-Boks. Analogi til varder el. postbokskontor. Kan aftales bilateralt, inden for domæner m.m.
-
-Service Providers
-  ~ *implementationsmønster* kan være både generisk eller specifikt for et domæne.
+#### Sikker email
+![Implementeringsmønster for email](figures/send-email.png)
 
 
-*Registrering*
+#### Fælles system
+![Implementeringsmønster for fælles applikation](figures/send-shared.png)
+
+fx e-Boks. Analogi til varder el. postbokskontor. Kan aftales bilateralt, inden for domæner m.m.
+
+#### Service Providers
+![Implementeringsmønster for ecosystem](figures/send-eco.png)
+
+kan være både generisk eller specifikt for et domæne.
+
+
+### Registrering*
 
 Registrering af data er ikke i scope for denne referencearkitektur, men medtages kort pga. sin væsentlige relation til Index-konceptet.
 

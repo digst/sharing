@@ -4194,7 +4194,7 @@ providers<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" 
           <y:Path sx="0.0" sy="0.0" tx="-1.9819045318858457" ty="5.878618902068638"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="plain"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Helvetica Neue" fontSize="8" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="13.53600025177002" horizontalTextPosition="center" iconTextGap="4" modelName="side_slider" preferredPlacement="target" ratio="0.0" textColor="#000000" verticalTextPosition="bottom" visible="true" width="29.61600112915039" x="-7.2454213295714E-7" y="-25.690126363297395">opslag<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="target" side="anywhere" sideReference="relative_to_edge_flow"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Helvetica Neue" fontSize="8" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="13.53600025177002" horizontalTextPosition="center" iconTextGap="4" modelName="side_slider" preferredPlacement="target" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" width="29.61600112915039" x="1.999999275457867" y="-34.76307635177136">opslag<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="target" side="anywhere" sideReference="relative_to_edge_flow"/>
           </y:EdgeLabel>
           <y:BendStyle smoothed="true"/>
         </y:PolyLineEdge>
