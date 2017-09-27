@@ -181,15 +181,17 @@ Referencearkitekturen beskriver tre centrale use cases, hvor aktører arbejder s
 ![Tværgående use cases og funktioner hos de enkelte roller](usecases.pdf)
 
 
-Registrering
-  ~ *collaboration* hvor oplysninger bringes på digital form
 
-Datanvendelse
+
+Udstilling af data og dokumenter
   ~ *collaboration* hvor oplysninger anvendes i en opgave
 
-Registreret forsendelse
+Forsendelse af meddelelser
   ~ *collaboration* hvor meddelelser sendes uafviseligt
 
+
+Registrering
+    ~ *collaboration* hvor oplysninger bringes på digital form
 
 ## Roller
 
