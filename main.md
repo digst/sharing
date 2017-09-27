@@ -8,6 +8,7 @@ Denne version udgør synopsis for det videre arbejde med en referencearkitektur.
 
 Formålet er at konkretisere et muligt indhold med henblik på udpegning af interessenter samt at afgrænse opgaven i forhold til øvrige aktiviteter.
 
+Synopsis vil, på kortest mulige form, give et overblik over strukturen og indholdet af den endelige arkitektur. Synopsen er ikke et gennemarbejdet bud på den endelige løsning, men skal udtale sig om retning og afprøve rammerne for det videre arbejde.
 
 Synopsis følger skabelon for referencearkitekturer som udarbejdet i DIGST/KDA.
 
