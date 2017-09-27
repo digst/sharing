@@ -274,7 +274,7 @@ Registreringshændelse
 # Teknik
 Forretningsfunktionerne understøttes/realiseres af applikationer.
 
-![Oversigt over nødvendige og understøttende applikations-services og deres indbyrdes relationer](tjenester.pdf)
+![Oversigt over nødvendige og understøttende applikations-services og deres indbyrdes relationer](figures/services.png)
 
 
 
