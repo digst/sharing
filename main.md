@@ -51,6 +51,12 @@ I det efterfølgende vil begrebet data blive brugt til at betegne både oplysnin
 
 ![Anvendelse af begrebet data og relaterede begreber i denne referencearkitektur](abstraktion.pdf)
 
+Vi vil endvidere lave en skelnen mellem:
+ - Udstilling af data - typisk via API i system-til-system-integrationer
+ - Forsendelse af meddelelser indeholdende data (eller dokumenter) - typisk brugt ved beskeder til borgere/virksomheder, der skal have retsvirkning, men også et klassisk mønster brugt i system-til-system-integrationer.
+
+ TODO: Indsæt figur.
+
 
 ## Anvendelse
 Referencearkitekturen skal:
@@ -273,7 +279,9 @@ Registreringshændelse
 
 
 
-# Teknik
+# Teknisk arkitektur
+Dette afsnit beskriver de væsentligste komponenter og services, der skal indgå i en løsningsarkitektur for deling af data og dokumenter. TODO: Færdiggør indledning.
+
 Forretningsfunktionerne understøttes/realiseres af applikationer.
 
 ![Oversigt over nødvendige og understøttende applikations-services og deres indbyrdes relationer](figures/services.png)
@@ -316,11 +324,11 @@ Katalog
 Her grupperes de enkelte roller og applikationsroller jf. forskellige mønstre.
 
 
-*Datanvendelse*
+### *Dataanvendelse*
 
-Når myndighed vil have adgang til data hos en anden myndighed, er der et par relevante mønstre:
+Når en dataanvender (virksomheder eller myndigheder) vil have adgang til data hos en myndighed, er der et par relevante mønstre: (TODO: Overvej samtykker ift. Virksomhed)
 
-### Direkte adgang, SOA
+#### Direkte adgang, SOA
 
 
 ![Implementeringsmønster for SOA](figures/use-soa.png)
@@ -346,7 +354,7 @@ SOA / Email
   ~ *implementationsmønster*
 
 Fælles system
-  ~ *implementationsmønster* fx e-Boks.
+  ~ *implementationsmønster* fx e-Boks. Analogi til varder el. postbokskontor. Kan aftales bilateralt, inden for domæner m.m.
 
 Service Providers
   ~ *implementationsmønster* kan være både generisk eller specifikt for et domæne.
