@@ -96,7 +96,8 @@ Udarbejdelsen af referencearkitekturen tager udgangspunkt i en række identifice
 
 ## Forretningsmæssige tendenser
 
-- Ensretning og nationale indsatser
+- Ensretning og nationale indsatser 
+MBK: <Hvad menes med ensretning?>
 - Data har øget værdi for organisationer
 - Øget bevågenhed omkring beskyttelse af privatliv
 - Øget opmærksomhed om håndtering af personlige oplysninger
@@ -129,7 +130,8 @@ Transperancy
 Re-use
   ~ *mål* om genbrug af it med henblik på lavere omkostninger
 
-
+MBK: <savner mål der kobler til visionen om det datadrevne samfund / data som råstof for samfundsudviklingen>
+ 
 ## Vision
 [TODO fokus på første workshop]: x
 
@@ -138,7 +140,7 @@ Re-use
 > *Byrden i datadeling skal afløftes fra dataejer, hvis den begrænser genbrug*
 
 > *Ensartet datadeling skal understøtte sammenstilling af data og tværgående brug*
-
+MBK: <fælles metoder er måske bedre end ensartet?>
 > *Klar governancce omkring beskrivelse af, adgang til og brug af data*
 
 
@@ -148,6 +150,7 @@ Re-use
 - Simplere arbejdsgange og mere potentiale for automatisering hos myndigheder [og virksomheder]
 - Understøtte transparens og bevare tillid til registre
 - Effektiv systemudvikling (begrænse udfaldsrum, opsamle best practice)
+MBK: <igen: data som råstof for vækst. Store potentialer for innovation, konkurrencefordele osv>
 
 ## Strategiske principper
 
@@ -162,6 +165,10 @@ Forretningsmæssige, Informationsmæssige, Applikationsmæssige og Tekniske prin
 - A3: Adgang til og fra internationale registre sker gennem national gateway
 - T1: Central fuldmagts-/rettighedsstyring
 - T2: Multi-flavour-api
+
+MBK: <savner noget om fælles referencedata (masterdata, grunddata, klassifikationer)>
+MBK: <savner noget om muligheder for at berige data (koble flere data omkring fælles objekter)>
+MBK: <savner noget om kvalitetssikring af data - som lægger op til fx at kunne falge data med dårlig kvalitet, indmelde 7 forreslå ændring af fejl i data, især i delte masterdata og grunddata>
 
 
 
@@ -215,6 +222,7 @@ Dataejer
 
 Datadistributør
   ~ *rolle* som ejer registreringer/data, ansvar for at udarbejde adgangspolitik
+MBK: <samme definition for to roller er ikke så godt. datadistributør er vel ikke en roller der ejer register/data. Det er nok heller ikke denne role der skal udarbejde adgangspolitik, men har ansvar for at håndhæve den der er udarbejdet af dataejer>
 
 Messaging User
   ~ *rolle* som der sender og modtager meddelelser
@@ -231,6 +239,7 @@ Herunder beskrives, hvor de enkelte business functions hos de enkelte roller anv
  - Sagsbehandling (fra Sag og dokument)
  - Simpel selvbetjening (fra Selvbetjening)
  - Tværgående selvbetjening (fra Sammenhængende services)
+MBK: <fra Selvbetjening, hvis i snakker om referencearkitektur. Vi har ikke en der hedder sammenhængende services> 
  - Indsigt i oplysninger og deres anvendelse (fra Overblik over sag og ydelser)
  - Sende meddelelse (inkl. brug af tilmeldingslister og påmindelser)
  - Modtage meddelelse
@@ -276,7 +285,13 @@ Påmindelse
 Registreringshændelse
   ~ *objekt* [Datafordeler]
 
+MBK: <Liste og model matcher ikke helt>
+MBK: <savner Dataservice, Forretningshændelse, Klassifikation>
+MBK: <Der bør være noget om sammenhængen mellem Referenceinformationsmodel, Applikationsprofiler og Snitfaldespecifikationer (inkl operationer og format)
+MBK: <Noget om anonymiserede data. Evt. kandidat til standardiseret metode>
+ 
 ## Forretningsmønstre?
+
 
 Rambøll nævner:
 
@@ -319,6 +334,7 @@ Dataservice
 - opbevare datasamling
 - begrænse adgang til de rigtige
 - (måske) vedligeholde og udsende abonnementer
+MBK: <vel også udstille / dele, understøtte fremsøgning, udtræk og evt yderligere operationer, som fejl rette, flage fejl o.l.>
 
 Kontaktregister
   ~ *applikationsservice* som er en slags data service med en særlig type oplysninger
@@ -331,9 +347,12 @@ Indeks
 
 Katalog
   ~ *applikationsservice* som ikke er en dataservice, fordi der ikke er begrænset adgang. Kan undværes, men ikke effektivt.
+MBK: >Forstår ikke denne defintion. For mig er hverken et katalog eller en dataservice defineret ved adgangsrettigheder. Et katalog skal fx også kunne begrænse adgang og en dataservice skal også kunne tilbyde adgang til læs . søg, hent / download uden login hvis der er tale om åbne data uden rettighedsbegrænsninger.>
+
+MBK: <Savner byggeblokke som fx Klassifikationsservices (både udstille klassifikationer og mapninger), Serviceregister, Systemkatalog, datakatalog, Modelkatalog.>
 
 [TODO Skal vi have en "beskyttet dataservice" og en offentlig?]: x
-
+MBK:<Det mener jeg er et must, jf hele open data agendaen>
 
 
 ## Tekniske Implementeringer
@@ -348,6 +367,10 @@ Når en dataanvender (virksomheder eller myndigheder) vil have adgang til data h
 ![Implementeringsmønster for service enablede registre](figures/use-soa.png)
 
 TODO: Tilføj beskrivelse
+MBK: SOA bruges ikkekun til direkte adgang, men kan også være via proxy, som fx datafordeleren, der jo også tilbyder SOA-services af forskellig flavour.
+MBK:<Der bør være noget om flavours af SOA: EDA, LD. og om SOAP vs REST. Plus vel også koblingen til AS"/AS4 når vi snakker protokoller>
+MBK: Måske ikke det rette sted for denne kommentar, men vi bør også komme omkring Linked data og Block Chain i et afsnit om teknologitrends.
+MBK: <Der bør også være noget om synkron vs asynkron og om fil/batch mønster>
 
 #### Datadistribution
 ![Implementeringsmønster for datadistribution](figures/use-dist.png)
@@ -368,7 +391,7 @@ Når en myndighed vil sende noget til en myndighed, virksomhed eller borger.
 
 #### Sikker email
 ![Implementeringsmønster for email](figures/send-email.png)
-
+MBK: <Dette mener jeg vi bør forsøge at lægge uden for scope ifht at deling er vores hoedfokus>
 
 #### Fælles system
 ![Implementeringsmønster for fælles applikation](figures/send-shared.png)
@@ -415,4 +438,6 @@ Nedenstående, tekniske områder er kandidater til at indgå i referencearkitekt
 - Hjemmel (samtykke, lov)
 - Context
 
+MBK:<Web service beskrivelser er også et vigtigt emne. Fx en udvidelse af WSDL, så det understøtter Linked data. tal med Peter bruhn om dette.>
+MBK: <Fælles liste over standard operationer og vejledning i hvordan de inarbedes ifbm med udarbejdelse af snitfladespecifikationer>
 ## Identifikation af eksisterende standarder
