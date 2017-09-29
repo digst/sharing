@@ -104,8 +104,8 @@ Udarbejdelsen af referencearkitekturen tager udgangspunkt i en række identifice
 
 ## Forretningsmæssige tendenser
 
-- Ensretning og nationale indsatser
-MBK: <Hvad menes med ensretning?>
+- Nationalt ønske om at undgå knopskudte løsninger
+[MBK: Hvad menes med ensretning?]: x
 - Data har øget værdi for organisationer
 - Øget bevågenhed omkring beskyttelse af privatliv
 - Øget opmærksomhed om håndtering af personlige oplysninger
@@ -125,31 +125,30 @@ MBK: <Hvad menes med ensretning?>
 
 ## Strategiske målsætninger
 [TODO beskriv målsætninger i eksisterende aftaler og strategier, også gerne fra andre områder]: x
+De overordnede målsætninger for denne referencearkitektur kobler alle til visionen om det datadrevne samfund, hvor data ses som et råstof for samfundsudviklingen.
 
-Interoperability
+Målsætningerne inkluderer:
+- **Interoperabilitet**
   ~  *mål* om sammenhængende services... integrated service delivery
-
-Once-only
+- **Once-only**
   ~  *mål* om at borger og virksomhed kun skal afgive den samme information til det offentlige en gang... (men give lov til genbrug?)
-
-Transperancy
+- **Transparens**
   ~ *mål* om at borgere og virksomheder skal kunne se, hvilke data der findes om dem, og hvor disse data anvendes
-
-Re-use
+- **Genbrug**
   ~ *mål* om genbrug af it med henblik på lavere omkostninger
 
-MBK: <savner mål der kobler til visionen om det datadrevne samfund / data som råstof for samfundsudviklingen>
+[MBK: <savner mål der kobler til visionen om det datadrevne samfund / data som råstof for samfundsudviklingen>]: x
 
 ## Vision
-[TODO fokus på første workshop]: x
+[TODO update baseret på første workshop]: x
 
 > *Data skal være nemme at bruge og svære at misbruge*
 
 > *Byrden i datadeling skal afløftes fra dataejer, hvis den begrænser genbrug*
 
-> *Ensartet datadeling skal understøtte sammenstilling af data og tværgående brug*
-MBK: <fælles metoder er måske bedre end ensartet?>
-> *Klar governancce omkring beskrivelse af, adgang til og brug af data*
+> *Fælles metoder for datadeling skal understøtte sammenstilling af data og tværgående brug*
+[MBK: <fælles metoder er måske bedre end ensartet?>]: x
+> *Klar governance omkring beskrivelse af, adgang til og brug af data*
 
 
 ## Værdiskabelse
