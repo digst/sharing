@@ -57,8 +57,8 @@ I det efterfølgende vil begrebet data blive brugt til at betegne både oplysnin
 ![Anvendelse af begrebet data og relaterede begreber i denne referencearkitektur](figures/abstraktion.png)
 
 Vi vil endvidere lave en skelnen mellem:
- - Udstilling af data - typisk via API i system-til-system-integrationer
- - Forsendelse af meddelelser indeholdende data (eller dokumenter) - typisk brugt ved beskeder til borgere/virksomheder, der skal have retsvirkning, men også et klassisk mønster brugt i system-til-system-integrationer.
+ - Anvendelse af udstillede data - typisk via API i system-til-system-integrationer
+ - Forsendelse af meddelelser indeholdende data (herunder dokumenter) - typisk brugt ved beskeder til borgere/virksomheder, der skal have retsvirkning, men også et klassisk mønster brugt i system-til-system-integrationer.
 
 Den fundamentale forskel på disse to scenarier er, om det er afsenderen eller modtageren af data, der kender formålet med interaktionen. Ved udstiling af data er dataafsenderen som udgangspunkt ikke bekendt med datamodtagerens formål (men er naturligvis forpligtet til at håndhæve relevant hjemmel). Ved forsendelse af meddelelser er det dataafsenderen, der i en given kontekst afsender en meddelelse med et givent formål - typisk som led i en proces.
 
@@ -75,8 +75,6 @@ Referencearkitekturen skal:
 Første udgave er skrevet hos Kontor for Data og Arkitektur af Mads Hjorth, Digitaliseringsstyrelsen og Anders Fausbøll, Omnium Improvement.
 
 Endelig godkendelse forventes hos Styregruppe for Data og Arkitektur under Digitaliseringsstrategien 18. december 2017.
-
-Synopsis følger skabelon for referencearkitekturer som udarbejdet i DIGST/KDA.
 
 ## Metoderamme
 Referencearkitekturen er udarbejdet inden for rammerne af Fællesoffentlig Digital Arkitektur og følger så vidt muligt den fælles skabelon for referencearkitekturer som udarbejdet i DIGST/KDA. Metoderammen bygger blandt andet på erfaringer fra OIO referencearkitektur, og indarbejder også elementer fra EIRA, TOGAF, ArchiMate m.m..
@@ -104,9 +102,8 @@ Udarbejdelsen af referencearkitekturen tager udgangspunkt i en række identifice
 
 ## Forretningsmæssige tendenser
 
-- Nationalt ønske om at undgå knopskudte løsninger
-
 [MBK: Hvad menes med ensretning?]: x
+- Nationalt ønske om at undgå knopskudte løsninger
 - Data har øget værdi for organisationer
 - Øget bevågenhed omkring beskyttelse af privatliv
 - Øget opmærksomhed om håndtering af personlige oplysninger
@@ -148,6 +145,7 @@ Målsætningerne inkluderer:
 > *Byrden i datadeling skal afløftes fra dataejer, hvis den begrænser genbrug*
 
 > *Fælles metoder for datadeling skal understøtte sammenstilling af data og tværgående brug*
+
 [MBK: <fælles metoder er måske bedre end ensartet?>]: x
 > *Klar governance omkring beskrivelse af, adgang til og brug af data*
 
@@ -209,7 +207,6 @@ Udstilling af data og dokumenter
 
 Forsendelse af meddelelser
   ~ *collaboration* hvor meddelelser sendes uafviseligt
-
 
 Registrering
     ~ *collaboration* hvor oplysninger bringes på digital form
@@ -367,9 +364,9 @@ MBK:<Det mener jeg er et must, jf hele open data agendaen>
 Her grupperes de enkelte roller og applikationsroller jf. forskellige mønstre.
 
 
-### Dataanvendelse
+### Anvendelse af udstillede data
 
-Når en dataanvender (virksomheder eller myndigheder) vil have adgang til data hos en myndighed, er der et par relevante mønstre: (TODO: Overvej samtykker ift. Virksomhed)
+Når en dataanvender (virksomhed eller myndighed) vil have adgang til data hos en myndighed, er der et par relevante mønstre: (TODO: Overvej samtykker ift. Virksomhed)
 
 #### Direkte adgang, SOA
 ![Implementeringsmønster for service enablede registre](figures/use-soa.png)
@@ -392,7 +389,7 @@ TODO: Tilføj beskrivelse (sammenstilling samt adgangskontrol og logning)
 TODO: Tilføj beskrivelse
 
 
-### Registreret forsendelse
+### Forsendelse af meddelelse
 
 Når en myndighed vil sende noget til en myndighed, virksomhed eller borger.
 
