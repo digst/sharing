@@ -1,24 +1,29 @@
 # Fællesoffentlig referencearkitektur for deling af data og dokumenter
-_Version 0.1, september 2017._
+_Version 0.1, september 2017. Denne version er et arbejdsdokument benyttet i forbindelse med workshops med arkitektarbejdsgruppen under SDA. Arbejdsdokumentet bygger oven på en tidligere udarbejdet Synopsis for Referencearkitektur for deling af data og dokumenter (august 2017)._
 
+# Resume
+Hverdagen er digital, og data om borgere, virksomheder, myndigheder, ejendomme, steder, køretøjer o.m.m. vedligeholdes i en lang række områder af den offentlige administration. Der ligger et stort potentiale i at gøre sådanne data tilgængelige for genbrug, så de kan skabe værdi i andre sammenhænge end formålet med det oprindelige register. Dette kan danne fundament for langt bedre understøttelse af tværgående, offentlige services, og åbner tillige for anvendelse af data i nye og innovative sammenhænge.
+
+Men deling af data kan være teknisk kompliceret og i mange tilfælde omkostningstungt, bl.a. drevet af krav til sikkerhed og dermed bevarelse af borgeres og virksomheders tillid til datadeling i det offentlige Danmark. Derfor er potentialet i deling og genbrug af data i høj grad forblevet uindfriet.
+
+Denne referencearkitekturs formål er hjælpe med at indfri dette potentiale. Dette gøres ved at introducere en fælles beskrivelse af de begreber og sammenhænge, der er væsentlige for at forstå og arbejde med design og implementering af løsninger, der involverer deling af data og dokumenter. Dette sker både på det strategiske plan, hvor vision, mål og arkitektoniske principper fastlægges; på det forretningsmæssige plan, hvor de typiske brugsscenarier beskrives; og på det tekniske plan, hvor en række implementeringsmønstre angiver, hvordan man i og mellem applikationer kan dele og forsende data.
+
+Referencearkitekturen er udarbejdet under den fællesoffentlige digitaliseringsstrategi 2016-2020 og er som sådan relevant for alle offentlige myndigheder og deres leverandører samt for virksomheder, der ønsker at gøre brug af offentlige data.
 
 # Introduktion
 
-Denne version udgør synopsis for det videre arbejde med en referencearkitektur.
+## Formål og målgruppe
 
-Formålet er at konkretisere et muligt indhold med henblik på udpegning af interessenter samt at afgrænse opgaven i forhold til øvrige aktiviteter.
-
-Synopsis vil, på kortest mulige form, give et overblik over strukturen og indholdet af den endelige arkitektur. Synopsen er ikke et gennemarbejdet bud på den endelige løsning, men skal udtale sig om retning og afprøve rammerne for det videre arbejde.
-
-Synopsis følger skabelon for referencearkitekturer som udarbejdet i DIGST/KDA.
-
-
-## Formål
-Referencearkitekturen understøtter anvendelse og udviklingen af offentlige it-systemer, der
+Referencearkitekturen for deling af data og dokumenter understøtter design, udvikling og anvendelse af offentlige it-systemer, der
 
 - (gen)anvender oplysninger i form af data og dokumenter til sagsbehandling eller selvbetjening
 - sender eller modtager meddelelser fra andre it-systemer
 
+Dokumentet er primært målrettet it-arkitekter tilknyttet offentlige digitaliseringsprojekter, herunder enterprise-arkitekter, forretningsarkitekter og løsningsarkitekter, der har til opgave at kravspecificere og designe løsninger.
+
+De første dele af dokumentet (Strategisk og Forretningsmæssig arkitektur) henvender sig endvidere til projektledere og beslutningstagere, herunder forretningsansvarlige, digitaliseringschefer, it-chefer, afdelings- og kontorchefer og andre med rollen som systemejer.
+
+Dokumentet i sin helhed er også relevant for leverandører at orientere sig i.
 
 ## Scope
 
@@ -55,6 +60,8 @@ Vi vil endvidere lave en skelnen mellem:
  - Udstilling af data - typisk via API i system-til-system-integrationer
  - Forsendelse af meddelelser indeholdende data (eller dokumenter) - typisk brugt ved beskeder til borgere/virksomheder, der skal have retsvirkning, men også et klassisk mønster brugt i system-til-system-integrationer.
 
+Den fundamentale forskel på disse to scenarier er, om det er afsenderen eller modtageren af data, der kender formålet med interaktionen. Ved udstiling af data er dataafsenderen som udgangspunkt ikke bekendt med datamodtagerens formål (men er naturligvis forpligtet til at håndhæve relevant hjemmel). Ved forsendelse af meddelelser er det dataafsenderen, der i en given kontekst afsender en meddelelse med et givent formål - typisk som led i en proces.
+
  TODO: Indsæt figur.
 
 
@@ -69,12 +76,13 @@ Første udgave er skrevet hos Kontor for Data og Arkitektur af Mads Hjorth, Digi
 
 Endelig godkendelse forventes hos Styregruppe for Data og Arkitektur under Digitaliseringsstrategien 18. december 2017.
 
+Synopsis følger skabelon for referencearkitekturer som udarbejdet i DIGST/KDA.
 
 ## Metoderamme
-Skrives inden for rammerne af Fællesoffentlige Digital Arkitektur, det vil sige; erfaringer fra OIO referencearkitektur, EIRA, TOGAF, ArchiMate.
+Referencearkitekturen er udarbejdet inden for rammerne af Fællesoffentlig Digital Arkitektur og følger så vidt muligt den fælles skabelon for referencearkitekturer som udarbejdet i DIGST/KDA. Metoderammen bygger blandt andet på erfaringer fra OIO referencearkitektur, og indarbejder også elementer fra EIRA, TOGAF, ArchiMate m.m..
 
 ## Relation til andre referencearkitekturer
-Gør brug af
+Gør brug af:
 
 - Fællesoffentlig referencearkitektur for brugerstyring
 
@@ -90,13 +98,13 @@ Skal anvendes i kontekst sammen med:
 - Sag- og dokument på det kommunale område
 
 
-# Strategi
+# Strategisk arkitektur
 
 Udarbejdelsen af referencearkitekturen tager udgangspunkt i en række identificerede forretningsmæssige og teknologiske trends og tendenser.
 
 ## Forretningsmæssige tendenser
 
-- Ensretning og nationale indsatser 
+- Ensretning og nationale indsatser
 MBK: <Hvad menes med ensretning?>
 - Data har øget værdi for organisationer
 - Øget bevågenhed omkring beskyttelse af privatliv
@@ -131,7 +139,7 @@ Re-use
   ~ *mål* om genbrug af it med henblik på lavere omkostninger
 
 MBK: <savner mål der kobler til visionen om det datadrevne samfund / data som råstof for samfundsudviklingen>
- 
+
 ## Vision
 [TODO fokus på første workshop]: x
 
@@ -172,7 +180,7 @@ MBK: <savner noget om kvalitetssikring af data - som lægger op til fx at kunne 
 
 
 
-# Forretning
+# Forretningsmæssig arkitektur
 
 ## Aktører
 
@@ -239,7 +247,7 @@ Herunder beskrives, hvor de enkelte business functions hos de enkelte roller anv
  - Sagsbehandling (fra Sag og dokument)
  - Simpel selvbetjening (fra Selvbetjening)
  - Tværgående selvbetjening (fra Sammenhængende services)
-MBK: <fra Selvbetjening, hvis i snakker om referencearkitektur. Vi har ikke en der hedder sammenhængende services> 
+MBK: <fra Selvbetjening, hvis i snakker om referencearkitektur. Vi har ikke en der hedder sammenhængende services>
  - Indsigt i oplysninger og deres anvendelse (fra Overblik over sag og ydelser)
  - Sende meddelelse (inkl. brug af tilmeldingslister og påmindelser)
  - Modtage meddelelse
@@ -289,7 +297,7 @@ MBK: <Liste og model matcher ikke helt>
 MBK: <savner Dataservice, Forretningshændelse, Klassifikation>
 MBK: <Der bør være noget om sammenhængen mellem Referenceinformationsmodel, Applikationsprofiler og Snitfaldespecifikationer (inkl operationer og format)
 MBK: <Noget om anonymiserede data. Evt. kandidat til standardiseret metode>
- 
+
 ## Forretningsmønstre?
 
 
