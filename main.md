@@ -105,6 +105,7 @@ Udarbejdelsen af referencearkitekturen tager udgangspunkt i en række identifice
 ## Forretningsmæssige tendenser
 
 - Nationalt ønske om at undgå knopskudte løsninger
+
 [MBK: Hvad menes med ensretning?]: x
 - Data har øget værdi for organisationer
 - Øget bevågenhed omkring beskyttelse af privatliv
