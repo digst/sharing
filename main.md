@@ -315,7 +315,7 @@ Registreringshændelse
 
 ## Forretningsmønstre
 
-TBU. <cf issue #6>
+*TBU.* <cf issue #6>
 
 
 
@@ -383,7 +383,7 @@ I dette mønster, som er simpelt og måske det mest klassiske, er det Dataejer, 
 Fordelen ved dette mønster er, at det er simpelt. Ulempen er, at Dataejer kommer til at bære hele udgiften ved at stille data bredt til rådighed.
 
 
-[MBK: SOA bruges ikkekun til direkte adgang, men kan også være via proxy, som fx datafordeleren, der jo også tilbyder SOA-services af forskellig flavour. AF: Fanget i næste mønster?]: x
+[MBK: SOA bruges ikke kun til direkte adgang, men kan også være via proxy, som fx datafordeleren, der jo også tilbyder SOA-services af forskellig flavour. AF: Fanget i næste mønster?]: x
 
 [MBK: Der bør være noget om flavours af SOA EDA, LD. og om SOAP vs REST. Plus vel også koblingen til AS2/AS4 når vi snakker protokoller.]: x
 
@@ -441,7 +441,6 @@ Et Fælles system-mønster kan fungere på mange niveauer, herunder nationalt (f
 
 #### Økosystem/Service providers
 ![Implementeringsmønster for ecosystem](figures/send-eco.png)
-[TODO Fjern opslags pile fra Modtager og Modtagers SP]: x
 
 I dette mønster deltager både Afsender (A) og Modtager (D) i et Meddelelses-økosystem ved at vælge hver sin Forsendelses-Service provider (hhv. B og C). Økosystem-mønsteret er bl.a. kendt i kontekst af den europæiske eDelivery-standard som en *four corner model*.
 
@@ -490,3 +489,5 @@ Nedenstående, tekniske områder er kandidater til at indgå i referencearkitekt
 [MBK: Web service beskrivelser er også et vigtigt emne. Fx en udvidelse af WSDL, så det understøtter Linked data. tal med Peter bruhn om dette.]: x
 [MBK: Fælles liste over standard operationer og vejledning i hvordan de inarbedes ifbm med udarbejdelse af snitfladespecifikationer]: x
 ## Identifikation af eksisterende standarder
+
+*TBU.*
