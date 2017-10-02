@@ -1,12 +1,16 @@
 # Fællesoffentlig referencearkitektur for deling af data og dokumenter
-_Version 0.1, september 2017. Denne version er et arbejdsdokument benyttet i forbindelse med workshops med arkitektarbejdsgruppen under SDA. Arbejdsdokumentet bygger oven på en tidligere udarbejdet Synopsis for Referencearkitektur for deling af data og dokumenter (august 2017)._
+*Versionsoversigt:*
+
+_Version 0.1, september 2017. Arbejdsdokument, der bygger oven på en tidligere udarbejdet Synopsis for Referencearkitektur for deling af data og dokumenter (august 2017). Benyttet i workshop med arkitektarbejdsgruppen under SDA._
+
+_Version 0.2, oktober 2017. Arbejdsdokument benyttet i forbindelse med anden workshop med arkitektarbejdsgruppen under SDA._
 
 # Resume
 Hverdagen er digital, og data om borgere, virksomheder, myndigheder, ejendomme, steder, køretøjer o.m.m. vedligeholdes i en lang række områder af den offentlige administration. Der ligger et stort potentiale i at gøre sådanne data tilgængelige for genbrug, så de kan skabe værdi i andre sammenhænge end formålet med det oprindelige register. Dette kan danne fundament for langt bedre understøttelse af tværgående, offentlige services, og åbner tillige for anvendelse af data i nye og innovative sammenhænge.
 
 Men deling af data kan være teknisk kompliceret og i mange tilfælde omkostningstungt, bl.a. drevet af krav til sikkerhed og dermed bevarelse af borgeres og virksomheders tillid til datadeling i det offentlige Danmark. Derfor er potentialet i deling og genbrug af data i høj grad forblevet uindfriet.
 
-Denne referencearkitekturs formål er hjælpe med at indfri dette potentiale. Dette gøres ved at introducere en fælles beskrivelse af de begreber og sammenhænge, der er væsentlige for at forstå og arbejde med design og implementering af løsninger, der involverer deling af data og dokumenter. Dette sker både på det strategiske plan, hvor vision, mål og arkitektoniske principper fastlægges; på det forretningsmæssige plan, hvor de typiske brugsscenarier beskrives; og på det tekniske plan, hvor en række implementeringsmønstre angiver, hvordan man i og mellem applikationer kan dele og forsende data.
+Denne referencearkitekturs formål er at hjælpe med at indfri dette potentiale. Dette gøres ved at introducere en fælles beskrivelse af de begreber og sammenhænge, der er væsentlige for at forstå og arbejde med design og implementering af løsninger, der involverer deling af data og dokumenter. Dette sker både på det strategiske plan, hvor vision, mål og arkitektoniske principper fastlægges; på det forretningsmæssige plan, hvor de typiske brugsscenarier beskrives; og på det tekniske plan, hvor en række implementeringsmønstre angiver, hvordan man i og mellem applikationer kan dele og forsende data.
 
 Referencearkitekturen er udarbejdet under den fællesoffentlige digitaliseringsstrategi 2016-2020 og er som sådan relevant for alle offentlige myndigheder og deres leverandører samt for virksomheder, der ønsker at gøre brug af offentlige data.
 
@@ -29,16 +33,13 @@ Dokumentet i sin helhed er også relevant for leverandører at orientere sig i.
 
 Referencearkitekturen beskriver anvendelse af og udvikling af it-systemer, der reguleres af blandt andet:
 
-EU databeskyttelse
+- EU databeskyttelse
  ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
-
-EU eIDAS
+- EU eIDAS
  ~ *lov* som definerer registrede tillidstjenester
-
-Persondata lov
+- Persondata lov
  ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
-
-Lov om Digital Post
+- Lov om Digital Post
  ~ *lov* der gør det obligatorisk for virksomheder og borgere at modtage digitale meddelelser fra offentlige afsendere.
 
 Referencearkitekturen skrives på baggrund af den fællesoffentlige digitaliseringsstrategi 2020 under initiativ 8.1 med tilslutning fra
@@ -76,19 +77,21 @@ Første udgave er skrevet hos Kontor for Data og Arkitektur af Mads Hjorth, Digi
 Endelig godkendelse forventes hos Styregruppe for Data og Arkitektur under Digitaliseringsstrategien 18. december 2017.
 
 ## Metoderamme
-Referencearkitekturen er udarbejdet inden for rammerne af Fællesoffentlig Digital Arkitektur og følger så vidt muligt den fælles skabelon for referencearkitekturer som udarbejdet i DIGST/KDA. Metoderammen bygger blandt andet på erfaringer fra OIO referencearkitektur, og indarbejder også elementer fra EIRA, TOGAF, ArchiMate m.m..
+Referencearkitekturen er udarbejdet inden for rammerne af Fællesoffentlig Digital Arkitektur og følger så vidt muligt den fælles skabelon for referencearkitekturer som udarbejdet i DIGST/KDA. Metoderammen bygger blandt andet på erfaringer fra OIO referencearkitektur, og indarbejder også elementer fra EIRA, TOGAF, ArchiMate m.m.
+
+Særlige elementer er i dokumentet angivet i *kursiv* (fx *lov*, *mål*, *rolle* m.m.). Dette markerer, at de hører til Archimate-begrebsapparatet.
 
 ## Relation til andre referencearkitekturer
-Gør brug af:
+Denne referencearkitektur gør brug af:
 
 - Fællesoffentlig referencearkitektur for brugerstyring
 
-Skal kunne anvendes af:
+Den skal kunne anvendes af:
 
 - Fællesoffentlig referencearkitektur for selvbetjening
 - Fællesoffentlig referencearkitektur for overblik over egne sager og ydelser
 
-Skal anvendes i kontekst sammen med:
+... og skal anvendes i kontekst sammen med:
 
 - Deling af dokumenter på sundhedsområdet
 - Indberetning til registre på sundhedsområdet
@@ -134,38 +137,38 @@ Målsætningerne inkluderer:
 - **Genbrug**
   ~ *mål* om genbrug af it med henblik på lavere omkostninger
 
-[MBK: <savner mål der kobler til visionen om det datadrevne samfund / data som råstof for samfundsudviklingen> DONE]: x
 
 ## Vision
-[TODO update baseret på første workshop]: x
+Visionen i denne referencearkitektur er at stræbe efter en situation, hvor:
 
-> *Data skal være nemme at bruge og svære at misbruge*
+> *Data betragtes som en fælles, værdifuld og velbeskyttet ressource; de skal være nemme at dele og bruge, men svære at misbruge*
 
-> *Byrden i datadeling skal afløftes fra dataejer, hvis den begrænser genbrug*
+> *Data beskrives, fordeles, forbedres og beskyttes i fælleskab.*
 
-> *Fælles metoder for datadeling skal understøtte sammenstilling af data og tværgående brug*
+> *Fælles metoder for datadeling understøtter sammenstilling af data og tværgående brug blandt myndigheder og virksomheder*
 
-[MBK: <fælles metoder er måske bedre end ensartet?> DONE]: x
-> *Klar governance omkring beskrivelse af, adgang til og brug af data*
+> *Beskrivelse af, adgang til og brug af data sker under klar governance og håndhæves ud fra tydelig hjemmel*
 
-> *Data betragtes som en fælles værdifuld ressource; der beskrives, fordeles, forbedres og beskyttes i fælleskab.*
+> *Borgere og virksomheder har overblik over deres data og hvor, de anvendes*
+
 
 
 
 ## Værdiskabelse
-
+Værdien ved at følge denne referencearkitektur er, at den giver:
 - Mindre besvær for borger og virksomheder ved brug af digitale services
-- Simplere arbejdsgange og mere potentiale for automatisering hos myndigheder [og virksomheder]
-- Understøtte transparens og bevare tillid til registre
-- Effektiv systemudvikling (begrænse udfaldsrum, opsamle best practice)
-<MBK: igen: data som råstof for vækst. Store potentialer for innovation, konkurrencefordele osv>
+- Simplere arbejdsgange og mere potentiale for automatisering hos organisationer (myndigheder/virksomheder)
+- Understøttelse af værdiskabende innovation (ved at gøre data til et 'råstof' for vækst/skabelse af konkurrencefordele)
+- Understøttelse transparens og bevare tillid til registre
+- Effektiv systemudvikling (begrænser udfaldsrum, opsamler best practice)
 
 ## Strategiske principper
 
 Forretningsmæssige, Informationsmæssige, Applikationsmæssige og Tekniske principper bag referencearkitekturen:
 
-- F1: Autoritative register med henvisninger til andre registre
-- F2: Ansvar for begrænsning af adgang ligger hos registerejer
+- F1: Byrden i datadeling skal afløftes fra dataejer, hvis den begrænser genbrug
+- F2: Autoritative registre med henvisninger til andre registre
+- F3: Ansvar for begrænsning af adgang ligger hos registerejer
 - I1: Fælles referenceinformationsmodel
 - I2: Dokument-princip (attester mv.)?
 - A1: Onlineopslag i sagsbehandling og selvbetjening
@@ -183,37 +186,38 @@ Forretningsmæssige, Informationsmæssige, Applikationsmæssige og Tekniske prin
 # Forretningsmæssig arkitektur
 
 ## Aktører
-
-- Offentlig myndigheder, og virksomheder der handler på vegne af dem.
-- Borger og virksomheder
+De væsentligste aktører, der er i spil omkring deling af data og dokumenter, er:
+- Offentlige myndigheder, herunder virksomheder, der handler på vegne af offentlige myndigheder
+- Borgere og virksomheder
 
 
 ## Opgaver
-Referencearkitekturen finder anvendelse i løsningen af alle offentlige opgaver.
-
- - Borger og virksomhedsvendte selvbetjeningsløsninger
+Forretningsmæssigt set finder referencearkitekturen anvendelse i løsningen af alle offentlige opgaver. Specifikt kan nævnes:
+ - Borger- og virksomhedsvendte selvbetjeningsløsninger
  - Myndigheders sagsbehandling
- - Tværgående analyse, tilsyn, kontrol
+ - Tværgående analyse, tilsyn og kontrol
 
 
 ## Funktioner
-Referencearkitekturen beskriver tre centrale use cases, hvor aktører arbejder sammen i forskellige roller.
+Referencearkitekturen kredser om tre centrale use cases, hvor aktører arbejder sammen i forskellige roller.
 
 ![Tværgående use cases og funktioner hos de enkelte roller](figures/usecases.png)
 
-![To scenarier](figures/patterns.png)
 
-- Registrering
+De tre use cases er:
+
+**Registrering**
     ~ *collaboration* hvor oplysninger bringes på digital form
 
-- Anvendelse af udstillede data (herunder dokumenter)
+**Anvendelse af udstillede data** (herunder dokumenter)
   ~ *collaboration* hvor oplysninger anvendes i en opgave
 
-- Forsendelse af meddelelser
+**Forsendelse af meddelelser**
   ~ *collaboration* hvor meddelelser sendes uafviseligt
 
-## Roller
+### Roller
 
+I ovenstående use cases indgår disse roller:
 - Registrant
   ~ *rolle* som bringer oplysninger på digital form, registrer
 
@@ -228,7 +232,6 @@ Referencearkitekturen beskriver tre centrale use cases, hvor aktører arbejder s
 
 - Datadistributør
   ~ *rolle* som distribuerer data, ansvar for at håndhæve adgangspolitik
-[MBK: <samme definition for to roller er ikke så godt. datadistributør er vel ikke en roller der ejer register/data. Det er nok heller ikke denne role der skal udarbejde adgangspolitik, men har ansvar for at håndhæve den der er udarbejdet af dataejer> DONE]: x
 
 - Messaging User
   ~ *rolle* som der sender og modtager meddelelser
@@ -238,6 +241,16 @@ Referencearkitekturen beskriver tre centrale use cases, hvor aktører arbejder s
 
 Nogle af overnstående roller kan betragtes som specialiseringer af GDPR-rollen *Databehandler*.
 
+### Use cases
+![To scenarier](figures/patterns.png)
+
+Figuren ovenfor beskriver det overordnede procesflow i de tre use cases. Væsentligt at fremhæve er:
+
+**Registrering**: En registrant initierer processen hvor oplysninger bringes på digital form
+
+**Anvendelse af udstillede data** TBU
+
+**Forsendelse af meddelelser** TBU
 
 ## Tværgående processer
 Herunder beskrives, hvor de enkelte business functions hos de enkelte roller anvendes i kontekst af et sæt af generiske procesmønstre.
