@@ -246,11 +246,13 @@ Nogle af overnstående roller kan betragtes som specialiseringer af GDPR-rollen 
 
 Figuren ovenfor beskriver det overordnede procesflow i de tre use cases. Væsentligt at fremhæve er:
 
-**Registrering**: En registrant initierer processen hvor oplysninger bringes på digital form
+**Registrering**: En registrant initierer processen ved at registrere ny data hos Dataejer (der er ansvarlig for sikring af hjemmel og håndhævelse af adgangspolitik). Når data er korrekt registreret, skal det markeres som klar til at blive udstillet.
 
-**Anvendelse af udstillede data** TBU
+**Anvendelse af udstillede data**: Denne proces initieres hos Dataanvender - typisk en myndighed, men kan også være en virksomhed - ud fra startsituationen, at man har erkendt et behov for data. Dataanvender sender en forespørgsel på data, der beskriver dels, hvilke data, der ønskes, og dels med hvilken hjemmel. Dataejer håndhæver på denne baggrund adgangskontrol, inden data deles og sendes i et svar til Dataanvender. Slutsituationen bliver, at Dataanvenders databehov er opfyldt. Dataejer er ikke nødvendigvis klar over, hvilket databehov forespørgslen har tjent til at tilfredsstille - så længe, adgangen er legitim, kender Dataejer ikke formålet med Dataanvenders brug af data.
 
-**Forsendelse af meddelelser** TBU
+**Forsendelse af meddelelser**: Til forskel fra Anvendelse af udstillede data starter denne proces hos Afsenderen (der tillige kan være Dataejer). Afsender har udvalgt og pakketeret data i en Meddelelse (evt. i form af et dokument), adresserer Meddelelsen og sender den herefter til Modtager. Modtager kan være alle typer af aktører; i figuren er vist, hvordan det hos en myndighed kan være relevant at fordele/route Meddelelsen internt ud fra adresseringsoplysningerne. I sammenligning med Anvendelse af udstillede data er det nu Afsender, der som deler af data 'ejer' den fulde forretningskontekst - hvor Dataejer overnfor ikke var bekendt med formålet med at dele data.
+
+
 
 ## Tværgående processer
 Herunder beskrives, hvor de enkelte business functions hos de enkelte roller anvendes i kontekst af et sæt af generiske procesmønstre.
