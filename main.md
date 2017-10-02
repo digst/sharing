@@ -151,13 +151,14 @@ Målsætningerne inkluderer:
 > *Data betragtes som en fælles værdifuld ressource; der beskrives, fordeles, forbedres og beskyttes i fælleskab.*
 
 
+
 ## Værdiskabelse
 
 - Mindre besvær for borger og virksomheder ved brug af digitale services
 - Simplere arbejdsgange og mere potentiale for automatisering hos myndigheder [og virksomheder]
 - Understøtte transparens og bevare tillid til registre
 - Effektiv systemudvikling (begrænse udfaldsrum, opsamle best practice)
-MBK: <igen: data som råstof for vækst. Store potentialer for innovation, konkurrencefordele osv>
+<MBK: igen: data som råstof for vækst. Store potentialer for innovation, konkurrencefordele osv>
 
 ## Strategiske principper
 
@@ -173,9 +174,9 @@ Forretningsmæssige, Informationsmæssige, Applikationsmæssige og Tekniske prin
 - T1: Central fuldmagts-/rettighedsstyring
 - T2: Multi-flavour-api
 
-MBK: <savner noget om fælles referencedata (masterdata, grunddata, klassifikationer)>
-MBK: <savner noget om muligheder for at berige data (koble flere data omkring fælles objekter)>
-MBK: <savner noget om kvalitetssikring af data - som lægger op til fx at kunne falge data med dårlig kvalitet, indmelde 7 forreslå ændring af fejl i data, især i delte masterdata og grunddata>
+<MBK: savner noget om fælles referencedata (masterdata, grunddata, klassifikationer)>
+<MBK: savner noget om muligheder for at berige data (koble flere data omkring fælles objekter)>
+<MBK: savner noget om kvalitetssikring af data - som lægger op til fx at kunne flage data med dårlig kvalitet, indmelde / foreslå ændring af fejl i data, især i delte masterdata og grunddata>
 
 
 
@@ -200,6 +201,7 @@ Referencearkitekturen beskriver tre centrale use cases, hvor aktører arbejder s
 
 ![Tværgående use cases og funktioner hos de enkelte roller](figures/usecases.png)
 
+![To scenarier](figures/patterns.png)
 
 - Registrering
     ~ *collaboration* hvor oplysninger bringes på digital form
@@ -356,13 +358,15 @@ Her grupperes de enkelte roller og applikationsroller jf. forskellige mønstre.
 
 Når en dataanvender (virksomhed eller myndighed) vil have adgang til data hos en dataejende myndighed, kan det ske via ét af nedenstående tre mønstre:
 <TODO: Overvej samtykker ift. Virksomhed>
+<TODO: Overvej Hændelser>
 
-#### Direkte adgang (SOA)
+#### Direkte adgang
 ![Implementeringsmønster for service enablede registre](figures/use-soa.png)
 
 I dette mønster, som er simpelt og måske det mest klassiske, er det Dataejer, der selv udstiller data til de mulige anvendere via en service-orienteret arkitektur. Dataejer er også ansvarlig for at betjene Datasubjektets forespørgsler om Dataejerens brug af personlige data.
 
 Fordelen ved dette mønster er, at det er simpelt. Ulempen er, at Dataejer kommer til at bære hele udgiften ved at stille data bredt til rådighed.
+
 
 <MBK: SOA bruges ikkekun til direkte adgang, men kan også være via proxy, som fx datafordeleren, der jo også tilbyder SOA-services af forskellig flavour. AF: Fanget i næste mønster?>
 
@@ -382,20 +386,31 @@ Når nye data registreres, er Dataejer ansvarlig for at opdatere Datasamlingen h
 Logningsmæssigt er den enkelte Datadistributør ansvarlig for at logge Dataanvenders adgang til data. Samtidig er den enkelte Distributør ansvarlig for at sørge for konsolidering af loggen. I figuren er log-konsolidering lagt hos Dataejer, men den kunne i princippet også være uddelegeret - så længe, der er et entydigt og klart SPOC for Datasubjektets opslag i anvendelsen af personlige data.
 
 
-#### Distribueret Service- og data-platform
+#### Distribueret service- og data-platform
 ![Implementeringsmønster for distribueret dataplatform](figures/use-plat.png)
 
-TODO: Tilføj beskrivelse
+Delingsansvaret er i dette mønster i høj grad håndteret af en Dataplatform. Platformen er distribueret og er i stand til at replikere data på tværs af Dataejer og Dataanvendere. Dvs., at data, der registreres via Dataejer, gøres tilgængelige hos Dataanvender af platformen.
+
+Da Dataplatformen kan rumme data fra forskellige Dataejere, muliggøres effektiv sammenstiling af data hos Datanvenderen. Platformen er ansvarlig for at håndhæve adgangskontrol, og eventuelle services hos Dataanvender, der gør brug af data, er ansvarlige for at logge deres brug. Platformen konsoliderer brugs-loggen, og gør det muligt for Datasubjekt at få overblik over brug af personlige data.
+
+Fordelen ved dette mønster er den umiddelbare og standardiserede tilgænglighed til data, som en Dataplatform kan levere. Ulempen er, at kompleksiteten øges, samt at der stilles større krav til Datanvenders modenhed ift. den tekniske adgang til data (da Dataanvenders applikationer i praksis vil skulle afvikles på den distribuerede Service- og Dataplatform).
+
+*(Uafklaret: Skal Dataanvenders applikationer/services have direkte adgang til distribuerede data, eller skal adgang fortsat ske via et servicesnit, der kan varetage adgangskontol m.m.?)*
 
 
 ### Forsendelse af meddelelse
 
-Når en myndighed vil sende noget til en myndighed, virksomhed eller borger.
+Når en myndighed vil initiere en specifik og målrettet datadeling - dvs. sende data (herunder dokumenter) til en anden myndighed, virksomhed eller borger - kan det ske via ét af de tre nedenstående mønstre.
 
 
-#### Sikker email
-![Implementeringsmønster for email](figures/send-email.png)
-MBK: <Dette mener jeg vi bør forsøge at lægge uden for scope ifht at deling er vores hoedfokus>
+#### Sikker e-mail
+![Implementeringsmønster for e-mail](figures/send-email.png)
+
+Et meget anvendt mønster for myndighed til myndighed-kommunikation er at levere en Meddelelse fra Afsender til Modtager ved brug af sikker e-mail. Det falder uden for dette dokuments scope at beskrive dette mønster yderligere, men det er medtaget her for reference. Det er endvidere oplagt at betragte dette mønster som et særtilfælde af det generelle 'Service provider'-mønster nedenfor.
+
+Fordelen ved dette mønster er, at det er simpelt og benytter sig af standardteknologi. Ulempen er, at det kun dækker myndighed til myndighed-kommunikation. Derudover sætter standardteknologien (e-mail) visse begrænsninger for funktionalitet, der fx understøtter automatisk routing af beskeder hos modtageren i det tilfælde, hvor Meddelelsen ikke har én specifik modtager.
+
+<MBK: Dette mener jeg vi bør forsøge at lægge uden for scope ifht at deling er vores hoedfokus. AF: DONE>
 
 #### Fælles system
 ![Implementeringsmønster for fælles applikation](figures/send-shared.png)
@@ -442,6 +457,6 @@ Nedenstående, tekniske områder er kandidater til at indgå i referencearkitekt
 - Hjemmel (samtykke, lov)
 - Context
 
-MBK:<Web service beskrivelser er også et vigtigt emne. Fx en udvidelse af WSDL, så det understøtter Linked data. tal med Peter bruhn om dette.>
-MBK: <Fælles liste over standard operationer og vejledning i hvordan de inarbedes ifbm med udarbejdelse af snitfladespecifikationer>
+<MBK: Web service beskrivelser er også et vigtigt emne. Fx en udvidelse af WSDL, så det understøtter Linked data. tal med Peter bruhn om dette.>
+<MBK: Fælles liste over standard operationer og vejledning i hvordan de inarbedes ifbm med udarbejdelse af snitfladespecifikationer>
 ## Identifikation af eksisterende standarder
