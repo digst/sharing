@@ -368,13 +368,13 @@ I dette mønster, som er simpelt og måske det mest klassiske, er det Dataejer, 
 Fordelen ved dette mønster er, at det er simpelt. Ulempen er, at Dataejer kommer til at bære hele udgiften ved at stille data bredt til rådighed.
 
 
-<MBK: SOA bruges ikkekun til direkte adgang, men kan også være via proxy, som fx datafordeleren, der jo også tilbyder SOA-services af forskellig flavour. AF: Fanget i næste mønster?>
+[MBK: SOA bruges ikkekun til direkte adgang, men kan også være via proxy, som fx datafordeleren, der jo også tilbyder SOA-services af forskellig flavour. AF: Fanget i næste mønster?]: x
 
-<MBK: Der bør være noget om flavours af SOA EDA, LD. og om SOAP vs REST. Plus vel også koblingen til AS2/AS4 når vi snakker protokoller.>
+[MBK: Der bør være noget om flavours af SOA EDA, LD. og om SOAP vs REST. Plus vel også koblingen til AS2/AS4 når vi snakker protokoller.]: x
 
-<MBK: Måske ikke det rette sted for denne kommentar, men vi bør også komme omkring Linked data og Block Chain i et afsnit om teknologitrends. AF: Oprettet i Issue #5>
+[MBK: Måske ikke det rette sted for denne kommentar, men vi bør også komme omkring Linked data og Block Chain i et afsnit om teknologitrends. AF: Oprettet i Issue #5]: x
 
-<MBK: Der bør også være noget om synkron vs asynkron og om fil/batch mønster>
+[MBK: Der bør også være noget om synkron vs asynkron og om fil/batch mønster]: x
 
 #### Datadistribution
 ![Implementeringsmønster for datadistribution](figures/use-dist.png)
@@ -415,17 +415,32 @@ Fordelen ved dette mønster er, at det er simpelt og benytter sig af standardtek
 #### Fælles system
 ![Implementeringsmønster for fælles applikation](figures/send-shared.png)
 
-fx e-Boks. Analogi til varder el. postbokskontor. Kan aftales bilateralt, inden for domæner m.m.
+Ved brug af Fælles system-mønsteret til Forsendelse af en Meddelelse benytter Afsender og Modtager et centralt, fælles system til hhv. at placere Meddelelsen og læse den. I den analoge verden svarer dette mønster til, at Afsender og Modtager benytter et fælles postbokskontor. Digitalt er dette mønster fx implementeret af e-Boks, hvor såvel myndigheder, virksomheder og borgere kan placere Meddelelser, der efterfølgende kan hentes af Modtager. Også messaging-funktionaliteten i mange af de sociale medieplatforme (fx Facebook) falder i denne kategori.
 
-#### Service Providers
+TIl forskel fra Sikker e-mail-mønsteret ovenfor er Fælles system-mønsteret mere robust, både da Forsendelsesservicen tilbyder opslag/verifikation mod et Kontaktregister samt da Meddelelsen opbevares i infrastrukturen, indtil Modtager aktivt læser den - i modsætning til Sikker e-mail, hvori infrastrukturen blot videresender Meddelelsen og dermed er afhængig af, at Modtageren i praksis findes.
+
+Meddelelsesfunktionaliteten har endvidere mulighed for at trække på en Notifikationsservice, der kan tilbyde notifikationer til Modtager om den nye Meddelelse.
+
+Et Fælles system-mønster kan fungere på mange niveauer, herunder nationalt (fx Digital Post); inden for et specifikt domæne, fx på sundhedsområdet; eller rent bilateralt, hvor to organisationer vælger en Meddelelsesplatform og enes om dette mønster.
+
+
+#### Økosystem/Service providers
 ![Implementeringsmønster for ecosystem](figures/send-eco.png)
+[TODO Fjern opslags pile fra Modtager og Modtagers SP]: x
 
-kan være både generisk eller specifikt for et domæne.
+I dette mønster deltager både Afsender (A) og Modtager (D) i et Meddelelses-økosystem ved at vælge hver sin Forsendelses-Service provider (hhv. B og C). Økosystem-mønsteret er bl.a. kendt i kontekst af den europæiske eDelivery-standard som en *four corner model*.
+
+Et fælles Kontaktregister udgør en central komponent i økosystemet, der gør det muligt for alle parter at slå den relevante information op. En Afsender kan via Kontaktregisteret se/verificere mulige modtagere, samt evt. afgøre hvilken konkrete Meddelelsesformater/kanaler, Modtager kan håndtere. Forsendelsesservicen, der håndterer afsendelse af Meddelelsen, kan benytte Kontaktregisteret til at finde Modtagerens konkrete Service provider og bliver dermed i stand til at levere Meddelelsen.
+
+Mønsteret vil typisk være symmetrisk, således at en Afsender også kan indgå som Modtager og vice versa. Mønsteret kan i øvrigt både være generisk eller specifikt for et domæne, der fx kan stille ekstra krav til Meddelelsens format.
+
+Fordelene ved Økosystem-mønsteret er, at det er robust, fleksibelt og løbende kan udvides med nye Service providers. Ulempen er, at der stilles store krav til det centrale Kontaktregister, samt at der fortsat ikke findes standardteknologier, der dækker mønsteret.
 
 
-### Registrering*
+### Registrering
 
 Registrering af data er ikke i scope for denne referencearkitektur, men medtages kort pga. sin væsentlige relation til Index-konceptet.
+[TODO: Hvor udfolder vi mere om mønstre, der anvender Index?]: x
 
 Ansvar hos registrant
   ~ *implementationsmønster*
@@ -457,6 +472,6 @@ Nedenstående, tekniske områder er kandidater til at indgå i referencearkitekt
 - Hjemmel (samtykke, lov)
 - Context
 
-<MBK: Web service beskrivelser er også et vigtigt emne. Fx en udvidelse af WSDL, så det understøtter Linked data. tal med Peter bruhn om dette.>
-<MBK: Fælles liste over standard operationer og vejledning i hvordan de inarbedes ifbm med udarbejdelse af snitfladespecifikationer>
+[MBK: Web service beskrivelser er også et vigtigt emne. Fx en udvidelse af WSDL, så det understøtter Linked data. tal med Peter bruhn om dette.]: x
+[MBK: Fælles liste over standard operationer og vejledning i hvordan de inarbedes ifbm med udarbejdelse af snitfladespecifikationer]: x
 ## Identifikation af eksisterende standarder
