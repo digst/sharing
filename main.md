@@ -135,7 +135,7 @@ Målsætningerne inkluderer:
 - **Genbrug**
   ~ *mål* om genbrug af it med henblik på lavere omkostninger
 
-[MBK: <savner mål der kobler til visionen om det datadrevne samfund / data som råstof for samfundsudviklingen>]: x
+[MBK: <savner mål der kobler til visionen om det datadrevne samfund / data som råstof for samfundsudviklingen> DONE]: x
 
 ## Vision
 [TODO update baseret på første workshop]: x
@@ -146,7 +146,7 @@ Målsætningerne inkluderer:
 
 > *Fælles metoder for datadeling skal understøtte sammenstilling af data og tværgående brug*
 
-[MBK: <fælles metoder er måske bedre end ensartet?>]: x
+[MBK: <fælles metoder er måske bedre end ensartet?> DONE]: x
 > *Klar governance omkring beskrivelse af, adgang til og brug af data*
 
 
@@ -195,47 +195,45 @@ Referencearkitekturen finder anvendelse i løsningen af alle offentlige opgaver.
 
 
 ## Funktioner
-Referencearkitekturen beskriver tre centrale use cases, hvor aktører arbejder sammen i forskellige roller
+Referencearkitekturen beskriver tre centrale use cases, hvor aktører arbejder sammen i forskellige roller.
 
 ![Tværgående use cases og funktioner hos de enkelte roller](figures/usecases.png)
 
 
+- Registrering
+    ~ *collaboration* hvor oplysninger bringes på digital form
 
-
-Udstilling af data og dokumenter
+- Anvendelse af udstillede data (herunder dokumenter)
   ~ *collaboration* hvor oplysninger anvendes i en opgave
 
-Forsendelse af meddelelser
+- Forsendelse af meddelelser
   ~ *collaboration* hvor meddelelser sendes uafviseligt
-
-Registrering
-    ~ *collaboration* hvor oplysninger bringes på digital form
 
 ## Roller
 
-Registrant
+- Registrant
   ~ *rolle* som bringer oplysninger på digital form, registrer
 
-Datasubject
+- Datasubject
   ~ *rolle* som oplysninger handler
 
-Dataanvender
+- Dataanvender
   ~ *rolle* der anvender oplysninger fra et register
 
-Dataejer
+- Dataejer
   ~ *rolle* som ejer registreringer/data, ansvar for at udarbejde adgangspolitik
 
-Datadistributør
-  ~ *rolle* som ejer registreringer/data, ansvar for at udarbejde adgangspolitik
-MBK: <samme definition for to roller er ikke så godt. datadistributør er vel ikke en roller der ejer register/data. Det er nok heller ikke denne role der skal udarbejde adgangspolitik, men har ansvar for at håndhæve den der er udarbejdet af dataejer>
+- Datadistributør
+  ~ *rolle* som distribuerer data, ansvar for at håndhæve adgangspolitik
+[MBK: <samme definition for to roller er ikke så godt. datadistributør er vel ikke en roller der ejer register/data. Det er nok heller ikke denne role der skal udarbejde adgangspolitik, men har ansvar for at håndhæve den der er udarbejdet af dataejer> DONE]: x
 
-Messaging User
+- Messaging User
   ~ *rolle* som der sender og modtager meddelelser
 
-Messaging Provider
+- Messaging Provider
   ~ *rolle* som leverer services til forsendelse
 
-Nogle kan betragtes som specialiseringer af GDPR-rollen Databehandler.
+Nogle af overnstående roller kan betragtes som specialiseringer af GDPR-rollen *Databehandler*.
 
 
 ## Tværgående processer
@@ -244,7 +242,7 @@ Herunder beskrives, hvor de enkelte business functions hos de enkelte roller anv
  - Sagsbehandling (fra Sag og dokument)
  - Simpel selvbetjening (fra Selvbetjening)
  - Tværgående selvbetjening (fra Sammenhængende services)
-MBK: <fra Selvbetjening, hvis i snakker om referencearkitektur. Vi har ikke en der hedder sammenhængende services>
+[MBK: <fra Selvbetjening, hvis i snakker om referencearkitektur. Vi har ikke en der hedder sammenhængende services>]: x
  - Indsigt i oplysninger og deres anvendelse (fra Overblik over sag og ydelser)
  - Sende meddelelse (inkl. brug af tilmeldingslister og påmindelser)
  - Modtage meddelelse
@@ -258,7 +256,7 @@ Procestrin udtrykkes typisk ved Forretningstjenester, der igen kan realiseres af
 [TODO]: x "[Vi skal være bedre til at beskrive hvordan vi trækker på elementer fra brugerstyring, men husk at holde det teknologi-fri]"
 
 ## Forretningsobjekter
-Nedenfor fremgår en initiel oversigt over en række forretningsobjekter, der er væsentlige for referencearkitekturen. Det videre arbejde skal klarlægge, hvilke elementer der skal indgå i listen samt hvordan de defineres. Modelleringsniveauet skal endvidere lægges fast (bregrebsmodellering og/eller logiske kernemodeller?) Kommentarer/regibemærkninger indgår i listen, markeret med kantede parenteser.
+Nedenfor fremgår en initiel oversigt over en række forretningsobjekter, der er væsentlige for referencearkitekturen. Det videre arbejde skal klarlægge, hvilke elementer der skal indgå i listen samt hvordan de defineres. Modelleringsniveauet skal endvidere lægges fast (begrebsmodellering og/eller logiske kernemodeller?) Kommentarer/regibemærkninger indgår i listen, markeret med kantede parenteser.
 
 ![Oversigt over de centrale forretningsobjekter og deres relationer](figures/objekter.png)
 
@@ -290,38 +288,26 @@ Påmindelse
 Registreringshændelse
   ~ *objekt* [Datafordeler]
 
-MBK: <Liste og model matcher ikke helt>
-MBK: <savner Dataservice, Forretningshændelse, Klassifikation>
-MBK: <Der bør være noget om sammenhængen mellem Referenceinformationsmodel, Applikationsprofiler og Snitfaldespecifikationer (inkl operationer og format)
-MBK: <Noget om anonymiserede data. Evt. kandidat til standardiseret metode>
-
-## Forretningsmønstre?
 
 
-Rambøll nævner:
+<MBK: Liste og model matcher ikke helt>
+<MBK: savner Dataservice, Forretningshændelse, Klassifikation>
+<MBK: Der bør være noget om sammenhængen mellem Referenceinformationsmodel, Applikationsprofiler og Snitfaldespecifikationer (inkl operationer og format)
+<MBK: Noget om anonymiserede data. Evt. kandidat til standardiseret metode>
 
-- Samtale -> forsendelse
-- Udsende, hente -> forsendelse? udstilling?
-- Indberetning -> registrering
-- Udsende eller hente med svarforventning -> forsendelse?
-- Abonnement -> ekstra service ved udstilling
-- Proceskæde med afhængigheder -> forsendelse mellem processer
+## Forretningsmønstre
 
-KL nævner i rammearkitekturen:
+TBU. <cf issue #6>
 
-- Kald integration -> udstilling
-- Hændelsesbeskedintegration -> ekstra service ved udstilling
-- Meddelelsesbesked integration -> forsendelse
-- Dialogintegration -> udstilling?
 
 
 # Teknisk arkitektur
-Dette afsnit beskriver de væsentligste komponenter og services, der skal indgå i en løsningsarkitektur for deling af data og dokumenter. TODO: Færdiggør indledning.
+Dette afsnit beskriver roller og implementeringsmønstre, der er relevante, når forretningsfunktionerne beskrevet ovenfor skal understøttes/realiseres af applikationer. Endvidere udpeges områder, der er kandidat til standardisering og/eller profilering i forbindelse med referencearkitekturen.
 
-Forretningsfunktionerne understøttes/realiseres af applikationer.
+
+De nødvendige og understøttende applikations-services og deres indbyrdes relationer er vist i figuren nedenfor. <TODO: Opdater figurtekst.>
 
 ![Oversigt over nødvendige og understøttende applikations-services og deres indbyrdes relationer](figures/services.png)
-
 
 
 ## Applikationsroller
@@ -352,12 +338,13 @@ Indeks
 
 Katalog
   ~ *applikationsservice* som ikke er en dataservice, fordi der ikke er begrænset adgang. Kan undværes, men ikke effektivt.
-MBK: >Forstår ikke denne defintion. For mig er hverken et katalog eller en dataservice defineret ved adgangsrettigheder. Et katalog skal fx også kunne begrænse adgang og en dataservice skal også kunne tilbyde adgang til læs . søg, hent / download uden login hvis der er tale om åbne data uden rettighedsbegrænsninger.>
 
-MBK: <Savner byggeblokke som fx Klassifikationsservices (både udstille klassifikationer og mapninger), Serviceregister, Systemkatalog, datakatalog, Modelkatalog.>
+<MBK: Forstår ikke denne defintion. For mig er hverken et katalog eller en dataservice defineret ved adgangsrettigheder. Et katalog skal fx også kunne begrænse adgang og en dataservice skal også kunne tilbyde adgang til læs . søg, hent / download uden login hvis der er tale om åbne data uden rettighedsbegrænsninger.>
 
-[TODO Skal vi have en "beskyttet dataservice" og en offentlig?]: x
-MBK:<Det mener jeg er et must, jf hele open data agendaen>
+<MBK: Savner byggeblokke som fx Klassifikationsservices (både udstille klassifikationer og mapninger), Serviceregister, Systemkatalog, datakatalog, Modelkatalog.>
+
+<TODO Skal vi have en "beskyttet dataservice" og en offentlig?>
+<MBK: Det mener jeg er et must, jf hele open data agendaen>
 
 
 ## Tekniske Implementeringer
@@ -366,21 +353,32 @@ Her grupperes de enkelte roller og applikationsroller jf. forskellige mønstre.
 
 ### Anvendelse af udstillede data
 
-Når en dataanvender (virksomhed eller myndighed) vil have adgang til data hos en myndighed, er der et par relevante mønstre: (TODO: Overvej samtykker ift. Virksomhed)
+Når en dataanvender (virksomhed eller myndighed) vil have adgang til data hos en dataejende myndighed, kan det ske via ét af nedenstående tre mønstre:
+<TODO: Overvej samtykker ift. Virksomhed>
 
-#### Direkte adgang, SOA
+#### Direkte adgang (SOA)
 ![Implementeringsmønster for service enablede registre](figures/use-soa.png)
 
-TODO: Tilføj beskrivelse
-MBK: SOA bruges ikkekun til direkte adgang, men kan også være via proxy, som fx datafordeleren, der jo også tilbyder SOA-services af forskellig flavour.
-MBK:<Der bør være noget om flavours af SOA: EDA, LD. og om SOAP vs REST. Plus vel også koblingen til AS"/AS4 når vi snakker protokoller>
-MBK: Måske ikke det rette sted for denne kommentar, men vi bør også komme omkring Linked data og Block Chain i et afsnit om teknologitrends.
-MBK: <Der bør også være noget om synkron vs asynkron og om fil/batch mønster>
+I dette mønster, som er simpelt og måske det mest klassiske, er det Dataejer, der selv udstiller data til de mulige anvendere via en service-orienteret arkitektur. Dataejer er også ansvarlig for at betjene Datasubjektets forespørgsler om Dataejerens brug af personlige data.
+
+Fordelen ved dette mønster er, at det er simpelt. Ulempen er, at Dataejer kommer til at bære hele udgiften ved at stille data bredt til rådighed.
+
+<MBK: SOA bruges ikkekun til direkte adgang, men kan også være via proxy, som fx datafordeleren, der jo også tilbyder SOA-services af forskellig flavour. AF: Fanget i næste mønster?>
+
+<MBK: Der bør være noget om flavours af SOA EDA, LD. og om SOAP vs REST. Plus vel også koblingen til AS2/AS4 når vi snakker protokoller.>
+
+<MBK: Måske ikke det rette sted for denne kommentar, men vi bør også komme omkring Linked data og Block Chain i et afsnit om teknologitrends. AF: Oprettet i Issue #5>
+
+<MBK: Der bør også være noget om synkron vs asynkron og om fil/batch mønster>
 
 #### Datadistribution
 ![Implementeringsmønster for datadistribution](figures/use-dist.png)
 
-TODO: Tilføj beskrivelse (sammenstilling samt adgangskontrol og logning)
+I dette mønster er Dataejer fortsat ansvarlig for registrering af data. Anvendelsesdelen er imidlertid afløftet til en Datadistributør (evt. flere). Dette giver Datadistributøren mulighed for at fokusere netop på distributionen, dvs. at gøre data bredt tilgængeligt (dog naturligvis under håndhævelse af adgangskrav specificeret af Dataejer) til Dataanvendere.
+
+Når nye data registreres, er Dataejer ansvarlig for at opdatere Datasamlingen hos Datadistributøren.
+
+Logningsmæssigt er den enkelte Datadistributør ansvarlig for at logge Dataanvenders adgang til data. Samtidig er den enkelte Distributør ansvarlig for at sørge for konsolidering af loggen. I figuren er log-konsolidering lagt hos Dataejer, men den kunne i princippet også være uddelegeret - så længe, der er et entydigt og klart SPOC for Datasubjektets opslag i anvendelsen af personlige data.
 
 
 #### Distribueret Service- og data-platform
