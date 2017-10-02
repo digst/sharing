@@ -62,7 +62,6 @@ Vi vil endvidere lave en skelnen mellem:
 
 Den fundamentale forskel på disse to scenarier er, om det er afsenderen eller modtageren af data, der kender formålet med interaktionen. Ved udstiling af data er dataafsenderen som udgangspunkt ikke bekendt med datamodtagerens formål (men er naturligvis forpligtet til at håndhæve relevant hjemmel). Ved forsendelse af meddelelser er det dataafsenderen, der i en given kontekst afsender en meddelelse med et givent formål - typisk som led i en proces.
 
-![To scenarier](figures/patterns.png)
 
 
 ## Anvendelse
@@ -148,6 +147,8 @@ Målsætningerne inkluderer:
 
 [MBK: <fælles metoder er måske bedre end ensartet?> DONE]: x
 > *Klar governance omkring beskrivelse af, adgang til og brug af data*
+
+> *Data betragtes som en fælles værdifuld ressource; der beskrives, fordeles, forbedres og beskyttes i fælleskab.*
 
 
 ## Værdiskabelse
