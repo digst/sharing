@@ -151,6 +151,7 @@ Målsætningerne inkluderer:
 > *Data betragtes som en fælles værdifuld ressource; der beskrives, fordeles, forbedres og beskyttes i fælleskab.*
 
 
+
 ## Værdiskabelse
 
 - Mindre besvær for borger og virksomheder ved brug af digitale services
@@ -200,6 +201,7 @@ Referencearkitekturen beskriver tre centrale use cases, hvor aktører arbejder s
 
 ![Tværgående use cases og funktioner hos de enkelte roller](figures/usecases.png)
 
+![To scenarier](figures/patterns.png)
 
 - Registrering
     ~ *collaboration* hvor oplysninger bringes på digital form
@@ -356,13 +358,15 @@ Her grupperes de enkelte roller og applikationsroller jf. forskellige mønstre.
 
 Når en dataanvender (virksomhed eller myndighed) vil have adgang til data hos en dataejende myndighed, kan det ske via ét af nedenstående tre mønstre:
 <TODO: Overvej samtykker ift. Virksomhed>
+<TODO: Overvej Hændelser>
 
-#### Direkte adgang (SOA)
+#### Direkte adgang
 ![Implementeringsmønster for service enablede registre](figures/use-soa.png)
 
 I dette mønster, som er simpelt og måske det mest klassiske, er det Dataejer, der selv udstiller data til de mulige anvendere via en service-orienteret arkitektur. Dataejer er også ansvarlig for at betjene Datasubjektets forespørgsler om Dataejerens brug af personlige data.
 
 Fordelen ved dette mønster er, at det er simpelt. Ulempen er, at Dataejer kommer til at bære hele udgiften ved at stille data bredt til rådighed.
+
 
 <MBK: SOA bruges ikkekun til direkte adgang, men kan også være via proxy, som fx datafordeleren, der jo også tilbyder SOA-services af forskellig flavour. AF: Fanget i næste mønster?>
 
@@ -382,15 +386,19 @@ Når nye data registreres, er Dataejer ansvarlig for at opdatere Datasamlingen h
 Logningsmæssigt er den enkelte Datadistributør ansvarlig for at logge Dataanvenders adgang til data. Samtidig er den enkelte Distributør ansvarlig for at sørge for konsolidering af loggen. I figuren er log-konsolidering lagt hos Dataejer, men den kunne i princippet også være uddelegeret - så længe, der er et entydigt og klart SPOC for Datasubjektets opslag i anvendelsen af personlige data.
 
 
-#### Distribueret Service- og data-platform
+#### Distribueret service- og data-platform
 ![Implementeringsmønster for distribueret dataplatform](figures/use-plat.png)
 
-TODO: Tilføj beskrivelse
+Delingsansvaret er i dette mønster i høj grad håndteret af en Dataplatform. Platformen er distribueret og er i stand til at replikere data på tværs af Dataejer og Dataanvendere. Dvs., at data, der registreres via Dataejer, gøres tilgængelige hos Dataanvender af platformen.
+
+Da Dataplatformen kan rumme data fra forskellige Dataejere, muliggøres effektiv sammenstiling af data hos Datanvenderen. Platformen er ansvarlig for at håndhæve adgangskontrol, og eventuelle services hos Dataanvender, der gør brug af data, er ansvarlige for at logge deres brug. Platformen konsoliderer brugs-loggen, og gør det muligt for Datasubjekt at få overblik over brug af personlige data.
+
+(Uafklaret: Skal Dataanvenders applikationer/services have direkte adgang til distribuerede data, eller skal adgang fortsat ske via et servicesnit, der kan varetage adgangskontol m.m.?)
 
 
 ### Forsendelse af meddelelse
 
-Når en myndighed vil sende noget til en myndighed, virksomhed eller borger.
+Når en myndighed vil initiere en specifik og målrettet datadeling - dvs. sende data (herunder dokumenter) til en anden myndighed, virksomhed eller borger - kan det ske via ét af de tre nedenstående mønstre.
 
 
 #### Sikker email
