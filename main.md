@@ -33,14 +33,17 @@ Dokumentet i sin helhed er også relevant for leverandører at orientere sig i.
 
 Referencearkitekturen beskriver anvendelse af og udvikling af it-systemer, der reguleres af blandt andet:
 
-- EU databeskyttelse
- ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
-- EU eIDAS
- ~ *lov* som definerer registrede tillidstjenester
-- Persondata lov
- ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
-- Lov om Digital Post
- ~ *lov* der gør det obligatorisk for virksomheder og borgere at modtage digitale meddelelser fra offentlige afsendere.
+EU databeskyttelse
+  ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
+
+EU eIDAS
+  ~ *lov* som definerer registrede tillidstjenester
+
+Persondatalov
+  ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
+
+Lov om Digital Post
+  ~ *lov* der gør det obligatorisk for virksomheder og borgere at modtage digitale meddelelser fra offentlige afsendere.
 
 Referencearkitekturen skrives på baggrund af den fællesoffentlige digitaliseringsstrategi 2020 under initiativ 8.1 med tilslutning fra
 FM, UFM, EVM, SIM, JM, EFKM, MBUL, SÆM, SKM, MFVM, BM, KL og Danske Regioner. Heri beskrives referencearkitekturen således:
@@ -58,6 +61,7 @@ I det efterfølgende vil begrebet data blive brugt til at betegne både oplysnin
 ![Anvendelse af begrebet data og relaterede begreber i denne referencearkitektur](figures/abstraktion.png)
 
 Vi vil endvidere lave en skelnen mellem:
+
  - Anvendelse af udstillede data - typisk via API i system-til-system-integrationer
  - Forsendelse af meddelelser indeholdende data (herunder dokumenter) - typisk brugt ved beskeder til borgere/virksomheder, der skal have retsvirkning, men også et klassisk mønster brugt i system-til-system-integrationer.
 
@@ -128,13 +132,17 @@ Udarbejdelsen af referencearkitekturen tager udgangspunkt i en række identifice
 De overordnede målsætninger for denne referencearkitektur kobler alle til visionen om det datadrevne samfund, hvor data ses som et råstof for samfundsudviklingen.
 
 Målsætningerne inkluderer:
-- **Interoperabilitet**
+
+Interoperabilitet
   ~  *mål* om sammenhængende services... integrated service delivery
-- **Once-only**
+
+Once-only
   ~  *mål* om at borger og virksomhed kun skal afgive den samme information til det offentlige en gang... (men give lov til genbrug?)
-- **Transparens**
+
+Transparens
   ~ *mål* om at borgere og virksomheder skal kunne se, hvilke data der findes om dem, og hvor disse data anvendes
-- **Genbrug**
+
+Genbrug
   ~ *mål* om genbrug af it med henblik på lavere omkostninger
 
 
@@ -156,6 +164,7 @@ Visionen i denne referencearkitektur er at stræbe efter en situation, hvor:
 
 ## Værdiskabelse
 Værdien ved at følge denne referencearkitektur er, at den giver:
+
 - Mindre besvær for borger og virksomheder ved brug af digitale services
 - Simplere arbejdsgange og mere potentiale for automatisering hos organisationer (myndigheder/virksomheder)
 - Understøttelse af værdiskabende innovation (ved at gøre data til et 'råstof' for vækst/skabelse af konkurrencefordele)
@@ -177,9 +186,9 @@ Forretningsmæssige, Informationsmæssige, Applikationsmæssige og Tekniske prin
 - T1: Central fuldmagts-/rettighedsstyring
 - T2: Multi-flavour-api
 
-<MBK: savner noget om fælles referencedata (masterdata, grunddata, klassifikationer)>
-<MBK: savner noget om muligheder for at berige data (koble flere data omkring fælles objekter)>
-<MBK: savner noget om kvalitetssikring af data - som lægger op til fx at kunne flage data med dårlig kvalitet, indmelde / foreslå ændring af fejl i data, især i delte masterdata og grunddata>
+[TODO MBK: savner noget om fælles referencedata (masterdata, grunddata, klassifikationer)]: x
+[TODO MBK: savner noget om muligheder for at berige data (koble flere data omkring fælles objekter)]: x
+[TODO MBK: savner noget om kvalitetssikring af data - som lægger op til fx at kunne flage data med dårlig kvalitet, indmelde / foreslå ændring af fejl i data, især i delte masterdata og grunddata]: x
 
 
 
@@ -187,15 +196,17 @@ Forretningsmæssige, Informationsmæssige, Applikationsmæssige og Tekniske prin
 
 ## Aktører
 De væsentligste aktører, der er i spil omkring deling af data og dokumenter, er:
+
 - Offentlige myndigheder, herunder virksomheder, der handler på vegne af offentlige myndigheder
 - Borgere og virksomheder
 
 
 ## Opgaver
 Forretningsmæssigt set finder referencearkitekturen anvendelse i løsningen af alle offentlige opgaver. Specifikt kan nævnes:
- - Borger- og virksomhedsvendte selvbetjeningsløsninger
- - Myndigheders sagsbehandling
- - Tværgående analyse, tilsyn og kontrol
+
+- Borger- og virksomhedsvendte selvbetjeningsløsninger
+- Myndigheders sagsbehandling
+- Tværgående analyse, tilsyn og kontrol
 
 
 ## Funktioner
@@ -206,65 +217,67 @@ Referencearkitekturen kredser om tre centrale use cases, hvor aktører arbejder 
 
 De tre use cases er:
 
-**Registrering**
-    ~ *collaboration* hvor oplysninger bringes på digital form
+Registrering
+  ~ *collaboration* hvor oplysninger bringes på digital form
 
-**Anvendelse af udstillede data** (herunder dokumenter)
+Anvendelse af udstillede data (herunder dokumenter)
   ~ *collaboration* hvor oplysninger anvendes i en opgave
 
-**Forsendelse af meddelelser**
+Forsendelse af meddelelser
   ~ *collaboration* hvor meddelelser sendes uafviseligt
 
-### Roller
+## Roller
 
 I ovenstående use cases indgår disse roller:
-- Registrant
+
+Registrant
   ~ *rolle* som bringer oplysninger på digital form, registrer
 
-- Datasubject
+Datasubject
   ~ *rolle* som oplysninger handler
 
-- Dataanvender
+Dataanvender
   ~ *rolle* der anvender oplysninger fra et register
 
-- Dataejer
+Dataejer
   ~ *rolle* som ejer registreringer/data, ansvar for at udarbejde adgangspolitik
 
-- Datadistributør
+Datadistributør
   ~ *rolle* som distribuerer data, ansvar for at håndhæve adgangspolitik
 
-- Messaging User
+Messaging User
   ~ *rolle* som der sender og modtager meddelelser
 
-- Messaging Provider
+Messaging Provider
   ~ *rolle* som leverer services til forsendelse
 
 Nogle af overnstående roller kan betragtes som specialiseringer af GDPR-rollen *Databehandler*.
 
-### Use cases
-![To scenarier](figures/patterns.png)
+## Use cases
+![Overblik over centrale processer og deres aktiviteter fordelt på roller](figures/patterns.png)
 
 Figuren ovenfor beskriver det overordnede procesflow i de tre use cases. Væsentligt at fremhæve er:
 
-**Registrering**: En registrant initierer processen ved at registrere ny data hos Dataejer (der er ansvarlig for sikring af hjemmel og håndhævelse af adgangspolitik). Når data er korrekt registreret, skal det markeres som klar til at blive udstillet.
+Registrering
+  ~ *proces* En registrant initierer processen ved at registrere ny data hos Dataejer (der er ansvarlig for sikring af hjemmel og håndhævelse af adgangspolitik). Når data er korrekt registreret, skal det markeres som klar til at blive udstillet.
 
-**Anvendelse af udstillede data**: Denne proces initieres hos Dataanvender - typisk en myndighed, men kan også være en virksomhed - ud fra startsituationen, at man har erkendt et behov for data. Dataanvender sender en forespørgsel på data, der beskriver dels, hvilke data, der ønskes, og dels med hvilken hjemmel. Dataejer håndhæver på denne baggrund adgangskontrol, inden data deles og sendes i et svar til Dataanvender. Slutsituationen bliver, at Dataanvenders databehov er opfyldt. Dataejer er ikke nødvendigvis klar over, hvilket databehov forespørgslen har tjent til at tilfredsstille - så længe, adgangen er legitim, kender Dataejer ikke formålet med Dataanvenders brug af data.
+Anvendelse af udstillede data
+  ~ *proces* Denne proces initieres hos Dataanvender - typisk en myndighed, men kan også være en virksomhed - ud fra startsituationen, at man har erkendt et behov for data. Dataanvender sender en forespørgsel på data, der beskriver dels, hvilke data, der ønskes, og dels med hvilken hjemmel. Dataejer håndhæver på denne baggrund adgangskontrol, inden data deles og sendes i et svar til Dataanvender. Slutsituationen bliver, at Dataanvenders databehov er opfyldt. Dataejer er ikke nødvendigvis klar over, hvilket databehov forespørgslen har tjent til at tilfredsstille - så længe, adgangen er legitim, kender Dataejer ikke formålet med Dataanvenders brug af data.
 
-**Forsendelse af meddelelser**: Til forskel fra Anvendelse af udstillede data starter denne proces hos Afsenderen (der tillige kan være Dataejer). Afsender har udvalgt og pakketeret data i en Meddelelse (evt. i form af et dokument), adresserer Meddelelsen og sender den herefter til Modtager. Modtager kan være alle typer af aktører; i figuren er vist, hvordan det hos en myndighed kan være relevant at fordele/route Meddelelsen internt ud fra adresseringsoplysningerne. I sammenligning med Anvendelse af udstillede data er det nu Afsender, der som deler af data 'ejer' den fulde forretningskontekst - hvor Dataejer overnfor ikke var bekendt med formålet med at dele data.
+Forsendelse af meddelelser
+  ~ *proces* Til forskel fra Anvendelse af udstillede data starter denne proces hos Afsenderen (der tillige kan være Dataejer). Afsender har udvalgt og pakketeret data i en Meddelelse (evt. i form af et dokument), adresserer Meddelelsen og sender den herefter til Modtager. Modtager kan være alle typer af aktører; i figuren er vist, hvordan det hos en myndighed kan være relevant at fordele/route Meddelelsen internt ud fra adresseringsoplysningerne. I sammenligning med Anvendelse af udstillede data er det nu Afsender, der som deler af data 'ejer' den fulde forretningskontekst - hvor Dataejer overnfor ikke var bekendt med formålet med at dele data.
 
 
 
 ## Tværgående processer
 Herunder beskrives, hvor de enkelte business functions hos de enkelte roller anvendes i kontekst af et sæt af generiske procesmønstre.
 
- - Sagsbehandling (fra Sag og dokument)
- - Simpel selvbetjening (fra Selvbetjening)
- - Tværgående selvbetjening (fra Sammenhængende services)
-[MBK: <fra Selvbetjening, hvis i snakker om referencearkitektur. Vi har ikke en der hedder sammenhængende services>]: x
- - Indsigt i oplysninger og deres anvendelse (fra Overblik over sag og ydelser)
- - Sende meddelelse (inkl. brug af tilmeldingslister og påmindelser)
- - Modtage meddelelse
- - Tag et dokument med til en anden service provider, der ikke har adgang til registre - herunder beskrive, hvordan dokumenter valideres.
+- Sagsbehandling (fra Referencearkitektur for Sag og dokument)
+- Selvbetjening (fra Referencearkitektur for Selvbetjening)
+- Indsigt i oplysninger og deres anvendelse (fra Referencearkitektur for Overblik over sag og ydelser)
+- Sende meddelelse (inkl. brug af tilmeldingslister og påmindelser)
+- Modtage meddelelse
+- Tag et dokument med til en anden service provider, der ikke har adgang til registre - herunder beskrive, hvordan dokumenter valideres.
 
 
 ## Forretningstjenester
@@ -278,40 +291,51 @@ Nedenfor fremgår en initiel oversigt over en række forretningsobjekter, der er
 
 ![Oversigt over de centrale forretningsobjekter og deres relationer](figures/objekter.png)
 
-Data
+data
   ~ *objekt* (Abstrakt. Bruges om både registerrecord og dokument)
 
-Registeroplysning
-  ~ *objekt* en record
+samling
+  ~ *objekt* [Datasætmodel har ikke definition...] ISO9115: en identificerbar samling af oplysninger (samlebetegnelse for PSI, GPDR, )
 
-Dokument
-  ~ *objekt* [Dokumentmodel fra OIO]
+meddelelse
+  ~ *objekt* [NgDP] registreret forsendelse
 
-Datasamling
-  ~ *objekt* [Datasætmodel har ikke noget!] ISO9115: en identificerbar samling af oplysninger (samlebetegnelse for PSI, GPDR, )
+datasubjekt
+  ~ *objekt* [Grunddata, fx person. GPDR den registrede]
 
-
-Datasubjekt
-  ~ *objekt* [Grunddata, fx person]
-
-Model/Schema
+model/type
   ~ *objekt* [Jf. modelregler fra FDA]
 
-Meddelelse
+katalog
+  ~ *objekt* [jf hvidbog] både data, service... til design
+
+dataservice
+  ~ *objekt* webservice med adgang til datasamling
+
+og andre mulige
+
+
+registeroplysning
+  ~ *objekt* en record
+
+dokument
+  ~ *objekt* [Dokumentmodel fra OIO]
+
+påmindelse
   ~ *objekt* [Næste generation Digital Post]
 
-Påmindelse
-  ~ *objekt* [Næste generation Digital Post]
+registreringshændelse
+  ~ *objekt*
 
-Registreringshændelse
-  ~ *objekt* [Datafordeler]
+forretningshændelse
+  ~ *objekt*
 
+klassifikation
+  ~ *objekt*
 
+[TODO MBK Der bør være noget om sammenhængen mellem Referenceinformationsmodel, Applikationsprofiler og Snitfaldespecifikationer inkl operationer og format]: x
 
-<MBK: Liste og model matcher ikke helt>
-<MBK: savner Dataservice, Forretningshændelse, Klassifikation>
-<MBK: Der bør være noget om sammenhængen mellem Referenceinformationsmodel, Applikationsprofiler og Snitfaldespecifikationer (inkl operationer og format)
-<MBK: Noget om anonymiserede data. Evt. kandidat til standardiseret metode>
+[TODO Noget om anonymiserede data. Evt. kandidat til standardiseret metode]: x
 
 ## Forretningsmønstre
 
@@ -323,7 +347,7 @@ Registreringshændelse
 Dette afsnit beskriver roller og implementeringsmønstre, der er relevante, når forretningsfunktionerne beskrevet ovenfor skal understøttes/realiseres af applikationer. Endvidere udpeges områder, der er kandidat til standardisering og/eller profilering i forbindelse med referencearkitekturen.
 
 
-De nødvendige og understøttende applikations-services og deres indbyrdes relationer er vist i figuren nedenfor. <TODO: Opdater figurtekst.>
+De nødvendige og understøttende applikations-services og deres indbyrdes relationer er vist i figuren nedenfor.
 
 ![Oversigt over nødvendige og understøttende applikations-services og deres indbyrdes relationer](figures/services.png)
 
@@ -357,12 +381,12 @@ Indeks
 Katalog
   ~ *applikationsservice* som ikke er en dataservice, fordi der ikke er begrænset adgang. Kan undværes, men ikke effektivt.
 
-<MBK: Forstår ikke denne defintion. For mig er hverken et katalog eller en dataservice defineret ved adgangsrettigheder. Et katalog skal fx også kunne begrænse adgang og en dataservice skal også kunne tilbyde adgang til læs . søg, hent / download uden login hvis der er tale om åbne data uden rettighedsbegrænsninger.>
+[MBK Forstår ikke denne defintion. For mig er hverken et katalog eller en dataservice defineret ved adgangsrettigheder. Et katalog skal fx også kunne begrænse adgang og en dataservice skal også kunne tilbyde adgang til læs . søg, hent / download uden login hvis der er tale om åbne data uden rettighedsbegrænsninger.]: x
 
-<MBK: Savner byggeblokke som fx Klassifikationsservices (både udstille klassifikationer og mapninger), Serviceregister, Systemkatalog, datakatalog, Modelkatalog.>
+[MBK: Savner byggeblokke som fx Klassifikationsservices (både udstille klassifikationer og mapninger), Serviceregister, Systemkatalog, datakatalog, Modelkatalog.]: x
 
-<TODO Skal vi have en "beskyttet dataservice" og en offentlig?>
-<MBK: Det mener jeg er et must, jf hele open data agendaen>
+[TODO Skal vi have en "beskyttet dataservice" og en offentlig? MBK, Ja]: x
+
 
 
 ## Tekniske Implementeringer
@@ -372,11 +396,11 @@ Her grupperes de enkelte roller og applikationsroller jf. forskellige mønstre.
 ### Anvendelse af udstillede data
 
 Når en dataanvender (virksomhed eller myndighed) vil have adgang til data hos en dataejende myndighed, kan det ske via ét af nedenstående tre mønstre:
-<TODO: Overvej samtykker ift. Virksomhed>
-<TODO: Overvej Hændelser>
+[TODO: Overvej samtykker ift. Virksomhed>]: x
+[TODO: Overvej Hændelser>]: x
 
 #### Direkte adgang
-![Implementeringsmønster for service enablede registre](figures/use-soa.png)
+![Implementeringsmønster med direkte adgang til registre](figures/use-soa.png)
 
 I dette mønster, som er simpelt og måske det mest klassiske, er det Dataejer, der selv udstiller data til de mulige anvendere via en service-orienteret arkitektur. Dataejer er også ansvarlig for at betjene Datasubjektets forespørgsler om Dataejerens brug af personlige data.
 
@@ -425,8 +449,6 @@ Et meget anvendt mønster for myndighed til myndighed-kommunikation er at levere
 
 Fordelen ved dette mønster er, at det er simpelt og benytter sig af standardteknologi. Ulempen er, at det kun dækker myndighed til myndighed-kommunikation. Derudover sætter standardteknologien (e-mail) visse begrænsninger for funktionalitet, der fx understøtter automatisk routing af beskeder hos modtageren i det tilfælde, hvor Meddelelsen ikke har én specifik modtager.
 
-<MBK: Dette mener jeg vi bør forsøge at lægge uden for scope ifht at deling er vores hoedfokus. AF: DONE>
-
 #### Fælles system
 ![Implementeringsmønster for fælles applikation](figures/send-shared.png)
 
@@ -454,7 +476,8 @@ Fordelene ved Økosystem-mønsteret er, at det er robust, fleksibelt og løbende
 ### Registrering
 
 Registrering af data er ikke i scope for denne referencearkitektur, men medtages kort pga. sin væsentlige relation til Index-konceptet.
-[TODO: Hvor udfolder vi mere om mønstre, der anvender Index?]: x
+
+[TODO: Hvor udfolder vi mere om mønstre, der anvender Index?]
 
 Ansvar hos registrant
   ~ *implementationsmønster*

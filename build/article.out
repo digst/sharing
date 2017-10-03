@@ -1,28 +1,33 @@
 \BOOKMARK [1][-]{section.1}{Introduktion}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Formål}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.1}{Formål og målgruppe}{section.1}% 2
 \BOOKMARK [2][-]{subsection.1.2}{Scope}{section.1}% 3
 \BOOKMARK [2][-]{subsection.1.3}{Centrale\040begreber}{section.1}% 4
 \BOOKMARK [2][-]{subsection.1.4}{Anvendelse}{section.1}% 5
 \BOOKMARK [2][-]{subsection.1.5}{Tilblivelse\040og\040governance}{section.1}% 6
 \BOOKMARK [2][-]{subsection.1.6}{Metoderamme}{section.1}% 7
 \BOOKMARK [2][-]{subsection.1.7}{Relation\040til\040andre\040referencearkitekturer}{section.1}% 8
-\BOOKMARK [1][-]{section.2}{Strategi}{}% 9
+\BOOKMARK [1][-]{section.2}{Strategisk\040arkitektur}{}% 9
 \BOOKMARK [2][-]{subsection.2.1}{Forretningsmæssige tendenser}{section.2}% 10
 \BOOKMARK [2][-]{subsection.2.2}{Teknologiske\040tendenser}{section.2}% 11
 \BOOKMARK [2][-]{subsection.2.3}{Strategiske målsætninger}{section.2}% 12
 \BOOKMARK [2][-]{subsection.2.4}{Vision}{section.2}% 13
 \BOOKMARK [2][-]{subsection.2.5}{Værdiskabelse}{section.2}% 14
 \BOOKMARK [2][-]{subsection.2.6}{Strategiske\040principper}{section.2}% 15
-\BOOKMARK [1][-]{section.3}{Forretning}{}% 16
+\BOOKMARK [1][-]{section.3}{Forretningsmæssig arkitektur}{}% 16
 \BOOKMARK [2][-]{subsection.3.1}{Aktører}{section.3}% 17
 \BOOKMARK [2][-]{subsection.3.2}{Opgaver}{section.3}% 18
 \BOOKMARK [2][-]{subsection.3.3}{Funktioner}{section.3}% 19
 \BOOKMARK [2][-]{subsection.3.4}{Roller}{section.3}% 20
-\BOOKMARK [2][-]{subsection.3.5}{Tværgående processer}{section.3}% 21
-\BOOKMARK [2][-]{subsection.3.6}{Forretningstjenester}{section.3}% 22
-\BOOKMARK [2][-]{subsection.3.7}{Forretningsobjekter}{section.3}% 23
-\BOOKMARK [1][-]{section.4}{Teknik}{}% 24
-\BOOKMARK [2][-]{subsection.4.1}{Applikationsroller}{section.4}% 25
-\BOOKMARK [2][-]{subsection.4.2}{Tekniske\040Implementeringer}{section.4}% 26
-\BOOKMARK [2][-]{subsection.4.3}{Områder for standardisering/profileringer}{section.4}% 27
-\BOOKMARK [2][-]{subsection.4.4}{Identifikation\040af\040eksisterende\040standarder}{section.4}% 28
+\BOOKMARK [2][-]{subsection.3.5}{Use\040cases}{section.3}% 21
+\BOOKMARK [2][-]{subsection.3.6}{Tværgående processer}{section.3}% 22
+\BOOKMARK [2][-]{subsection.3.7}{Forretningstjenester}{section.3}% 23
+\BOOKMARK [2][-]{subsection.3.8}{Forretningsobjekter}{section.3}% 24
+\BOOKMARK [2][-]{subsection.3.9}{Forretningsmønstre}{section.3}% 25
+\BOOKMARK [1][-]{section.4}{Teknisk\040arkitektur}{}% 26
+\BOOKMARK [2][-]{subsection.4.1}{Applikationsroller}{section.4}% 27
+\BOOKMARK [2][-]{subsection.4.2}{Tekniske\040Implementeringer}{section.4}% 28
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Anvendelse\040af\040udstillede\040data}{subsection.4.2}% 29
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Forsendelse\040af\040meddelelse}{subsection.4.2}% 30
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Registrering}{subsection.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.3}{Områder for standardisering/profileringer}{section.4}% 32
+\BOOKMARK [2][-]{subsection.4.4}{Identifikation\040af\040eksisterende\040standarder}{section.4}% 33

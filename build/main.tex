@@ -1,9 +1,42 @@
+
+\section*{Resume}\label{resume}
+
+Hverdagen er digital, og data om borgere, virksomheder, myndigheder,
+ejendomme, steder, køretøjer o.m.m. vedligeholdes i en lang række
+områder af den offentlige administration. Der ligger et stort potentiale
+i at gøre sådanne data tilgængelige for genbrug, så de kan skabe værdi i
+andre sammenhænge end formålet med det oprindelige register. Dette kan
+danne fundament for langt bedre understøttelse af tværgående, offentlige
+services, og åbner tillige for anvendelse af data i nye og innovative
+sammenhænge.
+
+Men deling af data kan være teknisk kompliceret og i mange tilfælde
+omkostningstungt, bl.a. drevet af krav til sikkerhed og dermed bevarelse
+af borgeres og virksomheders tillid til datadeling i det offentlige
+Danmark. Derfor er potentialet i deling og genbrug af data i høj grad
+forblevet uindfriet.
+
+Denne referencearkitekturs formål er at hjælpe med at indfri dette
+potentiale. Dette gøres ved at introducere en fælles beskrivelse af de
+begreber og sammenhænge, der er væsentlige for at forstå og arbejde med
+design og implementering af løsninger, der involverer deling af data og
+dokumenter. Dette sker både på det strategiske plan, hvor vision, mål og
+arkitektoniske principper fastlægges; på det forretningsmæssige plan,
+hvor de typiske brugsscenarier beskrives; og på det tekniske plan, hvor
+en række implementeringsmønstre angiver, hvordan man i og mellem
+applikationer kan dele og forsende data.
+
+Referencearkitekturen er udarbejdet under den fællesoffentlige
+digitaliseringsstrategi 2016-2020 og er som sådan relevant for alle
+offentlige myndigheder og deres leverandører samt for virksomheder, der
+ønsker at gøre brug af offentlige data.
+
 \section{Introduktion}\label{introduktion}
 
-\subsection{Formål}\label{formuxe5l}
+\subsection{Formål og målgruppe}\label{formuxe5l-og-muxe5lgruppe}
 
-Referencearkitekturen understøtter anvendelse og udviklingen af
-offentlige it-systemer, der
+Referencearkitekturen for deling af data og dokumenter understøtter
+design, udvikling og anvendelse af offentlige it-systemer, der
 
 \begin{itemize}
 \tightlist
@@ -13,6 +46,20 @@ offentlige it-systemer, der
 \item
   sender eller modtager meddelelser fra andre it-systemer
 \end{itemize}
+
+Dokumentet er primært målrettet it-arkitekter tilknyttet offentlige
+digitaliseringsprojekter, herunder enterprise-arkitekter,
+forretningsarkitekter og løsningsarkitekter, der har til opgave at
+kravspecificere og designe løsninger.
+
+De første dele af dokumentet (Strategisk og Forretningsmæssig
+arkitektur) henvender sig endvidere til projektledere og
+beslutningstagere, herunder forretningsansvarlige,
+digitaliseringschefer, it-chefer, afdelings- og kontorchefer og andre
+med rollen som systemejer.
+
+Dokumentet i sin helhed er også relevant for leverandører at orientere
+sig i.
 
 \subsection{Scope}\label{scope}
 
@@ -26,7 +73,7 @@ it-systemer, der reguleres af blandt andet:
 persondata
 \item[EU eIDAS]
 \emph{lov} som definerer registrede tillidstjenester
-\item[Persondata lov]
+\item[Persondatalov]
 \emph{lov} som beskriver pligter og rettigheder ved behandling af
 persondata
 \item[Lov om Digital Post]
@@ -70,10 +117,32 @@ dokumenter.
 
 \begin{figure}
 \centering
-\includegraphics{abstraktion.pdf}
+\includegraphics[width=\textwidth]{figures/abstraktion.png}
 \caption{Anvendelse af begrebet data og relaterede begreber i denne
 referencearkitektur}
 \end{figure}
+
+Vi vil endvidere lave en skelnen mellem:
+
+\begin{itemize}
+\tightlist
+\item
+  Anvendelse af udstillede data - typisk via API i
+  system-til-system-integrationer
+\item
+  Forsendelse af meddelelser indeholdende data (herunder dokumenter) -
+  typisk brugt ved beskeder til borgere/virksomheder, der skal have
+  retsvirkning, men også et klassisk mønster brugt i
+  system-til-system-integrationer.
+\end{itemize}
+
+Den fundamentale forskel på disse to scenarier er, om det er afsenderen
+eller modtageren af data, der kender formålet med interaktionen. Ved
+udstiling af data er dataafsenderen som udgangspunkt ikke bekendt med
+datamodtagerens formål (men er naturligvis forpligtet til at håndhæve
+relevant hjemmel). Ved forsendelse af meddelelser er det dataafsenderen,
+der i en given kontekst afsender en meddelelse med et givent formål -
+typisk som led i en proces.
 
 \subsection{Anvendelse}\label{anvendelse}
 
@@ -97,14 +166,21 @@ under Digitaliseringsstrategien 18. december 2017.
 
 \subsection{Metoderamme}\label{metoderamme}
 
-Skrives inden for rammerne af Fællesoffentlige Digital Arkitektur, det
-vil sige; erfaringer fra OIO referencearkitektur, EIRA, TOGAF,
-ArchiMate.
+Referencearkitekturen er udarbejdet inden for rammerne af
+Fællesoffentlig Digital Arkitektur og følger så vidt muligt den fælles
+skabelon for referencearkitekturer som udarbejdet i DIGST/KDA.
+Metoderammen bygger blandt andet på erfaringer fra OIO
+referencearkitektur, og indarbejder også elementer fra EIRA, TOGAF,
+ArchiMate m.m.
+
+Særlige elementer er i dokumentet angivet i \emph{kursiv} (fx
+\emph{lov}, \emph{mål}, \emph{rolle} m.m.). Dette markerer, at de hører
+til Archimate-begrebsapparatet.
 
 \subsection{Relation til andre
 referencearkitekturer}\label{relation-til-andre-referencearkitekturer}
 
-Gør brug af
+Denne referencearkitektur gør brug af:
 
 \begin{itemize}
 \tightlist
@@ -112,7 +188,7 @@ Gør brug af
   Fællesoffentlig referencearkitektur for brugerstyring
 \end{itemize}
 
-Skal kunne anvendes af:
+Den skal kunne anvendes af:
 
 \begin{itemize}
 \tightlist
@@ -123,7 +199,7 @@ Skal kunne anvendes af:
   ydelser
 \end{itemize}
 
-Skal anvendes i kontekst sammen med:
+\ldots{} og skal anvendes i kontekst sammen med:
 
 \begin{itemize}
 \tightlist
@@ -135,7 +211,7 @@ Skal anvendes i kontekst sammen med:
   Sag- og dokument på det kommunale område
 \end{itemize}
 
-\section{Strategi}\label{strategi}
+\section{Strategisk arkitektur}\label{strategisk-arkitektur}
 
 Udarbejdelsen af referencearkitekturen tager udgangspunkt i en række
 identificerede forretningsmæssige og teknologiske trends og tendenser.
@@ -146,7 +222,7 @@ tendenser}\label{forretningsmuxe6ssige-tendenser}
 \begin{itemize}
 \tightlist
 \item
-  Ensretning og nationale indsatser
+  Nationalt ønske om at undgå knopskudte løsninger
 \item
   Data har øget værdi for organisationer
 \item
@@ -187,44 +263,60 @@ tendenser}\label{forretningsmuxe6ssige-tendenser}
 \subsection{Strategiske
 målsætninger}\label{strategiske-muxe5lsuxe6tninger}
 
+De overordnede målsætninger for denne referencearkitektur kobler alle
+til visionen om det datadrevne samfund, hvor data ses som et råstof for
+samfundsudviklingen.
+
+Målsætningerne inkluderer:
+
 \begin{description}
 \tightlist
-\item[Interoperability]
+\item[Interoperabilitet]
 \emph{mål} om sammenhængende services\ldots{} integrated service
 delivery
 \item[Once-only]
 \emph{mål} om at borger og virksomhed kun skal afgive den samme
 information til det offentlige en gang\ldots{} (men give lov til
 genbrug?)
-\item[Transperancy]
+\item[Transparens]
 \emph{mål} om at borgere og virksomheder skal kunne se, hvilke data der
 findes om dem, og hvor disse data anvendes
-\item[Re-use]
+\item[Genbrug]
 \emph{mål} om genbrug af it med henblik på lavere omkostninger
 \end{description}
 
 \subsection{Vision}\label{vision}
 
+Visionen i denne referencearkitektur er at stræbe efter en situation,
+hvor:
+
 \begin{quote}
-\emph{Data skal være nemme at bruge og svære at misbruge}
+\emph{Data betragtes som en fælles, værdifuld og velbeskyttet ressource;
+de skal være nemme at dele og bruge, men svære at misbruge}
 \end{quote}
 
 \begin{quote}
-\emph{Byrden i datadeling skal afløftes fra dataejer, hvis den begrænser
-genbrug}
+\emph{Data beskrives, fordeles, forbedres og beskyttes i fælleskab.}
 \end{quote}
 
 \begin{quote}
-\emph{Ensartet datadeling skal understøtte sammenstilling af data og
-tværgående brug}
+\emph{Fælles metoder for datadeling understøtter sammenstilling af data
+og tværgående brug blandt myndigheder og virksomheder}
 \end{quote}
 
 \begin{quote}
-\emph{Klar governancce omkring beskrivelse af, adgang til og brug af
-data}
+\emph{Beskrivelse af, adgang til og brug af data sker under klar
+governance og håndhæves ud fra tydelig hjemmel}
+\end{quote}
+
+\begin{quote}
+\emph{Borgere og virksomheder har overblik over deres data og hvor, de
+anvendes}
 \end{quote}
 
 \subsection{Værdiskabelse}\label{vuxe6rdiskabelse}
+
+Værdien ved at følge denne referencearkitektur er, at den giver:
 
 \begin{itemize}
 \tightlist
@@ -232,11 +324,15 @@ data}
   Mindre besvær for borger og virksomheder ved brug af digitale services
 \item
   Simplere arbejdsgange og mere potentiale for automatisering hos
-  myndigheder {[}og virksomheder{]}
+  organisationer (myndigheder/virksomheder)
 \item
-  Understøtte transparens og bevare tillid til registre
+  Understøttelse af værdiskabende innovation (ved at gøre data til et
+  `råstof' for vækst/skabelse af konkurrencefordele)
 \item
-  Effektiv systemudvikling (begrænse udfaldsrum, opsamle best practice)
+  Understøttelse transparens og bevare tillid til registre
+\item
+  Effektiv systemudvikling (begrænser udfaldsrum, opsamler best
+  practice)
 \end{itemize}
 
 \subsection{Strategiske principper}\label{strategiske-principper}
@@ -247,9 +343,12 @@ principper bag referencearkitekturen:
 \begin{itemize}
 \tightlist
 \item
-  F1: Autoritative register med henvisninger til andre registre
+  F1: Byrden i datadeling skal afløftes fra dataejer, hvis den begrænser
+  genbrug
 \item
-  F2: Ansvar for begrænsning af adgang ligger hos registerejer
+  F2: Autoritative registre med henvisninger til andre registre
+\item
+  F3: Ansvar for begrænsning af adgang ligger hos registerejer
 \item
   I1: Fælles referenceinformationsmodel
 \item
@@ -267,55 +366,64 @@ principper bag referencearkitekturen:
   T2: Multi-flavour-api
 \end{itemize}
 
-\section{Forretning}\label{forretning}
+\section{Forretningsmæssig
+arkitektur}\label{forretningsmuxe6ssig-arkitektur}
 
 \subsection{Aktører}\label{aktuxf8rer}
+
+De væsentligste aktører, der er i spil omkring deling af data og
+dokumenter, er:
 
 \begin{itemize}
 \tightlist
 \item
-  Offentlig myndigheder, og virksomheder der handler på vegne af dem.
+  Offentlige myndigheder, herunder virksomheder, der handler på vegne af
+  offentlige myndigheder
 \item
-  Borger og virksomheder
+  Borgere og virksomheder
 \end{itemize}
 
 \subsection{Opgaver}\label{opgaver}
 
-Referencearkitekturen finder anvendelse i løsningen af alle offentlige
-opgaver.
+Forretningsmæssigt set finder referencearkitekturen anvendelse i
+løsningen af alle offentlige opgaver. Specifikt kan nævnes:
 
 \begin{itemize}
 \tightlist
 \item
-  Borger og virksomhedsvendte selvbetjeningsløsninger
+  Borger- og virksomhedsvendte selvbetjeningsløsninger
 \item
   Myndigheders sagsbehandling
 \item
-  Tværgående analyse, tilsyn, kontrol
+  Tværgående analyse, tilsyn og kontrol
 \end{itemize}
 
 \subsection{Funktioner}\label{funktioner}
 
-Referencearkitekturen beskriver tre centrale use cases, hvor aktører
-arbejder sammen i forskellige roller
+Referencearkitekturen kredser om tre centrale use cases, hvor aktører
+arbejder sammen i forskellige roller.
 
 \begin{figure}
 \centering
-\includegraphics{usecases.pdf}
+\includegraphics[width=\textwidth]{figures/usecases.png}
 \caption{Tværgående use cases og funktioner hos de enkelte roller}
 \end{figure}
+
+De tre use cases er:
 
 \begin{description}
 \tightlist
 \item[Registrering]
 \emph{collaboration} hvor oplysninger bringes på digital form
-\item[Datanvendelse]
+\item[Anvendelse af udstillede data (herunder dokumenter)]
 \emph{collaboration} hvor oplysninger anvendes i en opgave
-\item[Registreret forsendelse]
+\item[Forsendelse af meddelelser]
 \emph{collaboration} hvor meddelelser sendes uafviseligt
 \end{description}
 
 \subsection{Roller}\label{roller}
+
+I ovenstående use cases indgår disse roller:
 
 \begin{description}
 \tightlist
@@ -329,7 +437,7 @@ arbejder sammen i forskellige roller
 \emph{rolle} som ejer registreringer/data, ansvar for at udarbejde
 adgangspolitik
 \item[Datadistributør]
-\emph{rolle} som ejer registreringer/data, ansvar for at udarbejde
+\emph{rolle} som distribuerer data, ansvar for at håndhæve
 adgangspolitik
 \item[Messaging User]
 \emph{rolle} som der sender og modtager meddelelser
@@ -337,7 +445,51 @@ adgangspolitik
 \emph{rolle} som leverer services til forsendelse
 \end{description}
 
-Nogle kan betragtes som specialiseringer af GDPR-rollen Databehandler.
+Nogle af overnstående roller kan betragtes som specialiseringer af
+GDPR-rollen \emph{Databehandler}.
+
+\subsection{Use cases}\label{use-cases}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/patterns.png}
+\caption{Overblik over centrale processer og deres aktiviteter fordelt
+på roller}
+\end{figure}
+
+Figuren ovenfor beskriver det overordnede procesflow i de tre use cases.
+Væsentligt at fremhæve er:
+
+\begin{description}
+\tightlist
+\item[Registrering]
+\emph{proces} En registrant initierer processen ved at registrere ny
+data hos Dataejer (der er ansvarlig for sikring af hjemmel og
+håndhævelse af adgangspolitik). Når data er korrekt registreret, skal
+det markeres som klar til at blive udstillet.
+\item[Anvendelse af udstillede data]
+\emph{proces} Denne proces initieres hos Dataanvender - typisk en
+myndighed, men kan også være en virksomhed - ud fra startsituationen, at
+man har erkendt et behov for data. Dataanvender sender en forespørgsel
+på data, der beskriver dels, hvilke data, der ønskes, og dels med
+hvilken hjemmel. Dataejer håndhæver på denne baggrund adgangskontrol,
+inden data deles og sendes i et svar til Dataanvender. Slutsituationen
+bliver, at Dataanvenders databehov er opfyldt. Dataejer er ikke
+nødvendigvis klar over, hvilket databehov forespørgslen har tjent til at
+tilfredsstille - så længe, adgangen er legitim, kender Dataejer ikke
+formålet med Dataanvenders brug af data.
+\item[Forsendelse af meddelelser]
+\emph{proces} Til forskel fra Anvendelse af udstillede data starter
+denne proces hos Afsenderen (der tillige kan være Dataejer). Afsender
+har udvalgt og pakketeret data i en Meddelelse (evt. i form af et
+dokument), adresserer Meddelelsen og sender den herefter til Modtager.
+Modtager kan være alle typer af aktører; i figuren er vist, hvordan det
+hos en myndighed kan være relevant at fordele/route Meddelelsen internt
+ud fra adresseringsoplysningerne. I sammenligning med Anvendelse af
+udstillede data er det nu Afsender, der som deler af data `ejer' den
+fulde forretningskontekst - hvor Dataejer overnfor ikke var bekendt med
+formålet med at dele data.
+\end{description}
 
 \subsection{Tværgående processer}\label{tvuxe6rguxe5ende-processer}
 
@@ -347,14 +499,12 @@ roller anvendes i kontekst af et sæt af generiske procesmønstre.
 \begin{itemize}
 \tightlist
 \item
-  Sagsbehandling (fra Sag og dokument)
+  Sagsbehandling (fra Referencearkitektur for Sag og dokument)
 \item
-  Simpel selvbetjening (fra Selvbetjening)
+  Selvbetjening (fra Referencearkitektur for Selvbetjening)
 \item
-  Tværgående selvbetjening (fra Sammenhængende services)
-\item
-  Indsigt i oplysninger og deres anvendelse (fra Overblik over sag og
-  ydelser)
+  Indsigt i oplysninger og deres anvendelse (fra Referencearkitektur for
+  Overblik over sag og ydelser)
 \item
   Sende meddelelse (inkl. brug af tilmeldingslister og påmindelser)
 \item
@@ -376,42 +526,75 @@ Nedenfor fremgår en initiel oversigt over en række forretningsobjekter,
 der er væsentlige for referencearkitekturen. Det videre arbejde skal
 klarlægge, hvilke elementer der skal indgå i listen samt hvordan de
 defineres. Modelleringsniveauet skal endvidere lægges fast
-(bregrebsmodellering og/eller logiske kernemodeller?)
+(begrebsmodellering og/eller logiske kernemodeller?)
 Kommentarer/regibemærkninger indgår i listen, markeret med kantede
 parenteser.
 
 \begin{figure}
 \centering
-\includegraphics{objekter.pdf}
+\includegraphics[width=\textwidth]{figures/objekter.png}
 \caption{Oversigt over de centrale forretningsobjekter og deres
 relationer}
 \end{figure}
 
 \begin{description}
 \tightlist
-\item[Data]
+\item[data]
 \emph{objekt} (Abstrakt. Bruges om både registerrecord og dokument)
-\item[Registeroplysning]
-\emph{objekt} en record
-\item[Dokument]
-\emph{objekt} {[}Dokumentmodel fra OIO{]}
-\item[Datasamling]
-\emph{objekt} {[}Datasætmodel{]}
-\item[Datasubjekt]
-\emph{objekt} {[}Grunddata, fx person{]}
-\item[Model/Schema]
+\item[samling]
+\emph{objekt} {[}Datasætmodel har ikke definition\ldots{}{]} ISO9115: en
+identificerbar samling af oplysninger (samlebetegnelse for PSI, GPDR, )
+\item[meddelelse]
+\emph{objekt} {[}NgDP{]} registreret forsendelse
+\item[datasubjekt]
+\emph{objekt} {[}Grunddata, fx person. GPDR den registrede{]}
+\item[model/type]
 \emph{objekt} {[}Jf. modelregler fra FDA{]}
-\item[Meddelelse]
-\emph{objekt} {[}Næste generation Digital Post{]}
-\item[Påmindelse]
-\emph{objekt} {[}Næste generation Digital Post{]}
-\item[Registreringshændelse]
-\emph{objekt} {[}Datafordeler{]}
+\item[katalog]
+\emph{objekt} {[}jf hvidbog{]} både data, service\ldots{} til design
+\item[dataservice]
+\emph{objekt} webservice med adgang til datasamling
 \end{description}
 
-\section{Teknik}\label{teknik}
+og andre mulige
 
-Forretningsfunktionerne understøttes/realiseres af applikationer.
+\begin{description}
+\tightlist
+\item[registeroplysning]
+\emph{objekt} en record
+\item[dokument]
+\emph{objekt} {[}Dokumentmodel fra OIO{]}
+\item[påmindelse]
+\emph{objekt} {[}Næste generation Digital Post{]}
+\item[registreringshændelse]
+\emph{objekt}
+\item[forretningshændelse]
+\emph{objekt}
+\item[klassifikation]
+\emph{objekt}
+\end{description}
+
+\subsection{Forretningsmønstre}\label{forretningsmuxf8nstre}
+
+\emph{TBU.}
+
+\section{Teknisk arkitektur}\label{teknisk-arkitektur}
+
+Dette afsnit beskriver roller og implementeringsmønstre, der er
+relevante, når forretningsfunktionerne beskrevet ovenfor skal
+understøttes/realiseres af applikationer. Endvidere udpeges områder, der
+er kandidat til standardisering og/eller profilering i forbindelse med
+referencearkitekturen.
+
+De nødvendige og understøttende applikations-services og deres indbyrdes
+relationer er vist i figuren nedenfor.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/services.png}
+\caption{Oversigt over nødvendige og understøttende
+applikations-services og deres indbyrdes relationer}
+\end{figure}
 
 \subsection{Applikationsroller}\label{applikationsroller}
 
@@ -444,7 +627,7 @@ Forretningsfunktionerne understøttes/realiseres af applikationer.
 \item
   begrænse adgang til de rigtige
 \item
-  (måske) vedligeholde og udsende abonnementer
+  (måske) vedligeholde og udsende abonnementer MBK:
 \end{itemize}
 
 \begin{description}
@@ -469,42 +652,190 @@ begrænset adgang. Kan undværes, men ikke effektivt.
 Her grupperes de enkelte roller og applikationsroller jf. forskellige
 mønstre.
 
-\emph{Datanvendelse}
+\subsubsection{Anvendelse af udstillede
+data}\label{anvendelse-af-udstillede-data}
 
-Når myndighed vil have adgang til data hos en anden myndighed, er der et
-par relevante mønstre:
+Når en dataanvender (virksomhed eller myndighed) vil have adgang til
+data hos en dataejende myndighed, kan det ske via ét af nedenstående tre
+mønstre: {[}TODO: Overvej samtykker ift. Virksomhed\textgreater{}{]}: x
+{[}TODO: Overvej Hændelser\textgreater{}{]}: x
 
-\begin{description}
-\tightlist
-\item[Direkte adgang, SOA]
-\emph{implementationsmønster}
-\item[Datadistribution]
-\emph{implementationsmønster} sammenstilling samt adgangskontrol og
-logning
-\item[Distribueret Service- og data-platform]
-\emph{implementationsmønster}
-\end{description}
+\paragraph{Direkte adgang}\label{direkte-adgang}
 
-\emph{Registreret forsendelse}
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/use-soa.png}
+\caption{Implementeringsmønster med direkte adgang til registre}
+\end{figure}
 
-Når en myndighed vil sende noget til en myndighed, virksomhed eller
-borger.
+I dette mønster, som er simpelt og måske det mest klassiske, er det
+Dataejer, der selv udstiller data til de mulige anvendere via en
+service-orienteret arkitektur. Dataejer er også ansvarlig for at betjene
+Datasubjektets forespørgsler om Dataejerens brug af personlige data.
 
-\begin{description}
-\tightlist
-\item[SOA / Email]
-\emph{implementationsmønster}
-\item[Fælles system]
-\emph{implementationsmønster} fx e-Boks.
-\item[Service Providers]
-\emph{implementationsmønster} kan være både generisk eller specifikt for
-et domæne.
-\end{description}
+Fordelen ved dette mønster er, at det er simpelt. Ulempen er, at
+Dataejer kommer til at bære hele udgiften ved at stille data bredt til
+rådighed.
 
-\emph{Registrering}
+\paragraph{Datadistribution}\label{datadistribution}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/use-dist.png}
+\caption{Implementeringsmønster for datadistribution}
+\end{figure}
+
+I dette mønster er Dataejer fortsat ansvarlig for registrering af data.
+Anvendelsesdelen er imidlertid afløftet til en Datadistributør (evt.
+flere). Dette giver Datadistributøren mulighed for at fokusere netop på
+distributionen, dvs. at gøre data bredt tilgængeligt (dog naturligvis
+under håndhævelse af adgangskrav specificeret af Dataejer) til
+Dataanvendere.
+
+Når nye data registreres, er Dataejer ansvarlig for at opdatere
+Datasamlingen hos Datadistributøren.
+
+Logningsmæssigt er den enkelte Datadistributør ansvarlig for at logge
+Dataanvenders adgang til data. Samtidig er den enkelte Distributør
+ansvarlig for at sørge for konsolidering af loggen. I figuren er
+log-konsolidering lagt hos Dataejer, men den kunne i princippet også
+være uddelegeret - så længe, der er et entydigt og klart SPOC for
+Datasubjektets opslag i anvendelsen af personlige data.
+
+\paragraph{Distribueret service- og
+data-platform}\label{distribueret-service--og-data-platform}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/use-plat.png}
+\caption{Implementeringsmønster for distribueret dataplatform}
+\end{figure}
+
+Delingsansvaret er i dette mønster i høj grad håndteret af en
+Dataplatform. Platformen er distribueret og er i stand til at replikere
+data på tværs af Dataejer og Dataanvendere. Dvs., at data, der
+registreres via Dataejer, gøres tilgængelige hos Dataanvender af
+platformen.
+
+Da Dataplatformen kan rumme data fra forskellige Dataejere, muliggøres
+effektiv sammenstiling af data hos Datanvenderen. Platformen er
+ansvarlig for at håndhæve adgangskontrol, og eventuelle services hos
+Dataanvender, der gør brug af data, er ansvarlige for at logge deres
+brug. Platformen konsoliderer brugs-loggen, og gør det muligt for
+Datasubjekt at få overblik over brug af personlige data.
+
+Fordelen ved dette mønster er den umiddelbare og standardiserede
+tilgænglighed til data, som en Dataplatform kan levere. Ulempen er, at
+kompleksiteten øges, samt at der stilles større krav til Datanvenders
+modenhed ift. den tekniske adgang til data (da Dataanvenders
+applikationer i praksis vil skulle afvikles på den distribuerede
+Service- og Dataplatform).
+
+\emph{(Uafklaret: Skal Dataanvenders applikationer/services have direkte
+adgang til distribuerede data, eller skal adgang fortsat ske via et
+servicesnit, der kan varetage adgangskontol m.m.?)}
+
+\subsubsection{Forsendelse af
+meddelelse}\label{forsendelse-af-meddelelse}
+
+Når en myndighed vil initiere en specifik og målrettet datadeling - dvs.
+sende data (herunder dokumenter) til en anden myndighed, virksomhed
+eller borger - kan det ske via ét af de tre nedenstående mønstre.
+
+\paragraph{Sikker e-mail}\label{sikker-e-mail}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/send-email.png}
+\caption{Implementeringsmønster for e-mail}
+\end{figure}
+
+Et meget anvendt mønster for myndighed til myndighed-kommunikation er at
+levere en Meddelelse fra Afsender til Modtager ved brug af sikker
+e-mail. Det falder uden for dette dokuments scope at beskrive dette
+mønster yderligere, men det er medtaget her for reference. Det er
+endvidere oplagt at betragte dette mønster som et særtilfælde af det
+generelle `Service provider'-mønster nedenfor.
+
+Fordelen ved dette mønster er, at det er simpelt og benytter sig af
+standardteknologi. Ulempen er, at det kun dækker myndighed til
+myndighed-kommunikation. Derudover sætter standardteknologien (e-mail)
+visse begrænsninger for funktionalitet, der fx understøtter automatisk
+routing af beskeder hos modtageren i det tilfælde, hvor Meddelelsen ikke
+har én specifik modtager.
+
+\paragraph{Fælles system}\label{fuxe6lles-system}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/send-shared.png}
+\caption{Implementeringsmønster for fælles applikation}
+\end{figure}
+
+Ved brug af Fælles system-mønsteret til Forsendelse af en Meddelelse
+benytter Afsender og Modtager et centralt, fælles system til hhv. at
+placere Meddelelsen og læse den. I den analoge verden svarer dette
+mønster til, at Afsender og Modtager benytter et fælles postbokskontor.
+Digitalt er dette mønster fx implementeret af e-Boks, hvor såvel
+myndigheder, virksomheder og borgere kan placere Meddelelser, der
+efterfølgende kan hentes af Modtager. Også messaging-funktionaliteten i
+mange af de sociale medieplatforme (fx Facebook) falder i denne
+kategori.
+
+TIl forskel fra Sikker e-mail-mønsteret ovenfor er Fælles
+system-mønsteret mere robust, både da Forsendelsesservicen tilbyder
+opslag/verifikation mod et Kontaktregister samt da Meddelelsen opbevares
+i infrastrukturen, indtil Modtager aktivt læser den - i modsætning til
+Sikker e-mail, hvori infrastrukturen blot videresender Meddelelsen og
+dermed er afhængig af, at Modtageren i praksis findes.
+
+Meddelelsesfunktionaliteten har endvidere mulighed for at trække på en
+Notifikationsservice, der kan tilbyde notifikationer til Modtager om den
+nye Meddelelse.
+
+Et Fælles system-mønster kan fungere på mange niveauer, herunder
+nationalt (fx Digital Post); inden for et specifikt domæne, fx på
+sundhedsområdet; eller rent bilateralt, hvor to organisationer vælger en
+Meddelelsesplatform og enes om dette mønster.
+
+\paragraph{Økosystem/Service
+providers}\label{uxf8kosystemservice-providers}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/send-eco.png}
+\caption{Implementeringsmønster for ecosystem}
+\end{figure}
+
+I dette mønster deltager både Afsender (A) og Modtager (D) i et
+Meddelelses-økosystem ved at vælge hver sin Forsendelses-Service
+provider (hhv. B og C). Økosystem-mønsteret er bl.a. kendt i kontekst af
+den europæiske eDelivery-standard som en \emph{four corner model}.
+
+Et fælles Kontaktregister udgør en central komponent i økosystemet, der
+gør det muligt for alle parter at slå den relevante information op. En
+Afsender kan via Kontaktregisteret se/verificere mulige modtagere, samt
+evt. afgøre hvilken konkrete Meddelelsesformater/kanaler, Modtager kan
+håndtere. Forsendelsesservicen, der håndterer afsendelse af Meddelelsen,
+kan benytte Kontaktregisteret til at finde Modtagerens konkrete Service
+provider og bliver dermed i stand til at levere Meddelelsen.
+
+Mønsteret vil typisk være symmetrisk, således at en Afsender også kan
+indgå som Modtager og vice versa. Mønsteret kan i øvrigt både være
+generisk eller specifikt for et domæne, der fx kan stille ekstra krav
+til Meddelelsens format.
+
+Fordelene ved Økosystem-mønsteret er, at det er robust, fleksibelt og
+løbende kan udvides med nye Service providers. Ulempen er, at der
+stilles store krav til det centrale Kontaktregister, samt at der fortsat
+ikke findes standardteknologier, der dækker mønsteret.
+
+\subsubsection{Registrering}\label{registrering}
 
 Registrering af data er ikke i scope for denne referencearkitektur, men
 medtages kort pga. sin væsentlige relation til Index-konceptet.
+
+{[}TODO: Hvor udfolder vi mere om mønstre, der anvender Index?{]}
 
 \begin{description}
 \tightlist
@@ -556,3 +887,5 @@ mønstre.
 
 \subsection{Identifikation af eksisterende
 standarder}\label{identifikation-af-eksisterende-standarder}
+
+\emph{TBU.}
