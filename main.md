@@ -58,10 +58,11 @@ I det efterfølgende vil begrebet data blive brugt til at betegne både oplysnin
 ![Anvendelse af begrebet data og relaterede begreber i denne referencearkitektur](figures/abstraktion.png)
 
 Vi vil endvidere lave en skelnen mellem:
+
  - Anvendelse af udstillede data - typisk via API i system-til-system-integrationer
  - Forsendelse af meddelelser indeholdende data (herunder dokumenter) - typisk brugt ved beskeder til borgere/virksomheder, der skal have retsvirkning, men også et klassisk mønster brugt i system-til-system-integrationer.
 
-Den fundamentale forskel på disse to scenarier er, om det er afsenderen eller modtageren af data, der kender formålet med interaktionen. Ved udstiling af data er dataafsenderen som udgangspunkt ikke bekendt med datamodtagerens formål (men er naturligvis forpligtet til at håndhæve relevant hjemmel). Ved forsendelse af meddelelser er det dataafsenderen, der i en given kontekst afsender en meddelelse med et givent formål - typisk som led i en proces.
+Den fundamentale forskel på disse to scenarier er, om det er afsenderen eller modtageren af data, der kender formålet med interaktionen. Ved udstilling af data er dataafsenderen som udgangspunkt ikke bekendt med datamodtagerens formål (men er naturligvis forpligtet til at håndhæve relevant hjemmel). Ved forsendelse af meddelelser er det dataafsenderen, der i en given kontekst afsender en meddelelse med et givent formål - typisk som led i en proces.
 
 
 
@@ -143,7 +144,7 @@ Visionen i denne referencearkitektur er at stræbe efter en situation, hvor:
 
 > *Data betragtes som en fælles, værdifuld og velbeskyttet ressource; de skal være nemme at dele og bruge, men svære at misbruge*
 
-> *Data beskrives, fordeles, forbedres og beskyttes i fælleskab.*
+> *Data beskrives, fordeles, forbedres og beskyttes i fællesskab.*
 
 > *Fælles metoder for datadeling understøtter sammenstilling af data og tværgående brug blandt myndigheder og virksomheder*
 
@@ -156,6 +157,7 @@ Visionen i denne referencearkitektur er at stræbe efter en situation, hvor:
 
 ## Værdiskabelse
 Værdien ved at følge denne referencearkitektur er, at den giver:
+
 - Mindre besvær for borger og virksomheder ved brug af digitale services
 - Simplere arbejdsgange og mere potentiale for automatisering hos organisationer (myndigheder/virksomheder)
 - Understøttelse af værdiskabende innovation (ved at gøre data til et 'råstof' for vækst/skabelse af konkurrencefordele)
@@ -187,12 +189,14 @@ Forretningsmæssige, Informationsmæssige, Applikationsmæssige og Tekniske prin
 
 ## Aktører
 De væsentligste aktører, der er i spil omkring deling af data og dokumenter, er:
+
 - Offentlige myndigheder, herunder virksomheder, der handler på vegne af offentlige myndigheder
 - Borgere og virksomheder
 
 
 ## Opgaver
 Forretningsmæssigt set finder referencearkitekturen anvendelse i løsningen af alle offentlige opgaver. Specifikt kan nævnes:
+
  - Borger- og virksomhedsvendte selvbetjeningsløsninger
  - Myndigheders sagsbehandling
  - Tværgående analyse, tilsyn og kontrol
@@ -210,36 +214,37 @@ De tre use cases er:
     ~ *collaboration* hvor oplysninger bringes på digital form
 
 **Anvendelse af udstillede data** (herunder dokumenter)
-  ~ *collaboration* hvor oplysninger anvendes i en opgave
+    ~ *collaboration* hvor oplysninger anvendes i en opgave
 
 **Forsendelse af meddelelser**
-  ~ *collaboration* hvor meddelelser sendes uafviseligt
+    ~ *collaboration* hvor meddelelser sendes uafviseligt
 
 ### Roller
 
 I ovenstående use cases indgår disse roller:
+
 - Registrant
-  ~ *rolle* som bringer oplysninger på digital form, registrer
+~ *rolle* som bringer oplysninger på digital form, registrer
 
 - Datasubject
-  ~ *rolle* som oplysninger handler
+~ *rolle* som oplysninger handler
 
 - Dataanvender
-  ~ *rolle* der anvender oplysninger fra et register
+~ *rolle* der anvender oplysninger fra et register
 
 - Dataejer
-  ~ *rolle* som ejer registreringer/data, ansvar for at udarbejde adgangspolitik
+~ *rolle* som ejer registreringer/data, ansvar for at udarbejde adgangspolitik
 
 - Datadistributør
-  ~ *rolle* som distribuerer data, ansvar for at håndhæve adgangspolitik
+~ *rolle* som distribuerer data, ansvar for at håndhæve adgangspolitik
 
 - Messaging User
-  ~ *rolle* som der sender og modtager meddelelser
+~ *rolle* som der sender og modtager meddelelser
 
 - Messaging Provider
-  ~ *rolle* som leverer services til forsendelse
+~ *rolle* som leverer services til forsendelse
 
-Nogle af overnstående roller kan betragtes som specialiseringer af GDPR-rollen *Databehandler*.
+Nogle af ovenstående roller kan betragtes som specialiseringer af GDPR-rollen *Databehandler*.
 
 ### Use cases
 ![To scenarier](figures/patterns.png)
@@ -250,7 +255,7 @@ Figuren ovenfor beskriver det overordnede procesflow i de tre use cases. Væsent
 
 **Anvendelse af udstillede data**: Denne proces initieres hos Dataanvender - typisk en myndighed, men kan også være en virksomhed - ud fra startsituationen, at man har erkendt et behov for data. Dataanvender sender en forespørgsel på data, der beskriver dels, hvilke data, der ønskes, og dels med hvilken hjemmel. Dataejer håndhæver på denne baggrund adgangskontrol, inden data deles og sendes i et svar til Dataanvender. Slutsituationen bliver, at Dataanvenders databehov er opfyldt. Dataejer er ikke nødvendigvis klar over, hvilket databehov forespørgslen har tjent til at tilfredsstille - så længe, adgangen er legitim, kender Dataejer ikke formålet med Dataanvenders brug af data.
 
-**Forsendelse af meddelelser**: Til forskel fra Anvendelse af udstillede data starter denne proces hos Afsenderen (der tillige kan være Dataejer). Afsender har udvalgt og pakketeret data i en Meddelelse (evt. i form af et dokument), adresserer Meddelelsen og sender den herefter til Modtager. Modtager kan være alle typer af aktører; i figuren er vist, hvordan det hos en myndighed kan være relevant at fordele/route Meddelelsen internt ud fra adresseringsoplysningerne. I sammenligning med Anvendelse af udstillede data er det nu Afsender, der som deler af data 'ejer' den fulde forretningskontekst - hvor Dataejer overnfor ikke var bekendt med formålet med at dele data.
+**Forsendelse af meddelelser**: Til forskel fra Anvendelse af udstillede data starter denne proces hos Afsenderen (der tillige kan være Dataejer). Afsender har udvalgt og pakketeret data i en Meddelelse (evt. i form af et dokument), adresserer Meddelelsen og sender den herefter til Modtager. Modtager kan være alle typer af aktører; i figuren er vist, hvordan det hos en myndighed kan være relevant at fordele/route Meddelelsen internt ud fra adresseringsoplysningerne. I sammenligning med Anvendelse af udstillede data er det nu Afsender, der som deler af data 'ejer' den fulde forretningskontekst - hvor Dataejer ovenfor ikke var bekendt med formålet med at dele data.
 
 
 
