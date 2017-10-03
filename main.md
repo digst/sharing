@@ -65,7 +65,7 @@ Vi vil endvidere lave en skelnen mellem:
  - Anvendelse af udstillede data - typisk via API i system-til-system-integrationer
  - Forsendelse af meddelelser indeholdende data (herunder dokumenter) - typisk brugt ved beskeder til borgere/virksomheder, der skal have retsvirkning, men også et klassisk mønster brugt i system-til-system-integrationer.
 
-Den fundamentale forskel på disse to scenarier er, om det er afsenderen eller modtageren af data, der kender formålet med interaktionen. Ved udstiling af data er dataafsenderen som udgangspunkt ikke bekendt med datamodtagerens formål (men er naturligvis forpligtet til at håndhæve relevant hjemmel). Ved forsendelse af meddelelser er det dataafsenderen, der i en given kontekst afsender en meddelelse med et givent formål - typisk som led i en proces.
+Den fundamentale forskel på disse to scenarier er, om det er afsenderen eller modtageren af data, der kender formålet med interaktionen. Ved udstilling af data er dataafsenderen som udgangspunkt ikke bekendt med datamodtagerens formål (men er naturligvis forpligtet til at håndhæve relevant hjemmel). Ved forsendelse af meddelelser er det dataafsenderen, der i en given kontekst afsender en meddelelse med et givent formål - typisk som led i en proces.
 
 
 
@@ -151,7 +151,7 @@ Visionen i denne referencearkitektur er at stræbe efter en situation, hvor:
 
 > *Data betragtes som en fælles, værdifuld og velbeskyttet ressource; de skal være nemme at dele og bruge, men svære at misbruge*
 
-> *Data beskrives, fordeles, forbedres og beskyttes i fælleskab.*
+> *Data beskrives, fordeles, forbedres og beskyttes i fællesskab.*
 
 > *Fælles metoder for datadeling understøtter sammenstilling af data og tværgående brug blandt myndigheder og virksomheder*
 
@@ -251,7 +251,7 @@ Messaging User
 Messaging Provider
   ~ *rolle* som leverer services til forsendelse
 
-Nogle af overnstående roller kan betragtes som specialiseringer af GDPR-rollen *Databehandler*.
+Nogle af ovenstående roller kan betragtes som specialiseringer af GDPR-rollen *Databehandler*.
 
 ## Use cases
 ![Overblik over centrale processer og deres aktiviteter fordelt på roller](figures/patterns.png)
