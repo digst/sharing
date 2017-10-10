@@ -214,7 +214,7 @@ Forretningsmæssigt set finder referencearkitekturen anvendelse i løsningen af 
 ## Funktioner
 Referencearkitekturen kredser om tre centrale use cases, hvor aktører arbejder sammen i forskellige roller.
 
-![Tværgående use cases og funktioner hos de enkelte roller](figures/usecases.png)
+![Tværgående use cases og funktioner hos de enkelte roller](figures/forretningsroller.png)
 
 
 De tre use cases er:
@@ -350,13 +350,10 @@ Dette afsnit beskriver roller og implementeringsmønstre, der er relevante, når
 
 
 ## Applikationsroller
-
-
 De nødvendige og understøttende applikationsroller og deres indbyrdes relationer er vist i figuren nedenfor. Nødvendige roller udbyder det minimale sæt af services, der er i spil i en datadelingsarkitektur. Undersøttende roller udbyder services, der i mange situationer vil være fordelagtige at implementere for at øge tilgængelighed, performance, brugervenlighed m.m. i en given datadelingsløsning.
 
-![Oversigt over nødvendige og understøttende applikations-services og deres indbyrdes relationer](figures/applikationsroller.png)
+![Oversigt over nødvendige og understøttende applikationsroller](figures/applikationsroller.png)
 
-[TODO: Opdater roller nedenfor ift. figur]
 
 Datasamling (dataservice?)
   ~ *applikationsrolle* som har til ansvar at opbevare en datasamling, udstille denne og begrænse adgangen til den om nødvendigt
