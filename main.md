@@ -493,25 +493,62 @@ Ansvar hos distributør
   ~ *implementationsmønster*
 
 
+## Integrationer
 
+### skriv
+Med kvittering...
+
+### opslag
+- beskytter mod misbrug
+- beskyttet mod DDOS
+
+DNS
+
+### opdater
+
+Bulk, Delta, Teknologispecifikt
+
+### konsolider
+Skriv eller høst
+
+### læs
+SQL eller Fil, men log
+
+### distribution
+- uafviselighed
+- beskyttet
+- payload/header
+
+### hent meddelelse
+-
+
+### modtag notifikation
+- borger - SMS/APP
 
 
 ## Områder for standardisering/profileringer
 Nedenstående, tekniske områder er kandidater til at indgå i referencearkitekturen i forhold til at pege på en anbefalet standard eller en særlig profilering, evt. vendt mod de enkelte, tekniske mønstre.
 
+
+Integrationer
 - Service Design Guidelines
-- Access Protocols
+
+- Data Write Protocols
+- Data Access Protocols
 - Distribution Protocols
+- Notification Protocols
 - Synchronisation Protocols
+
+
+Indholdsmæssige standarder
 - Metadata for opslag/søgning/anvendelse
 - Log format
+- Hjemmel (samtykke, lov)
+- Kontekts (klassifkation af anvendelse)
+- Hændelsesbeskeder
 - Identifikation
 - Klassifikation af følsomhed
-- Klassifikation af anvendelse (sagsbehandling vs analyse)
-- Hændelsesbeskeder
-- Protokol for flytning af filer, kryptering
-- Hjemmel (samtykke, lov)
-- Context
+
 
 [MBK: Web service beskrivelser er også et vigtigt emne. Fx en udvidelse af WSDL, så det understøtter Linked data. tal med Peter bruhn om dette.]: x
 [MBK: Fælles liste over standard operationer og vejledning i hvordan de inarbedes ifbm med udarbejdelse af snitfladespecifikationer]: x
