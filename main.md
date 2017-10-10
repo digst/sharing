@@ -394,12 +394,12 @@ Katalog
 
 
 ## Tekniske Implementeringer
-Her grupperes de enkelte roller og applikationsroller jf. forskellige mønstre.
+Her grupperes de enkelte aktørroller og applikationsroller i forskellige implementeringsmønstre.
 
 
 ### Anvendelse af udstillede data
 
-Når en dataanvender (virksomhed eller myndighed) vil have adgang til data hos en dataejende myndighed, kan det ske via ét af nedenstående tre mønstre:
+Når en `dataanvender` (virksomhed eller myndighed) vil have adgang til data hos en dataansvarlig myndighed, kan det ske via ét af nedenstående tre mønstre:
 [TODO: Overvej samtykker ift. Virksomhed>]: x
 [TODO: Overvej Hændelser>]: x
 
@@ -428,23 +428,25 @@ Når nye data registreres, har `dataansvarlig` ansvaret for at opdatere `kopien`
 
 I det tilfælde, hvor ensartede `datasamlinger` ligger hos flere, separate `dataansvarlige` - eksempelvis sundhedsdata opbevaret i forskellige regioner - er det fordelagtigt at anvende et `index` for at sikre effektive opslag. `Dataansvarlig` opdaterer dette `index`, når en `registrant` opdaterer `datasamlingen`.
 
-Logningsmæssigt er den enkelte `distributør` ansvarlig for at logge `dataanvenders` adgang til data. Samtidig er den enkelte `distributør` ansvarlig for at sørge for konsolidering af loggen. I figuren er log-konsolidering lagt hos Dataejer, men den kunne i princippet også være uddelegeret - så længe, der er et entydigt og klart SPOC for Datasubjektets opslag i anvendelsen af personlige data.
+Logningsmæssigt er den enkelte `distributør` ansvarlig for at logge `dataanvenders` adgang til data. Samtidig er den enkelte `distributør` ansvarlig for at sørge for konsolidering af loggen for at sikre, at `datasubjekt` har adgang til information om anvendelse af data om vedkommende selv. I figuren er log-konsolidering lagt hos `dataansvarlig`, men den kunne i princippet også være uddelegeret - så længe, der er et entydigt og klart _single point of contact_ for `datasubjektets` opslag i anvendelsen af personlige data.
 
-[To varianter på sundhedsområdet]
+[TODO (MH): To varianter på sundhedsområdet]
 
-[Abonnement?]
+[TODO (MH): Abonnement?]
 
 
 #### Distribueret service- og data-platform
 ![Implementeringsmønster for distribueret dataplatform](figures/use-plat.png)
 
-Delingsansvaret er i dette mønster i høj grad håndteret af en Dataplatform. Platformen er distribueret og er i stand til at replikere data på tværs af Dataejer og Dataanvendere. Dvs., at data, der registreres via Dataejer, gøres tilgængelige hos Dataanvender af platformen.
+Delingsansvaret er i dette mønster i høj grad håndteret af en `dataplatform`. Platformen er distribueret og er i stand til at replikere data på tværs af `dataansvarlige`og `dataanvendere`. Dvs., at data, der registreres via en `dataansvarlig` myndighed, gøres tilgængelige for andre, dataanvendende myndigheder via platformen.
 
-Da `Dataplatformen` kan rumme data fra forskellige `Dataejere`, muliggøres effektiv sammenstiling af data hos Datanvenderen. Platformen er ansvarlig for at håndhæve adgangskontrol, og eventuelle services hos Dataanvender, der gør brug af data, er ansvarlige for at logge deres brug. Platformen konsoliderer brugs-loggen, og gør det muligt for Datasubjekt at få overblik over brug af personlige data.
+Da `dataplatformen` kan rumme data fra mange forskellige `dataejere`, muliggøres effektiv sammenstiling af data hos `dataanvenderen`, der kan kombinere `data` fra `egne samlinger` med `data` fra andre `samlinger`. `Data` kan her forstås både som simple opslag i egne eller andres `datasamlinger`, og som sammenstillinger, hvor data fra flere `samlinger` kombineres for at servicere `dataanvenders` applikationer.
 
-Fordelen ved dette mønster er den umiddelbare og standardiserede tilgænglighed til data, som en Dataplatform kan levere. Ulempen er, at kompleksiteten øges, samt at der stilles større krav til Datanvenders modenhed ift. den tekniske adgang til data (da Dataanvenders applikationer i praksis vil skulle afvikles på den distribuerede Service- og Dataplatform).
+Platformen er ansvarlig for at håndhæve adgangskontrol, herunder at sikre, at anvendelsesapplikationer har den nødvendige lovhjmmel til at tilgå en given, distribueret `samling`. Eventuelle services hos `dataanvender`, der gør brug af data, er ansvarlige for at logge deres brug. Platformen konsoliderer brugs-loggen og gør det muligt for `datasubjekt` at få overblik over brug af personlige data.
 
-*(Uafklaret: Skal Dataanvenders applikationer/services have direkte adgang til distribuerede data, eller skal adgang fortsat ske via et servicesnit, der kan varetage adgangskontol m.m.?)*
+Fordelen ved dette mønster er den umiddelbare og standardiserede tilgænglighed til data, som en `dataplatform` kan levere. Ulempen er, at kompleksiteten øges, samt at der stilles større krav til `dataanvenders` modenhed ift. den tekniske adgang til data (da `dataanvenders` applikationer i praksis vil skulle afvikles på den distribuerede Service- og Dataplatform).
+
+*(Uafklaret: Skal Dataanvenders applikationer/services have direkte adgang til distribuerede data, eller skal adgang fortsat ske via et servicesnit, der kan varetage adgangskontol m.m.? Tracket i issue 7.)*
 
 
 ### Forsendelse af meddelelse
