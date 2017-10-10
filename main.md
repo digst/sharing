@@ -3,7 +3,9 @@
 
 _Version 0.1, september 2017. Arbejdsdokument, der bygger oven på en tidligere udarbejdet Synopsis for Referencearkitektur for deling af data og dokumenter (august 2017). Benyttet i workshop med arkitektarbejdsgruppen under SDA._
 
-_Version 0.2, oktober 2017. Arbejdsdokument benyttet i forbindelse med anden workshop med arkitektarbejdsgruppen under SDA._
+_Version 0.2, primo oktober 2017. Arbejdsdokument benyttet i forbindelse med anden workshop med arkitektarbejdsgruppen under SDA._
+
+_Version 0.3, medio oktober 2017. Opdateret med input fra Workshop 2. Udgør Delleverance 2 ift. projektet Referencearkitektur for deling af data og dokumenter._
 
 # Resume
 Hverdagen er digital, og data om borgere, virksomheder, myndigheder, ejendomme, steder, køretøjer o.m.m. vedligeholdes i en lang række områder af den offentlige administration. Der ligger et stort potentiale i at gøre sådanne data tilgængelige for genbrug, så de kan skabe værdi i andre sammenhænge end formålet med det oprindelige register. Dette kan danne fundament for langt bedre understøttelse af tværgående, offentlige services, og åbner tillige for anvendelse af data i nye og innovative sammenhænge.
@@ -347,12 +349,14 @@ klassifikation
 Dette afsnit beskriver roller og implementeringsmønstre, der er relevante, når forretningsfunktionerne beskrevet ovenfor skal understøttes/realiseres af applikationer. Endvidere udpeges områder, der er kandidat til standardisering og/eller profilering i forbindelse med referencearkitekturen.
 
 
-De nødvendige og understøttende applikations-services og deres indbyrdes relationer er vist i figuren nedenfor.
+## Applikationsroller
+
+
+De nødvendige og understøttende applikationsroller og deres indbyrdes relationer er vist i figuren nedenfor. Nødvendige roller udbyder det minimale sæt af services, der er i spil i en datadelingsarkitektur. Undersøttende roller udbyder services, der i mange situationer vil være fordelagtige at implementere for at øge tilgængelighed, performance, brugervenlighed m.m. i en given datadelingsløsning.
 
 ![Oversigt over nødvendige og understøttende applikations-services og deres indbyrdes relationer](figures/services.png)
 
-
-## Applikationsroller
+[TODO: Opdater roller nedenfor ift. figur]
 
 eDelivery Service Provider
   ~ *applikationsservice* som skal kunne:
@@ -402,9 +406,9 @@ Når en dataanvender (virksomhed eller myndighed) vil have adgang til data hos e
 #### Direkte adgang
 ![Implementeringsmønster med direkte adgang til registre](figures/use-direct.png)
 
-I dette mønster, som er simpelt og måske det mest klassiske, er det `Dataejer`, der selv udstiller data til de mulige anvendere via en service-orienteret arkitektur. Dataejer er også ansvarlig for at betjene Datasubjektets forespørgsler om Dataejerens brug af personlige data.
+I dette mønster, som er simpelt og måske det mest klassiske, er det `dataansvarlig`, der selv udstiller data til de mulige anvendere via en service-orienteret arkitektur. `Dataansvarlig` er også ansvarlig for at betjene `datasubjektets` forespørgsler om `datansvarligs` brug af personlige data.
 
-Fordelen ved dette mønster er, at det er simpelt. Ulempen er, at Dataejer kommer til at bære hele udgiften ved at stille data bredt til rådighed.
+Fordelen ved dette mønster er, at det er simpelt. Ulempen er, at `dataansvarlig` kommer til at bære hele udgiften ved at stille data bredt til rådighed.
 
 
 [MBK: SOA bruges ikke kun til direkte adgang, men kan også være via proxy, som fx datafordeleren, der jo også tilbyder SOA-services af forskellig flavour. AF: Fanget i næste mønster?]: x
@@ -418,11 +422,13 @@ Fordelen ved dette mønster er, at det er simpelt. Ulempen er, at Dataejer komme
 #### Datadistribution
 ![Implementeringsmønster for datadistribution](figures/use-dist.png)
 
-I dette mønster er Dataejer fortsat ansvarlig for registrering af data. Anvendelsesdelen er imidlertid afløftet til en Datadistributør (evt. flere). Dette giver Datadistributøren mulighed for at fokusere netop på distributionen, dvs. at gøre data bredt tilgængeligt (dog naturligvis under håndhævelse af adgangskrav specificeret af Dataejer) til Dataanvendere.
+I dette mønster er `dataansvarlig` fortsat ansvarlig for at tilbyde en service til registrering af data. Anvendelsesdelen er imidlertid afløftet til en `datadistributør` (evt. flere). Dette giver `datadistributøren` mulighed for at fokusere netop på distributionen, dvs. at gøre data bredt tilgængeligt (dog naturligvis under håndhævelse af adgangskrav specificeret af `dataejer`) til `dataanvendere`.
 
-Når nye data registreres, er Dataejer ansvarlig for at opdatere Datasamlingen hos Datadistributøren.
+Når nye data registreres, har `dataansvarlig` ansvaret for at opdatere `kopien` af `datasamlingen` hos `datadistributøren`.
 
-Logningsmæssigt er den enkelte Datadistributør ansvarlig for at logge Dataanvenders adgang til data. Samtidig er den enkelte Distributør ansvarlig for at sørge for konsolidering af loggen. I figuren er log-konsolidering lagt hos Dataejer, men den kunne i princippet også være uddelegeret - så længe, der er et entydigt og klart SPOC for Datasubjektets opslag i anvendelsen af personlige data.
+I det tilfælde, hvor ensartede `datasamlinger` ligger hos flere, separate `dataansvarlige` - eksempelvis sundhedsdata opbevaret i forskellige regioner - er det fordelagtigt at anvende et `index` for at sikre effektive opslag. `Dataansvarlig` opdaterer dette `index`, når en `registrant` opdaterer `datasamlingen`.
+
+Logningsmæssigt er den enkelte `distributør` ansvarlig for at logge `dataanvenders` adgang til data. Samtidig er den enkelte `distributør` ansvarlig for at sørge for konsolidering af loggen. I figuren er log-konsolidering lagt hos Dataejer, men den kunne i princippet også være uddelegeret - så længe, der er et entydigt og klart SPOC for Datasubjektets opslag i anvendelsen af personlige data.
 
 [To varianter på sundhedsområdet]
 
