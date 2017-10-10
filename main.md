@@ -354,43 +354,67 @@ Dette afsnit beskriver roller og implementeringsmønstre, der er relevante, når
 
 De nødvendige og understøttende applikationsroller og deres indbyrdes relationer er vist i figuren nedenfor. Nødvendige roller udbyder det minimale sæt af services, der er i spil i en datadelingsarkitektur. Undersøttende roller udbyder services, der i mange situationer vil være fordelagtige at implementere for at øge tilgængelighed, performance, brugervenlighed m.m. i en given datadelingsløsning.
 
-![Oversigt over nødvendige og understøttende applikations-services og deres indbyrdes relationer](figures/services.png)
+![Oversigt over nødvendige og understøttende applikations-services og deres indbyrdes relationer](figures/applikationsroller.png)
 
 [TODO: Opdater roller nedenfor ift. figur]
 
-eDelivery Service Provider
-  ~ *applikationsservice* som skal kunne:
+Datasamling (dataservice?)
+  ~ *applikationsrolle* som har til ansvar at opbevare en datasamling, udstille denne og begrænse adgangen til den om nødvendigt
 
-- udstille eller levere meddelelser til modtager
-- modtage og distribuere meddeleleser
-- fortælle andre om deres kunder
+Når datasamlingen udgøres af dokumenter kaldes den  nogle gange et repository, ellers kaldes den også et register. Data kan skrives og fremsøges igen ved opslag. Samlinger kan have temporale og bitemporale egenskaber. [MBK](vel også udstille / dele, understøtte fremsøgning, udtræk og evt yderligere operationer, som fejl rette, flage fejl o.l.)
 
-Dataservice
-  ~ *applikationsservice* som skal kunne:
+(Record Management og Data Publication i EIRA)
 
-- opbevare datasamling
-- begrænse adgang til de rigtige
-- (måske) vedligeholde og udsende abonnementer
-MBK: <vel også udstille / dele, understøtte fremsøgning, udtræk og evt yderligere operationer, som fejl rette, flage fejl o.l.>
+Log (adgangslog? anvendelseslog?)
+  ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger om vidergivelse af (dele af?) datasamlinger
 
-Kontaktregister
-  ~ *applikationsservice* som er en slags data service med en særlig type oplysninger
+Der findes også andre typer af logs, fx skrive-log og validerings-log. Men her fokuseres på de oplysninger som en registreret har ret til at få oplyst.
 
-Log
-  ~ *applikationsservice* som er en slags data service med særlige oplysninger
+(Logging, EIRA)
 
-Indeks
-  ~ *applikationsservice* som er en slags data service med særlige oplysninger. Kan undværes, men på kraftig bekostning af effektivitet i bestemte situationer.
+
+Forsendelse
+  ~ *applikationsrolle* der kan modtage og distribuere meddelelser
+
+(Messaging og Registered Electronic Delivery, EIRA)
+
+
+Adresse
+  ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger til brug ved adressering af meddelelser
+
+(Capability Lookup og Service Discovery, EIRA)
+
+Id/Rettighed (Brugerstyring?)
+  ~ *applikationsrolle* der anvendes til identifikation af brugere og tildeling af rettigheder (?)
+
+(Identity Management og Access Management, EIRA)
 
 Katalog
-  ~ *applikationsservice* som ikke er en dataservice, fordi der ikke er begrænset adgang. Kan undværes, men ikke effektivt.
+  ~ *applikationsrolle* en slags datasamling der anvendes på design tidspunkt (?) [MBK](Forstår ikke denne defintion. For mig er hverken et katalog eller en dataservice defineret ved adgangsrettigheder. Et katalog skal fx også kunne begrænse adgang og en dataservice skal også kunne tilbyde adgang til læs . søg, hent / download uden login hvis der er tale om åbne data uden rettighedsbegrænsninger.)
 
-[MBK Forstår ikke denne defintion. For mig er hverken et katalog eller en dataservice defineret ved adgangsrettigheder. Et katalog skal fx også kunne begrænse adgang og en dataservice skal også kunne tilbyde adgang til læs . søg, hent / download uden login hvis der er tale om åbne data uden rettighedsbegrænsninger.]: x
+Der findes kataloger over mange ting: services, datasæt, systemer, datamodeller, dokumenttyper...
 
-[MBK: Savner byggeblokke som fx Klassifikationsservices (både udstille klassifikationer og mapninger), Serviceregister, Systemkatalog, datakatalog, Modelkatalog.]: x
 
-[TODO Skal vi have en "beskyttet dataservice" og en offentlig? MBK, Ja]: x
+Indeks
+  ~ *applikationsrolle* en slags datasamling der indeholder oplysninger om hvilke datasamlinger, der indeholder oplysninger om person, virksomheder og andre forvaltningsobjekter (?!)
 
+Kopi
+  ~ *applikationsrolle* en slags datasamling, hvor oplysninger er kopier af oplysninger opbevaret hos andre (?!)
+
+Den kan have en abonnement service, så anvender kan abonnere på ændringer i datasamlinger.
+
+(Data Publication Service i EIRA)
+
+Notifikation
+  ~ *applikationsrolle* der udsender notifikation/påmindelser.
+
+(Messaging, EIRA)
+
+Portal
+  ~ *applikationsrolle* der udstiller digitale selvbetjening rettet mod en særlig målgruppe fx borgere eller virksomheder
+
+
+[MBK](Savner byggeblokke som fx Klassifikationsservices)
 
 
 ## Tekniske Implementeringer
