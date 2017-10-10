@@ -430,7 +430,7 @@ Logningsmæssigt er den enkelte Datadistributør ansvarlig for at logge Dataanve
 
 
 #### Distribueret service- og data-platform
-![Implementeringsmønster for distribueret dataplatform](figures/use-plat.emf)
+![Implementeringsmønster for distribueret dataplatform](figures/use-plat.png)
 
 Delingsansvaret er i dette mønster i høj grad håndteret af en Dataplatform. Platformen er distribueret og er i stand til at replikere data på tværs af Dataejer og Dataanvendere. Dvs., at data, der registreres via Dataejer, gøres tilgængelige hos Dataanvender af platformen.
 
