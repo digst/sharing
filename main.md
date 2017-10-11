@@ -52,10 +52,11 @@ FM, UFM, EVM, SIM, JM, EFKM, MBUL, SÆM, SKM, MFVM, BM, KL og Danske Regioner. H
 
 > For at operationalisere, hvilke krav hvidbogen konkret stiller til initiativer og systemer udarbejdes en referencearkitektur for deling af data og dokumenter, der blandt andet beskriver fælles behovsmønstre og mønstre for teknisk understøttelse, herunder de forskelige roller, der skal afklares i initiativerne. Referencearkitekturen udpeger også eventuelle områder for eksisterende og nye fælles standarder og infrastruktur, som skal lette initiativernes implementering. Referencearkitekturen bliver således en generel ramme og støtte for alle initiativernes egen specifikke arkitektur.
 
-Uden for scope:
+Uden for scope af denne referencearkitektur er:
 
-- åbne data, der ikke kræver adgangskontrol
-- registrering og anvendelse af data hos registerejer
+- registrering og intern anvendelse af data hos registerejer
+- åbne data, der ikke kræver adgangskontrol (se issue #9)
+- streaming (se issue #2)
 
 ## Centrale begreber
 I det efterfølgende vil begrebet data blive brugt til at betegne både oplysninger på dokumentform og oplysninger der optræder i registre. Vi anvender begrebet datasamling både om et register og et repository med dokumenter.
@@ -85,7 +86,11 @@ Endelig godkendelse forventes hos Styregruppe for Data og Arkitektur under Digit
 ## Metoderamme
 Referencearkitekturen er udarbejdet inden for rammerne af Fællesoffentlig Digital Arkitektur og følger så vidt muligt den fælles skabelon for referencearkitekturer som udarbejdet i DIGST/KDA. Metoderammen bygger blandt andet på erfaringer fra OIO referencearkitektur, og indarbejder også elementer fra EIRA, TOGAF, ArchiMate m.m.
 
-Særlige elementer er i dokumentet angivet i *kursiv* (fx *lov*, *mål*, *rolle* m.m.). Dette markerer, at de hører til Archimate-begrebsapparatet.
+I dokumentets tekst er særlige elementer angivet i *kursiv* (fx *lov*, *mål*, *rolle* m.m.). Dette markerer, at de hører til Archimate-begrebsapparatet. Andre elementer er angivet med særlig `markering`. Her er der tale om referencer til begreber/elementer fra figurer. Det bemærkes, at prefixet 'data-' kan være udeladt på begreber/elementer i tekst og figurer fx af formatterings- eller læsbarhedshensyn uden, at der ligger en indholdsmæssig skelnen bag (fx `dataanvendelse`/`anvendelse`, `datasamling`/`samling` o.a.)
+
+I figurer markerer:
+- _Kursiv_: At et element eller en relation ikke er nærmere defineret i denne rammearkitektur (fx _dokument_)
+- Blå tekst: At et element eller en relation ejes og defineres i denne rammearkitektur (fx `anvendelse`)
 
 ## Relation til andre referencearkitekturer
 Denne referencearkitektur gør brug af:
@@ -100,8 +105,8 @@ Den skal kunne anvendes af:
 ... og skal anvendes i kontekst sammen med:
 
 - Deling af dokumenter på sundhedsområdet
-- Indberetning til registre på sundhedsområdet
 - Sag- og dokument på det kommunale område
+- Indberetning til registre på sundhedsområdet (under udarbejdelse pr. oktober 2017)
 
 
 # Strategisk arkitektur
@@ -151,17 +156,9 @@ Genbrug
 ## Vision
 Visionen i denne referencearkitektur er at stræbe efter en situation, hvor:
 
-> *Data betragtes som en fælles, værdifuld og velbeskyttet ressource; de skal være nemme at dele og bruge, men svære at misbruge*
+> *Data er en fælles, værdifuld og velbeskyttet ressource, som skal være nemme at dele og bruge, men svære at misbruge*
 
-> *Data beskrives, fordeles, forbedres og beskyttes i fællesskab.*
-
-> *Fælles metoder for datadeling understøtter sammenstilling af data og tværgående brug blandt myndigheder og virksomheder*
-
-> *Beskrivelse af, adgang til og brug af data sker under klar governance og håndhæves ud fra tydelig hjemmel*
-
-> *Borgere og virksomheder har overblik over deres data og hvor, de anvendes*
-
-
+> *Borgere og virksomheder har overblik over deres data og i hvilke sammenhænge, de anvendes*
 
 
 ## Værdiskabelse
@@ -170,7 +167,7 @@ Værdien ved at følge denne referencearkitektur er, at den giver:
 - Mindre besvær for borger og virksomheder ved brug af digitale services
 - Simplere arbejdsgange og mere potentiale for automatisering hos organisationer (myndigheder/virksomheder)
 - Understøttelse af værdiskabende innovation (ved at gøre data til et 'råstof' for vækst/skabelse af konkurrencefordele)
-- Understøttelse transparens og bevare tillid til registre
+- Understøttelse af transparens og dermed bevarelse af tillid til registre
 - Effektiv systemudvikling (begrænser udfaldsrum, opsamler best practice)
 
 ## Strategiske principper
@@ -180,6 +177,8 @@ Forretningsmæssige, Informationsmæssige, Applikationsmæssige og Tekniske prin
 - F1: Byrden i datadeling skal afløftes fra dataejer, hvis den begrænser genbrug
 - F2: Autoritative registre med henvisninger til andre registre
 - F3: Ansvar for begrænsning af adgang ligger hos registerejer
+- F4: Data beskrives, fordeles, forbedres og beskyttes i fællesskab
+- F5: Beskrivelse af, adgang til og brug af data sker under klar governance og håndhæves ud fra tydelig hjemmel
 - I1: Fælles referenceinformationsmodel
 - I2: Dokument-princip (attester mv.)?
 - A1: Onlineopslag i sagsbehandling og selvbetjening
@@ -187,6 +186,7 @@ Forretningsmæssige, Informationsmæssige, Applikationsmæssige og Tekniske prin
 - A3: Adgang til og fra internationale registre sker gennem national gateway
 - T1: Central fuldmagts-/rettighedsstyring
 - T2: Multi-flavour-api
+- T3: Fælles metoder for datadeling understøtter sammenstilling af data og tværgående brug blandt myndigheder og virksomheder
 
 [TODO MBK: savner noget om fælles referencedata (masterdata, grunddata, klassifikationer)]: x
 [TODO MBK: savner noget om muligheder for at berige data (koble flere data omkring fælles objekter)]: x
@@ -200,78 +200,86 @@ Forretningsmæssige, Informationsmæssige, Applikationsmæssige og Tekniske prin
 De væsentligste aktører, der er i spil omkring deling af data og dokumenter, er:
 
 - Offentlige myndigheder, herunder virksomheder, der handler på vegne af offentlige myndigheder
-- Borgere og virksomheder
+- Borgere
+- Virksomheder
 
 
-## Opgaver
-Forretningsmæssigt set finder referencearkitekturen anvendelse i løsningen af alle offentlige opgaver. Specifikt kan nævnes:
+## Forretningstjenester og funktioner
+Forretningsmæssigt set finder referencearkitekturen anvendelse i løsningen af alle offentlige opgaver. Specifikt kan nævnes nedenstående sæt af generiske procesmønstre:
 
-- Borger- og virksomhedsvendte selvbetjeningsløsninger
-- Myndigheders sagsbehandling
+- Myndigheders sagsbehandling (fra Referencearkitektur for Sag og dokument)
+- Selvbetjening, vendt mod borgere og virksomheder (fra Referencearkitektur for Selvbetjening)
+- Indsigt i oplysninger og deres anvendelse (fra Referencearkitektur for Overblik over sag og ydelser)
+- Sende meddelelse (inkl. brug af tilmeldingslister og påmindelser)
+- Modtage meddelelse
+- Tag et dokument med til en anden service provider, der ikke har adgang til registre - herunder beskrive, hvordan dokumenter valideres.
 - Tværgående analyse, tilsyn og kontrol
 
-
-## Funktioner
-Referencearkitekturen kredser om tre centrale use cases, hvor aktører arbejder sammen i forskellige roller.
+Referencearkitekturen kredser om fire centrale, delte _use cases_, hvor aktører arbejder sammen i forskellige roller.
 
 ![Tværgående use cases og funktioner hos de enkelte roller](figures/forretningsroller.png)
 
 
-De tre use cases er:
+De fire use cases er:
 
 Registrering
   ~ *collaboration* hvor oplysninger bringes på digital form
 
-Anvendelse af udstillede data (herunder dokumenter)
+Indsigt i anvendelse
+  ~ *collaboration* hvor en borger får indsigt i anvendelse af personlige data
+
+Anvendelse (af udstillede data, herunder dokumenter)
   ~ *collaboration* hvor oplysninger anvendes i en opgave
 
-Forsendelse af meddelelser
+Registreret forsendelse
   ~ *collaboration* hvor meddelelser sendes uafviseligt
 
-## Roller
+## Forretningsroller
 
-I ovenstående use cases indgår disse roller:
+I ovenstående use cases indgår disse forretningsroller:
 
 Registrant
   ~ *rolle* som bringer oplysninger på digital form, registrer
 
-Datasubject
-  ~ *rolle* som oplysninger handler
+"Den registrerede"
+  ~ *rolle* den person (datasubjekt), som oplysningerne vedrører
 
-Dataanvender
-  ~ *rolle* der anvender oplysninger fra et register
+Anvender
+  ~ *rolle* der anvender data/oplysninger fra et register
 
-Dataejer
-  ~ *rolle* som ejer registreringer/data, ansvar for at udarbejde adgangspolitik
+Dataansvarlig
+  ~ *rolle* som ejer registreringer/data og har ansvar for at udarbejde adgangspolitik
 
-Datadistributør
-  ~ *rolle* som distribuerer data, ansvar for at håndhæve adgangspolitik
+Afsender
+  ~ *rolle* som genererer og afsender meddelelser til en specifik modtager
 
-Messaging User
-  ~ *rolle* som der sender og modtager meddelelser
+Modtager
+  ~ *rolle* som modtager en meddelelse fra en specifik afsender
 
-Messaging Provider
-  ~ *rolle* som leverer services til forsendelse
-
-Nogle af ovenstående roller kan betragtes som specialiseringer af GDPR-rollen *Databehandler*.
-
-## Use cases
+## Tværgående processer
 ![Overblik over centrale processer og deres aktiviteter fordelt på roller](figures/patterns.png)
 
-Figuren ovenfor beskriver det overordnede procesflow i de tre use cases. Væsentligt at fremhæve er:
+Figuren ovenfor beskriver de væsentligste trin i de overordnede procesflow for de fire delte use cases. I denne sammenhæng skal følgende fremhæves:
 
 Registrering
-  ~ *proces* En registrant initierer processen ved at registrere ny data hos Dataejer (der er ansvarlig for sikring af hjemmel og håndhævelse af adgangspolitik). Når data er korrekt registreret, skal det markeres som klar til at blive udstillet.
+  ~ *proces* En `registrant` initierer processen ved at registrere ny data hos den `dataansvarlige` (der er ansvarlig for sikring af hjemmel og håndhævelse af adgangspolitik ifm. registreringen). Når data er korrekt registreret, skal det markeres som klar til at blive udstillet. Her kan der være forskel på, om data gøres tilgængeligt øjeblikkeligt eller først på et senere tidspunkt (fx ved registrering af fremtidigt skift af adresse) - begge muligheder kan være relevante, afhængig af `dataanvenders` behov.
+
+Indsigt i anvendelse
+  ~ *proces* *- beskrivelse TBU*
 
 Anvendelse af udstillede data
-  ~ *proces* Denne proces initieres hos Dataanvender - typisk en myndighed, men kan også være en virksomhed - ud fra startsituationen, at man har erkendt et behov for data. Dataanvender sender en forespørgsel på data, der beskriver dels, hvilke data, der ønskes, og dels med hvilken hjemmel. Dataejer håndhæver på denne baggrund adgangskontrol, inden data deles og sendes i et svar til Dataanvender. Slutsituationen bliver, at Dataanvenders databehov er opfyldt. Dataejer er ikke nødvendigvis klar over, hvilket databehov forespørgslen har tjent til at tilfredsstille - så længe, adgangen er legitim, kender Dataejer ikke formålet med Dataanvenders brug af data.
+  ~ *proces* Denne proces initieres hos `dataanvender` - typisk en myndighed, men kan også være en virksomhed - ud fra en startsituation defineret ved, at man har erkendt et behov for data. `Dataanvender` sender en forespørgsel på data, der beskriver dels, hvilke data, der ønskes, og dels med hvilken hjemmel. `Dataansvarlig` håndhæver på denne baggrund adgangskontrol, inden data deles og sendes i et svar til `dataanvender`. Slutsituationen bliver, at `dataanvenders` databehov er opfyldt. `Dataansvarlig` er ikke nødvendigvis klar over, hvilket databehov forespørgslen har tjent til at tilfredsstille - så længe, adgangen er legitim og foretaget på baggrund af gyldig hjemmel, kender `dataansvarlig` ikke nødvendigvis formålet med `dataanvenders` brug af data i den konkrete forespørgsel.
 
-Forsendelse af meddelelser
-  ~ *proces* Til forskel fra Anvendelse af udstillede data starter denne proces hos Afsenderen (der tillige kan være Dataejer). Afsender har udvalgt og pakketeret data i en Meddelelse (evt. i form af et dokument), adresserer Meddelelsen og sender den herefter til Modtager. Modtager kan være alle typer af aktører; i figuren er vist, hvordan det hos en myndighed kan være relevant at fordele/route Meddelelsen internt ud fra adresseringsoplysningerne. I sammenligning med Anvendelse af udstillede data er det nu Afsender, der som deler af data 'ejer' den fulde forretningskontekst - hvor Dataejer overnfor ikke var bekendt med formålet med at dele data.
+Registreret forsendelse
+  ~ *proces* Til forskel fra Anvendelse af udstillede data starter denne proces hos `afsenderen` (der tillige kan være `dataansvarlig`). `Afsender` har udvalgt og pakketeret data i en meddelelse (evt. helt eller delvist i form af et dokument), adresserer meddelelsen (fx ved brug af et kontaktregister) og sender den herefter til `modtager`. `Modtager` kan være alle typer af aktører; for myndigheder og virksomheder bemærkes, at det i forbindelse med modtagelsen kan være relevant at fordele/route meddelelsen internt ud fra dens adresseringsoplysninger. I sammenligning med Anvendelse af udstillede data er det nu `afsender`, der som den part, der deler data, 'ejer' den fulde forretningskontekst - hvor den `dataansvarlige` ovenfor ikke var bekendt med formålet med at dele data.
 
 
 
 ## Tværgående processer
+
+
+
+
 Herunder beskrives, hvor de enkelte business functions hos de enkelte roller anvendes i kontekst af et sæt af generiske procesmønstre.
 
 - Sagsbehandling (fra Referencearkitektur for Sag og dokument)
@@ -281,9 +289,6 @@ Herunder beskrives, hvor de enkelte business functions hos de enkelte roller anv
 - Modtage meddelelse
 - Tag et dokument med til en anden service provider, der ikke har adgang til registre - herunder beskrive, hvordan dokumenter valideres.
 
-
-## Forretningstjenester
-Procestrin udtrykkes typisk ved Forretningstjenester, der igen kan realiseres af interne business functions eller trække på eksterne business services.
 
 
 [TODO]: x "[Vi skal være bedre til at beskrive hvordan vi trækker på elementer fra brugerstyring, men husk at holde det teknologi-fri]"
