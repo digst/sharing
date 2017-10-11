@@ -273,33 +273,17 @@ Anvendelse af udstillede data
 Registreret forsendelse
   ~ *proces* Til forskel fra Anvendelse af udstillede data starter denne proces hos `afsenderen` (der tillige kan være `dataansvarlig`). `Afsender` har udvalgt og pakketeret data i en meddelelse (evt. helt eller delvist i form af et dokument), adresserer meddelelsen (fx ved brug af et kontaktregister) og sender den herefter til `modtager`. `Modtager` kan være alle typer af aktører; for myndigheder og virksomheder bemærkes, at det i forbindelse med modtagelsen kan være relevant at fordele/route meddelelsen internt ud fra dens adresseringsoplysninger. I sammenligning med Anvendelse af udstillede data er det nu `afsender`, der som den part, der deler data, 'ejer' den fulde forretningskontekst - hvor den `dataansvarlige` ovenfor ikke var bekendt med formålet med at dele data.
 
-
-
-## Tværgående processer
-
-
-
-
-Herunder beskrives, hvor de enkelte business functions hos de enkelte roller anvendes i kontekst af et sæt af generiske procesmønstre.
-
-- Sagsbehandling (fra Referencearkitektur for Sag og dokument)
-- Selvbetjening (fra Referencearkitektur for Selvbetjening)
-- Indsigt i oplysninger og deres anvendelse (fra Referencearkitektur for Overblik over sag og ydelser)
-- Sende meddelelse (inkl. brug af tilmeldingslister og påmindelser)
-- Modtage meddelelse
-- Tag et dokument med til en anden service provider, der ikke har adgang til registre - herunder beskrive, hvordan dokumenter valideres.
-
-
-
 [TODO]: x "[Vi skal være bedre til at beskrive hvordan vi trækker på elementer fra brugerstyring, men husk at holde det teknologi-fri]"
 
 ## Forretningsobjekter
-Nedenfor fremgår en initiel oversigt over en række forretningsobjekter, der er væsentlige for referencearkitekturen. Det videre arbejde skal klarlægge, hvilke elementer der skal indgå i listen samt hvordan de defineres. Modelleringsniveauet skal endvidere lægges fast (begrebsmodellering og/eller logiske kernemodeller?) Kommentarer/regibemærkninger indgår i listen, markeret med kantede parenteser.
+Nedenfor fremgår en initiel oversigt over en række forretningsobjekter, der er væsentlige for referencearkitekturen.
+
+_Regibemærkning for version 0.3: Det videre arbejde skal klarlægge, hvilke elementer der skal indgå i listen, samt hvordan de defineres. Modelleringsniveauet skal endvidere lægges fast (begrebsmodellering og/eller logiske kernemodeller?) Kommentarer og midlertidige bemærkninger indgår i listen, markeret med kantede parenteser._
 
 ![Oversigt over de centrale forretningsobjekter og deres relationer](figures/objekter.png)
 
 data
-  ~ *objekt* (Abstrakt. Bruges om både registerrecord og dokument)
+  ~ *objekt* (Abstrakt. Bruges om både register-record og dokument)
 
 samling
   ~ *objekt* [Datasætmodel har ikke definition...] ISO9115: en identificerbar samling af oplysninger (samlebetegnelse for PSI, GPDR, )
@@ -308,7 +292,7 @@ meddelelse
   ~ *objekt* [NgDP] registreret forsendelse
 
 datasubjekt
-  ~ *objekt* [Grunddata, fx person. GPDR den registrede]
+  ~ *objekt* [Grunddata, fx person. GPDR: den registrede]
 
 model/type
   ~ *objekt* [Jf. modelregler fra FDA]
@@ -344,10 +328,6 @@ klassifikation
 
 [TODO Noget om anonymiserede data. Evt. kandidat til standardiseret metode]: x
 
-## Forretningsmønstre
-
-*TBU.* <cf issue #6>
-
 
 
 # Teknisk arkitektur
@@ -361,16 +341,18 @@ De nødvendige og understøttende applikationsroller og deres indbyrdes relation
 
 
 Datasamling (dataservice?)
-  ~ *applikationsrolle* som har til ansvar at opbevare en datasamling, udstille denne og begrænse adgangen til den om nødvendigt
+  ~ *applikationsrolle* som har til ansvar at opbevare en `datasamling`, udstille denne og begrænse adgangen til den om nødvendigt
 
-Når datasamlingen udgøres af dokumenter kaldes den  nogle gange et repository, ellers kaldes den også et register. Data kan skrives og fremsøges igen ved opslag. Samlinger kan have temporale og bitemporale egenskaber. [MBK](vel også udstille / dele, understøtte fremsøgning, udtræk og evt yderligere operationer, som fejl rette, flage fejl o.l.)
+Når datasamlingen udgøres af dokumenter kaldes den nogle gange et repository, ellers kaldes den også et register. Data kan skrives og fremsøges igen ved opslag. `Samlinger` kan have temporale og bitemporale egenskaber. Dette handler blandt andet om at holde styr på datas gyldighedsperiode og registreringstidspunkt for fx at kunne understøtte dobbelt historik (overblik både over, hvad der var korrekt på en given dato, og hvad registeret på et givent tidspunkt troede var korrekt på samme tidspunkt).
+
+[MBK: vel også udstille / dele, understøtte fremsøgning, udtræk og evt yderligere operationer, som fejl rette, flage fejl o.l.]: x
 
 (Record Management og Data Publication i EIRA)
 
 Log (adgangslog? anvendelseslog?)
-  ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger om vidergivelse af (dele af?) datasamlinger
+  ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger om videregivelse af data fra datasamlinger
 
-Der findes også andre typer af logs, fx skrive-log og validerings-log. Men her fokuseres på de oplysninger som en registreret har ret til at få oplyst.
+Der findes også andre typer af logs, fx skrive-log og validerings-log. I denne sammenhæng er fokus på logning af de data, som en registreret har ret til at få oplyst.
 
 (Logging, EIRA)
 
@@ -382,7 +364,7 @@ Forsendelse
 
 
 Adresse
-  ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger til brug ved adressering af meddelelser
+  ~ *applikationsrolle* en slags datasamling (fx et kontaktregister), der indeholder oplysninger til brug ved adressering af meddelelser
 
 (Capability Lookup og Service Discovery, EIRA)
 
@@ -392,40 +374,43 @@ Id/Rettighed (Brugerstyring?)
 (Identity Management og Access Management, EIRA)
 
 Katalog
-  ~ *applikationsrolle* en slags datasamling der anvendes på design tidspunkt (?) [MBK](Forstår ikke denne defintion. For mig er hverken et katalog eller en dataservice defineret ved adgangsrettigheder. Et katalog skal fx også kunne begrænse adgang og en dataservice skal også kunne tilbyde adgang til læs . søg, hent / download uden login hvis der er tale om åbne data uden rettighedsbegrænsninger.)
+  ~ *applikationsrolle* en slags datasamling, der beskriver en given `datasamling`. Anvendes typisk på design-tidspunktet.
+
+[MBK: Forstår ikke denne defintion. For mig er hverken et katalog eller en dataservice defineret ved adgangsrettigheder. Et katalog skal fx også kunne begrænse adgang og en dataservice skal også kunne tilbyde adgang til læs . søg, hent / download uden login hvis der er tale om åbne data uden rettighedsbegrænsninger.)]: x
 
 Der findes kataloger over mange ting: services, datasæt, systemer, datamodeller, dokumenttyper...
 
 
 Indeks
-  ~ *applikationsrolle* en slags datasamling der indeholder oplysninger om hvilke datasamlinger, der indeholder oplysninger om person, virksomheder og andre forvaltningsobjekter (?!)
+  ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger om, hvilke datasamlinger der indeholder oplysninger om personer, virksomheder og andre forvaltningsobjekter. Et Indeks har typisk til formål at effektivise søgning og fremfinding
 
 Kopi
-  ~ *applikationsrolle* en slags datasamling, hvor oplysninger er kopier af oplysninger opbevaret hos andre (?!)
+  ~ *applikationsrolle* en datasamling, som er en direkte kopi af den `dataansvarliges` autoritære datasamling
 
-Den kan have en abonnement service, så anvender kan abonnere på ændringer i datasamlinger.
+Den kan have en abonnementsservice, så `anvender` kan abonnere på ændringer i datasamlinger.
 
 (Data Publication Service i EIRA)
 
 Notifikation
-  ~ *applikationsrolle* der udsender notifikation/påmindelser.
+  ~ *applikationsrolle* der udsender notifikationer/påmindelser.
 
 (Messaging, EIRA)
 
 Portal
-  ~ *applikationsrolle* der udstiller digitale selvbetjening rettet mod en særlig målgruppe fx borgere eller virksomheder
+  ~ *applikationsrolle* der udstiller digital selvbetjening rettet mod en særlig målgruppe, fx borgere eller virksomheder
 
 
-[MBK](Savner byggeblokke som fx Klassifikationsservices)
+[MBK: Savner byggeblokke som fx Klassifikationsservices]: x
 
 
 ## Tekniske Implementeringer
-Her grupperes de enkelte aktørroller og applikationsroller i forskellige implementeringsmønstre.
+Her grupperes de enkelte forretningsroller og applikationsroller i forskellige implementeringsmønstre.
 
 
 ### Anvendelse af udstillede data
 
 Når en `dataanvender` (virksomhed eller myndighed) vil have adgang til data hos en dataansvarlig myndighed, kan det ske via ét af nedenstående tre mønstre:
+
 [TODO: Overvej samtykker ift. Virksomhed>]: x
 [TODO: Overvej Hændelser>]: x
 
@@ -456,10 +441,6 @@ I det tilfælde, hvor ensartede `datasamlinger` ligger hos flere, separate `data
 
 Logningsmæssigt er den enkelte `distributør` ansvarlig for at logge `dataanvenders` adgang til data. Samtidig er den enkelte `distributør` ansvarlig for at sørge for konsolidering af loggen for at sikre, at `datasubjekt` har adgang til information om anvendelse af data om vedkommende selv. I figuren er log-konsolidering lagt hos `dataansvarlig`, men den kunne i princippet også være uddelegeret - så længe, der er et entydigt og klart _single point of contact_ for `datasubjektets` opslag i anvendelsen af personlige data.
 
-[TODO (MH): To varianter på sundhedsområdet]
-
-[TODO (MH): Abonnement?]
-
 
 #### Distribueret service- og data-platform
 ![Implementeringsmønster for distribueret dataplatform](figures/use-plat.png)
@@ -474,48 +455,49 @@ Fordelen ved dette mønster er den umiddelbare og standardiserede tilgænglighed
 
 *(Uafklaret: Skal Dataanvenders applikationer/services have direkte adgang til distribuerede data, eller skal adgang fortsat ske via et servicesnit, der kan varetage adgangskontol m.m.? Tracket i issue 7.)*
 
+[TODO: Opsæt en sidestillet vurdering af mønstre, med fordele/ulemper listet i samme tabel]: x
 
-### Forsendelse af meddelelse
+### Registreret forsendelse
 
 Når en myndighed vil initiere en specifik og målrettet datadeling - dvs. sende data (herunder dokumenter) til en anden myndighed, virksomhed eller borger - kan det ske via ét af de tre nedenstående mønstre.
 
 
 #### Sikker e-mail
-![Implementeringsmønster for e-mail](figures/send-email.png)
+![Implementeringsmønster for Sikker e-mail](figures/send-email.png)
 
-Et meget anvendt mønster for myndighed til myndighed-kommunikation er at levere en Meddelelse fra Afsender til Modtager ved brug af sikker e-mail. Det falder uden for dette dokuments scope at beskrive dette mønster yderligere, men det er medtaget her for reference. Det er endvidere oplagt at betragte dette mønster som et særtilfælde af det generelle 'Service provider'-mønster nedenfor.
+Et meget anvendt mønster for myndighed til myndighed-kommunikation er at levere en `meddelelse` fra `afsender` til `modtager` gennem `forsendelse` brug af sikker e-mail. Ud over at påpege, at `distributionen` her sker via en sikker og krypteret forbindelse, faldet detr uden for dette dokuments scope at beskrive dette mønster yderligere. Det er dog medtaget for reference pga. dets brede anvendelse. Det er endvidere oplagt at betragte dette mønster som et særtilfælde af det generelle 'Service provider'-mønster nedenfor.
 
-Fordelen ved dette mønster er, at det er simpelt og benytter sig af standardteknologi. Ulempen er, at det kun dækker myndighed til myndighed-kommunikation. Derudover sætter standardteknologien (e-mail) visse begrænsninger for funktionalitet, der fx understøtter automatisk routing af beskeder hos modtageren i det tilfælde, hvor Meddelelsen ikke har én specifik modtager.
+Fordelen ved dette mønster er, at det er simpelt og benytter sig af standardteknologi. Ulempen er, at det kun dækker myndighed til myndighed-kommunikation. Derudover sætter standardteknologien (e-mail) visse begrænsninger for funktionalitet, der fx understøtter `fordeling`(automatisk routing) af beskeder hos modtagende virksomhed/myndighed i det tilfælde, hvor `meddelelsen` ikke har én specifik `modtager`.
 
 #### Fælles system
-![Implementeringsmønster for fælles applikation](figures/send-shared.png)
+![Implementeringsmønster for fælles system](figures/send-shared.png)
 
-Ved brug af Fælles system-mønsteret til Forsendelse af en Meddelelse benytter Afsender og Modtager et centralt, fælles system til hhv. at placere Meddelelsen og læse den. I den analoge verden svarer dette mønster til, at Afsender og Modtager benytter et fælles postbokskontor. Digitalt er dette mønster fx implementeret af e-Boks, hvor såvel myndigheder, virksomheder og borgere kan placere Meddelelser, der efterfølgende kan hentes af Modtager. Også messaging-funktionaliteten i mange af de sociale medieplatforme (fx Facebook) falder i denne kategori.
+Ved brug af Fælles system-mønsteret til forsendelse af en `meddelelse` benytter `afsender` og `modtager` et centralt, fælles `postkasse` til hhv. at placere `meddelelsen` og læse den. I den analoge verden svarer dette mønster til, at `afsender` og `modtager` benytter et fælles postbokskontor. Digitalt er dette mønster fx implementeret af Digital Post, hvor såvel myndigheder, virksomheder og borgere kan placere `meddelelser`, der efterfølgende kan hentes af `modtager`. Også messaging-funktionaliteten i mange af de sociale medieplatforme (fx Facebook) falder i denne kategori.
 
-TIl forskel fra Sikker e-mail-mønsteret ovenfor er Fælles system-mønsteret mere robust, både da Forsendelsesservicen tilbyder opslag/verifikation mod et Kontaktregister samt da Meddelelsen opbevares i infrastrukturen, indtil Modtager aktivt læser den - i modsætning til Sikker e-mail, hvori infrastrukturen blot videresender Meddelelsen og dermed er afhængig af, at Modtageren i praksis findes.
+TIl forskel fra Sikker e-mail-mønsteret ovenfor er Fælles system-mønsteret mere robust, både da `adresseringsservicen` tilbyder opslag/verifikation mod et `adresseregister`, samt da `meddelelsen` opbevares i infrastrukturen, indtil `modtager` aktivt læser den - i modsætning til Sikker e-mail, hvori infrastrukturen blot videresender `meddelelsen` og dermed er afhængig af, at `modtageren` i praksis findes.
 
-Meddelelsesfunktionaliteten har endvidere mulighed for at trække på en Notifikationsservice, der kan tilbyde notifikationer til Modtager om den nye Meddelelse.
+`Postkassefunktionaliteten` har endvidere mulighed for at trække på en `notifikationsservice`, der kan tilbyde indholdsreducerede notifikationer til `modtager` om den nye `meddelelse`.
 
-Et Fælles system-mønster kan fungere på mange niveauer, herunder nationalt (fx Digital Post); inden for et specifikt domæne, fx på sundhedsområdet; eller rent bilateralt, hvor to organisationer vælger en Meddelelsesplatform og enes om dette mønster.
-
+Et Fælles system-mønster kan fungere på mange niveauer, herunder nationalt (fx Digital Post); inden for et specifikt domæne, fx på sundhedsområdet; eller rent bilateralt, hvor to organisationer enes om dette mønster og vælger en passende meddelelsesplatform.
 
 #### Økosystem/Service providers
-![Implementeringsmønster for ecosystem](figures/send-eco.png)
+![Implementeringsmønster for økosystem](figures/send-eco.png)
 
-I dette mønster deltager både Afsender (A) og Modtager (D) i et Meddelelses-økosystem ved at vælge hver sin Forsendelses-Service provider (hhv. B og C). Økosystem-mønsteret er bl.a. kendt i kontekst af den europæiske eDelivery-standard som en *four corner model*.
+I dette mønster deltager både `afsender` (A) og `modtager` (D) i et `meddelelses`-økosystem ved at vælge hver sin Forsendelses-Service provider (hhv. B og C). Økosystem-mønsteret er bl.a. kendt i kontekst af den europæiske eDelivery-standard som en *four corner model*.
 
-Et fælles Kontaktregister udgør en central komponent i økosystemet, der gør det muligt for alle parter at slå den relevante information op. En Afsender kan via Kontaktregisteret se/verificere mulige modtagere, samt evt. afgøre hvilken konkrete Meddelelsesformater/kanaler, Modtager kan håndtere. Forsendelsesservicen, der håndterer afsendelse af Meddelelsen, kan benytte Kontaktregisteret til at finde Modtagerens konkrete Service provider og bliver dermed i stand til at levere Meddelelsen.
+Et fælles `adresseregister/kontaktregister` udgør en central komponent i økosystemet, der gør det muligt for alle parter at slå den relevante adresseringsinformation op. En `afsender` kan via `adresseregisteret` se/verificere mulige `modtagere`, samt evt. afgøre hvilken konkrete meddelelsesformater/kanaler, `modtager` kan håndtere. `Forsendelsesservicen`, der håndterer afsendelse af Meddelelsen, kan benytte `adresseregisteret` til at finde `modtagerens` konkrete `Service provider` og bliver dermed i stand til at levere `meddelelsen`.
 
-Mønsteret vil typisk være symmetrisk, således at en Afsender også kan indgå som Modtager og vice versa. Mønsteret kan i øvrigt både være generisk eller specifikt for et domæne, der fx kan stille ekstra krav til Meddelelsens format.
+Mønsteret vil typisk være symmetrisk, således at en `afsender` også kan indgå som `modtager` og vice versa. Mønsteret kan i øvrigt både være generisk eller specifikt for et domæne, der fx kan stille ekstra krav til `meddelelsens` format.
 
-Fordelene ved Økosystem-mønsteret er, at det er robust, fleksibelt og løbende kan udvides med nye Service providers. Ulempen er, at der stilles store krav til det centrale Kontaktregister, samt at der fortsat ikke findes standardteknologier, der dækker mønsteret.
+Fordelene ved Økosystem-mønsteret er, at det er robust, fleksibelt og løbende kan udvides med nye `Service providers`. Ulempen er, at der stilles store krav til det centrale `adresseregister`, samt at der fortsat ikke findes standardteknologier, der dækker mønsteret.
 
+[TODO: Opsæt en sidestillet vurdering af mønstre, med fordele/ulemper listet i samme tabel]: x
 
 ### Registrering
 
-Registrering af data er ikke i scope for denne referencearkitektur, men medtages kort pga. sin væsentlige relation til Index-konceptet.
+Registrering af data er ikke i scope for denne referencearkitektur, men medtages kort pga. sin væsentlige relation til Indeks-konceptet.
 
-[TODO: Hvor udfolder vi mere om mønstre, der anvender Index?]
+_Opdateres._
 
 Ansvar hos registrant
   ~ *implementationsmønster*
@@ -528,36 +510,35 @@ Ansvar hos distributør
 
 
 ## Integrationer
+I de ovenstående implementeringsmønstre for hhv. Anvendelse af udstillede data og Registreret forsendelse indgår der en lang række relationer mellem de beskrevne elementer. Relationerne dækker i praksis over integrationer mellem to applikationer. Nedenfor opridser vi de relationer, der er væsentlige for denne referencearkitektur. Alle relationer er ikke relevante i vores kontekst - men sagt populært, hvis der "står noget på en linje mellem to kasser", er de mest fremtrædende karakteristika og kendetegn ved den underliggende integration beskrevet nedenfor:
 
-### skriv
-Med kvittering...
+_Integrationsbeskrivelser opdateres._
 
-### opslag
-- beskytter mod misbrug
-- beskyttet mod DDOS
+skriv
+  ~ Med kvittering...
 
-DNS
+opslag
+  ~ beskytter mod misbrug, og beskyttet mod DDOS
 
-### opdater
+_TBU: DNS_
 
-Bulk, Delta, Teknologispecifikt
+opdater
+  ~ Bulk, Delta, Teknologispecifikt
 
-### konsolider
-Skriv eller høst
+konsolider
+  ~ Skriv eller høst
 
-### læs
-SQL eller Fil, men log
+læs
+  ~ SQL eller Fil, men log
 
-### distribution
-- uafviselighed
-- beskyttet
-- payload/header
+distribution
+  ~ uafviselighed, beskyttet, payload/header
 
-### hent meddelelse
--
+hent meddelelse
+  ~ _TBU_
 
-### modtag notifikation
-- borger - SMS/APP
+modtag notifikation
+  ~ borger - SMS/APP
 
 
 ## Områder for standardisering/profileringer
@@ -583,6 +564,7 @@ Indholdsmæssige standarder
 - Identifikation
 - Klassifikation af følsomhed
 
+[TODO: Overvej, om denne liste skal bygges op som LOST?]: x
 
 [MBK: Web service beskrivelser er også et vigtigt emne. Fx en udvidelse af WSDL, så det understøtter Linked data. tal med Peter bruhn om dette.]: x
 [MBK: Fælles liste over standard operationer og vejledning i hvordan de inarbedes ifbm med udarbejdelse af snitfladespecifikationer]: x
