@@ -1,11 +1,10 @@
 # Fællesoffentlig referencearkitektur for deling af data og dokumenter
-*Versionsoversigt:*
 
-_Version 0.1, september 2017. Arbejdsdokument, der bygger oven på en tidligere udarbejdet Synopsis for Referencearkitektur for deling af data og dokumenter (august 2017). Benyttet i workshop med arkitektarbejdsgruppen under SDA._
+_Version 0.1, september 2017. Arbejdsdokument, der bygger oven på en tidligere udarbejdet Synopsis for Referencearkitektur for deling af data og dokumenter, august 2017. Benyttet i workshop med arkitektarbejdsgruppen under SDA._
 
 _Version 0.2, primo oktober 2017. Arbejdsdokument benyttet i forbindelse med anden workshop med arkitektarbejdsgruppen under SDA._
 
-_Version 0.3, medio oktober 2017. Opdateret med input fra Workshop 2. Udgør Delleverance 2 ift. projektet Referencearkitektur for deling af data og dokumenter._
+_Version 0.3, medio oktober 2017. Opdateret med input fra anden workshop. Udgør Delleverance 2 ift. projektet Referencearkitektur for deling af data og dokumenter._
 
 # Resume
 Hverdagen er digital, og data om borgere, virksomheder, myndigheder, ejendomme, steder, køretøjer o.m.m. vedligeholdes i en lang række områder af den offentlige administration. Der ligger et stort potentiale i at gøre sådanne data tilgængelige for genbrug, så de kan skabe værdi i andre sammenhænge end formålet med det oprindelige register. Dette kan danne fundament for langt bedre understøttelse af tværgående, offentlige services, og åbner tillige for anvendelse af data i nye og innovative sammenhænge.
@@ -70,6 +69,8 @@ Vi vil endvidere lave en skelnen mellem:
 
 Den fundamentale forskel på disse to scenarier er, om det er afsenderen eller modtageren af data, der kender formålet med interaktionen. Ved udstilling af data er dataafsenderen som udgangspunkt ikke bekendt med datamodtagerens formål (men er naturligvis forpligtet til at håndhæve relevant hjemmel). Ved forsendelse af meddelelser er det dataafsenderen, der i en given kontekst afsender en meddelelse med et givent formål - typisk som led i en proces.
 
+
+[Dokumenter granularitet og samlet forvaltningsobjekt, databaser er mere finkornert udtræk, opslag...]
 
 
 ## Anvendelse
@@ -217,7 +218,7 @@ Forretningsmæssigt set finder referencearkitekturen anvendelse i løsningen af 
 
 Referencearkitekturen kredser om fire centrale, delte _use cases_, hvor aktører arbejder sammen i forskellige roller.
 
-![Tværgående use cases og funktioner hos de enkelte roller](figures/forretningsroller.png)
+![Tværgående use cases og funktioner hos de enkelte roller](figures/processer.png)
 
 
 De fire use cases er:
@@ -421,6 +422,7 @@ I dette mønster, som er simpelt og måske det mest klassiske, er det `dataansva
 
 Fordelen ved dette mønster er, at det er simpelt. Ulempen er, at `dataansvarlig` kommer til at bære hele udgiften ved at stille data bredt til rådighed.
 
+[tilføj portal]
 
 [MBK: SOA bruges ikke kun til direkte adgang, men kan også være via proxy, som fx datafordeleren, der jo også tilbyder SOA-services af forskellig flavour. AF: Fanget i næste mønster?]: x
 
@@ -441,6 +443,7 @@ I det tilfælde, hvor ensartede `datasamlinger` ligger hos flere, separate `data
 
 Logningsmæssigt er den enkelte `distributør` ansvarlig for at logge `dataanvenders` adgang til data. Samtidig er den enkelte `distributør` ansvarlig for at sørge for konsolidering af loggen for at sikre, at `datasubjekt` har adgang til information om anvendelse af data om vedkommende selv. I figuren er log-konsolidering lagt hos `dataansvarlig`, men den kunne i princippet også være uddelegeret - så længe, der er et entydigt og klart _single point of contact_ for `datasubjektets` opslag i anvendelsen af personlige data.
 
+[tilføj portal]
 
 #### Distribueret service- og data-platform
 ![Implementeringsmønster for distribueret dataplatform](figures/use-plat.png)
@@ -472,6 +475,8 @@ Fordelen ved dette mønster er, at det er simpelt og benytter sig af standardtek
 #### Fælles system
 ![Implementeringsmønster for fælles system](figures/send-shared.png)
 
+[Bør modtag hedde hent/læs?]
+
 Ved brug af Fælles system-mønsteret til forsendelse af en `meddelelse` benytter `afsender` og `modtager` et centralt, fælles `postkasse` til hhv. at placere `meddelelsen` og læse den. I den analoge verden svarer dette mønster til, at `afsender` og `modtager` benytter et fælles postbokskontor. Digitalt er dette mønster fx implementeret af Digital Post, hvor såvel myndigheder, virksomheder og borgere kan placere `meddelelser`, der efterfølgende kan hentes af `modtager`. Også messaging-funktionaliteten i mange af de sociale medieplatforme (fx Facebook) falder i denne kategori.
 
 TIl forskel fra Sikker e-mail-mønsteret ovenfor er Fælles system-mønsteret mere robust, både da `adresseringsservicen` tilbyder opslag/verifikation mod et `adresseregister`, samt da `meddelelsen` opbevares i infrastrukturen, indtil `modtager` aktivt læser den - i modsætning til Sikker e-mail, hvori infrastrukturen blot videresender `meddelelsen` og dermed er afhængig af, at `modtageren` i praksis findes.
@@ -482,6 +487,8 @@ Et Fælles system-mønster kan fungere på mange niveauer, herunder nationalt (f
 
 #### Økosystem/Service providers
 ![Implementeringsmønster for økosystem](figures/send-eco.png)
+
+[Bør modtag hedde hent/læs?]
 
 I dette mønster deltager både `afsender` (A) og `modtager` (D) i et `meddelelses`-økosystem ved at vælge hver sin Forsendelses-Service provider (hhv. B og C). Økosystem-mønsteret er bl.a. kendt i kontekst af den europæiske eDelivery-standard som en *four corner model*.
 
@@ -512,33 +519,80 @@ Ansvar hos distributør
 ## Integrationer
 I de ovenstående implementeringsmønstre for hhv. Anvendelse af udstillede data og Registreret forsendelse indgår der en lang række relationer mellem de beskrevne elementer. Relationerne dækker i praksis over integrationer mellem to applikationer. Nedenfor opridser vi de relationer, der er væsentlige for denne referencearkitektur. Alle relationer er ikke relevante i vores kontekst - men sagt populært, hvis der "står noget på en linje mellem to kasser", er de mest fremtrædende karakteristika og kendetegn ved den underliggende integration beskrevet nedenfor:
 
+Generelle egenskaber:
+
+  - beskyttet mod DDOS (Check med REST arbejdsgruppe)
+  - identificer anvender og dennes kontekst og hjemmel (genkende, godkende) effektiv adgangspolitik; attributer, roller og overvågning
+
 _Integrationsbeskrivelser opdateres._
 
 skriv
-  ~ Med kvittering...
+  ~ *integrationstype* der lader en aktør skrive til en `samling` (herunder `log` og `index`) hos en anden aktør.
+
+  Særlige hensyn/overvejelser:
+
+  - tillade 'blød' validering
+  - logger nok til at anvender kan vurdere konteksten hvor det er dannet
+  - behøves måske ikke at indeholde hjemmel, da pligten følger dataansvarlig og samlingen.
+  - God ide at den er idempotent (Flyt to numre ned af vejen...)
+  - Overveje hvad der sker når flere skriver samtidigt...
+  - Noget med 'dead lock'
+
+  Særligt for `log`?
+
+  - Er der validering (en halv loglinje?) (en del af audit?)
+
+  Særligt for `index`?
+  - nok attributter til effektiv fremsøgning
 
 opslag
-  ~ beskytter mod misbrug, og beskyttet mod DDOS
+  ~ *integrationstype* der lader en aktør fremfinde og hente oplysninger (`record`, `indexrecord`?, `logrecord`, `adresse-record` `document`) hos en anden aktør.
 
-_TBU: DNS_
+  Særlige hensyn:
+
+  - overvej søgning
+  - overvej at give 'actions (fx ret)' med
+  - overvej granuklaritet (hvor meget sammenstilling) og performance (hent detaljer)
+  - overvej generalitet (hvor målrettet er services)
+  - inside/outside perspektiv
+  - Overvej at tillade fejl, med gøre dem tydelige
+  - Afstemme aktualitet med foretningsbeslutninger (cost issue)
+
+  Særligt for `adresse`:
+
+  - noget med DNS... SML/SMP (som eDelivery)
+
+  Særligt for `index`:?
 
 opdater
-  ~ Bulk, Delta, Teknologispecifikt
+  ~ *integrationstype* der lader dataansvarlig vedligeholde en kopi af en samling hos en datadistributør
+
+  Særlige hensyn/overvejelser:
+  - Delta, Full
+  - Event driven (near real time), Time driven (batch)
+  - Afstemme opdateringshastighed med foretningsbeslutninger
+
+[Bør skrivindex være opdater, ja!]
+
 
 konsolider
-  ~ Skriv eller høst
+  ~ *integrationstype* der samler ensartede samlinger i en ny.
+
+  Skriv eller høst
 
 læs
-  ~ SQL eller Fil, men log
+  ~ *integrationstype* der lader en service tilgå hele samlinger?
 
 distribution
-  ~ uafviselighed, beskyttet, payload/header
+  ~ en `skriv` integrationstype, som også giver uafviselighed, beskyttet, payload/header
 
-hent meddelelse
-  ~ _TBU_
+modtag meddelelse
+  ~ en `opslag` integrationstype, måske sletter...
 
 modtag notifikation
-  ~ borger - SMS/APP
+  ~ en `modtag` integrationstype, måske garanteret levering, men ingen kvittering?
+  
+  SMS vs App notifikation
 
 
 ## Områder for standardisering/profileringer
