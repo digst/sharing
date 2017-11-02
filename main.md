@@ -6,6 +6,8 @@ _Version 0.2, primo oktober 2017. Arbejdsdokument benyttet i forbindelse med and
 
 _Version 0.3, medio oktober 2017. Opdateret med input fra anden workshop. Udgør Delleverance 2 ift. projektet Referencearkitektur for deling af data og dokumenter._
 
+_Version 0.5, december 2017. UNDER UDARBEJDELSE
+
 # Resume
 Hverdagen er digital, og data om borgere, virksomheder, myndigheder, ejendomme, steder, køretøjer m.m. vedligeholdes på en lang række områder af den offentlige administration. Der ligger et stort potentiale i at gøre sådanne data tilgængelige for genbrug, så de kan skabe værdi i flere sammenhænge og for andre. Deling af data er et fundament for langt bedre understøttelse af tværgående, offentlige services, og åbner for anvendelse af data i nye og innovative sammenhænge.
 
@@ -121,7 +123,6 @@ Udarbejdelsen af referencearkitekturen tager udgangspunkt i en række identifice
 ## Forretningsmæssige tendenser
 [TODO: Fold bullet-liste ud med flere kommentarer - i et narrativ (bullets i figur)]
 
-[MBK: Hvad menes med ensretning?]: x
 - Sammenhængende offentlige services - gode brugerrejser [TODO: Knyt til sammenhængsreform)]
 - Nationalt ønske om at undgå knopskudte løsninger
 - Data har øget værdi for organisationer
@@ -189,7 +190,7 @@ Forretningsmæssige, Informationsmæssige, Applikationsmæssige og Tekniske prin
 - F4: Data beskrives, fordeles, forbedres og beskyttes i fællesskab
 - F5: Beskrivelse af, adgang til og brug af data sker under klar governance og håndhæves ud fra tydelig hjemmel
 - F6: Deling af data i kontekst af sagsbehandlinger skal være journaliserbart ("dokument-metafor" - konsekvens af AR3.1)
-- I1: Fælles referenceinformationsmodel
+- I1: Anvend fælles referenceinformationsmodel, grund- og referencedata
 - I2: Dataudveksling mellem organisationer designes ud fra en "dokument-tankegang" (aht. journalisering, forvaltningsret, tvistafgørelse, indsigter m.m.
 - I3: Modeller funderes (med eksplicitte referencer) i relevant lovgivning nationalt og internationalt [TODO AR5.1, AR5.2]
 - A1: Onlineopslag i sagsbehandling og selvbetjening
@@ -198,11 +199,6 @@ Forretningsmæssige, Informationsmæssige, Applikationsmæssige og Tekniske prin
 - T1: Central fuldmagts-/rettighedsstyring (AR2.1, AR2.4, AR7.1 samt Brugerstyring)
 - T2: Multi-flavour-api
 - T3: Fælles metoder for datadeling understøtter sammenstilling af data og tværgående brug blandt myndigheder og virksomheder
-
-[TODO MBK: savner noget om fælles referencedata (masterdata, grunddata, klassifikationer)]: x
-[TODO MBK: savner noget om muligheder for at berige data (koble flere data omkring fælles objekter)]: x
-[TODO MBK: savner noget om kvalitetssikring af data - som lægger op til fx at kunne flage data med dårlig kvalitet, indmelde / foreslå ændring af fejl i data, især i delte masterdata og grunddata]: x
-
 
 
 # Forretningsmæssig arkitektur
@@ -335,11 +331,6 @@ forretningshændelse
 klassifikation
   ~ *objekt*
 
-[TODO MBK Der bør være noget om sammenhængen mellem Referenceinformationsmodel, Applikationsprofiler og Snitfaldespecifikationer inkl operationer og format]: x
-
-[TODO Noget om anonymiserede data. Evt. kandidat til standardiseret metode]: x
-
-
 
 # Teknisk arkitektur
 Dette afsnit beskriver roller og implementeringsmønstre, der er relevante, når forretningsfunktionerne beskrevet ovenfor skal understøttes/realiseres af applikationer. Endvidere udpeges områder, der er kandidat til standardisering og/eller profilering i forbindelse med referencearkitekturen.
@@ -350,20 +341,17 @@ De nødvendige og understøttende applikationsroller og deres indbyrdes relation
 
 ![Oversigt over nødvendige og understøttende applikationsroller](figures/applikationsroller.png)
 
+[TODO: Fold beskrivelser ud pr. operation]
+
+[TODO: Tilføj Datadistribution-service, operationer til 'hent' vs. opslag', 'flage fejl' m.m. - issue #41]
 
 Datasamling (dataservice?)
-  ~ *applikationsrolle* som har til ansvar at opbevare en `datasamling`, udstille denne og begrænse adgangen til den om nødvendigt
-
-Når datasamlingen udgøres af dokumenter kaldes den nogle gange et repository, ellers kaldes den også et register. Data kan skrives og fremsøges igen ved opslag. `Samlinger` kan have temporale og bitemporale egenskaber. Dette handler blandt andet om at holde styr på datas gyldighedsperiode og registreringstidspunkt for fx at kunne understøtte dobbelt historik (overblik både over, hvad der var korrekt på en given dato, og hvad registeret på et givent tidspunkt troede var korrekt på samme tidspunkt).
-
-[MBK: vel også udstille / dele, understøtte fremsøgning, udtræk og evt yderligere operationer, som fejl rette, flage fejl o.l.]: x
+  ~ *applikationsrolle* som har til ansvar at opbevare en `datasamling`, udstille denne og begrænse adgangen til den om nødvendigt. Når datasamlingen udgøres af dokumenter kaldes den nogle gange et repository, ellers kaldes den også et register. Data kan skrives og fremsøges igen ved opslag. `Samlinger` kan have temporale og bitemporale egenskaber. Dette handler blandt andet om at holde styr på datas gyldighedsperiode og registreringstidspunkt for fx at kunne understøtte dobbelt historik (overblik både over, hvad der var korrekt på en given dato, og hvad registeret på et givent tidspunkt troede var korrekt på samme tidspunkt).
 
 (Record Management og Data Publication i EIRA)
 
 Log (adgangslog? anvendelseslog?)
-  ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger om videregivelse af data fra datasamlinger
-
-Der findes også andre typer af logs, fx skrive-log og validerings-log. I denne sammenhæng er fokus på logning af de data, som en registreret har ret til at få oplyst.
+  ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger om videregivelse af data fra datasamlinger. Der findes også andre typer af logs, fx skrive-log og validerings-log. I denne sammenhæng er fokus på logning af de data, som en registreret har ret til at få oplyst.
 
 (Logging, EIRA)
 
@@ -385,12 +373,7 @@ Id/Rettighed (Brugerstyring?)
 (Identity Management og Access Management, EIRA)
 
 Katalog
-  ~ *applikationsrolle* en slags datasamling, der beskriver en given `datasamling`. Anvendes typisk på design-tidspunktet.
-
-[MBK: Forstår ikke denne defintion. For mig er hverken et katalog eller en dataservice defineret ved adgangsrettigheder. Et katalog skal fx også kunne begrænse adgang og en dataservice skal også kunne tilbyde adgang til læs . søg, hent / download uden login hvis der er tale om åbne data uden rettighedsbegrænsninger.)]: x
-
-Der findes kataloger over mange ting: services, datasæt, systemer, datamodeller, dokumenttyper...
-
+  ~ *applikationsrolle* en slags datasamling, der beskriver en given `datasamling`. Anvendes typisk på design-tidspunktet. Der findes kataloger over mange ting: Services, datasæt, systemer, datamodeller, dokumenttyper, klassifikationer m.m.
 
 Indeks
   ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger om, hvilke datasamlinger der indeholder oplysninger om personer, virksomheder og andre forvaltningsobjekter. Et Indeks har typisk til formål at effektivise søgning og fremfinding
@@ -409,9 +392,6 @@ Notifikation
 
 Portal
   ~ *applikationsrolle* der udstiller digital selvbetjening rettet mod en særlig målgruppe, fx borgere eller virksomheder
-
-
-[MBK: Savner byggeblokke som fx Klassifikationsservices]: x
 
 
 ## Tekniske Implementeringer
@@ -434,14 +414,6 @@ Fordelen ved dette mønster er, at det er simpelt. Ulempen er, at `dataansvarlig
 
 [tilføj portal]
 
-[MBK: SOA bruges ikke kun til direkte adgang, men kan også være via proxy, som fx datafordeleren, der jo også tilbyder SOA-services af forskellig flavour. AF: Fanget i næste mønster?]: x
-
-[MBK: Der bør være noget om flavours af SOA EDA, LD. og om SOAP vs REST. Plus vel også koblingen til AS2/AS4 når vi snakker protokoller.]: x
-
-[MBK: Måske ikke det rette sted for denne kommentar, men vi bør også komme omkring Linked data og Block Chain i et afsnit om teknologitrends. AF: Oprettet i Issue #5]: x
-
-[MBK: Der bør også være noget om synkron vs asynkron og om fil/batch mønster]: x
-
 #### Datadistribution
 ![Implementeringsmønster for datadistribution](figures/use-dist.png)
 
@@ -454,6 +426,8 @@ I det tilfælde, hvor ensartede `datasamlinger` ligger hos flere, separate `data
 Logningsmæssigt er den enkelte `distributør` ansvarlig for at logge `dataanvenders` adgang til data. Samtidig er den enkelte `distributør` ansvarlig for at sørge for konsolidering af loggen for at sikre, at `datasubjekt` har adgang til information om anvendelse af data om vedkommende selv. I figuren er log-konsolidering lagt hos `dataansvarlig`, men den kunne i princippet også være uddelegeret - så længe, der er et entydigt og klart _single point of contact_ for `datasubjektets` opslag i anvendelsen af personlige data.
 
 [tilføj portal]
+
+[TODO: Uddyb 'opdater' - delta eller fuld kopi; nævn kopi hos anvender som anti-pattern]
 
 #### Distribueret service- og data-platform
 ![Implementeringsmønster for distribueret dataplatform](figures/use-plat.png)
@@ -630,8 +604,6 @@ Indholdsmæssige standarder
 
 [TODO: Overvej, om denne liste skal bygges op som LOST?]: x
 
-[MBK: Web service beskrivelser er også et vigtigt emne. Fx en udvidelse af WSDL, så det understøtter Linked data. tal med Peter bruhn om dette.]: x
-[MBK: Fælles liste over standard operationer og vejledning i hvordan de inarbedes ifbm med udarbejdelse af snitfladespecifikationer]: x
 ## Identifikation af eksisterende standarder
 
 *TBU.*
