@@ -338,7 +338,7 @@ klassifikation
 Dette afsnit beskriver roller og implementeringsmønstre, der er relevante, når forretningsfunktionerne beskrevet ovenfor skal understøttes/realiseres af applikationer. Endvidere udpeges områder, der er kandidat til standardisering og/eller profilering i forbindelse med referencearkitekturen.
 
 
-## Applikationsroller
+## Applikationsroller og deres services
 De nødvendige og understøttende applikationsroller og deres indbyrdes relationer er vist i figuren nedenfor. Nødvendige roller udbyder det minimale sæt af services, der er i spil i en datadelingsarkitektur. Undersøttende roller udbyder services, der i mange situationer vil være fordelagtige at implementere for at øge tilgængelighed, performance, brugervenlighed m.m. i en given datadelingsløsning.
 
 ![Oversigt over nødvendige og understøttende applikationsroller](figures/applikationsroller.png)
@@ -347,47 +347,79 @@ De nødvendige og understøttende applikationsroller og deres indbyrdes relation
 
 [TODO: Tilføj Datadistribution-service, operationer til 'hent' vs. opslag', 'flage fejl' m.m. - issue #41]
 
-Datasamling (dataservice?)
-  ~ *applikationsrolle* som har til ansvar at opbevare en `datasamling`, udstille denne og begrænse adgangen til den om nødvendigt. Når datasamlingen udgøres af dokumenter kaldes den nogle gange et repository, ellers kaldes den også et register. Data kan skrives og fremsøges igen ved opslag. `Samlinger` kan have temporale og bitemporale egenskaber. Dette handler blandt andet om at holde styr på datas gyldighedsperiode og registreringstidspunkt for fx at kunne understøtte dobbelt historik (overblik både over, hvad der var korrekt på en given dato, og hvad registeret på et givent tidspunkt troede var korrekt på samme tidspunkt).
+datakilde (autoritativ?)
+  ~ *applikationsrolle* som har til ansvar at opbevare en `datasamling`,
 
-[TODO: Overvej at skille opbevaring ud... altså kalde det en dataservice og ikke en samling]
-(Record Management og Data Publication i EIRA)
+Når datasamlingen udgøres af dokumenter kaldes den nogle gange et repository, ellers kaldes den også et register. Samlinger kan have temporale og bitemporale egenskaber. Dette handler blandt andet om at holde styr på datas gyldighedsperiode og registreringstidspunkt for fx at kunne understøtte dobbelt historik (overblik både over, hvad der var korrekt på en given dato, og hvad registeret på et givent tidspunkt troede var korrekt på samme tidspunkt).
 
-Log (adgangslog? anvendelseslog?)
-  ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger om videregivelse af data fra datasamlinger. Der findes også andre typer af logs, fx skrive-log og validerings-log. I denne sammenhæng er fokus på logning af de data, som en registreret har ret til at få oplyst.
+* skriv ~ *applikationsservice* der gør det muligt at registrere oplysninger. Kræver oftest adgangskontrol og logning. (Ret er en særlig udgave) (Begræns anvendelse er en særlig udgave)
+
+* hent ~ *applikationsservice* der tillader anvendere at hente elementer i samling med kendte id'er
+
+* søg ~ *applikationsservice* der tillader anvendere at søge i elementer udfra kritierier (eventuelt sammenstille med andre data)
+
+(Record Management i EIRA)
+
+
+dataservice
+  ~ *applikationsrolle* som har til ansvar  at udstille en `datasamling`, og begrænse adgangen til den om nødvendigt. Og logge.
+
+* hent ~ *applikationsservice* der tillader anvendere at hente elementer i samling med kendte id'er (husk reference til skriv mht ret og begræns)
+
+* søg ~ *applikationsservice* der tillader anvendere at søge i elementer _på tværs af forskellige samlinger_ udfra kritierier (eventuelt sammenstille med andre data)
+
+* abonner ~ *applikationsservice* der tillader anvendere opsætte abonnementer så de får notifikation. Kan være simple (alle eller topics) eller baseret på datasamlinger (der så skal opbevares som kopi hos servicen)
+
+(Data Publication i EIRA)
+
+log (adgangslog? anvendelseslog?)
+  ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger ændringer og anvendelser af oplysninger fra datasamlinger.
+
+* skriv ~ *applikationsservice* der lader  andre services skrive oplysninger. Bør sikre hvem der skriver.
+
+* søg ~ *applikationsservice* der tillader anvendere at søge i elementer _på tværs af forskellige samlinger_ udfra kritierier.
 
 (Logging, EIRA)
 
 
-Forsendelse
+forsendelse
   ~ *applikationsrolle* der kan modtage og distribuere meddelelser
+
+* send ~ *applikationsservice* der lader afsender slippe af med meddelelser. Kvitteringer?
+
+* modtag ~ *applikationsservice* der flytter post ind til modtageren
+
+* distribuer ~ *applikationsservice* der flytter meddelelser mellem to
 
 (Messaging og Registered Electronic Delivery, EIRA)
 
 
-Adresse til forsendelse
+adresse til forsendelse
   ~ *applikationsrolle* en slags datasamling (fx et kontaktregister), der indeholder oplysninger til brug ved adressering af meddelelser
 
  (Capability Lookup og Service Discovery, EIRA)
 
 * hent ~ *applikationsservice* der tillade afsendere af meddelelser at hente hvilke meddelelser en modtager kan læse... og lader en serviceprovider finde ud af hvor meddelelsen skal hen.
 
-* skriv ~ *applikationsservice* der lader afsendere (eller deres serviceprovider) registrere hvilke meddelelser der kan modtages hvor. 
+* skriv ~ *applikationsservice* der lader afsendere (eller deres serviceprovider) registrere hvilke meddelelser der kan modtages hvor.
 
-Id/Rettighed (Brugerstyring?)
-  ~ *applikationsrolle* der anvendes til identifikation af brugere og tildeling af rettigheder (?)
+id/rettighed (Brugerstyring?)
+  ~ *applikationsrolle* der anvendes til identifikation af brugere
+
+* genkend ~ *applikationsservice* der lader  andre services sikre identiteten af anvender (oversætte til kendt id, der kan bruges i adgangskontrol)
 
 (Identity Management og Access Management, EIRA)
 
-Katalog
+katalog
   ~ *applikationsrolle* en slags datasamling, der beskriver en given `datasamling`. Anvendes typisk på design-tidspunktet. Der findes kataloger over mange ting: Services, datasæt, systemer, datamodeller, dokumenttyper, klassifikationer m.m.
 
-Indeks
+indeks
   ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger om, hvilke datasamlinger der indeholder oplysninger om personer, virksomheder og andre forvaltningsobjekter. Et Indeks har typisk til formål at effektivise søgning og fremfinding
 
-Kopi
+kopi af datasamling
   ~ *applikationsrolle* en datasamling, som er en direkte kopi af den `dataansvarliges` autoritære datasamling
 
+  [TODO: Vi skal vælge hvor abonnement står. Er det fordi vi mangler noget om at sammenstille datasamlinger?]
 Den kan have en abonnementsservice, så `anvender` kan abonnere på ændringer i datasamlinger.
 
 (Data Publication Service i EIRA)
@@ -395,10 +427,9 @@ Den kan have en abonnementsservice, så `anvender` kan abonnere på ændringer i
 Notifikation
   ~ *applikationsrolle* der udsender notifikationer/påmindelser.
 
-(Messaging, EIRA)
+* send ~ *applikationsservice* der lader  andre services sende påmindelser (notifikationer?) til modtagere.
 
-Portal
-  ~ *applikationsrolle* der udstiller digital selvbetjening rettet mod en særlig målgruppe, fx borgere eller virksomheder
+(Messaging, EIRA)
 
 
 ## Tekniske Implementeringer
