@@ -312,6 +312,10 @@ katalog
 dataservice
   ~ *objekt* webservice med adgang til datasamling
 
+
+værdisæt (reference data)
+  ~ *objekt* beskriver udfaldsrum for felter i meddelelser og felter i data. Indeholder også oversættelser mellem forskellige.
+
 og andre mulige
 
 
@@ -332,6 +336,8 @@ forretningshændelse
 
 klassifikation
   ~ *objekt*
+
+
 
 
 # Teknisk arkitektur
@@ -403,7 +409,7 @@ adresse til forsendelse
 
 * skriv ~ *applikationsservice* der lader afsendere (eller deres serviceprovider) registrere hvilke meddelelser der kan modtages hvor.
 
-id/rettighed (Brugerstyring?)
+akkreditativ (Brugerstyring?)
   ~ *applikationsrolle* der anvendes til identifikation af brugere
 
 * genkend ~ *applikationsservice* der lader  andre services sikre identiteten af anvender (oversætte til kendt id, der kan bruges i adgangskontrol)
@@ -415,6 +421,9 @@ katalog
 
 indeks
   ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger om, hvilke datasamlinger der indeholder oplysninger om personer, virksomheder og andre forvaltningsobjekter. Et Indeks har typisk til formål at effektivise søgning og fremfinding
+
+værdisæt
+    ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger om tilladte værdier i samlinger og meddelelser. Og mapninger i mellem forskellige 'sprog'
 
 kopi af datasamling
   ~ *applikationsrolle* en datasamling, som er en direkte kopi af den `dataansvarliges` autoritære datasamling
