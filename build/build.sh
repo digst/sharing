@@ -1,7 +1,19 @@
+cp ../main.md .
+cp ../figures/* figures/
 
 
-pandoc ../main.md -o main.tex
 
-\includegraphics[width=\textwidth]
+pandoc -o main.docx --data-dir=. main.md
 
-xelatex article.tex
+
+
+
+
+
+
+
+#pandoc ../main.md -o main.tex
+#
+#\includegraphics[width=\textwidth]
+
+#xelatex article.tex

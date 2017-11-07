@@ -1,12 +1,14 @@
 # Fællesoffentlig referencearkitektur for deling af data og dokumenter
 
-_Version 0.1, september 2017. Arbejdsdokument, der bygger oven på en tidligere udarbejdet Synopsis for Referencearkitektur for deling af data og dokumenter, august 2017. Benyttet i workshop med arkitektarbejdsgruppen under SDA._
+Version 0.1, september 2017. Arbejdsdokument, der bygger oven på en tidligere udarbejdet Synopsis for Referencearkitektur for deling af data og dokumenter, august 2017. Benyttet i workshop med arkitektarbejdsgruppen under SDA.
 
-_Version 0.2, primo oktober 2017. Arbejdsdokument benyttet i forbindelse med anden workshop med arkitektarbejdsgruppen under SDA._
+Version 0.2, primo oktober 2017. Arbejdsdokument benyttet i forbindelse med anden workshop med arkitektarbejdsgruppen under SDA.
 
-_Version 0.3, medio oktober 2017. Opdateret med input fra anden workshop. Udgør Delleverance 2 ift. projektet Referencearkitektur for deling af data og dokumenter._
+Version 0.3, medio oktober 2017. Opdateret med input fra anden workshop. Udgør Delleverance 2 ift. projektet Referencearkitektur for deling af data og dokumenter.
 
-_Version 0.5, december 2017. UNDER UDARBEJDELSE
+**Version 0.4, november 2017. Til intern brug i KDA.**
+
+_Version 0.5, december 2017. Til kommentering hos deltager og deres bagland_
 
 # Resume
 Hverdagen er digital, og data om borgere, virksomheder, myndigheder, ejendomme, steder, køretøjer m.m. vedligeholdes på en lang række områder af den offentlige administration. Der ligger et stort potentiale i at gøre sådanne data tilgængelige for genbrug, så de kan skabe værdi i flere sammenhænge og for andre. Deling af data er et fundament for langt bedre understøttelse af tværgående, offentlige services, og åbner for anvendelse af data i nye og innovative sammenhænge.
@@ -348,6 +350,7 @@ De nødvendige og understøttende applikationsroller og deres indbyrdes relation
 Datasamling (dataservice?)
   ~ *applikationsrolle* som har til ansvar at opbevare en `datasamling`, udstille denne og begrænse adgangen til den om nødvendigt. Når datasamlingen udgøres af dokumenter kaldes den nogle gange et repository, ellers kaldes den også et register. Data kan skrives og fremsøges igen ved opslag. `Samlinger` kan have temporale og bitemporale egenskaber. Dette handler blandt andet om at holde styr på datas gyldighedsperiode og registreringstidspunkt for fx at kunne understøtte dobbelt historik (overblik både over, hvad der var korrekt på en given dato, og hvad registeret på et givent tidspunkt troede var korrekt på samme tidspunkt).
 
+[TODO: Overvej at skille opbevaring ud... altså kalde det en dataservice og ikke en samling]
 (Record Management og Data Publication i EIRA)
 
 Log (adgangslog? anvendelseslog?)
@@ -362,10 +365,14 @@ Forsendelse
 (Messaging og Registered Electronic Delivery, EIRA)
 
 
-Adresse
+Adresse til forsendelse
   ~ *applikationsrolle* en slags datasamling (fx et kontaktregister), der indeholder oplysninger til brug ved adressering af meddelelser
 
-(Capability Lookup og Service Discovery, EIRA)
+ (Capability Lookup og Service Discovery, EIRA)
+
+* hent ~ *applikationsservice* der tillade afsendere af meddelelser at hente hvilke meddelelser en modtager kan læse... og lader en serviceprovider finde ud af hvor meddelelsen skal hen.
+
+* skriv ~ *applikationsservice* der lader afsendere (eller deres serviceprovider) registrere hvilke meddelelser der kan modtages hvor. 
 
 Id/Rettighed (Brugerstyring?)
   ~ *applikationsrolle* der anvendes til identifikation af brugere og tildeling af rettigheder (?)
