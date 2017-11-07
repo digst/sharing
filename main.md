@@ -236,7 +236,7 @@ Forretningsmæssigt set finder referencearkitekturen anvendelse i løsningen af 
 
 Referencearkitekturen kredser om fire centrale, delte _use cases_, hvor aktører arbejder sammen i forskellige roller.
 
-![Tværgående use cases og funktioner hos de enkelte roller](figures/processer.png)
+![Tværgående use cases og funktioner hos de enkelte roller](figures/forretningsroller.png)
 
 
 De fire use cases er:
@@ -276,18 +276,18 @@ Modtager
   ~ *rolle* som modtager en meddelelse fra en specifik afsender
 
 ## Tværgående processer
-![Overblik over centrale processer og deres aktiviteter fordelt på roller](figures/patterns.png)
+![Overblik over centrale processer og deres aktiviteter fordelt på roller](figures/processer.png)
 
 Figuren ovenfor beskriver de væsentligste trin i de overordnede procesflow for de fire delte use cases. I denne sammenhæng skal følgende fremhæves:
 
 Registrering
   ~ *proces* En `registrant` initierer processen ved at registrere ny data hos den `dataansvarlige` (der er ansvarlig for sikring af hjemmel og håndhævelse af adgangspolitik ifm. registreringen). Når data er korrekt registreret, skal det markeres som klar til at blive udstillet. Her kan der være forskel på, om data gøres tilgængeligt øjeblikkeligt eller først på et senere tidspunkt (fx ved registrering af fremtidigt skift af adresse) - begge muligheder kan være relevante, afhængig af `dataanvenders` behov.
 
-Indsigt i anvendelse
-  ~ *proces* *- beskrivelse TBU*
-
 Anvendelse af udstillede data
   ~ *proces* Denne proces initieres hos `dataanvender` - typisk en myndighed, men kan også være en virksomhed - ud fra en startsituation defineret ved, at man har erkendt et behov for data. `Dataanvender` sender en forespørgsel på data, der beskriver dels, hvilke data, der ønskes, og dels med hvilken hjemmel. `Dataansvarlig` håndhæver på denne baggrund adgangskontrol, inden data deles og sendes i et svar til `dataanvender`. Slutsituationen bliver, at `dataanvenders` databehov er opfyldt. `Dataansvarlig` er ikke nødvendigvis klar over, hvilket databehov forespørgslen har tjent til at tilfredsstille - så længe, adgangen er legitim og foretaget på baggrund af gyldig hjemmel (procestrin: `vurder`, (TODO udfør adgangskontrol?), kender `dataansvarlig` ikke nødvendigvis formålet med `dataanvenders` brug af data i den konkrete forespørgsel.
+
+Indsigt i anvendelse
+    ~ *proces* *- beskrivelse TBU* (særtilfælde af anvendelse af data, den registrerede tilgår log)
 
 Registreret forsendelse
   ~ *proces* Til forskel fra Anvendelse af udstillede data starter denne proces hos `afsenderen` (der tillige kan være `dataansvarlig`). `Afsender` har udvalgt og pakketeret data i en meddelelse (evt. helt eller delvist i form af et dokument), adresserer meddelelsen (fx ved brug af et kontaktregister) og sender den herefter til `modtager`. `Modtager` kan være alle typer af aktører; for myndigheder og virksomheder bemærkes, at det i forbindelse med modtagelsen kan være relevant at fordele/route meddelelsen internt ud fra dens adresseringsoplysninger. I sammenligning med Anvendelse af udstillede data er det nu `afsender`, der som den part, der deler data, 'ejer' den fulde forretningskontekst - hvor den `dataansvarlige` ovenfor ikke var bekendt med formålet med at dele data.
