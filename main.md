@@ -62,15 +62,26 @@ Uden for scope af denne referencearkitektur er:
 - streaming af videodata og IoT-data (se issue #2)
 
 ## Centrale begreber
-I det efterfølgende vil begrebet `data` blive brugt til at betegne både oplysninger på dokumentform og oplysninger, der optræder i registre. Vi anvender begrebet `datasamling` både om et register og et repository med dokumenter.
+Data, oplysninger og informationer er tæt relaterede begreber og deres umiddelbare forståelse er meget forskellig imellem forskellige faggrupper og praksiser.
+
+Vi vil holde os fra at komme med en længere fænomoligisk udredning og fokusere på en mere pragmatisk og lokal definition.
+
+
+![Anvendelse af begrebet data og relaterede begreber i denne referencearkitektur](figures/abstraktion.png)
 
 [TODO: Tilføj to eksempler: CPR-register + Røntgenbilleder]
 
 [TODO: Afstem at begreber i figur er forklaret i ovenstående tekst, samt fold tekst ud (specialisering m.m.)]
 
-![Anvendelse af begrebet data og relaterede begreber i denne referencearkitektur](figures/abstraktion.png)
+[Dokumenter granularitet og samlet forvaltningsobjekt, databaser er mere finkornert udtræk, opslag...]
 
-Vi vil endvidere lave en skelnen mellem to typer af integrationsmønstre:
+
+I det efterfølgende vil begrebet `data` blive brugt til at betegne både oplysninger på dokumentform og oplysninger, der optræder i registre. Vi anvender begrebet `samling` både om et register og et repository med dokumenter.
+
+Endvidere vil vi undgå at bruge begrebet ~~metadata~~, da dets betydning er tæt knyttet til en konkret anvendelsessituation. I stedet for analogien til et kartotekstkort med _data om data_ foretrækker vi analogien med en rudekuvert hvor nogle oplysninger (adressen) er synlige en bestemt kontekst (udbringning) mens andre ikke er tilgængelige (indholdet). En diskussion om adressen er en del data eller metadata forekommer frugtesløs.
+
+
+Et af hovedformålet med denne referencearkitektur er at vejlede i valget mellem to integrationsmønstre:
 
  - `Anvendelse af udstillede data` - typisk via API i system-til-system-integrationer
  - `Forsendelse af meddelelser` indeholdende data (herunder dokumenter) - typisk brugt ved beskeder til borgere/virksomheder, der skal have retsvirkning, men også et klassisk mønster brugt i system-til-system-integrationer. [TODO: Knyt til EIDAS (Elektronisk leveringstjeneste - artikel 44)]
@@ -78,7 +89,6 @@ Vi vil endvidere lave en skelnen mellem to typer af integrationsmønstre:
 Den fundamentale forskel på disse to scenarier er, om det er afsenderen eller modtageren af data, der kender formålet med interaktionen. Ved udstilling af data er dataafsenderen som udgangspunkt ikke bekendt med datamodtagerens formål (men er naturligvis forpligtet til at håndhæve relevant hjemmel). Ved forsendelse af meddelelser er det dataafsenderen, der i en given kontekst afsender en meddelelse med et givent formål - typisk som led i en proces.
 
 
-[Dokumenter granularitet og samlet forvaltningsobjekt, databaser er mere finkornert udtræk, opslag...]
 
 
 ## Anvendelse
