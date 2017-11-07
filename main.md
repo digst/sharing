@@ -241,17 +241,16 @@ Referencearkitekturen kredser om fire centrale, delte _use cases_, hvor aktører
 
 De fire use cases er:
 
-Registrering
+registrering af data
   ~ *collaboration* hvor oplysninger bringes på digital form
 
-Indsigt i anvendelse
+indsigt i anvendelse af data
   ~ *collaboration* hvor en borger får indsigt i anvendelse af personlige data
 
-Anvendelse (af udstillede data, herunder dokumenter)
+anvendelse af data
   ~ *collaboration* hvor oplysninger anvendes i en opgave
 
-Registreret forsendelse
-  ~ *collaboration* hvor meddelelser sendes uafviseligt
+forsendelse af meddelelser  ~ *collaboration* hvor meddelelser sendes uafviseligt
 
 ## Forretningsroller
 
