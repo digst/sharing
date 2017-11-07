@@ -328,11 +328,14 @@ dokument
 påmindelse
   ~ *objekt* [Næste generation Digital Post]
 
-registreringshændelse
+registreringsbegivenhed
+  ~ *objekt* en ændring på et allerede registreret element?
+
+forretningshændelse/begivenhed
   ~ *objekt*
 
-forretningshændelse
-  ~ *objekt*
+abonnement
+    ~ *objekt* en beskrivelse af hvilke begivenheder en aktør ønsker oplysninger om
 
 klassifikation
   ~ *objekt*
