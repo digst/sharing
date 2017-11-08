@@ -30,6 +30,8 @@ Referencearkitekturen for deling af data og dokumenter understøtter design, udv
 
 Dokumentet er primært målrettet it-arkitekter tilknyttet offentlige digitaliseringsprojekter, herunder enterprise-arkitekter, forretningsarkitekter og løsningsarkitekter, der har til opgave at kravspecificere og designe løsninger.
 
+(Overvej om løsningsarkitekter er bedre hjulpet af løsningsskabeloner i det enkelte domæner)
+
 De første dele af dokumentet (Strategisk og Forretningsmæssig arkitektur) henvender sig endvidere til projektledere og beslutningstagere, herunder forretningsansvarlige, digitaliseringschefer, it-chefer, afdelings- og kontorchefer og andre med rollen som systemejer.
 
 Dokumentet i sin helhed er også relevant for leverandører at orientere sig i.
@@ -41,14 +43,37 @@ Referencearkitekturen beskriver anvendelse af og udvikling af it-systemer, der r
 EU databeskyttelse
   ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
 
-EU eIDAS
-  ~ *lov* som definerer registrede tillidstjenester
+Forvaltningslov
+   ~ *lov* ....
 
 Persondatalov
-  ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
+   ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
+
+Og mere specifikke lovgivninger
+
+
+Sundhedslov
+  ~ *lov* ....
+
+Servicelov
+  ~ *lov* ....
+
+
+[og flere...]
+
+Og nogle mere digitaliseringsagtige love...
 
 Lov om Digital Post
   ~ *lov* der gør det obligatorisk for virksomheder og borgere at modtage digitale meddelelser fra offentlige afsendere.
+
+EU eIDAS
+  ~ *lov* som definerer registrede tillidstjenester
+
+
+
+
+
+
 
 Referencearkitekturen skrives på baggrund af den fællesoffentlige digitaliseringsstrategi 2020 under initiativ 8.1 med tilslutning fra
 FM, UFM, EVM, SIM, JM, EFKM, MBUL, SÆM, SKM, MFVM, BM, KL og Danske Regioner. Heri beskrives referencearkitekturen således:
@@ -57,7 +82,7 @@ FM, UFM, EVM, SIM, JM, EFKM, MBUL, SÆM, SKM, MFVM, BM, KL og Danske Regioner. H
 
 Uden for scope af denne referencearkitektur er:
 
-- registrering og intern anvendelse af data hos dataejer (se issue #9)
+- registrering og intern anvendelse af data hos dataejer
 - åbne data, der ikke kræver adgangskontrol (se issue #9)
 - streaming af videodata og IoT-data (se issue #2)
 
@@ -100,7 +125,12 @@ Referencearkitekturen skal:
 ## Tilblivelse og governance
 Første udgave er skrevet hos Kontor for Data og Arkitektur af Mads Hjorth, Digitaliseringsstyrelsen og Anders Fausbøll, Omnium Improvement.
 
-Endelig godkendelse forventes hos Styregruppe for Data og Arkitektur under Digitaliseringsstrategien 18. december 2017.
+(TODO: Deltagere i arbejdsgruppe)
+
+
+Endelig godkendelse forventes hos Styregruppe for Data og Arkitektur under Digitaliseringsstrategien 5. marts 2018.
+
+(Videre vedligeholdelse i regi af FDA, næste version fokus på sammenhæng med øvrige)
 
 ## Metoderamme
 Referencearkitekturen er udarbejdet inden for rammerne af Fællesoffentlig Digital Arkitektur og følger så vidt muligt den fælles skabelon for referencearkitekturer som udarbejdet i DIGST/KDA. Metoderammen bygger blandt andet på erfaringer fra OIO referencearkitektur, og indarbejder også elementer fra EIRA, TOGAF, ArchiMate m.m.
@@ -109,7 +139,10 @@ I dokumentets tekst er særlige elementer angivet i *kursiv* (fx *lov*, *mål*, 
 
 I figurer markerer:
 - _Kursiv_: At et element eller en relation ikke er nærmere defineret i denne referencearkitektur (fx _dokument_)
-- Blå tekst: At et element eller en relation ejes og defineres i denne referencearkitektur (fx `anvendelse`)
+- `Blå tekst`: At et element eller en relation ejes og defineres i denne referencearkitektur (fx `anvendelse`)
+- Runde hjørner at det er "proces trin" Business Functions jf. Archimate
+- Skarpe hjørner at det er Applikationsroller jf. Archimate
+- "slikkepind" er interfaces/applikationsfunktioner/operationer
 
 ## Relation til andre referencearkitekturer
 Denne referencearkitektur gør brug af:
@@ -123,34 +156,33 @@ Den skal kunne anvendes af:
 
 ... og skal anvendes i kontekst sammen med:
 
-- Deling af dokumenter på sundhedsområdet
-- Sag- og dokument på det kommunale område
-- Indberetning til registre på sundhedsområdet (under udarbejdelse pr. oktober 2017)
+- OIO Sag- og dokumenter (2008)
+- Deling af dokumenter og billeder på sundhedsområdet (2012)
+- Referencearkitektur for informationssikkerhed på sundhedsområdet (2013)
+- Indberetning til registre på sundhedsområdet (under godkendelse pr. november 2017)
 
+(TODO: tilføjer hyperlinks...)
 
-# Strategisk arkitektur
+# Strategi
 
 Udarbejdelsen af referencearkitekturen tager udgangspunkt i en række identificerede forretningsmæssige og teknologiske trends og tendenser.
+
+[TODO: Slet tendenser, men overvej at fastholde pointer andre steder]
 
 ## Forretningsmæssige tendenser
 [TODO: Fold bullet-liste ud med flere kommentarer - i et narrativ (bullets i figur)]
 
 - Sammenhængende offentlige services - gode brugerrejser [TODO: Knyt til sammenhængsreform)]
-- Nationalt ønske om at undgå knopskudte løsninger
-- Data har øget værdi for organisationer
-- Øget bevågenhed omkring beskyttelse af privatliv
-- Øget opmærksomhed om håndtering af personlige oplysninger
-- Mængden af oplysninger der håndteres stiger
+- Suverænitet, beskyttelse mod cyberangreb
+- Øget opmærksomhed om behandling af personlige oplysninger
 - Grænseoverskridende services
 
 ## Teknologiske tendenser
-- Øget central standardisering af begreber, datamodeller og grænseflader
+- Øget standardisering af begreber, datamodeller og grænseflader
 - Flere og mere forskelligartede enheder forbundet til netværket
-- Øgede forventninger til brugervenlighed af offentlige digitale services
-- Mængden af tilgængelige oplysninger vokser
-- Integrated Service Delivery
-- ”Interoperability/Samarbejdende infrastrukturer / Økosystem af fælles løsninger?”
-- ”Valgfrihed for anvender mellem flere tekniske udbydere af samme oplysninger”
+- Scale-out løsninger til web-scale
+
+
 
 
 ## Strategiske målsætninger
@@ -159,6 +191,8 @@ Udarbejdelsen af referencearkitekturen tager udgangspunkt i en række identifice
 De overordnede målsætninger for denne referencearkitektur kobler alle til visionen om det datadrevne samfund, hvor data ses som et råstof for samfundsudviklingen.
 
 Målsætningerne inkluderer:
+
+> *Det digitale sksl være let, hurtigt og sikre god kvalitet*
 
 Interoperabilitet
   ~  *mål* om sammenhængende services... integrated service delivery
@@ -176,17 +210,20 @@ Genbrug
 ## Vision
 Visionen i denne referencearkitektur er at stræbe efter en situation, hvor:
 
-> *Data er en fælles, værdifuld og velbeskyttet ressource, som skal være nemme at dele og bruge, men svære at misbruge*
+> *Data er en fælles, værdifuld og velbeskyttet ressource, som skal være nem at dele og bruge, men svær at misbruge*
+
+(TODO: Hvilke forretningsevner der kommer i fokus, og hvad vi skal være bedre til... Data er fælles kræver beskrivelse?, velbeskyttet kræver indsats i mål med trussel...)
 
 ## Værdiskabelse
-Værdien ved at følge denne referencearkitektur er, at den giver:
+Værdien ved at følge denne referencearkitektur er, at den understøtter:
 
-- Enklere og mere effektive digitale services for borgere og virksomheder
-- Simplere arbejdsgange og mere potentiale for automatisering hos organisationer (myndigheder/virksomheder)
-- Understøttelse af vækst gennem nye typer af services baseret på eksisterende data
-- Understøttelse af transparens og bevarelse af tillid til registre
-- Effektiv systemudvikling (begrænser udfaldsrum, opsamler best practice)
+- enklere og mere effektive digitale services for borgere og virksomheder
+- simplere arbejdsgange og mere potentiale for automatisering hos organisationer (myndigheder/virksomheder)
+- vækst gennem nye typer af services baseret på eksisterende data
+- øget transparens og bevarelse af tillid til registre
+- effektiv systemudvikling (begrænser udfaldsrum, opsamler best practice)
 [TODO: Tilføj juridisk værdiskabelse (GDPR, EU (EIDAS m.m.)) - issue #32]
+[TODO: Stram op og fold ud, kig eventuelt på hvad der følger alene af denne... Bind dem op på de strategiske målsætninger]
 
 ## Strategiske principper
 [TODO: Issue #22 - omskriv afsnit til at være konsekvenser af principper fra strategien/hvidbogen + slå kopi-registre ihjel]
@@ -198,7 +235,7 @@ Forretningsmæssige, Informationsmæssige, Applikationsmæssige og Tekniske prin
 - F0: Understøtte borgeres og virksomheders indsigt i opbevaring og anvendelse af følsom data
 - F1: Udgifter i datadeling skal fordeles - byrden i datadeling skal afløftes fra dataejer, hvis den begrænser genbrug
 - F2: Autoritative registre med henvisninger til andre registre
-- F3: Ansvar for begrænsning af adgang ligger hos registerejer
+- F3: Ansvar for begrænsning af adgang ligger hos dataansvarlig (aka registerejer)
 - F4: Data beskrives, fordeles, forbedres og beskyttes i fællesskab
 - F5: Beskrivelse af, adgang til og brug af data sker under klar governance og håndhæves ud fra tydelig hjemmel
 - F6: Deling af data i kontekst af sagsbehandlinger skal være journaliserbart ("dokument-metafor" - konsekvens af AR3.1)
@@ -208,12 +245,13 @@ Forretningsmæssige, Informationsmæssige, Applikationsmæssige og Tekniske prin
 - A1: Onlineopslag i sagsbehandling og selvbetjening
 - A2: Log adgang
 - A3: Adgang til og fra internationale registre sker gennem national gateway
-- T1: Central fuldmagts-/rettighedsstyring (AR2.1, AR2.4, AR7.1 samt Brugerstyring)
+- T1: Vedlighold af fuldmagt og samtykker sker løst koblet fra deres håndhævelse (AR2.1, AR2.4, AR7.1 samt Brugerstyring)
 - T2: Multi-flavour-api
 - T3: Fælles metoder for datadeling understøtter sammenstilling af data og tværgående brug blandt myndigheder og virksomheder
 
+(tænk genbrug på design time)
 
-# Forretningsmæssig arkitektur
+# Forretningsarkitektur
 
 ## Aktører
 De væsentligste aktører, der er i spil omkring deling af data og dokumenter, er:
@@ -279,21 +317,41 @@ Modtager
 
 Figuren ovenfor beskriver de væsentligste trin i de overordnede procesflow for de fire delte use cases. I denne sammenhæng skal følgende fremhæves:
 
+(TODO: Skarpe definitioner, og så længere narrativ med forklaringer og eksempler. Huske at definere de enkelte procestrin)
+
 Registrering
   ~ *proces* En `registrant` initierer processen ved at registrere ny data hos den `dataansvarlige` (der er ansvarlig for sikring af hjemmel og håndhævelse af adgangspolitik ifm. registreringen). Når data er korrekt registreret, skal det markeres som klar til at blive udstillet. Her kan der være forskel på, om data gøres tilgængeligt øjeblikkeligt eller først på et senere tidspunkt (fx ved registrering af fremtidigt skift af adresse) - begge muligheder kan være relevante, afhængig af `dataanvenders` behov.
 
 Anvendelse af udstillede data
   ~ *proces* Denne proces initieres hos `dataanvender` - typisk en myndighed, men kan også være en virksomhed - ud fra en startsituation defineret ved, at man har erkendt et behov for data. `Dataanvender` sender en forespørgsel på data, der beskriver dels, hvilke data, der ønskes, og dels med hvilken hjemmel. `Dataansvarlig` håndhæver på denne baggrund adgangskontrol, inden data deles og sendes i et svar til `dataanvender`. Slutsituationen bliver, at `dataanvenders` databehov er opfyldt. `Dataansvarlig` er ikke nødvendigvis klar over, hvilket databehov forespørgslen har tjent til at tilfredsstille - så længe, adgangen er legitim og foretaget på baggrund af gyldig hjemmel (procestrin: `vurder`, (TODO udfør adgangskontrol?), kender `dataansvarlig` ikke nødvendigvis formålet med `dataanvenders` brug af data i den konkrete forespørgsel.
 
+  Følgende kvaliteter/kriterier i fokus:
+
+  * Sikkerhed for identifikation af dataansvarlig og datamodtager
+  * Effektiv adgangskontrol med tydelig hjemmel
+  * Effektiv søgning og sammenstilling
+  * Effektiv indsigt i anvendelse (logning) og opbevaring (færre kopier)
+
+
 Indsigt i anvendelse
     ~ *proces* *- beskrivelse TBU* (særtilfælde af anvendelse af data, den registrerede tilgår log)
 
-Registreret forsendelse
+Forsendelse af meddelelse
   ~ *proces* Til forskel fra Anvendelse af udstillede data starter denne proces hos `afsenderen` (der tillige kan være `dataansvarlig`). `Afsender` har udvalgt og pakketeret data i en meddelelse (evt. helt eller delvist i form af et dokument), adresserer meddelelsen (fx ved brug af et kontaktregister) og sender den herefter til `modtager`. `Modtager` kan være alle typer af aktører; for myndigheder og virksomheder bemærkes, at det i forbindelse med modtagelsen kan være relevant at fordele/route meddelelsen internt ud fra dens adresseringsoplysninger. I sammenligning med Anvendelse af udstillede data er det nu `afsender`, der som den part, der deler data, 'ejer' den fulde forretningskontekst - hvor den `dataansvarlige` ovenfor ikke var bekendt med formålet med at dele data.
+
+  (TODO: den som sender uden forudgående dokumenteret ansøgning har ansvar for at modtager har legitim formål med adgangen)(TODO: Overdragelse af dataansvar ved forsendelse?)
+
+  Følgende kriterier anvendes:
+
+* Sikkerhed for identifikation af afsender og modtager
+* Beskyttelse af meddelelser mod ændringer
+* Sporbarhed, herunder uafviselighed, logning
+* Automatisering (strukturering og tilgængelighed af data)
+
+
 
 [TODO]: x "[Vi skal være bedre til at beskrive hvordan vi trækker på elementer fra brugerstyring, men husk at holde det teknologi-fri]"
 
-[TODO]: x "[Hvad er vigtigt ved forsendelse vs deling. Kvalitetskriterier... #42]"
 
 
 ## Forretningsobjekter
@@ -352,8 +410,14 @@ abonnement
 klassifikation
   ~ *objekt*
 
+samtykke (til videregivelses af data)
+    ~ *objekt* (GDPR) (initiativ hos sagsbehandler)
 
+fuldmagt
+  ~ *objekt* (Forvaltningslov?) (initiativ hos borger eller virksomhed)
 
+negativt samtykke (begrænsning i anvendelse)
+  ~ *objekt* (GDPR)
 
 # Teknisk arkitektur
 Dette afsnit beskriver roller og implementeringsmønstre, der er relevante, når forretningsfunktionerne beskrevet ovenfor skal understøttes/realiseres af applikationer. Endvidere udpeges områder, der er kandidat til standardisering og/eller profilering i forbindelse med referencearkitekturen.
@@ -369,7 +433,7 @@ De nødvendige og understøttende applikationsroller og deres indbyrdes relation
 [TODO: Tilføj Datadistribution-service, operationer til 'hent' vs. opslag', 'flage fejl' m.m. - issue #41]
 
 datasamling
-  ~ *applikationsrolle* som har de (autoritativ?) oplysninger.
+  ~ *applikationsrolle* som har autoritative? oplysninger.
 
 Når datasamlingen udgøres af dokumenter kaldes den nogle gange et repository, ellers kaldes den også et register. Samlinger kan have temporale og bitemporale egenskaber. Dette handler blandt andet om at holde styr på datas gyldighedsperiode og registreringstidspunkt for fx at kunne understøtte dobbelt historik (overblik både over, hvad der var korrekt på en given dato, og hvad registeret på et givent tidspunkt troede var korrekt på samme tidspunkt).
 
@@ -385,7 +449,7 @@ Når datasamlingen udgøres af dokumenter kaldes den nogle gange et repository, 
 dataservice
   ~ *applikationsrolle* som har til ansvar  at udstille en `datasamling`, og begrænse adgangen til den om nødvendigt. Og logge.
 
-* hent ~ *applikationsservice* der tillader anvendere at hente elementer i samling med kendte id'er (husk reference til skriv mht ret og begræns) (men kan sammenstille på tværs af samlinger) (hent er ofte specialiseret til en konkret anvendelse og ikke så tæt på datasamlingen)
+* hent ~ *applikationsservice* der tillader anvendere at hente elementer i samling med kendte id'er (husk reference til skriv mht ret og begræns) (men kan sammenstille på tværs af samlinger) (hent er ofte specialiseret til en konkret anvendelse og ikke så tæt på datasamlingen) (TODO: udvide med streaming som variant se #2)
 
 * søg ~ *applikationsservice* der tillader anvendere at søge i elementer _på tværs af forskellige samlinger_ udfra kritierier (eventuelt sammenstille med andre data)
 
@@ -492,7 +556,7 @@ Logningsmæssigt er den enkelte `distributør` ansvarlig for at logge `dataanven
 
 [TODO: Uddyb 'opdater' - delta eller fuld kopi; nævn kopi hos anvender som anti-pattern]
 
-#### Distribueret service- og data-platform
+#### Fælles, distribueret service- og data-platform
 ![Implementeringsmønster for distribueret dataplatform](figures/use-plat.png)
 
 Delingsansvaret er i dette mønster i høj grad håndteret af en `dataplatform`. Platformen er distribueret og er i stand til at replikere data på tværs af `dataansvarlige`og `dataanvendere`. Dvs., at data, der registreres via en `dataansvarlig` myndighed, gøres tilgængelige for andre, dataanvendende myndigheder via platformen.
@@ -669,4 +733,7 @@ Indholdsmæssige standarder
 
 ## Identifikation af eksisterende standarder
 
+
+Datasamling --- skriv --> Indeks
+  (aka IHE ITI-42) foreslår: ebRIM, ebRS, HL7V2
 *TBU.*
