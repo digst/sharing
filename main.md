@@ -293,6 +293,9 @@ Registreret forsendelse
 
 [TODO]: x "[Vi skal være bedre til at beskrive hvordan vi trækker på elementer fra brugerstyring, men husk at holde det teknologi-fri]"
 
+[TODO]: x "[Hvad er vigtigt ved forsendelse vs deling. Kvalitetskriterier... #42]"
+
+
 ## Forretningsobjekter
 Nedenfor fremgår en initiel oversigt over en række forretningsobjekter, der er væsentlige for referencearkitekturen.
 
@@ -365,8 +368,8 @@ De nødvendige og understøttende applikationsroller og deres indbyrdes relation
 
 [TODO: Tilføj Datadistribution-service, operationer til 'hent' vs. opslag', 'flage fejl' m.m. - issue #41]
 
-datakilde (autoritativ?)
-  ~ *applikationsrolle* som har til ansvar at opbevare en `datasamling`,
+datasamling
+  ~ *applikationsrolle* som har de (autoritativ?) oplysninger.
 
 Når datasamlingen udgøres af dokumenter kaldes den nogle gange et repository, ellers kaldes den også et register. Samlinger kan have temporale og bitemporale egenskaber. Dette handler blandt andet om at holde styr på datas gyldighedsperiode og registreringstidspunkt for fx at kunne understøtte dobbelt historik (overblik både over, hvad der var korrekt på en given dato, og hvad registeret på et givent tidspunkt troede var korrekt på samme tidspunkt).
 
@@ -382,12 +385,13 @@ Når datasamlingen udgøres af dokumenter kaldes den nogle gange et repository, 
 dataservice
   ~ *applikationsrolle* som har til ansvar  at udstille en `datasamling`, og begrænse adgangen til den om nødvendigt. Og logge.
 
-* hent ~ *applikationsservice* der tillader anvendere at hente elementer i samling med kendte id'er (husk reference til skriv mht ret og begræns)
+* hent ~ *applikationsservice* der tillader anvendere at hente elementer i samling med kendte id'er (husk reference til skriv mht ret og begræns) (men kan sammenstille på tværs af samlinger) (hent er ofte specialiseret til en konkret anvendelse og ikke så tæt på datasamlingen)
 
 * søg ~ *applikationsservice* der tillader anvendere at søge i elementer _på tværs af forskellige samlinger_ udfra kritierier (eventuelt sammenstille med andre data)
 
 * abonner ~ *applikationsservice* der tillader anvendere opsætte abonnementer så de får notifikation. Kan være simple (alle eller topics) eller baseret på datasamlinger (der så skal opbevares som kopi hos servicen)
 
+Obs... ikke skriv.
 (Data Publication i EIRA)
 
 log (adgangslog? anvendelseslog?)
