@@ -198,8 +198,7 @@ Målsætningerne inkluderer:
 Interoperabilitet
   ~  *mål* om sammenhængende services... integrated service delivery
 
-Once-only [TODO: Tjek baggrund i strategi/Hvidbog - issue #39]
-  ~  *mål* om at borger og virksomhed kun skal afgive den samme information til det offentlige en gang... (men give lov til genbrug?)
+  ~  *mål* om at borger og virksomhed kun skal afgive den samme information til det offentlige en gang... (men give lov til genbrug?) [TODO: Tjek baggrund i strategi/Hvidbog - issue #39]
 
 Transparens
   ~ *mål* om at borgere og virksomheder får øget indsigt i, hvilke data der findes om dem, og hvor disse data anvendes
@@ -407,13 +406,11 @@ forretningshændelse/begivenhed
   ~ *objekt*
 
 abonnement
-    ~ *objekt* en beskrivelse af hvilke begivenheder en aktør ønsker oplysninger om
 
 klassifikation
   ~ *objekt*
 
 samtykke (til videregivelses af data)
-    ~ *objekt* (GDPR) (initiativ hos sagsbehandler)
 
 fuldmagt
   ~ *objekt* (Forvaltningslov?) (initiativ hos borger eller virksomhed)
@@ -505,7 +502,6 @@ indeks
   ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger om, hvilke datasamlinger der indeholder oplysninger om personer, virksomheder og andre forvaltningsobjekter. Et Indeks har typisk til formål at effektivise søgning og fremfinding
 
 værdisæt
-    ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger om tilladte værdier i samlinger og meddelelser. Og mapninger i mellem forskellige 'sprog'
 
 kopi af datasamling
   ~ *applikationsrolle* en datasamling, som er en direkte kopi af den `dataansvarliges` autoritære datasamling

@@ -40,7 +40,7 @@
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
 % styles
-
+\titlelabel{\llap{\thetitle\quad}} % numbers to the left 
 
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 
@@ -58,9 +58,7 @@
 \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 \usepackage{enumitem}
-\setlist[description]{%
-  font={\sffamily\mdseries\color{blue}}, % if colour is needed
-}
+\setlist[description]{font={\sffamily\mdseries\color{blue}}}
 
 \usepackage{titlesec}
 \newcommand{\sectionbreak}{\clearpage}
