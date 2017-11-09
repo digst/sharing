@@ -321,6 +321,8 @@ Figuren ovenfor beskriver udvalgte, væsentlige trin i de overordnede procesflow
 
 (TODO: Skarpe definitioner, og så længere narrativ med forklaringer og eksempler. Huske at definere de enkelte procestrin)
 
+[TODO: Tilføj Søgning til Anvendelse.]
+
 ### Registrering af data
 
 Registrering af data
@@ -328,7 +330,7 @@ Registrering af data
 
 ### Anvendelse af data
 
-Denne proces dækker en `dataanvender` - typisk en myndighed, men kan også være en virksomhed - der søger adgang til data, der på forhånd er gjort tilgængelige af en `dataansvarlig`. De indgående procestrin er:
+Denne proces dækker, at en `dataanvender` - typisk en myndighed, men kan også være en virksomhed - søger adgang til data, der på forhånd er gjort tilgængelige af en `dataansvarlig`. De indgående procestrin er:
 
 behov opstår
   ~ *forhåndsbetingelse* Processen starter hos `anvender`, der har identificeret et behov for at indhente data. Dette behov opstår typisk i kontekst af andre processer, som vi ikke specificerer nærmere her, men som indbefatter sagsbehandling, selvbetjeningsløsninger, analyser og meget mere.
@@ -349,34 +351,56 @@ oversæt svar
   ~ *procestrin* I tilfælde af, at der er behov for at oversætte `svaret` i form af mapninger af datafelter, klassifikationer m.m., håndteres dette på `dataanvenders` side. `Dataanvenders` initielle behov for data er hermed opfyldt.
 
 
-I processen `Anvendelse af data` er følgende kvaliteter og kriterier i fokus:
+Når man skal vurdere processen `Anvendelse af data`, er følgende kvaliteter og kriterier de mest væsentlige at forholde sig til:
 
-  * Sikkerhed for identifikation af dataansvarlig og datamodtager
-  * Effektiv adgangskontrol med tydelig hjemmel
-  * Effektiv søgning og sammenstilling
-  * Effektiv indsigt i anvendelse (logning) og opbevaring (undgå kopier)
-
+  * **Identifikation**: Det skal være muligt for både `dataansvarlig` og `dataanvender` at identificere hinanden entydigt og sikkert.
+  * **Adgangskontrol**: Der skal være en effektiv adgangskontrol, der opfylder kravet til at kunne dokumentere en tydelig og nødvendig hjemmel med skyldig hensyntagen til effektivitet i løsningen
+  * **Søgning**: `Dataansvarlig` bør tilbyde en søgefunktionalitet, der tillader `anvender` at fremsøge data effektivt på tværs af distribuerede, ensartede `datasamlinger` (fx røntgenbilledregistre), eller ud fra et sæt af kriterier.
+  * **Sammenstilling**: `Dataansvarlig` kan, hvor det måtte være hensigtsmæssigt ift. specifikke behov, vælge at sammenstille data fra flere `datasamlinger` og udstille en service, der tilbyder det sammenstillede data.
+  * **Indsigt**: Processen skal understøtte effektiv indsigt i anvendelse (logning)
+  * **Opbevaring**: `Dataanvender` bør benytte den autoritative `datasamling` direkte hvis muligt. Herved undgås, at der opbygges 'skyggekopier' af `datasamlinger`, der introducerer kompleksistet i forbindelse med synkroisering, aktualitetsudfordringer m.m.
 
 Det bemærkes, at processen for den delte use case `Indsigt i anvendelse`, hvor `den registrerede` benytter sig af sin ret til indsigt i, hvordan data om ham/hende er blevet anvendt, er et særtilfælde af `Anvendelse af data`. Den er derfor ikke beskrevet selvstændigt.
 
 ### Forsendelse af meddelelse
 
+Denne proces dækker, at en `afsender` - typisk en myndighed eller en virksomhed - har behov for at sende data (evt. i form af et dokument) til en `modtager`. De indgående procestrin er:
+
+behov opstår
+  ~ *forhåndsbetingelse* Processen starter hos `afsender`, der - typisk i kontekst af en anden, overliggende proces - har behov for at dele data ved at sende en `meddelelse` til en `modtager`.
+
+dan indhold af meddelelse
+  ~ *procestrin* Første trin er, at `afsender` danner indholdet af meddelelsen. Indholdet kan være data under kontrol af `afsender` selv, men kan også indhentes fra andre via processen `Anvendelse af data` (der dermed bliver en underproces til `forsendelse af meddelelse`, der i sig selv typisk også er en underproces).
+
+adressér meddelelse
+  ~ *procestrin* Dette trin giver mulighed for at angive en slutmodtager for `meddelelsen`, der kan være mere specifik end blot `modtager`. Som eksempel kan `modtager` i nogle tilfælde være en organisation, og der kan være behov for at specificere en bestemt ansat som slutmodtager, hvilket kan tilføjes som metadata til `meddelelsen`.
+
+afsend meddelelse
+  ~ *procestrin* Afsendelse af `meddelelsen` sker i dette trin. `Afsender` er ansvalig for at logge hvilke data, der er sendt, til hvem, de er sendt, og med hvilket formål/hjemmel. Implicit i trinet ligger, at datadelingen er lovmedholdelig, hvilket er ensbetydende med at sige, at `modtager` har et legitimt formål med at modtage data. Ansvaret for dette påhviler `afsender`.
+
+modtag meddelelse
+  ~ *procestrin* `Meddelelsen` ankommer hos `modtager`. Der kan afsendes kvittering for modtagelse.
+
+fordel meddelelse
+  ~ *procestrin* `Modtager` har mulighed for at benytte adresseringsoplysningerne i `meddelelsen` til at foretage routing af `meddelelsen` i egen organisation. `Meddelelsen` kan endvidere være et `svar` på en tidligere fremsendt `forespørgsel`. Er dette tilfældet, har `modtager` behov for at sammenknytte `meddelelsen` med den kontekst, fra hvilken den oprindelige `forespørgsel` blev sendt.
+
+oversæt meddelelse
+  ~ *procestrin* [TODO: Foreslår at slette dette trin? Det signalerer, at der påhviler modtager en generel forpligtelse til at kunne modtage hvad-som-helst. Meningen er nok, at hvis meddelelsen er et svar på en separat request fra modtager, skal modtager også kunne parse svaret - hvilket er dækket i den tilsvarende trin i Anvendelse af data.]
+
 Forsendelse af meddelelse
   ~ *proces* Til forskel fra Anvendelse af udstillede data starter denne proces hos `afsenderen` (der tillige kan være `dataansvarlig`). `Afsender` har udvalgt og pakketeret data i en meddelelse (evt. helt eller delvist i form af et dokument), adresserer meddelelsen (fx ved brug af et kontaktregister) og sender den herefter til `modtager`. `Modtager` kan være alle typer af aktører; for myndigheder og virksomheder bemærkes, at det i forbindelse med modtagelsen kan være relevant at fordele/route meddelelsen internt ud fra dens adresseringsoplysninger. I sammenligning med Anvendelse af udstillede data er det nu `afsender`, der som den part, der deler data, 'ejer' den fulde forretningskontekst - hvor den `dataansvarlige` ovenfor ikke var bekendt med formålet med at dele data.
 
-  (TODO: den som sender uden forudgående dokumenteret ansøgning har ansvar for at modtager har legitim formål med adgangen)(TODO: Overdragelse af dataansvar ved forsendelse?)
 
-  Følgende kriterier anvendes:
-
-* Sikkerhed for identifikation af afsender og modtager
-* Beskyttelse af meddelelser mod ændringer
-* Sporbarhed, herunder uafviselighed, logning
-* Automatisering (strukturering og tilgængelighed af data)
+  Når man skal vurdere processen `Forsendelse af meddelelse`, er følgende kvaliteter og kriterier de mest væsentlige at forholde sig til:
+* **Identifikation**: Der bør være fuld sikkerhed for identifikation af `afsender` og `modtager`, understøttet gennem brugerstyring, kontaktregister eller lignende.
+* **Integritet**: Indholdet i en `meddelelse` skal være beskyttet mod ændringer foretaget, mens `meddelelsen` er på vej fra `afsender` til `modtager`.
+* **Sporbarhed**: Der skal være et klart revisionsspor i logs for `meddelelsers` vej gennem systemet, herunder understøttelse af uafviselighed.
+* **Automatisering**: `Meddelelser` bør være velstrukturerede og understøtte automatisering på `modtagers` side, fx ved at gøre data til fordeling/håndtering af `meddelelser` tilgængelig i en meddelelses-header.
 
 
+(TODO: Overdragelse af dataansvar ved forsendelse?)
 
 [TODO]: x "[Vi skal være bedre til at beskrive hvordan vi trækker på elementer fra brugerstyring, men husk at holde det teknologi-fri]"
-
 
 
 ## Forretningsobjekter
