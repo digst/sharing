@@ -1165,6 +1165,8 @@ opgave</y:NodeLabel>
       </data>
     </node>
     <node id="n70">
+      <data key="d4"><![CDATA[http://data.gov.dk]]></data>
+      <data key="d5"><![CDATA[Link til hjemmeside]]></data>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="87.5953791456476" x="-389.62573042296196" y="-554.3135999999838"/>
@@ -4100,7 +4102,6 @@ sagsnr<y:LabelModel>
           <y:Geometry height="30.0" width="87.5953791456476" x="-272.03035127731437" y="-494.3135999999838"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#808080" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="14" fontStyle="italic" hasBackgroundColor="false" hasLineColor="false" height="23.0654296875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#1F497D" verticalTextPosition="bottom" visible="true" width="64.4775390625" x="11.5589200415738" y="3.46728515625">–––––––––</y:NodeLabel>
           <y:Shape type="roundrectangle"/>
         </y:ShapeNode>
       </data>
@@ -4124,6 +4125,23 @@ sagsnr<y:LabelModel>
           <y:BorderStyle color="#C0C0C0" raised="false" type="line" width="1.0"/>
           <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Open Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.341796875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#1F497D" verticalTextPosition="bottom" visible="true" width="151.181640625" x="4.0" y="4.0">forsendelse af meddelelse</y:NodeLabel>
           <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n213">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="30.0" width="87.5953791456476" x="-272.03035127731437" y="-494.3135999999838"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#808080" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="71.88671875" x="7.854330197823799" y="5.93359375">–––––––––--<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
         </y:ShapeNode>
       </data>
     </node>
