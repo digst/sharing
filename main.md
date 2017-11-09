@@ -317,26 +317,49 @@ modtager
 ## Tværgående processer
 ![Overblik over centrale processer og deres aktiviteter fordelt på roller](figures/processer.png)
 
-Figuren ovenfor beskriver de væsentligste trin i de overordnede procesflow for de fire delte use cases. I denne sammenhæng skal følgende fremhæves:
+Figuren ovenfor beskriver udvalgte, væsentlige trin i de overordnede procesflow for de delte use cases. Nedenfor er de to datadelings-use cases `Anvendelse af data` og `Forsendelse af meddelelse` beskrevet i detaljer. Registrering af data er ligeledes beskrevet, dog mere summarisk, da den i kontekst af denne referencearkitektur kun er med af referencehensyn.
 
 (TODO: Skarpe definitioner, og så længere narrativ med forklaringer og eksempler. Huske at definere de enkelte procestrin)
 
-Registrering
+### Registrering af data
+
+Registrering af data
   ~ *proces* En `registrant` initierer processen ved at registrere ny data hos den `dataansvarlige` (der er ansvarlig for sikring af hjemmel og håndhævelse af adgangspolitik ifm. registreringen). Når data er korrekt registreret, skal det markeres som klar til at blive udstillet. Her kan der være forskel på, om data gøres tilgængeligt øjeblikkeligt eller først på et senere tidspunkt (fx ved registrering af fremtidigt skift af adresse) - begge muligheder kan være relevante, afhængig af `dataanvenders` behov.
 
-Anvendelse af udstillede data
-  ~ *proces* Denne proces initieres hos `dataanvender` - typisk en myndighed, men kan også være en virksomhed - ud fra en startsituation defineret ved, at man har erkendt et behov for data. `Dataanvender` sender en forespørgsel på data, der beskriver dels, hvilke data, der ønskes, og dels med hvilken hjemmel. `Dataansvarlig` håndhæver på denne baggrund adgangskontrol, inden data deles og sendes i et svar til `dataanvender`. Slutsituationen bliver, at `dataanvenders` databehov er opfyldt. `Dataansvarlig` er ikke nødvendigvis klar over, hvilket databehov forespørgslen har tjent til at tilfredsstille - så længe, adgangen er legitim og foretaget på baggrund af gyldig hjemmel (procestrin: `vurder`, (TODO udfør adgangskontrol?), kender `dataansvarlig` ikke nødvendigvis formålet med `dataanvenders` brug af data i den konkrete forespørgsel.
+### Anvendelse af data
 
-  Følgende kvaliteter/kriterier i fokus:
+Denne proces dækker en `dataanvender` - typisk en myndighed, men kan også være en virksomhed - der søger adgang til data, der på forhånd er gjort tilgængelige af en `dataansvarlig`. De indgående procestrin er:
+
+behov opstår
+  ~ *forhåndsbetingelse* Processen starter hos `anvender`, der har identificeret et behov for at indhente data. Dette behov opstår typisk i kontekst af andre processer, som vi ikke specificerer nærmere her, men som indbefatter sagsbehandling, selvbetjeningsløsninger, analyser og meget mere.
+
+forespørg om data
+  ~ *procestrin* `Dataanvender` sender en forespørgsel på data, der beskriver, hvilke data der ønskes. Ved adgang til andet end åbne data skal den nødvendige hjemmel ligeledes fremgå af forespørgslen, så `dataansvarlig` kan håndhæve den nødvendige adgangskontrol.
+
+vurder adgang
+  ~ *procestrin* `Dataansvarlig` myndighed vurderer i dette trin forespørgslen med henblik på at håndhæve adgangskontrol. Kun, hvis den medsendte hjemmel giver lovmæssig adgang til den forespurgte data, kan `dataansvarlig` gå videre med delingen. Hjemlen kan være eksplicit angivet eller ligge implicit i brugerstyringen. Hjemlen kan enten give generel adgang til en given `datasamling`, eller give adgang til specifik data i `samlingen`, hvorfor der i mange situationer vil være behov for at se på hjemlen og det eftrspurgte data i sammnenhæng for at håndhæve adgangskontrollen. Dette procestrin kan i øvrigt benyttes af `dataansvarlig` til at håndhæve adgangskontrol også på andre planer som håndhævelse af en Service Level Agreement, beskyttelse mod misbrug, mistænkelig adfærd m.m. Det bemærkes endvidere, at `Dataansvarlig` kan have overladt datadistributionsansvaret og det praktiske ansvar for håndhævelse af adgangskontrollen til en `datadistributør`, hvilket i øvrigt ikke ændrer ved beskrivelsen af dette trin.
+
+del data
+  ~ *procestrin* `Dataansvarlig` håndterer forespørgslen ved at slå data op i `datasamlingen`, evt. ved at sammenstille data fra flere `datasamlinger`, og sender et `svar` tilbage til `anvender`. Delingen af data bliver logget af `dataansvarlig`, indbefattende hvilken data, der blev delt; til hvilken `anvender`; og med hvilken hjemmel. Det bemærkes, at `Dataansvarlig` ikke nødvendigvis er klar over, hvilket databehov forespørgslen har tjent til at tilfredsstille - så længe, adgangen er legitim og foretaget på baggrund af gyldig hjemmel, har `dataansvarlig` ikke behov for at kende til `dataanvenders` brug af data i den konkrete forespørgsel.
+
+modtag svar
+  ~ *procestrin* `Dataanvender` modtager svaret fra `dataansvarlig.`
+
+oversæt svar
+  ~ *procestrin* I tilfælde af, at der er behov for at oversætte `svaret` i form af mapninger af datafelter, klassifikationer m.m., håndteres dette på `dataanvenders` side. `Dataanvenders` initielle behov for data er hermed opfyldt.
+
+
+I processen `Anvendelse af data` er følgende kvaliteter og kriterier i fokus:
 
   * Sikkerhed for identifikation af dataansvarlig og datamodtager
   * Effektiv adgangskontrol med tydelig hjemmel
   * Effektiv søgning og sammenstilling
-  * Effektiv indsigt i anvendelse (logning) og opbevaring (færre kopier)
+  * Effektiv indsigt i anvendelse (logning) og opbevaring (undgå kopier)
 
 
-Indsigt i anvendelse
-    ~ *proces* *- beskrivelse TBU* (særtilfælde af anvendelse af data, den registrerede tilgår log)
+Det bemærkes, at processen for den delte use case `Indsigt i anvendelse`, hvor `den registrerede` benytter sig af sin ret til indsigt i, hvordan data om ham/hende er blevet anvendt, er et særtilfælde af `Anvendelse af data`. Den er derfor ikke beskrevet selvstændigt.
+
+### Forsendelse af meddelelse
 
 Forsendelse af meddelelse
   ~ *proces* Til forskel fra Anvendelse af udstillede data starter denne proces hos `afsenderen` (der tillige kan være `dataansvarlig`). `Afsender` har udvalgt og pakketeret data i en meddelelse (evt. helt eller delvist i form af et dokument), adresserer meddelelsen (fx ved brug af et kontaktregister) og sender den herefter til `modtager`. `Modtager` kan være alle typer af aktører; for myndigheder og virksomheder bemærkes, at det i forbindelse med modtagelsen kan være relevant at fordele/route meddelelsen internt ud fra dens adresseringsoplysninger. I sammenligning med Anvendelse af udstillede data er det nu `afsender`, der som den part, der deler data, 'ejer' den fulde forretningskontekst - hvor den `dataansvarlige` ovenfor ikke var bekendt med formålet med at dele data.
