@@ -1,0 +1,113 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[10pt]{article}
+\usepackage[danish]{babel}
+
+% fonts
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont[Mapping=tex-text]{Merriweather Light}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Open Sans}
+\setmonofont[Scale=MatchLowercase]{Open Sans}
+
+\usepackage{xcolor}
+\definecolor{blue}{HTML}{1F497D}
+
+
+% layout
+\usepackage{geometry}
+\geometry{a4paper}
+\usepackage[parfill]{parskip}
+
+\usepackage[sf, bf]{titlesec}
+
+
+%toc
+\usepackage{tocloft}
+\setcounter{tocdepth}{2}
+
+
+
+% figur
+\usepackage{graphicx, grffile}
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+% styles
+
+
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+
+\usepackage[normalem]{ulem}
+% avoid problems with \sout in headers with hyperref:
+%\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
+
+\providecommand{\tightlist}{%
+\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{enumitem}
+\setlist[description]{%
+  font={\sffamily\mdseries\color{blue}}, % if colour is needed
+}
+
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+\renewcommand{\baselinestretch}{1.4}
+
+%\setcounter{secnumdepth}{0} % numbers to what level
+
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+
+
+
+
+
+\title{Fællesoffentlig referencearkitektur for \\ deling af data og dokumenter}
+\author{}
+\date{Oktober 2017}
+
+\begin{document}
+\maketitle \clearpage
+
+\tableofcontents
+\newpage
+
+\input{main.tex}
+
+
+\newpage
+\thispagestyle{empty}
+\begin{figure}
+\centering
+\includegraphics[angle=90, height=\textheight]{../overview.pdf}
+\caption{Overblik over elementer i referencearkitekturen og deres EIRA stereotyper}
+\end{figure}
+
+\newpage
+\thispagestyle{empty}
+\begin{figure}
+\centering
+\includegraphics[angle=0, width=\textwidth]{../eco2.pdf}
+\caption{Overblik over elementer i de samlede referencearkitekturer i FDA}
+\end{figure}
+
+\end{document}

@@ -5,15 +5,18 @@ cp ../figures/* figures/
 
 pandoc -o main.docx --data-dir=. main.md
 
+echo "done with word"
+
+pandoc ../main.md -o main.tex
+
+echo "patching for latex"
+
+#sed -i -e 's/\includegraphics/\includegraphics[width=\\textwidth]/g' main.tex
+#sed -i -e 's/\begin{figure}/\begin{figure}[H]/g' main.tex
 
 
 
+echo "ready for latex"
+xelatex wrapper.tex
 
-
-
-
-#pandoc ../main.md -o main.tex
-#
-#\includegraphics[width=\textwidth]
-
-#xelatex article.tex
+open wrapper.pdf

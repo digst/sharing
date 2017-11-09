@@ -44,10 +44,10 @@ EU databeskyttelse
   ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
 
 Forvaltningslov
-   ~ *lov* ....
+  ~ *lov* ....
 
 Persondatalov
-   ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
+  ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
 
 Og mere specifikke lovgivninger
 
@@ -138,6 +138,7 @@ Referencearkitekturen er udarbejdet inden for rammerne af Fællesoffentlig Digit
 I dokumentets tekst er særlige elementer angivet i *kursiv* (fx *lov*, *mål*, *rolle* m.m.). Dette markerer, at de hører til Archimate-begrebsapparatet. Andre elementer er angivet med særlig `markering`. Her er der tale om referencer til begreber/elementer fra figurer. Det bemærkes, at prefixet 'data-' kan være udeladt på begreber/elementer i tekst og figurer fx af formatterings- eller læsbarhedshensyn uden, at der ligger en indholdsmæssig skelnen bag (fx `dataanvendelse`/`anvendelse`, `datasamling`/`samling` o.a.)
 
 I figurer markerer:
+
 - _Kursiv_: At et element eller en relation ikke er nærmere defineret i denne referencearkitektur (fx _dokument_)
 - `Blå tekst`: At et element eller en relation ejes og defineres i denne referencearkitektur (fx `anvendelse`)
 - Runde hjørner at det er "proces trin" Business Functions jf. Archimate
@@ -212,7 +213,7 @@ Visionen i denne referencearkitektur er at stræbe efter en situation, hvor:
 
 > *Data er en fælles, værdifuld og velbeskyttet ressource, som skal være nem at dele og bruge, men svær at misbruge*
 
-(TODO: Hvilke forretningsevner der kommer i fokus, og hvad vi skal være bedre til... Data er fælles kræver beskrivelse?, velbeskyttet kræver indsats i mål med trussel...)
+(TODO: Hvilke forretningsevner der kommer i fokus, og hvad vi skal være bedre til... Data er fælles kræver mere ensartede rammer og lovgivning, værdifulde kræver at de er velbeskret, velbeskyttet kræver indsats der står i mål med trusler...)
 
 ## Værdiskabelse
 Værdien ved at følge denne referencearkitektur er, at den understøtter:
@@ -262,7 +263,7 @@ De væsentligste aktører, der er i spil omkring deling af data og dokumenter, e
 
 
 ## Forretningstjenester og funktioner
-Forretningsmæssigt set finder referencearkitekturen anvendelse i løsningen af alle offentlige opgaver. Specifikt kan nævnes nedenstående sæt af generiske procesmønstre:
+Overordnet set finder referencearkitekturen anvendelse i løsningen af alle offentlige opgaver. Specifikt kan nævnes nedenstående sæt af generiske procesmønstre:
 
 - Myndigheders sagsbehandling (fra Referencearkitektur for Sag og dokument)
 - Selvbetjening, vendt mod borgere og virksomheder (fra Referencearkitektur for Selvbetjening)
@@ -286,30 +287,31 @@ indsigt i anvendelse af data
   ~ *collaboration* hvor en borger får indsigt i anvendelse af personlige data
 
 anvendelse af data
-  ~ *collaboration* hvor oplysninger anvendes i en opgave
+  ~ *collaboration* hvor oplysninger opbevaret hos en aktør anvendes hos en anden
 
-forsendelse af meddelelser  ~ *collaboration* hvor meddelelser sendes uafviseligt
+forsendelse af meddelelser
+  ~ *collaboration* hvor meddelelser sendes mellem to aktører
 
 ## Forretningsroller
 
 I ovenstående use cases indgår disse forretningsroller:
 
-Registrant
+registrant
   ~ *rolle* som bringer oplysninger på digital form, registrer
 
-"Den registrerede"
+den registrerede
   ~ *rolle* den person (datasubjekt), som oplysningerne vedrører
 
-Anvender
+anvender
   ~ *rolle* der anvender data/oplysninger fra et register
 
-Dataansvarlig
+dataansvarlig
   ~ *rolle* som ejer registreringer/data og har ansvar for at udarbejde adgangspolitik
 
-Afsender
+afsender
   ~ *rolle* som genererer og afsender meddelelser til en specifik modtager
 
-Modtager
+modtager
   ~ *rolle* som modtager en meddelelse fra en specifik afsender
 
 ## Tværgående processer
@@ -712,6 +714,7 @@ Nedenstående, tekniske områder er kandidater til at indgå i referencearkitekt
 [TODO: Udbyg liste over områder til standardisering, jf. issue #40]
 
 Integrationer
+
 - Service Design Guidelines
 - Data Write Protocols
 - Data Access Protocols
@@ -721,6 +724,7 @@ Integrationer
 
 
 Indholdsmæssige standarder
+
 - Metadata for opslag/søgning/anvendelse
 - Log format
 - Hjemmel (samtykke, lov)
