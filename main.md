@@ -1,4 +1,3 @@
-# Fællesoffentlig referencearkitektur for deling af data og dokumenter
 
 Version 0.1, september 2017. Arbejdsdokument, der bygger oven på en tidligere udarbejdet Synopsis for Referencearkitektur for deling af data og dokumenter, august 2017. Benyttet i workshop med arkitektarbejdsgruppen under SDA.
 
@@ -28,17 +27,19 @@ Referencearkitekturen for deling af data og dokumenter understøtter design, udv
 - (gen)anvender oplysninger i form af data og dokumenter til sagsbehandling eller selvbetjening
 - sender eller modtager meddelelser fra andre it-systemer
 
+[madsh: - vidergiver registrede oplysninger i elektronisk form af data og til myndigheder, virksomheder og borgere]
+
 Dokumentet er primært målrettet it-arkitekter tilknyttet offentlige digitaliseringsprojekter, herunder enterprise-arkitekter, forretningsarkitekter og løsningsarkitekter, der har til opgave at kravspecificere og designe løsninger.
 
-(Overvej om løsningsarkitekter er bedre hjulpet af løsningsskabeloner i det enkelte domæner)
+[madsh: Overvej om løsningsarkitekter er bedre hjulpet af løsningsskabeloner i det enkelte domæner]
 
-De første dele af dokumentet (Strategisk og Forretningsmæssig arkitektur) henvender sig endvidere til projektledere og beslutningstagere, herunder forretningsansvarlige, digitaliseringschefer, it-chefer, afdelings- og kontorchefer og andre med rollen som systemejer.
+De første dele af dokumentet (Strategi og Forretningsmæssig arkitektur) henvender sig endvidere til projektledere og beslutningstagere, herunder forretningsansvarlige, digitaliseringschefer, it-chefer, afdelings- og kontorchefer og andre med rollen som systemejer.
 
-Dokumentet i sin helhed er også relevant for leverandører at orientere sig i.
+Dokumentet i sin helhed er også relevant for nuværende og kommende leverandører af offentlige it-løsninger.
 
 ## Scope
 
-Referencearkitekturen beskriver anvendelse af og udvikling af it-systemer, der reguleres af blandt andet:
+Referencearkitekturen beskriver anvendelse og udvikling af it-systemer, der reguleres af blandt andet:
 
 EU databeskyttelse
   ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
@@ -69,12 +70,6 @@ Lov om Digital Post
 EU eIDAS
   ~ *lov* som definerer registrede tillidstjenester
 
-
-
-
-
-
-
 Referencearkitekturen skrives på baggrund af den fællesoffentlige digitaliseringsstrategi 2020 under initiativ 8.1 med tilslutning fra
 FM, UFM, EVM, SIM, JM, EFKM, MBUL, SÆM, SKM, MFVM, BM, KL og Danske Regioner. Heri beskrives referencearkitekturen således:
 
@@ -87,7 +82,7 @@ Uden for scope af denne referencearkitektur er:
 - streaming af videodata og IoT-data (se issue #2)
 
 ## Centrale begreber
-Data, oplysninger og informationer er tæt relaterede begreber og deres umiddelbare forståelse er meget forskellig imellem forskellige faggrupper og praksiser.
+Data, oplysninger og informationer er tæt relaterede begreber og deres umiddelbare forståelse er meget forskellig på tværs  forskellige faggrupper og praksiser.
 
 Vi vil holde os fra at komme med en længere fænomoligisk udredning og fokusere på en mere pragmatisk og lokal definition.
 
@@ -106,12 +101,14 @@ I det efterfølgende vil begrebet `data` blive brugt til at betegne både oplysn
 Endvidere vil vi undgå at bruge begrebet ~~metadata~~, da dets betydning er tæt knyttet til en konkret anvendelsessituation. I stedet for analogien til et kartotekstkort med _data om data_ foretrækker vi analogien med en rudekuvert hvor nogle oplysninger (adressen) er synlige en bestemt kontekst (udbringning) mens andre ikke er tilgængelige (indholdet). En diskussion om adressen er en del data eller metadata forekommer frugtesløs.
 
 
-Et af hovedformålet med denne referencearkitektur er at vejlede i valget mellem to integrationsmønstre:
+Et af hovedformålet med denne referencearkitektur er at vejlede i valget mellem to mønstre for videregivelse af oplysninger:
 
  - `Anvendelse af udstillede data` - typisk via API i system-til-system-integrationer
  - `Forsendelse af meddelelser` indeholdende data (herunder dokumenter) - typisk brugt ved beskeder til borgere/virksomheder, der skal have retsvirkning, men også et klassisk mønster brugt i system-til-system-integrationer. [TODO: Knyt til EIDAS (Elektronisk leveringstjeneste - artikel 44)]
 
-Den fundamentale forskel på disse to scenarier er, om det er afsenderen eller modtageren af data, der kender formålet med interaktionen. Ved udstilling af data er dataafsenderen som udgangspunkt ikke bekendt med datamodtagerens formål (men er naturligvis forpligtet til at håndhæve relevant hjemmel). Ved forsendelse af meddelelser er det dataafsenderen, der i en given kontekst afsender en meddelelse med et givent formål - typisk som led i en proces.
+Den fundamentale forskel på disse to scenarier er, om det er den dataansvarlige eller modtageren af data, der bedst kender den konkrete kontekst for anvendelsen af oplysningerne.
+
+Ved `anvendelse af udstillede data` er dataafsenderen som udgangspunkt ikke bekendt med datamodtagerens formål (men er naturligvis forpligtet til at håndhæve relevant hjemmel). Ved forsendelse af meddelelser er det dataafsenderen, der i en given kontekst afsender en meddelelse med et givent formål - typisk som led i en proces.
 
 
 
@@ -119,8 +116,8 @@ Den fundamentale forskel på disse to scenarier er, om det er afsenderen eller m
 ## Anvendelse
 Referencearkitekturen skal:
 
-- danne et fælles sprog til at formulere en fælles handlingsplan
-- bruges som reference ved løsningsbeskrivelser
+- danne et fælles sprog til at formulere en fælles handlingsplan blandt digitalieringsstrategiens parter
+- bruges som reference ved review af løsningsbeskrivelser
 
 ## Tilblivelse og governance
 Første udgave er skrevet hos Kontor for Data og Arkitektur af Mads Hjorth, Digitaliseringsstyrelsen og Anders Fausbøll, Omnium Improvement.
@@ -165,35 +162,32 @@ Den skal kunne anvendes af:
 (TODO: tilføjer hyperlinks...)
 
 # Strategi
+Referencearkitekturen er udarbejdet en række aktuelle offentlige/politiske strategier, herunder Digitaliseringsstrategi, Sammenhængsreform, Cybersikkerhed, Lokal og Digital... På tværs af strategierne gør en række tværgående tendenser, som er med til at sætte retningen for den ønskelige arkitektur.
 
-Udarbejdelsen af referencearkitekturen tager udgangspunkt i en række identificerede forretningsmæssige og teknologiske trends og tendenser.
+![Tværgående tendenser i aktuelle strategier](figures/tendenser.png)
 
-[TODO: Slet tendenser, men overvej at fastholde pointer andre steder]
-
-## Forretningsmæssige tendenser
-[TODO: Fold bullet-liste ud med flere kommentarer - i et narrativ (bullets i figur)]
+[TODO: Fold bullet-liste ud med flere kommentarer - i et narrativ]
 
 - Sammenhængende offentlige services - gode brugerrejser [TODO: Knyt til sammenhængsreform)]
 - Suverænitet, beskyttelse mod cyberangreb
 - Øget opmærksomhed om behandling af personlige oplysninger
 - Grænseoverskridende services
 
-## Teknologiske tendenser
 - Øget standardisering af begreber, datamodeller og grænseflader
 - Flere og mere forskelligartede enheder forbundet til netværket
 - Scale-out løsninger til web-scale
 
 
-
-
 ## Strategiske målsætninger
 [TODO Beskriv målsætninger i eksisterende aftaler og strategier, også gerne fra andre områder]
 
-De overordnede målsætninger for denne referencearkitektur kobler alle til visionen om det datadrevne samfund, hvor data ses som et råstof for samfundsudviklingen.
+De overordnede målsætninger for strategierne kobler alle til visionen om det datadrevne samfund, hvor data ses som et råstof for samfundsudviklingen.
 
 Målsætningerne inkluderer:
 
-> *Det digitale sksl være let, hurtigt og sikre god kvalitet*
+> *Det digitale sksl være let, hurtigt og sikre god kvalitet* (Digitaliseringsstrategien)
+
+Mere generisk kan man udpege fire overordnede mål:
 
 Interoperabilitet
   ~  *mål* om sammenhængende services... integrated service delivery
@@ -213,7 +207,9 @@ Visionen i denne referencearkitektur er at stræbe efter en situation, hvor:
 
 > *Data er en fælles, værdifuld og velbeskyttet ressource, som skal være nem at dele og bruge, men svær at misbruge*
 
-(TODO: Hvilke forretningsevner der kommer i fokus, og hvad vi skal være bedre til... Data er fælles kræver mere ensartede rammer og lovgivning, værdifulde kræver at de er velbeskret, velbeskyttet kræver indsats der står i mål med trusler...)
+[TODO: Hvilke forretningsevner der kommer i fokus, og hvad vi skal være bedre til... Data er fælles kræver mere ensartede rammer og lovgivning, værdifulde kræver at de er velbeskret, velbeskyttet kræver indsats der står i mål med trusler...]
+
+
 
 ## Værdiskabelse
 Værdien ved at følge denne referencearkitektur er, at den understøtter:
@@ -227,37 +223,43 @@ Værdien ved at følge denne referencearkitektur er, at den understøtter:
 [TODO: Stram op og fold ud, kig eventuelt på hvad der følger alene af denne... Bind dem op på de strategiske målsætninger]
 
 ## Strategiske principper
-[TODO: Issue #22 - omskriv afsnit til at være konsekvenser af principper fra strategien/hvidbogen + slå kopi-registre ihjel]
 
-[TODO: Tilføj liste af Arkitekturregler og/eller -principper fra Hvidbog]
+Den Fællesoffentlige Digitale Arkitektur udpeger en række principper til rammesætning og styring af den offentlige digitalisering. I denne referencearkitektur er fokus at understøtte informationsprincippet om at *Gode data deles og genbruges* og i særlig grad reglen: *6.1 Del og genbrug data*. Referencearkitekturen tilbyder to måde hvorpå data kan vidergives til genbrug og seks forskellige tekniske integrationsmønster som det kan realiseres gennem.
 
-Forretningsmæssige, Informationsmæssige, Applikationsmæssige og Tekniske principper bag referencearkitekturen:
+Derudover har en række af arkitekturreglerne konsekvenser for dette arbejde:
 
-- F0: Understøtte borgeres og virksomheders indsigt i opbevaring og anvendelse af følsom data
-- F1: Udgifter i datadeling skal fordeles - byrden i datadeling skal afløftes fra dataejer, hvis den begrænser genbrug
-- F2: Autoritative registre med henvisninger til andre registre
-- F3: Ansvar for begrænsning af adgang ligger hos dataansvarlig (aka registerejer)
-- F4: Data beskrives, fordeles, forbedres og beskyttes i fællesskab
-- F5: Beskrivelse af, adgang til og brug af data sker under klar governance og håndhæves ud fra tydelig hjemmel
-- F6: Deling af data i kontekst af sagsbehandlinger skal være journaliserbart ("dokument-metafor" - konsekvens af AR3.1)
-- I1: Anvend fælles referenceinformationsmodel, grund- og referencedata
-- I2: Dataudveksling mellem organisationer designes ud fra en "dokument-tankegang" (aht. journalisering, forvaltningsret, tvistafgørelse, indsigter m.m.
-- I3: Modeller funderes (med eksplicitte referencer) i relevant lovgivning nationalt og internationalt [TODO AR5.1, AR5.2]
-- A1: Onlineopslag i sagsbehandling og selvbetjening
-- A2: Log adgang
-- A3: Adgang til og fra internationale registre sker gennem national gateway
-- T1: Vedlighold af fuldmagt og samtykker sker løst koblet fra deres håndhævelse (AR2.1, AR2.4, AR7.1 samt Brugerstyring)
-- T2: Multi-flavour-api
-- T3: Fælles metoder for datadeling understøtter sammenstilling af data og tværgående brug blandt myndigheder og virksomheder
+*AR 1.2 Optimer arkitketur efter projektets og de fælles mål*
+- Udgifter i datadeling skal fordeles - byrden i datadeling skal afløftes fra dataejer, hvis den begrænser genbrug
 
-(tænk genbrug på design time)
+*AR2.5 Stil data og løsninger til rådighed for private*
+- Fælles metoder for datadeling understøtter sammenstilling af data og tværgående brug blandt myndigheder og virksomheder
+
+*AR3.1 Tag højde for juridiske bindinger i forhold til deling og genbrug af data og it-systemer*
+- Dataudveksling mellem organisationer designes ud fra en "dokument-tankegang" (aht. journalisering, forvaltningsret, tvistafgørelse, indsigter m.m.
+- Modeller funderes (med eksplicitte referencer) i relevant lovgivning nationalt og internationalt
+
+*AR4.1 Opfyld krav til informationssikkerhed og privatlivsbeskyttelse*
+- Understøtte borgeres og virksomheders indsigt i opbevaring og anvendelse af følsom data.
+- Beskrivelse af, adgang til og brug af data sker under klar governance og håndhæves ud fra tydelig hjemmel
+- Begræns opbevaring af kopiregistre mest muligt
+
+*AR4.2 Anvend fælles arkitektur for informationssikkerhed* (Brugerstyring?)
+- Ansvar for begrænsning af adgang ligger hos dataansvarlig (aka registerejer)
+- Vedlighold af fuldmagt og samtykker sker løst koblet fra deres håndhævelse
+
+*AR5.1 Optimér tværgående processer efter fælles mål*
+- Data beskrives, fordeles, forbedres og beskyttes i fællesskab
+
+*AR6.2 Anvende fælles regler for dokumentation af data*
+- Anvend fælles referenceinformationsmodel, grund- og referencedata
+
 
 # Forretningsarkitektur
 
 ## Aktører
 De væsentligste aktører, der er i spil omkring deling af data og dokumenter, er:
 
-- Offentlige myndigheder, herunder virksomheder, der handler på vegne af offentlige myndigheder
+- Offentlige myndigheder (herunder virksomheder, der handler på vegne af offentlige myndigheder?)
 - Borgere
 - Virksomheder
 
@@ -303,7 +305,7 @@ den registrerede
   ~ *rolle* den person (datasubjekt), som oplysningerne vedrører
 
 anvender
-  ~ *rolle* der anvender data/oplysninger fra et register
+  ~ *rolle* der anvender data/oplysninger fra et register (aka databehandler)
 
 dataansvarlig
   ~ *rolle* som ejer registreringer/data og har ansvar for at udarbejde adgangspolitik
@@ -313,6 +315,11 @@ afsender
 
 modtager
   ~ *rolle* som modtager en meddelelse fra en specifik afsender
+
+
+[TODO: Overvej om vi kan reducere til rene forretningsroller: registrant, den registrerede, dataansvarlig, databehandler; og til use cases: registrering, vidergivelse, sletning og arkivering. Konsekvensret i processer.]
+
+
 
 ## Tværgående processer
 ![Overblik over centrale processer og deres aktiviteter fordelt på roller](figures/processer.png)
@@ -326,18 +333,27 @@ Figuren ovenfor beskriver udvalgte, væsentlige trin i de overordnede procesflow
 Denne proces dækker de overordnede trin i at registrere data. Procestrinene er ikke foldet så meget ud som for de øvrige use cases, da registrering af data ikke falder i scope for denne referencearkitektur. Dog er en kort beskrivelse medtaget for reference på grund af den tætte sammenhæng mellem registrering og udstilling af data. Procestrinene er:
 
 registrer data
-  ~ *procestrin* En `registrant` er i besiddelse af data, der skal registreres hos en `dataansvarlig`. I denne sammenhæng skelnes ikke mellem, om registreringen angår ny data eller ændringer til data (i sidstnævnte tilfælde kan det være `den registrerede`, der agerer som `registrant`.)
+  ~ *procestrin* hvor oplysninger bringes på digital form
+
+En `registrant` er i besiddelse af data, der skal registreres hos en `dataansvarlig`. I denne sammenhæng skelnes ikke mellem, om registreringen angår ny data eller ændringer til data (i sidstnævnte tilfælde kan det være `den registrerede`, der agerer som `registrant`.)
 
 modtag data
-  ~ *procestrin* Den `dataansvarlige` `myndighed` modtager data fra `registranten`. I denne forbindelse skelnes ikke mellem, om data modtages automatisk eller manuelt. I begge tilfælde er den `dataansvarlige` dog ansvarlig for at håndhæve adgangspolitik og herunder sikre, at `registranten` har gyldig hjemmel til at fremsende `registreringen`.
+  ~ *procestrin* hvor data placeres i en samling
+
+Den `dataansvarlige` `myndighed` modtager data fra `registranten`. I denne forbindelse skelnes ikke mellem, om data modtages automatisk eller manuelt. I begge tilfælde er den `dataansvarlige` dog ansvarlig for at håndhæve adgangspolitik og herunder sikre, at `registranten` har gyldig hjemmel til at fremsende `registreringen`.
 
 valider data
-  ~ *procestrin* Den `dataansvarlige` myndighed validerer det modtagne data. Den `dataansvarlige` kan have varierende krav til datas kvalitet og komplethed, afhængig af formålet med `datasamlingen`. Fejlscenarier, hvor data ikke kan valideres, dækkes ikke af  denne referencearkitektur.
+  ~ *procestrin* hvor modtagne data valideres før anvendelse
+
+Den `dataansvarlige` myndighed validerer det modtagne data. Den `dataansvarlige` kan have varierende krav til datas kvalitet og komplethed, afhængig af formålet med `datasamlingen`. Fejlscenarier, hvor data ikke kan valideres, dækkes ikke af  denne referencearkitektur.
 
 udstil data
-  ~ *procestrin* Når data er korrekt registreret, skal de markeres som klar til at blive udstillet. Her kan der være forskel på, om data gøres tilgængelig øjeblikkeligt eller først på et senere tidspunkt (fx ved registrering af fremtidigt skift af adresse). Begge muligheder kan være relevante, og vil i mange tilfælde afhænge af `dataanvenderes` typiske behov.
+  ~ *procestrin* hvor data gøres tilgængelige for andre
+
+Når data er korrekt registreret, skal de markeres som klar til at blive udstillet. Her kan der være forskel på, om data gøres tilgængelig øjeblikkeligt eller først på et senere tidspunkt (fx ved registrering af fremtidigt skift af adresse). Begge muligheder kan være relevante, og vil i mange tilfælde afhænge af `dataanvenderes` typiske behov.
 
 Når man skal vurdere processen `registrering af data`, er følgende kvaliteter og kriterier de mest væsentlige at forholde sig til:
+
 * **Identifikation**: Sikker identifikation af `registrant` (så `dataansvarlig` kan håndhæve adgangskontrol) og `dataansvarlig` (så `registrant` kan have tillid til, at de potentiel følsomme data ender hos rette modtager).
 * **Sikkerhed**: Tillid til, at data når ukompromitteret frem, herunder tjek af `registreringens` integritet, mulighed for kryptering af følsomme data, transaktionssikkerhed m.m.
 * **Kontekst**: I hvilken kontekst er data skabt/opsamlet - hvor og af hvem?
@@ -350,22 +366,34 @@ Når man skal vurdere processen `registrering af data`, er følgende kvaliteter 
 Denne proces dækker, at en `dataanvender` - typisk en myndighed, men kan også være en virksomhed - søger adgang til data, der på forhånd er gjort tilgængelige af en `dataansvarlig`. De indgående procestrin er:
 
 behov opstår
-  ~ *forhåndsbetingelse* Processen starter hos `anvender`, der har identificeret et behov for at indhente data. Dette behov opstår typisk i kontekst af andre processer, som vi ikke specificerer nærmere her, men som indbefatter sagsbehandling, selvbetjeningsløsninger, analyser og meget mere.
+  ~ *forhåndsbetingelse* [todo: definition]
+
+Processen starter hos `anvender`, der har identificeret et behov for at indhente data. Dette behov opstår typisk i kontekst af andre processer, som vi ikke specificerer nærmere her, men som indbefatter sagsbehandling, selvbetjeningsløsninger, analyser og meget mere.
 
 forespørg om data
-  ~ *procestrin* `Dataanvender` sender en forespørgsel på data, der beskriver, hvilke data der ønskes. Ved adgang til andet end åbne data skal den nødvendige hjemmel ligeledes fremgå af forespørgslen, så `dataansvarlig` kan håndhæve den nødvendige adgangskontrol.
+  ~ *procestrin* hvor en anvender spørger om udstillede data
+
+`Dataanvender` sender en forespørgsel på data, der beskriver, hvilke data der ønskes. Ved adgang til andet end åbne data skal den nødvendige hjemmel ligeledes fremgå af forespørgslen, så `dataansvarlig` kan håndhæve den nødvendige adgangskontrol.
 
 vurder adgang
-  ~ *procestrin* `Dataansvarlig` myndighed vurderer i dette trin forespørgslen med henblik på at håndhæve adgangskontrol. Kun, hvis den medsendte hjemmel giver lovmæssig adgang til den forespurgte data, kan `dataansvarlig` gå videre med delingen. Hjemlen kan være eksplicit angivet eller ligge implicit i brugerstyringen. Hjemlen kan enten give generel adgang til en given `datasamling`, eller give adgang til specifik data i `samlingen`, hvorfor der i mange situationer vil være behov for at se på hjemlen og det eftrspurgte data i sammnenhæng for at håndhæve adgangskontrollen. Et særligt aspekt i at vurdere adgang er håndhævelsen af 'negativt samtykke', hvor adgang til bestemte data er fjernet, fx fordi datas korrekthed er bragt i tvivl og skal undersøges Dette procestrin kan i øvrigt benyttes af `dataansvarlig` til at håndhæve adgangskontrol også på andre planer som håndhævelse af en Service Level Agreement, beskyttelse mod misbrug, mistænkelig adfærd m.m. Det bemærkes endvidere, at `Dataansvarlig` kan have overladt datadistributionsansvaret og det praktiske ansvar for håndhævelse af adgangskontrollen til en `datadistributør`, hvilket i øvrigt ikke ændrer ved beskrivelsen af dette trin.
+  ~ *procestrin* [todo: definition]
+
+`Dataansvarlig` myndighed vurderer i dette trin forespørgslen med henblik på at håndhæve adgangskontrol. Kun, hvis den medsendte hjemmel giver lovmæssig adgang til den forespurgte data, kan `dataansvarlig` gå videre med delingen. Hjemlen kan være eksplicit angivet eller ligge implicit i brugerstyringen. Hjemlen kan enten give generel adgang til en given `datasamling`, eller give adgang til specifik data i `samlingen`, hvorfor der i mange situationer vil være behov for at se på hjemlen og det eftrspurgte data i sammnenhæng for at håndhæve adgangskontrollen. Et særligt aspekt i at vurdere adgang er håndhævelsen af 'negativt samtykke', hvor adgang til bestemte data er fjernet, fx fordi datas korrekthed er bragt i tvivl og skal undersøges Dette procestrin kan i øvrigt benyttes af `dataansvarlig` til at håndhæve adgangskontrol også på andre planer som håndhævelse af en Service Level Agreement, beskyttelse mod misbrug, mistænkelig adfærd m.m. Det bemærkes endvidere, at `Dataansvarlig` kan have overladt datadistributionsansvaret og det praktiske ansvar for håndhævelse af adgangskontrollen til en `datadistributør`, hvilket i øvrigt ikke ændrer ved beskrivelsen af dette trin.
 
 del data
-  ~ *procestrin* `Dataansvarlig` håndterer forespørgslen ved at slå data op i `datasamlingen`, evt. ved at sammenstille data fra flere `datasamlinger`, og sender et `svar` tilbage til `anvender`. Delingen af data bliver logget af `dataansvarlig`, indbefattende hvilken data, der blev delt; til hvilken `anvender`; og med hvilken hjemmel. Det bemærkes, at `Dataansvarlig` ikke nødvendigvis er klar over, hvilket databehov forespørgslen har tjent til at tilfredsstille - så længe, adgangen er legitim og foretaget på baggrund af gyldig hjemmel, har `dataansvarlig` ikke behov for at kende til `dataanvenders` brug af data i den konkrete forespørgsel.
+  ~ *procestrin* hvor data videregives til andre
+
+`Dataansvarlig` håndterer forespørgslen ved at slå data op i `datasamlingen`, evt. ved at sammenstille data fra flere `datasamlinger`, og sender et `svar` tilbage til `anvender`. Delingen af data bliver logget af `dataansvarlig`, indbefattende hvilken data, der blev delt; til hvilken `anvender`; og med hvilken hjemmel. Det bemærkes, at `Dataansvarlig` ikke nødvendigvis er klar over, hvilket databehov forespørgslen har tjent til at tilfredsstille - så længe, adgangen er legitim og foretaget på baggrund af gyldig hjemmel, har `dataansvarlig` ikke behov for at kende til `dataanvenders` brug af data i den konkrete forespørgsel.
 
 modtag svar
-  ~ *procestrin* `Dataanvender` modtager svaret fra `dataansvarlig.`
+  ~ *procestrin* [todo: definition]
+
+`Dataanvender` modtager svaret fra `dataansvarlig.`
 
 oversæt svar
-  ~ *procestrin* I tilfælde af, at der er behov for at oversætte `svaret` i form af mapninger af datafelter, klassifikationer m.m., håndteres dette på `dataanvenders` side. `Dataanvenders` initielle behov for data er hermed opfyldt.
+  ~ *procestrin* [todo: definition]
+
+I tilfælde af, at der er behov for at oversætte `svaret` i form af mapninger af datafelter, klassifikationer m.m., håndteres dette på `dataanvenders` side. `Dataanvenders` initielle behov for data er hermed opfyldt.
 
 
 Når man skal vurdere processen `Anvendelse af data`, er følgende kvaliteter og kriterier de mest væsentlige at forholde sig til:
@@ -384,28 +412,44 @@ Det bemærkes, at processen for den delte use case `Indsigt i anvendelse`, hvor 
 Denne proces dækker, at en `afsender` - typisk en myndighed eller en virksomhed - har behov for at sende data (evt. i form af et dokument) til en `modtager`. De indgående procestrin er:
 
 behov opstår
-  ~ *forhåndsbetingelse* Processen starter hos `afsender`, der - typisk i kontekst af en anden, overliggende proces - har behov for at dele data ved at sende en `meddelelse` til en `modtager`.
+  ~ *forhåndsbetingelse* [todo: definition]
+
+Processen starter hos `afsender`, der - typisk i kontekst af en anden, overliggende proces - har behov for at dele data ved at sende en `meddelelse` til en `modtager`.
 
 dan indhold af meddelelse
-  ~ *procestrin* Første trin er, at `afsender` danner indholdet af meddelelsen. Indholdet kan være data under kontrol af `afsender` selv, men kan også indhentes fra andre via processen `Anvendelse af data` (der dermed bliver en underproces til `forsendelse af meddelelse`, der i sig selv typisk også er en underproces).
+  ~ *procestrin* [todo: definition]
+
+Første trin er, at `afsender` danner indholdet af meddelelsen. Indholdet kan være data under kontrol af `afsender` selv, men kan også indhentes fra andre via processen `Anvendelse af data` (der dermed bliver en underproces til `forsendelse af meddelelse`, der i sig selv typisk også er en underproces).
 
 adressér meddelelse
-  ~ *procestrin* Dette trin giver mulighed for at angive en slutmodtager for `meddelelsen`, der kan være mere specifik end blot `modtager`. Som eksempel kan `modtager` i nogle tilfælde være en organisation, og der kan være behov for at specificere en bestemt ansat som slutmodtager, hvilket kan tilføjes som metadata til `meddelelsen`.
+  ~ *procestrin* [todo: definition]
+
+Dette trin giver mulighed for at angive en slutmodtager for `meddelelsen`, der kan være mere specifik end blot `modtager`. Som eksempel kan `modtager` i nogle tilfælde være en organisation, og der kan være behov for at specificere en bestemt ansat som slutmodtager, hvilket kan tilføjes som metadata til `meddelelsen`.
 
 afsend meddelelse
-  ~ *procestrin* Afsendelse af `meddelelsen` sker i dette trin. `Afsender` er ansvalig for at logge hvilke data, der er sendt, til hvem, de er sendt, og med hvilket formål/hjemmel. Implicit i trinet ligger, at datadelingen er lovmedholdelig, hvilket er ensbetydende med at sige, at `modtager` har et legitimt formål med at modtage data. Ansvaret for dette påhviler `afsender`.
+  ~ *procestrin* [todo: definition]
+
+Afsendelse af `meddelelsen` sker i dette trin. `Afsender` er ansvalig for at logge hvilke data, der er sendt, til hvem, de er sendt, og med hvilket formål/hjemmel. Implicit i trinet ligger, at datadelingen er lovmedholdelig, hvilket er ensbetydende med at sige, at `modtager` har et legitimt formål med at modtage data. Ansvaret for dette påhviler `afsender`.
 
 modtag meddelelse
-  ~ *procestrin* `Meddelelsen` ankommer hos `modtager`. Der kan afsendes kvittering for modtagelse.
+  ~ *procestrin* [todo: definition]
+
+`Meddelelsen` ankommer hos `modtager`. Der kan afsendes kvittering for modtagelse.
 
 fordel meddelelse
-  ~ *procestrin* `Modtager` har mulighed for at benytte adresseringsoplysningerne i `meddelelsen` til at foretage routing af `meddelelsen` i egen organisation. `Meddelelsen` kan endvidere være et `svar` på en tidligere fremsendt `forespørgsel`. Er dette tilfældet, har `modtager` behov for at sammenknytte `meddelelsen` med den kontekst, fra hvilken den oprindelige `forespørgsel` blev sendt.
+  ~ *procestrin* [todo: definition]
+
+`Modtager` har mulighed for at benytte adresseringsoplysningerne i `meddelelsen` til at foretage routing af `meddelelsen` i egen organisation. `Meddelelsen` kan endvidere være et `svar` på en tidligere fremsendt `forespørgsel`. Er dette tilfældet, har `modtager` behov for at sammenknytte `meddelelsen` med den kontekst, fra hvilken den oprindelige `forespørgsel` blev sendt.
 
 oversæt meddelelse
-  ~ *procestrin* [TODO: Foreslår at slette dette trin? Det signalerer, at der påhviler modtager en generel forpligtelse til at kunne modtage hvad-som-helst. Meningen er nok, at hvis meddelelsen er et svar på en separat request fra modtager, skal modtager også kunne parse svaret - hvilket er dækket i den tilsvarende trin i Anvendelse af data.]
+  ~ *procestrin* [todo: definition]
+
+[TODO: Foreslår at slette dette trin? Det signalerer, at der påhviler modtager en generel forpligtelse til at kunne modtage hvad-som-helst. Meningen er nok, at hvis meddelelsen er et svar på en separat request fra modtager, skal modtager også kunne parse svaret - hvilket er dækket i den tilsvarende trin i Anvendelse af data.]
 
 Forsendelse af meddelelse
-  ~ *proces* Til forskel fra Anvendelse af udstillede data starter denne proces hos `afsenderen` (der tillige kan være `dataansvarlig`). `Afsender` har udvalgt og pakketeret data i en meddelelse (evt. helt eller delvist i form af et dokument), adresserer meddelelsen (fx ved brug af et kontaktregister) og sender den herefter til `modtager`. `Modtager` kan være alle typer af aktører; for myndigheder og virksomheder bemærkes, at det i forbindelse med modtagelsen kan være relevant at fordele/route meddelelsen internt ud fra dens adresseringsoplysninger. I sammenligning med Anvendelse af udstillede data er det nu `afsender`, der som den part, der deler data, 'ejer' den fulde forretningskontekst - hvor den `dataansvarlige` ovenfor ikke var bekendt med formålet med at dele data.
+  ~ *proces* [todo: definition]
+
+Til forskel fra Anvendelse af udstillede data starter denne proces hos `afsenderen` (der tillige kan være `dataansvarlig`). `Afsender` har udvalgt og pakketeret data i en meddelelse (evt. helt eller delvist i form af et dokument), adresserer meddelelsen (fx ved brug af et kontaktregister) og sender den herefter til `modtager`. `Modtager` kan være alle typer af aktører; for myndigheder og virksomheder bemærkes, at det i forbindelse med modtagelsen kan være relevant at fordele/route meddelelsen internt ud fra dens adresseringsoplysninger. I sammenligning med Anvendelse af udstillede data er det nu `afsender`, der som den part, der deler data, 'ejer' den fulde forretningskontekst - hvor den `dataansvarlige` ovenfor ikke var bekendt med formålet med at dele data.
 
 
   Når man skal vurdere processen `Forsendelse af meddelelse`, er følgende kvaliteter og kriterier de mest væsentlige at forholde sig til:
@@ -416,15 +460,14 @@ Forsendelse af meddelelse
 * **Automatisering**: `Meddelelser` bør være velstrukturerede og understøtte automatisering på `modtagers` side, fx ved at gøre data til fordeling/håndtering af `meddelelser` tilgængelig i en meddelelses-header.
 
 
-(TODO: Overdragelse af dataansvar ved forsendelse?)
+[TODO: Overdragelse af dataansvar ved forsendelse?]
 
-[TODO]: x "[Vi skal være bedre til at beskrive hvordan vi trækker på elementer fra brugerstyring, men husk at holde det teknologi-fri]"
-
+[TODO: Alignment med elementer fra referencearkitektur for brugerstyring]
 
 ## Forretningsobjekter
 Nedenfor fremgår en initiel oversigt over en række forretningsobjekter, der er væsentlige for referencearkitekturen.
 
-_Regibemærkning for version 0.3: Det videre arbejde skal klarlægge, hvilke elementer der skal indgå i listen, samt hvordan de defineres. Modelleringsniveauet skal endvidere lægges fast (begrebsmodellering og/eller logiske kernemodeller?) Kommentarer og midlertidige bemærkninger indgår i listen, markeret med kantede parenteser._
+_Regibemærkning for version 0.4: Det videre arbejde skal klarlægge, hvilke elementer der skal indgå i listen, samt hvordan de defineres. Modelleringsniveauet skal endvidere lægges fast (begrebsmodellering og/eller logiske kernemodeller?) Kommentarer og midlertidige bemærkninger indgår i listen, markeret med kantede parenteser._
 
 ![Oversigt over de centrale forretningsobjekter og deres relationer](figures/objekter.png)
 
@@ -497,10 +540,9 @@ De nødvendige og understøttende applikationsroller og deres indbyrdes relation
 
 [TODO: Fold beskrivelser ud pr. operation]
 
-[TODO: Tilføj Datadistribution-service, operationer til 'hent' vs. opslag', 'flage fejl' m.m. - issue #41]
 
 datasamling
-  ~ *applikationsrolle* som har autoritative? oplysninger.
+  ~ *applikationsrolle* som har autoritative? oplysninger til et bestemt formål
 
 Når datasamlingen udgøres af dokumenter kaldes den nogle gange et repository, ellers kaldes den også et register. Samlinger kan have temporale og bitemporale egenskaber. Dette handler blandt andet om at holde styr på datas gyldighedsperiode og registreringstidspunkt for fx at kunne understøtte dobbelt historik (overblik både over, hvad der var korrekt på en given dato, og hvad registeret på et givent tidspunkt troede var korrekt på samme tidspunkt).
 
@@ -619,9 +661,7 @@ I det tilfælde, hvor ensartede `datasamlinger` ligger hos flere, separate `data
 
 Logningsmæssigt er den enkelte `distributør` ansvarlig for at logge `dataanvenders` adgang til data. Samtidig er den enkelte `distributør` ansvarlig for at sørge for konsolidering af loggen for at sikre, at `datasubjekt` har adgang til information om anvendelse af data om vedkommende selv. I figuren er log-konsolidering lagt hos `dataansvarlig`, men den kunne i princippet også være uddelegeret - så længe, der er et entydigt og klart _single point of contact_ for `datasubjektets` opslag i anvendelsen af personlige data.
 
-[tilføj portal]
-
-[TODO: Uddyb 'opdater' - delta eller fuld kopi; nævn kopi hos anvender som anti-pattern]
+[TODO: Tilføj portal] [TODO: Uddyb 'opdater' - delta eller fuld kopi; nævn kopi hos anvender som anti-pattern] [TODO: Overvej om konsolider kan skiftes ud med send/distribuer?]
 
 #### Fælles, distribueret service- og data-platform
 ![Implementeringsmønster for distribueret dataplatform](figures/use-plat.png)
@@ -705,7 +745,7 @@ Generelle egenskaber:
 _Integrationsbeskrivelser opdateres._
 
 skriv
-  ~ *integrationstype* der lader en aktør skrive til en `samling` (herunder `log` og `index`) hos en anden aktør.
+  ~ *integrationstype* der lader en aktør skrive til en `samling` (herunder `log` og `index`) hos en anden aktør
 
   Særlige hensyn/overvejelser:
 
@@ -723,12 +763,11 @@ skriv
   Særligt for `index`?
   - nok attributter til effektiv fremsøgning
 
-opslag
-  ~ *integrationstype* der lader en aktør fremfinde og hente oplysninger (`record`, `indexrecord`?, `logrecord`, `adresse-record` `document`) hos en anden aktør.
+hent
+  ~ *integrationstype* der lader en aktør hente data via en kendt identifikator (`record`, `indexrecord`?, `logrecord`, `adresse-record` `document`) hos en anden aktør.
 
   Særlige hensyn:
 
-  - overvej søgning
   - overvej at give 'actions (fx ret)' med
   - overvej granuklaritet (hvor meget sammenstilling) og performance (hent detaljer)
   - overvej generalitet (hvor målrettet er services)
@@ -739,6 +778,11 @@ opslag
   Særligt for `adresse`:
 
   - noget med DNS... SML/SMP (som eDelivery)
+
+
+søg
+    ~ *integrationstype* der lader en aktør fremsøge data (`record`, `indexrecord`?, `logrecord`, `adresse-record` `document`) hos en anden aktør.
+
 
   Særligt for `index`:?
 
@@ -752,11 +796,6 @@ opdater
 
 [Bør skrivindex være opdater, ja!]
 
-
-konsolider
-  ~ *integrationstype* der samler ensartede samlinger i en ny.
-
-  Skriv eller høst
 
 læs
   ~ *integrationstype* der lader en service tilgå hele samlinger?
@@ -776,17 +815,20 @@ modtag notifikation
 ## Områder for standardisering/profileringer
 Nedenstående, tekniske områder er kandidater til at indgå i referencearkitekturen i forhold til at pege på en anbefalet standard eller en særlig profilering, evt. vendt mod de enkelte, tekniske mønstre.
 
-[TODO: Udbyg liste over områder til standardisering, jf. issue #40]
+[TODO: Udbyg liste over områder til standardisering, jf. issue #40 Begrund opdeling/sammenlægning]
 
-Integrationer
+Standarder til applikationsintegration
 
-- Service Design Guidelines
-- Data Write Protocols
-- Data Access Protocols
-- Distribution Protocols
-- Notification Protocols
-- Synchronisation Protocols
-
+- skriv til samling
+- skriv til log
+- skriv til index
+- hent (incl adresse)
+- søg i samling
+- søg i log
+- distribution meddelelsen (incl konsolidering af log)
+- opdater (vedligehold kopi hos dataservice/distributør)
+- læs (rå adgang til samling fra dataservice)
+- modtag notifikation
 
 Indholdsmæssige standarder
 
@@ -802,7 +844,6 @@ Indholdsmæssige standarder
 
 ## Identifikation af eksisterende standarder
 
-
+[TODO: Bliver udfyldt i forbindelse med review hos arbejdsgruppen]
 Datasamling --- skriv --> Indeks
   (aka IHE ITI-42) foreslår: ebRIM, ebRS, HL7V2
-*TBU.*

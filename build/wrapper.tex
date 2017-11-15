@@ -4,30 +4,67 @@
 \documentclass[10pt]{article}
 \usepackage[danish]{babel}
 
+
 % fonts
 \usepackage{fontspec,xltxtra,xunicode}
 \defaultfontfeatures{Mapping=tex-text}
-\setromanfont[Mapping=tex-text]{Merriweather Light}
-\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Open Sans}
+\setromanfont[Mapping=tex-text]{Adobe Garamond Pro}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Helvetica Neue}
 \setmonofont[Scale=MatchLowercase]{Open Sans}
+\renewcommand{\familydefault}{\sfdefault}
+
 
 \usepackage{xcolor}
 \definecolor{blue}{HTML}{1F497D}
+\definecolor{warmgrey}{HTML}{F9F8F2}
+\definecolor{darkblue}{RGB}{3,29,92}
+
+
 
 
 % layout
-\usepackage{geometry}
-\geometry{a4paper}
+
+\usepackage[showcrop, includehead, includefoot]{geometry}
+\geometry{a4paper, layoutsize={168mm,237mm}, top=8mm, bottom=8mm}
+
 \usepackage[parfill]{parskip}
 
-\usepackage[sf, bf]{titlesec}
+\usepackage{titlesec}
+\titleformat{\section}
+  {\vspace{.8ex}%
+   \rmfamily\Huge}
+  {\thesection}{.5em}{}
+
+\titleformat{\subsection}
+	{\vspace{.2ex}%
+	   \rmfamily\Large}
+	{\thesubsection}{.5em}{}
+
+\titleformat{\subsubsection}
+	{\vspace{.2ex}%
+	 \rmfamily\large}
+	{\thesubsubsection}{.5em}{}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.2pt}
+\lhead{\nouppercase{\rightmark}}
+\chead{}
+\rhead{}
+\lfoot{\sffamily\small FDA 1.0 $\cdot$ Oktober 2017}
+\cfoot{}
+\rfoot{\sffamily\small \thepage}
 
 
 %toc
 \usepackage{tocloft}
 \setcounter{tocdepth}{2}
 
-
+% tt
+\let\OldTexttt\texttt
+\renewcommand{\texttt}[1]{\OldTexttt{\color{darkblue}{#1}}}
 
 % figur
 \usepackage{graphicx, grffile}
@@ -39,8 +76,34 @@
 \makeatother
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
+\usepackage{mdframed} % colored backgrounds
+
+\usepackage{floatrow}
+%\floatsetup[figure]{style=plaintop}
+\DeclareColorBox{shaded}{\colorbox{warmgrey}}
+\floatsetup{style=plaintop,framestyle=colorbox,colorframeset=shaded,framefit=yes,heightadjust=all,framearound=all}
+
+
+\usepackage{caption}
+\DeclareCaptionFont{darkblue}{\color{darkblue}}
+\captionsetup{
+	font=small,
+	format=plain,
+	labelfont={darkblue,sf,up,bf},
+	labelsep=newline,
+	textfont={sf,up},
+	justification=justified,
+	singlelinecheck=false}
+
+
+
+
+\usepackage{amsmath}
+\numberwithin{figure}{section}
+
+
 % styles
-\titlelabel{\llap{\thetitle\quad}} % numbers to the left 
+%\titlelabel{\llap{\thetitle\quad}} % numbers to the left
 
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 
@@ -52,7 +115,7 @@
 
 \usepackage[normalem]{ulem}
 % avoid problems with \sout in headers with hyperref:
-%\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
 
 \providecommand{\tightlist}{%
 \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -62,7 +125,7 @@
 
 \usepackage{titlesec}
 \newcommand{\sectionbreak}{\clearpage}
-\renewcommand{\baselinestretch}{1.4}
+\renewcommand{\baselinestretch}{1.2}
 
 %\setcounter{secnumdepth}{0} % numbers to what level
 
@@ -79,9 +142,9 @@
 
 
 
-\title{Fællesoffentlig referencearkitektur for \\ deling af data og dokumenter}
+\title{\rmfamily\Huge Fællesoffentlig referencearkitektur \\ for deling af data og dokumenter}
 \author{}
-\date{Oktober 2017}
+\date{\rmfamily Oktober 2017}
 
 \begin{document}
 \maketitle \clearpage
@@ -95,7 +158,6 @@
 \newpage
 \thispagestyle{empty}
 \begin{figure}
-\centering
 \includegraphics[angle=90, height=\textheight]{../overview.pdf}
 \caption{Overblik over elementer i referencearkitekturen og deres EIRA stereotyper}
 \end{figure}
@@ -103,9 +165,9 @@
 \newpage
 \thispagestyle{empty}
 \begin{figure}
-\centering
-\includegraphics[angle=0, width=\textwidth]{../eco2.pdf}
 \caption{Overblik over elementer i de samlede referencearkitekturer i FDA}
+\includegraphics[angle=0, width=\textwidth]{../eco2.pdf}
+
 \end{figure}
 
 \end{document}
