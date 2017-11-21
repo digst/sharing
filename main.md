@@ -196,7 +196,7 @@ Once-only
   ~  *mål* om at borger og virksomhed kun skal afgive den samme information til det offentlige en gang... (men give lov til genbrug?) [TODO: Tjek baggrund i strategi/Hvidbog - issue #39]
 
 Transparens
-  ~ *mål* om at borgere og virksomheder får øget indsigt i, hvilke data der findes om dem, og hvor disse data anvendes
+  ~ *mål* om at borgere og virksomheder får øget indsigt i, hvilke oplysninger der er registreret om dem hos hvilke offentlige myndigheder, hvem der anvender disse og til hvilke formål
 
 Genbrug
   ~ *mål* om genbrug af it med henblik på lavere omkostninger
@@ -206,6 +206,8 @@ Genbrug
 Visionen i denne referencearkitektur er at stræbe efter en situation, hvor:
 
 > *Data er en fælles, værdifuld og velbeskyttet ressource, som skal være nem at dele og bruge, men svær at misbruge*
+
+[TODO: Fold visionen ud ord for ord. Skal være 'meningsfuldt' - 'what's in it for me?' for den registrerede.]
 
 [TODO: Hvilke forretningsevner der kommer i fokus, og hvad vi skal være bedre til... Data er fælles kræver mere ensartede rammer og lovgivning, værdifulde kræver at de er velbeskret, velbeskyttet kræver indsats der står i mål med trusler...]
 
