@@ -339,14 +339,19 @@ anvender
   ~ *rolle* der anvender data/oplysninger fra et register (aka databehandler)
 
 dataansvarlig
-  ~ *rolle* som ejer registreringer/data og har ansvar for at udarbejde adgangspolitik
+  ~ en fysisk eller juridisk person, en offentlig myndighed, en institution eller et andet organ, der alene eller sammen med andre afgør, til hvilke formål og med hvilke hjælpemidler der må foretages behandling af personoplysninger (*rolle*)
+
+databehandler
+  ~ en fysisk eller juridisk person, en offentlig myndighed, en institution eller et andet organ, der behandler personoplysninger på den dataansvarliges vegne (*rolle* fra GDPR)
 
 afsender
   ~ *rolle* som genererer og afsender meddelelser til en specifik modtager
 
-modtager
-  ~ *rolle* som modtager en meddelelse fra en specifik afsender
+modtager (af personoplysninger)
+  ~ en fysisk eller juridisk person, en offentlig myndighed, en institution eller et andet organ, hvortil personoplysninger videregives, uanset om det er en tredjemand eller ej
 
+modtager (af forsendelse)
+  ~ ...
 
 [TODO: Overvej om vi kan reducere til rene forretningsroller: registrant, den registrerede, dataansvarlig, databehandler; og til use cases: registrering, vidergivelse, sletning og arkivering. Konsekvensret i processer.]
 
@@ -507,8 +512,12 @@ data
 
 Klassificeret i forhold til både organisation og den registrerede.
 
+personoplysninger (persondata)
+  ~ *objekt* enhver form for informations om en identificeret eller identificerbar fysisk person (den registrerede)
+
+
 samling
-  ~ *objekt* [Datasætmodel har ikke definition...] ISO9115: en identificerbar samling af oplysninger (samlebetegnelse for PSI, GPDR, )
+  ~ *objekt* [Datasætmodel har ikke definition...] ISO9115: en identificerbar samling af oplysninger (samlebetegnelse for PSI, GPDR register, )
 
 meddelelse
   ~ *objekt* [NgDP] registreret forsendelse
@@ -590,8 +599,8 @@ Når datasamlingen udgøres af dokumenter kaldes den nogle gange et repository, 
 (Record Management i EIRA)
 
 
-dataservice
-  ~ *applikationsrolle* som har til ansvar  at udstille en `datasamling`, og begrænse adgangen til den om nødvendigt. Og logge.
+dataservice/kopi/
+  ~ *applikationsrolle* som har til ansvar at udstille en kopi af `datasamling`, og begrænse adgangen til den om nødvendigt. Og logge.
 
 * hent ~ *applikationsservice* der tillader anvendere at hente elementer i samling med kendte id'er (husk reference til skriv mht ret og begræns) (men kan sammenstille på tværs af samlinger) (hent er ofte specialiseret til en konkret anvendelse og ikke så tæt på datasamlingen) (TODO: udvide med streaming som variant se #2)
 
@@ -611,6 +620,7 @@ log (adgangslog? anvendelseslog?)
 
 (Logging, EIRA)
 
+[todo: tilføje aftale komponent]
 
 forsendelse
   ~ *applikationsrolle* der kan modtage og distribuere meddelelser
@@ -789,7 +799,7 @@ Beskyttes mod autoriseret ændring (ISO)
   - tillade 'blød' validering
   - logger nok til at anvender kan vurdere konteksten hvor det er dannet
   - behøves måske ikke at indeholde hjemmel, da pligten følger dataansvarlig og samlingen.
-  - God ide at den er idempotent (Flyt to numre ned af vejen...)
+  - God ide at den er idempotent (Flyt to numre ned af vejen...) (R06)
   - Overveje hvad der sker når flere skriver samtidigt...
   - Noget med 'dead lock'
 
@@ -857,6 +867,12 @@ modtag notifikation
 Nedenstående, tekniske områder er kandidater til at indgå i referencearkitekturen i forhold til at pege på en anbefalet standard eller en særlig profilering, evt. vendt mod de enkelte, tekniske mønstre.
 
 [TODO: Udbyg liste over områder til standardisering, jf. issue #40 Begrund opdeling/sammenlægning]
+
+Organisatoriske standarder og aftaler
+
+- Aftale om systemtilslutning
+- Databehandleraftaler
+- Samtykke til vidergivelse af personoplysninger
 
 
 
