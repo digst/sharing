@@ -358,9 +358,11 @@ modtager (af forsendelse)
 
 
 ## Tværgående processer
+I ovenstående diagram over centrale use cases er `videregivelse` den væsentligste, da den rummer selve delingen af data. Dykker man ned i den, findes den i to grundvarianter, hhv. `videregivelse på forespørgsel` og `videregivelse ved meddelelse`. Figuren nedenfor beskriver disse to varianter på procesform og knytter dem tillige sammen med en kort beskrivelse af processen `registrering af data`.
+
 ![Overblik over centrale processer og deres aktiviteter fordelt på roller](figures/processer.png)
 
-Figuren ovenfor beskriver udvalgte, væsentlige trin i de overordnede procesflow for de delte use cases. Nedenfor er de to datadelings-use cases `Anvendelse af data` og `Forsendelse af meddelelse` beskrevet i detaljer. Registrering af data er ligeledes beskrevet, dog mere summarisk, da den i kontekst af denne referencearkitektur kun er med af referencehensyn.
+Nedenfor er de to grundvarianter for datadeling `videregivelse på forespørgsel` og `videregivelse ved meddelelse` beskrevet i detaljer. `Registrering af data` er ligeledes beskrevet, dog mere summarisk, da den i kontekst af denne referencearkitektur kun er med af referencehensyn.
 
 [TODO: Tilføj Søgning til Anvendelse af data.]
 
