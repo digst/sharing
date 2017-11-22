@@ -47,7 +47,6 @@ Persondatalov
   ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
 
 
-
 [og flere...]
 
 Og nogle mere digitaliseringsagtige love...
