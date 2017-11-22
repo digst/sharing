@@ -24,10 +24,9 @@ Referencearkitekturen er udarbejdet under den fællesoffentlige digitaliseringss
 
 Referencearkitekturen for deling af data og dokumenter understøtter design, udvikling og anvendelse af offentlige it-systemer, der
 
-- (gen)anvender oplysninger i form af data og dokumenter til sagsbehandling eller selvbetjening
-- sender eller modtager meddelelser fra andre it-systemer
+- vidergiver eller modtager registrede oplysninger i elektronisk form til andre myndigheder, virksomheder og borgere
 
-[madsh: - vidergiver registrede oplysninger i elektronisk form af data og til myndigheder, virksomheder og borgere]
+[was: - (gen)anvender oplysninger i form af data og dokumenter til sagsbehandling eller selvbetjening - sender eller modtager meddelelser fra andre it-systemer]
 
 Dokumentet er primært målrettet it-arkitekter tilknyttet offentlige digitaliseringsprojekter, herunder enterprise-arkitekter, forretningsarkitekter og løsningsarkitekter, der har til opgave at kravspecificere og designe løsninger.
 
@@ -44,31 +43,33 @@ Referencearkitekturen beskriver anvendelse og udvikling af it-systemer, der regu
 EU databeskyttelse
   ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
 
-Forvaltningslov
-  ~ *lov* ....
-
 Persondatalov
   ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
 
-Og mere specifikke lovgivninger
-
-
-Sundhedslov
-  ~ *lov* ....
-
-Servicelov
-  ~ *lov* ....
 
 
 [og flere...]
 
 Og nogle mere digitaliseringsagtige love...
 
+EU eIDAS
+  ~ *lov* som definerer registrede tillidstjenester
+
 Lov om Digital Post
   ~ *lov* der gør det obligatorisk for virksomheder og borgere at modtage digitale meddelelser fra offentlige afsendere.
 
-EU eIDAS
-  ~ *lov* som definerer registrede tillidstjenester
+
+Og mere specifikke lovgivninger (som specificerer yderligere...)
+
+Sundhedslov
+  ~ *lov* ....  (beskriv at negativt samtykke med GDPR ophæng)
+
+Servicelov
+  ~ *lov* ....
+
+Forvaltningslov
+    ~ *lov* ....
+
 
 Referencearkitekturen skrives på baggrund af den fællesoffentlige digitaliseringsstrategi 2020 under initiativ 8.1 med tilslutning fra
 FM, UFM, EVM, SIM, JM, EFKM, MBUL, SÆM, SKM, MFVM, BM, KL og Danske Regioner. Heri beskrives referencearkitekturen således:
@@ -253,6 +254,35 @@ Derudover har en række af arkitekturreglerne konsekvenser for dette arbejde:
 *AR6.2 Anvende fælles regler for dokumentation af data*
 - Anvend fælles referenceinformationsmodel, grund- og referencedata
 
+GDPR har også nogle principper:
+
+*lovlighed, rimelighed og gennemsigtighed*
+
+*formålsbegrænsning* (undtagelse for arkiv, forskning og statistik)
+
+*dataminimering*
+
+*rigtighed* (straks slettes eller berigtiges)
+
+*opbevaringsbegrænisning*
+
+*integritet og fortrolighed*
+
+*ansvarlighed* (skal kunne påvise at ovenstående overholdes)
+
+og lovlige behandlinger hos offentlige myndigheder er:
+
+*Den registreredes samtykke*
+
+*Opfyldelse af kontrakt*
+
+*retlig forpligtigelse hos dataansvarlig*
+
+*beskyttelse af vitale interesser*
+
+*opgaver i samfundets interesse eller myndighedsudøvelse*
+
+
 
 # Forretningsarkitektur
 
@@ -361,12 +391,12 @@ Når man skal vurdere processen `registrering af data`, er følgende kvaliteter 
 
 [TODO: Skal alle kriterier/kvaliteter her og nedenfor formuleres som spørgsmål?]
 
-### Anvendelse af data
+### Videregivelse på forespørgsel
 
 Denne proces dækker, at en `dataanvender` - typisk en myndighed, men kan også være en virksomhed - søger adgang til data, der på forhånd er gjort tilgængelige af en `dataansvarlig`. De indgående procestrin er:
 
 behov opstår
-  ~ *forhåndsbetingelse* [todo: definition]
+  ~ *forhåndsbetingelse/begivenhed?* [todo: definition]
 
 Processen starter hos `anvender`, der har identificeret et behov for at indhente data. Dette behov opstår typisk i kontekst af andre processer, som vi ikke specificerer nærmere her, men som indbefatter sagsbehandling, selvbetjeningsløsninger, analyser og meget mere.
 
@@ -378,12 +408,12 @@ forespørg om data
 vurder adgang
   ~ *procestrin* [todo: definition]
 
-`Dataansvarlig` myndighed vurderer i dette trin forespørgslen med henblik på at håndhæve adgangskontrol. Kun, hvis den medsendte hjemmel giver lovmæssig adgang til den forespurgte data, kan `dataansvarlig` gå videre med delingen. Hjemlen kan være eksplicit angivet eller ligge implicit i brugerstyringen. Hjemlen kan enten give generel adgang til en given `datasamling`, eller give adgang til specifik data i `samlingen`, hvorfor der i mange situationer vil være behov for at se på hjemlen og det eftrspurgte data i sammnenhæng for at håndhæve adgangskontrollen. Et særligt aspekt i at vurdere adgang er håndhævelsen af 'negativt samtykke', hvor adgang til bestemte data er fjernet, fx fordi datas korrekthed er bragt i tvivl og skal undersøges Dette procestrin kan i øvrigt benyttes af `dataansvarlig` til at håndhæve adgangskontrol også på andre planer som håndhævelse af en Service Level Agreement, beskyttelse mod misbrug, mistænkelig adfærd m.m. Det bemærkes endvidere, at `Dataansvarlig` kan have overladt datadistributionsansvaret og det praktiske ansvar for håndhævelse af adgangskontrollen til en `datadistributør`, hvilket i øvrigt ikke ændrer ved beskrivelsen af dette trin.
+`Dataansvarlig` myndighed vurderer i dette trin forespørgslen med henblik på at håndhæve adgangskontrol. Kun, hvis den medsendte hjemmel giver lovmæssig adgang til den forespurgte data, kan `dataansvarlig` gå videre med delingen. Hjemlen kan være eksplicit angivet eller ligge implicit i brugerstyringen. Hjemlen kan enten give generel adgang til en given `datasamling`, eller give adgang til specifik data i `samlingen`, hvorfor der i mange situationer vil være behov for at se på hjemlen og det efterspurgte data i sammnenhæng for at håndhæve adgangskontrollen. Et særligt aspekt i at vurdere adgang er håndhævelsen af 'negativt samtykke', hvor adgang til bestemte data er fjernet, fx fordi datas korrekthed er bragt i tvivl og skal undersøges. Dette procestrin kan i øvrigt benyttes af `dataansvarlig` til at håndhæve adgangskontrol også på andre planer som håndhævelse af en Service Level Agreement, beskyttelse mod misbrug, mistænkelig adfærd m.m. Det bemærkes endvidere, at `dataansvarlig` kan have overladt distributionsopgave og de praktiske opgaver for håndhævelse af adgangskontrollen til en `datadistributør`, hvilket i øvrigt ikke ændrer ved beskrivelsen af dette trin.
 
 del data
   ~ *procestrin* hvor data videregives til andre
 
-`Dataansvarlig` håndterer forespørgslen ved at slå data op i `datasamlingen`, evt. ved at sammenstille data fra flere `datasamlinger`, og sender et `svar` tilbage til `anvender`. Delingen af data bliver logget af `dataansvarlig`, indbefattende hvilken data, der blev delt; til hvilken `anvender`; og med hvilken hjemmel. Det bemærkes, at `Dataansvarlig` ikke nødvendigvis er klar over, hvilket databehov forespørgslen har tjent til at tilfredsstille - så længe, adgangen er legitim og foretaget på baggrund af gyldig hjemmel, har `dataansvarlig` ikke behov for at kende til `dataanvenders` brug af data i den konkrete forespørgsel.
+`Dataansvarlig` håndterer forespørgslen ved at slå data op i `datasamlingen`, evt. ved at sammenstille data fra flere `datasamlinger`, og sender et `svar` tilbage til `anvender`. Delingen af data bliver logget af `dataansvarlig`, indbefattende hvilken data, der blev delt; til hvilken `anvender`; og med hvilken hjemmel. Det bemærkes, at `dataansvarlig` ikke nødvendigvis er klar over, hvilket databehov forespørgslen har tjent til at tilfredsstille - så længe, adgangen er legitim og foretaget på baggrund af gyldig hjemmel, har `dataansvarlig` ikke behov for at kende til `dataanvenders` brug af data i den konkrete forespørgsel.
 
 modtag svar
   ~ *procestrin* [todo: definition]
@@ -474,13 +504,15 @@ _Regibemærkning for version 0.4: Det videre arbejde skal klarlægge, hvilke ele
 data
   ~ *objekt* (Abstrakt. Bruges om både register-record og dokument)
 
+Klassificeret i forhold til både organisation og den registrerede.
+
 samling
   ~ *objekt* [Datasætmodel har ikke definition...] ISO9115: en identificerbar samling af oplysninger (samlebetegnelse for PSI, GPDR, )
 
 meddelelse
   ~ *objekt* [NgDP] registreret forsendelse
 
-datasubjekt
+den registrede
   ~ *objekt* [Grunddata, fx person. GPDR: den registrede]
 
 model/type
@@ -492,6 +524,8 @@ katalog
 dataservice
   ~ *objekt* webservice med adgang til datasamling
 
+hændelseslog
+    ~ *objekt* datasamling der indeholder oplysninger om hændelser og kan tilvejebring bevis. (ISO27002 indeholder 'bøer omfatte'). Bør beskyttes mod manipulation.
 
 værdisæt (reference data)
   ~ *objekt* beskriver udfaldsrum for felter i meddelelser og felter i data. Indeholder også oversættelser mellem forskellige.
@@ -636,7 +670,7 @@ Her grupperes de enkelte forretningsroller og applikationsroller i forskellige i
 
 ### Anvendelse af udstillede data
 
-Når en `dataanvender` (virksomhed eller myndighed) vil have adgang til data hos en dataansvarlig myndighed, kan det ske via ét af nedenstående tre mønstre:
+Når en `databehandler` (virksomhed eller myndighed) vil have adgang til data hos en dataansvarlig myndighed, kan det ske via ét af nedenstående tre mønstre:
 
 [TODO: Overvej samtykker ift. Virksomhed>]: x
 [TODO: Overvej Hændelser>]: x
@@ -747,6 +781,8 @@ _Integrationsbeskrivelser opdateres._
 skriv
   ~ *integrationstype* der lader en aktør skrive til en `samling` (herunder `log` og `index`) hos en anden aktør
 
+Beskyttes mod autoriseret ændring (ISO)
+
   Særlige hensyn/overvejelser:
 
   - tillade 'blød' validering
@@ -766,7 +802,11 @@ skriv
 hent
   ~ *integrationstype* der lader en aktør hente data via en kendt identifikator (`record`, `indexrecord`?, `logrecord`, `adresse-record` `document`) hos en anden aktør.
 
-  Særlige hensyn:
+
+
+
+
+Særlige hensyn:
 
   - overvej at give 'actions (fx ret)' med
   - overvej granuklaritet (hvor meget sammenstilling) og performance (hent detaljer)
@@ -817,7 +857,19 @@ Nedenstående, tekniske områder er kandidater til at indgå i referencearkitekt
 
 [TODO: Udbyg liste over områder til standardisering, jf. issue #40 Begrund opdeling/sammenlægning]
 
-Standarder til applikationsintegration
+
+
+Semantiske standarder og begrebsmodeller
+
+- Metadata for opslag/søgning/anvendelse
+- Log format
+- Hjemmel (samtykke, lov)
+- Kontekts (klassifkation af anvendelse)
+- Hændelsesbeskeder
+- Identifikation
+- Klassifikation af følsomhed
+
+Tekniske standarder og specifikationer
 
 - skriv til samling
 - skriv til log
@@ -830,15 +882,7 @@ Standarder til applikationsintegration
 - læs (rå adgang til samling fra dataservice)
 - modtag notifikation
 
-Indholdsmæssige standarder
-
-- Metadata for opslag/søgning/anvendelse
-- Log format
-- Hjemmel (samtykke, lov)
-- Kontekts (klassifkation af anvendelse)
-- Hændelsesbeskeder
-- Identifikation
-- Klassifikation af følsomhed
+- Kryptografi (hvilke cifre... skal baseres på tredjeparts vurdering)
 
 [TODO: Overvej, om denne liste skal bygges op som LOST?]: x
 
