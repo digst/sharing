@@ -5,9 +5,9 @@ Version 0.2, primo oktober 2017. Arbejdsdokument benyttet i forbindelse med ande
 
 Version 0.3, medio oktober 2017. Opdateret med input fra anden workshop. Udgør Delleverance 2 ift. projektet Referencearkitektur for deling af data og dokumenter.
 
-**Version 0.4, november 2017. Til intern brug i KDA.**
+Version 0.4, november 2017. Til intern brug i KDA.
 
-_Version 0.5, december 2017. Til kommentering hos deltager og deres bagland_
+**Version 0.5, december 2017. Til kommentering hos arbejdsgruppedeltagere og deres bagland**
 
 # Resume
 Hverdagen er digital, og data om borgere, virksomheder, myndigheder, ejendomme, steder, køretøjer m.m. vedligeholdes på en lang række områder af den offentlige administration. Der ligger et stort potentiale i at gøre sådanne data tilgængelige for genbrug, så de kan skabe værdi i flere sammenhænge og for andre. Deling af data er et fundament for langt bedre understøttelse af tværgående, offentlige services, og åbner for anvendelse af data i nye og innovative sammenhænge.
@@ -24,9 +24,9 @@ Referencearkitekturen er udarbejdet under den fællesoffentlige digitaliseringss
 
 Det overordnede formål med denne referencearkitektur er at understøtte den offentlige digitalisering som beskrevet i den Fællesoffentlige Digitaliseringsstrategi 2020. Derudover kan referencearkitekturen finde anvendelse generelt i projekter i såvel offentlige som private digitaliseringsinitiativer.
 
-Specifikt i regi af strategien betyder dette, at referencearkitekturen skal anvendes:
+Specifikt i regi af digitaliseringsstrategien skal referencearkitekturen anvendes:
 
-1.  som reference i løsningsbeskrivelser samt ved review heraf
+1.  som reference i løsningsbeskrivelser samt ved review af løsningsbeskrivelser
 2.  til at danne et fælles sprog til at formulere en fælles handlingsplan blandt digitalieringsstrategiens parter
 
 Samlet set skal referencearkitekturen dermed bidrage til at skabe sammenhængende, sikre og effektive digitale services for borgere og virksomheder blandt andet gennem større genbrug og mulighed for øget automatisering.
@@ -41,17 +41,17 @@ Dokumentet i sin helhed er også relevant for nuværende og kommende leverandør
 
 Referencearkitektur for deling af data og dokumenter understøtter design, udvikling og anvendelse af offentlige it-systemer, der videregiver eller modtager registrerede oplysninger i elektronisk form til/fra andre myndigheder, virksomheder og borgere.
 
-I et juridisk perspektiv er dette område reguleret af en lang række forordninger og love. De mest relevante er:
+I et juridisk perspektiv er dette område reguleret af en lang række forordninger og love. De mest relevante specielt med hensyn til videregivelse af persondata er:
 
-EU databeskyttelse (GDPR)
+EU-persondataforordningen (GDPR)
   ~ *forordning* som beskriver pligter og rettigheder ved behandling af persondata [TODO: uddyb relevans]
 
 Persondatalov
   ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata [TODO: uddyb relevans]
 
-Og nogle mere digitaliseringsagtige love...
+Med hensyn til digitalisering generelt er følgende love særligt relevante:
 
-EU eIDAS
+EU-forordningen eIDAS (electronic IDentification, Authentication and trust Services)
   ~ *lov* som definerer registrerede tillidstjenester [TODO: uddyb relevans]
 
 Lov om Digital Post
