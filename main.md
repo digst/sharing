@@ -5,32 +5,33 @@ Version 0.2, primo oktober 2017. Arbejdsdokument benyttet i forbindelse med ande
 
 Version 0.3, medio oktober 2017. Opdateret med input fra anden workshop. Udgør Delleverance 2 ift. projektet Referencearkitektur for deling af data og dokumenter.
 
-**Version 0.4, november 2017. Til intern brug i KDA.**
+Version 0.4, november 2017. Til intern brug i KDA.
 
-_Version 0.5, december 2017. Til kommentering hos deltager og deres bagland_
+**Version 0.5, december 2017. Til kommentering hos arbejdsgruppedeltagere og deres bagland**
 
 # Resume
 Hverdagen er digital, og data om borgere, virksomheder, myndigheder, ejendomme, steder, køretøjer m.m. vedligeholdes på en lang række områder af den offentlige administration. Der ligger et stort potentiale i at gøre sådanne data tilgængelige for genbrug, så de kan skabe værdi i flere sammenhænge og for andre. Deling af data er et fundament for langt bedre understøttelse af tværgående, offentlige services, og åbner for anvendelse af data i nye og innovative sammenhænge.
 
-Men deling af data kan være teknisk kompliceret og i mange tilfælde omkostningstungt, bl.a. drevet af krav til sikkerhed og dermed bevarelse af borgeres og virksomheders tillid til datadeling i det offentlige Danmark. Derfor er potentialet i deling og genbrug af data i høj grad forblevet uindfriet.
+Men deling af data kan være teknisk kompliceret og i mange tilfælde omkostningstungt, bl.a. drevet af lovmæssige og organisatoriske krav, herunder med særligt fokus på at bevare borgeres og virksomheders tillid til datadeling i det offentlige Danmark. Derfor er potentialet i deling og genbrug af data endnu ikke indfriet i det omfang, det er muligt.
 
-Denne referencearkitekturs formål er at hjælpe med at indfri dette potentiale. Dette gøres ved at introducere en fælles beskrivelse af de begreber og sammenhænge, der er væsentlige for at forstå og arbejde med design og implementering af løsninger, der involverer deling af data og dokumenter. Dette sker både på det strategiske plan, hvor vision, mål og arkitektoniske principper fastlægges; på det forretningsmæssige plan, hvor de typiske brugsscenarier beskrives; og på det tekniske plan, hvor en række implementeringsmønstre angiver, hvordan man i og mellem applikationer kan dele og forsende data.
+Denne referencearkitekturs formål er at hjælpe med at indfri dette potentiale. Dette gøres ved at introducere en fælles beskrivelse af de begreber og sammenhænge, der er væsentlige for at forstå og arbejde med design og implementering af løsninger, der involverer deling af data og dokumenter. Dette sker både på det strategiske plan, hvor vision, mål og arkitektoniske principper fastlægges; på det forretningsmæssige plan, hvor de typiske brugsscenarier beskrives; og på det tekniske plan, hvor en række implementeringsmønstre angiver, hvordan man i og mellem applikationer kan dele og forsende data. Endelig peger referencearkitekturen på en række konkrete specifikationer, der anvendes ved deling af data og dokumenter i dag i den offentlige sektor.
 
 Referencearkitekturen er udarbejdet under den fællesoffentlige digitaliseringsstrategi 2016-2020 og skal som sådan anvendes i alle projekter, der sorterer under digitaliseringsstrategien. Referencearkitekturen er dermed relevant for såvel offentlige myndigheder, deres leverandører samt for virksomheder, der ønsker at gøre brug af offentlige data.
 
 # Introduktion
 
-## Formål og målgruppe
+## Formål, anvendelse og målgruppe
 
-Referencearkitekturen for deling af data og dokumenter understøtter design, udvikling og anvendelse af offentlige it-systemer, der
+Det overordnede formål med denne referencearkitektur er at understøtte den offentlige digitalisering som beskrevet i den Fællesoffentlige Digitaliseringsstrategi 2020. Derudover kan referencearkitekturen finde anvendelse generelt i projekter i såvel offentlige som private digitaliseringsinitiativer.
 
-- vidergiver eller modtager registrede oplysninger i elektronisk form til andre myndigheder, virksomheder og borgere
+Specifikt i regi af digitaliseringsstrategien skal referencearkitekturen anvendes:
 
-[was: - (gen)anvender oplysninger i form af data og dokumenter til sagsbehandling eller selvbetjening - sender eller modtager meddelelser fra andre it-systemer]
+1.  som reference i løsningsbeskrivelser samt ved review af løsningsbeskrivelser
+2.  til at danne et fælles sprog til at formulere en fælles handlingsplan blandt digitalieringsstrategiens parter
+
+Samlet set skal referencearkitekturen dermed bidrage til at skabe sammenhængende, sikre og effektive digitale services for borgere og virksomheder blandt andet gennem større genbrug og mulighed for øget automatisering.
 
 Dokumentet er primært målrettet it-arkitekter tilknyttet offentlige digitaliseringsprojekter, herunder enterprise-arkitekter, forretningsarkitekter og løsningsarkitekter, der har til opgave at kravspecificere og designe løsninger.
-
-[madsh: Overvej om løsningsarkitekter er bedre hjulpet af løsningsskabeloner i det enkelte domæner]
 
 De første dele af dokumentet (Strategi og Forretningsmæssig arkitektur) henvender sig endvidere til projektledere og beslutningstagere, herunder forretningsansvarlige, digitaliseringschefer, it-chefer, afdelings- og kontorchefer og andre med rollen som systemejer.
 
@@ -38,56 +39,58 @@ Dokumentet i sin helhed er også relevant for nuværende og kommende leverandør
 
 ## Scope
 
-Referencearkitekturen beskriver anvendelse og udvikling af it-systemer, der reguleres af blandt andet:
+Referencearkitektur for deling af data og dokumenter understøtter design, udvikling og anvendelse af offentlige it-systemer, der videregiver eller modtager registrerede oplysninger i elektronisk form til/fra andre myndigheder, virksomheder og borgere.
 
-EU databeskyttelse
-  ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
+I et juridisk perspektiv er dette område reguleret af en lang række forordninger og love. De mest relevante specielt med hensyn til videregivelse af persondata er:
+
+EU-persondataforordningen (GDPR)
+  ~ *forordning* som beskriver pligter og rettigheder ved behandling af persondata [TODO: uddyb relevans]
 
 Persondatalov
-  ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata
+  ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata [TODO: uddyb relevans]
 
+Med hensyn til digitalisering generelt er følgende love særligt relevante:
 
-[og flere...]
-
-Og nogle mere digitaliseringsagtige love...
-
-EU eIDAS
-  ~ *lov* som definerer registrede tillidstjenester
+EU-forordningen eIDAS (electronic IDentification, Authentication and trust Services)
+  ~ *lov* som definerer registrerede tillidstjenester [TODO: uddyb relevans]
 
 Lov om Digital Post
-  ~ *lov* der gør det obligatorisk for virksomheder og borgere at modtage digitale meddelelser fra offentlige afsendere.
+  ~ *lov* der gør det obligatorisk for virksomheder og borgere at modtage digitale meddelelser fra offentlige afsendere. [TODO: uddyb relevans]
 
-
-Og mere specifikke lovgivninger (som specificerer yderligere...)
+Derudover er der en række mere specifikke love, der sætter rammer for datadeling i den offentlige forvaltning, fx inden for særlige sektorer eller domæner. Listen nedenfor inkluderer de væsentligste, men forsøger i øvrigt ikke på at være udtømmende.
 
 Sundhedslov
-  ~ *lov* ....  (beskriv at negativt samtykke med GDPR ophæng)
+  ~ *lov* ....  (beskriv at negativt samtykke med GDPR ophæng) [TODO: uddyb relevans]
 
 Servicelov
-  ~ *lov* ....
+  ~ *lov* .... [TODO: uddyb relevans]
 
 Forvaltningslov
-    ~ *lov* ....
+    ~ *lov* .... [TODO: uddyb relevans]
 
 
-Referencearkitekturen skrives på baggrund af den fællesoffentlige digitaliseringsstrategi 2020 under initiativ 8.1 med tilslutning fra
+Referencearkitekturen skrives på baggrund af den Fællesoffentlige Digitaliseringsstrategi 2020 under initiativ 8.1 med tilslutning fra
 FM, UFM, EVM, SIM, JM, EFKM, MBUL, SÆM, SKM, MFVM, BM, KL og Danske Regioner. Heri beskrives referencearkitekturen således:
 
 > For at operationalisere, hvilke krav hvidbogen konkret stiller til initiativer og systemer udarbejdes en referencearkitektur for deling af data og dokumenter, der blandt andet beskriver fælles behovsmønstre og mønstre for teknisk understøttelse, herunder de forskelige roller, der skal afklares i initiativerne. Referencearkitekturen udpeger også eventuelle områder for eksisterende og nye fælles standarder og infrastruktur, som skal lette initiativernes implementering. Referencearkitekturen bliver således en generel ramme og støtte for alle initiativernes egen specifikke arkitektur.
 
-Uden for scope af denne referencearkitektur er:
+Scope for denne referencearkitektur er, som navnet angiver, selve delingen/videregivelsen af data (herunder dokumenter). Vi søger ikke at definere, hvordan data registreres, eller hvordan den aktør (fx en myndighed), der afsender eller modtager data, anvender disse i en konkret arbejdsgang. Processerne for registrering samt afsendelse og modtagelse af en meddelsese er dog summarisk beskrevet for at introducere begreber, der er relevante for at kunne tale om selve delingen/videregivelsen af data.
 
-- registrering og intern anvendelse af data hos dataejer
-- åbne data, der ikke kræver adgangskontrol (se issue #9)
-- streaming af videodata og IoT-data (se issue #2)
+Specifikt er det uden for scope af denne referencearkitektur at definere:
+
+- Registrering og intern anvendelse af data hos den dataansvarlige myndighed
+- Konteksten for en aktørs behov for at forespørge på data, videregive data via en meddelelse eller modtage data via en meddelelse
+- Streaming af data (videodata, IoT-data m.m.)
+
+I forhold til streaming af data bemærkes det, at streaming løseligt kan beskrives som en seriel række af processen `videregivelse på forespørgsel`, som vi beskriver senere i dette dokument. Eventuelle, yderligere aspekter ved streaming, der kan være relevante at dykke ned i i referencearkitektursammenhæng, er ikke inkluderet i denne referencearkitektur, men må henvises til en specialiseret referencearkitektur for streaming af data.
 
 ## Centrale begreber
-Data, oplysninger og informationer er tæt relaterede begreber og deres umiddelbare forståelse er meget forskellig på tværs  forskellige faggrupper og praksiser.
+Data, oplysninger og informationer er tæt relaterede begreber og deres umiddelbare forståelse er meget forskellig på tværs af forskellige faggrupper og praksisser.
 
-Vi vil holde os fra at komme med en længere fænomoligisk udredning og fokusere på en mere pragmatisk og lokal definition.
+Vi vil i denne referencearkitektur holde os fra at komme med en længere fænomænologisk udredning og fokusere på en mere pragmatisk og lokal definition.
 
 
-![Anvendelse af begrebet data og relaterede begreber i denne referencearkitektur](figures/abstraktion.png)
+![Figuren beskriver begrebet **data**, som det anvendes i denne referencearkitektur. Væsentligst er, at data indgår i samlinger, samt at de - evt. i form af et dokument - kan videregives i en meddelelse.](figures/abstraktion.png)
 
 [TODO: Tilføj to eksempler: CPR-register + Røntgenbilleder]
 
@@ -96,28 +99,21 @@ Vi vil holde os fra at komme med en længere fænomoligisk udredning og fokusere
 [Dokumenter granularitet og samlet forvaltningsobjekt, databaser er mere finkornert udtræk, opslag...]
 
 
-I det efterfølgende vil begrebet `data` blive brugt til at betegne både oplysninger på dokumentform og oplysninger, der optræder i registre. Vi anvender begrebet `samling` både om et register og et repository med dokumenter.
+I det efterfølgende vil begrebet `data` blive brugt til at betegne både oplysninger på dokumentform og oplysninger, der optræder i registre. Vi anvender begrebet `samling` både om et `register` og et `repository` af dokumenter (`repository` anvendt jf. Referencearkitektur for deling af dokumenter og billeder, 2012).
 
-Endvidere vil vi undgå at bruge begrebet ~~metadata~~, da dets betydning er tæt knyttet til en konkret anvendelsessituation. I stedet for analogien til et kartotekstkort med _data om data_ foretrækker vi analogien med en rudekuvert hvor nogle oplysninger (adressen) er synlige en bestemt kontekst (udbringning) mens andre ikke er tilgængelige (indholdet). En diskussion om adressen er en del data eller metadata forekommer frugtesløs.
+Endvidere vil vi undgå at bruge ordet `metadata`. Ordet anvendes historisk set meget forskelligt, typisk med en betydning der er tæt knyttet til en konkret anvendelsessituation. Fra denne referencearkitekturs synspunkt er `metadata` imidlertid blot en særlig form af `data`.
 
+Et af hovedformålene med denne referencearkitektur er at vejlede i valget mellem de to grundlæggende, generiske procesmønstre for videregivelse af data:
 
-Et af hovedformålet med denne referencearkitektur er at vejlede i valget mellem to mønstre for videregivelse af oplysninger:
+ - `Videregivelse på forespørgsel` - typisk via API i system-til-system-integrationer
+ - `Videregivelse ved meddelelse` indeholdende data (herunder dokumenter) - typisk brugt ved beskeder til borgere/virksomheder, der skal have retsvirkning, men også et klassisk mønster brugt i system-til-system-integrationer. [TODO: Knyt til EIDAS (Elektronisk leveringstjeneste - artikel 44)]
 
- - `Anvendelse af udstillede data` - typisk via API i system-til-system-integrationer
- - `Forsendelse af meddelelser` indeholdende data (herunder dokumenter) - typisk brugt ved beskeder til borgere/virksomheder, der skal have retsvirkning, men også et klassisk mønster brugt i system-til-system-integrationer. [TODO: Knyt til EIDAS (Elektronisk leveringstjeneste - artikel 44)]
+Den fundamentale forskel på disse to scenarier er, om det er den aktør, der videregiver data eller den aktør, der modtager data, der kender den konkrete kontekst for, hvordan data skal anvendes. Afsnittet [TODO: henvisning til Forretningsarkitektur]
 
-Den fundamentale forskel på disse to scenarier er, om det er den dataansvarlige eller modtageren af data, der bedst kender den konkrete kontekst for anvendelsen af oplysningerne.
+Ved `videregivelse på forespørgsel` er dataafsenderen som udgangspunkt ikke bekendt med datamodtagerens formål (men er naturligvis forpligtet til at håndhæve relevant hjemmel). Et eksempel på dette er en myndigheds forespørgsel på personoplysninger i CPR-registeret.
 
-Ved `anvendelse af udstillede data` er dataafsenderen som udgangspunkt ikke bekendt med datamodtagerens formål (men er naturligvis forpligtet til at håndhæve relevant hjemmel). Ved forsendelse af meddelelser er det dataafsenderen, der i en given kontekst afsender en meddelelse med et givent formål - typisk som led i en proces.
+Ved `videregivelse ved meddelelse` er det dataafsenderen, der i en given kontekst afsender en meddelelse med et givent formål - typisk som led i en proces. Et eksempel på dette er politiets fremsendelse af en fartbøde til en borger.
 
-
-
-
-## Anvendelse
-Referencearkitekturen skal:
-
-- danne et fælles sprog til at formulere en fælles handlingsplan blandt digitalieringsstrategiens parter
-- bruges som reference ved review af løsningsbeskrivelser
 
 ## Tilblivelse og governance
 Første udgave er skrevet hos Kontor for Data og Arkitektur af Mads Hjorth, Digitaliseringsstyrelsen og Anders Fausbøll, Omnium Improvement.
@@ -130,17 +126,19 @@ Endelig godkendelse forventes hos Styregruppe for Data og Arkitektur under Digit
 (Videre vedligeholdelse i regi af FDA, næste version fokus på sammenhæng med øvrige)
 
 ## Metoderamme
-Referencearkitekturen er udarbejdet inden for rammerne af Fællesoffentlig Digital Arkitektur og følger så vidt muligt den fælles skabelon for referencearkitekturer som udarbejdet i DIGST/KDA. Metoderammen bygger blandt andet på erfaringer fra OIO referencearkitektur, og indarbejder også elementer fra EIRA, TOGAF, ArchiMate m.m.
+Referencearkitekturen er udarbejdet inden for rammerne af Fællesoffentlig Digital Arkitektur og følger så vidt muligt den fælles skabelon for referencearkitekturer som udarbejdet i Sekretariatet for Styregruppen for Data og Arkitektur under digitaliseringsstrategien. Metoderammen bygger blandt andet på erfaringer fra OIO referencearkitektur, og indarbejder også elementer fra EIRA, TOGAF, ArchiMate m.m.
 
 I dokumentets tekst er særlige elementer angivet i *kursiv* (fx *lov*, *mål*, *rolle* m.m.). Dette markerer, at de hører til Archimate-begrebsapparatet. Andre elementer er angivet med særlig `markering`. Her er der tale om referencer til begreber/elementer fra figurer. Det bemærkes, at prefixet 'data-' kan være udeladt på begreber/elementer i tekst og figurer fx af formatterings- eller læsbarhedshensyn uden, at der ligger en indholdsmæssig skelnen bag (fx `dataanvendelse`/`anvendelse`, `datasamling`/`samling` o.a.)
 
-I figurer markerer:
+I figurer og tekst markerer:
 
 - _Kursiv_: At et element eller en relation ikke er nærmere defineret i denne referencearkitektur (fx _dokument_)
 - `Blå tekst`: At et element eller en relation ejes og defineres i denne referencearkitektur (fx `anvendelse`)
-- Runde hjørner at det er "proces trin" Business Functions jf. Archimate
-- Skarpe hjørner at det er Applikationsroller jf. Archimate
-- "slikkepind" er interfaces/applikationsfunktioner/operationer
+
+I elementerne i dokumentets figurer angiver:
+- Runde hjørner: At det er et Procestrin (Business Functions, jf. Archimate)
+- Skarpe hjørner: At det er en Applikationsrolle (Application services, jf. Archimate)
+- "Slikkepind" er interfaces/applikationsfunktioner/operationer
 
 ## Relation til andre referencearkitekturer
 Denne referencearkitektur gør brug af:
@@ -162,9 +160,9 @@ Den skal kunne anvendes af:
 (TODO: tilføjer hyperlinks...)
 
 # Strategi
-Referencearkitekturen er udarbejdet en række aktuelle offentlige/politiske strategier, herunder Digitaliseringsstrategi, Sammenhængsreform, Cybersikkerhed, Lokal og Digital... På tværs af strategierne gør en række tværgående tendenser, som er med til at sætte retningen for den ønskelige arkitektur.
+Referencearkitekturen udmønter og understøtter beslutninger i den Fællesoffentlige Digitaliseringsstrategi 2020. Desuden er der i udarbejdelsen taget hensyn til en række aktuelle, offentlige/politiske strategier, herunder Sammenhængsreformen, Cybersikkerhedsinitativet og kommunernes digitaliseringsstrategi "Lokal og Digital". Der kan på tværs af strategierne identificeres en række forretningsmæssige og teknologiske tendenser, som ligeledes har bidraget til at sætte retningen for den ønskelige arkitektur.
 
-![Tværgående tendenser i aktuelle strategier](figures/tendenser.png)
+![Tværgående tendenser i aktuelle, offentlige/politiske strategier](figures/tendenser.png)
 
 [TODO: Fold bullet-liste ud med flere kommentarer - i et narrativ]
 
@@ -226,11 +224,11 @@ Værdien ved at følge denne referencearkitektur er, at den understøtter:
 
 ## Strategiske principper
 
-Den Fællesoffentlige Digitale Arkitektur udpeger en række principper til rammesætning og styring af den offentlige digitalisering. I denne referencearkitektur er fokus at understøtte informationsprincippet om at *Gode data deles og genbruges* og i særlig grad reglen: *6.1 Del og genbrug data*. Referencearkitekturen tilbyder to måde hvorpå data kan vidergives til genbrug og seks forskellige tekniske integrationsmønster som det kan realiseres gennem.
+Den Fællesoffentlige Digitale Arkitektur udpeger en række principper til rammesætning og styring af den offentlige digitalisering. I denne referencearkitektur er fokus at understøtte arkitekturprincippet om, at *Gode data deles og genbruges* og i særlig grad reglen: *6.1 Del og genbrug data*. Referencearkitekturen tilbyder to måder, hvorpå data kan videregives til genbrug og seks forskellige tekniske integrationsmønster som det kan realiseres gennem.
 
 Derudover har en række af arkitekturreglerne konsekvenser for dette arbejde:
 
-*AR 1.2 Optimer arkitketur efter projektets og de fælles mål*
+*AR 1.2 Optimer arkitektur efter projektets og de fælles mål*
 - Udgifter i datadeling skal fordeles - byrden i datadeling skal afløftes fra dataejer, hvis den begrænser genbrug
 
 *AR2.5 Stil data og løsninger til rådighed for private*
@@ -283,7 +281,7 @@ og lovlige behandlinger hos offentlige myndigheder er:
 
 *opgaver i samfundets interesse eller myndighedsudøvelse*
 
-
+[TODO: Tilføj opsummering af Strategiafsnit]
 
 # Forretningsarkitektur
 
