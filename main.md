@@ -44,10 +44,13 @@ Referencearkitektur for deling af data og dokumenter understøtter design, udvik
 I et juridisk perspektiv er dette område reguleret af en lang række forordninger og love. De mest relevante specielt med hensyn til videregivelse af persondata er:
 
 EU-persondataforordningen (GDPR)
-  ~ *forordning* som beskriver pligter og rettigheder ved behandling af persondata [TODO: uddyb relevans]
+  ~ *forordning* som beskriver pligter og rettigheder ved behandling af persondata [TODO: uddyb relevans. Nævn 'videregivelse']
 
-Persondatalov
+Persondataloven
   ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata [TODO: uddyb relevans]
+
+Databeskyttelsesloven
+    ~ *lov* (pr. december 2017 under udarbejdelse) som beskriver pligter og rettigheder ved behandling af persondata, og som forventes at erstatte Persondataloven
 
 Med hensyn til digitalisering generelt er følgende love særligt relevante:
 
@@ -59,13 +62,13 @@ Lov om Digital Post
 
 Derudover er der en række mere specifikke love, der sætter rammer for datadeling i den offentlige forvaltning, fx inden for særlige sektorer eller domæner. Listen nedenfor inkluderer de væsentligste, men forsøger i øvrigt ikke på at være udtømmende.
 
-Sundhedslov
+Sundhedsloven
   ~ *lov* ....  (beskriv at negativt samtykke med GDPR ophæng) [TODO: uddyb relevans]
 
-Servicelov
+Serviceloven
   ~ *lov* .... [TODO: uddyb relevans]
 
-Forvaltningslov
+Forvaltningsloven
     ~ *lov* .... [TODO: uddyb relevans]
 
 
@@ -74,7 +77,7 @@ FM, UFM, EVM, SIM, JM, EFKM, MBUL, SÆM, SKM, MFVM, BM, KL og Danske Regioner. H
 
 > For at operationalisere, hvilke krav hvidbogen konkret stiller til initiativer og systemer udarbejdes en referencearkitektur for deling af data og dokumenter, der blandt andet beskriver fælles behovsmønstre og mønstre for teknisk understøttelse, herunder de forskelige roller, der skal afklares i initiativerne. Referencearkitekturen udpeger også eventuelle områder for eksisterende og nye fælles standarder og infrastruktur, som skal lette initiativernes implementering. Referencearkitekturen bliver således en generel ramme og støtte for alle initiativernes egen specifikke arkitektur.
 
-Scope for denne referencearkitektur er, som navnet angiver, selve delingen/videregivelsen af data (herunder dokumenter). Vi søger ikke at definere, hvordan data registreres, eller hvordan den aktør (fx en myndighed), der afsender eller modtager data, anvender disse i en konkret arbejdsgang. Processerne for registrering samt afsendelse og modtagelse af en meddelsese er dog summarisk beskrevet for at introducere begreber, der er relevante for at kunne tale om selve delingen/videregivelsen af data.
+Scope for denne referencearkitektur er, som navnet angiver, selve delingen/videregivelsen af data (herunder dokumenter). Vi søger ikke at definere, hvordan data registreres, eller hvordan den aktør (fx en myndighed), der afsender eller modtager data, anvender disse i en konkret arbejdsgang. Processerne for registrering samt afsendelse og modtagelse af en meddelelse er dog summarisk beskrevet for at introducere begreber, der er relevante for at kunne tale om selve delingen/videregivelsen af data.
 
 Specifikt er det uden for scope af denne referencearkitektur at definere:
 
@@ -288,7 +291,7 @@ og lovlige behandlinger hos offentlige myndigheder er:
 ## Aktører
 De væsentligste aktører, der er i spil omkring deling af data og dokumenter, er:
 
-- Offentlige myndigheder (herunder virksomheder, der handler på vegne af offentlige myndigheder?)
+- Offentlige myndigheder (herunder virksomheder, der handler på vegne af offentlige myndigheder)
 - Borgere
 - Virksomheder
 
@@ -414,7 +417,7 @@ forespørg om data
 vurder adgang
   ~ *procestrin* [todo: definition]
 
-`Dataansvarlig` myndighed vurderer i dette trin forespørgslen med henblik på at håndhæve adgangskontrol. Kun, hvis den medsendte hjemmel giver lovmæssig adgang til den forespurgte data, kan `dataansvarlig` gå videre med delingen. Hjemlen kan være eksplicit angivet eller ligge implicit i brugerstyringen. Hjemlen kan enten give generel adgang til en given `datasamling`, eller give adgang til specifik data i `samlingen`, hvorfor der i mange situationer vil være behov for at se på hjemlen og det efterspurgte data i sammnenhæng for at håndhæve adgangskontrollen. Et særligt aspekt i at vurdere adgang er håndhævelsen af 'negativt samtykke', hvor adgang til bestemte data er fjernet, fx fordi datas korrekthed er bragt i tvivl og skal undersøges. Dette procestrin kan i øvrigt benyttes af `dataansvarlig` til at håndhæve adgangskontrol også på andre planer som håndhævelse af en Service Level Agreement, beskyttelse mod misbrug, mistænkelig adfærd m.m. Det bemærkes endvidere, at `dataansvarlig` kan have overladt distributionsopgave og de praktiske opgaver for håndhævelse af adgangskontrollen til en `datadistributør`, hvilket i øvrigt ikke ændrer ved beskrivelsen af dette trin.
+`Dataansvarlig` myndighed vurderer i dette trin forespørgslen med henblik på at håndhæve adgangskontrol. Kun, hvis den medsendte hjemmel giver lovmæssig adgang til den forespurgte data, kan `dataansvarlig` gå videre med delingen. Hjemlen kan være eksplicit angivet eller ligge implicit i brugerstyringen. Hjemlen kan enten give generel adgang til en given `datasamling`, eller give adgang til specifik data i `samlingen`, hvorfor der i mange situationer vil være behov for at se på hjemlen og det efterspurgte data i sammnenhæng for at håndhæve adgangskontrollen. Et særligt aspekt i at vurdere adgang er håndhævelsen af 'negativt samtykke', hvor adgang til bestemte data er fjernet, fx fordi datas korrekthed er bragt i tvivl og skal undersøges. Dette procestrin kan i øvrigt benyttes af `dataansvarlig` til at håndhæve adgangskontrol også på andre planer som håndhævelse af en Service Level Agreement, beskyttelse mod misbrug, mistænkelig adfærd m.m. Det bemærkes endvidere, at `dataansvarlig` kan have overladt distributionsopgave og de praktiske opgaver for håndhævelse af adgangskontrollen til en `datadistributør`, hvilket i øvrigt ikke ændrer ved beskrivelsen af dette trin. Slutteligt bemærkes, at særlige typer af data ikke er belagt med nogen adgangsrestriktioner og dermed er frit tilgængelige (fx CVR-data).
 
 del data
   ~ *procestrin* hvor data videregives til andre
