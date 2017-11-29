@@ -4285,6 +4285,118 @@ arkivering<y:LabelModel>
         </y:ShapeNode>
       </data>
     </node>
+    <node id="n225">
+      <data key="d4"/>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="60.2574942089866" width="109.40862871300806" x="-2012.9158861053938" y="-1506.123806654125"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#808080" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="36.68359375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#1F497D" verticalTextPosition="bottom" visible="true" width="93.583984375" x="7.912322169004028" y="11.786950229493414">videregivelse af 
+(person)data<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="ellipse"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n226">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="46.200066710021076" width="177.0774470493049" x="-2156.8735501298897" y="-1415.8663124451384"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#C0C0C0" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Open Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="36.68359375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#1F497D" verticalTextPosition="bottom" visible="true" width="91.380859375" x="4.0" y="4.0">videregivelse 
+på forespørgsel</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n227">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="46.20006671002096" width="177.0774470493049" x="-1949.7961030805848" y="-1415.8663124451384"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#C0C0C0" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Open Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="36.68359375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#1F497D" verticalTextPosition="bottom" visible="true" width="91.80859375" x="4.0" y="4.0">videregivelse 
+ved meddelelse</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n228">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="103.0234929204355" width="41.75943905233049" x="-2156.8735501298897" y="-1339.6662457351174"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#808080" raised="false" type="dashed" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="36.68359375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" rotationAngle="90.0" textColor="#1F497D" verticalTextPosition="bottom" visible="true" width="46.404296875" x="4.0" y="4.0">direkte 
+adgang</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n229">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="103.02349292043596" width="41.75943905233049" x="-2089.2145461314026" y="-1339.6662457351179"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#808080" raised="false" type="dashed" width="1.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Open Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="36.68359375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" rotationAngle="90.0" textColor="#1F497D" verticalTextPosition="bottom" visible="true" width="87.736328125" x="4.0" y="4.0">gennem 
+datafordeler(e)</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n230">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="103.02349292043596" width="41.75943905233049" x="-2021.5555421329152" y="-1339.6662457351179"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#808080" raised="false" type="dashed" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="36.68359375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" rotationAngle="90.0" textColor="#1F497D" verticalTextPosition="bottom" visible="true" width="77.611328125" x="4.0" y="4.0">service- og 
+dataplatform</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n231">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="103.0234929204355" width="41.75943905233049" x="-1949.7961030805848" y="-1339.6662457351176"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#808080" raised="false" type="dashed" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.341796875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" rotationAngle="90.0" textColor="#1F497D" verticalTextPosition="bottom" visible="true" width="34.638671875" x="4.0" y="4.0">email</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n232">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="103.02349292043596" width="41.75943905233049" x="-1882.1370990820976" y="-1339.666245735118"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#808080" raised="false" type="dashed" width="1.0"/>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Open Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.341796875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" rotationAngle="90.0" textColor="#1F497D" verticalTextPosition="bottom" visible="true" width="80.353515625" x="4.0" y="4.0">fælles løsning</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n233">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="103.02349292043596" width="41.75943905233049" x="-1814.4780950836102" y="-1339.666245735118"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#808080" raised="false" type="dashed" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="20.341796875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" rotationAngle="90.0" textColor="#1F497D" verticalTextPosition="bottom" visible="true" width="55.97265625" x="4.0" y="4.0">eDelivery</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
     <edge id="e0" source="n81" target="n84">
       <data key="d10">
         <y:PolyLineEdge>

@@ -5,6 +5,8 @@ cp ../figures/* figures/
 
 pandoc -o main.docx --data-dir=. main.md
 
+cp main.md ../releases/latest.docx
+
 echo "done with word"
 
 pandoc ../main.md -o main.tex
@@ -22,4 +24,4 @@ sed -i -e 's/.png/.pdf/g' main.tex
 echo "ready for latex"
 xelatex wrapper.tex
 
-open wrapper.pdf
+cp wrapper.pdf ../releases/latest.pdf
