@@ -57,8 +57,7 @@ EU-forordningen eIDAS (electronic IDentification, Authentication and trust Servi
 Lov om Digital Post
   ~ *lov* der gør det obligatorisk for virksomheder og borgere at modtage digitale meddelelser fra offentlige afsendere. [TODO: uddyb relevans]
 
-
-Og mere specifikke lovgivninger (som specificerer yderligere, fx inden for særlige sektorer...)
+Derudover er der en række mere specifikke love, der sætter rammer for datadeling i den offentlige forvaltning, fx inden for særlige sektorer eller domæner. Listen nedenfor inkluderer de væsentligste, men forsøger i øvrigt ikke på at være udtømmende.
 
 Sundhedslov
   ~ *lov* ....  (beskriv at negativt samtykke med GDPR ophæng) [TODO: uddyb relevans]
@@ -70,16 +69,20 @@ Forvaltningslov
     ~ *lov* .... [TODO: uddyb relevans]
 
 
-Referencearkitekturen skrives på baggrund af den fællesoffentlige digitaliseringsstrategi 2020 under initiativ 8.1 med tilslutning fra
+Referencearkitekturen skrives på baggrund af den Fællesoffentlige Digitaliseringsstrategi 2020 under initiativ 8.1 med tilslutning fra
 FM, UFM, EVM, SIM, JM, EFKM, MBUL, SÆM, SKM, MFVM, BM, KL og Danske Regioner. Heri beskrives referencearkitekturen således:
 
 > For at operationalisere, hvilke krav hvidbogen konkret stiller til initiativer og systemer udarbejdes en referencearkitektur for deling af data og dokumenter, der blandt andet beskriver fælles behovsmønstre og mønstre for teknisk understøttelse, herunder de forskelige roller, der skal afklares i initiativerne. Referencearkitekturen udpeger også eventuelle områder for eksisterende og nye fælles standarder og infrastruktur, som skal lette initiativernes implementering. Referencearkitekturen bliver således en generel ramme og støtte for alle initiativernes egen specifikke arkitektur.
 
-Uden for scope af denne referencearkitektur er:
+Scope for denne referencearkitektur er, som navnet angiver, selve delingen/videregivelsen af data (herunder dokumenter). Vi søger ikke at definere, hvordan data registreres, eller hvordan den aktør (fx en myndighed), der afsender eller modtager data, anvender disse i en konkret arbejdsgang. Processerne for registrering samt afsendelse og modtagelse af en meddelsese er dog summarisk beskrevet for at introducere begreber, der er relevante for at kunne tale om selve delingen/videregivelsen af data.
 
-- registrering og intern anvendelse af data hos dataejer
-- åbne data, der ikke kræver adgangskontrol (se issue #9)[TODO: Fjern/indlem.]
-- streaming af videodata og IoT-data (se issue #2)
+Specifikt er det uden for scope af denne referencearkitektur at definere:
+
+- Registrering og intern anvendelse af data hos den dataansvarlige myndighed
+- Konteksten for en aktørs behov for at forespørge på data, videregive data via en meddelelse eller modtage data via en meddelelse
+- Streaming af data (videodata, IoT-data m.m.)
+
+I forhold til streaming af data bemærkes det, at streaming løseligt kan beskrives som en seriel række af processen `videregivelse på forespørgsel`, som vi beskriver senere i dette dokument. Eventuelle, yderligere aspekter ved streaming, der kan være relevante at dykke ned i i referencearkitektursammenhæng, er ikke inkluderet i denne referencearkitektur, men må henvises til en specialiseret referencearkitektur for streaming af data.
 
 ## Centrale begreber
 Data, oplysninger og informationer er tæt relaterede begreber og deres umiddelbare forståelse er meget forskellig på tværs af forskellige faggrupper og praksisser.
