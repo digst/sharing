@@ -9,6 +9,11 @@ Version 0.4, november 2017. Til intern brug i KDA.
 
 **Version 0.5, december 2017. Til kommentering hos arbejdsgruppedeltagere og deres bagland**
 
+*Version 0.6, januar 2018. Til offentlig kommentering*
+
+*Version 1.0, marts 2018. Til vurdering hos Styregruppe for Data og Arkitektur*
+
+
 # Resume
 Hverdagen er digital, og data om borgere, virksomheder, myndigheder, ejendomme, steder, køretøjer m.m. vedligeholdes på en lang række områder af den offentlige administration. Der ligger et stort potentiale i at gøre sådanne data tilgængelige for genbrug, så de kan skabe værdi i flere sammenhænge og for andre. Deling af data er et fundament for langt bedre understøttelse af tværgående, offentlige services, og åbner for anvendelse af data i nye og innovative sammenhænge.
 
@@ -44,13 +49,10 @@ Referencearkitektur for deling af data og dokumenter understøtter design, udvik
 I et juridisk perspektiv er dette område reguleret af en lang række forordninger og love. De mest relevante specielt med hensyn til videregivelse af persondata er:
 
 EU-persondataforordningen (GDPR)
-  ~ *forordning* som beskriver pligter og rettigheder ved behandling af persondata [TODO: uddyb relevans. Nævn 'videregivelse']
+  ~ *forordning* som beskriver pligter og rettigheder ved behandling af persondata [TODO: uddyb relevans]
 
-Persondataloven
+Persondatalov
   ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata [TODO: uddyb relevans]
-
-Databeskyttelsesloven
-    ~ *lov* (pr. december 2017 under udarbejdelse) som beskriver pligter og rettigheder ved behandling af persondata, og som forventes at erstatte Persondataloven
 
 Med hensyn til digitalisering generelt er følgende love særligt relevante:
 
@@ -62,13 +64,13 @@ Lov om Digital Post
 
 Derudover er der en række mere specifikke love, der sætter rammer for datadeling i den offentlige forvaltning, fx inden for særlige sektorer eller domæner. Listen nedenfor inkluderer de væsentligste, men forsøger i øvrigt ikke på at være udtømmende.
 
-Sundhedsloven
+Sundhedslov
   ~ *lov* ....  (beskriv at negativt samtykke med GDPR ophæng) [TODO: uddyb relevans]
 
-Serviceloven
+Servicelov
   ~ *lov* .... [TODO: uddyb relevans]
 
-Forvaltningsloven
+Forvaltningslov
     ~ *lov* .... [TODO: uddyb relevans]
 
 
@@ -77,7 +79,7 @@ FM, UFM, EVM, SIM, JM, EFKM, MBUL, SÆM, SKM, MFVM, BM, KL og Danske Regioner. H
 
 > For at operationalisere, hvilke krav hvidbogen konkret stiller til initiativer og systemer udarbejdes en referencearkitektur for deling af data og dokumenter, der blandt andet beskriver fælles behovsmønstre og mønstre for teknisk understøttelse, herunder de forskelige roller, der skal afklares i initiativerne. Referencearkitekturen udpeger også eventuelle områder for eksisterende og nye fælles standarder og infrastruktur, som skal lette initiativernes implementering. Referencearkitekturen bliver således en generel ramme og støtte for alle initiativernes egen specifikke arkitektur.
 
-Scope for denne referencearkitektur er, som navnet angiver, selve delingen/videregivelsen af data (herunder dokumenter). Vi søger ikke at definere, hvordan data registreres, eller hvordan den aktør (fx en myndighed), der afsender eller modtager data, anvender disse i en konkret arbejdsgang. Processerne for registrering samt afsendelse og modtagelse af en meddelelse er dog summarisk beskrevet for at introducere begreber, der er relevante for at kunne tale om selve delingen/videregivelsen af data.
+Scope for denne referencearkitektur er, som navnet angiver, selve delingen/videregivelsen af data (herunder dokumenter). Vi søger ikke at definere, hvordan data registreres, eller hvordan den aktør (fx en myndighed), der afsender eller modtager data, anvender disse i en konkret arbejdsgang. Processerne for registrering samt afsendelse og modtagelse af en meddelsese er dog summarisk beskrevet for at introducere begreber, der er relevante for at kunne tale om selve delingen/videregivelsen af data.
 
 Specifikt er det uden for scope af denne referencearkitektur at definere:
 
@@ -291,7 +293,7 @@ og lovlige behandlinger hos offentlige myndigheder er:
 ## Aktører
 De væsentligste aktører, der er i spil omkring deling af data og dokumenter, er:
 
-- Offentlige myndigheder (herunder virksomheder, der handler på vegne af offentlige myndigheder)
+- Offentlige myndigheder (herunder virksomheder, der handler på vegne af offentlige myndigheder?)
 - Borgere
 - Virksomheder
 
@@ -417,7 +419,7 @@ forespørg om data
 vurder adgang
   ~ *procestrin* [todo: definition]
 
-`Dataansvarlig` myndighed vurderer i dette trin forespørgslen med henblik på at håndhæve adgangskontrol. Kun, hvis den medsendte hjemmel giver lovmæssig adgang til den forespurgte data, kan `dataansvarlig` gå videre med delingen. Hjemlen kan være eksplicit angivet eller ligge implicit i brugerstyringen. Hjemlen kan enten give generel adgang til en given `datasamling`, eller give adgang til specifik data i `samlingen`, hvorfor der i mange situationer vil være behov for at se på hjemlen og det efterspurgte data i sammnenhæng for at håndhæve adgangskontrollen. Et særligt aspekt i at vurdere adgang er håndhævelsen af 'negativt samtykke', hvor adgang til bestemte data er fjernet, fx fordi datas korrekthed er bragt i tvivl og skal undersøges. Dette procestrin kan i øvrigt benyttes af `dataansvarlig` til at håndhæve adgangskontrol også på andre planer som håndhævelse af en Service Level Agreement, beskyttelse mod misbrug, mistænkelig adfærd m.m. Det bemærkes endvidere, at `dataansvarlig` kan have overladt distributionsopgave og de praktiske opgaver for håndhævelse af adgangskontrollen til en `datadistributør`, hvilket i øvrigt ikke ændrer ved beskrivelsen af dette trin. Slutteligt bemærkes, at særlige typer af data ikke er belagt med nogen adgangsrestriktioner og dermed er frit tilgængelige (fx CVR-data).
+`Dataansvarlig` myndighed vurderer i dette trin forespørgslen med henblik på at håndhæve adgangskontrol. Kun, hvis den medsendte hjemmel giver lovmæssig adgang til den forespurgte data, kan `dataansvarlig` gå videre med delingen. Hjemlen kan være eksplicit angivet eller ligge implicit i brugerstyringen. Hjemlen kan enten give generel adgang til en given `datasamling`, eller give adgang til specifik data i `samlingen`, hvorfor der i mange situationer vil være behov for at se på hjemlen og det efterspurgte data i sammnenhæng for at håndhæve adgangskontrollen. Et særligt aspekt i at vurdere adgang er håndhævelsen af 'negativt samtykke', hvor adgang til bestemte data er fjernet, fx fordi datas korrekthed er bragt i tvivl og skal undersøges. Dette procestrin kan i øvrigt benyttes af `dataansvarlig` til at håndhæve adgangskontrol også på andre planer som håndhævelse af en Service Level Agreement, beskyttelse mod misbrug, mistænkelig adfærd m.m. Det bemærkes endvidere, at `dataansvarlig` kan have overladt distributionsopgave og de praktiske opgaver for håndhævelse af adgangskontrollen til en `datadistributør`, hvilket i øvrigt ikke ændrer ved beskrivelsen af dette trin.
 
 del data
   ~ *procestrin* hvor data videregives til andre
@@ -586,65 +588,116 @@ fuldmagt
 negativt samtykke (begrænsning i anvendelse)
   ~ *objekt* (GDPR)
 
+request
+    ~ *objekt* som sendes til dataservice med anmodning om vidergivelse af data.
+
+
+
 # Teknisk arkitektur
-Dette afsnit beskriver roller og implementeringsmønstre, der er relevante, når forretningsfunktionerne beskrevet ovenfor skal understøttes/realiseres af applikationer. Endvidere udpeges områder, der er kandidat til standardisering og/eller profilering i forbindelse med referencearkitekturen.
+Dette afsnit beskriver en række nødvendige applikationservice til understøttelse af de tværgående processer der er beskrevet tidligere. Udover de et basalt implementeringsmønstre, beskrives yderlige to mønstre for hver af processerne. Disse mere avancerede mønstre kræver nogle ekstra roller og applikationsservices, som vil blive introduceret løbende. Til sidst er der et overblik over mulige områder for standardisering og en oversigt over eksisterende standarder og specifikationer der allerede er i anvendelsen i den offentlige sektor.
 
 
-## Nødvendige applikationsroller
+## Nødvendige applikationservices
 De nødvendige og understøttende applikationsroller og deres indbyrdes relationer er vist i figuren nedenfor. Nødvendige roller udbyder det minimale sæt af services, der er i spil i en datadelingsarkitektur. Undersøttende roller udbyder services, der i mange situationer vil være fordelagtige at implementere for at øge tilgængelighed, performance, brugervenlighed m.m. i en given datadelingsløsning.
 
 ![Oversigt over nødvendige applikationsroller til understøttelse af vidergivelse af data, både på forespørgsel og ved meddelelse](figures/applikationsroller-minimum.png)
 
-[TODO: Fold beskrivelser ud pr. operation (Overvej at la'vær!. Kan vi slette operationerne og beskrive dem senere?)]
-
 
 datasamling
-  ~ *applikationsrolle* som har autoritative? oplysninger til et bestemt formål
-
-Når datasamlingen udgøres af dokumenter kaldes den nogle gange et repository, ellers kaldes den også et register. Samlinger kan have temporale og bitemporale egenskaber. Dette handler blandt andet om at holde styr på datas gyldighedsperiode og registreringstidspunkt for fx at kunne understøtte dobbelt historik (overblik både over, hvad der var korrekt på en given dato, og hvad registeret på et givent tidspunkt troede var korrekt på samme tidspunkt).
-
-
+  ~ *applikationsservice* som har til opgave at opbevare data registeret til et specifikt formål
 
 forsendelse
-  ~ *applikationsrolle* der kan afsende, modtage og distribuere meddelelser
-
-
+  ~ *applikationsservice* der kan afsende, modtage og distribuere meddelelser
 
 log (adgangslog? anvendelseslog?)
-    ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger ændringer og anvendelser af oplysninger fra datasamlinger.
-
+  ~ *applikationsservice* en slags datasamling, der indeholder oplysninger om ændringer, videregivelsr og anvendelser af oplysninger fra datasamlinger.
 
 brugerstyring
-      ~ *applikationsrolle* der anvendes til identifikation af brugere
+  ~ *applikationsservice* der anvendes til identifikation af brugere (j.f. Referencearkitektur for brugerstyring 2017)
+
+
+### Datasamling
+
+Når datasamlingen udgøres af dokumenter kaldes den nogle gange et repository, ellers kaldes den også et register. (Data Record Management)
+
+Datasamlinger er kendetegnet ved:
+
+
+#### Identificeret og dokumenteret
+Datasamlingen er registreret som Information Asset (j.f. ISO 27000). Dække Formålet med indsamlingen og kategorier af personoplysninger.
+
+
+
+#### 'Forvaltningsegnede'
+Indeholde data om den kontekst de er registreret i, så anvender kan vurdere tilliden til dem.
+
+Samlinger kan have temporale og bitemporale egenskaber. Dette handler blandt andet om at holde styr på datas gyldighedsperiode og registreringstidspunkt for fx at kunne understøtte dobbelt historik (overblik både over, hvad der var korrekt på en given dato, og hvad registeret på et givent tidspunkt troede var korrekt på samme tidspunkt).
+(Sag og Dokument taler om virkning og registrering)
+
+#### Beskyttet
+ på basis af adgangspolitik bestemt af dataansvarlige. Adgangskontrol er en funktion af identitet og attributter, herunder retttigheder og roller. Husk at det skal være effektivt for anvender, så anvende eksisterende trusted attributes i andre samlinger hvor muligt...
+
+#### Robust
+'overforbrug' sikre sig mod 'over-forbrug'. Rimelig brug er beskrevet i aftaler. (eller er det generelt for alle services...?)
+
+
+### Forsendelse
+Kan ofte bruges til både at sende og modtage, men findes også i andre konfigurationer. Fx 'skriv til os' hjemmesider. Kaldes også en MEssaging Services i ERIA og elektroniske leveringstjeneste i eIDAS.
+
+
+#### Identifikation af afsender og modtager
+Ved brug af elektronisk signature eller id.
+
+#### Integritet
+ændringer kan spores. tidstempler er kvalificerede.
+
+####  Sporbar
+tidspunkter for afsendelse og modtagelse.
+
+#### Kvalificeret tjenesteudbyder
+
+
+### Log
+(Logging Service hos EIRA)
+
+#### "Indsigtsret"
+hvor de stammer fra, vidergivelser (og deres hjemmel), retskilde?
+
+#### integritet
+At den ikke kan ændres/forfalskes.
+
+#### beskyttet
+Indeholder personoplysninger og andre følsomme.
+
+
+### Brugerstyring
+Som beskrevet i referencearkitektur for brugerstyring
+
+Særligt i forbindelse med identifikationer af afsender og modtager ved Forsendelse samt ved forespørgsel, men også "indsigt" (hvis der vælges servicesspecifikke id'er skal der laves en identitets-mapper... forudsætning for brugercentrisk indsigt)
 
 
 
 
 
 
-
-
-## Tekniske Implementeringer
-Her grupperes de enkelte forretningsroller og applikationsroller i forskellige implementeringsmønstre.
-
-
-### Anvendelse af udstillede data
+## Implementationsmønstre for vidergivelse ved forespørgsel
 
 Når en `databehandler` (virksomhed eller myndighed) vil have adgang til data hos en dataansvarlig myndighed, kan det ske via ét af nedenstående tre mønstre:
 
 [TODO: Overvej samtykker ift. Virksomhed>]: x
 [TODO: Overvej Hændelser>]: x
 
-#### Direkte adgang
+### Direkte adgang
 ![Implementeringsmønster med direkte adgang til registre](figures/use-direct.png)
 
 I dette mønster, som er simpelt og måske det mest klassiske, er det `dataansvarlig`, der selv udstiller data til de mulige anvendere via en service-orienteret arkitektur. `Dataansvarlig` er også ansvarlig for at betjene `datasubjektets` forespørgsler om `datansvarligs` brug af personlige data.
 
-Fordelen ved dette mønster er, at det er simpelt. Ulempen er, at `dataansvarlig` kommer til at bære hele udgiften ved at stille data bredt til rådighed.
+Fordelen ved dette mønster er, at det er simpelt. Ulempen er, at `dataansvarlig` kommer til at bære hele udgiften ved at stille data bredt til rådighed. og Den registrerede kan ikke få et samlet overblik.
 
-[tilføj portal]
 
-#### Datadistribution
+
+
+### Datadistribution
 ![Implementeringsmønster for datadistribution](figures/use-dist.png)
 
 I dette mønster er `dataansvarlig` fortsat ansvarlig for at tilbyde en service til registrering af data. Anvendelsesdelen er imidlertid afløftet til en `datadistributør` (evt. flere). Dette giver `datadistributøren` mulighed for at fokusere netop på distributionen, dvs. at gøre data bredt tilgængeligt (dog naturligvis under håndhævelse af adgangskrav specificeret af `dataejer`) til `dataanvendere`.
@@ -658,7 +711,24 @@ Logningsmæssigt er den enkelte `distributør` ansvarlig for at logge `dataanven
 [TODO: Tilføj portal] [TODO: Uddyb 'opdater' - delta eller fuld kopi; nævn kopi hos anvender som anti-pattern] [TODO: Overvej om konsolider kan skiftes ud med send/distribuer?]
 [TODO: Beskriv anvender-centrisk vs dataansvarlig fokus for distributør]
 
-#### Fælles, distribueret service- og data-platform
+Her introduceres:
+
+distributør
+  ~ *foretningsrolle* der distribuerer data på vegne af en dataansvarlig
+
+dataservice
+  ~ *applikationsservice* som har til opgave at opbevare data registeret til et specifikt formål
+
+dataservice/kopi/
+  ~ *applikationsrolle* som har til ansvar at udstille en kopi af `datasamling`, og begrænse adgangen til den om nødvendigt. Og logge.
+
+indeks
+  ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger om, hvilke datasamlinger der indeholder oplysninger om personer, virksomheder og andre forvaltningsobjekter. Et Indeks har typisk til formål at effektivise søgning og fremfinding. Forklar seperat ansvar som er andet end datasamlingens.
+
+
+
+
+### Fælles, distribueret service- og data-platform
 ![Implementeringsmønster for distribueret dataplatform](figures/use-plat.png)
 
 Delingsansvaret er i dette mønster i høj grad håndteret af en `dataplatform`. Platformen er distribueret og er i stand til at replikere data på tværs af `dataansvarlige`og `dataanvendere`. Dvs., at data, der registreres via en `dataansvarlig` myndighed, gøres tilgængelige for andre, dataanvendende myndigheder via platformen.
@@ -671,21 +741,31 @@ Fordelen ved dette mønster er den umiddelbare og standardiserede tilgænglighed
 
 *(Uafklaret: Skal Dataanvenders applikationer/services have direkte adgang til distribuerede data, eller skal adgang fortsat ske via et servicesnit, der kan varetage adgangskontol m.m.? Tracket i issue 7.)*
 
+[TODO: Tilføj portal på tegning]
+
+Her introduceres:
+
+portal
+  ~ *applikationsservice* og selvbetjeningsløsning der lader den registrede have indsigt i datanvendelse mm
+
+platform (serviceprovider?)
+  ~ *foretningsrolle* der forvalter en fælles platform på vegne af flere aktører.
+
 [TODO: Opsæt en sidestillet vurdering af mønstre, med fordele/ulemper listet i samme tabel]: x
 
-### Registreret forsendelse
+## Registreret forsendelse
 
 Når en myndighed vil initiere en specifik og målrettet datadeling - dvs. sende data (herunder dokumenter) til en anden myndighed, virksomhed eller borger - kan det ske via ét af de tre nedenstående mønstre.
 
 
-#### Sikker e-mail
+### Sikker e-mail
 ![Implementeringsmønster for Sikker e-mail](figures/send-email.png)
 
 Et meget anvendt mønster for myndighed til myndighed-kommunikation er at levere en `meddelelse` fra `afsender` til `modtager` gennem `forsendelse` brug af sikker e-mail. Ud over at påpege, at `distributionen` her sker via en sikker og krypteret forbindelse, faldet detr uden for dette dokuments scope at beskrive dette mønster yderligere. Det er dog medtaget for reference pga. dets brede anvendelse. Det er endvidere oplagt at betragte dette mønster som et særtilfælde af det generelle 'Service provider'-mønster nedenfor.
 
 Fordelen ved dette mønster er, at det er simpelt og benytter sig af standardteknologi. Ulempen er, at det kun dækker myndighed til myndighed-kommunikation. Derudover sætter standardteknologien (e-mail) visse begrænsninger for funktionalitet, der fx understøtter `fordeling`(automatisk routing) af beskeder hos modtagende virksomhed/myndighed i det tilfælde, hvor `meddelelsen` ikke har én specifik `modtager`.
 
-#### Fælles system
+### Fælles system
 ![Implementeringsmønster for fælles system](figures/send-shared.png)
 
 [Bør modtag hedde hent/læs?]
@@ -698,7 +778,23 @@ TIl forskel fra Sikker e-mail-mønsteret ovenfor er Fælles system-mønsteret me
 
 Et Fælles system-mønster kan fungere på mange niveauer, herunder nationalt (fx Digital Post); inden for et specifikt domæne, fx på sundhedsområdet; eller rent bilateralt, hvor to organisationer enes om dette mønster og vælger en passende meddelelsesplatform.
 
-#### Økosystem/Service providers
+Her introduceres:
+
+adresse til forsendelse
+  ~ *applikationsrolle* en slags datasamling (fx et kontaktregister), der indeholder oplysninger til brug ved adressering af meddelelser
+
+ (Capability Lookup og Service Discovery, EIRA)
+
+notifikation
+  ~ *applikationsrolle* der udsender notifikationer/påmindelser.
+
+(Messaging Service, EIRA, men begrænset) usikker...
+
+[TODO: Erstat postkasse med forsendelse]
+
+
+
+### Økosystem/Service providers
 ![Implementeringsmønster for økosystem](figures/send-eco.png)
 
 [Bør modtag hedde hent/læs?]
@@ -711,47 +807,126 @@ Mønsteret vil typisk være symmetrisk, således at en `afsender` også kan indg
 
 Fordelene ved Økosystem-mønsteret er, at det er robust, fleksibelt og løbende kan udvides med nye `Service providers`. Ulempen er, at der stilles store krav til det centrale `adresseregister`, samt at der fortsat ikke findes standardteknologier, der dækker mønsteret.
 
+
+
 [TODO: Opsæt en sidestillet vurdering af mønstre, med fordele/ulemper listet i samme tabel]: x
 
-### Registrering
-
-Registrering af data er ikke i scope for denne referencearkitektur, men medtages kort pga. sin væsentlige relation til Indeks-konceptet.
-
-_Opdateres._
-
-Ansvar hos registrant
-  ~ *implementationsmønster*
-
-Ansvar hos dataejer
-  ~ *implementationsmønster*
-
-Ansvar hos distributør
-  ~ *implementationsmønster*
+[TODO: Afklar hvem der har ansvar for adresse]
 
 
-## Integrationer (operationer?)
+## Snitflader og områder for standardisering
+
+![Oversigt over alle applikationsservices og deres udstillede snitflader](figures/applikationsroller.png)
+
 I de ovenstående implementeringsmønstre for hhv. Anvendelse af udstillede data og Registreret forsendelse indgår der en lang række relationer mellem de beskrevne elementer. Relationerne dækker i praksis over integrationer mellem to applikationer. Nedenfor opridser vi de relationer, der er væsentlige for denne referencearkitektur. Alle relationer er ikke relevante i vores kontekst - men sagt populært, hvis der "står noget på en linje mellem to kasser", er de mest fremtrædende karakteristika og kendetegn ved den underliggende integration beskrevet nedenfor:
 
 Generelle egenskaber:
 
   - beskyttet mod DDOS (Check med REST arbejdsgruppe)
   - identificer anvender og dennes kontekst og hjemmel (genkende, godkende) effektiv adgangspolitik; attributer, roller og overvågning
+  - Selvdokumenterende? og på flere sprog
 
 _Integrationsbeskrivelser opdateres._
 
-skriv
-  ~ *integrationstype* der lader en aktør skrive til en `samling` (herunder `log` og `index`) hos en anden aktør
 
+
+### Datasamling
+
+#### hent
+opslag på kendte id'er....
+
+- **DK-REST** under udvikling. Særligt omkring GET
+
+#### søg
+begrænset til indhold af en samling
+
+- **DK-REST** under udvikling. Særligt omkring GET
+
+
+#### skriv
+Nævnt fordi...   - logger nok til at anvender kan vurdere konteksten hvor det er dannet - God ide at den er idempotent (Flyt to numre ned af vejen...) (R06) - Overveje hvad der sker når flere skriver samtidigt... - Noget med 'dead lock' - tillade 'blød' validering
 Beskyttes mod autoriseret ændring (ISO)
 
-  Særlige hensyn/overvejelser:
+- **DK-REST** under udvikling. Særligt omkring PUT/POST
 
-  - tillade 'blød' validering
-  - logger nok til at anvender kan vurdere konteksten hvor det er dannet
-  - behøves måske ikke at indeholde hjemmel, da pligten følger dataansvarlig og samlingen.
-  - God ide at den er idempotent (Flyt to numre ned af vejen...) (R06)
-  - Overveje hvad der sker når flere skriver samtidigt...
-  - Noget med 'dead lock'
+
+### Log
+
+#### skriv
+
+#### søg
+husk at det er en brugervendt søgning...
+
+#### opdater/konsolider
+
+
+### Forsendelse
+
+#### send
+
+- SMTP
+
+#### hent
+
+- IMAP
+- POP3
+
+#### distribuer
+
+- AS2/4
+
+#### notificer
+
+- SMS
+- App notification infrastructures
+
+
+### Adresse
+
+#### hent
+opslag på kendte id'er....
+
+
+### Dataservice
+
+#### søg
+på tværs af samlinger
+
+- **Linked Data** under udvikling. Særligt omkring GET
+
+#### abonnement
+
+### Distributionskopi
+
+#### opdater
+
+#### læs
+bruges direkte af dataservice
+
+- **SQL**
+
+### Indeks
+
+#### opdater
+
+#### hent
+
+### Referencedata
+
+### Notifikation
+
+
+### Katalog
+
+#### opdater
+
+
+
+
+
+
+
+---------------
 
   Særligt for `log`?
 
@@ -813,7 +988,7 @@ modtag notifikation
   SMS vs App notifikation
 
 
-## Områder for standardisering/profileringer
+ Områder for standardisering/profileringer
 Nedenstående, tekniske områder er kandidater til at indgå i referencearkitekturen i forhold til at pege på en anbefalet standard eller en særlig profilering, evt. vendt mod de enkelte, tekniske mønstre.
 
 [TODO: Udbyg liste over områder til standardisering, jf. issue #40 Begrund opdeling/sammenlægning]
@@ -845,15 +1020,17 @@ Tekniske standarder og specifikationer
 - søg i samling
 - søg i log
 - distribution meddelelsen (incl konsolidering af log)
-- opdater (vedligehold kopi hos dataservice/distributør)
+- opdater (vedligehold kopi hos dataservice/distributør) (DLS hos datafordeler)
 - læs (rå adgang til samling fra dataservice)
 - modtag notifikation
 
 - Kryptografi (hvilke cifre... skal baseres på tredjeparts vurdering)
+- URI  (overvej noget som subdomæner) (multitiere, decentral)
+- Dokumentation af services (openapi)
 
 [TODO: Overvej, om denne liste skal bygges op som LOST?]: x
 
-## Identifikation af eksisterende standarder
+ Identifikation af eksisterende standarder
 
 [TODO: Bliver udfyldt i forbindelse med review hos arbejdsgruppen]
 Datasamling --- skriv --> Indeks
@@ -877,8 +1054,6 @@ Datasamling --- skriv --> Indeks
   (Record Management i EIRA)
 
 
-  dataservice/kopi/
-    ~ *applikationsrolle* som har til ansvar at udstille en kopi af `datasamling`, og begrænse adgangen til den om nødvendigt. Og logge.
 
   * hent ~ *applikationsservice* der tillader anvendere at hente elementer i samling med kendte id'er (husk reference til skriv mht ret og begræns) (men kan sammenstille på tværs af samlinger) (hent er ofte specialiseret til en konkret anvendelse og ikke så tæt på datasamlingen) (TODO: udvide med streaming som variant se #2)
 
@@ -912,10 +1087,6 @@ Datasamling --- skriv --> Indeks
   (Messaging og Registered Electronic Delivery, EIRA)
 
 
-  adresse til forsendelse
-    ~ *applikationsrolle* en slags datasamling (fx et kontaktregister), der indeholder oplysninger til brug ved adressering af meddelelser
-
-   (Capability Lookup og Service Discovery, EIRA)
 
   * hent ~ *applikationsservice* der tillade afsendere af meddelelser at hente hvilke meddelelser en modtager kan læse... og lader en serviceprovider finde ud af hvor meddelelsen skal hen.
 
