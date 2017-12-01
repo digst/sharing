@@ -641,6 +641,7 @@ Samlinger kan have temporale og bitemporale egenskaber. Dette handler blandt and
 'overforbrug' sikre sig mod 'over-forbrug'. Rimelig brug er beskrevet i aftaler. (eller er det generelt for alle services...?)
 
 
+
 ### Forsendelse
 Kan ofte bruges til både at sende og modtage, men findes også i andre konfigurationer. Fx 'skriv til os' hjemmesider. Kaldes også en MEssaging Services i ERIA og elektroniske leveringstjeneste i eIDAS.
 
@@ -684,9 +685,6 @@ Særligt i forbindelse med identifikationer af afsender og modtager ved Forsende
 
 Når en `databehandler` (virksomhed eller myndighed) vil have adgang til data hos en dataansvarlig myndighed, kan det ske via ét af nedenstående tre mønstre:
 
-[TODO: Overvej samtykker ift. Virksomhed>]: x
-[TODO: Overvej Hændelser>]: x
-
 ### Direkte adgang
 ![Implementeringsmønster med direkte adgang til registre](figures/use-direct.png)
 
@@ -715,6 +713,15 @@ Her introduceres:
 
 distributør
   ~ *foretningsrolle* der distribuerer data på vegne af en dataansvarlig
+
+For en `datanasvarlig` med enkelte og hyppigt anvendte `datasamlinger` vil det være en forholdsmæssig stor opgave at vedligeholde en adgangsservice og der kan være betydelige fordele ved at løfte opgaven på tværs af
+
+
+data leverence specifikation
+  ~ *aftale* der distribuerer data på vegne af en dataansvarlig
+
+
+
 
 dataservice
   ~ *applikationsservice* som har til opgave at opbevare data registeret til et specifikt formål
@@ -832,10 +839,23 @@ _Integrationsbeskrivelser opdateres._
 
 ### Datasamling
 
+(Data record management i EIRA)
+
 #### hent
 opslag på kendte id'er....
 
+- overvej at give 'actions (fx ret)' med
+- overvej granuklaritet (hvor meget sammenstilling) og performance (hent detaljer)
+- overvej generalitet (hvor målrettet er services)
+- inside/outside perspektiv
+- Overvej at tillade fejl, med gøre dem tydelige
+- Afstemme aktualitet med foretningsbeslutninger (cost issue)
+
+
 - **DK-REST** under udvikling. Særligt omkring GET
+- Modelregler
+
+Forskellige payload typer (`record`, `indexrecord`?, `logrecord`, `adresse-record` `document`)
 
 #### søg
 begrænset til indhold af en samling
@@ -844,8 +864,7 @@ begrænset til indhold af en samling
 
 
 #### skriv
-Nævnt fordi...   - logger nok til at anvender kan vurdere konteksten hvor det er dannet - God ide at den er idempotent (Flyt to numre ned af vejen...) (R06) - Overveje hvad der sker når flere skriver samtidigt... - Noget med 'dead lock' - tillade 'blød' validering
-Beskyttes mod autoriseret ændring (ISO)
+Nævnt fordi...   - gemmer nok til at anvender kan vurdere registreringskonteksten hvor det er dannet
 
 - **DK-REST** under udvikling. Særligt omkring PUT/POST
 
@@ -853,6 +872,10 @@ Beskyttes mod autoriseret ændring (ISO)
 ### Log
 
 #### skriv
+
+der gør det muligt at registrere oplysninger. Kræver oftest adgangskontrol og logning. (Ret er en særlig udgave) (Begræns anvendelse er en særlig udgave)
+
+
 
 #### søg
 husk at det er en brugervendt søgning...
@@ -862,18 +885,28 @@ husk at det er en brugervendt søgning...
 
 ### Forsendelse
 
-#### send
+#### send meddelelse
 
 - SMTP
+- Internet Message Format (IMF/email)
+- Hændelsesbesked
 
-#### hent
+#### hent meddelelse
+modtag meddelelse en hent integrationstype, måske sletter...
 
 - IMAP
 - POP3
 
+
+
 #### distribuer
+en `skriv` integrationstype, som også giver uafviselighed, beskyttet, payload/header
 
 - AS2/4
+
+og payload
+
+- Digital Post 3 Message Model
 
 #### notificer
 
@@ -885,10 +918,12 @@ husk at det er en brugervendt søgning...
 
 #### hent
 opslag på kendte id'er....
+SML/SMP
 
+- DNS MX Record
 
 ### Dataservice
-
+(Data Publication Service i EIRA)
 #### søg
 på tværs af samlinger
 
@@ -896,9 +931,17 @@ på tværs af samlinger
 
 #### abonnement
 
+- Serviceplatform
+- Datafordeler
+
 ### Distributionskopi
 
 #### opdater
+Særlige hensyn/overvejelser:
+- Delta, Full
+- Event driven (near real time), Time driven (batch)
+- Afstemme opdateringshastighed med foretningsbeslutninger
+- Data leverance specifikation hos datafordeler
 
 #### læs
 bruges direkte af dataservice
@@ -906,8 +949,13 @@ bruges direkte af dataservice
 - **SQL**
 
 ### Indeks
+en slags datasamling, der indeholder oplysninger om, hvilke datasamlinger der indeholder oplysninger om personer, virksomheder og andre forvaltningsobjekter. Et Indeks har typisk til formål at effektivise søgning og fremfinding
 
 #### opdater
+nok attributter til effektiv fremsøgning
+(aka IHE ITI-42)
+-   foreslår: ebRIM, ebRS, HL7V2
+
 
 #### hent
 
@@ -915,81 +963,17 @@ bruges direkte af dataservice
 
 ### Notifikation
 
+#### send påmindelse (om ny meddelelse)
+måske garanteret levering, men ingen kvittering?
+
+- SMS
+- App notifikation
 
 ### Katalog
+en slags datasamling der typisk på design-tidspunktet. Der findes kataloger over mange ting: Services, datasæt, systemer, datamodeller, dokumenttyper, klassifikationer m.m.
 
 #### opdater
 
-
-
-
-
-
-
----------------
-
-  Særligt for `log`?
-
-  - Er der validering (en halv loglinje?) (en del af audit?)
-
-  Særligt for `index`?
-  - nok attributter til effektiv fremsøgning
-
-hent
-  ~ *integrationstype* der lader en aktør hente data via en kendt identifikator (`record`, `indexrecord`?, `logrecord`, `adresse-record` `document`) hos en anden aktør.
-
-
-
-
-
-Særlige hensyn:
-
-  - overvej at give 'actions (fx ret)' med
-  - overvej granuklaritet (hvor meget sammenstilling) og performance (hent detaljer)
-  - overvej generalitet (hvor målrettet er services)
-  - inside/outside perspektiv
-  - Overvej at tillade fejl, med gøre dem tydelige
-  - Afstemme aktualitet med foretningsbeslutninger (cost issue)
-
-  Særligt for `adresse`:
-
-  - noget med DNS... SML/SMP (som eDelivery)
-
-
-søg
-    ~ *integrationstype* der lader en aktør fremsøge data (`record`, `indexrecord`?, `logrecord`, `adresse-record` `document`) hos en anden aktør.
-
-
-  Særligt for `index`:?
-
-opdater
-  ~ *integrationstype* der lader dataansvarlig vedligeholde en kopi af en samling hos en datadistributør
-
-  Særlige hensyn/overvejelser:
-  - Delta, Full
-  - Event driven (near real time), Time driven (batch)
-  - Afstemme opdateringshastighed med foretningsbeslutninger
-
-[Bør skrivindex være opdater, ja!]
-
-
-læs
-  ~ *integrationstype* der lader en service tilgå hele samlinger?
-
-distribution
-  ~ en `skriv` integrationstype, som også giver uafviselighed, beskyttet, payload/header
-
-modtag meddelelse
-  ~ en `opslag` integrationstype, måske sletter...
-
-modtag notifikation
-  ~ en `modtag` integrationstype, måske garanteret levering, men ingen kvittering?
-
-  SMS vs App notifikation
-
-
- Områder for standardisering/profileringer
-Nedenstående, tekniske områder er kandidater til at indgå i referencearkitekturen i forhold til at pege på en anbefalet standard eller en særlig profilering, evt. vendt mod de enkelte, tekniske mønstre.
 
 [TODO: Udbyg liste over områder til standardisering, jf. issue #40 Begrund opdeling/sammenlægning]
 
@@ -998,8 +982,6 @@ Organisatoriske standarder og aftaler
 - Aftale om systemtilslutning
 - Databehandleraftaler
 - Samtykke til vidergivelse af personoplysninger
-
-
 
 Semantiske standarder og begrebsmodeller
 
@@ -1013,112 +995,6 @@ Semantiske standarder og begrebsmodeller
 
 Tekniske standarder og specifikationer
 
-- skriv til samling
-- skriv til log
-- skriv til index
-- hent (incl adresse)
-- søg i samling
-- søg i log
-- distribution meddelelsen (incl konsolidering af log)
-- opdater (vedligehold kopi hos dataservice/distributør) (DLS hos datafordeler)
-- læs (rå adgang til samling fra dataservice)
-- modtag notifikation
-
 - Kryptografi (hvilke cifre... skal baseres på tredjeparts vurdering)
 - URI  (overvej noget som subdomæner) (multitiere, decentral)
 - Dokumentation af services (openapi)
-
-[TODO: Overvej, om denne liste skal bygges op som LOST?]: x
-
- Identifikation af eksisterende standarder
-
-[TODO: Bliver udfyldt i forbindelse med review hos arbejdsgruppen]
-Datasamling --- skriv --> Indeks
-  (aka IHE ITI-42) foreslår: ebRIM, ebRS, HL7V2
-
-
-  ----------
-
-
-
-
-
-
-
-  * skriv ~ *applikationsservice* der gør det muligt at registrere oplysninger. Kræver oftest adgangskontrol og logning. (Ret er en særlig udgave) (Begræns anvendelse er en særlig udgave)
-
-  * hent ~ *applikationsservice* der tillader anvendere at hente elementer i samling med kendte id'er
-
-  * søg ~ *applikationsservice* der tillader anvendere at søge i elementer udfra kritierier (eventuelt sammenstille med andre data)
-
-  (Record Management i EIRA)
-
-
-
-  * hent ~ *applikationsservice* der tillader anvendere at hente elementer i samling med kendte id'er (husk reference til skriv mht ret og begræns) (men kan sammenstille på tværs af samlinger) (hent er ofte specialiseret til en konkret anvendelse og ikke så tæt på datasamlingen) (TODO: udvide med streaming som variant se #2)
-
-  * søg ~ *applikationsservice* der tillader anvendere at søge i elementer _på tværs af forskellige samlinger_ udfra kritierier (eventuelt sammenstille med andre data)
-
-  * abonner ~ *applikationsservice* der tillader anvendere opsætte abonnementer så de får notifikation. Kan være simple (alle eller topics) eller baseret på datasamlinger (der så skal opbevares som kopi hos servicen)
-
-  Obs... ikke skriv.
-  (Data Publication i EIRA)
-
-  log (adgangslog? anvendelseslog?)
-    ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger ændringer og anvendelser af oplysninger fra datasamlinger.
-
-  * skriv ~ *applikationsservice* der lader  andre services skrive oplysninger. Bør sikre hvem der skriver.
-
-  * søg ~ *applikationsservice* der tillader anvendere at søge i elementer _på tværs af forskellige samlinger_ udfra kritierier.
-
-  (Logging, EIRA)
-
-  [todo: tilføje aftale komponent]
-
-  forsendelse
-    ~ *applikationsrolle* der kan modtage og distribuere meddelelser
-
-  * send ~ *applikationsservice* der lader afsender slippe af med meddelelser. Kvitteringer?
-
-  * modtag ~ *applikationsservice* der flytter post ind til modtageren
-
-  * distribuer ~ *applikationsservice* der flytter meddelelser mellem to
-
-  (Messaging og Registered Electronic Delivery, EIRA)
-
-
-
-  * hent ~ *applikationsservice* der tillade afsendere af meddelelser at hente hvilke meddelelser en modtager kan læse... og lader en serviceprovider finde ud af hvor meddelelsen skal hen.
-
-  * skriv ~ *applikationsservice* der lader afsendere (eller deres serviceprovider) registrere hvilke meddelelser der kan modtages hvor.
-
-  akkreditativ (Brugerstyring?)
-    ~ *applikationsrolle* der anvendes til identifikation af brugere
-
-  * genkend ~ *applikationsservice* der lader  andre services sikre identiteten af anvender (oversætte til kendt id, der kan bruges i adgangskontrol)
-
-  (Identity Management og Access Management, EIRA)
-
-  katalog
-    ~ *applikationsrolle* en slags datasamling, der beskriver en given `datasamling`. Anvendes typisk på design-tidspunktet. Der findes kataloger over mange ting: Services, datasæt, systemer, datamodeller, dokumenttyper, klassifikationer m.m.
-
-  indeks
-    ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger om, hvilke datasamlinger der indeholder oplysninger om personer, virksomheder og andre forvaltningsobjekter. Et Indeks har typisk til formål at effektivise søgning og fremfinding
-
-  værdisæt
-    ~ *applikationsrolle* en slags datasamling, der indeholder oplysninger om tilladte værdier i samlinger og meddelelser. Og mapninger i mellem forskellige 'sprog'
-
-  kopi af datasamling
-    ~ *applikationsrolle* en datasamling, som er en direkte kopi af den `dataansvarliges` autoritære datasamling
-
-    [TODO: Vi skal vælge hvor abonnement står. Er det fordi vi mangler noget om at sammenstille datasamlinger?]
-  Den kan have en abonnementsservice, så `anvender` kan abonnere på ændringer i datasamlinger.
-
-  (Data Publication Service i EIRA)
-
-  Notifikation
-    ~ *applikationsrolle* der udsender notifikationer/påmindelser.
-
-  * send ~ *applikationsservice* der lader  andre services sende påmindelser (notifikationer?) til modtagere.
-
-  (Messaging, EIRA)
