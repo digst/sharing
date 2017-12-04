@@ -977,10 +977,40 @@ en slags datasamling der typisk på design-tidspunktet. Der findes kataloger ove
 
 [TODO: Udbyg liste over områder til standardisering, jf. issue #40 Begrund opdeling/sammenlægning]
 
+
+Integration
+
+| Anvender | Snitflade | Udstiller | Specifikationer | Vejledninger
+|---------|-----------|-----------|-----|-----
+| registrant     | skriv       | datasamling                      |          | Indberetning?
+| dataanvender   | hent        | datasamling, dataservice, index  |  DK-REST |
+| dataanvender   | hent        | index  |  ebRIM, ebRS, HL7v2 |
+| dataanvender   | søg         | datasamling, dataservice         |  DK-REST |
+| den registrede | søg, hent   | log         |   | Selvbetjening
+| datasamling    | skriv       | log         |   | GDPR?
+| datasamling    | opdater     | index       |  HL7v2 | Deling (sundhed)
+| datasamling    | opdater     | kopi        |  FTP(s?) |
+| log            | opdater     | log         |  FTP(s?) |
+| dataservice    | læs         | samling, kopi | SQL |
+| afsender       | send        | forsendelse | SMTP |
+| modtager       | modtag      | forsendelse | POP3 |
+| modtager       | modtag      | forsendelse | IMAP |
+| notifikation   | send        | modtager    | SMS  |
+| afsender       | hent        | adresse     | LDAP  |
+| afsender       | hent        | adresse     | SML, SMP |
+| forsendelse    | hent        | adresse     | SML, SMP |
+| forsendelse    | distr. | forsendelse | SMTP | -
+| forsendelse    | distr. | forsendelse | AS/4 | -
+
+
+
+# Rest 
+
+
 Organisatoriske standarder og aftaler
 
 - Aftale om systemtilslutning
-- Databehandleraftaler
+ Databehandleraftaler
 - Samtykke til vidergivelse af personoplysninger
 
 Semantiske standarder og begrebsmodeller
