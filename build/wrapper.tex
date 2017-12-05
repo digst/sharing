@@ -17,8 +17,8 @@
 \usepackage{xcolor}
 \definecolor{blue}{HTML}{1F497D}
 \definecolor{warmgrey}{HTML}{F9F8F2}
-\definecolor{darkblue}{RGB}{3,29,92}
-
+\definecolor{darkblue}{RGB}{3,29,92} % graf farve / FM
+\definecolor{darkred}{RGB}{148,0,39} % graf farve / FM
 
 
 \usepackage{longtable, booktabs}
@@ -65,7 +65,7 @@
 
 % tt
 \let\OldTexttt\texttt
-\renewcommand{\texttt}[1]{\OldTexttt{\color{darkblue}{#1}}}
+\renewcommand{\texttt}[1]{\OldTexttt{\color{black}{#1}}}
 
 % figur
 \usepackage{graphicx, grffile}
@@ -122,7 +122,7 @@
 \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 \usepackage{enumitem}
-\setlist[description]{font={\sffamily\mdseries\color{blue}}}
+\setlist[description]{font={\sffamily\bfseries\color{darkred}}}
 
 \usepackage{titlesec}
 \newcommand{\sectionbreak}{\clearpage}
