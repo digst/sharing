@@ -102,30 +102,25 @@ Vi vil i denne referencearkitektur holde os fra at komme med en længere, fænom
 ### Data og dokumenter
 ![Figuren beskriver begrebet **data**, som det anvendes i denne referencearkitektur. Væsentligst er, at data indgår i samlinger, samt at de - evt. i form af et dokument - kan videregives i en meddelelse.](figures/abstraktion.png)
 
-Figuren viser de centrale begreber i denne referencearkitektur, hvor `data` ikke overraskende ligger centralt. Vi vil dog ikke introducere en specifik og isoleret definition af `data` - vi regner med, at læseren har en god fornemmelse for, hvad `data` er, og det er i denne sammenhæng tilstrækkeligt.
+Figuren viser de centrale begreber i denne referencearkitektur, hvor `data` ikke overraskende ligger i midten. Vi vil dog ikke introducere en specifik og isoleret definition af `data` - vi regner med, at læseren har en god fornemmelse for, hvad `data` er, og det er i denne sammenhæng tilstrækkeligt.
 
 Vi vil i stedet tale om `data` ud fra de relationer, der er afbildet i figuren. Har man fx mange, ens strukturerede `data` samlet samme sted, indgår `data` i en `samling`. En `samling` vil typisk have en standardiseret måde, hvorpå man kan hente `data` på forespørgsel.
 
 `Data` kan også indgå i en `meddelelse` i forbindelse med, at det videregives fra en afsender til en modtager. En `meddelelse` kan være både struktureret og ustruktureret.
 
-`Data` har to specialiseringer. Den første er en `registrering`, der betegner, at en myndighed har registreret oplysninger på standardiseret og struktureret vis, typisk ud fra specifik, lovmæssig hjemmel. `Registreringerne` udgør tilsammen et `register`. `Registeret` understøtter opslag af `data` i form af den oprindelige `registrering`, men kan typisk også understøtte mere finkornede opslag.
+`Data` har to specialiseringer. Den første er en `registrering`, der betegner, at en myndighed har registreret oplysninger på standardiseret og struktureret vis, typisk ud fra specifik, lovmæssig hjemmel. `Registreringerne` udgør tilsammen et `register`, der dermed er en specialiseret `samling`. `Registeret` understøtter opslag af `data` i form af den oprindelige `registrering`, fx i kontekst af myndigheders sagsbehandling eller for at understøtte selvbetjeningsprocesser. `Registeret` kan også understøtte mere finkornede opslag. Et eksempel på dette kunne være en anvendelsesorienteret dataservice, der baserer sig på finkornede opslag i flere registre for at kombinere udvalgte data til brug i en given, specifik sammenhæng.
 
-[blive brugt til at betegne både oplysninger på dokumentform og oplysninger, der optræder i registre.]
+Den anden specialisering af `data` er i form af et `dokument`. Med denne modellering viser vi, at et `dokument` i bund og grund blot består af `data`. Som afledt konsekvens vælger vi som generelt pricip i denne referencearkitektur ikke tale om deling af "`data` og `dokumenter`", men i stedet indskrænke til at tale om "`data`".
 
+Med det sagt, er der alligevel nogle kvaliteter ved et `dokument`, der skal fremhæves. For det første er et `dokument` typisk karakteriseret ved, at det er er optimeret mod at være tilgængeligt for menneskeøjne, da det binder `data` i en grafisk, læsbar opsætning (i tilgift til, at mange dokumenttyper også tilbyder indlejring af data i fuldt struktureret, maskinlæsbar form). For det andet har et `dokument` nogle iboende egenskaber, der er hensigtsmæssige i forvaltningsmæssige sammenhænge: Et `dokument` kan samle en række `data`, der i praksis håndteres som en samlet enhed, eller som er nødvendige på et givet tidspunkt i et sagsbehandlingsforløb, for eksempel som beslutningsgrundlag eller ved videregivelse af `data` fra én myndighed til en anden. Et `dokument` kan være tidsstemplet og signeret, og er dermed en klart grundlag for aktindsigt, retslige afgørelser og i det hele taget den historiske dokumentation af en sagsgang. Til sammenligning vil det ofte være vanskeligere at afgøre, nøjagtigt hvordan en specifik `registrering` så ud i et `register` på et givet tidspunkt. Dette vil typisk kræve, at `registeret` på forespørgselstidspunktet teknisk gendanner, hvordan `registreringen` så ud på det givne tidspunkt - hvorimod de historiske `data`, hvis de var gemt i `dokument`-form, ville være direkte tilgængelige.
 
-[Vi anvender begrebet `samling` både om et `register` og et `repository` af dokumenter (den engelske term `repository` anvendt jf. Referencearkitektur for deling af dokumenter og billeder, 2012).]
-
-
-
-[TODO: Afstem at begreber i figur er forklaret i ovenstående tekst, samt fold tekst ud (specialisering m.m.)]
-
-[Dokumenter granularitet og samlet forvaltningsobjekt, databaser er mere finkornert udtræk, opslag...]
+Sluttelig findes der også en specialisering af `samling` for `dokumenter`, nemlig et `repository`, som er det fysiske sted, hvor `dokumenter` lagres efter oprettelse, og hvorfra de hentes ved efterfølgende anvendelse. Vi anvender den engelske term `repository` jf. Referencearkitektur for deling af dokumenter og billeder, 2012.
 
 Endvidere vil vi undlade at bruge ordet `metadata`. Ordet anvendes historisk set meget forskelligt, typisk med en betydning der er tæt knyttet til en konkret anvendelsessituation. Fra denne referencearkitekturs synspunkt er `metadata` imidlertid blot en særlig form af `data`.
 
 To virkelige eksempler kan benyttes til at gøre begreberne omkring `data` konkrete:
 - **CPR-registeret**: `data` om borgere indgår i den `datasamling`, der kaldes CPR-registeret og i praksis benævnes netop som et `register`. `Data` om en enkelt borger udgør én specifik `registrering` i CPR-registeret, der kan hentes via en standardiseret forespørgsel.
-- **Røntgenbilleder**: `data` om et røntgenbillede består dels af billeddata, dels af yderligere informationer som fx tidsstempel, patient-ID, datakilde m.m. I praksis håndteres `data` om et røntgenbillede i et samlet, standardiseret objekt, som vi referer til som et `dokument`. Røntgenbilleder er gemt i `samlinger`, der for `dokumenter` kaldes et `repository`, og som i praksis ligger decentralt i røntgensystemer hos de enkelte regioner/hospitaler.
+- **Røntgenbilleder**: `data` om et røntgenbillede består dels af billeddata, dels af yderligere informationer som fx tidsstempel, patient-ID, datakilde m.m. I praksis håndteres `data` om et røntgenbillede i et samlet, standardiseret objekt, som vi kan refere til som et `dokument`. Røntgenbilleder er gemt i `samlinger`, der for `dokumenter` kaldes et `repository`, og som i praksis ligger decentralt i røntgensystemer hos de enkelte regioner/hospitaler.
 
 ### Grundlæggende mønstre
 Et af hovedformålene med denne referencearkitektur er at vejlede i valget mellem de to grundlæggende, generiske procesmønstre for videregivelse af data:
