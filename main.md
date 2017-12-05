@@ -95,24 +95,39 @@ I forhold til grænseoverskridende datadeling er mandatet for denne referenceark
 
 ## Centrale begreber
 [TODO: Overvej om dette afsnit bør foldes ind i scope...]
-Data, oplysninger og informationer er tæt relaterede begreber og deres umiddelbare forståelse er meget forskellig på tværs af forskellige faggrupper og praksisser.
+Data, oplysninger og informationer er tæt relaterede begreber, og deres umiddelbare forståelse er meget forskellig på tværs af forskellige faggrupper og praksisser.
 
-Vi vil i denne referencearkitektur holde os fra at komme med en længere fænomænologisk udredning og fokusere på en mere pragmatisk og lokal definition.
+Vi vil i denne referencearkitektur holde os fra at komme med en længere, fænomænologisk udredning af forskelle og ligheder mellem disse termer. I stedet vil vi fokusere på en mere pragmatisk og lokal definition.
 
-
+### Data og dokumenter
 ![Figuren beskriver begrebet **data**, som det anvendes i denne referencearkitektur. Væsentligst er, at data indgår i samlinger, samt at de - evt. i form af et dokument - kan videregives i en meddelelse.](figures/abstraktion.png)
 
-[TODO: Tilføj to eksempler: CPR-register + Røntgenbilleder]
+Figuren viser de centrale begreber i denne referencearkitektur, hvor `data` ikke overraskende ligger centralt. Vi vil dog ikke introducere en specifik og isoleret definition af `data` - vi regner med, at læseren har en god fornemmelse for, hvad `data` er, og det er i denne sammenhæng tilstrækkeligt.
+
+Vi vil i stedet tale om `data` ud fra de relationer, der er afbildet i figuren. Har man fx mange, ens strukturerede `data` samlet samme sted, indgår `data` i en `samling`. En `samling` vil typisk have en standardiseret måde, hvorpå man kan hente `data` på forespørgsel.
+
+`Data` kan også indgå i en `meddelelse` i forbindelse med, at det videregives fra en afsender til en modtager. En `meddelelse` kan være både struktureret og ustruktureret.
+
+`Data` har to specialiseringer. Den første er en `registrering`, der betegner, at en myndighed har registreret oplysninger på standardiseret og struktureret vis, typisk ud fra specifik, lovmæssig hjemmel. `Registreringerne` udgør tilsammen et `register`. `Registeret` understøtter opslag af `data` i form af den oprindelige `registrering`, men kan typisk også understøtte mere finkornede opslag.
+
+[blive brugt til at betegne både oplysninger på dokumentform og oplysninger, der optræder i registre.]
+
+
+[Vi anvender begrebet `samling` både om et `register` og et `repository` af dokumenter (den engelske term `repository` anvendt jf. Referencearkitektur for deling af dokumenter og billeder, 2012).]
+
+
 
 [TODO: Afstem at begreber i figur er forklaret i ovenstående tekst, samt fold tekst ud (specialisering m.m.)]
 
 [Dokumenter granularitet og samlet forvaltningsobjekt, databaser er mere finkornert udtræk, opslag...]
 
-
-I det efterfølgende vil begrebet `data` blive brugt til at betegne både oplysninger på dokumentform og oplysninger, der optræder i registre. Vi anvender begrebet `samling` både om et `register` og et `repository` af dokumenter (termen `repository` anvendt jf. Referencearkitektur for deling af dokumenter og billeder, 2012).
-
 Endvidere vil vi undlade at bruge ordet `metadata`. Ordet anvendes historisk set meget forskelligt, typisk med en betydning der er tæt knyttet til en konkret anvendelsessituation. Fra denne referencearkitekturs synspunkt er `metadata` imidlertid blot en særlig form af `data`.
 
+To virkelige eksempler kan benyttes til at gøre begreberne omkring `data` konkrete:
+- **CPR-registeret**: `data` om borgere indgår i den `datasamling`, der kaldes CPR-registeret og i praksis benævnes netop som et `register`. `Data` om en enkelt borger udgør én specifik `registrering` i CPR-registeret, der kan hentes via en standardiseret forespørgsel.
+- **Røntgenbilleder**: `data` om et røntgenbillede består dels af billeddata, dels af yderligere informationer som fx tidsstempel, patient-ID, datakilde m.m. I praksis håndteres `data` om et røntgenbillede i et samlet, standardiseret objekt, som vi referer til som et `dokument`. Røntgenbilleder er gemt i `samlinger`, der for `dokumenter` kaldes et `repository`, og som i praksis ligger decentralt i røntgensystemer hos de enkelte regioner/hospitaler.
+
+### Grundlæggende mønstre
 Et af hovedformålene med denne referencearkitektur er at vejlede i valget mellem de to grundlæggende, generiske procesmønstre for videregivelse af data:
 
  - `Videregivelse på forespørgsel` - typisk via et API i system til system-integrationer
