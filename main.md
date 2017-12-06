@@ -125,7 +125,7 @@ Den fundamentale forskel på disse to scenarier er, om det er den aktør, der *v
 
 Ved `videregivelse på forespørgsel` er dataafsenderen som udgangspunkt ikke bekendt med datamodtagerens formål (men er naturligvis forpligtet til at håndhæve relevant hjemmel). Et eksempel på dette er en myndigheds forespørgsel på personoplysninger i CPR-registeret.
 
-Ved `videregivelse ved meddelelse` er det dataafsenderen, der i en given kontekst afsender en meddelelse med et givent formål - typisk som led i en proces. Et eksempel på dette er politiets fremsendelse af en fartbøde til en borger.
+Ved `videregivelse ved meddelelse` er det dataafsenderen, der i en given kontekst afsender en meddelelse med et givent formål - typisk som led i en afviklingen af en arbejdsgang, der enten kan være manuel eller automatiseret. Et eksempel på dette er politiets fremsendelse af en fartbøde til en borger.
 
 Figuren nedenfor opsummerer nogle af denne referencearkitekturs væsentligste elementer. Dokumentets overordnede emne er `videregivelse af data`, herunder persondata. De to grundlæggende måder at videregive data på er enten på forespørgsel eller gennem en meddelelse - afsnittet "Forretningsarkitektur" beskriver de to scenarier i yderligere detaljer. For hvert scenarie er der en række, mulige implementeringsmønstre - disse behandles nærmere i afsnittet "Teknisk arkitektur".
 
@@ -135,55 +135,50 @@ Figuren nedenfor opsummerer nogle af denne referencearkitekturs væsentligste el
 ## Tilblivelse og governance
 Første udgave er skrevet hos Kontor for Data og Arkitektur af Mads Hjorth, Digitaliseringsstyrelsen og Anders Fausbøll, Omnium Improvement.
 
-(TODO: Deltagere i arbejdsgruppe)
+I udarbejdelsen har en arbejdsgruppe af offentlige arkitekter bidraget gennem en række af workshops. I gruppen har deltaget: [TODO: Oplist deltagere i arbejdsgruppe]
+
+Endelig godkendelse forventes hos Styregruppe for Data og Arkitektur under Digitaliseringsstrategien 5. marts 2018. Herefter vil Styregruppen eje dokumentet, med Kontor for Data og Arkitektur som ansvarlig for vedligehold af referencearkitekturen frem til 2020 som en del af den Fællesoffentlige, Digitale Arkitektur.
+
+Metodemæssigt er referencearkitekturen udarbejdet inden for rammerne af [Fællesoffentlig Digital Arkitektur](https://arkitektur.digst.dk/) og følger så vidt muligt den fælles skabelon for referencearkitekturer som udarbejdet i Sekretariatet for Styregruppen for Data og Arkitektur under digitaliseringsstrategien. Metoderammen bygger blandt andet på erfaringer fra OIO referencearkitektur, og indarbejder også elementer fra European Interoperability Reference Architecture (EIRA), The Open Group Architecture Framework (TOGAF), ArchiMate m.m.
+
+Denne referencearkitektur relaterer sig til en række andre referencearkitekturer, både eksisterende og planlagte. Specifikt gør denne referencearkitektur brug af:
+
+- Fællesoffentlig referencearkitektur for brugerstyring - [link til version 1.0](https://www.digst.dk/Arkitektur-og-data/It-arkitektur/Brugerstyring)
+
+Den skal kunne anvendes af:
+
+- Fællesoffentlig referencearkitektur for selvbetjening (under udarbejdelse i regi af Initiativ 1.2 af Den fællesoffentlige digitaliseringsstrategi 2016-2020)
+- Fællesoffentlig referencearkitektur for overblik over egne sager og ydelser(under udarbejdelse i regi af Initiativ 1.3 af Den fællesoffentlige digitaliseringsstrategi 2016-2020)
+
+... og skal anvendes i kontekst sammen med:
+
+- Referencearkitektur for sags- og dokumentområdet (OIO, 2008) - [link](https://digitaliser.dk/resource/230688)
+- Referencearkitektur for deling af dokumenter og billeder (National sundheds-it, 2012) - [link](https://sundhedsdatastyrelsen.dk/da/rammer-og-retningslinjer/om-referencearkitektur-og-standarder)
+- Referencearkitektur for informationssikkerhed (National sundheds-it, 2013) - [link](https://sundhedsdatastyrelsen.dk/da/rammer-og-retningslinjer/om-referencearkitektur-og-standarder)
+- Indberetning til registre på sundhedsområdet (under godkendelse pr. november 2017)
 
 
-Endelig godkendelse forventes hos Styregruppe for Data og Arkitektur under Digitaliseringsstrategien 5. marts 2018.
-
-(Videre vedligeholdelse i regi af FDA, næste version fokus på sammenhæng med øvrige)
-
-## Metoderamme
-[TODO: Fold ind i tilblivelse og governance]
-Referencearkitekturen er udarbejdet inden for rammerne af Fællesoffentlig Digital Arkitektur og følger så vidt muligt den fælles skabelon for referencearkitekturer som udarbejdet i Sekretariatet for Styregruppen for Data og Arkitektur under digitaliseringsstrategien. Metoderammen bygger blandt andet på erfaringer fra OIO referencearkitektur, og indarbejder også elementer fra EIRA, TOGAF, ArchiMate m.m.
-
+## Signaturforklaring
 I dokumentet er specifikke termer/ord fremhævet med en særlig `skrifttype` for at markere referencer til elementer på figurer (og vedlagte Archimate model).
-Andre termer/ord i teksten er fremhævet med `kursiv` hvilket markerer at elementet findes i Archimate-begrebsapparatet (og i FDA dokumentationsrammer?).
+Andre termer/ord i teksten er fremhævet med `kursiv`, hvilket markerer at elementet findes i Archimate-begrebsapparatet (og i FDA dokumentationsrammer?).
 
 Det bemærkes, at prefixet 'data-' kan være udeladt på begreber/elementer i tekst og figurer fx af formatterings- eller læsbarhedshensyn uden, at der ligger en indholdsmæssig skelnen bag (fx `dataanvendelse`/`anvendelse`, `datasamling`/`samling` o.a.)
 
 I figurer og tekst markerer:
 
 - _Kursiv_ et element eller en relation ikke er nærmere defineret i denne referencearkitektur (fx _dokument_)
-- Blå almindelig tekst et element eller en relation ejes og defineres andet steds, fx. i andre   referencearkitektur eller lovgivning.
+- Blå almindelig tekst et element eller en relation ejes og defineres andet steds, fx. i andre  referencearkitektur eller lovgivning.
 - Rød **Fed tekst** et element eller en relation ejes og defineres i denne referencearkitektur (fx `anvendelse`)
 
 I elementerne i dokumentets figurer angiver:
+
 - runde hjørner et procestrin (*Business Functions Archimate*)
 - skarpe hjørner en Applikationsrolle (*Application services*)
 - "Slikkepind" en Snitflade (*Application Interface*)
 
-## Relation til andre referencearkitekturer
-[TODO: Fold ind i tilblivelse og governance]
-Denne referencearkitektur gør brug af:
-
-- Fællesoffentlig referencearkitektur for brugerstyring
-
-Den skal kunne anvendes af:
-
-- Fællesoffentlig referencearkitektur for selvbetjening
-- Fællesoffentlig referencearkitektur for overblik over egne sager og ydelser
-
-... og skal anvendes i kontekst sammen med:
-
-- OIO Sag- og dokumenter (2008)
-- Deling af dokumenter og billeder på sundhedsområdet (2012)
-- Referencearkitektur for informationssikkerhed på sundhedsområdet (2013)
-- Indberetning til registre på sundhedsområdet (under godkendelse pr. november 2017)
-
-(TODO: tilføjer hyperlinks...)
 
 # Strategi
-Referencearkitekturen udmønter og understøtter beslutninger i den Fællesoffentlige Digitaliseringsstrategi 2020. Desuden er der i udarbejdelsen taget hensyn til en række aktuelle, offentlige/politiske strategier, herunder Sammenhængsreformen, Cybersikkerhedsinitativet og kommunernes digitaliseringsstrategi "Lokal og Digital". Der kan på tværs af strategierne identificeres en række forretningsmæssige og teknologiske tendenser, som ligeledes har bidraget til at sætte retningen for den ønskelige arkitektur.
+Referencearkitekturen udmønter og understøtter beslutninger i Den fællesoffentlige digitaliseringsstrategi 2016-2020. Desuden er der i udarbejdelsen taget hensyn til en række aktuelle, offentlige/politiske strategier, herunder Sammenhængsreformen, Cybersikkerhedsinitativet og kommunernes digitaliseringsstrategi "Lokal og Digital". Der kan på tværs af strategierne identificeres en række forretningsmæssige og teknologiske tendenser, som ligeledes har bidraget til at sætte retningen for den ønskelige arkitektur.
 
 - **Sammenhængende offentlige services** er det mest tydelige, gennemgående tema på tværs af strategierne. Den offentlige forvaltning ønsker at tilbyde borgere og virksomheder services, der ikke er tæt knyttet til enkelte myndigheder, men opleves som sammenhængende for dem, der anvender servicen. Mest tydeligt er det udtrykt i European Interoperability Frameworks koncept om *integrated service delivery*, men temaet er også meget fremtrædende i regeringens sammenhængsreform.
 
