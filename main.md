@@ -185,14 +185,6 @@ Den skal kunne anvendes af:
 # Strategi
 Referencearkitekturen udmønter og understøtter beslutninger i den Fællesoffentlige Digitaliseringsstrategi 2020. Desuden er der i udarbejdelsen taget hensyn til en række aktuelle, offentlige/politiske strategier, herunder Sammenhængsreformen, Cybersikkerhedsinitativet og kommunernes digitaliseringsstrategi "Lokal og Digital". Der kan på tværs af strategierne identificeres en række forretningsmæssige og teknologiske tendenser, som ligeledes har bidraget til at sætte retningen for den ønskelige arkitektur.
 
-| Forretningsmæssige tendenser | Teknologiske tendenseri
-|----------|----------
-| Sammenhængende offentlige services | Scale-out løsninger til web-scale
-| Suverænintet, beskyttelse mod cyberangreb | Micro-services og DevOps
-| Øget opmærksomhed på behandling af persondata | Nær real-tid
-
-Table: Tværgående tendenser i aktuelle, offentlige/politiske strategier
-
 - **Sammenhængende offentlige services** er det meste tydelig gennemgående tema på tværs af strategierne. Den offentlige forvaltning ønsker at tilbyder borger og virksomheder services, der ikke er tæt knyttet til enkelte myndigheder, men opleves som sammenhængende for dem der anvender services. Mest tydelig er det udtrykt i European Interoperability Frameworks koncept om intergrated service delivery, men er også meget fremtrædende i regeringens sammenhængsreform.
 
 - **Suverænitet, beskyttelse mod cyberangreb** er et tema, som har været på dagsordenen længe, men har med regeringens cybersecurity strategi fået en vægt der ikke er set tidligere. Tendensen udgør et større strategisk skifte som flytter noget af den tillid som tidligere har været vist store it-leverandører og peger i retning af hjemtagning af centrale/kritiske/vitale funktioner som fx netværk.
@@ -326,13 +318,6 @@ og lovlige behandlinger hos offentlige myndigheder er:
 
 # Forretningsarkitektur
 
-## Aktører
-De væsentligste aktører, der er i spil omkring deling af data og dokumenter, er:
-
-- Offentlige myndigheder (herunder virksomheder, der handler på vegne af offentlige myndigheder?)
-- Borgere
-- Virksomheder
-
 
 ## Forretningstjenester og funktioner
 Overordnet set finder referencearkitekturen anvendelse i løsningen af alle offentlige opgaver. Specifikt kan nævnes nedenstående sæt af generiske procesmønstre:
@@ -364,36 +349,31 @@ anvendelse af data
 forsendelse af meddelelser
   ~ *collaboration* hvor meddelelser sendes mellem to aktører
 
-## Forretningsroller
+## Forretningsroller og aktører
 
 I ovenstående use cases indgår disse forretningsroller:
 
-registrant
-  ~ *rolle* som bringer oplysninger på digital form, registrer
 
 den registrerede
-  ~ *rolle* den person (datasubjekt), som oplysningerne vedrører
-
-anvender
-  ~ *rolle* der anvender data/oplysninger fra et register (aka databehandler)
-
-dataansvarlig
-  ~ en fysisk eller juridisk person, en offentlig myndighed, en institution eller et andet organ, der alene eller sammen med andre afgør, til hvilke formål og med hvilke hjælpemidler der må foretages behandling af personoplysninger (*rolle*)
+  ~ *rolle* den person (datasubjekt), som oplysningerne vedrører (*rolle* fra GDPR)
 
 databehandler
   ~ en fysisk eller juridisk person, en offentlig myndighed, en institution eller et andet organ, der behandler personoplysninger på den dataansvarliges vegne (*rolle* fra GDPR)
 
-afsender
-  ~ *rolle* som genererer og afsender meddelelser til en specifik modtager
+dataansvarlig
+  ~ en fysisk eller juridisk person, en offentlig myndighed, en institution eller et andet organ, der alene eller sammen med andre afgør, til hvilke formål og med hvilke hjælpemidler der må foretages behandling af personoplysninger (*rolle* fra GDPR)
+
+registrant
+  ~ *rolle* som bringer oplysninger på digital form, registrer
 
 modtager (af personoplysninger)
-  ~ en fysisk eller juridisk person, en offentlig myndighed, en institution eller et andet organ, hvortil personoplysninger videregives, uanset om det er en tredjemand eller ej
+  ~ en fysisk eller juridisk person, en offentlig myndighed, en institution eller et andet organ, hvortil personoplysninger videregives, uanset om det er en tredjemand eller ej [todo: skal den fjernes eller tegnes på?]
 
-modtager (af forsendelse)
-  ~ ...
+De væsentligste aktører, der er i spil omkring deling af data og dokumenter, er:
 
-[TODO: Overvej om vi kan reducere til rene forretningsroller: registrant, den registrerede, dataansvarlig, databehandler; og til use cases: registrering, vidergivelse, sletning og arkivering. Konsekvensret i processer.]
-
+- Offentlige myndigheder (herunder virksomheder, der handler på vegne af offentlige myndigheder?). Typisk vil være dataansvarlig, eller databehandler, men også ofte registrant.
+- Borgere oftest den registrerede, men også registrant.
+- Virksomheder som databehandler, særligt i forbindelse med privater tjenester der anvender oplysninger der er registreret i offentlige regi i forbindelse med ydelser for den registrerede, men også for virksomhedens egen skyld.
 
 
 ## Tværgående processer
@@ -404,39 +384,6 @@ I ovenstående diagram over centrale use cases er `videregivelse` den væsentlig
 Nedenfor er de to grundvarianter for datadeling `videregivelse på forespørgsel` og `videregivelse ved meddelelse` beskrevet i detaljer. `Registrering af data` er ligeledes beskrevet, dog mere summarisk, da den i kontekst af denne referencearkitektur kun er med af referencehensyn.
 
 [TODO: Tilføj Søgning til Anvendelse af data.]
-
-### Registrering af data
-
-Denne proces dækker de overordnede trin i at registrere data. Procestrinene er ikke foldet så meget ud som for de øvrige use cases, da registrering af data ikke falder i scope for denne referencearkitektur. Dog er en kort beskrivelse medtaget for reference på grund af den tætte sammenhæng mellem registrering og udstilling af data. Procestrinene er:
-
-registrer data
-  ~ *procestrin* hvor oplysninger bringes på digital form
-
-En `registrant` er i besiddelse af data, der skal registreres hos en `dataansvarlig`. I denne sammenhæng skelnes ikke mellem, om registreringen angår ny data eller ændringer til data (i sidstnævnte tilfælde kan det være `den registrerede`, der agerer som `registrant`.)
-
-modtag data
-  ~ *procestrin* hvor data placeres i en samling
-
-Den `dataansvarlige` `myndighed` modtager data fra `registranten`. I denne forbindelse skelnes ikke mellem, om data modtages automatisk eller manuelt. I begge tilfælde er den `dataansvarlige` dog ansvarlig for at håndhæve adgangspolitik og herunder sikre, at `registranten` har gyldig hjemmel til at fremsende `registreringen`.
-
-valider data
-  ~ *procestrin* hvor modtagne data valideres før anvendelse
-
-Den `dataansvarlige` myndighed validerer det modtagne data. Den `dataansvarlige` kan have varierende krav til datas kvalitet og komplethed, afhængig af formålet med `datasamlingen`. Fejlscenarier, hvor data ikke kan valideres, dækkes ikke af  denne referencearkitektur.
-
-udstil data
-  ~ *procestrin* hvor data gøres tilgængelige for andre
-
-Når data er korrekt registreret, skal de markeres som klar til at blive udstillet. Her kan der være forskel på, om data gøres tilgængelig øjeblikkeligt eller først på et senere tidspunkt (fx ved registrering af fremtidigt skift af adresse). Begge muligheder kan være relevante, og vil i mange tilfælde afhænge af `dataanvenderes` typiske behov.
-
-Når man skal vurdere processen `registrering af data`, er følgende kvaliteter og kriterier de mest væsentlige at forholde sig til:
-
-* **Identifikation**: Sikker identifikation af `registrant` (så `dataansvarlig` kan håndhæve adgangskontrol) og `dataansvarlig` (så `registrant` kan have tillid til, at de potentiel følsomme data ender hos rette modtager).
-* **Sikkerhed**: Tillid til, at data når ukompromitteret frem, herunder tjek af `registreringens` integritet, mulighed for kryptering af følsomme data, transaktionssikkerhed m.m.
-* **Kontekst**: I hvilken kontekst er data skabt/opsamlet - hvor og af hvem?
-* **Kvalitet**: Hvilke krav er der til data komplethed, hvor meget valideres i forhold til stærke datatyper, og er `registreringens` granularitet passende (hvor meget registreres ad gangen)?
-
-[TODO: Skal alle kriterier/kvaliteter her og nedenfor formuleres som spørgsmål?]
 
 ### Videregivelse på forespørgsel
 
@@ -450,10 +397,10 @@ Processen starter hos `anvender`, der har identificeret et behov for at indhente
 forespørg om data
   ~ *procestrin* hvor en anvender spørger om udstillede data
 
-`Dataanvender` sender en forespørgsel på data, der beskriver, hvilke data der ønskes. Ved adgang til andet end åbne data skal den nødvendige hjemmel ligeledes fremgå af forespørgslen, så `dataansvarlig` kan håndhæve den nødvendige adgangskontrol.
+`Dataanvender` sender en forespørgsel på data, der beskriver, hvilke data der ønskes. Ved adgang til andet end åbne data skal den nødvendige hjemmel ligeledes fremgå af forespørgslen, så `dataansvarlig` kan håndhæve den nødvendige adgangskontrol. Forespørglsen kan ske ved anvendelse af flere meddelelser, fx kan man starte med at spørge et indeks, for der efter at spørge de enkelte registre.
 
 vurder adgang
-  ~ *procestrin* [todo: definition]
+  ~ *procestrin* hvor det vurderes om den etablerede adgangspolitik er overholdt.
 
 `Dataansvarlig` myndighed vurderer i dette trin forespørgslen med henblik på at håndhæve adgangskontrol. Kun, hvis den medsendte hjemmel giver lovmæssig adgang til den forespurgte data, kan `dataansvarlig` gå videre med delingen. Hjemlen kan være eksplicit angivet eller ligge implicit i brugerstyringen. Hjemlen kan enten give generel adgang til en given `datasamling`, eller give adgang til specifik data i `samlingen`, hvorfor der i mange situationer vil være behov for at se på hjemlen og det efterspurgte data i sammnenhæng for at håndhæve adgangskontrollen. Et særligt aspekt i at vurdere adgang er håndhævelsen af 'negativt samtykke', hvor adgang til bestemte data er fjernet, fx fordi datas korrekthed er bragt i tvivl og skal undersøges. Dette procestrin kan i øvrigt benyttes af `dataansvarlig` til at håndhæve adgangskontrol også på andre planer som håndhævelse af en Service Level Agreement, beskyttelse mod misbrug, mistænkelig adfærd m.m. Det bemærkes endvidere, at `dataansvarlig` kan have overladt distributionsopgave og de praktiske opgaver for håndhævelse af adgangskontrollen til en `datadistributør`, hvilket i øvrigt ikke ændrer ved beskrivelsen af dette trin.
 
@@ -463,12 +410,12 @@ del data
 `Dataansvarlig` håndterer forespørgslen ved at slå data op i `datasamlingen`, evt. ved at sammenstille data fra flere `datasamlinger`, og sender et `svar` tilbage til `anvender`. Delingen af data bliver logget af `dataansvarlig`, indbefattende hvilken data, der blev delt; til hvilken `anvender`; og med hvilken hjemmel. Det bemærkes, at `dataansvarlig` ikke nødvendigvis er klar over, hvilket databehov forespørgslen har tjent til at tilfredsstille - så længe, adgangen er legitim og foretaget på baggrund af gyldig hjemmel, har `dataansvarlig` ikke behov for at kende til `dataanvenders` brug af data i den konkrete forespørgsel.
 
 modtag svar
-  ~ *procestrin* [todo: definition]
+  ~ *procestrin* hvor meddelelser registreres i den modtagende organisation.
 
-`Dataanvender` modtager svaret fra `dataansvarlig.`
+`Dataanvender` modtager svaret fra `dataansvarlig.` Kan involvere kvitteringer...
 
 oversæt svar
-  ~ *procestrin* [todo: definition]
+  ~ *procestrin* hvor meddelelsers indhold og struktur transformeres fra et domæne til et andet. 
 
 I tilfælde af, at der er behov for at oversætte `svaret` i form af mapninger af datafelter, klassifikationer m.m., håndteres dette på `dataanvenders` side. `Dataanvenders` initielle behov for data er hermed opfyldt.
 
@@ -540,6 +487,40 @@ Til forskel fra Anvendelse af udstillede data starter denne proces hos `afsender
 [TODO: Overdragelse af dataansvar ved forsendelse?]
 
 [TODO: Alignment med elementer fra referencearkitektur for brugerstyring]
+
+### Registrering af data
+
+Denne proces dækker de overordnede trin i at registrere data. Procestrinene er ikke foldet så meget ud som for de øvrige use cases, da registrering af data ikke falder i scope for denne referencearkitektur. Dog er en kort beskrivelse medtaget for reference på grund af den tætte sammenhæng mellem registrering og udstilling af data. Procestrinene er:
+
+registrer data
+  ~ *procestrin* hvor oplysninger bringes på digital form
+
+En `registrant` er i besiddelse af data, der skal registreres hos en `dataansvarlig`. I denne sammenhæng skelnes ikke mellem, om registreringen angår ny data eller ændringer til data (i sidstnævnte tilfælde kan det være `den registrerede`, der agerer som `registrant`.)
+
+modtag data
+  ~ *procestrin* hvor data placeres i en samling
+
+Den `dataansvarlige` `myndighed` modtager data fra `registranten`. I denne forbindelse skelnes ikke mellem, om data modtages automatisk eller manuelt. I begge tilfælde er den `dataansvarlige` dog ansvarlig for at håndhæve adgangspolitik og herunder sikre, at `registranten` har gyldig hjemmel til at fremsende `registreringen`.
+
+valider data
+  ~ *procestrin* hvor modtagne data valideres før anvendelse
+
+Den `dataansvarlige` myndighed validerer det modtagne data. Den `dataansvarlige` kan have varierende krav til datas kvalitet og komplethed, afhængig af formålet med `datasamlingen`. Fejlscenarier, hvor data ikke kan valideres, dækkes ikke af  denne referencearkitektur.
+
+udstil data
+  ~ *procestrin* hvor data gøres tilgængelige for andre
+
+Når data er korrekt registreret, skal de markeres som klar til at blive udstillet. Her kan der være forskel på, om data gøres tilgængelig øjeblikkeligt eller først på et senere tidspunkt (fx ved registrering af fremtidigt skift af adresse). Begge muligheder kan være relevante, og vil i mange tilfælde afhænge af `dataanvenderes` typiske behov.
+
+Når man skal vurdere processen `registrering af data`, er følgende kvaliteter og kriterier de mest væsentlige at forholde sig til:
+
+* **Identifikation**: Sikker identifikation af `registrant` (så `dataansvarlig` kan håndhæve adgangskontrol) og `dataansvarlig` (så `registrant` kan have tillid til, at de potentiel følsomme data ender hos rette modtager).
+* **Sikkerhed**: Tillid til, at data når ukompromitteret frem, herunder tjek af `registreringens` integritet, mulighed for kryptering af følsomme data, transaktionssikkerhed m.m.
+* **Kontekst**: I hvilken kontekst er data skabt/opsamlet - hvor og af hvem?
+* **Kvalitet**: Hvilke krav er der til data komplethed, hvor meget valideres i forhold til stærke datatyper, og er `registreringens` granularitet passende (hvor meget registreres ad gangen)?
+
+[TODO: Skal alle kriterier/kvaliteter her og nedenfor formuleres som spørgsmål?]
+
 
 ### Hybrid-varianter
 
