@@ -185,19 +185,19 @@ Den skal kunne anvendes af:
 # Strategi
 Referencearkitekturen udmønter og understøtter beslutninger i den Fællesoffentlige Digitaliseringsstrategi 2020. Desuden er der i udarbejdelsen taget hensyn til en række aktuelle, offentlige/politiske strategier, herunder Sammenhængsreformen, Cybersikkerhedsinitativet og kommunernes digitaliseringsstrategi "Lokal og Digital". Der kan på tværs af strategierne identificeres en række forretningsmæssige og teknologiske tendenser, som ligeledes har bidraget til at sætte retningen for den ønskelige arkitektur.
 
-- **Sammenhængende offentlige services** er det meste tydelig gennemgående tema på tværs af strategierne. Den offentlige forvaltning ønsker at tilbyder borger og virksomheder services, der ikke er tæt knyttet til enkelte myndigheder, men opleves som sammenhængende for dem der anvender services. Mest tydelig er det udtrykt i European Interoperability Frameworks koncept om intergrated service delivery, men er også meget fremtrædende i regeringens sammenhængsreform.
+- **Sammenhængende offentlige services** er det mest tydelige, gennemgående tema på tværs af strategierne. Den offentlige forvaltning ønsker at tilbyde borgere og virksomheder services, der ikke er tæt knyttet til enkelte myndigheder, men opleves som sammenhængende for dem, der anvender servicen. Mest tydeligt er det udtrykt i European Interoperability Frameworks koncept om *integrated service delivery*, men temaet er også meget fremtrædende i regeringens sammenhængsreform.
 
-- **Suverænitet, beskyttelse mod cyberangreb** er et tema, som har været på dagsordenen længe, men har med regeringens cybersecurity strategi fået en vægt der ikke er set tidligere. Tendensen udgør et større strategisk skifte som flytter noget af den tillid som tidligere har været vist store it-leverandører og peger i retning af hjemtagning af centrale/kritiske/vitale funktioner som fx netværk.
+- **Suverænitet, beskyttelse mod cyberangreb** er et tema, som har været på dagsordenen længe, men har med regeringens cybersecurity-strategi fået en vægt og et fokus, der ikke er set tidligere. Tendensen udgør et større, strategisk skifte, som flytter noget af den tillid, som tidligere har været vist store it-leverandører, og peger i retning af hjemtagning af centrale/kritiske/vitale funktioner som fx netværk.
 
 
-- **Øget opmærksomhed om behandling af personlige oplysninger** Den europæiske fordning om beskyttelse af personoplysninger (GPDR) og tilhørende dansk implementering udvider den dataansvarliges risiko i forhold til tidligere. Det har føret til en fornyet fokus på at have styr på behandling af persondata og tilsynet hermed.
+- **Øget opmærksomhed om behandling af personlige oplysninger** Den europæiske forordning om beskyttelse af personoplysninger (GPDR) og tilhørende dansk implementering udvider den dataansvarliges risiko i forhold til tidligere. Det har ført til et fornyet fokus på at have styr på behandling af persondata og tilsynet hermed.
 - Grænseoverskridende services
 
 - **Scale-out løsninger til web-scale** Der har de sidste 5-10 år været fokus på at få teknologier til at skalere forudsigeligt til web-scale. Der har voldsomt udvidet de ressourcer der globalt er blevet brugt på large-scale implementeringer. Nu er området så modent at teknologierne også er tilgængelig for projekter på national skala og endda i enkelte projekter.
 
 - **Micro-services** En måde at håndtere den stigende kompleksitet i forvaltningen af it landskaber er en udbredt strategi om at levere applikationer i mindre enheder. Micro-services er en sådan strategi.
 
-- **Nær realtid** Med henblik på automatisering og sammenhængende services, er der fokus på at have mindre tid mellem registrering og anvendelse af data. Det betyder at der er færre batch overførsler. Selvbetjening services bygges så de kan gennemføres i 'one-seating'.
+- **Nær realtid** - med henblik på automatisering og sammenhængende services er der fokus på at have kortest mulig tid mellem registrering og anvendelse af data. Det betyder, at der er færre batch-overførsler. Selvbetjeningsservices bygges, så de kan gennemføres i 'one-seating'.
 
 
 ## Strategiske målsætninger
@@ -229,17 +229,17 @@ Visionen i denne referencearkitektur er at stræbe efter en situation, hvor:
 
 > *Data er en fælles, værdifuld og velbeskyttet ressource, som skal være nem at dele og bruge, men svær at misbruge*
 
-**Fælles** betyder at data der registreres ét sted til ét formål, kan have stor værdi for myndigheder og endda private tjenester. **Værdifuld** betyder at data der er registerret i det offentlgie betragtes som et økonomisk og kvalitetsmæssigt asset på lige fod med finansiering og fysiske bygninger. **Velbeskyttet** betyder at der er taget tilstrækkelige og effektiv tiltag for at beskytte borgere og virksomhederes tillid til at opbevaring, anvendelse og vidergivelse sker under gennemskuelige og retsmæssige forhold. **Nem at dele** betyder at udgifterne ved at anvende data i en ny sammenhæng ikke alene løftes af dataejer samt at de er tydelig vejledning i udarbejdelse af nødvendige aftaler og ikke tager for lang tid. **Nem at bruge** betyder der er fastlagte processer og best practices og generiske infrastruktur der kan genbruges. **Svær at misbruge** betyder at enkelt person, organisationer og fremmede magter med hensigt at bruge data uretsmæssigt begrænses mest muligt og at indsatsen står i mål med trusslerne og mulige konsekvenser af misbrug.
+**Fælles** betyder, at data, der registreres ét sted til ét formål, kan have stor værdi for myndigheder og endda private tjenester. **Værdifuld** betyder, at data, der er registeret i det offentlige, betragtes som et økonomisk og kvalitetsmæssigt aktiv på lige fod med kontantbeholdninger og fysiske bygninger. **Velbeskyttet** betyder, at der er taget tilstrækkelige og effektive sikkerhedsmæssige tiltag for at beskytte borgere og virksomhederes tillid til, at opbevaring, anvendelse og videregivelse sker under gennemskuelige og retmæssige forhold. **Nem at dele** betyder, at udgifterne ved at anvende data i en ny sammenhæng ikke alene løftes af dataejer, samt at der er tydelig vejledning i udarbejdelse af nødvendige aftaler og at processen ikke tager for lang tid. **Nem at bruge** betyder, at der er fastlagte processer, *best practices* og generiske infrastrukturelementer, der kan genbruges. **Svær at misbruge** betyder, at enkeltpersoner, organisationer og fremmede magter, der måtte have til hensigt at bruge data uretmæssigt, begrænses mest muligt gennem en indsats, der står i forhold til truslerne og de mulige konsekvenser af misbrug.
 
-Denne vision kræver at en række forretningsevner (capabillities) i det offentlige forstærkes væsentligt, herunder:
+Denne vision kræver, at en række forretningsevner *(capabilities)* i det offentlige forstærkes væsentligt, herunder:
 
-- **Identifikation og dokumentation af data** sker allerede i ISO 27000 sammenhæng, men også behov for at udstille til andre.
+- **Identifikation og dokumentation af data** - sker allerede i ISO 27000-sammenhæng, men også behov for at udstille til andre.
 
-- **Aftaleindgåelse** kan tage lang tid og kræver meget arbejde. Bør kunne ske på baggrund af mere generelle og eksisterende aftaler, så vi ikke starter forfra hver gang nye vidergivelser skal etableres.
+- **Aftaleindgåelse** kan tage lang tid og kræver meget arbejde. Bør kunne ske på baggrund af mere generelle og eksisterende aftaler, så vi ikke starter forfra, hver gang nye videregivelser skal etableres.
 
-- **Genbrug af løsninger** at vi kan lave hyppige udvidelser både af funktionalitet og anvendelsesområde.
+- **Genbrug af løsninger** - sikrer, at vi kan lave hyppige udvidelser både af funktionalitet og anvendelsesområde.
 
-- **Koordination af lovgivning** det handler ikke kun om digitaliseringsparat lovgivning men også at der er enighed om centrale definitioner på tværs af flere ressort. Og hvor der er modstrid er adgang til effektiv vejledning.
+- **Koordination af lovgivning** - handler ikke kun om digitaliseringsparat lovgivning, men også om at der er enighed om centrale definitioner på tværs af flere ressortområder. Samt, at der er adgang til effektiv vejledning de steder, hvor der måtte være modstrid.
 
 
 ## Værdiskabelse
@@ -549,15 +549,15 @@ Nedenfor fremgår en initiel oversigt over en række forretningsobjekter, der er
 ![Oversigt over de centrale forretningsobjekter og deres relationer](figures/objekter.png)
 
 
-vidergivelse
-  ~ *process* hvor en dataansvarlige videregiver oplysninger til andre.
+videregivelse
+  ~ *proces* hvor en dataansvarlig videregiver oplysninger til andre.
 
 
 meddelelse
-  ~ *forretningsobjekt* data der vidergives?
+  ~ *forretningsobjekt* data der videregives?
 
 meddelelse
-  ~ *forretningsobjekt* der beskriver retten til at registrere, opbevare, anvende og vidergive data
+  ~ *forretningsobjekt* der beskriver retten til at registrere, opbevare, anvende og videregive data
 
 data
   ~ *objekt* (Abstrakt. Bruges om både register-record og dokument)
@@ -570,16 +570,16 @@ dataservice
   ~ *applikationsservice* der giver adgang til en eller flere datasamlinger med den nødvendige beskyttelse
 
 forespørgsel
-  ~ *forretningsobjekt* og meddelse som indeholder foprespørgsel om vidergivelse af oplysninger.
+  ~ *forretningsobjekt* og meddelse som indeholder forespørgsel om videregivelse af oplysninger.
 
 abonnement
   ~ *forretningsobjekt* og der indeholder en eller flere forspørgelser og resultere i en meddelelse om ændringer i datasamlinger.
 
 forsendelse
-  ~ *applikationsservice* der modtager og distribuere meddelelser til andre forsendelsesservices og stiller modtagne meddelelser til rådighed for modtager
+  ~ *applikationsservice* der modtager og distribuerer meddelelser til andre forsendelsesservices og stiller modtagne meddelelser til rådighed for modtager
 
 adresse
-  ~ *forretningsobjekt* der beskriver forsendelsesoplysninger om modtager, fx tekniske endepunkter men også kapabilities.
+  ~ *forretningsobjekt* der beskriver forsendelsesoplysninger om modtager, fx tekniske endepunkter men også capabilities.
 
 påmindelse
   ~ *forretningsobjekt* usikker levering og beskyttelse, i modæstning til model.
@@ -592,7 +592,7 @@ påmindelse
 
 *Applikationsfunktionerne* fra referencearkitektur for brugerstyring
 
-- gendelse (autentifikation)
+- genkendelse (autentifikation)
 - godkendelse (authentifikation)
 
 *Forretningsobjekterne* fra referencearkitektur for brugerstyring
