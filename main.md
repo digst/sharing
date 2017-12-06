@@ -195,14 +195,16 @@ Referencearkitekturen udmønter og understøtter beslutninger i Den fællesoffen
 - **Nær realtid** - med henblik på automatisering og sammenhængende services er der fokus på at have kortest mulig tid mellem registrering og anvendelse af data. Det betyder, at der er færre batch-overførsler. Selvbetjeningsservices bygges, så de kan gennemføres i 'one-seating'.
 
 
-## Strategiske målsætninger
+## Strategiske principper
+[TODO Beskriv afvejning mellem at realisere vision (datadrevet samfund) inden for givne rammer (GDPR)]
+
 [TODO Beskriv målsætninger i eksisterende aftaler og strategier, også gerne fra andre områder]
 
 De overordnede målsætninger for strategierne kobler alle til visionen om det datadrevne samfund, hvor data ses som et råstof for samfundsudviklingen.
 
 Målsætningerne inkluderer:
 
-> *Det digitale sksl være let, hurtigt og sikre god kvalitet* (Digitaliseringsstrategien)
+> *Det digitale skal være let, hurtigt og sikre god kvalitet* (Digitaliseringsstrategien)
 
 Mere generisk kan man udpege fire overordnede mål:
 
@@ -217,6 +219,34 @@ Transparens
 
 Genbrug
   ~ *mål* om genbrug af it med henblik på lavere omkostninger
+
+EUs persondataforordning (GDPR) rummer også en række relevante principper:
+
+*lovlighed, rimelighed og gennemsigtighed*
+
+*formålsbegrænsning* (undtagelse for arkiv, forskning og statistik)
+
+*dataminimering*
+
+*rigtighed* (straks slettes eller berigtiges)
+
+*opbevaringsbegrænisning*
+
+*integritet og fortrolighed*
+
+*ansvarlighed* (skal kunne påvise at ovenstående overholdes)
+
+[TODO Flyt 'lovlige behandlinger' til 'hjemmel'-afsnit] Endvidere opridser GDPR de lovlige behandlinger hos offentlige myndigheder, som er:
+
+*Den registreredes samtykke*
+
+*Opfyldelse af kontrakt*
+
+*retlig forpligtigelse hos dataansvarlig*
+
+*beskyttelse af vitale interesser*
+
+*opgaver i samfundets interesse eller myndighedsudøvelse*
 
 
 ## Vision
@@ -248,11 +278,25 @@ Værdien ved at følge denne referencearkitektur er, at den understøtter:
 [TODO: Tilføj juridisk værdiskabelse (GDPR, EU (EIDAS m.m.)) - issue #32]
 [TODO: Stram op og fold ud, kig eventuelt på hvad der følger alene af denne... Bind dem op på de strategiske målsætninger]
 
-## Strategiske principper
+## Fællesoffentlige arkitekturprincipper og -regler
 
-Den Fællesoffentlige Digitale Arkitektur udpeger en række principper til rammesætning og styring af den offentlige digitalisering. I denne referencearkitektur er fokus at understøtte arkitekturprincippet om, at *Gode data deles og genbruges* og i særlig grad reglen: *6.1 Del og genbrug data*. Referencearkitekturen tilbyder to måder, hvorpå data kan videregives til genbrug og seks forskellige tekniske integrationsmønster som det kan realiseres gennem.
+Den Fællesoffentlige Digitale Arkitektur (FDA) udpeger en række principper til rammesætning og styring af den offentlige digitalisering. Under hvert princip angiver FDA fra 1 til 5 konkrete arkitekturregler. Tabellen nedenfor gengiver disse FDA's arkitekturprincipper (kilde: https://arkitektur.digst.dk/).
 
-Derudover har en række af arkitekturreglerne konsekvenser for dette arbejde:
+Nr. | Område        | Princip
+--- | ------------- | ------
+1   | Styring       | Arkitektur styres på rette niveau efter fælles rammer
+2   | Strategi      | Arkitektur fremmer sammenhæng, innovation og effektivitet
+3   | Jura          | Arkitektur og regulering understøtter hinanden
+4   | Sikkerhed     | Sikkerhed, privatliv og tillid sikres
+5   | Opgaver       | Processer optimeres på tværs
+6   | Information   | **Gode data deles og genbruges**
+7   | Applikation   | It-løsninger samarbejder effektivt
+8   | Infrastruktur | Data og services leveres driftssikkert
+
+
+I denne referencearkitektur er fokus at understøtte arkitekturprincippet om, at *Gode data deles og genbruges* og i særlig grad den underliggende regel: *6.1 Del og genbrug data*. Referencearkitekturen for deling af data og dokumenter tilbyder to måder, hvorpå data kan videregives til genbrug, og seks forskellige, tekniske implementeringsmønstre, som videregivelse/deling af data kan realiseres gennem.
+
+Derudover har en række af de øvrige arkitekturregler konsekvenser for dette arbejde:
 
 *AR 1.2 Optimer arkitektur efter projektets og de fælles mål*
 - Udgifter i datadeling skal fordeles - byrden i datadeling skal afløftes fra dataejer, hvis den begrænser genbrug
@@ -278,34 +322,6 @@ Derudover har en række af arkitekturreglerne konsekvenser for dette arbejde:
 
 *AR6.2 Anvende fælles regler for dokumentation af data*
 - Anvend fælles referenceinformationsmodel, grund- og referencedata
-
-GDPR har også nogle principper:
-
-*lovlighed, rimelighed og gennemsigtighed*
-
-*formålsbegrænsning* (undtagelse for arkiv, forskning og statistik)
-
-*dataminimering*
-
-*rigtighed* (straks slettes eller berigtiges)
-
-*opbevaringsbegrænisning*
-
-*integritet og fortrolighed*
-
-*ansvarlighed* (skal kunne påvise at ovenstående overholdes)
-
-og lovlige behandlinger hos offentlige myndigheder er:
-
-*Den registreredes samtykke*
-
-*Opfyldelse af kontrakt*
-
-*retlig forpligtigelse hos dataansvarlig*
-
-*beskyttelse af vitale interesser*
-
-*opgaver i samfundets interesse eller myndighedsudøvelse*
 
 [TODO: Tilføj opsummering af Strategiafsnit]
 
