@@ -1660,7 +1660,7 @@ af data<y:LabelModel>
               <y:Geometry height="22.627200000000002" width="22.627200000000002" x="210.10759462379724" y="-1164.4535400485993"/>
               <y:Fill color="#FFFFFFE6" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="9.313599999999951" y="26.627199999999903">
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="9.313600000000008" y="26.627199999999903">
                 <y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
@@ -1838,7 +1838,7 @@ af data<y:LabelModel>
               <y:Geometry height="22.627200000000002" width="22.627200000000002" x="494.6338565411377" y="-1260.969238505277"/>
               <y:Fill color="#FFFFFFE6" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Helvetica Neue" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.65000057220459" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="43.44999694824219" x="-10.411398474121142" y="-19.65000057220459">"Design"<y:LabelModel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Helvetica Neue" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="15.65000057220459" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="43.44999694824219" x="-10.411398474121086" y="-19.65000057220459">"Design"<y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
                 <y:ModelParameter>
@@ -1886,7 +1886,7 @@ af data<y:LabelModel>
           <y:Geometry height="35.799999999999955" width="22.781818181818153" x="398.16386044773776" y="-1113.3263400485991"/>
           <y:Fill color="#FFFFFFE6" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Helvetica Neue" fontSize="10" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="39.760000228881836" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="67.86000442504883" x="-22.539093121615224" y="63.115620198884585">Notifikation? 
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Helvetica Neue" fontSize="10" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="39.760000228881836" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="67.86000442504883" x="-22.539093121615224" y="63.11562019888447">Notifikation? 
 Påmindelse? 
 Meddelelse?<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
@@ -4611,7 +4611,7 @@ data<y:LabelModel>
           <y:Geometry height="30.0" width="180.45851006323426" x="858.0339771563504" y="-637.3205871616991"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#808080" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.0654296875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#940027" verticalTextPosition="bottom" visible="true" width="58.8173828125" x="60.82056362536707" y="3.46728515625">samling</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.0654296875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#940027" verticalTextPosition="bottom" visible="true" width="58.8173828125" x="60.820563625367186" y="3.46728515625">samling</y:NodeLabel>
           <y:Shape type="roundrectangle"/>
         </y:ShapeNode>
       </data>
@@ -4646,7 +4646,7 @@ data<y:LabelModel>
           <y:Geometry height="30.0" width="117.25894714015215" x="858.0339771563505" y="-757.3205871616991"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#808080" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.0654296875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#940027" verticalTextPosition="bottom" visible="true" width="90.9736328125" x="13.142657163826016" y="3.46728515625">forespørgsel</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.0654296875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#940027" verticalTextPosition="bottom" visible="true" width="90.9736328125" x="13.14265716382613" y="3.46728515625">forespørgsel</y:NodeLabel>
           <y:Shape type="roundrectangle"/>
         </y:ShapeNode>
       </data>
@@ -4672,7 +4672,7 @@ data<y:LabelModel>
           <y:Geometry height="30.0" width="180.45851006323426" x="858.0339771563505" y="-697.3205871616991"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#808080" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.0654296875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#940027" verticalTextPosition="bottom" visible="true" width="85.142578125" x="47.657965969117186" y="3.46728515625">dataservice</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.0654296875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#940027" verticalTextPosition="bottom" visible="true" width="85.142578125" x="47.65796596911707" y="3.46728515625">dataservice</y:NodeLabel>
           <y:Shape type="roundrectangle"/>
         </y:ShapeNode>
       </data>
@@ -4761,7 +4761,7 @@ data<y:LabelModel>
           <y:Geometry height="30.0" width="87.5953791456476" x="713.6121303041501" y="-931.5883947176918"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#808080" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.0654296875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#940027" verticalTextPosition="bottom" visible="true" width="65.783203125" x="10.906088010323856" y="3.46728515625">hjemmel</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="23.0654296875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#940027" verticalTextPosition="bottom" visible="true" width="65.783203125" x="10.906088010323742" y="3.46728515625">hjemmel</y:NodeLabel>
           <y:Shape type="roundrectangle"/>
         </y:ShapeNode>
       </data>
@@ -4852,7 +4852,7 @@ data<y:LabelModel>
           <y:Geometry height="30.0" width="100.85932152718954" x="962.4280523656327" y="-991.5883947176918"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#808080" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.0654296875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#1F497D" verticalTextPosition="bottom" visible="true" width="100.1884765625" x="0.33542248234471117" y="3.46728515625">databehandler</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="14" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.0654296875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#1F497D" verticalTextPosition="bottom" visible="true" width="100.1884765625" x="0.33542248234482486" y="3.46728515625">databehandler</y:NodeLabel>
           <y:Shape type="roundrectangle"/>
         </y:ShapeNode>
       </data>
@@ -7571,7 +7571,6 @@ del data
     </edge>
     <edge id="e179" source="n252" target="n249">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="-7.457706224304616" ty="15.017825535501288"/>
@@ -7583,7 +7582,6 @@ del data
     </edge>
     <edge id="e180" source="n251" target="n249">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="-106.09098015159623" ty="4.706398966027564"/>
@@ -7706,7 +7704,6 @@ del data
     </edge>
     <edge id="e187" source="n257" target="n264">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -7717,7 +7714,6 @@ del data
       </data>
     </edge>
     <edge id="e188" source="n257" target="n250">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="35.73719961794859" sy="-1.4680161919447983" tx="0.0" ty="0.0"/>
@@ -7728,7 +7724,6 @@ del data
       </data>
     </edge>
     <edge id="e189" source="n256" target="n1">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="-171.58521427058565" ty="22.818184918839393"/>
@@ -7739,7 +7734,6 @@ del data
       </data>
     </edge>
     <edge id="e190" source="n264" target="n248">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -7750,7 +7744,6 @@ del data
       </data>
     </edge>
     <edge id="e191" source="n253" target="n272">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -7763,7 +7756,6 @@ del data
       </data>
     </edge>
     <edge id="e192" source="n251" target="n252">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -7783,7 +7775,6 @@ del data
       </data>
     </edge>
     <edge id="e193" source="n263" target="n249">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>

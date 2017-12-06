@@ -54,74 +54,82 @@ FM, UFM, EVM, SIM, JM, EFKM, MBUL, SÆM, SKM, MFVM, BM, KL og Danske Regioner. H
 
 I et juridisk perspektiv er dette område reguleret af en lang række forordninger og love. De mest relevante specielt med hensyn til videregivelse af persondata er:
 
-EU-persondataforordningen (GDPR)
-  ~ *forordning* som beskriver pligter og rettigheder ved behandling af persondata. I sammenhæng med denne referencearkitektur er GDPR fundamentalt relevant, da en stor del af de data, der er registreret af offentlige myndigheder, netop er personhenførbare. Da persondata er en af de datatyper, der er strengest reguleret (sammenlignet med fx virksomhedsdata, geodata, registrering af objekter m.m.), har vi valgt at genbruge mange termer og begreber fra netop GDPR i denne referencearkitektur. Herudover er en række aspekter, der dækkes af GDPR, relevante - fx definitionen af gyldige grunde til datadeling, den nødvendige hjemmel i form af borgeren (den registreredes) samtykke, og meget mere. GDPR er således nødvendig læsning for enhver, der planlægger at genbruge persondata i offentlige sagsgange, selvbetjeningsløsninger m.v.
+- **EU-persondataforordningen (GDPR)** beskriver pligter og rettigheder ved behandling af persondata. I sammenhæng med denne referencearkitektur er GDPR fundamentalt relevant, da en stor del af de data, der er registreret af offentlige myndigheder, netop er personhenførbare. Da persondata er en af de datatyper, der er strengest reguleret (sammenlignet med fx virksomhedsdata, geodata, registrering af objekter m.m.), har vi valgt at genbruge mange termer og begreber fra netop GDPR i denne referencearkitektur. Herudover er en række aspekter, der dækkes af GDPR, relevante - fx definitionen af gyldige grunde til datadeling, den nødvendige hjemmel i form af borgeren (den registreredes) samtykke, og meget mere. GDPR er således nødvendig læsning for enhver, der planlægger at genbruge persondata i offentlige sagsgange, selvbetjeningsløsninger m.v.
 
-Persondataloven
-  ~ *lov* som beskriver pligter og rettigheder ved behandling af persondata. Relevansen for denne referencearkitektur er i høj grad den samme som for GDPR. Det bemærkes, at Persondataloven forventes helt eller delvist erstattet af en kommende Databeskyttelseslov, der på tidspunktet for dette dokuments udarbejdelse behandles i folketinget, og som sammen med GDPR fremover vil definere den registreredes rettigheder.
+- **Persondataloven** beskriver pligter og rettigheder ved behandling af persondata. Relevansen for denne referencearkitektur er i høj grad den samme som for GDPR. Det bemærkes, at Persondataloven forventes helt eller delvist erstattet af en kommende Databeskyttelseslov, der på tidspunktet for dette dokuments udarbejdelse behandles i folketinget, og som sammen med GDPR fremover vil definere den registreredes rettigheder.
 
 Med hensyn til digitalisering generelt er følgende love særligt relevante:
 
-EU-forordningen eIDAS (electronic IDentification, Authentication and trust Services)
-  ~ *forordning* som definerer registrerede tillidstjenester. Forordningen specificerer bl.a., at elektroniske transaktioner, der opfylder kravene i eIDAS, altid har samme juridiske gyldighed som klassiske, papirbårne transaktioner. Forordningen fjerner dermed en klassisk barriere for digitalisering. I forhold til denne referencearkitektur bemærker vi, at eIDAS har et udpræget grænseoverskridende (*cross border*) fokus. Det grænseoverskridende aspekt af datadeling behandles ikke i dette dokument.
+- **EU-forordningen eIDAS** (electronic IDentification, Authentication and trust Services) definerer registrerede tillidstjenester. Forordningen specificerer bl.a., at elektroniske transaktioner, der opfylder kravene i eIDAS, altid har samme juridiske gyldighed som klassiske, papirbårne transaktioner. Forordningen fjerner dermed en klassisk barriere for digitalisering. I forhold til denne referencearkitektur bemærker vi, at eIDAS har et udpræget grænseoverskridende (*cross border*) fokus. Det grænseoverskridende aspekt af datadeling behandles ikke i dette dokument.
 
-Lov om Digital Post
-  ~ *lov* der gør det obligatorisk for virksomheder og borgere at modtage digitale meddelelser fra offentlige afsendere. Digital Post er således en helt fundamental kanal, når myndigheder ønsker at dele data og dokumenter med borgere og virksomheder gennem meddelelser.
+- **Lov om Digital Post fra offentlige afsendere** gør det obligatorisk for virksomheder og borgere at modtage digitale meddelelser fra offentlige afsendere. Digital Post er således en helt fundamental kanal, når myndigheder ønsker at dele data og dokumenter med borgere og virksomheder gennem meddelelser.
 
 Derudover er der en række mere specifikke love, der sætter rammer for datadeling i den offentlige forvaltning, fx inden for særlige sektorer eller domæner. Listen nedenfor inkluderer de væsentligste, men forsøger i øvrigt ikke på at være udtømmende.
 
-Sundhedsloven
-  ~ *lov* der regulerer hvem der har ansvar for behandling, forebyggelse og sundhedsfremme i det danske sundhedsvæsen. Sundhedsdata om borgere udgør en særlig følsom kategori af data, og Sundhedsloven regulerer derfor i detaljer, hvordan og til hvilke formål data kan behandles. Hvem, der har adgang til data, og hvordan adgang kan begrænses (herunder 'negativt samtykke', der i nogen grad svarer til GDPR-begrebet 'begrænsning af behandling'), er ligeledes reguleret med relativt finkornet granularitet.
+- **Sundhedsloven** regulerer hvem der har ansvar for behandling, forebyggelse og sundhedsfremme i det danske sundhedsvæsen. Sundhedsdata om borgere udgør en særlig følsom kategori af data, og Sundhedsloven regulerer derfor i detaljer, hvordan og til hvilke formål data kan behandles. Hvem, der har adgang til data, og hvordan adgang kan begrænses (herunder 'negativt samtykke', der i nogen grad svarer til GDPR-begrebet 'begrænsning af behandling'), er ligeledes reguleret med relativt finkornet granularitet.
 
-Serviceloven
-  ~ *lov* der udstikker rammerne for rådgivning og støtte for at forebygge sociale problemer samt for at tilbyde ydelser til borgere med nedsat fysisk eller psykisk funktionsevne eller særlige sociale problemer. Loven danner baggrund for sagsbehandlingsforløb, der typisk kan involvere en række forskellige myndigheder. Dermed er loven et godt eksempel på, hvordan der juridisk kan gives hjemmel til deling/videregivelse af data i en række, konkrete scenarier.
+- **Serviceloven** udstikker rammerne for rådgivning og støtte for at forebygge sociale problemer samt for at tilbyde ydelser til borgere med nedsat fysisk eller psykisk funktionsevne eller særlige sociale problemer. Loven danner baggrund for sagsbehandlingsforløb, der typisk kan involvere en række forskellige myndigheder. Dermed er loven et godt eksempel på, hvordan der juridisk kan gives hjemmel til deling/videregivelse af data i en række, konkrete scenarier.
 
-Forvaltningslov
-  ~ *lov* der indeholder regler om borgernes retsstilling over for den offentlige forvaltning. I forbindelse med sagsbehandling i offentlige forvaltninger regulerer loven bl.a. aktindsigt fx i begrundelse for afgørelser. I forhold til denne referencearkitektur spiller Forvaltningsloven bl.a. ind i diskussionen om forholdet mellem data og dokumenter.
+- **Forvaltningslov** indeholder regler om borgernes retsstilling over for den offentlige forvaltning. I forbindelse med sagsbehandling i offentlige forvaltninger regulerer loven bl.a. aktindsigt fx i begrundelse for afgørelser. I forhold til denne referencearkitektur spiller Forvaltningsloven bl.a. ind i diskussionen om forholdet mellem data og dokumenter.
 
 Scope for denne referencearkitektur er, som navnet angiver, selve delingen/videregivelsen af data (herunder persondata og evt. i form af dokumenter). Vi søger ikke at definere *anvendelsen* af data, herunder hvordan data registreres, eller hvordan den aktør (fx en myndighed), der afsender eller modtager data, benytter disse data i en konkret arbejdsgang. Processerne for registrering samt afsendelse og modtagelse af en meddelsese er dog summarisk beskrevet for at introducere begreber, der er relevante for at kunne tale om selve delingen/videregivelsen af data.
 
 Specifikt er det uden for scope af denne referencearkitektur at definere:
 
-- Anvendelse af data, herunder:
-  - Registrering og intern anvendelse af data hos den dataansvarlige myndighed
-  - Konteksten for en aktørs behov for at forespørge på data, videregive data via en meddelelse eller modtage data via en meddelelse
-- Streaming af data (videodata, IoT-data m.m.)
-- Grænseoverskridende (cross-border) datadeling
+* Anvendelse af data, herunder:
+     * Registrering og intern anvendelse af data hos den dataansvarlige myndighed
+     * Konteksten for en aktørs behov for at forespørge på data, videregive data via en meddelelse eller modtage data via en meddelelse
+* Streaming af data (videodata, IoT-data m.m.)
+* Grænseoverskridende (cross-border) datadeling
 
 I forhold til streaming af data bemærkes det, at streaming løseligt kan beskrives som en seriel række af processen `videregivelse på forespørgsel`, som vi beskriver senere i dette dokument. Eventuelle, yderligere aspekter ved streaming, der kan være relevante at dykke ned i i referencearkitektursammenhæng, er ikke inkluderet i denne referencearkitektur, men må henvises til en specialiseret referencearkitektur for streaming af data.
 
 I forhold til grænseoverskridende datadeling er mandatet for denne referencearkitektur begrænset til bestemte initiativer forankret hos de myndigheder, der er del af Den fællesoffentlige digitaliseringsstrategi 2016-2020. Mandatet inkluderer ikke myndigheder i andre lande, hvorfor en beskrivelse af grænseoverskridende datadeling aldrig vil kunne blive fyldestgørende.
 
 ## Centrale begreber
-Data, oplysninger og informationer er tæt relaterede begreber og deres umiddelbare forståelse er meget forskellig på tværs af forskellige faggrupper og praksisser.
+Trods det, at Data, Oplysninger og Informationer er tæt relaterede begreber, er deres umiddelbare forståelse meget forskellig på tværs af faggrupper og praksisser.
 
-Vi vil i denne referencearkitektur holde os fra at komme med en længere fænomænologisk udredning og fokusere på en mere pragmatisk og lokal definition.
+Vi vil i denne referencearkitektur holde os fra at komme med en længere, fænomænologisk udredning af forskelle og ligheder mellem disse termer. I stedet vil vi fokusere på en mere pragmatisk og lokal definition og holde os til `data` som generelt begreb.
 
-
+### Data og dokumenter
 ![Figuren beskriver begrebet **data**, som det anvendes i denne referencearkitektur. Væsentligst er, at data indgår i samlinger, samt at de - evt. i form af et dokument - kan videregives i en meddelelse.](figures/abstraktion.png)
 
-[TODO: Tilføj to eksempler: CPR-register + Røntgenbilleder]
+Figuren viser de centrale begreber i denne referencearkitektur, hvor `data` ikke overraskende ligger i midten. Vi vil dog ikke introducere en specifik og isoleret definition af `data` - vi regner med, at læseren har en god fornemmelse for, hvad `data` er, og det er i denne sammenhæng tilstrækkeligt.
 
-[TODO: Afstem at begreber i figur er forklaret i ovenstående tekst, samt fold tekst ud (specialisering m.m.)]
+Vi vil i stedet tale om `data` ud fra de relationer, der er afbildet i figuren. Har man fx mange, ens strukturerede `data` samlet samme sted, indgår `data` i en `samling`. En `samling` vil typisk have en standardiseret måde, hvorpå man kan hente `data` på forespørgsel.
 
-[Dokumenter granularitet og samlet forvaltningsobjekt, databaser er mere finkornert udtræk, opslag...]
+`Data` kan også indgå i en `meddelelse` i forbindelse med, at det videregives fra en afsender til en modtager. En `meddelelse` kan være både struktureret og ustruktureret.
 
+`Data` har to specialiseringer. Den første er en `registrering`, der betegner, at en myndighed har registreret oplysninger på standardiseret og struktureret vis, typisk ud fra specifik, lovmæssig hjemmel. `Registreringerne` udgør tilsammen et `register`, der dermed er en specialiseret `samling`. `Registeret` understøtter opslag af `data` i form af den oprindelige `registrering`, fx i kontekst af myndigheders sagsbehandling eller for at understøtte selvbetjeningsprocesser. `Registeret` kan også understøtte mere finkornede opslag. Et eksempel på dette kunne være en anvendelsesorienteret dataservice, der baserer sig på finkornede opslag i flere registre for at kombinere udvalgte data til brug i en given, specifik sammenhæng.
 
-I det efterfølgende vil begrebet `data` blive brugt til at betegne både oplysninger på dokumentform og oplysninger, der optræder i registre. Vi anvender begrebet `samling` både om et `register` og et `repository` af dokumenter (termen `repository` anvendt jf. Referencearkitektur for deling af dokumenter og billeder, 2012).
+Den anden specialisering af `data` er i form af et `dokument`. Med denne modellering viser vi, at et `dokument` i bund og grund blot består af `data`. Som afledt konsekvens vælger vi som generelt pricip i denne referencearkitektur ikke tale om deling af "`data` og `dokumenter`", men i stedet indskrænke til at tale om "`data`".
+
+Med det sagt, er der alligevel nogle kvaliteter ved et `dokument`, der skal fremhæves. For det første er et `dokument` typisk karakteriseret ved, at det er er optimeret mod at være tilgængeligt for menneskeøjne, da det binder `data` i en grafisk, læsbar opsætning (i tilgift til, at mange dokumenttyper også tilbyder indlejring af data i fuldt struktureret, maskinlæsbar form). For det andet har et `dokument` nogle iboende egenskaber, der er hensigtsmæssige i forvaltningsmæssige sammenhænge: Et `dokument` kan samle en række `data`, der i praksis håndteres som en samlet enhed, eller som er nødvendige på et givet tidspunkt i et sagsbehandlingsforløb, for eksempel som beslutningsgrundlag eller ved videregivelse af `data` fra én myndighed til en anden. Et `dokument` kan være tidsstemplet og signeret, og er dermed en klart grundlag for aktindsigt, retslige afgørelser og i det hele taget den historiske dokumentation af en sagsgang. Til sammenligning vil det ofte være vanskeligere at afgøre, nøjagtigt hvordan en specifik `registrering` så ud i et `register` på et givet tidspunkt. Dette vil typisk kræve, at `registeret` på forespørgselstidspunktet teknisk gendanner, hvordan `registreringen` så ud på det givne tidspunkt - hvorimod de historiske `data`, hvis de var gemt i `dokument`-form, ville være direkte tilgængelige.
+
+Sluttelig findes der også en specialisering af `samling` for `dokumenter`, nemlig et `repository`, som er det fysiske sted, hvor `dokumenter` lagres efter oprettelse, og hvorfra de hentes ved efterfølgende anvendelse. Vi anvender den engelske term `repository` jf. Referencearkitektur for deling af dokumenter og billeder, 2012.
 
 Endvidere vil vi undlade at bruge ordet `metadata`. Ordet anvendes historisk set meget forskelligt, typisk med en betydning der er tæt knyttet til en konkret anvendelsessituation. Fra denne referencearkitekturs synspunkt er `metadata` imidlertid blot en særlig form af `data`.
 
+To virkelige eksempler kan benyttes til at gøre begreberne omkring `data` konkrete:
+
+- **CPR-registeret**: `data` om borgere indgår i den `datasamling`, der kaldes CPR-registeret og i praksis benævnes netop som et `register`. `Data` om en enkelt borger udgør én specifik `registrering` i CPR-registeret, der kan hentes via en standardiseret forespørgsel.
+- **Røntgenbilleder**: `data` om et røntgenbillede består dels af billeddata, dels af yderligere informationer som fx tidsstempel, patient-ID, datakilde m.m. I praksis håndteres `data` om et røntgenbillede i et samlet, standardiseret objekt, som vi kan refere til som et `dokument`. Røntgenbilleder er gemt i `samlinger`, der for `dokumenter` kaldes et `repository`, og som i praksis ligger decentralt i røntgensystemer hos de enkelte regioner/hospitaler.
+
+### Grundlæggende mønstre
 Et af hovedformålene med denne referencearkitektur er at vejlede i valget mellem de to grundlæggende, generiske procesmønstre for videregivelse af data:
 
  - `Videregivelse på forespørgsel` - typisk via et API i system til system-integrationer
- - `Videregivelse ved meddelelse` indeholdende data (herunder dokumenter) - typisk brugt ved beskeder til borgere/virksomheder, der skal have retsvirkning, men også et klassisk mønster brugt i system til system-integrationer. [TODO: Knyt til EIDAS (Elektronisk leveringstjeneste - artikel 44)]
+ - `Videregivelse ved meddelelse` indeholdende `data` (herunder `dokumenter`) - typisk brugt ved beskeder til borgere/virksomheder, der skal have retsvirkning, men også et klassisk mønster brugt i system til system-integrationer.
 
-Den fundamentale forskel på disse to scenarier er, om det er den aktør, der videregiver data eller den aktør, der modtager data, der kender den konkrete kontekst for, hvordan data skal anvendes. Afsnittet [TODO: henvisning til Forretningsarkitektur]
+Den fundamentale forskel på disse to scenarier er, om det er den aktør, der *videregiver* data eller den aktør, der *modtager* data, der kender den konkrete kontekst for, hvordan data skal anvendes.
 
 Ved `videregivelse på forespørgsel` er dataafsenderen som udgangspunkt ikke bekendt med datamodtagerens formål (men er naturligvis forpligtet til at håndhæve relevant hjemmel). Et eksempel på dette er en myndigheds forespørgsel på personoplysninger i CPR-registeret.
 
 Ved `videregivelse ved meddelelse` er det dataafsenderen, der i en given kontekst afsender en meddelelse med et givent formål - typisk som led i en proces. Et eksempel på dette er politiets fremsendelse af en fartbøde til en borger.
+
+Figuren nedenfor opsummerer nogle af denne referencearkitekturs væsentligste elementer. Dokumentets overordnede emne er `videregivelse af data`, herunder persondata. De to grundlæggende måder at videregive data på er enten på forespørgsel eller gennem en meddelelse - afsnittet "Forretningsarkitektur" beskriver de to scenarier i yderligere detaljer. For hvert scenarie er der en række, mulige implementeringsmønstre - disse behandles nærmere i afsnittet "Teknisk arkitektur".
+
+![Oversigt over fokusområder i referencearkitektur for deling af data og dokumenter  - generiske forretningsprocesmønstre og mulige, tekniske implementeringsmønstre.](figures/scope.png)
 
 
 ## Tilblivelse og governance
@@ -135,21 +143,27 @@ Endelig godkendelse forventes hos Styregruppe for Data og Arkitektur under Digit
 (Videre vedligeholdelse i regi af FDA, næste version fokus på sammenhæng med øvrige)
 
 ## Metoderamme
+[TODO: Fold ind i tilblivelse og governance]
 Referencearkitekturen er udarbejdet inden for rammerne af Fællesoffentlig Digital Arkitektur og følger så vidt muligt den fælles skabelon for referencearkitekturer som udarbejdet i Sekretariatet for Styregruppen for Data og Arkitektur under digitaliseringsstrategien. Metoderammen bygger blandt andet på erfaringer fra OIO referencearkitektur, og indarbejder også elementer fra EIRA, TOGAF, ArchiMate m.m.
 
-I dokumentets tekst er særlige elementer angivet i *kursiv* (fx *lov*, *mål*, *rolle* m.m.). Dette markerer, at de hører til Archimate-begrebsapparatet. Andre elementer er angivet med særlig `markering`. Her er der tale om referencer til begreber/elementer fra figurer. Det bemærkes, at prefixet 'data-' kan være udeladt på begreber/elementer i tekst og figurer fx af formatterings- eller læsbarhedshensyn uden, at der ligger en indholdsmæssig skelnen bag (fx `dataanvendelse`/`anvendelse`, `datasamling`/`samling` o.a.)
+I dokumentet er specifikke termer/ord fremhævet med en særlig `skrifttype` for at markere referencer til elementer på figurer (og vedlagte Archimate model).
+Andre termer/ord i teksten er fremhævet med `kursiv` hvilket markerer at elementet findes i Archimate-begrebsapparatet (og i FDA dokumentationsrammer?).
+
+Det bemærkes, at prefixet 'data-' kan være udeladt på begreber/elementer i tekst og figurer fx af formatterings- eller læsbarhedshensyn uden, at der ligger en indholdsmæssig skelnen bag (fx `dataanvendelse`/`anvendelse`, `datasamling`/`samling` o.a.)
 
 I figurer og tekst markerer:
 
-- _Kursiv_: At et element eller en relation ikke er nærmere defineret i denne referencearkitektur (fx _dokument_)
-- `Blå tekst`: At et element eller en relation ejes og defineres i denne referencearkitektur (fx `anvendelse`)
+- _Kursiv_ et element eller en relation ikke er nærmere defineret i denne referencearkitektur (fx _dokument_)
+- Blå almindelig tekst et element eller en relation ejes og defineres andet steds, fx. i andre   referencearkitektur eller lovgivning.
+- Rød **Fed tekst** et element eller en relation ejes og defineres i denne referencearkitektur (fx `anvendelse`)
 
 I elementerne i dokumentets figurer angiver:
-- Runde hjørner: At det er et Procestrin (Business Functions, jf. Archimate)
-- Skarpe hjørner: At det er en Applikationsrolle (Application services, jf. Archimate)
-- "Slikkepind" er interfaces/applikationsfunktioner/operationer
+- runde hjørner et procestrin (*Business Functions Archimate*)
+- skarpe hjørner en Applikationsrolle (*Application services*)
+- "Slikkepind" en Snitflade (*Application Interface*)
 
 ## Relation til andre referencearkitekturer
+[TODO: Fold ind i tilblivelse og governance]
 Denne referencearkitektur gør brug af:
 
 - Fællesoffentlig referencearkitektur for brugerstyring
@@ -171,18 +185,27 @@ Den skal kunne anvendes af:
 # Strategi
 Referencearkitekturen udmønter og understøtter beslutninger i den Fællesoffentlige Digitaliseringsstrategi 2020. Desuden er der i udarbejdelsen taget hensyn til en række aktuelle, offentlige/politiske strategier, herunder Sammenhængsreformen, Cybersikkerhedsinitativet og kommunernes digitaliseringsstrategi "Lokal og Digital". Der kan på tværs af strategierne identificeres en række forretningsmæssige og teknologiske tendenser, som ligeledes har bidraget til at sætte retningen for den ønskelige arkitektur.
 
-![Tværgående tendenser i aktuelle, offentlige/politiske strategier](figures/tendenser.png)
+| Forretningsmæssige tendenser | Teknologiske tendenseri
+|----------|----------
+| Sammenhængende offentlige services | Scale-out løsninger til web-scale
+| Suverænintet, beskyttelse mod cyberangreb | Micro-services og DevOps
+| Øget opmærksomhed på behandling af persondata | Nær real-tid
 
-[TODO: Fold bullet-liste ud med flere kommentarer - i et narrativ]
+Table: Tværgående tendenser i aktuelle, offentlige/politiske strategier
 
-- Sammenhængende offentlige services - gode brugerrejser [TODO: Knyt til sammenhængsreform)]
-- Suverænitet, beskyttelse mod cyberangreb
-- Øget opmærksomhed om behandling af personlige oplysninger
+- **Sammenhængende offentlige services** er det meste tydelig gennemgående tema på tværs af strategierne. Den offentlige forvaltning ønsker at tilbyder borger og virksomheder services, der ikke er tæt knyttet til enkelte myndigheder, men opleves som sammenhængende for dem der anvender services. Mest tydelig er det udtrykt i European Interoperability Frameworks koncept om intergrated service delivery, men er også meget fremtrædende i regeringens sammenhængsreform.
+
+- **Suverænitet, beskyttelse mod cyberangreb** er et tema, som har været på dagsordenen længe, men har med regeringens cybersecurity strategi fået en vægt der ikke er set tidligere. Tendensen udgør et større strategisk skifte som flytter noget af den tillid som tidligere har været vist store it-leverandører og peger i retning af hjemtagning af centrale/kritiske/vitale funktioner som fx netværk.
+
+
+- **Øget opmærksomhed om behandling af personlige oplysninger** Den europæiske fordning om beskyttelse af personoplysninger (GPDR) og tilhørende dansk implementering udvider den dataansvarliges risiko i forhold til tidligere. Det har føret til en fornyet fokus på at have styr på behandling af persondata og tilsynet hermed.
 - Grænseoverskridende services
 
-- Øget standardisering af begreber, datamodeller og grænseflader
-- Flere og mere forskelligartede enheder forbundet til netværket
-- Scale-out løsninger til web-scale
+- **Scale-out løsninger til web-scale** Der har de sidste 5-10 år været fokus på at få teknologier til at skalere forudsigeligt til web-scale. Der har voldsomt udvidet de ressourcer der globalt er blevet brugt på large-scale implementeringer. Nu er området så modent at teknologierne også er tilgængelig for projekter på national skala og endda i enkelte projekter.
+
+- **Micro-services** En måde at håndtere den stigende kompleksitet i forvaltningen af it landskaber er en udbredt strategi om at levere applikationer i mindre enheder. Micro-services er en sådan strategi.
+
+- **Nær realtid** Med henblik på automatisering og sammenhængende services, er der fokus på at have mindre tid mellem registrering og anvendelse af data. Det betyder at der er færre batch overførsler. Selvbetjening services bygges så de kan gennemføres i 'one-seating'.
 
 
 ## Strategiske målsætninger
@@ -215,6 +238,8 @@ Visionen i denne referencearkitektur er at stræbe efter en situation, hvor:
 > *Data er en fælles, værdifuld og velbeskyttet ressource, som skal være nem at dele og bruge, men svær at misbruge*
 
 [TODO: Fold visionen ud ord for ord. Skal være 'meningsfuldt' - 'what's in it for me?' for den registrerede.]
+
+**Fælles** betyder at data der registreres ét sted til ét formål, kan have stor værdi for andre. **Værdifuld** betyder at data betragtes som et økonomisk og kvalitetsmæssigt asset på lige fod med finansiering og fysiske bygninger. **Velbeskyttet** betyder at der er taget tilstrækkelige og effektiv tiltag for at beskytte tillid til at opbevaring, anvendelse og vidergivelse sker under retsmæssige forhold. **Nem at dele** betyder at udgifterne ved at anvende data i en ny sammenhæng ikke alene løftes af dataejer samt at de er tydelig vejledning i udarbejdelse af nødvendige aftaler. **Nem at bruge** betyder 
 
 [TODO: Hvilke forretningsevner der kommer i fokus, og hvad vi skal være bedre til... Data er fælles kræver mere ensartede rammer og lovgivning, værdifulde kræver at de er velbeskret, velbeskyttet kræver indsats der står i mål med trusler...]
 

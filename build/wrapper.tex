@@ -18,7 +18,7 @@
 \definecolor{blue}{HTML}{1F497D}
 \definecolor{warmgrey}{HTML}{F9F8F2}
 \definecolor{darkblue}{RGB}{3,29,92} % graf farve / FM
-\definecolor{darkred}{RGB}{148,0,39} % graf farve / FM
+\definecolor{darkred}{RGB}{148,0,39} % graf farve / DIGST
 
 
 \usepackage{longtable, booktabs}
@@ -69,9 +69,9 @@
 
 % figur
 \usepackage{graphicx, grffile}
-% set default figure placement to htbp
+% set default figure placement to
 \makeatletter
-\def\fps@figure{h}
+\def\fps@figure{ht}
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
 \makeatother
@@ -83,7 +83,6 @@
 %\floatsetup[figure]{style=plaintop}
 \DeclareColorBox{shaded}{\colorbox{warmgrey}}
 \floatsetup{style=plaintop,framestyle=colorbox,colorframeset=shaded,framefit=yes,heightadjust=all,framearound=all}
-
 
 \usepackage{caption}
 \DeclareCaptionFont{darkblue}{\color{darkblue}}
@@ -101,7 +100,7 @@
 
 \usepackage{amsmath}
 \numberwithin{figure}{section}
-
+\numberwithin{table}{section}
 
 % styles
 %\titlelabel{\llap{\thetitle\quad}} % numbers to the left
