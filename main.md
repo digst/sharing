@@ -229,8 +229,6 @@ Visionen i denne referencearkitektur er at stræbe efter en situation, hvor:
 
 > *Data er en fælles, værdifuld og velbeskyttet ressource, som skal være nem at dele og bruge, men svær at misbruge*
 
-[TODO: Fold visionen ud ord for ord. Skal være 'meningsfuldt' - 'what's in it for me?' for den registrerede.]
-
 **Fælles** betyder at data der registreres ét sted til ét formål, kan have stor værdi for myndigheder og endda private tjenester. **Værdifuld** betyder at data der er registerret i det offentlgie betragtes som et økonomisk og kvalitetsmæssigt asset på lige fod med finansiering og fysiske bygninger. **Velbeskyttet** betyder at der er taget tilstrækkelige og effektiv tiltag for at beskytte borgere og virksomhederes tillid til at opbevaring, anvendelse og vidergivelse sker under gennemskuelige og retsmæssige forhold. **Nem at dele** betyder at udgifterne ved at anvende data i en ny sammenhæng ikke alene løftes af dataejer samt at de er tydelig vejledning i udarbejdelse af nødvendige aftaler og ikke tager for lang tid. **Nem at bruge** betyder der er fastlagte processer og best practices og generiske infrastruktur der kan genbruges. **Svær at misbruge** betyder at enkelt person, organisationer og fremmede magter med hensigt at bruge data uretsmæssigt begrænses mest muligt og at indsatsen står i mål med trusslerne og mulige konsekvenser af misbrug.
 
 Denne vision kræver at en række forretningsevner (capabillities) i det offentlige forstærkes væsentligt, herunder:
@@ -546,44 +544,69 @@ Det er dog værd at bemærke, at der i praksis kan skabes 'hybrid-varianter' af 
 ## Forretningsobjekter
 Nedenfor fremgår en initiel oversigt over en række forretningsobjekter, der er væsentlige for referencearkitekturen.
 
-_Regibemærkning for version 0.4: Det videre arbejde skal klarlægge, hvilke elementer der skal indgå i listen, samt hvordan de defineres. Modelleringsniveauet skal endvidere lægges fast (begrebsmodellering og/eller logiske kernemodeller?) Kommentarer og midlertidige bemærkninger indgår i listen, markeret med kantede parenteser._
-
 ![Oversigt over de centrale forretningsobjekter og deres relationer](figures/objekter.png)
+
+
+vidergivelse
+  ~ *process* hvor en dataansvarlige videregiver oplysninger til andre.
+
+
+meddelelse
+  ~ *forretningsobjekt* data der vidergives?
+
+meddelelse
+  ~ *forretningsobjekt* der beskriver retten til at registrere, opbevare, anvende og vidergive data
 
 data
   ~ *objekt* (Abstrakt. Bruges om både register-record og dokument)
 
-Klassificeret i forhold til både organisation og den registrerede.
-
-personoplysninger (persondata)
-  ~ *objekt* enhver form for informations om en identificeret eller identificerbar fysisk person (den registrerede)
+log
+  ~ *forretningsobjekt* og datasamling der beskriver behandlingen af data.
 
 
-samling
-  ~ *objekt* [Datasætmodel har ikke definition...] ISO9115: en identificerbar samling af oplysninger (samlebetegnelse for PSI, GPDR register, )
+dataservice
+  ~ *applikationsservice* der giver adgang til en eller flere datasamlinger med den nødvendige beskyttelse
 
-meddelelse
-  ~ *objekt* [NgDP] registreret forsendelse
+forespørgsel
+  ~ *forretningsobjekt* og meddelse som indeholder foprespørgsel om vidergivelse af oplysninger.
 
-den registrede
-  ~ *objekt* [Grunddata, fx person. GPDR: den registrede]
+abonnement
+  ~ *forretningsobjekt* og der indeholder en eller flere forspørgelser og resultere i en meddelelse om ændringer i datasamlinger.
 
+forsendelse
+  ~ *applikationsservice* der modtager og distribuere meddelelser til andre forsendelsesservices og stiller modtagne meddelelser til rådighed for modtager
+
+adresse
+  ~ *forretningsobjekt* der beskriver forsendelsesoplysninger om modtager, fx tekniske endepunkter men også kapabilities.
+
+påmindelse
+  ~ *forretningsobjekt* usikker levering og beskyttelse, i modæstning til model.
+
+*Forretningsrollerne* fra GDPR
+
+- dataansvarlige
+- databehandler
+- den registrerede
+
+*Applikationsfunktionerne* fra referencearkitektur for brugerstyring
+
+- gendelse (autentifikation)
+- godkendelse (authentifikation)
+
+*Forretningsobjekterne* fra referencearkitektur for brugerstyring
+
+- adgangspolitik
+- [todo: overvej idToken (og ikke adgangsbillet)]
+
+[Todo: Tag stilling til boblere]
 model/type
   ~ *objekt* [Jf. modelregler fra FDA]
 
 katalog
   ~ *objekt* [jf hvidbog] både data, service... til design
 
-dataservice
-  ~ *objekt* webservice med adgang til datasamling
-
-hændelseslog
-    ~ *objekt* datasamling der indeholder oplysninger om hændelser og kan tilvejebring bevis. (ISO27002 indeholder 'bøer omfatte'). Bør beskyttes mod manipulation.
-
-værdisæt (reference data)
+referencedata
   ~ *objekt* beskriver udfaldsrum for felter i meddelelser og felter i data. Indeholder også oversættelser mellem forskellige.
-
-og andre mulige
 
 
 registeroplysning
@@ -591,18 +614,11 @@ registeroplysning
 
 dokument
   ~ *objekt* [Dokumentmodel fra OIO]
-
-påmindelse
-  ~ *objekt* [Næste generation Digital Post]
-
 registreringsbegivenhed
   ~ *objekt* en ændring på et allerede registreret element?
 
 forretningshændelse/begivenhed
   ~ *objekt*
-
-abonnement
-  ~ *objekt* en beskrivelse af hvilke begivenheder en aktør ønsker oplysninger om
 
 klassifikation
   ~ *objekt*
@@ -615,9 +631,6 @@ fuldmagt
 
 negativt samtykke (begrænsning i anvendelse)
   ~ *objekt* (GDPR)
-
-request
-    ~ *objekt* som sendes til dataservice med anmodning om vidergivelse af data.
 
 
 
