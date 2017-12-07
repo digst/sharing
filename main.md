@@ -125,7 +125,7 @@ Den fundamentale forskel på disse to scenarier er, om det er den aktør, der *v
 
 Ved `videregivelse på forespørgsel` er dataafsenderen som udgangspunkt ikke bekendt med datamodtagerens formål (men er naturligvis forpligtet til at håndhæve relevant hjemmel). Et eksempel på dette er en myndigheds forespørgsel på personoplysninger i CPR-registeret.
 
-Ved `videregivelse ved meddelelse` er det dataafsenderen, der i en given kontekst afsender en meddelelse med et givent formål - typisk som led i en proces. Et eksempel på dette er politiets fremsendelse af en fartbøde til en borger.
+Ved `videregivelse ved meddelelse` er det dataafsenderen, der i en given kontekst afsender en meddelelse med et givent formål - typisk som led i en afviklingen af en arbejdsgang, der enten kan være manuel eller automatiseret. Et eksempel på dette er politiets fremsendelse af en fartbøde til en borger.
 
 Figuren nedenfor opsummerer nogle af denne referencearkitekturs væsentligste elementer. Dokumentets overordnede emne er `videregivelse af data`, herunder persondata. De to grundlæggende måder at videregive data på er enten på forespørgsel eller gennem en meddelelse - afsnittet "Forretningsarkitektur" beskriver de to scenarier i yderligere detaljer. For hvert scenarie er der en række, mulige implementeringsmønstre - disse behandles nærmere i afsnittet "Teknisk arkitektur".
 
@@ -135,55 +135,54 @@ Figuren nedenfor opsummerer nogle af denne referencearkitekturs væsentligste el
 ## Tilblivelse og governance
 Første udgave er skrevet hos Kontor for Data og Arkitektur af Mads Hjorth, Digitaliseringsstyrelsen og Anders Fausbøll, Omnium Improvement.
 
-(TODO: Deltagere i arbejdsgruppe)
+I udarbejdelsen har en arbejdsgruppe af offentlige arkitekter bidraget gennem en række af workshops. I gruppen har deltaget: [TODO: Oplist deltagere i arbejdsgruppe]
+
+Endelig godkendelse forventes hos Styregruppe for Data og Arkitektur under Digitaliseringsstrategien 5. marts 2018. Herefter vil Styregruppen eje dokumentet, med Kontor for Data og Arkitektur som ansvarlig for vedligehold af referencearkitekturen frem til 2020 som en del af den Fællesoffentlige, Digitale Arkitektur.
+
+Metodemæssigt er referencearkitekturen udarbejdet inden for rammerne af [Fællesoffentlig Digital Arkitektur](https://arkitektur.digst.dk/) og følger så vidt muligt den fælles skabelon for referencearkitekturer som udarbejdet i Sekretariatet for Styregruppen for Data og Arkitektur under digitaliseringsstrategien. Metoderammen bygger blandt andet på erfaringer fra OIO referencearkitektur, og indarbejder også elementer fra European Interoperability Reference Architecture (EIRA), The Open Group Architecture Framework (TOGAF), ArchiMate m.m.
+
+Denne referencearkitektur relaterer sig til en række andre referencearkitekturer, både eksisterende og planlagte. Specifikt gør denne referencearkitektur brug af:
+
+- Fællesoffentlig referencearkitektur for brugerstyring - [link til version 1.0](https://www.digst.dk/Arkitektur-og-data/It-arkitektur/Brugerstyring)
+
+Den skal kunne anvendes af:
+
+- Fællesoffentlig referencearkitektur for selvbetjening (under udarbejdelse i regi af Initiativ 1.2 af Den fællesoffentlige digitaliseringsstrategi 2016-2020)
+- Fællesoffentlig referencearkitektur for overblik over egne sager og ydelser(under udarbejdelse i regi af Initiativ 1.3 af Den fællesoffentlige digitaliseringsstrategi 2016-2020)
+
+... og skal anvendes i kontekst sammen med:
+
+- Referencearkitektur for sags- og dokumentområdet (OIO, 2008) - [link](https://digitaliser.dk/resource/230688)
+- Referencearkitektur for deling af dokumenter og billeder (National sundheds-it, 2012) - [link](https://sundhedsdatastyrelsen.dk/da/rammer-og-retningslinjer/om-referencearkitektur-og-standarder)
+- Referencearkitektur for informationssikkerhed (National sundheds-it, 2013) - [link](https://sundhedsdatastyrelsen.dk/da/rammer-og-retningslinjer/om-referencearkitektur-og-standarder)
+- Indberetning til registre på sundhedsområdet (under godkendelse pr. november 2017)
 
 
-Endelig godkendelse forventes hos Styregruppe for Data og Arkitektur under Digitaliseringsstrategien 5. marts 2018.
-
-(Videre vedligeholdelse i regi af FDA, næste version fokus på sammenhæng med øvrige)
-
-## Metoderamme
-[TODO: Fold ind i tilblivelse og governance]
-Referencearkitekturen er udarbejdet inden for rammerne af Fællesoffentlig Digital Arkitektur og følger så vidt muligt den fælles skabelon for referencearkitekturer som udarbejdet i Sekretariatet for Styregruppen for Data og Arkitektur under digitaliseringsstrategien. Metoderammen bygger blandt andet på erfaringer fra OIO referencearkitektur, og indarbejder også elementer fra EIRA, TOGAF, ArchiMate m.m.
-
+## Signaturforklaring
 I dokumentet er specifikke termer/ord fremhævet med en særlig `skrifttype` for at markere referencer til elementer på figurer (og vedlagte Archimate model).
-Andre termer/ord i teksten er fremhævet med `kursiv` hvilket markerer at elementet findes i Archimate-begrebsapparatet (og i FDA dokumentationsrammer?).
+Andre termer/ord i teksten er fremhævet med `kursiv`, hvilket markerer at elementet findes i Archimate-begrebsapparatet (og i FDA dokumentationsrammer?).
 
 Det bemærkes, at prefixet 'data-' kan være udeladt på begreber/elementer i tekst og figurer fx af formatterings- eller læsbarhedshensyn uden, at der ligger en indholdsmæssig skelnen bag (fx `dataanvendelse`/`anvendelse`, `datasamling`/`samling` o.a.)
 
 I figurer og tekst markerer:
 
 - _Kursiv_ et element eller en relation ikke er nærmere defineret i denne referencearkitektur (fx _dokument_)
-- Blå almindelig tekst et element eller en relation ejes og defineres andet steds, fx. i andre   referencearkitektur eller lovgivning.
+- Blå almindelig tekst et element eller en relation ejes og defineres andet steds, fx. i andre  referencearkitektur eller lovgivning.
 - Rød **Fed tekst** et element eller en relation ejes og defineres i denne referencearkitektur (fx `anvendelse`)
 
 I elementerne i dokumentets figurer angiver:
+
 - runde hjørner et procestrin (*Business Functions Archimate*)
 - skarpe hjørner en Applikationsrolle (*Application services*)
 - "Slikkepind" en Snitflade (*Application Interface*)
 
-## Relation til andre referencearkitekturer
-[TODO: Fold ind i tilblivelse og governance]
-Denne referencearkitektur gør brug af:
-
-- Fællesoffentlig referencearkitektur for brugerstyring
-
-Den skal kunne anvendes af:
-
-- Fællesoffentlig referencearkitektur for selvbetjening
-- Fællesoffentlig referencearkitektur for overblik over egne sager og ydelser
-
-... og skal anvendes i kontekst sammen med:
-
-- OIO Sag- og dokumenter (2008)
-- Deling af dokumenter og billeder på sundhedsområdet (2012)
-- Referencearkitektur for informationssikkerhed på sundhedsområdet (2013)
-- Indberetning til registre på sundhedsområdet (under godkendelse pr. november 2017)
-
-(TODO: tilføjer hyperlinks...)
 
 # Strategi
-Referencearkitekturen udmønter og understøtter beslutninger i den Fællesoffentlige Digitaliseringsstrategi 2020. Desuden er der i udarbejdelsen taget hensyn til en række aktuelle, offentlige/politiske strategier, herunder Sammenhængsreformen, Cybersikkerhedsinitativet og kommunernes digitaliseringsstrategi "Lokal og Digital". Der kan på tværs af strategierne identificeres en række forretningsmæssige og teknologiske tendenser, som ligeledes har bidraget til at sætte retningen for den ønskelige arkitektur.
+Dette afsnit introducerer visionen for deling af data og dokumenter med baggrund i identificerede temaer, principper, arkitekturregler og den forventede værdiskabelse.
+
+## Temaer
+Referencearkitekturen udmønter og understøtter beslutninger i Den fællesoffentlige digitaliseringsstrategi 2016-2020. Desuden er der i udarbejdelsen taget hensyn til en række aktuelle, offentlige/politiske strategier, herunder Sammenhængsreformen, Cybersikkerhedsinitativet og kommunernes digitaliseringsstrategi "Lokal og Digital".
+Der kan på tværs af strategierne identificeres en række forretningsmæssige og teknologiske temaer, som ligeledes har bidraget til at sætte retningen for den ønskelige arkitektur.
 
 - **Sammenhængende offentlige services** er det mest tydelige, gennemgående tema på tværs af strategierne. Den offentlige forvaltning ønsker at tilbyde borgere og virksomheder services, der ikke er tæt knyttet til enkelte myndigheder, men opleves som sammenhængende for dem, der anvender servicen. Mest tydeligt er det udtrykt i European Interoperability Frameworks koncept om *integrated service delivery*, men temaet er også meget fremtrædende i regeringens sammenhængsreform.
 
@@ -191,37 +190,57 @@ Referencearkitekturen udmønter og understøtter beslutninger i den Fællesoffen
 
 
 - **Øget opmærksomhed om behandling af personlige oplysninger** Den europæiske forordning om beskyttelse af personoplysninger (GPDR) og tilhørende dansk implementering udvider den dataansvarliges risiko i forhold til tidligere. Det har ført til et fornyet fokus på at have styr på behandling af persondata og tilsynet hermed.
-- Grænseoverskridende services
+- Grænseoverskridende services [TODO: Foldes ud eller udgå?]
 
-- **Scale-out løsninger til web-scale** Der har de sidste 5-10 år været fokus på at få teknologier til at skalere forudsigeligt til web-scale. Der har voldsomt udvidet de ressourcer der globalt er blevet brugt på large-scale implementeringer. Nu er området så modent at teknologierne også er tilgængelig for projekter på national skala og endda i enkelte projekter.
+- **Scale-out løsninger til web-scale** Der har de sidste 5-10 år været fokus på at få teknologier til at skalere forudsigeligt til web-scale. Der har voldsomt udvidet de ressourcer, der globalt er blevet brugt på large-scale implementeringer. Nu er området så modent, at teknologierne også er tilgængelige for projekter på national skala og endda i enkeltprojekter.
 
-- **Micro-services** En måde at håndtere den stigende kompleksitet i forvaltningen af it landskaber er en udbredt strategi om at levere applikationer i mindre enheder. Micro-services er en sådan strategi.
+- **Micro-services** En måde at håndtere den stigende kompleksitet i forvaltningen af it-landskaber er en udbredt strategi om at levere applikationer i mindre enheder. Micro-services er en sådan strategi.
 
-- **Nær realtid** - med henblik på automatisering og sammenhængende services er der fokus på at have kortest mulig tid mellem registrering og anvendelse af data. Det betyder, at der er færre batch-overførsler. Selvbetjeningsservices bygges, så de kan gennemføres i 'one-seating'.
+- **Nær realtid** - med henblik på automatisering og sammenhængende services er der fokus på at have kortest mulig tid mellem registrering og anvendelse af data. Det medfører behov for færre batch-overførsler. Selvbetjeningsservices bygges, så de kan gennemføres i 'one-seating'.
 
 
-## Strategiske målsætninger
+## Strategiske principper
+[TODO Beskriv afvejning mellem at realisere vision (datadrevet samfund) inden for givne rammer (GDPR)]
+
 [TODO Beskriv målsætninger i eksisterende aftaler og strategier, også gerne fra andre områder]
 
-De overordnede målsætninger for strategierne kobler alle til visionen om det datadrevne samfund, hvor data ses som et råstof for samfundsudviklingen.
+De strategiske principper, der ligger til grund for denne referencearkitektur, udspænder sig i et spændingsfelt. På den ene sider åbner visionen om det datadrevne samfund, hvor data ses som et råstof for samfundsudviklingen, for en lang række muligheder og ønsker. På den anden side er deling og data også underlagt begrænsninger og indskrænkninger i lovgivning. Dette afsnit opridser de væsentligste principper i dette spændingsfelt.
 
-Målsætningerne inkluderer:
+På mulighedssiden er det en fundamental målsætning, at:
 
-> *Det digitale sksl være let, hurtigt og sikre god kvalitet* (Digitaliseringsstrategien)
+> *Det digitale skal være let, hurtigt og sikre god kvalitet* (Digitaliseringsstrategien)
 
-Mere generisk kan man udpege fire overordnede mål:
+Mere generisk kan man, med inspiration fra the European Interoperability Framework (EIF - https://ec.europa.eu/isa2/eif_en), fremhæve fire overordnede principper:
 
 Interoperabilitet
-  ~  *mål* om sammenhængende services... integrated service delivery
+  ~  *princip* om sammenhængende services og smidige brugerrejser på tværs af myndighedsskel (*integrated service delivery*)
 
 Once-only
-  ~  *mål* om at borger og virksomhed kun skal afgive den samme information til det offentlige en gang... (men give lov til genbrug?) [TODO: Tjek baggrund i strategi/Hvidbog - issue #39]
+  ~  *princip* om, at borger og virksomhed kun skal afgive den samme information til det offentlige én gang... (men give lov til genbrug?) [TODO: Tjek baggrund i strategi/Hvidbog - issue #39]
 
 Transparens
-  ~ *mål* om at borgere og virksomheder får øget indsigt i, hvilke oplysninger der er registreret om dem hos hvilke offentlige myndigheder, hvem der anvender disse og til hvilke formål
+  ~ *princip* om, at borgere og virksomheder får øget indsigt i, hvilke oplysninger der er registreret om dem hos hvilke offentlige myndigheder, hvem der anvender disse og til hvilke formål
 
 Genbrug
-  ~ *mål* om genbrug af it med henblik på lavere omkostninger
+  ~ *princip* om genbrug af it med henblik på lavere omkostninger
+
+På begrænsningssiden er der også en række principper, der skal tages i agt. Nedenstående principper er hentet fra EUs persondataforordning (GDPR) og er i vores sammenhæng dækkende uden behov for yderligere definition:
+
+- *lovlighed, rimelighed og gennemsigtighed*
+- *formålsbegrænsning* (undtagelse for arkiv, forskning og statistik)
+- *dataminimering*
+- *rigtighed* (urigtige data skal straks slettes eller berigtiges)
+- *opbevaringsbegrænsning* (data må ikke opbevares "for evigt")
+- *integritet og fortrolighed*
+- *ansvarlighed* (man skal kunne påvise, at ovenstående overholdes)
+
+Endvidere opridser GDPR de lovlige behandlinger hos offentlige myndigheder, som er: [TODO Flyt 'lovlige behandlinger' til 'hjemmel'-afsnit]
+
+- *Den registreredes samtykke*
+- *Opfyldelse af kontrakt*
+- *retlig forpligtigelse hos dataansvarlig*
+- *beskyttelse af vitale interesser*
+- *opgaver i samfundets interesse eller myndighedsudøvelse*
 
 
 ## Vision
@@ -250,74 +269,67 @@ Værdien ved at følge denne referencearkitektur er, at den understøtter:
 - vækst gennem nye typer af services baseret på eksisterende data
 - øget transparens og bevarelse af tillid til registre
 - effektiv systemudvikling (begrænser udfaldsrum, opsamler best practice)
-[TODO: Tilføj juridisk værdiskabelse (GDPR, EU (EIDAS m.m.)) - issue #32]
-[TODO: Stram op og fold ud, kig eventuelt på hvad der følger alene af denne... Bind dem op på de strategiske målsætninger]
+- juridisk værdi gennem design-mæssig indlejring af compliance-understøttelse for GDPR, eIDAS m.m.
+[TODO: Stram op og fold ud, kig eventuelt på hvad der følger alene af denne... Bind værdi op på de strategiske målsætninger]
 
-## Strategiske principper
+## Fællesoffentlige arkitekturprincipper og -regler
 
-Den Fællesoffentlige Digitale Arkitektur udpeger en række principper til rammesætning og styring af den offentlige digitalisering. I denne referencearkitektur er fokus at understøtte arkitekturprincippet om, at *Gode data deles og genbruges* og i særlig grad reglen: *6.1 Del og genbrug data*. Referencearkitekturen tilbyder to måder, hvorpå data kan videregives til genbrug og seks forskellige tekniske integrationsmønster som det kan realiseres gennem.
+Den Fællesoffentlige Digitale Arkitektur (FDA) udpeger en række principper til rammesætning og styring af den offentlige digitalisering. Under hvert princip angiver FDA fra 1 til 5 konkrete arkitekturregler. Tabellen nedenfor gengiver disse FDA's arkitekturprincipper (kilde: https://arkitektur.digst.dk/).
 
-Derudover har en række af arkitekturreglerne konsekvenser for dette arbejde:
+Nr. | Område        | Princip
+--- | ------------- | ------
+1   | Styring       | Arkitektur styres på rette niveau efter fælles rammer
+2   | Strategi      | Arkitektur fremmer sammenhæng, innovation og effektivitet
+3   | Jura          | Arkitektur og regulering understøtter hinanden
+4   | Sikkerhed     | Sikkerhed, privatliv og tillid sikres
+5   | Opgaver       | Processer optimeres på tværs
+6   | Information   | **Gode data deles og genbruges**
+7   | Applikation   | It-løsninger samarbejder effektivt
+8   | Infrastruktur | Data og services leveres driftssikkert
+
+
+I denne referencearkitektur er fokus at understøtte arkitekturprincip 6 om, at *Gode data deles og genbruges* og i særlig grad den underliggende regel: *6.1 Del og genbrug data*. Referencearkitekturen for deling af data og dokumenter tilbyder to måder, hvorpå data kan videregives til genbrug, og seks forskellige, tekniske implementeringsmønstre, som videregivelse/deling af data kan realiseres gennem.
+
+Derudover er en række af de øvrige arkitekturregler rammesættende for dette arbejde:
 
 *AR 1.2 Optimer arkitektur efter projektets og de fælles mål*
-- Udgifter i datadeling skal fordeles - byrden i datadeling skal afløftes fra dataejer, hvis den begrænser genbrug
+
+- Udgifter i datadeling skal fordeles. Hvis byrden i datadeling begrænser genbrug, bør den afløftes fra dataansvarlig
 
 *AR2.5 Stil data og løsninger til rådighed for private*
+
 - Fælles metoder for datadeling understøtter sammenstilling af data og tværgående brug blandt myndigheder og virksomheder
 
 *AR3.1 Tag højde for juridiske bindinger i forhold til deling og genbrug af data og it-systemer*
-- Dataudveksling mellem organisationer designes ud fra en "dokument-tankegang" (aht. journalisering, forvaltningsret, tvistafgørelse, indsigter m.m.
+
+- Dataudveksling mellem organisationer designes ud fra en "dokument-tankegang" (aht. journalisering, forvaltningsret, tvistafgørelse, indsigter m.m.)
 - Modeller funderes (med eksplicitte referencer) i relevant lovgivning nationalt og internationalt
 
 *AR4.1 Opfyld krav til informationssikkerhed og privatlivsbeskyttelse*
-- Understøtte borgeres og virksomheders indsigt i opbevaring og anvendelse af følsom data.
-- Beskrivelse af, adgang til og brug af data sker under klar governance og håndhæves ud fra tydelig hjemmel
-- Begræns opbevaring af kopiregistre mest muligt
 
-*AR4.2 Anvend fælles arkitektur for informationssikkerhed* (Brugerstyring?)
-- Ansvar for begrænsning af adgang ligger hos dataansvarlig (aka registerejer)
-- Vedlighold af fuldmagt og samtykker sker løst koblet fra deres håndhævelse
+- Understøtte borgeres og virksomheders indsigt i opbevaring og anvendelse af følsom data
+- Beskrivelse af, adgang til og anvendelse af data sker under klar governance og håndhæves ud fra tydelig hjemmel
+- Begræns eksistens og anvendelse af kopiregistre mest muligt
+
+*AR4.2 Anvend fælles arkitektur for informationssikkerhed* [TODO: Brugerstyring?]
+
+- Ansvar for begrænsning af adgang ligger hos dataansvarlig (typisk identisk med registerejer)
+- Vedlighold af fuldmagter og samtykker sker løst koblet fra deres håndhævelse
 
 *AR5.1 Optimér tværgående processer efter fælles mål*
+
 - Data beskrives, fordeles, forbedres og beskyttes i fællesskab
 
 *AR6.2 Anvende fælles regler for dokumentation af data*
+
 - Anvend fælles referenceinformationsmodel, grund- og referencedata
 
-GDPR har også nogle principper:
-
-*lovlighed, rimelighed og gennemsigtighed*
-
-*formålsbegrænsning* (undtagelse for arkiv, forskning og statistik)
-
-*dataminimering*
-
-*rigtighed* (straks slettes eller berigtiges)
-
-*opbevaringsbegrænisning*
-
-*integritet og fortrolighed*
-
-*ansvarlighed* (skal kunne påvise at ovenstående overholdes)
-
-og lovlige behandlinger hos offentlige myndigheder er:
-
-*Den registreredes samtykke*
-
-*Opfyldelse af kontrakt*
-
-*retlig forpligtigelse hos dataansvarlig*
-
-*beskyttelse af vitale interesser*
-
-*opgaver i samfundets interesse eller myndighedsudøvelse*
-
-[TODO: Tilføj opsummering af Strategiafsnit]
-
 # Forretningsarkitektur
-
+Dette afsnit beskriver på forretningsniveau de centrale forretningsfunktioner, der er dækket i denne referencearkitektur, i form af use cases og tværgående processer. De medvirkende aktører og deres roller beskrives. Sluttelig gives en oversigt over de forretningsobjekter, der er i spil omkring deling af data og dokumenter.
 
 ## Forretningstjenester og funktioner
+[TODO: AF noter: Her beskrives anvendelse. Men vi udtaler os kun om datadeling. Ref til scope2.png-figur (der ikke findes?)]
+
 Overordnet set finder referencearkitekturen anvendelse i løsningen af alle offentlige opgaver. Specifikt kan nævnes nedenstående sæt af generiske procesmønstre:
 
 - Myndigheders sagsbehandling (fra Referencearkitektur for Sag og dokument)
@@ -351,7 +363,6 @@ forsendelse af meddelelser
 
 I ovenstående use cases indgår disse forretningsroller:
 
-
 den registrerede
   ~ *rolle* den person (datasubjekt), som oplysningerne vedrører (*rolle* fra GDPR)
 
@@ -365,13 +376,13 @@ registrant
   ~ *rolle* som bringer oplysninger på digital form, registrer
 
 modtager (af personoplysninger)
-  ~ en fysisk eller juridisk person, en offentlig myndighed, en institution eller et andet organ, hvortil personoplysninger videregives, uanset om det er en tredjemand eller ej [todo: skal den fjernes eller tegnes på?]
+  ~ en fysisk eller juridisk person, en offentlig myndighed, en institution eller et andet organ, hvortil personoplysninger videregives, uanset om det er en tredjemand eller ej [TODO: skal den fjernes eller tegnes på?]
 
-De væsentligste aktører, der er i spil omkring deling af data og dokumenter, er:
+De aktører, der er i spil omkring deling af data og dokumenter, er:
 
-- Offentlige myndigheder (herunder virksomheder, der handler på vegne af offentlige myndigheder?). Typisk vil være dataansvarlig, eller databehandler, men også ofte registrant.
-- Borgere oftest den registrerede, men også registrant.
-- Virksomheder som databehandler, særligt i forbindelse med privater tjenester der anvender oplysninger der er registreret i offentlige regi i forbindelse med ydelser for den registrerede, men også for virksomhedens egen skyld.
+- **Offentlige myndigheder** (herunder virksomheder, der handler på vegne af offentlige myndigheder). Kan typisk være `dataansvarlig` eller `databehandler`, men også ofte agere som `registrant`.
+- **Borgere** - oftest i rollen som `den registrerede`, men også som `registrant`.
+- **Virksomheder** som `databehandlere`, særligt i forbindelse med private tjenester, der anvender oplysninger registreret i offentligt regi i forbindelse med at levere ydelser til `den registrerede`, men også, når anvendelsen er for virksomhedens egen skyld.
 
 
 ## Tværgående processer
@@ -430,7 +441,7 @@ Når man skal vurdere processen `Anvendelse af data`, er følgende kvaliteter og
 Det bemærkes, at processen for den delte use case `Indsigt i anvendelse`, hvor `den registrerede` benytter sig af sin ret til indsigt i, hvordan data om ham/hende er blevet anvendt, er et særtilfælde af `Anvendelse af data`. Den er derfor ikke beskrevet selvstændigt.
 
 ### Videregivelse ved meddelelse
-[todo: overveje at erstatte afsender og modtager med dataansvarlig og databehandler, eller ihvertfald forklar 'dobbeltrollen']
+[TODO: overveje at erstatte afsender og modtager med dataansvarlig og databehandler, eller ihvertfald forklar 'dobbeltrollen']
 
 
 Denne proces dækker, at en `afsender` - typisk en myndighed eller en virksomhed - har behov for at sende data (evt. i form af et dokument) til en `modtager`. De indgående procestrin er:
@@ -527,19 +538,20 @@ Når man skal vurdere processen `registrering af data`, er følgende kvaliteter 
 * **Sikkerhed**: Tillid til, at data når ukompromitteret frem, herunder tjek af `registreringens` integritet, mulighed for kryptering af følsomme data, transaktionssikkerhed m.m.
 * **Kontekst**: I hvilken kontekst er data skabt/opsamlet - hvor og af hvem?
 * **Kvalitet**: Hvilke krav er der til data komplethed, hvor meget valideres i forhold til stærke datatyper, og er `registreringens` granularitet passende (hvor meget registreres ad gangen)?
+* **Øvrig anvendelse**: Baseret på datas følsomhed, fortrolighedsniveau m.m. kan der være muligheder for anvendelse af data ud over den primære anvendelse. Er data udstillet på den mest hensigtsmæssige måde, der ikke begrænser genbrug unødigt? Er den `datasamling`, hvori registreringen indgår, velbeskrevet i et datasætkatalog?
 
 [TODO: Skal alle kriterier/kvaliteter her og nedenfor formuleres som spørgsmål?]
 
 
 ### Hybrid-varianter
 
-I dette dokument betragter vi de ovenstående to processer for videregivelse af data som de atomare grundelementer, der er nødvendige for at kunne beskrive og tale om datadeling.
+I dette dokument betragter vi de ovenstående to processer for videregivelse af data hhv. på forespørgsel og via mededelelse som de atomare grundelementer, der er nødvendige for at kunne beskrive og tale om datadeling.
 
 Det er dog værd at bemærke, at der i praksis kan skabes 'hybrid-varianter' af de to processer, der kan være velegnede i særlige situationer. Som eksempler kan nævnes:
 
 - **Forespørgsel via meddelelse:** Processen `videregivelse på forespørgsel` kan i simpel form implementeres gennem to anvendelser af processen `videregivelse ved meddelelse`, i det den første `meddelelse` udgør `forespørgslen` og den anden `meddelelse` udgør `svaret`. Dette procesmønster kan være relevant for ad hoc-forespørgsler, der ikke er fuldt it-understøttede, eller i scenarier, hvor processen med at forberede `svaret` er tidskrævende, og det derfor er hensigtsmæssigt at lave en fuld, asynkron afkobling af `forespørgslen` og `svaret`. Procestrinet `fordel meddelelse` bliver i denne sammenhæng en opgave om at sammenkæde `svaret` med den relevante `forespørgsel`.
 
-[todo: beskrive cross border scenario]
+[TODO: beskrive cross border scenario]
 
 - **Videregivelse via link til data:** Denne proces er en variant af `videregivelse ved meddelelelse`, hvor der imidlertid ikke sendes data direkte i `meddelelsen`, men i stedet et link til, hvor data kan hentes. Linket kan enten være til en særligt forberede 'pakke' af data, fx i form af et `dokument`, eller til specifikke data, der er relevante for modtageren i den givne sammenhæng. Modtageren vil herefter kunne hente data gennem processen `videregivelse på forespørgsel`. Dette procesmønster kan fx være relevant, hvis man ønsker et ekstra lag af sikkerhed ved at undgå, at data kopieres fra `datasamlingen` til en `meddelelse`, hvilket giver en ekstra, sikkerhedsmæssig angrebsvektor (jf. GDPR-princippet *privacy by design*).
 
