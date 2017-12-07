@@ -328,36 +328,42 @@ Derudover er en række af de øvrige arkitekturregler rammesættende for dette a
 Dette afsnit beskriver på forretningsniveau de centrale forretningsfunktioner, der er dækket i denne referencearkitektur, i form af use cases og tværgående processer. De medvirkende aktører og deres roller beskrives. Sluttelig gives en oversigt over de forretningsobjekter, der er i spil omkring deling af data og dokumenter.
 
 ## Forretningstjenester og funktioner
-[TODO: AF noter: Her beskrives anvendelse. Men vi udtaler os kun om datadeling. Ref til scope2.png-figur (der ikke findes?)]
+Emnet for denne referencearkitektur er "deling af data og dokumenter". Det er ikke urimeligt at sige, at denne funktion er så generisk, at det indgår i snart sagt alle processer, der går ud over den enkelte myndighed, hvad enten det er i forbindelse med sagsbehandling, selvbetjening eller noget tredje. Overordnet set finder referencearkitekturen dermed anvendelse i løsningen af alle offentlige opgaver.
 
-Overordnet set finder referencearkitekturen anvendelse i løsningen af alle offentlige opgaver. Specifikt kan nævnes nedenstående sæt af generiske procesmønstre:
+Som beskrevet i afsnit 1 har vi præciseret scope for dette dokument til at dreje sig om selve *delingen* af data - og ikke de mulige *anvendelser*, der muliggøres gennem delingen. Vi gør dette ud fra en betragtning om, at typen af denne referencearkitektur er en grundlæggende referencearkitektur. Når det er sagt, er det alligevel meningsfuldt kort at overveje de typiske anvendelser for derigennem at forstå konteksten for datadeling bedre.
 
-- Myndigheders sagsbehandling (fra Referencearkitektur for Sag og dokument)
-- Selvbetjening, vendt mod borgere og virksomheder (fra Referencearkitektur for Selvbetjening)
+![Anvendelse af data falder i to kategorier: Behandling af data i forbindelse med sagsbehandling, der typisk udgør den primære anvendelse, og anden, sekundær behandling. Den særlige markering af `offentlig selvbetjening` indikerer, at dette emne er specifikt håndteret inden for Den fællesoffentlige digitaliseringsstrategi 2016-2020 i og med, at det har sin egen referencearkitektur for selvbetjeningsløsninger, der indgår i den fællesoffentlige rammearkitektur.](figures/scope2.png)
+
+Figuren ovenfor illustrerer, at anvendelsen af delte data kan deles ind i to kategorier: Den primære anvendelse, som består af behandling af data i forbindelse med en sagsgang, som oftest vil være det formål, data er indsamlet til. Primære anvendelser er typisk knyttet til sagsbehandling, borgerens/virksomhedens selvbetjening eller til forskellige, private tjenester, der gør brug af delte data.
+
+Herudover findes der sekundære anvendelser, som indbefatter brug af data til styringsformål, økonomiopfølgning og økonomisk afregning, statistik, forskningsformål og meget mere.  
+
+ Som eksempler på anvendelser, der vil have gavn af en effektiv datadeling, kan nævnes nedenstående sæt af generiske procesmønstre:
+
+- Myndigheders sagsbehandling (beskrevet i Referencearkitektur for Sag og dokument)
+- Selvbetjening, vendt mod borgere og virksomheder (beskrevet i Referencearkitektur for Selvbetjening)
 - Indsigt i oplysninger og deres anvendelse (fra Referencearkitektur for Overblik over sag og ydelser)
-- Sende meddelelse (inkl. brug af tilmeldingslister og påmindelser)
-- Modtage meddelelse
-- Tag et dokument med til en anden service provider, der ikke har adgang til registre - herunder beskrive, hvordan dokumenter valideres.
+- Brug af Digital Post (herunder påmindelser)
+- Brug af abonnementsfunktionalitet (herunder tilmelding)
+- Medbringelse af et dokument til en anden service provider, der ikke har adgang til registre - herunder bekræftelse af dokumentets ægthed og validering af dets indhold
 - Tværgående analyse, tilsyn og kontrol
 
-Referencearkitekturen kredser om fire centrale, delte _use cases_, hvor aktører arbejder sammen i forskellige roller.
+Hvis vi zoomer ind på selve delingen - eller `videregivelsen`, som vi vil præcisere til for at fremhæve den faktiske delingshandling og ikke blot det, at data er potentielt tilgængeligt - kredser referencearkitekturen om én central og to relaterede, delte _use cases_, hvor aktører arbejder sammen i forskellige roller.
 
-![Tværgående use cases og funktioner hos de enkelte roller](figures/forretningsroller.png)
+![Den delte use case `videregivelse`, de relaterede use cases `registrering` og `sletning og arkivering` samt de funktioner, der er knyttet til de involverede roller.](figures/forretningsroller.png)
 
+De tre use cases er:
 
-De fire use cases er:
+videregivelse
+  ~ *collaboration* hvor oplysninger opbevaret hos én aktør videregives til en anden
 
-registrering af data
+registrering
   ~ *collaboration* hvor oplysninger bringes på digital form
 
-indsigt i anvendelse af data
-  ~ *collaboration* hvor en borger får indsigt i anvendelse af personlige data
+sletning og arkivering
+    ~ *collaboration* hvor oplysninger slettes eller videregives til arkivering
 
-anvendelse af data
-  ~ *collaboration* hvor oplysninger opbevaret hos en aktør anvendes hos en anden
-
-forsendelse af meddelelser
-  ~ *collaboration* hvor meddelelser sendes mellem to aktører
+[TODO: Afklar, hvor handlinger defineres ('ret' m.m.)]
 
 ## Forretningsroller og aktører
 
@@ -378,6 +384,8 @@ registrant
 modtager (af personoplysninger)
   ~ en fysisk eller juridisk person, en offentlig myndighed, en institution eller et andet organ, hvortil personoplysninger videregives, uanset om det er en tredjemand eller ej [TODO: skal den fjernes eller tegnes på?]
 
+Som tidligere tager vi udgangspunkt i, at det er persondata, der behandles. Der findes imidlertid mange typer af data, der ikke er personhenførbare. I et sådant tilfælde falder `den registrerede` væk fra ovenstående billede, sammen med de GDPR-relaterede handlinger `ret`, `begræns anvendelse` og `få indsigt`.
+
 De aktører, der er i spil omkring deling af data og dokumenter, er:
 
 - **Offentlige myndigheder** (herunder virksomheder, der handler på vegne af offentlige myndigheder). Kan typisk være `dataansvarlig` eller `databehandler`, men også ofte agere som `registrant`.
@@ -388,25 +396,23 @@ De aktører, der er i spil omkring deling af data og dokumenter, er:
 ## Tværgående processer
 I ovenstående diagram over centrale use cases er `videregivelse` den væsentligste, da den rummer selve delingen af data. Dykker man ned i den, findes den i to grundvarianter, hhv. `videregivelse på forespørgsel` og `videregivelse ved meddelelse`. Figuren nedenfor beskriver disse to varianter på procesform og knytter dem tillige sammen med en kort beskrivelse af processen `registrering af data`.
 
-![Overblik over centrale processer og deres aktiviteter fordelt på roller](figures/processer.png)
+![Overblik over de centrale processer for videregivelse af data og deres aktiviteter fordelt på roller](figures/processer.png)
 
-Nedenfor er de to grundvarianter for datadeling `videregivelse på forespørgsel` og `videregivelse ved meddelelse` beskrevet i detaljer. `Registrering af data` er ligeledes beskrevet, dog mere summarisk, da den i kontekst af denne referencearkitektur kun er med af referencehensyn.
-
-[TODO: Tilføj Søgning til Anvendelse af data.]
+Nedenfor er de to grundvarianter for datadeling, `videregivelse på forespørgsel` og `videregivelse ved meddelelse`, beskrevet i detaljer. `Registrering af data` er ligeledes beskrevet, dog mere summarisk, da den i kontekst af denne referencearkitektur kun er med af referencehensyn.
 
 ### Videregivelse på forespørgsel
 
-Denne proces dækker, at en `dataanvender` - typisk en myndighed, men kan også være en virksomhed - søger adgang til data, der på forhånd er gjort tilgængelige af en `dataansvarlig`. De indgående procestrin er:
+Denne proces dækker, at en `databehandler` - typisk en myndighed, men kan også være en virksomhed - søger adgang til data, der på forhånd er gjort tilgængelige af en `dataansvarlig`. De indgående procestrin er:
 
 behov opstår
   ~ *forhåndsbetingelse/begivenhed?* [todo: definition]
 
-Processen starter hos `anvender`, der har identificeret et behov for at indhente data. Dette behov opstår typisk i kontekst af andre processer, som vi ikke specificerer nærmere her, men som indbefatter sagsbehandling, selvbetjeningsløsninger, analyser og meget mere.
+Processen starter hos `databehandler`, der har identificeret et behov for at indhente data. Dette behov opstår typisk i kontekst af andre processer, som vi ikke specificerer nærmere her, men som indbefatter sagsbehandling, selvbetjeningsløsninger, analyser og meget mere.
 
 forespørg om data
-  ~ *procestrin* hvor en anvender spørger om udstillede data
+  ~ *procestrin* hvor en `databehandler` spørger om udstillede data
 
-`Dataanvender` sender en forespørgsel på data, der beskriver, hvilke data der ønskes. Ved adgang til andet end åbne data skal den nødvendige hjemmel ligeledes fremgå af forespørgslen, så `dataansvarlig` kan håndhæve den nødvendige adgangskontrol. Forespørglsen kan ske ved anvendelse af flere meddelelser, fx kan man starte med at spørge et indeks, for der efter at spørge de enkelte registre.
+`Databehandler` sender en forespørgsel på data, der beskriver, hvilke data der ønskes. Ved adgang til andet end åbne data skal den nødvendige hjemmel ligeledes fremgå af forespørgslen, så `dataansvarlig` kan håndhæve den nødvendige adgangskontrol. Forespørglsen kan ske ved anvendelse af flere meddelelser, fx kan man starte med at spørge et indeks, for der efter at spørge de enkelte registre.
 
 vurder adgang
   ~ *procestrin* hvor det vurderes om den etablerede adgangspolitik er overholdt.
@@ -416,40 +422,40 @@ vurder adgang
 del data
   ~ *procestrin* hvor data videregives til andre
 
-`Dataansvarlig` håndterer forespørgslen ved at slå data op i `datasamlingen`, evt. ved at sammenstille data fra flere `datasamlinger`, og sender et `svar` tilbage til `anvender`. Delingen af data bliver logget af `dataansvarlig`, indbefattende hvilken data, der blev delt; til hvilken `anvender`; og med hvilken hjemmel. Det bemærkes, at `dataansvarlig` ikke nødvendigvis er klar over, hvilket databehov forespørgslen har tjent til at tilfredsstille - så længe, adgangen er legitim og foretaget på baggrund af gyldig hjemmel, har `dataansvarlig` ikke behov for at kende til `dataanvenders` brug af data i den konkrete forespørgsel.
+`Dataansvarlig` håndterer forespørgslen ved at slå data op i `datasamlingen`, evt. ved at sammenstille data fra flere `datasamlinger`, og sender et `svar` tilbage til `anvender`. Delingen af data bliver logget af `dataansvarlig`, indbefattende hvilken data, der blev delt; til hvilken `anvender`; og med hvilken hjemmel. Det bemærkes, at `dataansvarlig` ikke nødvendigvis er klar over, hvilket databehov forespørgslen har tjent til at tilfredsstille - så længe, adgangen er legitim og foretaget på baggrund af gyldig hjemmel, har `dataansvarlig` ikke behov for at kende til `databehandlers` brug af data i den konkrete forespørgsel.
 
 modtag svar
   ~ *procestrin* hvor meddelelser registreres i den modtagende organisation.
 
-`Dataanvender` modtager svaret fra `dataansvarlig.` Kan involvere kvitteringer...
+`Databehandler` modtager svaret, der indeholder det efterspurgte data, fra `dataansvarlig.`
 
 oversæt svar
   ~ *procestrin* hvor meddelelsers indhold og struktur transformeres fra et domæne til et andet.
 
-I tilfælde af, at der er behov for at oversætte `svaret` i form af mapninger af datafelter, klassifikationer m.m., håndteres dette på `dataanvenders` side. `Dataanvenders` initielle behov for data er hermed opfyldt.
+I tilfælde af, at der er behov for at oversætte `svaret` i form af mapninger af datafelter, klassifikationer m.m., håndteres dette på `databehandlers` side. `Databehandlers` initielle behov for data er hermed opfyldt.
 
 
-Når man skal vurdere processen `Anvendelse af data`, er følgende kvaliteter og kriterier de mest væsentlige at forholde sig til:
+Når man skal vurdere processen `videregivelse på forespørgsel`, er følgende kvaliteter og kriterier de mest væsentlige at forholde sig til:
 
-  * **Identifikation**: Det skal være muligt for både `dataansvarlig` og `dataanvender` at identificere hinanden entydigt og sikkert.
+  * **Identifikation**: Det skal være muligt for både `dataansvarlig` og `databehandler` at identificere hinanden entydigt og sikkert.
   * **Adgangskontrol**: Der skal være en effektiv adgangskontrol, der opfylder kravet til at kunne dokumentere en tydelig og nødvendig hjemmel med skyldig hensyntagen til effektivitet i løsningen
-  * **Søgning**: `Dataansvarlig` bør tilbyde en søgefunktionalitet, der tillader `anvender` at fremsøge data effektivt på tværs af distribuerede, ensartede `datasamlinger` (fx røntgenbilledregistre), eller ud fra et sæt af kriterier.
+  * **Søgning**: `Dataansvarlig` bør tilbyde en søgefunktionalitet, der tillader `databehandler` at fremsøge data effektivt på tværs af distribuerede, ensartede `datasamlinger` (fx røntgenbilledregistre), eller ud fra et sæt af kriterier.
   * **Sammenstilling**: `Dataansvarlig` kan, hvor det måtte være hensigtsmæssigt ift. specifikke behov, vælge at sammenstille data fra flere `datasamlinger` og udstille en service, der tilbyder det sammenstillede data.
   * **Indsigt**: Processen skal understøtte effektiv indsigt i anvendelse (logning)
-  * **Opbevaring**: `Dataanvender` bør benytte den autoritative `datasamling` direkte hvis muligt. Herved undgås, at der opbygges 'skyggekopier' af `datasamlinger`, der introducerer kompleksistet i forbindelse med synkroisering, aktualitetsudfordringer m.m.
+  * **Opbevaring**: `Databehandler` bør benytte den autoritative `datasamling` direkte hvis muligt. Herved undgås, at der opbygges 'skyggekopier' af `datasamlinger`, der introducerer kompleksistet i forbindelse med synkroisering, aktualitetsudfordringer m.m.
 
-Det bemærkes, at processen for den delte use case `Indsigt i anvendelse`, hvor `den registrerede` benytter sig af sin ret til indsigt i, hvordan data om ham/hende er blevet anvendt, er et særtilfælde af `Anvendelse af data`. Den er derfor ikke beskrevet selvstændigt.
+Det bemærkes, at processen for use casen `indsigt`, hvor `den registrerede` benytter sig af sin ret til indsigt i, hvordan data om ham/hende er blevet anvendt, er et særtilfælde af `Anvendelse af data`. Den er derfor ikke beskrevet selvstændigt.
 
 ### Videregivelse ved meddelelse
-[TODO: overveje at erstatte afsender og modtager med dataansvarlig og databehandler, eller ihvertfald forklar 'dobbeltrollen']
+[TODO: overveje at erstatte afsender og modtager med dataansvarlig og databehandler, eller i hvert fald forklare 'dobbeltrollen']
 
 
 Denne proces dækker, at en `afsender` - typisk en myndighed eller en virksomhed - har behov for at sende data (evt. i form af et dokument) til en `modtager`. De indgående procestrin er:
 
 Forsendelse af meddelelse
-  ~ *proces* [todo: definition]
+  ~ *proces* [TODO: definition]
 
-Til forskel fra Anvendelse af udstillede data starter denne proces hos `afsenderen` (der tillige kan være `dataansvarlig`). `Afsender` har udvalgt og pakketeret data i en meddelelse (evt. helt eller delvist i form af et dokument), adresserer meddelelsen (fx ved brug af et kontaktregister) og sender den herefter til `modtager`. `Modtager` kan være alle typer af aktører; for myndigheder og virksomheder bemærkes, at det i forbindelse med modtagelsen kan være relevant at fordele/route meddelelsen internt ud fra dens adresseringsoplysninger. I sammenligning med Anvendelse af udstillede data er det nu `afsender`, der som den part, der deler data, 'ejer' den fulde forretningskontekst - hvor den `dataansvarlige` ovenfor ikke var bekendt med formålet med at dele data.
+Til forskel fra `videregivelse på forespørgsel` starter denne proces hos `afsenderen` (der tillige kan være `dataansvarlig`). `Afsender` har udvalgt og pakketeret data i en meddelelse (evt. helt eller delvist i form af et dokument), adresserer meddelelsen (fx ved brug af et kontaktregister) og sender den herefter til `modtager`. `Modtager` kan være alle typer af aktører; for myndigheder og virksomheder bemærkes, at det i forbindelse med modtagelsen kan være relevant at fordele/route meddelelsen internt ud fra dens adresseringsoplysninger. I sammenligning med Anvendelse af udstillede data er det nu `afsender`, der som den part, der deler data, 'ejer' den fulde forretningskontekst - hvor den `dataansvarlige` ovenfor ikke var bekendt med formålet med at dele data.
 
 behov opstår
   ~ *hændelse* hvor 'afsender' er pålagt at vidergive data til en anden aktør.
@@ -457,19 +463,19 @@ behov opstår
 Processen starter hos `afsender`, der - typisk i kontekst af en anden, overliggende proces - har behov for at dele data ved at sende en `meddelelse` til en `modtager`.
 
 adressér meddelelse
-  ~ *procestrin* hvor afsender undersøger hvordan meddelelsen kan sendes. [[todo: flyt på figur]
+  ~ *procestrin* hvor afsender undersøger, hvordan meddelelsen kan sendes. [[todo: flyt på figur]
 
 Første trin giver mulighed for at angive en slutmodtager for `meddelelsen`, der kan være mere specifik end blot `modtager`. Som eksempel kan `modtager` i nogle tilfælde være en organisation, og der kan være behov for at specificere en bestemt ansat som slutmodtager, hvilket kan tilføjes som metadata til `meddelelsen`. Kan også indholde oplysninger om modtagerens evner? til at modtage meddelelser fx om fritaget for digital post, sproglige præferencer eller begrænsninger i tekniske formater.
 
 dan indhold af meddelelse
   ~ *procestrin* hvor afsender sammenstiller og formatere data fra forskellige kilder til en meddelelse.
 
-Dette trin er, at `afsender` danner indholdet af meddelelsen. Indholdet kan være data under kontrol af `afsender` selv, men kan også indhentes fra andre via processen `Anvendelse af data` (der dermed bliver en underproces til `forsendelse af meddelelse`, der i sig selv typisk også er en underproces).
+Dette trin er, at `afsender` danner indholdet af meddelelsen. Indholdet kan være data under kontrol af `afsender` selv, men kan også indhentes fra andre via processen `videregivelse på forespørgsel` (der dermed bliver en underproces til `videregivelse ved meddelelse`, der i sig selv typisk også er en underproces).
 
 
 
 afsend meddelelse
-  ~ *procestrin* overgive ansvaret for meddelelse forsendelse der står for den videre distribution.
+  ~ *procestrin* overgiver ansvaret for meddelelse forsendelse der står for den videre distribution.
 
 Afsendelse af `meddelelsen` sker i dette trin. `Afsender` er ansvalig for at logge hvilke data, der er sendt, til hvem, de er sendt, og med hvilket formål/hjemmel. Implicit i trinet ligger, at datadelingen er lovmedholdelig, hvilket er ensbetydende med at sige, at `modtager` har et legitimt formål med at modtage data. Ansvaret for dette påhviler `afsender`.
 
@@ -491,7 +497,7 @@ oversæt meddelelse
 
 
 
-Når man skal vurdere processen `Forsendelse af meddelelse`, er følgende kvaliteter og kriterier de mest væsentlige at forholde sig til:
+Når man skal vurdere processen `videregivelse ved meddelelse`, er følgende kvaliteter og kriterier de mest væsentlige at forholde sig til:
 
 * **Identifikation**: Der bør være fuld sikkerhed for identifikation af `afsender` og `modtager`, understøttet gennem brugerstyring, kontaktregister eller lignende.
 
@@ -530,7 +536,7 @@ Den `dataansvarlige` myndighed validerer det modtagne data. Den `dataansvarlige`
 udstil data
   ~ *procestrin* hvor data gøres tilgængelige for andre
 
-Når data er korrekt registreret, skal de markeres som klar til at blive udstillet. Her kan der være forskel på, om data gøres tilgængelig øjeblikkeligt eller først på et senere tidspunkt (fx ved registrering af fremtidigt skift af adresse). Begge muligheder kan være relevante, og vil i mange tilfælde afhænge af `dataanvenderes` typiske behov.
+Når data er korrekt registreret, skal de markeres som klar til at blive udstillet. Her kan der være forskel på, om data gøres tilgængelig øjeblikkeligt eller først på et senere tidspunkt (fx ved registrering af fremtidigt skift af adresse). Begge muligheder kan være relevante, og vil i mange tilfælde afhænge af `databehandlerens` typiske behov.
 
 Når man skal vurdere processen `registrering af data`, er følgende kvaliteter og kriterier de mest væsentlige at forholde sig til:
 
@@ -585,7 +591,7 @@ forespørgsel
   ~ *forretningsobjekt* og meddelse som indeholder forespørgsel om videregivelse af oplysninger.
 
 abonnement
-  ~ *forretningsobjekt* og der indeholder en eller flere forspørgelser og resultere i en meddelelse om ændringer i datasamlinger.
+  ~ *forretningsobjekt* der indeholder en eller flere forspørgelser og resulterer i en meddelelse om ændringer i datasamlinger.
 
 forsendelse
   ~ *applikationsservice* der modtager og distribuerer meddelelser til andre forsendelsesservices og stiller modtagne meddelelser til rådighed for modtager
