@@ -178,7 +178,11 @@ I elementerne i dokumentets figurer angiver:
 
 
 # Strategi
-Referencearkitekturen udmønter og understøtter beslutninger i Den fællesoffentlige digitaliseringsstrategi 2016-2020. Desuden er der i udarbejdelsen taget hensyn til en række aktuelle, offentlige/politiske strategier, herunder Sammenhængsreformen, Cybersikkerhedsinitativet og kommunernes digitaliseringsstrategi "Lokal og Digital". Der kan på tværs af strategierne identificeres en række forretningsmæssige og teknologiske tendenser, som ligeledes har bidraget til at sætte retningen for den ønskelige arkitektur.
+Dette afsnit introducerer visionen for deling af data og dokumenter med baggrund i identificerede temaer, principper, arkitekturregler og den forventede værdiskabelse.
+
+## Temaer
+Referencearkitekturen udmønter og understøtter beslutninger i Den fællesoffentlige digitaliseringsstrategi 2016-2020. Desuden er der i udarbejdelsen taget hensyn til en række aktuelle, offentlige/politiske strategier, herunder Sammenhængsreformen, Cybersikkerhedsinitativet og kommunernes digitaliseringsstrategi "Lokal og Digital".
+Der kan på tværs af strategierne identificeres en række forretningsmæssige og teknologiske temaer, som ligeledes har bidraget til at sætte retningen for den ønskelige arkitektur.
 
 - **Sammenhængende offentlige services** er det mest tydelige, gennemgående tema på tværs af strategierne. Den offentlige forvaltning ønsker at tilbyde borgere og virksomheder services, der ikke er tæt knyttet til enkelte myndigheder, men opleves som sammenhængende for dem, der anvender servicen. Mest tydeligt er det udtrykt i European Interoperability Frameworks koncept om *integrated service delivery*, men temaet er også meget fremtrædende i regeringens sammenhængsreform.
 
@@ -186,13 +190,13 @@ Referencearkitekturen udmønter og understøtter beslutninger i Den fællesoffen
 
 
 - **Øget opmærksomhed om behandling af personlige oplysninger** Den europæiske forordning om beskyttelse af personoplysninger (GPDR) og tilhørende dansk implementering udvider den dataansvarliges risiko i forhold til tidligere. Det har ført til et fornyet fokus på at have styr på behandling af persondata og tilsynet hermed.
-- Grænseoverskridende services
+- Grænseoverskridende services [TODO: Foldes ud eller udgå?]
 
-- **Scale-out løsninger til web-scale** Der har de sidste 5-10 år været fokus på at få teknologier til at skalere forudsigeligt til web-scale. Der har voldsomt udvidet de ressourcer der globalt er blevet brugt på large-scale implementeringer. Nu er området så modent at teknologierne også er tilgængelig for projekter på national skala og endda i enkelte projekter.
+- **Scale-out løsninger til web-scale** Der har de sidste 5-10 år været fokus på at få teknologier til at skalere forudsigeligt til web-scale. Der har voldsomt udvidet de ressourcer, der globalt er blevet brugt på large-scale implementeringer. Nu er området så modent, at teknologierne også er tilgængelige for projekter på national skala og endda i enkeltprojekter.
 
-- **Micro-services** En måde at håndtere den stigende kompleksitet i forvaltningen af it landskaber er en udbredt strategi om at levere applikationer i mindre enheder. Micro-services er en sådan strategi.
+- **Micro-services** En måde at håndtere den stigende kompleksitet i forvaltningen af it-landskaber er en udbredt strategi om at levere applikationer i mindre enheder. Micro-services er en sådan strategi.
 
-- **Nær realtid** - med henblik på automatisering og sammenhængende services er der fokus på at have kortest mulig tid mellem registrering og anvendelse af data. Det betyder, at der er færre batch-overførsler. Selvbetjeningsservices bygges, så de kan gennemføres i 'one-seating'.
+- **Nær realtid** - med henblik på automatisering og sammenhængende services er der fokus på at have kortest mulig tid mellem registrering og anvendelse af data. Det medfører behov for færre batch-overførsler. Selvbetjeningsservices bygges, så de kan gennemføres i 'one-seating'.
 
 
 ## Strategiske principper
@@ -200,53 +204,43 @@ Referencearkitekturen udmønter og understøtter beslutninger i Den fællesoffen
 
 [TODO Beskriv målsætninger i eksisterende aftaler og strategier, også gerne fra andre områder]
 
-De overordnede målsætninger for strategierne kobler alle til visionen om det datadrevne samfund, hvor data ses som et råstof for samfundsudviklingen.
+De strategiske principper, der ligger til grund for denne referencearkitektur, udspænder sig i et spændingsfelt. På den ene sider åbner visionen om det datadrevne samfund, hvor data ses som et råstof for samfundsudviklingen, for en lang række muligheder og ønsker. På den anden side er deling og data også underlagt begrænsninger og indskrænkninger i lovgivning. Dette afsnit opridser de væsentligste principper i dette spændingsfelt.
 
-Målsætningerne inkluderer:
+På mulighedssiden er det en fundamental målsætning, at:
 
 > *Det digitale skal være let, hurtigt og sikre god kvalitet* (Digitaliseringsstrategien)
 
-Mere generisk kan man udpege fire overordnede mål:
+Mere generisk kan man, med inspiration fra the European Interoperability Framework (EIF - https://ec.europa.eu/isa2/eif_en), fremhæve fire overordnede principper:
 
 Interoperabilitet
-  ~  *mål* om sammenhængende services... integrated service delivery
+  ~  *princip* om sammenhængende services og smidige brugerrejser på tværs af myndighedsskel (*integrated service delivery*)
 
 Once-only
-  ~  *mål* om at borger og virksomhed kun skal afgive den samme information til det offentlige en gang... (men give lov til genbrug?) [TODO: Tjek baggrund i strategi/Hvidbog - issue #39]
+  ~  *princip* om, at borger og virksomhed kun skal afgive den samme information til det offentlige én gang... (men give lov til genbrug?) [TODO: Tjek baggrund i strategi/Hvidbog - issue #39]
 
 Transparens
-  ~ *mål* om at borgere og virksomheder får øget indsigt i, hvilke oplysninger der er registreret om dem hos hvilke offentlige myndigheder, hvem der anvender disse og til hvilke formål
+  ~ *princip* om, at borgere og virksomheder får øget indsigt i, hvilke oplysninger der er registreret om dem hos hvilke offentlige myndigheder, hvem der anvender disse og til hvilke formål
 
 Genbrug
-  ~ *mål* om genbrug af it med henblik på lavere omkostninger
+  ~ *princip* om genbrug af it med henblik på lavere omkostninger
 
-EUs persondataforordning (GDPR) rummer også en række relevante principper:
+På begrænsningssiden er der også en række principper, der skal tages i agt. Nedenstående principper er hentet fra EUs persondataforordning (GDPR) og er i vores sammenhæng dækkende uden behov for yderligere definition:
 
-*lovlighed, rimelighed og gennemsigtighed*
+- *lovlighed, rimelighed og gennemsigtighed*
+- *formålsbegrænsning* (undtagelse for arkiv, forskning og statistik)
+- *dataminimering*
+- *rigtighed* (urigtige data skal straks slettes eller berigtiges)
+- *opbevaringsbegrænsning* (data må ikke opbevares "for evigt")
+- *integritet og fortrolighed*
+- *ansvarlighed* (man skal kunne påvise, at ovenstående overholdes)
 
-*formålsbegrænsning* (undtagelse for arkiv, forskning og statistik)
+Endvidere opridser GDPR de lovlige behandlinger hos offentlige myndigheder, som er: [TODO Flyt 'lovlige behandlinger' til 'hjemmel'-afsnit]
 
-*dataminimering*
-
-*rigtighed* (straks slettes eller berigtiges)
-
-*opbevaringsbegrænisning*
-
-*integritet og fortrolighed*
-
-*ansvarlighed* (skal kunne påvise at ovenstående overholdes)
-
-[TODO Flyt 'lovlige behandlinger' til 'hjemmel'-afsnit] Endvidere opridser GDPR de lovlige behandlinger hos offentlige myndigheder, som er:
-
-*Den registreredes samtykke*
-
-*Opfyldelse af kontrakt*
-
-*retlig forpligtigelse hos dataansvarlig*
-
-*beskyttelse af vitale interesser*
-
-*opgaver i samfundets interesse eller myndighedsudøvelse*
+- *Den registreredes samtykke*
+- *Opfyldelse af kontrakt*
+- *retlig forpligtigelse hos dataansvarlig*
+- *beskyttelse af vitale interesser*
+- *opgaver i samfundets interesse eller myndighedsudøvelse*
 
 
 ## Vision
@@ -275,8 +269,8 @@ Værdien ved at følge denne referencearkitektur er, at den understøtter:
 - vækst gennem nye typer af services baseret på eksisterende data
 - øget transparens og bevarelse af tillid til registre
 - effektiv systemudvikling (begrænser udfaldsrum, opsamler best practice)
-[TODO: Tilføj juridisk værdiskabelse (GDPR, EU (EIDAS m.m.)) - issue #32]
-[TODO: Stram op og fold ud, kig eventuelt på hvad der følger alene af denne... Bind dem op på de strategiske målsætninger]
+- juridisk værdi gennem design-mæssig indlejring af compliance-understøttelse for GDPR, eIDAS m.m.
+[TODO: Stram op og fold ud, kig eventuelt på hvad der følger alene af denne... Bind værdi op på de strategiske målsætninger]
 
 ## Fællesoffentlige arkitekturprincipper og -regler
 
@@ -294,36 +288,41 @@ Nr. | Område        | Princip
 8   | Infrastruktur | Data og services leveres driftssikkert
 
 
-I denne referencearkitektur er fokus at understøtte arkitekturprincippet om, at *Gode data deles og genbruges* og i særlig grad den underliggende regel: *6.1 Del og genbrug data*. Referencearkitekturen for deling af data og dokumenter tilbyder to måder, hvorpå data kan videregives til genbrug, og seks forskellige, tekniske implementeringsmønstre, som videregivelse/deling af data kan realiseres gennem.
+I denne referencearkitektur er fokus at understøtte arkitekturprincip 6 om, at *Gode data deles og genbruges* og i særlig grad den underliggende regel: *6.1 Del og genbrug data*. Referencearkitekturen for deling af data og dokumenter tilbyder to måder, hvorpå data kan videregives til genbrug, og seks forskellige, tekniske implementeringsmønstre, som videregivelse/deling af data kan realiseres gennem.
 
 Derudover har en række af de øvrige arkitekturregler konsekvenser for dette arbejde:
 
 *AR 1.2 Optimer arkitektur efter projektets og de fælles mål*
-- Udgifter i datadeling skal fordeles - byrden i datadeling skal afløftes fra dataejer, hvis den begrænser genbrug
+
+- Udgifter i datadeling skal fordeles. Hvis byrden i datadeling begrænser genbrug, bør den afløftes fra dataansvarlig
 
 *AR2.5 Stil data og løsninger til rådighed for private*
+
 - Fælles metoder for datadeling understøtter sammenstilling af data og tværgående brug blandt myndigheder og virksomheder
 
 *AR3.1 Tag højde for juridiske bindinger i forhold til deling og genbrug af data og it-systemer*
-- Dataudveksling mellem organisationer designes ud fra en "dokument-tankegang" (aht. journalisering, forvaltningsret, tvistafgørelse, indsigter m.m.
+
+- Dataudveksling mellem organisationer designes ud fra en "dokument-tankegang" (aht. journalisering, forvaltningsret, tvistafgørelse, indsigter m.m.)
 - Modeller funderes (med eksplicitte referencer) i relevant lovgivning nationalt og internationalt
 
 *AR4.1 Opfyld krav til informationssikkerhed og privatlivsbeskyttelse*
-- Understøtte borgeres og virksomheders indsigt i opbevaring og anvendelse af følsom data.
-- Beskrivelse af, adgang til og brug af data sker under klar governance og håndhæves ud fra tydelig hjemmel
-- Begræns opbevaring af kopiregistre mest muligt
 
-*AR4.2 Anvend fælles arkitektur for informationssikkerhed* (Brugerstyring?)
-- Ansvar for begrænsning af adgang ligger hos dataansvarlig (aka registerejer)
-- Vedlighold af fuldmagt og samtykker sker løst koblet fra deres håndhævelse
+- Understøtte borgeres og virksomheders indsigt i opbevaring og anvendelse af følsom data
+- Beskrivelse af, adgang til og anvendelse af data sker under klar governance og håndhæves ud fra tydelig hjemmel
+- Begræns eksistens og anvendelse af kopiregistre mest muligt
+
+*AR4.2 Anvend fælles arkitektur for informationssikkerhed* [TODO: Brugerstyring?]
+
+- Ansvar for begrænsning af adgang ligger hos dataansvarlig (typisk identisk med registerejer)
+- Vedlighold af fuldmagter og samtykker sker løst koblet fra deres håndhævelse
 
 *AR5.1 Optimér tværgående processer efter fælles mål*
+
 - Data beskrives, fordeles, forbedres og beskyttes i fællesskab
 
 *AR6.2 Anvende fælles regler for dokumentation af data*
-- Anvend fælles referenceinformationsmodel, grund- og referencedata
 
-[TODO: Tilføj opsummering af Strategiafsnit]
+- Anvend fælles referenceinformationsmodel, grund- og referencedata
 
 # Forretningsarkitektur
 
