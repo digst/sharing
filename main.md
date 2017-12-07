@@ -290,7 +290,7 @@ Nr. | Område        | Princip
 
 I denne referencearkitektur er fokus at understøtte arkitekturprincip 6 om, at *Gode data deles og genbruges* og i særlig grad den underliggende regel: *6.1 Del og genbrug data*. Referencearkitekturen for deling af data og dokumenter tilbyder to måder, hvorpå data kan videregives til genbrug, og seks forskellige, tekniske implementeringsmønstre, som videregivelse/deling af data kan realiseres gennem.
 
-Derudover har en række af de øvrige arkitekturregler konsekvenser for dette arbejde:
+Derudover er en række af de øvrige arkitekturregler rammesættende for dette arbejde:
 
 *AR 1.2 Optimer arkitektur efter projektets og de fælles mål*
 
@@ -325,9 +325,11 @@ Derudover har en række af de øvrige arkitekturregler konsekvenser for dette ar
 - Anvend fælles referenceinformationsmodel, grund- og referencedata
 
 # Forretningsarkitektur
-
+Dette afsnit beskriver på forretningsniveau de centrale forretningsfunktioner, der er dækket i denne referencearkitektur, i form af use cases og tværgående processer. De medvirkende aktører og deres roller beskrives. Sluttelig gives en oversigt over de forretningsobjekter, der er i spil omkring deling af data og dokumenter.
 
 ## Forretningstjenester og funktioner
+[TODO: AF noter: Her beskrives anvendelse. Men vi udtaler os kun om datadeling. Ref til scope2.png-figur (der ikke findes?)]
+
 Overordnet set finder referencearkitekturen anvendelse i løsningen af alle offentlige opgaver. Specifikt kan nævnes nedenstående sæt af generiske procesmønstre:
 
 - Myndigheders sagsbehandling (fra Referencearkitektur for Sag og dokument)
@@ -361,7 +363,6 @@ forsendelse af meddelelser
 
 I ovenstående use cases indgår disse forretningsroller:
 
-
 den registrerede
   ~ *rolle* den person (datasubjekt), som oplysningerne vedrører (*rolle* fra GDPR)
 
@@ -375,13 +376,13 @@ registrant
   ~ *rolle* som bringer oplysninger på digital form, registrer
 
 modtager (af personoplysninger)
-  ~ en fysisk eller juridisk person, en offentlig myndighed, en institution eller et andet organ, hvortil personoplysninger videregives, uanset om det er en tredjemand eller ej [todo: skal den fjernes eller tegnes på?]
+  ~ en fysisk eller juridisk person, en offentlig myndighed, en institution eller et andet organ, hvortil personoplysninger videregives, uanset om det er en tredjemand eller ej [TODO: skal den fjernes eller tegnes på?]
 
-De væsentligste aktører, der er i spil omkring deling af data og dokumenter, er:
+De aktører, der er i spil omkring deling af data og dokumenter, er:
 
-- Offentlige myndigheder (herunder virksomheder, der handler på vegne af offentlige myndigheder?). Typisk vil være dataansvarlig, eller databehandler, men også ofte registrant.
-- Borgere oftest den registrerede, men også registrant.
-- Virksomheder som databehandler, særligt i forbindelse med privater tjenester der anvender oplysninger der er registreret i offentlige regi i forbindelse med ydelser for den registrerede, men også for virksomhedens egen skyld.
+- **Offentlige myndigheder** (herunder virksomheder, der handler på vegne af offentlige myndigheder). Kan typisk være `dataansvarlig` eller `databehandler`, men også ofte agere som `registrant`.
+- **Borgere** - oftest i rollen som `den registrerede`, men også som `registrant`.
+- **Virksomheder** som `databehandlere`, særligt i forbindelse med private tjenester, der anvender oplysninger registreret i offentligt regi i forbindelse med at levere ydelser til `den registrerede`, men også, når anvendelsen er for virksomhedens egen skyld.
 
 
 ## Tværgående processer
@@ -440,7 +441,7 @@ Når man skal vurdere processen `Anvendelse af data`, er følgende kvaliteter og
 Det bemærkes, at processen for den delte use case `Indsigt i anvendelse`, hvor `den registrerede` benytter sig af sin ret til indsigt i, hvordan data om ham/hende er blevet anvendt, er et særtilfælde af `Anvendelse af data`. Den er derfor ikke beskrevet selvstændigt.
 
 ### Videregivelse ved meddelelse
-[todo: overveje at erstatte afsender og modtager med dataansvarlig og databehandler, eller ihvertfald forklar 'dobbeltrollen']
+[TODO: overveje at erstatte afsender og modtager med dataansvarlig og databehandler, eller ihvertfald forklar 'dobbeltrollen']
 
 
 Denne proces dækker, at en `afsender` - typisk en myndighed eller en virksomhed - har behov for at sende data (evt. i form af et dokument) til en `modtager`. De indgående procestrin er:
@@ -537,19 +538,20 @@ Når man skal vurdere processen `registrering af data`, er følgende kvaliteter 
 * **Sikkerhed**: Tillid til, at data når ukompromitteret frem, herunder tjek af `registreringens` integritet, mulighed for kryptering af følsomme data, transaktionssikkerhed m.m.
 * **Kontekst**: I hvilken kontekst er data skabt/opsamlet - hvor og af hvem?
 * **Kvalitet**: Hvilke krav er der til data komplethed, hvor meget valideres i forhold til stærke datatyper, og er `registreringens` granularitet passende (hvor meget registreres ad gangen)?
+* **Øvrig anvendelse**: Baseret på datas følsomhed, fortrolighedsniveau m.m. kan der være muligheder for anvendelse af data ud over den primære anvendelse. Er data udstillet på den mest hensigtsmæssige måde, der ikke begrænser genbrug unødigt? Er den `datasamling`, hvori registreringen indgår, velbeskrevet i et datasætkatalog?
 
 [TODO: Skal alle kriterier/kvaliteter her og nedenfor formuleres som spørgsmål?]
 
 
 ### Hybrid-varianter
 
-I dette dokument betragter vi de ovenstående to processer for videregivelse af data som de atomare grundelementer, der er nødvendige for at kunne beskrive og tale om datadeling.
+I dette dokument betragter vi de ovenstående to processer for videregivelse af data hhv. på forespørgsel og via mededelelse som de atomare grundelementer, der er nødvendige for at kunne beskrive og tale om datadeling.
 
 Det er dog værd at bemærke, at der i praksis kan skabes 'hybrid-varianter' af de to processer, der kan være velegnede i særlige situationer. Som eksempler kan nævnes:
 
 - **Forespørgsel via meddelelse:** Processen `videregivelse på forespørgsel` kan i simpel form implementeres gennem to anvendelser af processen `videregivelse ved meddelelse`, i det den første `meddelelse` udgør `forespørgslen` og den anden `meddelelse` udgør `svaret`. Dette procesmønster kan være relevant for ad hoc-forespørgsler, der ikke er fuldt it-understøttede, eller i scenarier, hvor processen med at forberede `svaret` er tidskrævende, og det derfor er hensigtsmæssigt at lave en fuld, asynkron afkobling af `forespørgslen` og `svaret`. Procestrinet `fordel meddelelse` bliver i denne sammenhæng en opgave om at sammenkæde `svaret` med den relevante `forespørgsel`.
 
-[todo: beskrive cross border scenario]
+[TODO: beskrive cross border scenario]
 
 - **Videregivelse via link til data:** Denne proces er en variant af `videregivelse ved meddelelelse`, hvor der imidlertid ikke sendes data direkte i `meddelelsen`, men i stedet et link til, hvor data kan hentes. Linket kan enten være til en særligt forberede 'pakke' af data, fx i form af et `dokument`, eller til specifikke data, der er relevante for modtageren i den givne sammenhæng. Modtageren vil herefter kunne hente data gennem processen `videregivelse på forespørgsel`. Dette procesmønster kan fx være relevant, hvis man ønsker et ekstra lag af sikkerhed ved at undgå, at data kopieres fra `datasamlingen` til en `meddelelse`, hvilket giver en ekstra, sikkerhedsmæssig angrebsvektor (jf. GDPR-princippet *privacy by design*).
 
