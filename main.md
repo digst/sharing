@@ -645,17 +645,18 @@ negativt samtykke (begrænsning i anvendelse)
 
 
 # Teknisk arkitektur
-Dette afsnit beskriver en række nødvendige applikationservice til understøttelse af de tværgående processer der er beskrevet tidligere. Udover et basalt implementeringsmønstre, beskrives yderlige to mønstre for hver af processerne. Disse mere avancerede mønstre kræver nogle ekstra roller og applikationsservices, som vil blive introduceret løbende. Til sidst er der et overblik over mulige områder for standardisering og en oversigt over eksisterende standarder og specifikationer der allerede er i anvendelsen i den offentlige sektor.
+Dette afsnit beskriver, hvordan de forretningsmæssige processer, begreber og objekter kan udmønte sig i konkrete applikationsservices. Dette leder samtidigt til et overblik over mulige områder for standardisering og en oversigt over eksisterende standarder og specifikationer, der allerede er i anvendelse i den offentlige sektor.
 
+Først beskrives de *nødvendige* applikationservices, der skal bruges til at realisere de tværgående processer, der er beskrevet tidligere. For hver af de to processer for videregivelse af data beskrives først et basalt implementeringsmønster, og herefter yderligere to, mere avancerede mønstre. De avancerede mønstre kræver ekstra roller og applikationsservices, som vil blive introduceret løbende.
 
 ## Nødvendige applikationservices
-Applikationsservicen `datasamling` samt tilhørende log og brugerstyring hos den dataansvarliger er de nødvendige applikationsservices for at implementere processen `vidergivelsen på forespørgsel` i en simple form.
+Applikationsservicen `datasamling` samt tilhørende `log` og `brugerstyring` hos den `dataansvarlige` er de nødvendige applikationsservices for at implementere processen `videregivelse på forespørgsel` i helt simpel form.
 
-Tilsvarende er `forsendelse` samt tilhørende log og brugerstyring hos afsender og modtager nødvendige for at implementer et simpelt mønster for `vidergivelsen ved meddelelse`.
+For at implementere et simpelt mønster for `videregivelse ved meddelelse` er også applikationsservicen `forsendelse` (samt tilhørende `log` og `brugerstyring` hos `afsender` og `modtager`) nødvendig.
 
-Derudover kan der indgå andre understøttende services være fordelagtige at implementere for at øge tilgængelighed, performance, brugervenlighed m.m. i en given datadelingsløsning.
+Derudover kan der indgå andre understøttende, services i en given løsning til datadeling, der kan være fordelagtige at implementere for at øge tilgængelighed, performance, brugervenlighed m.m.
 
-![Oversigt over nødvendige applikationsroller til understøttelse af vidergivelse af data, både på forespørgsel og ved meddelelse](figures/applikationsroller-minimum.png)
+![Oversigt over nødvendige applikationsservices til understøttelse af videregivelse af data, både på forespørgsel og ved meddelelse.](figures/applikationsroller-minimum.png)
 
 
 datasamling
