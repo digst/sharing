@@ -200,10 +200,6 @@ Der kan på tværs af strategierne identificeres en række forretningsmæssige o
 
 
 ## Strategiske principper
-[TODO Beskriv afvejning mellem at realisere vision (datadrevet samfund) inden for givne rammer (GDPR)]
-
-[TODO Beskriv målsætninger i eksisterende aftaler og strategier, også gerne fra andre områder]
-
 De strategiske principper, der ligger til grund for denne referencearkitektur, udspænder sig i et spændingsfelt. På den ene sider åbner visionen om det datadrevne samfund, hvor data ses som et råstof for samfundsudviklingen, for en lang række muligheder og ønsker. På den anden side er deling og data også underlagt begrænsninger og indskrænkninger i lovgivning. Dette afsnit opridser de væsentligste principper i dette spændingsfelt.
 
 På mulighedssiden er det en fundamental målsætning, at:
@@ -234,13 +230,6 @@ På begrænsningssiden er der også en række principper, der skal tages i agt. 
 - *integritet og fortrolighed*
 - *ansvarlighed* (man skal kunne påvise, at ovenstående overholdes)
 
-Endvidere opridser GDPR de lovlige behandlinger hos offentlige myndigheder, som er: [TODO Flyt 'lovlige behandlinger' til 'hjemmel'-afsnit]
-
-- *Den registreredes samtykke*
-- *Opfyldelse af kontrakt*
-- *retlig forpligtigelse hos dataansvarlig*
-- *beskyttelse af vitale interesser*
-- *opgaver i samfundets interesse eller myndighedsudøvelse*
 
 
 ## Vision
@@ -248,7 +237,7 @@ Visionen i denne referencearkitektur er at stræbe efter en situation, hvor:
 
 > *Data er en fælles, værdifuld og velbeskyttet ressource, som skal være nem at dele og bruge, men svær at misbruge*
 
-**Fælles** betyder, at data, der registreres ét sted til ét formål, kan have stor værdi for myndigheder og endda private tjenester. **Værdifuld** betyder, at data, der er registeret i det offentlige, betragtes som et økonomisk og kvalitetsmæssigt aktiv på lige fod med kontantbeholdninger og fysiske bygninger. **Velbeskyttet** betyder, at der er taget tilstrækkelige og effektive sikkerhedsmæssige tiltag for at beskytte borgere og virksomhederes tillid til, at opbevaring, anvendelse og videregivelse sker under gennemskuelige og retmæssige forhold. **Nem at dele** betyder, at udgifterne ved at anvende data i en ny sammenhæng ikke alene løftes af dataejer, samt at der er tydelig vejledning i udarbejdelse af nødvendige aftaler og at processen ikke tager for lang tid. **Nem at bruge** betyder, at der er fastlagte processer, *best practices* og generiske infrastrukturelementer, der kan genbruges. **Svær at misbruge** betyder, at enkeltpersoner, organisationer og fremmede magter, der måtte have til hensigt at bruge data uretmæssigt, begrænses mest muligt gennem en indsats, der står i forhold til truslerne og de mulige konsekvenser af misbrug.
+**Fælles** betyder, at data i videst muligt omfang betragtes som et fælles gode på tværs af myndigheder ud fra en betragtning om, at data, der registreres ét sted til ét formål, kan have stor værdi for andre myndigheder og virksomheder, der udbyder private tjenester. **Værdifuld** betyder, at data, der er registeret i det offentlige, betragtes som et økonomisk og kvalitetsmæssigt aktiv på lige fod med kontantbeholdninger og fysiske bygninger. **Velbeskyttet** betyder, at der er taget tilstrækkelige og effektive sikkerhedsmæssige tiltag for at beskytte borgere og virksomhederes tillid til, at opbevaring, anvendelse og videregivelse sker under gennemskuelige og retmæssige forhold. **Nem at dele** betyder, at udgifterne ved at anvende data i en ny sammenhæng ikke alene løftes af dataejer, samt at der er tydelig vejledning i udarbejdelse af nødvendige aftaler og at processen ikke tager for lang tid. **Nem at bruge** betyder, at der er fastlagte processer, *best practices* og generiske infrastrukturelementer, der kan genbruges. **Svær at misbruge** betyder, at enkeltpersoner, organisationer og fremmede magter, der måtte have til hensigt at bruge data uretmæssigt, begrænses mest muligt gennem en indsats, der står i forhold til truslerne og de mulige konsekvenser af misbrug.
 
 Denne vision kræver, at en række forretningsevner *(capabilities)* i det offentlige forstærkes væsentligt, herunder:
 
@@ -327,7 +316,7 @@ Derudover er en række af de øvrige arkitekturregler rammesættende for dette a
 # Forretningsarkitektur
 Dette afsnit beskriver på forretningsniveau de centrale forretningsfunktioner, der er dækket i denne referencearkitektur, i form af use cases og tværgående processer. De medvirkende aktører og deres roller beskrives. Sluttelig gives en oversigt over de forretningsobjekter, der er i spil omkring deling af data og dokumenter.
 
-## Forretningstjenester og funktioner
+## Forretningstjenester/anvendelser i forhold til deling
 Emnet for denne referencearkitektur er "deling af data og dokumenter". Det er ikke urimeligt at sige, at denne funktion er så generisk, at det indgår i snart sagt alle processer, der går ud over den enkelte myndighed, hvad enten det er i forbindelse med sagsbehandling, selvbetjening eller noget tredje. Overordnet set finder referencearkitekturen dermed anvendelse i løsningen af alle offentlige opgaver.
 
 Som beskrevet i afsnit 1 har vi præciseret scope for dette dokument til at dreje sig om selve *delingen* af data - og ikke de mulige *anvendelser*, der muliggøres gennem delingen. Vi gør dette ud fra en betragtning om, at typen af denne referencearkitektur er en grundlæggende referencearkitektur. Når det er sagt, er det alligevel meningsfuldt kort at overveje de typiske anvendelser for derigennem at forstå konteksten for datadeling bedre.
@@ -348,6 +337,8 @@ Herudover findes der sekundære anvendelser, som indbefatter brug af data til st
 - Medbringelse af et dokument til en anden service provider, der ikke har adgang til registre - herunder bekræftelse af dokumentets ægthed og validering af dets indhold
 - Tværgående analyse, tilsyn og kontrol
 
+
+## Forretningsfunktionen deling/videregivelse
 Hvis vi zoomer ind på selve delingen - eller `videregivelsen`, som vi vil præcisere til for at fremhæve den faktiske delingshandling og ikke blot det, at data er potentielt tilgængeligt - kredser referencearkitekturen om én central og to relaterede, delte _use cases_, hvor aktører arbejder sammen i forskellige roller.
 
 ![Den delte use case `videregivelse`, de relaterede use cases `registrering` og `sletning og arkivering` samt de funktioner, der er knyttet til de involverede roller.](figures/forretningsroller.png)
@@ -412,7 +403,7 @@ Processen starter hos `databehandler`, der har identificeret et behov for at ind
 forespørg om data
   ~ *procestrin* hvor en `databehandler` spørger om udstillede data
 
-`Databehandler` sender en forespørgsel på data, der beskriver, hvilke data der ønskes. Ved adgang til andet end åbne data skal den nødvendige hjemmel ligeledes fremgå af forespørgslen, så `dataansvarlig` kan håndhæve den nødvendige adgangskontrol. Forespørglsen kan ske ved anvendelse af flere meddelelser, fx kan man starte med at spørge et indeks, for der efter at spørge de enkelte registre.
+`Databehandler` sender en forespørgsel på data, der beskriver, hvilke data der ønskes. Ved adgang til andet end åbne data skal den nødvendige hjemmel ligeledes fremgå af forespørgslen, så `dataansvarlig` kan håndhæve den nødvendige adgangskontrol. Forespørgslen kan i praksis ske ved anvendelse af flere meddelelser, eksempelvis ved kriteriebaseret søgning forud for, at data hentes, eller ved at starte med en forespørgsel til et `indeks`, der udpeger relevante enkeltregistre, hvorfra data kan hentes.
 
 vurder adgang
   ~ *procestrin* hvor det vurderes om den etablerede adgangspolitik er overholdt.
@@ -427,12 +418,7 @@ del data
 modtag svar
   ~ *procestrin* hvor meddelelser registreres i den modtagende organisation.
 
-`Databehandler` modtager svaret, der indeholder det efterspurgte data, fra `dataansvarlig.`
-
-oversæt svar
-  ~ *procestrin* hvor meddelelsers indhold og struktur transformeres fra et domæne til et andet.
-
-I tilfælde af, at der er behov for at oversætte `svaret` i form af mapninger af datafelter, klassifikationer m.m., håndteres dette på `databehandlers` side. `Databehandlers` initielle behov for data er hermed opfyldt.
+`Databehandler` modtager svaret, der indeholder det efterspurgte data, fra `dataansvarlig.` `Databehandlers` initielle behov for data er hermed opfyldt.
 
 
 Når man skal vurdere processen `videregivelse på forespørgsel`, er følgende kvaliteter og kriterier de mest væsentlige at forholde sig til:
@@ -452,9 +438,6 @@ Det bemærkes, at processen for use casen `indsigt`, hvor `den registrerede` ben
 
 Denne proces dækker, at en `afsender` - typisk en myndighed eller en virksomhed - har behov for at sende data (evt. i form af et dokument) til en `modtager`. De indgående procestrin er:
 
-Forsendelse af meddelelse
-  ~ *proces* [TODO: definition]
-
 Til forskel fra `videregivelse på forespørgsel` starter denne proces hos `afsenderen` (der tillige kan være `dataansvarlig`). `Afsender` har udvalgt og pakketeret data i en meddelelse (evt. helt eller delvist i form af et dokument), adresserer meddelelsen (fx ved brug af et kontaktregister) og sender den herefter til `modtager`. `Modtager` kan være alle typer af aktører; for myndigheder og virksomheder bemærkes, at det i forbindelse med modtagelsen kan være relevant at fordele/route meddelelsen internt ud fra dens adresseringsoplysninger. I sammenligning med Anvendelse af udstillede data er det nu `afsender`, der som den part, der deler data, 'ejer' den fulde forretningskontekst - hvor den `dataansvarlige` ovenfor ikke var bekendt med formålet med at dele data.
 
 behov opstår
@@ -462,20 +445,19 @@ behov opstår
 
 Processen starter hos `afsender`, der - typisk i kontekst af en anden, overliggende proces - har behov for at dele data ved at sende en `meddelelse` til en `modtager`.
 
-adressér meddelelse
-  ~ *procestrin* hvor afsender undersøger, hvordan meddelelsen kan sendes. [[todo: flyt på figur]
-
-Første trin giver mulighed for at angive en slutmodtager for `meddelelsen`, der kan være mere specifik end blot `modtager`. Som eksempel kan `modtager` i nogle tilfælde være en organisation, og der kan være behov for at specificere en bestemt ansat som slutmodtager, hvilket kan tilføjes som metadata til `meddelelsen`. Kan også indholde oplysninger om modtagerens evner? til at modtage meddelelser fx om fritaget for digital post, sproglige præferencer eller begrænsninger i tekniske formater.
-
 dan indhold af meddelelse
   ~ *procestrin* hvor afsender sammenstiller og formatere data fra forskellige kilder til en meddelelse.
 
-Dette trin er, at `afsender` danner indholdet af meddelelsen. Indholdet kan være data under kontrol af `afsender` selv, men kan også indhentes fra andre via processen `videregivelse på forespørgsel` (der dermed bliver en underproces til `videregivelse ved meddelelse`, der i sig selv typisk også er en underproces).
+Første trin er, at `afsender` danner indholdet af meddelelsen. Indholdet kan være data under kontrol af `afsender` selv, men kan også indhentes fra andre via processen `videregivelse på forespørgsel` (der dermed bliver en underproces til `videregivelse ved meddelelse`, der i sig selv typisk også er en underproces).
 
 
+adressér meddelelse
+  ~ *procestrin* hvor afsender undersøger, hvordan meddelelsen kan sendes. [[todo: flyt på figur]
+
+Dette trin giver mulighed for at angive en slutmodtager for `meddelelsen`, der kan være mere specifik end blot `modtager`. Som eksempel kan `modtager` i nogle tilfælde være en organisation, og der kan være behov for at specificere en bestemt ansat som slutmodtager, hvilket kan tilføjes som metadata til `meddelelsen`. En del af dette procestrin kan være at søge oplysninger i et kontaktregister for entydigt at identificere `modtager`, undersøge `modtagers` evne til at håndtere forskellige meddelelsesformater, identificere `modtagers` præference mht. sprog m.m.
 
 afsend meddelelse
-  ~ *procestrin* overgiver ansvaret for meddelelse forsendelse der står for den videre distribution.
+  ~ *procestrin* rummer ansvaret for forsendelsen af `meddelelsen`, evt. via separat infrastruktur, der står for den videre distribution.
 
 Afsendelse af `meddelelsen` sker i dette trin. `Afsender` er ansvalig for at logge hvilke data, der er sendt, til hvem, de er sendt, og med hvilket formål/hjemmel. Implicit i trinet ligger, at datadelingen er lovmedholdelig, hvilket er ensbetydende med at sige, at `modtager` har et legitimt formål med at modtage data. Ansvaret for dette påhviler `afsender`.
 
@@ -488,12 +470,6 @@ fordel meddelelse
   ~ *procestrin* hvor meddelelsen distribueres internt i den modtagne organisation.
 
 `Modtager` har mulighed for at benytte adresseringsoplysningerne i `meddelelsen` til at foretage routing af `meddelelsen` i egen organisation. `Meddelelsen` kan endvidere være et `svar` på en tidligere fremsendt `forespørgsel`. Er dette tilfældet, har `modtager` behov for at sammenknytte `meddelelsen` med den kontekst, fra hvilken den oprindelige `forespørgsel` blev sendt.
-
-oversæt meddelelse
-  ~ *procestrin* [hvor meddelelsers indhold og struktur transformeres fra et domæne til et andet.
-
-[TODO: Foreslår at slette dette trin? Det signalerer, at der påhviler modtager en generel forpligtelse til at kunne modtage hvad-som-helst. Meningen er nok, at hvis meddelelsen er et svar på en separat request fra modtager, skal modtager også kunne parse svaret - hvilket er dækket i den tilsvarende trin i Anvendelse af data.]
-
 
 
 
@@ -574,8 +550,17 @@ videregivelse
 meddelelse
   ~ *forretningsobjekt* data der videregives?
 
-meddelelse
-  ~ *forretningsobjekt* der beskriver retten til at registrere, opbevare, anvende og videregive data
+hjemmel
+  ~ *forretningsobjekt* der beskriver retten til at registrere, opbevare, anvende og videregive data.
+
+
+I forhold til `hjemmel` opridser GDPR de lovlige behandlinger hos offentlige myndigheder, som er:
+
+  - *Den registreredes samtykke*
+  - *Opfyldelse af kontrakt*
+  - *retlig forpligtigelse hos dataansvarlig*
+  - *beskyttelse af vitale interesser*
+  - *opgaver i samfundets interesse eller myndighedsudøvelse*
 
 data
   ~ *objekt* (Abstrakt. Bruges om både register-record og dokument)
