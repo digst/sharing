@@ -20,7 +20,7 @@
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="129.78035124477628" width="310.97423214631317" x="976.3784918919634" y="-792.6294845787556"/>
-          <y:Fill color="#FFFFFF" transparent="false"/>
+          <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#C0C0C0" raised="false" type="dotted" width="2.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="10" fontStyle="italic" hasBackgroundColor="false" hasLineColor="false" height="17.6181640625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="129.4736328125" x="4.0" y="4.0">videregivelse ved meddelelse</y:NodeLabel>
           <y:Shape type="roundrectangle"/>
@@ -33,9 +33,9 @@
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="129.78035124477628" width="265.0309318695248" x="692.9895245658404" y="-792.6294845787556"/>
-          <y:Fill color="#FFFFFF" transparent="false"/>
+          <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#C0C0C0" raised="false" type="dotted" width="2.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="10" fontStyle="italic" hasBackgroundColor="false" hasLineColor="false" height="17.6181640625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tr" textColor="#000000" verticalTextPosition="bottom" visible="true" width="134.1416015625" x="126.8893303070248" y="4.0">videregivelse ved forespørgsel</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="10" fontStyle="italic" hasBackgroundColor="false" hasLineColor="false" height="17.6181640625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="134.1416015625" x="4.0" y="4.0">videregivelse ved forespørgsel</y:NodeLabel>
           <y:Shape type="roundrectangle"/>
         </y:ShapeNode>
       </data>
@@ -46,7 +46,7 @@
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="63.63077602541989" width="594.3631994724361" x="692.9895245658404" y="-1063.086642944715"/>
-          <y:Fill color="#FFFFFF" transparent="false"/>
+          <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#C0C0C0" raised="false" type="dotted" width="2.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.6181640625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#1F497D" verticalTextPosition="bottom" visible="true" width="133.1357421875" x="4.0" y="4.0">Databeskyttelsesforordning</y:NodeLabel>
           <y:Shape type="roundrectangle"/>
@@ -59,7 +59,7 @@
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="85.25412312372578" width="276.37757941611255" x="827.2581872004619" y="-918.720717658781"/>
-          <y:Fill color="#FFFFFF" transparent="false"/>
+          <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#C0C0C0" raised="false" type="dotted" width="2.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="10" fontStyle="italic" hasBackgroundColor="false" hasLineColor="false" height="17.6181640625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="74.7275390625" x="4.0" y="4.0">Databehandling</y:NodeLabel>
           <y:Shape type="roundrectangle"/>
@@ -72,7 +72,7 @@
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="174.53657212298344" width="120.82089614930487" x="1166.5318278889715" y="-984.8929571559735"/>
-          <y:Fill color="#FFFFFF" transparent="false"/>
+          <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#C0C0C0" raised="false" type="dotted" width="2.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="10" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.6181640625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#1F497D" verticalTextPosition="bottom" visible="true" width="67.4375" x="4.0" y="4.0">Brugerstyring</y:NodeLabel>
           <y:Shape type="roundrectangle"/>
@@ -3516,7 +3516,7 @@ svar<y:LabelModel>
           <y:Fill color2="#0042F440" hasColor="false" transparent="false"/>
           <y:BorderStyle color="#808080" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="10" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="17.6181640625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#940027" verticalTextPosition="bottom" visible="true" width="59.91796875" x="20.038904505910637" y="4.0">myndighed</y:NodeLabel>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="8" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="14.89453125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#940027" verticalTextPosition="bottom" visible="true" width="58.68359375" x="20.656092005910637" y="33.0">dataansvarlig<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="8" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="14.89453125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#940027" verticalTextPosition="bottom" visible="true" width="39.3125" x="30.341638880910637" y="33.0">afsender<y:LabelModel>
               <y:ColumnNodeLabelModel offset="3.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -3696,7 +3696,7 @@ opstår<y:LabelModel>
           <y:Fill color2="#0042F440" hasColor="false" transparent="false"/>
           <y:BorderStyle color="#808080" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="10" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#940027" verticalTextPosition="bottom" visible="true" width="4.0" x="38.317021472559986" y="4.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="8" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="14.89453125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#940027" verticalTextPosition="bottom" visible="true" width="63.19921875" x="8.717412097559986" y="33.0">databehandler<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Open Sans" fontSize="8" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="14.89453125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#940027" verticalTextPosition="bottom" visible="true" width="43.0546875" x="18.789677722559986" y="33.0">modtager<y:LabelModel>
               <y:ColumnNodeLabelModel offset="3.0"/>
             </y:LabelModel>
             <y:ModelParameter>

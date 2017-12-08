@@ -29,11 +29,11 @@ Referencearkitekturen er udarbejdet under Den fællesoffentlige digitaliseringss
 
 Det overordnede formål med denne referencearkitektur er at understøtte offentlig digitalisering i regi af Den fællesoffentlige digitaliseringsstrategi 2016-2020. Derudover kan referencearkitekturen finde anvendelse generelt i projekter i såvel offentlige som private digitaliseringsinitiativer.
 
-Specifikt i sammenhæng med digitaliseringsstrategien skal referencearkitekturen anvendes:
+Specifikt i sammenhæng med udmøntningen af den aktuelle strategi skal referencearkitekturen anvendes:
 
-1.  som reference i udarbejdelsen af løsningsbeskrivelser
-2.  ved review af løsningsbeskrivelser
-3.  til at danne et fælles sprog til at formulere en fælles handlingsplan blandt digitalieringsstrategiens parter
+- som reference i udarbejdelsen af løsningsbeskrivelser
+- ved review af løsningsbeskrivelser
+- til at danne et fælles sprog til at formulere en fælles handlingsplan blandt digitalieringsstrategiens parter
 
 Samlet set skal referencearkitekturen bidrage til at skabe sammenhængende, sikre og effektive digitale services for borgere og virksomheder blandt andet gennem større genbrug af data samt ved at give mulighed for øget automatisering.
 
@@ -166,13 +166,13 @@ Det bemærkes, at prefixet 'data-' kan være udeladt på begreber/elementer i te
 
 I figurer og tekst markerer:
 
-- _Kursiv_ et element eller en relation ikke er nærmere defineret i denne referencearkitektur (fx _dokument_)
-- Blå almindelig tekst et element eller en relation ejes og defineres andet steds, fx. i andre  referencearkitektur eller lovgivning.
-- Rød **Fed tekst** et element eller en relation ejes og defineres i denne referencearkitektur (fx `anvendelse`)
+- _Kursiv_ et element eller en relation ikke er nærmere defineret i denne referencearkitektur.
+- Almindelig tekst (i blå) et element eller en relation ejes og defineres andet steds, fx. i andre  referencearkitektur eller lovgivning.
+- **Fed tekst** (i rød) et element eller en relation ejes og defineres i denne referencearkitektur.
 
 I elementerne i dokumentets figurer angiver:
 
-- runde hjørner et procestrin (*Business Functions Archimate*)
+- runde hjørner et procestrin (*Business Functions*)
 - skarpe hjørner en Applikationsrolle (*Application services*)
 - "Slikkepind" en Snitflade (*Application Interface*)
 
@@ -209,12 +209,12 @@ På mulighedssiden er det en fundamental målsætning, at:
 Mere generisk kan man, med inspiration fra the European Interoperability Framework (EIF - https://ec.europa.eu/isa2/eif_en), fremhæve fire overordnede principper:
 
 Interoperabilitet
-  ~  *princip* om sammenhængende services og smidige brugerrejser på tværs af myndighedsskel (*integrated service delivery*)
+  ~  *princip* om sammenhængende services og smidige brugerrejser på tværs af myndighedsskel
 
 Once-only
-  ~  *princip* om, at borger og virksomhed kun skal afgive den samme information til det offentlige én gang... (men give lov til genbrug?) [TODO: Tjek baggrund i strategi/Hvidbog - issue #39]
+  ~  *princip* om, at borger og virksomhed kun skal afgive den samme information til det offentlige én gang.
 
-Transparens
+Gennemsigtighed
   ~ *princip* om, at borgere og virksomheder får øget indsigt i, hvilke oplysninger der er registreret om dem hos hvilke offentlige myndigheder, hvem der anvender disse og til hvilke formål
 
 Genbrug
@@ -325,7 +325,7 @@ Som beskrevet i afsnit 1 har vi præciseret scope for dette dokument til at drej
 
 Figuren ovenfor illustrerer, at anvendelsen af delte data kan deles ind i to kategorier: Den primære anvendelse, som består af behandling af data i forbindelse med en sagsgang, som oftest vil være det formål, data er indsamlet til. Primære anvendelser er typisk knyttet til sagsbehandling, borgerens/virksomhedens selvbetjening eller til forskellige, private tjenester, der gør brug af delte data.
 
-Herudover findes der sekundære anvendelser, som indbefatter brug af data til styringsformål, økonomiopfølgning og økonomisk afregning, statistik, forskningsformål og meget mere.  
+Herudover findes der sekundære anvendelser, som indbefatter brug af data til styringsformål, økonomiopfølgning og økonomisk afregning, statistik, forskningsformål og meget mere.
 
  Som eksempler på anvendelser, der vil have gavn af en effektiv datadeling, kan nævnes nedenstående sæt af generiske procesmønstre:
 
@@ -396,7 +396,7 @@ Nedenfor er de to grundvarianter for datadeling, `videregivelse på forespørgse
 Denne proces dækker, at en `databehandler` - typisk en myndighed, men kan også være en virksomhed - søger adgang til data, der på forhånd er gjort tilgængelige af en `dataansvarlig`. De indgående procestrin er:
 
 behov opstår
-  ~ *forhåndsbetingelse/begivenhed?* [todo: definition]
+  ~ *begivenhed* hvor en datanvender har brug at anvende data der opbevares af en dataansvarlig
 
 Processen starter hos `databehandler`, der har identificeret et behov for at indhente data. Dette behov opstår typisk i kontekst af andre processer, som vi ikke specificerer nærmere her, men som indbefatter sagsbehandling, selvbetjeningsløsninger, analyser og meget mere.
 
@@ -441,7 +441,7 @@ Denne proces dækker, at en `afsender` - typisk en myndighed eller en virksomhed
 Til forskel fra `videregivelse på forespørgsel` starter denne proces hos `afsenderen` (der tillige kan være `dataansvarlig`). `Afsender` har udvalgt og pakketeret data i en meddelelse (evt. helt eller delvist i form af et dokument), adresserer meddelelsen (fx ved brug af et kontaktregister) og sender den herefter til `modtager`. `Modtager` kan være alle typer af aktører; for myndigheder og virksomheder bemærkes, at det i forbindelse med modtagelsen kan være relevant at fordele/route meddelelsen internt ud fra dens adresseringsoplysninger. I sammenligning med Anvendelse af udstillede data er det nu `afsender`, der som den part, der deler data, 'ejer' den fulde forretningskontekst - hvor den `dataansvarlige` ovenfor ikke var bekendt med formålet med at dele data.
 
 behov opstår
-  ~ *hændelse* hvor 'afsender' er pålagt at vidergive data til en anden aktør.
+  ~ *hændelse* hvor en `afsender` er pålagt at vidergive data til en anden aktør.
 
 Processen starter hos `afsender`, der - typisk i kontekst af en anden, overliggende proces - har behov for at dele data ved at sende en `meddelelse` til en `modtager`.
 
@@ -538,7 +538,7 @@ Det er dog værd at bemærke, at der i praksis kan skabes 'hybrid-varianter' af 
 - **Videregivelse via link til data:** Denne proces er en variant af `videregivelse ved meddelelelse`, hvor der imidlertid ikke sendes data direkte i `meddelelsen`, men i stedet et link til, hvor data kan hentes. Linket kan enten være til en særligt forberede 'pakke' af data, fx i form af et `dokument`, eller til specifikke data, der er relevante for modtageren i den givne sammenhæng. Modtageren vil herefter kunne hente data gennem processen `videregivelse på forespørgsel`. Dette procesmønster kan fx være relevant, hvis man ønsker et ekstra lag af sikkerhed ved at undgå, at data kopieres fra `datasamlingen` til en `meddelelse`, hvilket giver en ekstra, sikkerhedsmæssig angrebsvektor (jf. GDPR-princippet *privacy by design*).
 
 ## Forretningsobjekter og begreber
-Når processerne omkring videregivelse af data skal implementeres, er der en række begreber, det er væsentligt at holde styr på gennem god modellering. Nogle af disse begreber bliver i praksis til konkrete forretningsobjekter.
+Når processerne omkring videregivelse af data skal implementeres, er der en række begreber, det er væsentligt at holde styr på gennem god modellering. Nogle af disse begreber bliver i praksis til konkrete forretningsobjekter. Forretningsobjekt betyder i denne sammenhæng: data struktureret med henblik på automatisk behandling (jf. *Data Object*), med særligt henblik på udveksling mellem aktører.
 
 Figuren nedenfor præsenterer en oversigt over en række begreber og forretningsobjekter, der er væsentlige for referencearkitekturen. Vi tager udgangspunkt i de tre allerede introducerede forretningsobjekter `meddelelse`, `forespørgsel` og `svar`, i det vi bemærker, at de to sidstnævnte modelleringsteknisk er specialiseringer af førstnævnte.
 
@@ -561,13 +561,7 @@ svar
 hjemmel
   ~ *forretningsobjekt* der beskriver retten til at registrere, opbevare, anvende og videregive data.
 
-I forhold til `hjemmel` opridser GDPR de lovlige behandlinger hos offentlige myndigheder, som er:
-
-  - *Den registreredes samtykke*
-  - *Opfyldelse af kontrakt*
-  - *retlig forpligtigelse hos dataansvarlig*
-  - *beskyttelse af vitale interesser*
-  - *opgaver i samfundets interesse eller myndighedsudøvelse*
+I forhold til `hjemmel` opridser GDPR de lovlige behandlinger hos offentlige myndigheder, som er: Den registreredes samtykke, opfyldelse af kontrakt, retlig forpligtigelse hos dataansvarlig, beskyttelse af vitale interesser samt opgaver i samfundets interesse eller myndighedsudøvelse.
 
 log
   ~ *forretningsobjekt* der beskriver de faktiske, historiske behandlinger af data i en given `datasamling`. En `log` er i sig selv en specialiseret `datasamling`.
@@ -668,8 +662,8 @@ forsendelse
 log
   ~ *datasamling*, der indeholder data om ændringer, videregivelse og anvendelser af data fra samlinger.
 
-brugerstyring (autentifikation)
-  ~ *applikationsservice* der validerer en identitet på baggrund af et akkreditiv (j.f. Referencearkitektur for brugerstyring 2017).
+brugerstyring
+  ~ *forretningsfunktion* og nødvendige *applikationsservice*, til administration og anvendelse af identiteter og rettigheder (j.f. Referencearkitektur for brugerstyring 2017).
 
 
 ### Datasamling
@@ -824,22 +818,22 @@ portal
 platform (serviceprovider?)
   ~ *foretningsrolle* der forvalter en fælles platform på vegne af flere aktører.
 
-[TODO: Opsæt en sidestillet vurdering af mønstre, med fordele/ulemper listet i samme tabel]: x
 
-
+Tabel: Oversigt over fordele og ulemper for de forskellige roller ved brug af forskellige implementeringsmønstre
 
 | Mønster | Dataansvarlig    | Databehandler    | Den registrerede
 |------   |--------------------|--------------------|--------------------
-| Direkte | Tæt kontrol med distribution |  Svært at sammenstille med andre samlinger | Svært at skabe overblik over alle data
+| direkte | Tæt kontrol med distribution |  Svært at sammenstille med andre samlinger | Svært at skabe overblik over alle data
 |         | Bærer udgifter til distribution alene | |
 |         | | |
-| Fordeler| Dele udgifter til distribution | Mulighed for tilpassede services |
+| fordeler| Dele udgifter til distribution | Mulighed for tilpassede services |
 |         | Øget behov for styring og tilsyn | Mulighed for sammenstilling |
 |         | | |
-| Platform| Automatiseret distribution | Mulighed for sammenstilling med egne samlinger | Overblik over data og anvendelser
+| platform| Automatiseret distribution | Mulighed for sammenstilling med egne samlinger | Overblik over data og anvendelser
 |         | Behov for audit services |  |
 
 
+[Regibemærkning til 0.5: Her vil vi særligt gerne høre andre fordele og ulemper der opleves]
 
 
 
@@ -899,8 +893,15 @@ Mønsteret vil typisk være symmetrisk, således at en `afsender` også kan indg
 Fordelene ved Økosystem-mønsteret er, at det er robust, fleksibelt og løbende kan udvides med nye `Service providers`. Ulempen er, at der stilles store krav til det centrale `adresseregister`, samt at der fortsat ikke findes standardteknologier, der dækker mønsteret.
 
 
+Tabel: Oversigt over fordele og ulemper for de forskellige roller ved brug af forskellige implementeringsmønstre
 
-[TODO: Opsæt en sidestillet vurdering af mønstre, med fordele/ulemper listet i samme tabel]: x
+| Mønster | Afsender    | Modtager
+|------   |--------------------|--------------------
+| email   |                    |
+| én service |                    |
+| flere udbydere |                    |
+
+[Regibemærkning til 0.5: Her vil vi særligt gerne høre andre fordele og ulemper der opleves]
 
 [TODO: Afklar hvem der har ansvar for adresse]
 
@@ -1092,17 +1093,10 @@ Integration
 | commun. | forsendelse    | hent        | adresse     | SML, SMP |
 | commun. | forsendelse    | distr.      | forsendelse | AS/4 | -
 
+[Regibemærkning til 0.5: Her vil vi særligt gerne høre andre standarder, specifikationer, profiler og vejledninger i anvendelse]
 
 
 
-
-
-
-
-
-ISO Identifier
-
-SBDH
 
 Andre områder....
 
@@ -1121,9 +1115,11 @@ Semantiske standarder og begrebsmodeller
 - Hændelsesbeskeder
 - Identifikation
 - Klassifikation af følsomhed
+- Standard Business Dokument Header
 
 Tekniske standarder og specifikationer
 
 - Kryptografi (hvilke cifre... skal baseres på tredjeparts vurdering)
 - URI  (overvej noget som subdomæner) (multitiere, decentral)
 - Dokumentation af services (openapi)
+- ISO Identifier
