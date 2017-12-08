@@ -138,7 +138,8 @@
 }{}
 \PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
 
-
+\renewcommand{\labelitemi}{---}
+\renewcommand{\labelitemii}{--}
 
 
 \title{\rmfamily\Huge Fællesoffentlig referencearkitektur \\ for deling af data og dokumenter}
@@ -146,11 +147,17 @@
 \date{\rmfamily December 2017}
 
 \begin{document}
-\maketitle \clearpage
-
+\maketitle
+\thispagestyle{empty}
+\vfill
+\begin{center}
+\includegraphics[width=3cm]{figures/vaben.pdf}
+\end{center}
+\clearpage
+\thispagestyle{plain}
 \tableofcontents
 \newpage
-
+\thispagestyle{plain}
 \input{main.tex}
 
 

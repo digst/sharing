@@ -325,7 +325,7 @@ Som beskrevet i afsnit 1 har vi præciseret scope for dette dokument til at drej
 
 Figuren ovenfor illustrerer, at anvendelsen af delte data kan deles ind i to kategorier: Den primære anvendelse, som består af behandling af data i forbindelse med en sagsgang, som oftest vil være det formål, data er indsamlet til. Primære anvendelser er typisk knyttet til sagsbehandling, borgerens/virksomhedens selvbetjening eller til forskellige, private tjenester, der gør brug af delte data.
 
-Herudover findes der sekundære anvendelser, som indbefatter brug af data til styringsformål, økonomiopfølgning og økonomisk afregning, statistik, forskningsformål og meget mere.
+Herudover findes der sekundære anvendelser, som indbefatter brug af data til styringsformål, økonomiopfølgning og økonomisk afregning, statistik, forskningsformål og meget mere.  
 
  Som eksempler på anvendelser, der vil have gavn af en effektiv datadeling, kan nævnes nedenstående sæt af generiske procesmønstre:
 
@@ -537,22 +537,29 @@ Det er dog værd at bemærke, at der i praksis kan skabes 'hybrid-varianter' af 
 
 - **Videregivelse via link til data:** Denne proces er en variant af `videregivelse ved meddelelelse`, hvor der imidlertid ikke sendes data direkte i `meddelelsen`, men i stedet et link til, hvor data kan hentes. Linket kan enten være til en særligt forberede 'pakke' af data, fx i form af et `dokument`, eller til specifikke data, der er relevante for modtageren i den givne sammenhæng. Modtageren vil herefter kunne hente data gennem processen `videregivelse på forespørgsel`. Dette procesmønster kan fx være relevant, hvis man ønsker et ekstra lag af sikkerhed ved at undgå, at data kopieres fra `datasamlingen` til en `meddelelse`, hvilket giver en ekstra, sikkerhedsmæssig angrebsvektor (jf. GDPR-princippet *privacy by design*).
 
-## Forretningsobjekter
-Nedenfor fremgår en initiel oversigt over en række forretningsobjekter, der er væsentlige for referencearkitekturen.
+## Forretningsobjekter og begreber
+Når processerne omkring videregivelse af data skal implementeres, er der en række begreber, det er væsentligt at holde styr på gennem god modellering. Nogle af disse begreber bliver i praksis til konkrete forretningsobjekter.
 
-![Oversigt over de centrale forretningsobjekter og deres relationer](figures/objekter.png)
+Figuren nedenfor præsenterer en oversigt over en række begreber og forretningsobjekter, der er væsentlige for referencearkitekturen. Vi tager udgangspunkt i de tre allerede introducerede forretningsobjekter `meddelelse`, `forespørgsel` og `svar`, i det vi bemærker, at de to sidstnævnte modelleringsteknisk er specialiseringer af førstnævnte.
 
+![Oversigt over de centrale forretningsobjekter `meddelelse`, `forespørgsel` og `svar` og deres relationer til øvrige begreber i forbindelse med deling af data og dokuemnter ](figures/objekter.png)
+
+De væsentligste elementer i figuren er:
 
 videregivelse
-  ~ *proces* hvor en dataansvarlig videregiver oplysninger til andre.
-
+  ~ *proces* hvor en dataansvarlig videregiver data til andre.
 
 meddelelse
-  ~ *forretningsobjekt* data der videregives?
+  ~ *forretningsobjekt* der sendes fra en `afsender` til en `modtager` og som kan indeholde data, evt. i dokumentform
+
+forespørgsel
+  ~ *forretningsobjekt* som er en specialiseret `meddelse`, der indeholder en forespørgsel om videregivelse af oplysninger.
+
+svar
+  ~ *forretningsobjekt* som er en specialiseret `meddelse`, der indeholder de data, en `databehandler` har forespurgt på.
 
 hjemmel
   ~ *forretningsobjekt* der beskriver retten til at registrere, opbevare, anvende og videregive data.
-
 
 I forhold til `hjemmel` opridser GDPR de lovlige behandlinger hos offentlige myndigheder, som er:
 
@@ -562,35 +569,32 @@ I forhold til `hjemmel` opridser GDPR de lovlige behandlinger hos offentlige myn
   - *beskyttelse af vitale interesser*
   - *opgaver i samfundets interesse eller myndighedsudøvelse*
 
-data
-  ~ *objekt* (Abstrakt. Bruges om både register-record og dokument)
-
 log
-  ~ *forretningsobjekt* og datasamling der beskriver behandlingen af data.
+  ~ *forretningsobjekt* der beskriver de faktiske, historiske behandlinger af data i en given `datasamling`. En `log` er i sig selv en specialiseret `datasamling`.
 
+Diagrammet rummer en række øvrige elementer, der knytter sig til og grænser op til de ovenfor beskrevne:
 
 dataservice
-  ~ *applikationsservice* der giver adgang til en eller flere datasamlinger med den nødvendige beskyttelse
-
-forespørgsel
-  ~ *forretningsobjekt* og meddelse som indeholder forespørgsel om videregivelse af oplysninger.
+  ~ *applikationsservice* der giver adgang til en eller flere datasamlinger med den nødvendige beskyttelse. Kan evt. tilbyde aggregerede services, der samler data på tværs af flere samlinger og målretter dem til en given anvendelse.
 
 abonnement
-  ~ *forretningsobjekt* der indeholder en eller flere forspørgelser og resulterer i en meddelelse om ændringer i datasamlinger.
+  ~ *applikationsservice* der tilbyder tilmelding til en regelbaseret opdatering i form af `meddelelser` sendt fra en `dataservice`, fx i forbindelser med ændringer, tilføjelser eller opdateringer af specifikke `registreringer` i et `register`. Der er i praksis mange måder at designe abonnementsmønstre på, afhængigt af den givne `datasamling ` og den givne anvendelse af data.
 
-forsendelse
-  ~ *applikationsservice* der modtager og distribuerer meddelelser til andre forsendelsesservices og stiller modtagne meddelelser til rådighed for modtager
+forsendelsesservice
+  ~ *applikationsservice* der modtager og distribuerer `meddelelser` til andre forsendelsesservices og stiller modtagne `meddelelser` til rådighed for `modtager`
 
 adresse
   ~ *forretningsobjekt* der beskriver forsendelsesoplysninger om modtager, fx tekniske endepunkter men også capabilities.
 
 påmindelse
-  ~ *forretningsobjekt* usikker levering og beskyttelse, i modæstning til model.
+  ~ *forretningsobjekt* der er en ikke-databærende specialisering af `meddelelse`, der typisk ikke har leverancegaranti og ikke tilbyder samme sikkerhedsmæssige kvalitet i leverancekanalen.
+
+
 
 *Forretningsrollerne* fra GDPR
 
 - dataansvarlige
-- databehandler
+- databehandler (specialiseret i `anvender`, `afsender` og `modtager`)
 - den registrerede
 
 *Applikationsfunktionerne* fra referencearkitektur for brugerstyring
@@ -619,8 +623,9 @@ registeroplysning
 
 dokument
   ~ *objekt* [Dokumentmodel fra OIO]
+
 registreringsbegivenhed
-  ~ *objekt* en ændring på et allerede registreret element?
+  ~ *objekt* en ændring på et allerede registreret element? (AF: Dækket i abonnement)
 
 forretningshændelse/begivenhed
   ~ *objekt*
@@ -640,17 +645,18 @@ negativt samtykke (begrænsning i anvendelse)
 
 
 # Teknisk arkitektur
-Dette afsnit beskriver en række nødvendige applikationservice til understøttelse af de tværgående processer der er beskrevet tidligere. Udover et basalt implementeringsmønstre, beskrives yderlige to mønstre for hver af processerne. Disse mere avancerede mønstre kræver nogle ekstra roller og applikationsservices, som vil blive introduceret løbende. Til sidst er der et overblik over mulige områder for standardisering og en oversigt over eksisterende standarder og specifikationer der allerede er i anvendelsen i den offentlige sektor.
+Dette afsnit beskriver, hvordan de forretningsmæssige processer, begreber og objekter kan udmønte sig i konkrete applikationsservices. Dette leder samtidigt til et overblik over mulige områder for standardisering og en oversigt over eksisterende standarder og specifikationer, der allerede er i anvendelse i den offentlige sektor.
 
+Først beskrives de *nødvendige* applikationservices, der skal bruges til at realisere de tværgående processer, der er beskrevet tidligere. For hver af de to processer for videregivelse af data beskrives først et basalt implementeringsmønster, og herefter yderligere to, mere avancerede mønstre. De avancerede mønstre kræver ekstra roller og applikationsservices, som vil blive introduceret løbende.
 
 ## Nødvendige applikationservices
-Applikationsservicen `datasamling` samt tilhørende log og brugerstyring hos den dataansvarliger er de nødvendige applikationsservices for at implementere processen `vidergivelsen på forespørgsel` i en simple form.
+Applikationsservicen `datasamling` samt tilhørende `log` og `brugerstyring` hos den `dataansvarlige` er de nødvendige applikationsservices for at implementere processen `videregivelse på forespørgsel` i helt simpel form.
 
-Tilsvarende er `forsendelse` samt tilhørende log og brugerstyring hos afsender og modtager nødvendige for at implementer et simpelt mønster for `vidergivelsen ved meddelelse`.
+For at implementere et simpelt mønster for `videregivelse ved meddelelse` er også applikationsservicen `forsendelse` (samt tilhørende `log` og `brugerstyring` hos `afsender` og `modtager`) nødvendig.
 
-Derudover kan der indgå andre understøttende services være fordelagtige at implementere for at øge tilgængelighed, performance, brugervenlighed m.m. i en given datadelingsløsning.
+Derudover kan der indgå andre understøttende, services i en given løsning til datadeling, der kan være fordelagtige at implementere for at øge tilgængelighed, performance, brugervenlighed m.m.
 
-![Oversigt over nødvendige applikationsroller til understøttelse af vidergivelse af data, både på forespørgsel og ved meddelelse](figures/applikationsroller-minimum.png)
+![Oversigt over nødvendige applikationsservices til understøttelse af videregivelse af data, både på forespørgsel og ved meddelelse.](figures/applikationsroller-minimum.png)
 
 
 datasamling
