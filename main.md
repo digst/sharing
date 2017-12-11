@@ -433,12 +433,12 @@ Denne proces dækker, at en `afsender` - typisk en myndighed eller en virksomhed
 Til forskel fra `videregivelse på forespørgsel` starter denne proces hos `afsenderen` (der tillige kan være `dataansvarlig`). `Afsender` har udvalgt og pakketeret data i en meddelelse (evt. helt eller delvist i form af et dokument), adresserer meddelelsen (fx ved brug af et kontaktregister) og sender den herefter til `modtager`. `Modtager` kan være alle typer af aktører; for myndigheder og virksomheder bemærkes, at det i forbindelse med modtagelsen kan være relevant at fordele/route meddelelsen internt ud fra dens adresseringsoplysninger. I sammenligning med Anvendelse af udstillede data er det nu `afsender`, der som den part, der deler data, 'ejer' den fulde forretningskontekst - hvor den `dataansvarlige` ovenfor ikke var bekendt med formålet med at dele data.
 
 behov opstår
-  ~ *hændelse* hvor en `afsender` er pålagt at vidergive data til en anden aktør.
+  ~ *hændelse* hvor en `afsender` ønsker eller er pålagt at videregive data til en anden aktør.
 
 Processen starter hos `afsender`, der - typisk i kontekst af en anden, overliggende proces - har behov for at dele data ved at sende en `meddelelse` til en `modtager`.
 
 dan indhold af meddelelse
-  ~ *procestrin* hvor afsender sammenstiller og formatere data fra forskellige kilder til en meddelelse.
+  ~ *procestrin* hvor afsender sammenstiller og formaterer data fra forskellige kilder til en `meddelelse`.
 
 Første trin er, at `afsender` danner indholdet af meddelelsen. Indholdet kan være data under kontrol af `afsender` selv, men kan også indhentes fra andre via processen `videregivelse på forespørgsel` (der dermed bliver en underproces til `videregivelse ved meddelelse`, der i sig selv typisk også er en underproces).
 
@@ -632,14 +632,15 @@ Dette afsnit beskriver, hvordan de forretningsmæssige processer, begreber og ob
 Først beskrives de *nødvendige* applikationservices, der skal bruges til at realisere de tværgående processer, der er beskrevet tidligere. For hver af de to processer for videregivelse af data beskrives først et basalt implementeringsmønster, og herefter yderligere to, mere avancerede mønstre. De avancerede mønstre kræver ekstra roller og applikationsservices, som vil blive introduceret løbende.
 
 ## Nødvendige applikationservices
-Applikationsservicen `datasamling` samt tilhørende `log` og `brugerstyring` hos den `dataansvarlige` er de nødvendige applikationsservices for at implementere processen `videregivelse på forespørgsel` i helt simpel form.
+Applikationsservicen `datasamling` samt tilhørende `log` og `brugerstyring` hos den `dataansvarlige` udgør de nødvendige applikationsservices for at implementere processen `videregivelse på forespørgsel` i helt simpel form.
 
 For at implementere et simpelt mønster for `videregivelse ved meddelelse` er også applikationsservicen `forsendelse` (samt tilhørende `log` og `brugerstyring` hos `afsender` og `modtager`) nødvendig.
 
 Derudover kan der indgå andre, understøttende services i en given løsning til datadeling, der kan være fordelagtige at implementere for at øge tilgængelighed, performance, brugervenlighed m.m.
 
-![Oversigt over nødvendige applikationsservices til understøttelse af videregivelse af data, både på forespørgsel og ved meddelelse.](figures/applikationsroller-minimum.png)
+![Oversigt over de 4, nødvendige applikationsservices til understøttelse af videregivelse af data, både på forespørgsel og ved meddelelse.](figures/applikationsroller-minimum.png)
 
+De indgående applikationsservices kan på kort form defineres som:
 
 datasamling
   ~ *applikationsservice* som har til opgave at opbevare, beskytte og videregive data registeret til et specifikt formål
@@ -653,10 +654,16 @@ log
 brugerstyring
   ~ *forretningsfunktion* og nødvendige *applikationsservice*, til administration og anvendelse af identiteter og rettigheder (j.f. Referencearkitektur for brugerstyring 2017).
 
+### Ønskelige egenskaber ved videregivelse
+
+Dette afsnit sætter flere ord på de kvaliteter, der knytter sig til videregivelse af data. De forskellige kvaliteter er her stillet op i sammenhæng med den relevante applikationsservice.
+
+
+[TODO: Om-formattér nedenstående 4 afsnit til **bold** + bulletlister]
 
 ### Datasamling
 
-Når datasamlingen udgøres af dokumenter kaldes den nogle gange et repository, ellers kaldes den også et register. (Data Record Management)
+En `datasamling` er et helt centralt begreb i denne referencearkitektur og blev introduceret allerede i afsnit 1. Når `datasamlingen` udgøres af dokumenter kaldes den et `repository`. Udgøres den af `registreringer`, kaldes den et `register`.
 
 Datasamlinger er kendetegnet ved:
 
@@ -682,7 +689,7 @@ på basis af adgangspolitik bestemt af dataansvarlige. Adgangskontrol er en funk
 
 
 ### Forsendelse
-Kan ofte bruges til både at sende og modtage, men findes også i andre konfigurationer. Fx 'skriv til os' hjemmesider. Kaldes også en Messaging Services i ERIA og elektroniske leveringstjeneste i eIDAS.
+Kan ofte bruges til både at sende og modtage, men findes også i andre konfigurationer. Fx 'skriv til os' hjemmesider. Kaldes også en Messaging Services i EIRA og elektroniske leveringstjeneste i eIDAS.
 
 
 #### Identifikation af afsender og modtager
@@ -696,6 +703,8 @@ tidspunkter for afsendelse og modtagelse.
 
 #### Kvalificeret tjenesteudbyder
 
+#### Aftaler
+Når der designes forsendelsesmøntre, er det vigtigt at forholde sig til behovet for en *aftale*, der regulerer den samlede forsendelsen. Det kunne fx være en aftale om `modtagers` pligt til at tømme sin postkasse - Lov om Digital Post er et konkret eksempel på et juridisk instrument, der forpligter `modtageren` til at åbne sin post i og med, at en `meddelelse` her er uafviselig og kan have retsvirkning.
 
 ### Log
 (Logging Service hos EIRA)
@@ -704,7 +713,7 @@ tidspunkter for afsendelse og modtagelse.
 
 
 #### "indsigtsret"
-hvor de stammer fra, vidergivelser (og deres hjemmel), retskilde? bruger-centrisk / umiddelbar forståelig
+hvor de stammer fra, videregivelser (og deres hjemmel), retskilde? bruger-centrisk / umiddelbar forståelig
 
 #### integritet
 At den ikke kan ændres/forfalskes.
@@ -723,7 +732,7 @@ Særligt i forbindelse med identifikationer af afsender og modtager ved Forsende
 
 
 
-## Implementering af vidergivelse på forespørgsel
+## Implementering af videregivelse på forespørgsel
 
 Når en `dataanvender` (virksomhed eller myndighed) har brug for adgang til data hos en dataansvarlig myndighed, kan det ske via ét af nedenstående tre mønstre:
 
@@ -737,10 +746,10 @@ Fordelen ved dette mønster er, at det er simpelt. Ulempen er, at `dataansvarlig
 
 
 
-### Datafordelere
-![Implementeringsmønster for datadistribution](figures/use-dist.png)
+### Distribution via datafordeler
+![Implementeringsmønster for distribution via datafordeler](figures/use-dist.png)
 
-I dette mønster er `dataansvarlig` fortsat ansvarlig for at tilbyde en service til registrering af data. Anvendelsesdelen er imidlertid afløftet til en `datadistributør` (evt. flere). Dette giver `datadistributøren` mulighed for at fokusere netop på distributionen, dvs. at gøre data bredt tilgængeligt (dog naturligvis under håndhævelse af adgangskrav specificeret af `dataejer`) til `dataanvendere`.
+I dette mønster er `dataansvarlig` fortsat ansvarlig for at tilbyde en service til registrering af data. Anvendelsesdelen er imidlertid afløftet til en `datadistributør` (evt. flere). Dette giver `datadistributøren` mulighed for at fokusere netop på distributionen, dvs. at gøre data bredt tilgængelige (dog naturligvis under håndhævelse af adgangskrav specificeret af `dataansvarlig`) til `dataanvendere`. En typisk fordel ved dette er, at det giver mulighed for at designe en `dataservice` målrettet `anvenders` behov - hvilket evt. kan betyde, at `dataservicen` aggregerer data på tværs af flere `datasamlinger`.
 
 Når nye data registreres, har `dataansvarlig` ansvaret for at opdatere `kopien` af `datasamlingen` hos `datadistributøren`.
 
@@ -748,8 +757,11 @@ I det tilfælde, hvor ensartede `datasamlinger` ligger hos flere, separate `data
 
 Logningsmæssigt er den enkelte `distributør` ansvarlig for at logge `dataanvenders` adgang til data. Samtidig er den enkelte `distributør` ansvarlig for at sørge for konsolidering af loggen for at sikre, at `datasubjekt` har adgang til information om anvendelse af data om vedkommende selv. I figuren er log-konsolidering lagt hos `dataansvarlig`, men den kunne i princippet også være uddelegeret - så længe, der er et entydigt og klart _single point of contact_ for `datasubjektets` opslag i anvendelsen af personlige data.
 
-[TODO: Tilføj portal] [TODO: Uddyb 'opdater' - delta eller fuld kopi; nævn kopi hos anvender som anti-pattern] [TODO: Overvej om konsolider kan skiftes ud med send/distribuer?]
-[TODO: Beskriv anvender-centrisk vs dataansvarlig fokus for distributør]
+[TODO: Tilføj portal]
+
+[TODO: Uddyb 'opdater' - delta eller fuld kopi; nævn kopi hos anvender som anti-pattern]
+
+[TODO: Overvej om konsolider kan skiftes ud med send/distribuer?]
 
 Her introduceres:
 
@@ -783,7 +795,7 @@ databehandleraftalen bør også indeholde afklaring af tilgang til log for den r
 
 
 
-### Service- og data-platform
+### Fælles service- og data-platform
 ![Implementeringsmønster for distribueret dataplatform](figures/use-plat.png)
 
 Delingsansvaret er i dette mønster i høj grad håndteret af en `dataplatform`. Platformen er distribueret og er i stand til at replikere data på tværs af `dataansvarlige`og `dataanvendere`. Dvs., at data, der registreres via en `dataansvarlig` myndighed, gøres tilgængelige for andre, dataanvendende myndigheder via platformen.
@@ -811,22 +823,22 @@ Tabel: Oversigt over fordele og ulemper for de forskellige roller ved brug af fo
 
 | Mønster | Dataansvarlig    | Databehandler    | Den registrerede
 |------   |--------------------|--------------------|--------------------
-| direkte | Tæt kontrol med distribution |  Svært at sammenstille med andre samlinger | Svært at skabe overblik over alle data
+| Direkte adgang | Tæt kontrol med distribution |  Svært at sammenstille med andre samlinger | Svært at skabe overblik over alle data
 |         | Bærer udgifter til distribution alene | |
 |         | | |
-| fordeler| Dele udgifter til distribution | Mulighed for tilpassede services |
+| Distribution via datafordeler| Dele udgifter til distribution | Mulighed for tilpassede services |
 |         | Øget behov for styring og tilsyn | Mulighed for sammenstilling |
 |         | | |
-| platform| Automatiseret distribution | Mulighed for sammenstilling med egne samlinger | Overblik over data og anvendelser
+| Fælles platform| Automatiseret distribution | Mulighed for sammenstilling med egne samlinger | Overblik over data og anvendelser
 |         | Behov for audit services |  |
 
 
-[Regibemærkning til 0.5: Her vil vi særligt gerne høre andre fordele og ulemper der opleves]
+[Regibemærkning til 0.5: Her vil vi særligt gerne høre andre fordele og ulemper, der opleves.]
 
 
 
 
-## Implementering af vidergivelse ved forsendelse
+## Implementering af videregivelse ved forsendelse
 
 Når en myndighed vil initiere en specifik og målrettet datadeling - dvs. sende data (herunder dokumenter) til en anden myndighed, virksomhed eller borger - kan det ske via ét af de tre nedenstående mønstre.
 
@@ -840,8 +852,6 @@ Fordelen ved dette mønster er, at det er simpelt og benytter sig af standardtek
 
 ### Fælles system
 ![Implementeringsmønster for fælles system](figures/send-shared.png)
-
-[Bør modtag hedde hent/læs?]
 
 Ved brug af Fælles system-mønsteret til forsendelse af en `meddelelse` benytter `afsender` og `modtager` et centralt, fælles `postkasse` til hhv. at placere `meddelelsen` og læse den. I den analoge verden svarer dette mønster til, at `afsender` og `modtager` benytter et fælles postbokskontor. Digitalt er dette mønster fx implementeret af Digital Post, hvor såvel myndigheder, virksomheder og borgere kan placere `meddelelser`, der efterfølgende kan hentes af `modtager`. Også messaging-funktionaliteten i mange af de sociale medieplatforme (fx Facebook) falder i denne kategori.
 
@@ -863,14 +873,9 @@ notifikation
 
 (Messaging Service, EIRA, men begrænset) usikker...
 
-[TODO: Erstat postkasse med forsendelse]
-
-
 
 ### Økosystem/Service providers
 ![Implementeringsmønster for økosystem](figures/send-eco.png)
-
-[Bør modtag hedde hent/læs?]
 
 I dette mønster deltager både `afsender` (A) og `modtager` (D) i et `meddelelses`-økosystem ved at vælge hver sin Forsendelses-Service provider (hhv. B og C). Økosystem-mønsteret er bl.a. kendt i kontekst af den europæiske eDelivery-standard som en *four corner model*.
 
@@ -885,20 +890,20 @@ Tabel: Oversigt over fordele og ulemper for de forskellige roller ved brug af fo
 
 | Mønster | Afsender    | Modtager
 |------   |--------------------|--------------------
-| email   |                    |
-| én service |                    |
-| flere udbydere |                    |
+| Sikker e-mail   |                    |
+| Fælles service |                    |
+| Økosystem/service providers |                    |
 
-[Regibemærkning til 0.5: Her vil vi særligt gerne høre andre fordele og ulemper der opleves]
+[Regibemærkning til v0.5: Her vil vi særligt gerne høre andre fordele og ulemper, der opleves.]
 
 [TODO: Afklar hvem der har ansvar for adresse]
 
 
-## Snitflader og områder for standardisering
+## Snitflader og egenskaber for services
 
-![Oversigt over alle applikationsservices og deres udstillede snitflader](figures/applikationsroller.png)
+![Oversigt over alle applikationsservices involveret i `videregivelse af data` samt deres udstillede snitflader](figures/applikationsroller.png)
 
-I de ovenstående implementeringsmønstre for hhv. Anvendelse af udstillede data og Registreret forsendelse indgår der en lang række relationer mellem de beskrevne elementer. Relationerne dækker i praksis over integrationer mellem to applikationer. Nedenfor opridser vi de relationer, der er væsentlige for denne referencearkitektur. Alle relationer er ikke relevante i vores kontekst - men sagt populært, hvis der "står noget på en linje mellem to kasser", er de mest fremtrædende karakteristika og kendetegn ved den underliggende integration beskrevet nedenfor:
+I de ovenstående implementeringsmønstre for hhv. `videregivelse på forespørgsel` og `videregivelse ved meddelelse` indgår der en lang række relationer mellem de beskrevne elementer. Relationerne dækker i praksis over integrationer mellem to applikationer. Nedenfor opridser vi de relationer, der er væsentlige for denne referencearkitektur. Alle relationer er ikke relevante i vores kontekst - men sagt populært, hvis der "står noget på en linje mellem to kasser", er de mest fremtrædende karakteristika og kendetegn ved den underliggende integration beskrevet nedenfor:
 
 Generelle egenskaber:
 
@@ -914,11 +919,13 @@ _Integrationsbeskrivelser opdateres._
 
 (Data record management i EIRA)
 
+[TODO: Overvej at samle alle EIRA-referencer i ét afsnit, evt. nær bilag/byggeblokke?]
+
 #### hent
 opslag på kendte id'er....
 
 - overvej at give 'actions (fx ret)' med
-- overvej granuklaritet (hvor meget sammenstilling) og performance (hent detaljer)
+- overvej granularitet (hvor meget sammenstilling) og performance (hent detaljer)
 - overvej generalitet (hvor målrettet er services)
 - inside/outside perspektiv
 - Overvej at tillade fejl, med gøre dem tydelige
@@ -997,6 +1004,7 @@ SML/SMP
 
 ### Dataservice
 (Data Publication Service i EIRA)
+
 #### søg
 på tværs af samlinger
 
@@ -1048,6 +1056,8 @@ en slags datasamling der typisk på design-tidspunktet. Der findes kataloger ove
 #### opdater
 
 
+## Områder for standardisering
+
 [TODO: Udbyg liste over områder til standardisering, jf. issue #40 Begrund opdeling/sammenlægning]
 
 
@@ -1092,7 +1102,7 @@ Organisatoriske standarder og aftaler
 
 - Aftale om systemtilslutning
  Databehandleraftaler
-- Samtykke til vidergivelse af personoplysninger
+- Samtykke til videregivelse af personoplysninger
 
 Semantiske standarder og begrebsmodeller
 
