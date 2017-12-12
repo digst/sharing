@@ -428,9 +428,11 @@ Når man skal vurdere processen `videregivelse på forespørgsel`, er følgende 
 Det bemærkes, at processen for use casen `indsigt`, hvor `den registrerede` benytter sig af sin ret til indsigt i, hvordan data om ham/hende er blevet anvendt, er et særtilfælde af `videregivelse på forespørgsel`. Den er derfor ikke beskrevet selvstændigt.
 
 ### Videregivelse ved meddelelse
-Denne proces dækker, at en `afsender` - typisk en myndighed eller en virksomhed - har behov for at sende data (evt. i form af et dokument) til en `modtager`. De indgående procestrin er:
+Denne proces dækker, at en `afsender` - typisk en myndighed eller en virksomhed - har behov for at sende data (evt. i form af et dokument) til en `modtager`.
 
-Til forskel fra `videregivelse på forespørgsel` starter denne proces hos `afsenderen` (der tillige kan være `dataansvarlig`). `Afsender` har udvalgt og pakketeret data i en meddelelse (evt. helt eller delvist i form af et dokument), adresserer meddelelsen (fx ved brug af et kontaktregister) og sender den herefter til `modtager`. `Modtager` kan være alle typer af aktører; for myndigheder og virksomheder bemærkes, at det i forbindelse med modtagelsen kan være relevant at fordele/route meddelelsen internt ud fra dens adresseringsoplysninger. I sammenligning med Anvendelse af udstillede data er det nu `afsender`, der som den part, der deler data, 'ejer' den fulde forretningskontekst - hvor den `dataansvarlige` ovenfor ikke var bekendt med formålet med at dele data.
+Generelt betragtet dækker `videregivelse ved meddelelse` både menneske til menneske-kommunikation (kommunikation til borgere/virksomheder, kommunikation mellem sagsbehandlere som led i en sagsgang m.v.), system til system-kommunikation (hvor `meddelelse`-mønsteret benyttes som ren teknisk integration), samt varianter, hvor enten afsendelsen eller modtagelsen af `meddelelsen` er automatiseret.
+
+Til forskel fra `videregivelse på forespørgsel` starter denne proces hos `afsenderen` (der tillige kan være `dataansvarlig`). `Afsender` har udvalgt og pakketeret data i en meddelelse (evt. helt eller delvist i form af et dokument), adresserer meddelelsen (fx ved brug af et kontaktregister) og sender den herefter til `modtager`. `Modtager` kan være alle typer af aktører; for myndigheder og virksomheder bemærkes, at det i forbindelse med modtagelsen kan være relevant at fordele/route meddelelsen internt ud fra dens adresseringsoplysninger. I sammenligning med `videregivelse på forespørgsel` er det nu `afsender`, der som den part, der deler data, 'ejer' den fulde forretningskontekst - hvor den `dataansvarlige` ovenfor ikke var bekendt med formålet med at dele data.
 
 behov opstår
   ~ *hændelse* hvor en `afsender` ønsker eller er pålagt at videregive data til en anden aktør.
@@ -627,9 +629,9 @@ klassifikation
 
 
 # Teknisk arkitektur
-Dette afsnit beskriver, hvordan de forretningsmæssige processer, begreber og objekter kan udmønte sig i konkrete applikationsservices. Dette leder samtidigt til et overblik over mulige områder for standardisering og en oversigt over eksisterende standarder og specifikationer, der allerede er i anvendelse i den offentlige sektor.
+Dette afsnit beskriver, hvordan de forretningsmæssige processer, begreber og objekter beskrevet i det forrige afsnit kan udmønte sig i konkrete applikationsservices. Dette leder samtidigt til et overblik over de områder, hvor der er behov for standardisering. Vi supplerer dette overblik med en oversigt over eksisterende standarder og specifikationer, der allerede er i anvendelse i den offentlige sektor.
 
-Først beskrives de *nødvendige* applikationservices, der skal bruges til at realisere de tværgående processer, der er beskrevet tidligere. For hver af de to processer for videregivelse af data beskrives først et basalt implementeringsmønster, og herefter yderligere to, mere avancerede mønstre. De avancerede mønstre kræver ekstra roller og applikationsservices, som vil blive introduceret løbende.
+Nedenfor beskrives først det minimale sæt af *nødvendige* applikationservices, der kan bruges til at realisere de tværgående processer, der er beskrevet tidligere. For hver af de to processer for videregivelse af data beskrives først et basalt implementeringsmønster, og herefter yderligere to, mere avancerede mønstre. De avancerede mønstre kræver ekstra roller og applikationsservices, som vil blive introduceret løbende.
 
 ## Nødvendige applikationservices
 Applikationsservicen `datasamling` samt tilhørende `log` og `brugerstyring` hos den `dataansvarlige` udgør de nødvendige applikationsservices for at implementere processen `videregivelse på forespørgsel` i helt simpel form.
@@ -649,77 +651,65 @@ forsendelse
   ~ *applikationsservice* der kan afsende, modtage og distribuere meddelelser
 
 log
-  ~ *datasamling*, der indeholder data om ændringer, videregivelse og anvendelser af data fra samlinger.
+  ~ *applikationsservice*, der konsoliderer og formidler data om ændringer, videregivelse og anvendelser af data fra en given `datasamling`
 
 brugerstyring
-  ~ *forretningsfunktion* og nødvendige *applikationsservice*, til administration og anvendelse af identiteter og rettigheder (j.f. Referencearkitektur for brugerstyring 2017).
+  ~ *forretningsfunktion* indeholdende nødvendige *applikationsservices* til administration og anvendelse af identiteter og rettigheder (jf. Referencearkitektur for brugerstyring, 2017).
 
 ### Ønskelige egenskaber ved videregivelse
 
-Dette afsnit sætter flere ord på de kvaliteter, der knytter sig til videregivelse af data. De forskellige kvaliteter er her stillet op i sammenhæng med den relevante applikationsservice.
+Dette afsnit sætter flere ord på de kvaliteter, der grundlæggende knytter sig til videregivelse af data. De forskellige kvaliteter er her stillet op i sammenhæng med den relevante applikationsservice.
 
 
 [TODO: Om-formattér nedenstående 4 afsnit til **bold** + bulletlister]
 
-### Datasamling
+**Datasamling:** En `datasamling` er et helt centralt begreb i denne referencearkitektur og blev introduceret allerede i afsnit 1. Når `datasamlingen` udgøres af dokumenter kaldes den et `repository`. Udgøres den af `registreringer`, kaldes den et `register`.
 
-En `datasamling` er et helt centralt begreb i denne referencearkitektur og blev introduceret allerede i afsnit 1. Når `datasamlingen` udgøres af dokumenter kaldes den et `repository`. Udgøres den af `registreringer`, kaldes den et `register`.
+Datasamlinger er kendetegnet ved følgende, ønskede egenskaber:
 
-Datasamlinger er kendetegnet ved:
+- **Identificeret og dokumenteret:**
+Datasamlingen bør registreres som et Information Asset (jf. ISO 27000). Registreringen dækker formålet med indsamlingen, og kategorier af personoplysninger m.m.
 
+- **'Forvaltningsegnede':**
 
-#### Identificeret og dokumenteret
-Datasamlingen er registreret som Information Asset (j.f. ISO 27000). Dække Formålet med indsamlingen og kategorier af personoplysninger.
-
-
-
-#### 'Forvaltningsegnede'
-Indeholde data om den kontekst de er registreret i, så anvender kan vurdere tilliden til dem.
-
-Samlinger kan have temporale og bitemporale egenskaber. Dette handler blandt andet om at holde styr på datas gyldighedsperiode og registreringstidspunkt for fx at kunne understøtte dobbelt historik (overblik både over, hvad der var korrekt på en given dato, og hvad registeret på et givent tidspunkt troede var korrekt på samme tidspunkt).
-(Sag og Dokument taler om virkning og registrering)
-
+  - Data i `samlinger` bør indeholde oplysninger om den kontekst, de er registreret i, så `anvender` kan vurdere tilliden til dem.
+  - Samlinger kan have temporale og bitemporale egenskaber. Dette handler blandt andet om at holde styr på datas gyldighedsperiode og registreringstidspunkt for fx at kunne understøtte dobbelt historik (overblik både over, hvad der var korrekt på en given dato, og hvad registeret på et givent tidspunkt troede var korrekt på samme tidspunkt).
 [TODO: check paragraf 12 om evidens i 1024/2012 ]
 
-#### Beskyttet
-på basis af adgangspolitik bestemt af dataansvarlige. Adgangskontrol er en funktion af identitet og attributter, herunder retttigheder og roller. Husk at det skal være effektivt for anvender, så anvende eksisterende trusted attributes i andre samlinger hvor muligt...
+- **Beskyttet:**
+`Samlinger` skal beskytte deres data på basis af adgangspolitik bestemt af den `dataansvarlige`, fx registerejer. Adgangskontrol er en funktion af identitet og attributter, herunder retttigheder og roller. I praksis er der behov for et *trade-off* mellem et adgangspolitik-design, der udspringer af den enkelte `datasamling`, og et design, der i stedet tager udgangspunkt i `dataanvenders` fx ved at anvende eksisterende *trusted attributes* fra andre `samlinger` hvis muligt. Anvenderperspektivet er relevant eksempelvis, hvor flere `datasamlinger` skal integreres i samme, tværgående proces. Referencearkitektur for Brugerstyring under Den fællesoffentlige digitaliseringsstrategi 2016-2020 har bl.a. til formål at lægge fælles rammer for adgangspolitik, der understøtter fællesoffentlig interoperabilitet.
 
-#### Robust
-'overforbrug' sikre sig mod 'over-forbrug'. Rimelig brug er beskrevet i aftaler. (eller er det generelt for alle services...?)
-
-
-### Forsendelse
-Kan ofte bruges til både at sende og modtage, men findes også i andre konfigurationer. Fx 'skriv til os' hjemmesider. Kaldes også en Messaging Services i EIRA og elektroniske leveringstjeneste i eIDAS.
+- **Robust og kontrolleret (governed):**
+En god `datasamling` kan (som applikationsservice betragtet) sikre sig mod overforbrug. Rimelig brug er beskrevet i aftaler, der kan være generelle eller bilaterale i forhold til en bestemt `anvender`. Ud over en passende håndhævning af den juridisk bestemte brug skal en `datasamling` også på det tekniske niveau kunne sikre robusthed.
 
 
-#### Identifikation af afsender og modtager
-Ved brug af elektronisk signature eller id.
+**Forsendelse:** Skal generelt kunne distribuere en `meddelelse` fra en `afsender` til en `modtager`. I praksis kan behovet være at understøtte menneske til menneske-kommunikation, system til system-kommunikation, eller varianter, hvor enten afsendelsen eller modtagelsen af `meddelelsen` er automatiseret. Kaldes også en *Messaging Service* i den europæiske interoperabilitetsreferencearkitektur EIRA, samt en *elektronisk leveringstjeneste* i eIDAS.
 
-#### Integritet
-ændringer kan spores. tidstempler er kvalificerede.
+Gode egenskaber omkring `forsendelse` inkluderer:
 
-####  Sporbar
-tidspunkter for afsendelse og modtagelse.
+- **Identifikation af afsender og modtager:** Entydig identifikation ved brug af elektronisk signatur eller id.
 
-#### Kvalificeret tjenesteudbyder
+- **Integritet:**
+Understøttelse af, at `meddelelsen` som udgangspunkt leveres i sin oprindelige form uden at være blevet ændret *in-flight* - sekundært, at ændringer har fuld sporbarhed.
 
-#### Aftaler
-Når der designes forsendelsesmøntre, er det vigtigt at forholde sig til behovet for en *aftale*, der regulerer den samlede forsendelsen. Det kunne fx være en aftale om `modtagers` pligt til at tømme sin postkasse - Lov om Digital Post er et konkret eksempel på et juridisk instrument, der forpligter `modtageren` til at åbne sin post i og med, at en `meddelelse` her er uafviselig og kan have retsvirkning.
+- **Sporbarhed:**
+Tidspunkter for afsendelse og modtagelse samt relevante, øvrige punkter/handlinger i distributionskæden logges. Tidsstempler i distributionskæden er kvalificerede (jf. eIDAS).
 
-### Log
-(Logging Service hos EIRA)
+- **Kvalificeret tjenesteudbyder:** [TODO: Opdater beskrivelse - udgangspunkt i eIDAS-forordningen?]
 
+- **Aftaler:**
+Når der designes forsendelsesmønstre, er det vigtigt at forholde sig til behovet for en *aftale*, der regulerer den samlede forsendelse og dermed videregivelsen af data. Det kunne fx være en aftale om `modtagers` pligt til at tømme sin postkasse. Lov om Digital Post er et konkret eksempel på et juridisk instrument, der forpligter `modtager` til at åbne sin post i og med, at en `meddelelse` her er uafviselig og kan have retsvirkning.
 
+**Log:** Applikationsservicen `log` (i EIRA-termer: *Logging Service*) har følgende gode egenskaber:
 
+- **Understøttelse af ret til indsigt:**
+En `log` skal i denne sammenhæng kunne understøtte den forretningsmæssige indsigt i data og deres faktiske anvendelse. Herunder, hvor data (`registreringer` eller `dokumenter`) stammer fra samt konkrete videregivelser og deres hjemmel. Understøttelsen er ekstra stærk, hvis en `log` er opbygget bruger-centrisk og designet til at være umiddelbar forståelig
 
-#### "indsigtsret"
-hvor de stammer fra, videregivelser (og deres hjemmel), retskilde? bruger-centrisk / umiddelbar forståelig
-
-#### integritet
+- **Integritet:**
 At den ikke kan ændres/forfalskes.
 
-#### beskyttet
-Indeholder personoplysninger og andre følsomme.
+- **Beskyttet:**
+En `log` kan indeholde personhenførbare data og andre følsomme oplysninger og skal derfor være behørigt beskyttet.
 
 
 ### Brugerstyring
