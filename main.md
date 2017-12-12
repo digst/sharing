@@ -148,7 +148,7 @@ Denne referencearkitektur relaterer sig til en række andre referencearkitekture
 Den skal kunne anvendes af:
 
 - Fællesoffentlig referencearkitektur for selvbetjening (under udarbejdelse i regi af Initiativ 1.2 af Den fællesoffentlige digitaliseringsstrategi 2016-2020)
-- Fællesoffentlig referencearkitektur for overblik over egne sager og ydelser(under udarbejdelse i regi af Initiativ 1.3 af Den fællesoffentlige digitaliseringsstrategi 2016-2020)
+- Fællesoffentlig referencearkitektur for overblik over egne sager og ydelser (under udarbejdelse i regi af Initiativ 1.3 af Den fællesoffentlige digitaliseringsstrategi 2016-2020)
 
 ... og skal anvendes i kontekst sammen med:
 
@@ -159,52 +159,55 @@ Den skal kunne anvendes af:
 
 
 ## Signaturforklaring
-I dokumentet er specifikke termer/ord fremhævet med en særlig `skrifttype` for at markere referencer til elementer på figurer (og vedlagte Archimate model).
-Andre termer/ord i teksten er fremhævet med `kursiv`, hvilket markerer at elementet findes i Archimate-begrebsapparatet (og i FDA dokumentationsrammer?).
+I dokumentet er specifikke termer/ord fremhævet med en særlig `skrifttype` for at markere referencer til elementer på figurer (og vedlagte Archimate-model).
+Andre termer/ord i teksten er fremhævet med *kursiv*, hvilket markerer at elementet findes i Archimate-begrebsapparatet.
+[TODO: Afklari hvor høj grad vi kan henvise til/benytte FDAs dokumentationsramme]
 
 Det bemærkes, at prefixet 'data-' kan være udeladt på begreber/elementer i tekst og figurer fx af formatterings- eller læsbarhedshensyn uden, at der ligger en indholdsmæssig skelnen bag (fx `dataanvendelse`/`anvendelse`, `datasamling`/`samling` o.a.)
 
-I figurer og tekst markerer:
+I forhold til ejerskab af de elementer, der indgår i dokumentets figurer og tekst, markerer:
 
-- _Kursiv_ et element eller en relation ikke er nærmere defineret i denne referencearkitektur.
-- Almindelig tekst (i blå) et element eller en relation ejes og defineres andet steds, fx. i andre  referencearkitektur eller lovgivning.
-- **Fed tekst** (i rød) et element eller en relation ejes og defineres i denne referencearkitektur.
+- **Fed tekst** (i rød): At et element eller en relation ejes og defineres i denne referencearkitektur.
+- Almindelig tekst (i blå): At et element eller en relation ejes og defineres et andet, nærmere angivet sted, fx i andre referencearkitektur eller i lovgivning.
+- _Kursiv:_ At et element eller en relation ikke er nærmere defineret i denne referencearkitektur.
 
 I elementerne i dokumentets figurer angiver:
 
-- runde hjørner et procestrin (*Business Functions*)
-- skarpe hjørner en Applikationsrolle (*Application services*)
-- "Slikkepind" en Snitflade (*Application Interface*)
+- runde hjørner: et Procestrin (*Business Functions*)
+- skarpe hjørner: en Applikationsservice (*Application services*)
+- "slikkepind": en Snitflade (*Application Interface*)
 
 
 # Strategi
 Dette afsnit introducerer visionen for deling af data og dokumenter med baggrund i identificerede temaer, principper, arkitekturregler og den forventede værdiskabelse.
 
 ## Temaer
-Referencearkitekturen udmønter og understøtter beslutninger i Den fællesoffentlige digitaliseringsstrategi 2016-2020. Desuden er der i udarbejdelsen taget hensyn til en række aktuelle, offentlige/politiske strategier, herunder Sammenhængsreformen, Cybersikkerhedsinitativet og kommunernes digitaliseringsstrategi "Lokal og Digital".
+Referencearkitekturen udmønter og understøtter beslutninger i Den fællesoffentlige digitaliseringsstrategi 2016-2020. Desuden er der i udarbejdelsen taget hensyn til en række aktuelle, offentlige/politiske strategier, herunder Sammenhængsreformen, Cybersikkerhedsinitativet, kommunernes digitaliseringsstrategi "Lokal og Digital", samt det europæiske rammeværk for interoperabilitet (New European Interoperability Framework for European Public Services).
+
+
 Der kan på tværs af strategierne identificeres en række forretningsmæssige og teknologiske temaer, som ligeledes har bidraget til at sætte retningen for den ønskelige arkitektur.
 
 - **Sammenhængende offentlige services** er det mest tydelige, gennemgående tema på tværs af strategierne. Den offentlige forvaltning ønsker at tilbyde borgere og virksomheder services, der ikke er tæt knyttet til enkelte myndigheder, men opleves som sammenhængende for dem, der anvender servicen. Mest tydeligt er det udtrykt i European Interoperability Frameworks koncept om *integrated service delivery*, men temaet er også meget fremtrædende i regeringens sammenhængsreform.
 
-- **Suverænitet, beskyttelse mod cyberangreb** er et tema, som har været på dagsordenen længe, men har med regeringens cybersecurity-strategi fået en vægt og et fokus, der ikke er set tidligere. Tendensen udgør et større, strategisk skifte, som flytter noget af den tillid, som tidligere har været vist store it-leverandører, og peger i retning af hjemtagning af centrale/kritiske/vitale funktioner som fx netværk.
-
+- **Suverænitet og beskyttelse mod cyberangreb** er et tema, som har været på dagsordenen længe, men har med regeringens cybersecurity-strategi fået en vægt og et fokus, der ikke er set tidligere. Tendensen udgør et større, strategisk skifte, som flytter noget af den tillid, som tidligere har været vist store it-leverandører, og peger i retning af hjemtagning af centrale/kritiske/vitale funktioner som fx netværk.
 
 - **Øget opmærksomhed om behandling af personlige oplysninger** Den europæiske forordning om beskyttelse af personoplysninger (GPDR) og tilhørende dansk implementering udvider den dataansvarliges risiko i forhold til tidligere. Det har ført til et fornyet fokus på at have styr på behandling af persondata og tilsynet hermed.
-- Grænseoverskridende services [TODO: Foldes ud eller udgå?]
 
-- **Scale-out løsninger til web-scale** Der har de sidste 5-10 år været fokus på at få teknologier til at skalere forudsigeligt til web-scale. Der har voldsomt udvidet de ressourcer, der globalt er blevet brugt på large-scale implementeringer. Nu er området så modent, at teknologierne også er tilgængelige for projekter på national skala og endda i enkeltprojekter.
+- **Grænseoverskridende services** I takt med, at de enkelte nationer udvider deres ambitioner for offentlig, digital service til borgere og virksomheder, stiger også behover for at koordinere arkitektur og it-løsninger på tværs af landegrænser for dels at understøtte services, der i deres natur krydser grænser (fx arbejde eller ejerskab af fast ejendom i et andet land), men også for at standardisere og dermed undgå opbygning af nationale "siloer". EU er en aktiv spiller i at drive denne standardisering gennem initiativer som EIF og EIRA samt forordninger som GDPR, eIDAS m.fl.
 
-- **Micro-services** En måde at håndtere den stigende kompleksitet i forvaltningen af it-landskaber er en udbredt strategi om at levere applikationer i mindre enheder. Micro-services er en sådan strategi.
+- **Scale-out af løsninger til web scale** Der har de sidste 5-10 år været fokus på at få teknologier til at skalere forudsigeligt til *web scale*. Der har voldsomt udvidet de ressourcer, der globalt er blevet brugt på large-scale implementeringer. Nu er området så modent, at teknologierne også er tilgængelige for projekter på national skala og endda i enkeltprojekter.
+
+- **Microservices** En måde at håndtere den stigende kompleksitet i forvaltningen af it-landskaber er en udbredt strategi om at levere applikationer i mindre enheder. *Microservices* er en sådan strategi.
 
 - **Nær realtid** - med henblik på automatisering og sammenhængende services er der fokus på at have kortest mulig tid mellem registrering og anvendelse af data. Det medfører behov for færre batch-overførsler. Selvbetjeningsservices bygges, så de kan gennemføres i 'one-seating'.
 
 
 ## Strategiske principper
-De strategiske principper, der ligger til grund for denne referencearkitektur, udspænder sig i et spændingsfelt. På den ene sider åbner visionen om det datadrevne samfund, hvor data ses som et råstof for samfundsudviklingen, for en lang række muligheder og ønsker. På den anden side er deling og data også underlagt begrænsninger og indskrænkninger i lovgivning. Dette afsnit opridser de væsentligste principper i dette spændingsfelt.
+De strategiske principper, der ligger til grund for denne referencearkitektur, udspænder sig i et spændingsfelt. På den ene side åbner visionen om det datadrevne samfund, hvor data ses som et råstof for samfundsudviklingen, for en lang række muligheder og ønsker. På den anden side er deling og data også underlagt begrænsninger og indskrænkninger i lovgivning. Dette afsnit opridser de væsentligste principper i dette spændingsfelt.
 
 På mulighedssiden er det en fundamental målsætning, at:
 
-> *Det digitale skal være let, hurtigt og sikre god kvalitet* (Digitaliseringsstrategien)
+> *Det digitale skal være let, hurtigt og sikre god kvalitet* (kilde: Digitaliseringsstrategien)
 
 Mere generisk kan man, med inspiration fra the European Interoperability Framework (EIF - https://ec.europa.eu/isa2/eif_en), fremhæve fire overordnede principper:
 
@@ -223,8 +226,8 @@ Genbrug
 På begrænsningssiden er der også en række principper, der skal tages i agt. Nedenstående principper er hentet fra EUs persondataforordning (GDPR) og er i vores sammenhæng dækkende uden behov for yderligere definition:
 
 - *lovlighed, rimelighed og gennemsigtighed*
-- *formålsbegrænsning* (undtagelse for arkiv, forskning og statistik)
-- *dataminimering*
+- *formålsbegrænsning* (undtaget er arkiver, forskning og statistiske formål)
+- *data-minimering*
 - *rigtighed* (urigtige data skal straks slettes eller berigtiges)
 - *opbevaringsbegrænsning* (data må ikke opbevares "for evigt")
 - *integritet og fortrolighed*
@@ -235,13 +238,13 @@ På begrænsningssiden er der også en række principper, der skal tages i agt. 
 ## Vision
 Visionen i denne referencearkitektur er at stræbe efter en situation, hvor:
 
-> *Data er en fælles, værdifuld og velbeskyttet ressource, som skal være nem at dele og bruge, men svær at misbruge*
+> *Data er en fælles, værdifuld og velbeskyttet ressource, som er nem at dele og bruge, men svær at misbruge*
 
-**Fælles** betyder, at data i videst muligt omfang betragtes som et fælles gode på tværs af myndigheder ud fra en betragtning om, at data, der registreres ét sted til ét formål, kan have stor værdi for andre myndigheder og virksomheder, der udbyder private tjenester. **Værdifuld** betyder, at data, der er registeret i det offentlige, betragtes som et økonomisk og kvalitetsmæssigt aktiv på lige fod med kontantbeholdninger og fysiske bygninger. **Velbeskyttet** betyder, at der er taget tilstrækkelige og effektive sikkerhedsmæssige tiltag for at beskytte borgere og virksomhederes tillid til, at opbevaring, anvendelse og videregivelse sker under gennemskuelige og retmæssige forhold. **Nem at dele** betyder, at udgifterne ved at anvende data i en ny sammenhæng ikke alene løftes af dataejer, samt at der er tydelig vejledning i udarbejdelse af nødvendige aftaler og at processen ikke tager for lang tid. **Nem at bruge** betyder, at der er fastlagte processer, *best practices* og generiske infrastrukturelementer, der kan genbruges. **Svær at misbruge** betyder, at enkeltpersoner, organisationer og fremmede magter, der måtte have til hensigt at bruge data uretmæssigt, begrænses mest muligt gennem en indsats, der står i forhold til truslerne og de mulige konsekvenser af misbrug.
+**Fælles** betyder, at data i videst muligt omfang betragtes som et fælles gode på tværs af myndigheder ud fra en betragtning om, at data, der registreres ét sted til ét formål, kan have stor værdi for andre myndigheder og virksomheder, der udbyder private tjenester. **Værdifuld** betyder, at data, der er registeret i det offentlige, betragtes som et økonomisk og kvalitetsmæssigt aktiv på lige fod med kontantbeholdninger og fysiske bygninger. **Velbeskyttet** betyder, at der er taget tilstrækkelige og effektive sikkerhedsmæssige tiltag for at beskytte borgere og virksomhederes tillid til, at opbevaring, anvendelse og videregivelse sker under gennemskuelige og retmæssige forhold. **Nem at dele** betyder, at udgifterne ved at anvende data i en ny sammenhæng ikke alene løftes af den dataansvarlige myndighed, samt at der er tydelig vejledning i udarbejdelse af nødvendige aftaler, og at processen ikke tager for lang tid. **Nem at bruge** betyder, at der er fastlagte processer, *best practices* og generiske infrastrukturelementer, der kan genbruges. **Svær at misbruge** betyder, at enkeltpersoner, organisationer og fremmede magter, der måtte have til hensigt at bruge data uretmæssigt, begrænses mest muligt gennem en indsats, der står i forhold til truslerne og de mulige konsekvenser af misbrug.
 
 Denne vision kræver, at en række forretningsevner *(capabilities)* i det offentlige forstærkes væsentligt, herunder:
 
-- **Identifikation og dokumentation af data** - sker allerede i ISO 27000-sammenhæng, men også behov for at udstille til andre.
+- **Identifikation og dokumentation af data** - sker allerede i ISO 27000-sammenhæng for den interne brug, men også behov for at dække, at data udstilles til andre.
 
 - **Aftaleindgåelse** kan tage lang tid og kræver meget arbejde. Bør kunne ske på baggrund af mere generelle og eksisterende aftaler, så vi ikke starter forfra, hver gang nye videregivelser skal etableres.
 
@@ -259,11 +262,11 @@ Værdien ved at følge denne referencearkitektur er, at den understøtter:
 - øget transparens og bevarelse af tillid til registre
 - effektiv systemudvikling (begrænser udfaldsrum, opsamler best practice)
 - juridisk værdi gennem design-mæssig indlejring af compliance-understøttelse for GDPR, eIDAS m.m.
-[TODO: Stram op og fold ud, kig eventuelt på hvad der følger alene af denne... Bind værdi op på de strategiske målsætninger]
+[TODO: Dette afsnit skal strammes op. Overvej at binde værdi op på de strategiske målsætninger. Overvej at adskille i direkte og indirekte værdiskabelse]
 
 ## Fællesoffentlige arkitekturprincipper og -regler
 
-Den Fællesoffentlige Digitale Arkitektur (FDA) udpeger en række principper til rammesætning og styring af den offentlige digitalisering. Under hvert princip angiver FDA fra 1 til 5 konkrete arkitekturregler. Tabellen nedenfor gengiver disse FDA's arkitekturprincipper (kilde: https://arkitektur.digst.dk/).
+Den Fællesoffentlige Digitale Arkitektur (FDA) udpeger en række principper til rammesætning og styring af den offentlige digitalisering. Under hvert princip angiver FDA fra 1 til 5 konkrete arkitekturregler. Tabellen nedenfor gengiver FDA's arkitekturprincipper (kilde: https://arkitektur.digst.dk/).
 
 Nr. | Område        | Princip
 --- | ------------- | ------
@@ -272,7 +275,7 @@ Nr. | Område        | Princip
 3   | Jura          | Arkitektur og regulering understøtter hinanden
 4   | Sikkerhed     | Sikkerhed, privatliv og tillid sikres
 5   | Opgaver       | Processer optimeres på tværs
-6   | Information   | **Gode data deles og genbruges**
+**6**   | **Information**   | **Gode data deles og genbruges**
 7   | Applikation   | It-løsninger samarbejder effektivt
 8   | Infrastruktur | Data og services leveres driftssikkert
 
@@ -300,7 +303,7 @@ Derudover er en række af de øvrige arkitekturregler rammesættende for dette a
 - Beskrivelse af, adgang til og anvendelse af data sker under klar governance og håndhæves ud fra tydelig hjemmel
 - Begræns eksistens og anvendelse af kopiregistre mest muligt
 
-*AR4.2 Anvend fælles arkitektur for informationssikkerhed* [TODO: Brugerstyring?]
+*AR4.2 Anvend fælles arkitektur for informationssikkerhed*
 
 - Ansvar for begrænsning af adgang ligger hos dataansvarlig (typisk identisk med registerejer)
 - Vedlighold af fuldmagter og samtykker sker løst koblet fra deres håndhævelse
@@ -316,7 +319,7 @@ Derudover er en række af de øvrige arkitekturregler rammesættende for dette a
 # Forretningsarkitektur
 Dette afsnit beskriver på forretningsniveau de centrale forretningsfunktioner, der er dækket i denne referencearkitektur, i form af use cases og tværgående processer. De medvirkende aktører og deres roller beskrives. Sluttelig gives en oversigt over de forretningsobjekter, der er i spil omkring deling af data og dokumenter.
 
-## Forretningstjenester/anvendelser i forhold til deling
+## Forretningsfunktioner/anvendelser i forhold til deling
 Emnet for denne referencearkitektur er "deling af data og dokumenter". Det er ikke urimeligt at sige, at denne funktion er så generisk, at det indgår i snart sagt alle processer, der går ud over den enkelte myndighed, hvad enten det er i forbindelse med sagsbehandling, selvbetjening eller noget tredje. Overordnet set finder referencearkitekturen dermed anvendelse i løsningen af alle offentlige opgaver.
 
 Som beskrevet i afsnit 1 har vi præciseret scope for dette dokument til at dreje sig om selve *delingen* af data - og ikke de mulige *anvendelser*, der muliggøres gennem delingen. Vi gør dette ud fra en betragtning om, at typen af denne referencearkitektur er en grundlæggende referencearkitektur. Når det er sagt, er det alligevel meningsfuldt kort at overveje de typiske anvendelser for derigennem at forstå konteksten for datadeling bedre.
@@ -327,14 +330,14 @@ Figuren ovenfor illustrerer, at anvendelsen af delte data kan deles ind i to kat
 
 Herudover findes der sekundære anvendelser, som indbefatter brug af data til styringsformål, økonomiopfølgning og økonomisk afregning, statistik, forskningsformål og meget mere.
 
- Som eksempler på anvendelser, der vil have gavn af en effektiv datadeling, kan nævnes nedenstående sæt af generiske procesmønstre:
+ Som eksempler på anvendelser, der vil have gavn af effektiv datadeling, kan nævnes nedenstående sæt af generiske procesmønstre:
 
 - Myndigheders sagsbehandling (beskrevet i Referencearkitektur for Sag og dokument)
 - Selvbetjening, vendt mod borgere og virksomheder (beskrevet i Referencearkitektur for Selvbetjening)
 - Indsigt i oplysninger og deres anvendelse (fra Referencearkitektur for Overblik over sag og ydelser)
 - Brug af Digital Post (herunder påmindelser)
 - Brug af abonnementsfunktionalitet (herunder tilmelding)
-- Medbringelse af et dokument til en anden service provider, der ikke har adgang til registre - herunder bekræftelse af dokumentets ægthed og validering af dets indhold
+- Medbringelse af et dokument til en anden, offentlig/privat serviceudbyder, der ikke har adgang til registre - herunder bekræftelse af dokumentets ægthed og validering af dets indhold
 - Tværgående analyse, tilsyn og kontrol
 
 
@@ -352,14 +355,14 @@ registrering
   ~ *collaboration* hvor oplysninger bringes på digital form
 
 sletning og arkivering
-    ~ *collaboration* hvor oplysninger slettes eller videregives til arkivering
+  ~ *collaboration* hvor oplysninger slettes eller videregives til arkivering
 
 ## Forretningsroller og aktører
 
 I ovenstående use cases indgår disse forretningsroller:
 
 den registrerede
-  ~ *rolle* den person (datasubjekt), som oplysningerne vedrører (*rolle* fra GDPR)
+  ~ den person (datasubjekt), som oplysningerne vedrører (*rolle* fra GDPR)
 
 dataanvender
   ~ en fysisk eller juridisk person, en offentlig myndighed, en institution eller et andet organ, der behandler personoplysninger på den dataansvarliges vegne (*rolle* fra GDPR)
@@ -374,9 +377,9 @@ Som tidligere tager vi udgangspunkt i, at det er persondata, der behandles. Der 
 
 De aktører, der er i spil omkring deling af data og dokumenter, er:
 
-- **Offentlige myndigheder** (herunder virksomheder, der handler på vegne af offentlige myndigheder). Kan typisk være `dataansvarlig` eller `dataanvender`, men også ofte agere som `registrant`.
-- **Borgere** - oftest i rollen som `den registrerede`, men også som `registrant`.
-- **Virksomheder** som `dataanvendere`, særligt i forbindelse med private tjenester, der anvender oplysninger registreret i offentligt regi i forbindelse med at levere ydelser til `den registrerede`, men også, når anvendelsen er for virksomhedens egen skyld.
+1. **Offentlige myndigheder** (herunder virksomheder, der handler på vegne af offentlige myndigheder). Kan typisk være `dataansvarlig` eller `dataanvender`, men også ofte agere som `registrant`.
+2. **Borgere** - oftest i rollen som `den registrerede`, men også som `registrant`.
+3. **Virksomheder** som `dataanvendere`, særligt i forbindelse med private tjenester, der anvender oplysninger registreret i offentligt regi i forbindelse med at levere ydelser til `den registrerede`, men også, når anvendelsen er for virksomhedens egen skyld.
 
 
 ## Tværgående processer
@@ -391,9 +394,9 @@ Nedenfor er de to grundvarianter for datadeling, `videregivelse på forespørgse
 Denne proces dækker, at en `dataanvender` - typisk en myndighed, men kan også være en virksomhed - søger adgang til data, der på forhånd er gjort tilgængelige af en `dataansvarlig`. De indgående procestrin er:
 
 behov opstår
-  ~ *begivenhed* hvor en datanvender har brug at anvende data der opbevares af en dataansvarlig
+  ~ *begivenhed* hvor en `dataanvender` har brug at anvende data, der opbevares af en `dataansvarlig`
 
-Processen starter hos `dataanvener`, der har identificeret et behov for at indhente data. Dette behov opstår typisk i kontekst af andre processer, som vi ikke specificerer nærmere her, men som indbefatter sagsbehandling, selvbetjeningsløsninger, analyser og meget mere.
+Processen starter hos `dataanvender`, der har identificeret et behov for at indhente data. Dette behov opstår typisk i kontekst af andre processer, som vi ikke specificerer nærmere her, men som indbefatter sagsbehandling, selvbetjeningsløsninger, analyser og meget mere.
 
 forespørg om data
   ~ *procestrin* hvor en `dataanvender` spørger om udstillede data
@@ -401,7 +404,7 @@ forespørg om data
 `Dataanvender` sender en forespørgsel på data, der beskriver, hvilke data der ønskes. Ved adgang til andet end åbne data skal den nødvendige hjemmel ligeledes fremgå af forespørgslen, så `dataansvarlig` kan håndhæve den nødvendige adgangskontrol. Forespørgslen kan i praksis ske ved anvendelse af flere meddelelser, eksempelvis ved kriteriebaseret søgning forud for, at data hentes, eller ved at starte med en forespørgsel til et `indeks`, der udpeger relevante enkeltregistre, hvorfra data kan hentes.
 
 vurder adgang
-  ~ *procestrin* hvor det vurderes om den etablerede adgangspolitik er overholdt.
+  ~ *procestrin* hvor det vurderes, om den etablerede adgangspolitik er overholdt.
 
 `Dataansvarlig` myndighed vurderer i dette trin forespørgslen med henblik på at håndhæve adgangskontrol. Kun, hvis den medsendte hjemmel giver lovmæssig adgang til den forespurgte data, kan `dataansvarlig` gå videre med delingen. Hjemlen kan være eksplicit angivet eller ligge implicit i brugerstyringen. Hjemlen kan enten give generel adgang til en given `datasamling`, eller give adgang til specifik data i `samlingen`, hvorfor der i mange situationer vil være behov for at se på hjemlen og det efterspurgte data i sammnenhæng for at håndhæve adgangskontrollen. Et særligt aspekt i at vurdere adgang er håndhævelsen af 'negativt samtykke', hvor adgang til bestemte data er fjernet, fx fordi datas korrekthed er bragt i tvivl og skal undersøges. Dette procestrin kan i øvrigt benyttes af `dataansvarlig` til at håndhæve adgangskontrol også på andre planer som håndhævelse af en Service Level Agreement, beskyttelse mod misbrug, mistænkelig adfærd m.m. Det bemærkes endvidere, at `dataansvarlig` kan have overladt distributionsopgave og de praktiske opgaver for håndhævelse af adgangskontrollen til en `datadistributør`, hvilket i øvrigt ikke ændrer ved beskrivelsen af dette trin.
 
@@ -425,7 +428,7 @@ Når man skal vurdere processen `videregivelse på forespørgsel`, er følgende 
   * **Indsigt**: Processen skal understøtte effektiv indsigt i anvendelse (logning)
   * **Opbevaring**: `Dataanvender` bør benytte den autoritative `datasamling` direkte hvis muligt. Herved undgås, at der opbygges 'skyggekopier' af `datasamlinger`, der introducerer kompleksistet i forbindelse med synkronisering, aktualitetsudfordringer m.m.
 
-Det bemærkes, at processen for use casen `indsigt`, hvor `den registrerede` benytter sig af sin ret til indsigt i, hvordan data om ham/hende er blevet anvendt, er et særtilfælde af `videregivelse på forespørgsel`. Den er derfor ikke beskrevet selvstændigt.
+Det bemærkes, at processen for *use casen* `få indsigt`, hvor `den registrerede` benytter sig af sin ret til indsigt i, hvordan data om ham/hende er blevet anvendt, er et særtilfælde af `videregivelse på forespørgsel`. Den er derfor ikke beskrevet selvstændigt.
 
 ### Videregivelse ved meddelelse
 Denne proces dækker, at en `afsender` - typisk en myndighed eller en virksomhed - har behov for at sende data (evt. i form af et dokument) til en `modtager`.
@@ -446,7 +449,7 @@ Første trin er, at `afsender` danner indholdet af meddelelsen. Indholdet kan v�
 
 
 adressér meddelelse
-  ~ *procestrin* hvor afsender undersøger, hvordan meddelelsen kan sendes. [[todo: flyt på figur]
+  ~ *procestrin* hvor afsender undersøger, hvordan meddelelsen kan sendes.
 
 Dette trin giver mulighed for at angive en slutmodtager for `meddelelsen`, der kan være mere specifik end blot `modtager`. Som eksempel kan `modtager` i nogle tilfælde være en organisation, og der kan være behov for at specificere en bestemt ansat som slutmodtager, hvilket kan tilføjes som metadata til `meddelelsen`. En del af dette procestrin kan være at søge oplysninger i et kontaktregister for entydigt at identificere `modtager`, undersøge `modtagers` evne til at håndtere forskellige meddelelsesformater, identificere `modtagers` præference mht. sprog m.m.
 
@@ -536,7 +539,7 @@ Når processerne omkring videregivelse af data skal implementeres, er der en ræ
 
 Figuren nedenfor præsenterer en oversigt over en række begreber og forretningsobjekter, der er væsentlige for referencearkitekturen. Vi tager udgangspunkt i de tre allerede introducerede forretningsobjekter `meddelelse`, `forespørgsel` og `svar`, i det vi bemærker, at de to sidstnævnte modelleringsteknisk er specialiseringer af førstnævnte.
 
-![Oversigt over de centrale forretningsobjekter, herunder `meddelelse`, `forespørgsel` og `svar`, samt deres relationer til øvrige begreber i forbindelse med deling af data og dokumenter.](figures/objekter.png)
+![Oversigt over de centrale forretningsobjekter, herunder `meddelelse`, `forespørgsel` og `svar`, samt deres relationer til øvrige begreber i forbindelse med deling af data og dokumenter. Forretningsobjekterne er i denne begrebsmodel markeret med fuldt optrukne kasser.](figures/objekter.png)
 
 De væsentligste elementer i figuren er:
 
@@ -660,9 +663,6 @@ brugerstyring
 
 Dette afsnit sætter flere ord på de kvaliteter, der grundlæggende knytter sig til videregivelse af data. De forskellige kvaliteter er her stillet op i sammenhæng med den relevante applikationsservice.
 
-
-[TODO: Om-formattér nedenstående 4 afsnit til **bold** + bulletlister]
-
 **Datasamling:** En `datasamling` er et helt centralt begreb i denne referencearkitektur og blev introduceret allerede i afsnit 1. Når `datasamlingen` udgøres af dokumenter kaldes den et `repository`. Udgøres den af `registreringer`, kaldes den et `register`.
 
 Datasamlinger er kendetegnet ved følgende, ønskede egenskaber:
@@ -712,14 +712,8 @@ At den ikke kan ændres/forfalskes.
 En `log` kan indeholde personhenførbare data og andre følsomme oplysninger og skal derfor være behørigt beskyttet.
 
 
-### Brugerstyring
-Som beskrevet i referencearkitektur for brugerstyring
-
-Særligt i forbindelse med identifikationer af afsender og modtager ved Forsendelse samt ved forespørgsel, men også "indsigt" (hvis der vælges servicesspecifikke id'er skal der laves en identitets-mapper... forudsætning for brugercentrisk indsigt)
-
-
-
-
+**Brugerstyring:** Generelt er `brugerstyring` som forretningsfunktion beskrevet i Referencearkitektur for Brugerstyring, og gode egenskaber ved `brugerstyring`vil derfor ikke blive beskrevet nærmere her. I kontekst af deling af data og dokumenter er `brugerstyring` central for at kunne identificere `afsender`/`dataansvarlig` samt `modtager`/`dataanvender` entydigt. Derudover er det i forbindelse med `den registreredes` indsigt i anvendelse af data om sig selv interessant at overveje identitetsstyringen på tværs af de `logs`, der rummer information om anvendelsen af data fra forskellige `samlinger`. Et bruger-centrisk design har som forudsætning, at brugerens identitet kan anvendes på tværs af `logs` og kræver dermed, hvis de enkelte `logs` opererer med servicespecifikke id'er, at der laves en identitetsmapper.
+[TODO: Afklar håndtering af fuldmagter/samtykker - jf. issue #28]
 
 
 ## Implementering af videregivelse på forespørgsel
@@ -790,7 +784,7 @@ databehandleraftalen bør også indeholde afklaring af tilgang til log for den r
 
 Delingsansvaret er i dette mønster i høj grad håndteret af en `dataplatform`. Platformen er distribueret og er i stand til at replikere data på tværs af `dataansvarlige`og `dataanvendere`. Dvs., at data, der registreres via en `dataansvarlig` myndighed, gøres tilgængelige for andre, dataanvendende myndigheder via platformen.
 
-Da `dataplatformen` kan rumme data fra mange forskellige `dataejere`, muliggøres effektiv sammenstiling af data hos `dataanvenderen`, der kan kombinere `data` fra `egne samlinger` med `data` fra andre `samlinger`. `Data` kan her forstås både som simple opslag i egne eller andres `datasamlinger`, og som sammenstillinger, hvor data fra flere `samlinger` kombineres for at servicere `dataanvenders` applikationer.
+Da `dataplatformen` kan rumme data fra mange forskellige `dataansvarlige`, muliggøres effektiv sammenstiling af data hos `dataanvenderen`, der kan kombinere `data` fra `egne samlinger` med `data` fra andre `samlinger`. `Data` kan her forstås både som simple opslag i egne eller andres `datasamlinger`, og som sammenstillinger, hvor data fra flere `samlinger` kombineres for at servicere `dataanvenders` applikationer.
 
 Platformen er ansvarlig for at håndhæve adgangskontrol, herunder at sikre, at anvendelsesapplikationer har den nødvendige lovhjmmel til at tilgå en given, distribueret `samling`. Eventuelle services hos `dataanvender`, der gør brug af data, er ansvarlige for at logge deres brug. Platformen konsoliderer brugs-loggen og gør det muligt for `datasubjekt` at få overblik over brug af personlige data.
 
@@ -808,8 +802,9 @@ portal
 platform (serviceprovider?)
   ~ *foretningsrolle* der forvalter en fælles platform på vegne af flere aktører.
 
+## Vurdering af fordele og ulemper
 
-Tabel: Oversigt over fordele og ulemper for de forskellige roller ved brug af forskellige implementeringsmønstre
+De tre implementeringsmønstre for `videregivelse på forespørgsel`, der er beskrevet i de foregående afsnit, passer i forskellige situationer og tilbyder alle tre både fordele og ulemper. Tabellen nedenfor giver en oversigt over fordele og ulemper for de forskellige roller ved brug af de forskellige implementeringsmønstre.
 
 | Mønster | Dataansvarlig    | Databehandler    | Den registrerede
 |------   |--------------------|--------------------|--------------------
@@ -875,8 +870,9 @@ Mønsteret vil typisk være symmetrisk, således at en `afsender` også kan indg
 
 Fordelene ved Økosystem-mønsteret er, at det er robust, fleksibelt og løbende kan udvides med nye `Service providers`. Ulempen er, at der stilles store krav til det centrale `adresseregister`, samt at der fortsat ikke findes standardteknologier, der dækker mønsteret.
 
+## Vurdering af fordele og ulemper
 
-Tabel: Oversigt over fordele og ulemper for de forskellige roller ved brug af forskellige implementeringsmønstre
+De tre implementeringsmønstre for `videregivelse ved meddelelse`, der er beskrevet i de foregående afsnit, passer i forskellige situationer og tilbyder alle tre både fordele og ulemper. Tabellen nedenfor giver en oversigt over fordele og ulemper for de forskellige roller ved brug af de forskellige implementeringsmønstre.
 
 | Mønster | Afsender    | Modtager
 |------   |--------------------|--------------------
@@ -886,7 +882,7 @@ Tabel: Oversigt over fordele og ulemper for de forskellige roller ved brug af fo
 
 [Regibemærkning til v0.5: Her vil vi særligt gerne høre andre fordele og ulemper, der opleves.]
 
-[TODO: Afklar hvem der har ansvar for adresse]
+[TODO: Afklar hvem der har ansvar for adresse-komponenten]
 
 
 ## Snitflader og egenskaber for services
@@ -1030,8 +1026,6 @@ nok attributter til effektiv fremsøgning
 
 #### hent
 
-### Referencedata
-
 ### Notifikation
 
 #### send påmindelse (om ny meddelelse)
@@ -1040,11 +1034,16 @@ måske garanteret levering, men ingen kvittering?
 - SMS
 - App notifikation
 
+### Referencedata
+
 ### Katalog
 en slags datasamling der typisk på design-tidspunktet. Der findes kataloger over mange ting: Services, datasæt, systemer, datamodeller, dokumenttyper, klassifikationer m.m.
 
 #### opdater
 
+## Sammenhæng til øvrige standarder
+
+[TODO: Tabel, der viser sammenhæng mellem centrale begreber i denne referencearkitektur og de tilsvarende begreber/elementer i EIRA, ETSI, HL7 m.fl.]
 
 ## Områder for standardisering
 
