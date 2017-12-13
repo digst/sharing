@@ -244,13 +244,15 @@ Visionen i denne referencearkitektur er at stræbe efter en situation, hvor:
 
 Denne vision kræver, at en række forretningsevner *(capabilities)* i det offentlige forstærkes væsentligt, herunder:
 
-- **Identifikation og dokumentation af data** - sker allerede i ISO 27000-sammenhæng for den interne brug, men også behov for at dække, at data udstilles til andre.
+- **Koordination af lovgivning** - handler ikke kun om digitaliseringsparat lovgivning, men også om at der er enighed om centrale definitioner på tværs af flere ressortområder. Samt, at der er adgang til effektiv vejledning de steder, hvor der måtte være modstrid.
 
 - **Aftaleindgåelse** kan tage lang tid og kræver meget arbejde. Bør kunne ske på baggrund af mere generelle og eksisterende aftaler, så vi ikke starter forfra, hver gang nye videregivelser skal etableres.
 
+- **Identifikation og dokumentation af data** - sker allerede i ISO 27000-sammenhæng for den interne brug, men også behov for at dække, at data udstilles til andre.
+
 - **Genbrug af løsninger** - sikrer, at vi kan lave hyppige udvidelser både af funktionalitet og anvendelsesområde.
 
-- **Koordination af lovgivning** - handler ikke kun om digitaliseringsparat lovgivning, men også om at der er enighed om centrale definitioner på tværs af flere ressortområder. Samt, at der er adgang til effektiv vejledning de steder, hvor der måtte være modstrid.
+
 
 
 ## Værdiskabelse
