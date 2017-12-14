@@ -162,7 +162,7 @@ Den skal kunne anvendes af:
 ## Signaturforklaring
 I dokumentet er specifikke termer/ord fremhævet med en særlig `skrifttype` for at markere referencer til elementer på figurer (og vedlagte Archimate-model).
 Andre termer/ord i teksten er fremhævet med *kursiv*, hvilket markerer at elementet findes i Archimate-begrebsapparatet.
-[TODO: Afklari hvor høj grad vi kan henvise til/benytte FDAs dokumentationsramme]
+[TODO: Afklar i hvor høj grad vi kan henvise til/benytte FDAs dokumentationsramme]
 
 Det bemærkes, at prefixet 'data-' kan være udeladt på begreber/elementer i tekst og figurer fx af formatterings- eller læsbarhedshensyn uden, at der ligger en indholdsmæssig skelnen bag (fx `dataanvendelse`/`anvendelse`, `datasamling`/`samling` o.a.)
 
@@ -183,16 +183,28 @@ I elementerne i dokumentets figurer angiver:
 Dette afsnit introducerer visionen for deling af data og dokumenter med baggrund i identificerede temaer, principper, arkitekturregler og den forventede værdiskabelse.
 
 ## Temaer
-Referencearkitekturen udmønter og understøtter beslutninger i Den fællesoffentlige digitaliseringsstrategi 2016-2020. Desuden er der i udarbejdelsen taget hensyn til en række aktuelle, offentlige/politiske strategier, herunder Sammenhængsreformen, Cybersikkerhedsinitativet, kommunernes digitaliseringsstrategi "Lokal og Digital", samt det europæiske rammeværk for interoperabilitet (New European Interoperability Framework for European Public Services).
+Referencearkitekturen udmønter og understøtter beslutninger i Den fællesoffentlige digitaliseringsstrategi 2016-2020. Strategien har tre, overordnede målsætninger:
 
+- Det digitale skal være let, hurtigt og sikre god kvalitet
+- Offentlig digitalisering skal give gode vilkår for vækst
+- Tryghed og tillid skal i centrum
 
-Der kan på tværs af strategierne identificeres en række forretningsmæssige og teknologiske temaer, som ligeledes har bidraget til at sætte retningen for den ønskelige arkitektur.
+De tre målsætninger er understøttet af en række, specifikke initiativer, hvoraf *Initiativ 8.1: Gode data og effektiv datadeling* er det konkrete ophæng for denne referencearkitektur.
 
-- **Sammenhængende offentlige services** er det mest tydelige, gennemgående tema på tværs af strategierne. Den offentlige forvaltning ønsker at tilbyde borgere og virksomheder services, der ikke er tæt knyttet til enkelte myndigheder, men opleves som sammenhængende for dem, der anvender servicen. Mest tydeligt er det udtrykt i European Interoperability Frameworks koncept om *integrated service delivery*, men temaet er også meget fremtrædende i regeringens sammenhængsreform.
+Ved at kigge på tværs af initiativerne samt inddrage trends fra den digitale udvikling i samfundet i øvrigt kan man opridse en række forretningsmæssige og teknologiske temaer, der er relevante i forhold til at sætte retningen for den ønskelige arkitektur for datadeling:
 
-- **Suverænitet og beskyttelse mod cyberangreb** er et tema, som har været på dagsordenen længe, men har med regeringens cybersecurity-strategi fået en vægt og et fokus, der ikke er set tidligere. Tendensen udgør et større, strategisk skifte, som flytter noget af den tillid, som tidligere har været vist store it-leverandører, og peger i retning af hjemtagning af centrale/kritiske/vitale funktioner som fx netværk.
+- **Sammenhængende offentlige services** er et meget tydeligt, gennemgående tema. Den offentlige forvaltning ønsker at tilbyde borgere og virksomheder services, der ikke er tæt knyttet til enkelte myndigheder, men opleves som sammenhængende for dem, der anvender servicen. Mest tydeligt er det udtrykt i European Interoperability Frameworks koncept om *integrated service delivery*, men temaet er også fremtrædende i regeringens sammenhængsreform.
 
-- **Øget opmærksomhed om behandling af personlige oplysninger** Den europæiske forordning om beskyttelse af personoplysninger (GPDR) og tilhørende dansk implementering udvider den dataansvarliges risiko i forhold til tidligere. Det har ført til et fornyet fokus på at have styr på behandling af persondata og tilsynet hermed.
+- **Offentlige data skal deles og genbruges**
+En øget deling af data giver mulighed for
+nye generationer af digitale løsninger, som
+i højere grad kan trække de nødvendige data
+automatisk. Det sparer tid for borgere og
+virksomheder, når de slipper for unødige
+indberetninger. Og det kan lette de administrative
+processer og sagsbehandling, når
+manuelle arbejdsgange og i nogle tilfælde
+afgørelser kan automatiseres.
 
 - **Grænseoverskridende services** I takt med, at de enkelte nationer udvider deres ambitioner for offentlig, digital service til borgere og virksomheder, stiger også behover for at koordinere arkitektur og it-løsninger på tværs af landegrænser for dels at understøtte services, der i deres natur krydser grænser (fx arbejde eller ejerskab af fast ejendom i et andet land), men også for at standardisere og dermed undgå opbygning af nationale "siloer". EU er en aktiv spiller i at drive denne standardisering gennem initiativer som EIF og EIRA samt forordninger som GDPR, eIDAS m.fl.
 
@@ -202,6 +214,11 @@ Der kan på tværs af strategierne identificeres en række forretningsmæssige o
 
 - **Nær realtid** - med henblik på automatisering og sammenhængende services er der fokus på at have kortest mulig tid mellem registrering og anvendelse af data. Det medfører behov for færre batch-overførsler. Selvbetjeningsservices bygges, så de kan gennemføres i 'one-seating'.
 
+- **Suverænitet og beskyttelse mod cyberangreb** er et tema, som har været på dagsordenen længe, men har med regeringens cybersecurity-strategi fået en vægt og et fokus, der ikke er set tidligere. Tendensen udgør et større, strategisk skifte, som flytter noget af den tillid, som tidligere har været vist store it-leverandører, og peger i retning af hjemtagning af centrale/kritiske/vitale funktioner som fx netværk.
+
+- **Øget opmærksomhed om behandling af personlige oplysninger** Den europæiske forordning om beskyttelse af personoplysninger (GPDR) og tilhørende dansk implementering udvider den dataansvarliges risiko i forhold til tidligere. Det har ført til et fornyet fokus på at have styr på behandling af persondata og tilsynet hermed.
+
+Mange af disse temaer kan genfindes i en række aktuelle, offentlige/politiske strategier, herunder Sammenhængsreformen, Cybersikkerhedsinitativet, kommunernes digitaliseringsstrategi "Lokal og Digital", samt det europæiske rammeværk for interoperabilitet (New European Interoperability Framework for European Public Services).
 
 ## Strategiske principper
 De strategiske principper, der ligger til grund for denne referencearkitektur, udspænder sig i et spændingsfelt. På den ene side åbner visionen om det datadrevne samfund, hvor data ses som et råstof for samfundsudviklingen, for en lang række muligheder og ønsker. På den anden side er deling og data også underlagt begrænsninger og indskrænkninger i lovgivning. Dette afsnit opridser de væsentligste principper i dette spændingsfelt.
