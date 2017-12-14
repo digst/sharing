@@ -157,6 +157,7 @@ Den skal kunne anvendes af:
 - Referencearkitektur for informationssikkerhed (National sundheds-it, 2013) - [link](https://sundhedsdatastyrelsen.dk/da/rammer-og-retningslinjer/om-referencearkitektur-og-standarder)
 - Indberetning til registre på sundhedsområdet (under godkendelse pr. november 2017)
 
+[TODO: Tilføj publicering & relaterede dokumenter]
 
 ## Signaturforklaring
 I dokumentet er specifikke termer/ord fremhævet med en særlig `skrifttype` for at markere referencer til elementer på figurer (og vedlagte Archimate-model).
@@ -319,7 +320,7 @@ Derudover er en række af de øvrige arkitekturregler rammesættende for dette a
 # Forretningsarkitektur
 Dette afsnit beskriver på forretningsniveau de centrale forretningsfunktioner, der er dækket i denne referencearkitektur, i form af use cases og tværgående processer. De medvirkende aktører og deres roller beskrives. Sluttelig gives en oversigt over de forretningsobjekter, der er i spil omkring deling af data og dokumenter.
 
-## Forretningsfunktioner/anvendelser i forhold til deling
+## Forretningsmæssig kontekst for datadeling
 Emnet for denne referencearkitektur er "deling af data og dokumenter". Det er ikke urimeligt at sige, at denne funktion er så generisk, at det indgår i snart sagt alle processer, der går ud over den enkelte myndighed, hvad enten det er i forbindelse med sagsbehandling, selvbetjening eller noget tredje. Overordnet set finder referencearkitekturen dermed anvendelse i løsningen af alle offentlige opgaver.
 
 Som beskrevet i afsnit 1 har vi præciseret scope for dette dokument til at dreje sig om selve *delingen* af data - og ikke de mulige *anvendelser*, der muliggøres gennem delingen. Vi gør dette ud fra en betragtning om, at typen af denne referencearkitektur er en grundlæggende referencearkitektur. Når det er sagt, er det alligevel meningsfuldt kort at overveje de typiske anvendelser for derigennem at forstå konteksten for datadeling bedre.
