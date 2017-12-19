@@ -7,11 +7,13 @@ Version 0.3, medio oktober 2017. Opdateret med input fra anden workshop. Udgør 
 
 Version 0.4, november 2017. Til intern brug i KDA.
 
-**Version 0.5, december 2017. Til kommentering hos arbejdsgruppedeltagere og deres bagland**
+**Version 0.5, december 2017. Intern leverance til KDA**
 
-*Version 0.7, forventet januar 2018. Til offentlig kommentering*
+*Version 0.6, forventet januar/februar 2018. Til kommentering hos arbejdsgruppedeltagere og deres bagland*
 
-*Version 1.0, forventet marts 2018. Til vurdering hos Styregruppe for Data og Arkitektur*
+*Version 0.7, forventet februar/marts 2018. Til offentlig kommentering*
+
+*Version 1.0, forventet maj 2018. Til vurdering hos Styregruppe for Data og Arkitektur*
 
 
 # Resume
@@ -157,7 +159,7 @@ Den skal kunne anvendes af:
 - Referencearkitektur for informationssikkerhed (National sundheds-it, 2013) - [link](https://sundhedsdatastyrelsen.dk/da/rammer-og-retningslinjer/om-referencearkitektur-og-standarder)
 - Indberetning til registre på sundhedsområdet (under godkendelse pr. november 2017)
 
-[TODO: Tilføj publicering & relaterede dokumenter]
+[TODO: Tilføj publicering & evt. relaterede dokumenter]
 
 ## Signaturforklaring
 I dokumentet er specifikke termer/ord fremhævet med en særlig `skrifttype` for at markere referencer til elementer på figurer (og vedlagte Archimate-model).
@@ -302,26 +304,26 @@ Nr. | Område        | Princip
 
 I denne referencearkitektur er fokus at understøtte arkitekturprincip 6 om, at *Gode data deles og genbruges* og i særlig grad den underliggende regel: *6.1 Del og genbrug data*. Referencearkitekturen for deling af data og dokumenter tilbyder to måder, hvorpå data kan videregives til genbrug, og seks forskellige, tekniske implementeringsmønstre, som videregivelse/deling af data kan realiseres gennem.
 
-Derudover er en række af de øvrige arkitekturregler rammesættende for dette arbejde:
+Derudover giver en række af de øvrige arkitekturregler input og rammer til dette arbejde:
 
 *AR 1.2 Optimer arkitektur efter projektets og de fælles mål*
 
-- Udgifter i datadeling skal fordeles. Hvis byrden i datadeling begrænser genbrug, bør den afløftes fra dataansvarlig
+- Som eksempel på et arkitekturmæssigt dilemma i forhold til at indfri det fælles mål om at dele data kan nævnes den udgift, der er forbundet med at holde systemer kørende for at udstille data. Udgiften falder typisk til den dataansvarlige, der ikke har en isoleret gevinst ud af, at data genbruges. Kan man designe mønstre, der afløfter byrden ved datadeling fra den dataansvarlige for at understøtte god genbrug?
 
 *AR2.5 Stil data og løsninger til rådighed for private*
 
-- Fælles metoder for datadeling understøtter sammenstilling af data og tværgående brug blandt myndigheder og virksomheder
+- Fælles metoder for datadeling vil understøtte sammenstilling af data og tværgående brug blandt myndigheder og virksomheder
 
 *AR3.1 Tag højde for juridiske bindinger i forhold til deling og genbrug af data og it-systemer*
 
-- Dataudveksling mellem organisationer designes ud fra en "dokument-tankegang" (aht. journalisering, forvaltningsret, tvistafgørelse, indsigter m.m.)
 - Modeller funderes (med eksplicitte referencer) i relevant lovgivning nationalt og internationalt
+- Dataudveksling mellem organisationer skal understøtte behovene omkring journalisering, forvaltningsret, tvistafgørelse, indsigter m.m., der er funderet i den klassiske "dokument-tankegang"
 
 *AR4.1 Opfyld krav til informationssikkerhed og privatlivsbeskyttelse*
 
 - Understøtte borgeres og virksomheders indsigt i opbevaring og anvendelse af følsom data
-- Beskrivelse af, adgang til og anvendelse af data sker under klar governance og håndhæves ud fra tydelig hjemmel
-- Begræns eksistens og anvendelse af kopiregistre mest muligt
+- Beskrivelse af data, adgang til data og anvendelse af data sker under klar governance og håndhæves ud fra tydelig hjemmel
+- Peger mod at begrænse eksistens og anvendelse af kopiregistre
 
 *AR4.2 Anvend fælles arkitektur for informationssikkerhed*
 
