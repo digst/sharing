@@ -656,14 +656,16 @@ klassifikation
 # Teknisk arkitektur
 Dette afsnit beskriver, hvordan de forretningsmæssige processer, begreber og objekter beskrevet i det forrige afsnit kan udmønte sig i konkrete applikationsservices. Dette leder samtidigt til et overblik over de områder, hvor der er behov for standardisering. Vi supplerer dette overblik med en oversigt over eksisterende standarder og specifikationer, der allerede er i anvendelse i den offentlige sektor.
 
-Nedenfor beskrives først det minimale sæt af *nødvendige* applikationservices, der kan bruges til at realisere de tværgående processer, der er beskrevet tidligere. For hver af de to processer for videregivelse af data beskrives først et basalt implementeringsmønster, og herefter yderligere to, mere avancerede mønstre. De integrationsmønstre, der beskrives i denne referencearkitektur, er:
+Nedenfor beskrives først det minimale sæt af *nødvendige* applikationservices, der kan bruges til at realisere de tværgående processer, der er beskrevet tidligere. For hver af de to processer for videregivelse af data beskrives først et basalt implementeringsmønster, og herefter yderligere to, mere avancerede mønstre.
+
+De integrationsmønstre, der beskrives i denne referencearkitektur, er:
 
 - **Direkte adgang:** Data videregives ved, at en `dataanvender` forespørger direkte mod den `dataansvarliges` system
 - **Distribution via datafordeler:** Den `dataansvarlige` har overdraget ansvaret for videregivelse af data til en `distributør`, der servicerer forespørgsler fra `dataanvendere`
-- **Fælles service- og dataplatform:** Data opbevares på en `data`
-- **Sikker e-mail:** xx
-- **Fælles system:** xx
-- **Økosystem/service providers:** xx
+- **Fælles service- og dataplatform:** Data opbevares og videregives på forespørgsel fra en fællesoffentlig, distribueret platform
+- **Sikker e-mail:** Data videregives i en `meddelelse` fra `afsender` til `modtager` via sikker e-mail
+- **Fælles system:** `Meddelelsen` med data holdes i dette mønster af et fælles system, der tilbyder postkasser til `afsender` og `modtager` (fx Digital Post)
+- **Økosystem/service providers:** En række `forsendelsesservices`, der er koblet sammen i et økosystem og hver for sig betjener et antal `afsendere`/`modtagere`, tilbyder udveksling af `meddelelser` indeholdende data
 
 De avancerede mønstre kræver ekstra roller og applikationsservices, som vil blive introduceret løbende.
 
@@ -854,7 +856,7 @@ De tre implementeringsmønstre for `videregivelse på forespørgsel`, der er bes
 
 
 
-## Implementering af videregivelse ved forsendelse
+## Implementering af videregivelse ved meddelelse
 
 Når en myndighed vil initiere en specifik og målrettet datadeling - dvs. sende data (herunder dokumenter) til en anden myndighed, virksomhed eller borger - kan det ske via ét af de tre nedenstående mønstre.
 
@@ -862,9 +864,9 @@ Når en myndighed vil initiere en specifik og målrettet datadeling - dvs. sende
 ### Sikker e-mail
 ![Implementeringsmønster for Sikker e-mail](figures/send-email.png)
 
-Et meget anvendt mønster for myndighed til myndighed-kommunikation er at levere en `meddelelse` fra `afsender` til `modtager` gennem `forsendelse` brug af sikker e-mail. Ud over at påpege, at `distributionen` her sker via en sikker og krypteret forbindelse, faldet detr uden for dette dokuments scope at beskrive dette mønster yderligere. Det er dog medtaget for reference pga. dets brede anvendelse. Det er endvidere oplagt at betragte dette mønster som et særtilfælde af det generelle 'Service provider'-mønster nedenfor.
+Et meget anvendt mønster for myndighed til myndighed-kommunikation er at levere en `meddelelse` fra `afsender` til `modtager` gennem `forsendelse` brug af sikker e-mail. Ud over at påpege, at `distributionen` her sker via en sikker og krypteret forbindelse, faldet det uden for dette dokuments scope at beskrive dette mønster yderligere. Det er dog medtaget for reference pga. dets brede anvendelse. Det er endvidere oplagt at betragte dette mønster som et særtilfælde af det generelle 'Service provider'-mønster nedenfor.
 
-Fordelen ved dette mønster er, at det er simpelt og benytter sig af standardteknologi. Ulempen er, at det kun dækker myndighed til myndighed-kommunikation. Derudover sætter standardteknologien (e-mail) visse begrænsninger for funktionalitet, der fx understøtter `fordeling`(automatisk routing) af beskeder hos modtagende virksomhed/myndighed i det tilfælde, hvor `meddelelsen` ikke har én specifik `modtager`.
+Fordelen ved dette mønster er, at det er simpelt og benytter sig af standardteknologi. Ulempen er, at det kun dækker myndighed til myndighed-kommunikation. Derudover sætter standardteknologien (e-mail) visse begrænsninger for funktionalitet, der fx understøtter `fordeling` (automatisk routing) af beskeder hos modtagende virksomhed/myndighed i det tilfælde, hvor `meddelelsen` ikke har én specifik `modtager`.
 
 ### Fælles system
 ![Implementeringsmønster for fælles system](figures/send-shared.png)
