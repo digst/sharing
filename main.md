@@ -9,7 +9,7 @@ Version 0.4, november 2017. Til intern brug i KDA.
 
 **Version 0.5, december 2017. Intern leverance til KDA**
 
-*Version 0.6, forventet januar/februar 2018. Til kommentering hos arbejdsgruppedeltagere og deres bagland*
+*Version 0.6, forventet januar 2018. Til kommentering hos arbejdsgruppedeltagere og deres bagland*
 
 *Version 0.7, forventet februar/marts 2018. Til offentlig kommentering*
 
@@ -656,7 +656,16 @@ klassifikation
 # Teknisk arkitektur
 Dette afsnit beskriver, hvordan de forretningsmæssige processer, begreber og objekter beskrevet i det forrige afsnit kan udmønte sig i konkrete applikationsservices. Dette leder samtidigt til et overblik over de områder, hvor der er behov for standardisering. Vi supplerer dette overblik med en oversigt over eksisterende standarder og specifikationer, der allerede er i anvendelse i den offentlige sektor.
 
-Nedenfor beskrives først det minimale sæt af *nødvendige* applikationservices, der kan bruges til at realisere de tværgående processer, der er beskrevet tidligere. For hver af de to processer for videregivelse af data beskrives først et basalt implementeringsmønster, og herefter yderligere to, mere avancerede mønstre. De avancerede mønstre kræver ekstra roller og applikationsservices, som vil blive introduceret løbende.
+Nedenfor beskrives først det minimale sæt af *nødvendige* applikationservices, der kan bruges til at realisere de tværgående processer, der er beskrevet tidligere. For hver af de to processer for videregivelse af data beskrives først et basalt implementeringsmønster, og herefter yderligere to, mere avancerede mønstre. De integrationsmønstre, der beskrives i denne referencearkitektur, er:
+
+- **Direkte adgang:** Data videregives ved, at en `dataanvender` forespørger direkte mod den `dataansvarliges` system
+- **Distribution via datafordeler:** Den `dataansvarlige` har overdraget ansvaret for videregivelse af data til en `distributør`, der servicerer forespørgsler fra `dataanvendere`
+- **Fælles service- og dataplatform:** Data opbevares på en `data`
+- **Sikker e-mail:** xx
+- **Fælles system:** xx
+- **Økosystem/service providers:** xx
+
+De avancerede mønstre kræver ekstra roller og applikationsservices, som vil blive introduceret løbende.
 
 ## Nødvendige applikationservices
 Applikationsservicen `datasamling` samt tilhørende `log` og `brugerstyring` hos den `dataansvarlige` udgør de nødvendige applikationsservices for at implementere processen `videregivelse på forespørgsel` i helt simpel form.
