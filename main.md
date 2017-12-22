@@ -1143,3 +1143,17 @@ Tekniske standarder og specifikationer
 - URI  (overvej noget som subdomæner) (multitiere, decentral)
 - Dokumentation af services (openapi)
 - ISO Identifier
+
+
+# Bilag
+
+## Mapning til European Interoperability Reference Architecture v2
+
+
+![EIRA Organisational View](figures/EIRA-org.png)
+
+
+![EIRA Semantic](figures/EIRA-sem.png)
+
+
+![EIRA Technical](figures/EIRA_tech.png)

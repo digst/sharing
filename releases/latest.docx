@@ -7,11 +7,13 @@ Version 0.3, medio oktober 2017. Opdateret med input fra anden workshop. Udgør 
 
 Version 0.4, november 2017. Til intern brug i KDA.
 
-**Version 0.5, december 2017. Til kommentering hos arbejdsgruppedeltagere og deres bagland**
+**Version 0.5, december 2017. Intern leverance til KDA**
 
-*Version 0.7, forventet januar 2018. Til offentlig kommentering*
+*Version 0.6, forventet januar 2018. Til kommentering hos arbejdsgruppedeltagere og deres bagland*
 
-*Version 1.0, forventet marts 2018. Til vurdering hos Styregruppe for Data og Arkitektur*
+*Version 0.7, forventet februar/marts 2018. Til offentlig kommentering*
+
+*Version 1.0, forventet maj 2018. Til vurdering hos Styregruppe for Data og Arkitektur*
 
 
 # Resume
@@ -157,11 +159,12 @@ Den skal kunne anvendes af:
 - Referencearkitektur for informationssikkerhed (National sundheds-it, 2013) - [link](https://sundhedsdatastyrelsen.dk/da/rammer-og-retningslinjer/om-referencearkitektur-og-standarder)
 - Indberetning til registre på sundhedsområdet (under godkendelse pr. november 2017)
 
+[TODO: Tilføj publicering & evt. relaterede dokumenter]
 
 ## Signaturforklaring
 I dokumentet er specifikke termer/ord fremhævet med en særlig `skrifttype` for at markere referencer til elementer på figurer (og vedlagte Archimate-model).
 Andre termer/ord i teksten er fremhævet med *kursiv*, hvilket markerer at elementet findes i Archimate-begrebsapparatet.
-[TODO: Afklari hvor høj grad vi kan henvise til/benytte FDAs dokumentationsramme]
+[TODO: Afklar i hvor høj grad vi kan henvise til/benytte FDAs dokumentationsramme]
 
 Det bemærkes, at prefixet 'data-' kan være udeladt på begreber/elementer i tekst og figurer fx af formatterings- eller læsbarhedshensyn uden, at der ligger en indholdsmæssig skelnen bag (fx `dataanvendelse`/`anvendelse`, `datasamling`/`samling` o.a.)
 
@@ -182,16 +185,28 @@ I elementerne i dokumentets figurer angiver:
 Dette afsnit introducerer visionen for deling af data og dokumenter med baggrund i identificerede temaer, principper, arkitekturregler og den forventede værdiskabelse.
 
 ## Temaer
-Referencearkitekturen udmønter og understøtter beslutninger i Den fællesoffentlige digitaliseringsstrategi 2016-2020. Desuden er der i udarbejdelsen taget hensyn til en række aktuelle, offentlige/politiske strategier, herunder Sammenhængsreformen, Cybersikkerhedsinitativet, kommunernes digitaliseringsstrategi "Lokal og Digital", samt det europæiske rammeværk for interoperabilitet (New European Interoperability Framework for European Public Services).
+Referencearkitekturen udmønter og understøtter beslutninger i Den fællesoffentlige digitaliseringsstrategi 2016-2020. Strategien har tre, overordnede målsætninger:
 
+- Det digitale skal være let, hurtigt og sikre god kvalitet
+- Offentlig digitalisering skal give gode vilkår for vækst
+- Tryghed og tillid skal i centrum
 
-Der kan på tværs af strategierne identificeres en række forretningsmæssige og teknologiske temaer, som ligeledes har bidraget til at sætte retningen for den ønskelige arkitektur.
+De tre målsætninger er understøttet af en række, specifikke initiativer, hvoraf *Initiativ 8.1: Gode data og effektiv datadeling* er det konkrete ophæng for denne referencearkitektur.
 
-- **Sammenhængende offentlige services** er det mest tydelige, gennemgående tema på tværs af strategierne. Den offentlige forvaltning ønsker at tilbyde borgere og virksomheder services, der ikke er tæt knyttet til enkelte myndigheder, men opleves som sammenhængende for dem, der anvender servicen. Mest tydeligt er det udtrykt i European Interoperability Frameworks koncept om *integrated service delivery*, men temaet er også meget fremtrædende i regeringens sammenhængsreform.
+Ved at kigge på tværs af initiativerne samt inddrage trends fra den digitale udvikling i samfundet i øvrigt kan man opridse en række forretningsmæssige og teknologiske temaer, der er relevante i forhold til at sætte retningen for den ønskelige arkitektur for datadeling:
 
-- **Suverænitet og beskyttelse mod cyberangreb** er et tema, som har været på dagsordenen længe, men har med regeringens cybersecurity-strategi fået en vægt og et fokus, der ikke er set tidligere. Tendensen udgør et større, strategisk skifte, som flytter noget af den tillid, som tidligere har været vist store it-leverandører, og peger i retning af hjemtagning af centrale/kritiske/vitale funktioner som fx netværk.
+- **Sammenhængende offentlige services** er et meget tydeligt, gennemgående tema. Den offentlige forvaltning ønsker at tilbyde borgere og virksomheder services, der ikke er tæt knyttet til enkelte myndigheder, men opleves som sammenhængende for dem, der anvender servicen. Mest tydeligt er det udtrykt i European Interoperability Frameworks koncept om *integrated service delivery*, men temaet er også fremtrædende i regeringens sammenhængsreform.
 
-- **Øget opmærksomhed om behandling af personlige oplysninger** Den europæiske forordning om beskyttelse af personoplysninger (GPDR) og tilhørende dansk implementering udvider den dataansvarliges risiko i forhold til tidligere. Det har ført til et fornyet fokus på at have styr på behandling af persondata og tilsynet hermed.
+- **Offentlige data skal deles og genbruges**
+En øget deling af data giver mulighed for
+nye generationer af digitale løsninger, som
+i højere grad kan trække de nødvendige data
+automatisk. Det sparer tid for borgere og
+virksomheder, når de slipper for unødige
+indberetninger. Og det kan lette de administrative
+processer og sagsbehandling, når
+manuelle arbejdsgange og i nogle tilfælde
+afgørelser kan automatiseres.
 
 - **Grænseoverskridende services** I takt med, at de enkelte nationer udvider deres ambitioner for offentlig, digital service til borgere og virksomheder, stiger også behover for at koordinere arkitektur og it-løsninger på tværs af landegrænser for dels at understøtte services, der i deres natur krydser grænser (fx arbejde eller ejerskab af fast ejendom i et andet land), men også for at standardisere og dermed undgå opbygning af nationale "siloer". EU er en aktiv spiller i at drive denne standardisering gennem initiativer som EIF og EIRA samt forordninger som GDPR, eIDAS m.fl.
 
@@ -201,6 +216,11 @@ Der kan på tværs af strategierne identificeres en række forretningsmæssige o
 
 - **Nær realtid** - med henblik på automatisering og sammenhængende services er der fokus på at have kortest mulig tid mellem registrering og anvendelse af data. Det medfører behov for færre batch-overførsler. Selvbetjeningsservices bygges, så de kan gennemføres i 'one-seating'.
 
+- **Suverænitet og beskyttelse mod cyberangreb** er et tema, som har været på dagsordenen længe, men har med regeringens cybersecurity-strategi fået en vægt og et fokus, der ikke er set tidligere. Tendensen udgør et større, strategisk skifte, som flytter noget af den tillid, som tidligere har været vist store it-leverandører, og peger i retning af hjemtagning af centrale/kritiske/vitale funktioner som fx netværk.
+
+- **Øget opmærksomhed om behandling af personlige oplysninger** Den europæiske forordning om beskyttelse af personoplysninger (GPDR) og tilhørende dansk implementering udvider den dataansvarliges risiko i forhold til tidligere. Det har ført til et fornyet fokus på at have styr på behandling af persondata og tilsynet hermed.
+
+Mange af disse temaer kan genfindes i en række aktuelle, offentlige/politiske strategier, herunder Sammenhængsreformen, Cybersikkerhedsinitativet, kommunernes digitaliseringsstrategi "Lokal og Digital", samt det europæiske rammeværk for interoperabilitet (New European Interoperability Framework for European Public Services).
 
 ## Strategiske principper
 De strategiske principper, der ligger til grund for denne referencearkitektur, udspænder sig i et spændingsfelt. På den ene side åbner visionen om det datadrevne samfund, hvor data ses som et råstof for samfundsudviklingen, for en lang række muligheder og ønsker. På den anden side er deling og data også underlagt begrænsninger og indskrænkninger i lovgivning. Dette afsnit opridser de væsentligste principper i dette spændingsfelt.
@@ -284,26 +304,26 @@ Nr. | Område        | Princip
 
 I denne referencearkitektur er fokus at understøtte arkitekturprincip 6 om, at *Gode data deles og genbruges* og i særlig grad den underliggende regel: *6.1 Del og genbrug data*. Referencearkitekturen for deling af data og dokumenter tilbyder to måder, hvorpå data kan videregives til genbrug, og seks forskellige, tekniske implementeringsmønstre, som videregivelse/deling af data kan realiseres gennem.
 
-Derudover er en række af de øvrige arkitekturregler rammesættende for dette arbejde:
+Derudover giver en række af de øvrige arkitekturregler input og rammer til dette arbejde:
 
 *AR 1.2 Optimer arkitektur efter projektets og de fælles mål*
 
-- Udgifter i datadeling skal fordeles. Hvis byrden i datadeling begrænser genbrug, bør den afløftes fra dataansvarlig
+- Som eksempel på et arkitekturmæssigt dilemma i forhold til at indfri det fælles mål om at dele data kan nævnes den udgift, der er forbundet med at holde systemer kørende for at udstille data. Udgiften falder typisk til den dataansvarlige, der ikke har en isoleret gevinst ud af, at data genbruges. Kan man designe mønstre, der afløfter byrden ved datadeling fra den dataansvarlige for at understøtte god genbrug?
 
 *AR2.5 Stil data og løsninger til rådighed for private*
 
-- Fælles metoder for datadeling understøtter sammenstilling af data og tværgående brug blandt myndigheder og virksomheder
+- Fælles metoder for datadeling vil understøtte sammenstilling af data og tværgående brug blandt myndigheder og virksomheder
 
 *AR3.1 Tag højde for juridiske bindinger i forhold til deling og genbrug af data og it-systemer*
 
-- Dataudveksling mellem organisationer designes ud fra en "dokument-tankegang" (aht. journalisering, forvaltningsret, tvistafgørelse, indsigter m.m.)
 - Modeller funderes (med eksplicitte referencer) i relevant lovgivning nationalt og internationalt
+- Dataudveksling mellem organisationer skal understøtte behovene omkring journalisering, forvaltningsret, tvistafgørelse, indsigter m.m., der er funderet i den klassiske "dokument-tankegang"
 
 *AR4.1 Opfyld krav til informationssikkerhed og privatlivsbeskyttelse*
 
 - Understøtte borgeres og virksomheders indsigt i opbevaring og anvendelse af følsom data
-- Beskrivelse af, adgang til og anvendelse af data sker under klar governance og håndhæves ud fra tydelig hjemmel
-- Begræns eksistens og anvendelse af kopiregistre mest muligt
+- Beskrivelse af data, adgang til data og anvendelse af data sker under klar governance og håndhæves ud fra tydelig hjemmel
+- Peger mod at begrænse eksistens og anvendelse af kopiregistre
 
 *AR4.2 Anvend fælles arkitektur for informationssikkerhed*
 
@@ -321,7 +341,7 @@ Derudover er en række af de øvrige arkitekturregler rammesættende for dette a
 # Forretningsarkitektur
 Dette afsnit beskriver på forretningsniveau de centrale forretningsfunktioner, der er dækket i denne referencearkitektur, i form af use cases og tværgående processer. De medvirkende aktører og deres roller beskrives. Sluttelig gives en oversigt over de forretningsobjekter, der er i spil omkring deling af data og dokumenter.
 
-## Forretningsfunktioner/anvendelser i forhold til deling
+## Forretningsmæssig kontekst for datadeling
 Emnet for denne referencearkitektur er "deling af data og dokumenter". Det er ikke urimeligt at sige, at denne funktion er så generisk, at det indgår i snart sagt alle processer, der går ud over den enkelte myndighed, hvad enten det er i forbindelse med sagsbehandling, selvbetjening eller noget tredje. Overordnet set finder referencearkitekturen dermed anvendelse i løsningen af alle offentlige opgaver.
 
 Som beskrevet i afsnit 1 har vi præciseret scope for dette dokument til at dreje sig om selve *delingen* af data - og ikke de mulige *anvendelser*, der muliggøres gennem delingen. Vi gør dette ud fra en betragtning om, at typen af denne referencearkitektur er en grundlæggende referencearkitektur. Når det er sagt, er det alligevel meningsfuldt kort at overveje de typiske anvendelser for derigennem at forstå konteksten for datadeling bedre.
@@ -636,7 +656,18 @@ klassifikation
 # Teknisk arkitektur
 Dette afsnit beskriver, hvordan de forretningsmæssige processer, begreber og objekter beskrevet i det forrige afsnit kan udmønte sig i konkrete applikationsservices. Dette leder samtidigt til et overblik over de områder, hvor der er behov for standardisering. Vi supplerer dette overblik med en oversigt over eksisterende standarder og specifikationer, der allerede er i anvendelse i den offentlige sektor.
 
-Nedenfor beskrives først det minimale sæt af *nødvendige* applikationservices, der kan bruges til at realisere de tværgående processer, der er beskrevet tidligere. For hver af de to processer for videregivelse af data beskrives først et basalt implementeringsmønster, og herefter yderligere to, mere avancerede mønstre. De avancerede mønstre kræver ekstra roller og applikationsservices, som vil blive introduceret løbende.
+Nedenfor beskrives først det minimale sæt af *nødvendige* applikationservices, der kan bruges til at realisere de tværgående processer, der er beskrevet tidligere. For hver af de to processer for videregivelse af data beskrives først et basalt implementeringsmønster, og herefter yderligere to, mere avancerede mønstre.
+
+De integrationsmønstre, der beskrives i denne referencearkitektur, er:
+
+- **Direkte adgang:** Data videregives ved, at en `dataanvender` forespørger direkte mod den `dataansvarliges` system
+- **Distribution via datafordeler:** Den `dataansvarlige` har overdraget ansvaret for videregivelse af data til en `distributør`, der servicerer forespørgsler fra `dataanvendere`
+- **Fælles service- og dataplatform:** Data opbevares og videregives på forespørgsel fra en fællesoffentlig, distribueret platform
+- **Sikker e-mail:** Data videregives i en `meddelelse` fra `afsender` til `modtager` via sikker e-mail
+- **Fælles system:** `Meddelelsen` med data holdes i dette mønster af et fælles system, der tilbyder postkasser til `afsender` og `modtager` (fx Digital Post)
+- **Økosystem/service providers:** En række `forsendelsesservices`, der er koblet sammen i et økosystem og hver for sig betjener et antal `afsendere`/`modtagere`, tilbyder udveksling af `meddelelser` indeholdende data
+
+De avancerede mønstre kræver ekstra roller og applikationsservices, som vil blive introduceret løbende.
 
 ## Nødvendige applikationservices
 Applikationsservicen `datasamling` samt tilhørende `log` og `brugerstyring` hos den `dataansvarlige` udgør de nødvendige applikationsservices for at implementere processen `videregivelse på forespørgsel` i helt simpel form.
@@ -825,7 +856,7 @@ De tre implementeringsmønstre for `videregivelse på forespørgsel`, der er bes
 
 
 
-## Implementering af videregivelse ved forsendelse
+## Implementering af videregivelse ved meddelelse
 
 Når en myndighed vil initiere en specifik og målrettet datadeling - dvs. sende data (herunder dokumenter) til en anden myndighed, virksomhed eller borger - kan det ske via ét af de tre nedenstående mønstre.
 
@@ -833,9 +864,9 @@ Når en myndighed vil initiere en specifik og målrettet datadeling - dvs. sende
 ### Sikker e-mail
 ![Implementeringsmønster for Sikker e-mail](figures/send-email.png)
 
-Et meget anvendt mønster for myndighed til myndighed-kommunikation er at levere en `meddelelse` fra `afsender` til `modtager` gennem `forsendelse` brug af sikker e-mail. Ud over at påpege, at `distributionen` her sker via en sikker og krypteret forbindelse, faldet detr uden for dette dokuments scope at beskrive dette mønster yderligere. Det er dog medtaget for reference pga. dets brede anvendelse. Det er endvidere oplagt at betragte dette mønster som et særtilfælde af det generelle 'Service provider'-mønster nedenfor.
+Et meget anvendt mønster for myndighed til myndighed-kommunikation er at levere en `meddelelse` fra `afsender` til `modtager` gennem `forsendelse` brug af sikker e-mail. Ud over at påpege, at `distributionen` her sker via en sikker og krypteret forbindelse, faldet det uden for dette dokuments scope at beskrive dette mønster yderligere. Det er dog medtaget for reference pga. dets brede anvendelse. Det er endvidere oplagt at betragte dette mønster som et særtilfælde af det generelle 'Service provider'-mønster nedenfor.
 
-Fordelen ved dette mønster er, at det er simpelt og benytter sig af standardteknologi. Ulempen er, at det kun dækker myndighed til myndighed-kommunikation. Derudover sætter standardteknologien (e-mail) visse begrænsninger for funktionalitet, der fx understøtter `fordeling`(automatisk routing) af beskeder hos modtagende virksomhed/myndighed i det tilfælde, hvor `meddelelsen` ikke har én specifik `modtager`.
+Fordelen ved dette mønster er, at det er simpelt og benytter sig af standardteknologi. Ulempen er, at det kun dækker myndighed til myndighed-kommunikation. Derudover sætter standardteknologien (e-mail) visse begrænsninger for funktionalitet, der fx understøtter `fordeling` (automatisk routing) af beskeder hos modtagende virksomhed/myndighed i det tilfælde, hvor `meddelelsen` ikke har én specifik `modtager`.
 
 ### Fælles system
 ![Implementeringsmønster for fælles system](figures/send-shared.png)
@@ -1112,3 +1143,17 @@ Tekniske standarder og specifikationer
 - URI  (overvej noget som subdomæner) (multitiere, decentral)
 - Dokumentation af services (openapi)
 - ISO Identifier
+
+
+# Bilag
+
+## Mapning til European Interoperability Reference Architecture v2
+
+
+![EIRA Organisational View](figures/EIRA-org.png)
+
+
+![EIRA Semantic](figures/EIRA-sem.png)
+
+
+![EIRA Technical](figures/EIRA_tech.png)
